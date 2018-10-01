@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine - Provision a New Service Instance</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Use the REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine to manage, monitor, and perform operations on SOA services and servers.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine">
+        <meta property="og:description" content="Use the REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine to manage, monitor, and perform operations on SOA services and servers.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="op-instances-%7BidentityId%7D-get.html" title="Previous" type="text/html">
+        <link rel="next" href="api-Scaling.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="op-instances-%7BidentityId%7D-get.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="api-Scaling.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            
+            <header>
+
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine</a></li>
+                    <li>Tasks</li>
+                    
+                    <li class="active">
+                        
+                        <a href="api-Provision%20Services.html">Provision Services</a>
+                        
+                    </li>
+                    
+                </ol>
+                
+                <p class="draftsubtitle"></p>
+                
+                <h2>Provision a New Service Instance</h2>
+                <div>
+                    <div class="label label-post text-uppercase">post</div>
+                    <p style="word-break: break-word;"><strong>/api/v1.1/instances/{identityId}</strong></p>
+                </div>
+            </header>
+            <section>
+
+                <div class="description">Provisions a new service instance in a domain.</div>
+
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                        <li role="presentation" class="active"><a href="#request" aria-controls="request" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-in" aria-hidden="true"></span> Request</a></li>
+                        <li role="presentation"><a href="#response" aria-controls="response" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-out" aria-hidden="true"></span> Response</a></li>
+                        
+                        <li role="presentation"><a href="#examples" aria-controls="examples" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-edit" aria-hidden="true"></span> Examples</a></li>
+                        
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="request">
+                            <h3 class="visible-print-block">Request</h3>
+                            
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Path Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>identityId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the identity domain for the Oracle Cloud Service account.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+
+                            
+                            
+                            
+
+                            
+                            
+
+                            
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">Body Parameter</div>
+                                <div style="padding-bottom: 0px" class="panel-body">
+                                    
+                                    <div style="margin-bottom: 8px">Provision Payload</div>
+                                    
+
+                                    <div class="schema-container">
+                                    
+                                    <div id="request-definitions-InstanceProvisionPayload" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : InstanceProvisionPayload</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-InstanceProvisionPayload-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-InstanceProvisionPayload-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-InstanceProvisionPayload-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-InstanceProvisionPayload-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-InstanceProvisionPayload-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>cloudStorageContainer</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the Oracle Storage Cloud Service container used to provide storage for your service instance backups. Use the following format to specify the container name: <code>&lt;<i>storageservicename</i>&gt;-&lt;<i>storageidentitydomain</i>&gt;&#47;&lt;<i>containername</i>&gt;</code><p><b>Notes</b>:<ul><li>Do not use an Oracle Storage Cloud container that you use to back up Oracle SOA Cloud Service instances for any other purpose. For example, do not also use it to back up Oracle Database Cloud - Database as a Service instances. Using the container for multiple purposes can result in billing errors.</li></ul></div>
+
+
+
+            
+        </dd>
+        
+        <dt>description</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Free-form text that provides additional information about the service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>level</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Service level. Valid values include:<ul><li><code>PAAS</code>- Production-level service. Supports Oracle SOA Cloud Service instance creation and monitoring; backup and restoration; patching; and scaling. This is the default.</li></ul></div>
+
+
+
+            
+        </dd>
+        
+        <dt>parameters</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#request-definitions-InstanceProvisionPayload-properties-parameters" role="button" class="btn btn-default btn-sm">parameters</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups component-specific attributes in the following categories:<ul><li>WebLogic Server (<code>&quot;type&quot;:&quot;weblogic&quot;</code>)</li><li>Oracle Traffic Director (<code>&quot;type&quot;:&quot;otd&quot;</code>)</li></ul></div>
+
+            
+        </dd>
+        
+        <dt>provisionOTD</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Default Value: <code>false</code></div>
+
+
+
+
+
+
+
+<div>Flag that specifies whether to enable the load balancer. This value defaults to <code>true</code> when you configure more than one Managed Server for the Oracle SOA Cloud Service instance. Otherwise, defaults to false.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>publicNetwork</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Path to the network from which the Oracle SOA Cloud Service REST API is accessed.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>serviceName</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of Oracle SOA Cloud Service instance. The service name:<ul><li>Must not exceed 50 characters.</li><li>Must start with a letter.</li><li>Must contain only letters, numbers, or hyphens.</li><li>Must not contain any other special characters.</li><li>Must be unique within the identity domain.</li></ul><p>By default, the names of the domain and cluster in the service instance will be generated from the first eight characters of the service instance name (<code>serviceName</code>), using the following formats, respectively: <ul><li><code><i>first8charsOfServiceInstanceName</i>_domain</code></li><li><code><i>first8charsOfServiceInstanceName</i>_cluster</code></li></ul></div>
+
+
+
+            
+        </dd>
+        
+        <dt>subscriptionType</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Billing unit. Valid values include:<ul><li><code>MONTHLY</code> - Pay one price for the full month irrespective of the number of hours used.</li></ul></div>
+
+
+
+            
+        </dd>
+        
+        <dt>topology</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Topology Name. Valid values include:<ul><li><code>osb</code> - Oracle Service Bus Topology.</li><li><code>soa</code> - Service Oriented Architecture.</li><li><code>soaosb</code> - Both OSB and SOA Topology.</li><li><code>b2b</code> - Both B2B (Business to Business) and SOA Topology.</li><li><code>mft</code> - MFT (Managed File Transfer) Topology.</li><li><code>insight</code> - Oracle Business Insight (Business Activity Monitoring) Topology.</li></ul></div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-InstanceProvisionPayload-properties-parameters" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : parameters</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups component-specific attributes in the following categories:<ul><li>WebLogic Server (<code>&quot;type&quot;:&quot;weblogic&quot;</code>)</li><li>Oracle Traffic Director (<code>&quot;type&quot;:&quot;otd&quot;</code>)</li></ul></div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-InstanceProvisionPayload-properties-parameters-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-InstanceProvisionPayload-properties-parameters-items" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-InstanceProvisionPayload-properties-parameters-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-InstanceProvisionPayload-properties-parameters-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-InstanceProvisionPayload-properties-parameters-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#request-definitions-Parameter" role="button" class="btn btn-default btn-sm">Parameter</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-Parameter" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : Parameter</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-Parameter-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-Parameter-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-Parameter-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-Parameter-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-Parameter-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>adminPassword</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div><b>Note:</b> This attribute is valid when component <code>type</code> is set to <code>weblogic</code> only.<p>Password for WebLogic Server administrator. The password must meet the following requirements:<ul><li>Starts with a letter</li><li>Is between 8 and 30 characters long</li><li>Contains letters, at least one number, and optionally, any number of these special characters: dollar sign ($), pound sign (#), and underscore (_).</li></ul></div>
+
+
+
+            
+        </dd>
+        
+        <dt>adminUserName</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div><b>Note:</b> This attribute is valid when component <code>type</code> is set to <code>weblogic</code> only.<p>Username for the WebLogic Server administrator. The name must be between 8 and 128 characters long and cannot contain any of the following characters:<ul><li>Tab</li><li>Brackets</li><li>Parentheses</li><li>The following special characters: left angle bracket (&lt;), right angle bracket (&gt;), ampersand (&), pound sign (#), pipe symbol (|), and question mark (?).</li></ul></div>
+
+
+
+            
+        </dd>
+        
+        <dt>connectString</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The string used to connect to the database. <p>The connection string must be entered using one of the following formats:<ul><li><code><i>host:port/SID</i></code></li><li><code><i>host:port/serviceName</i></code></li></ul></div>
+
+
+
+            
+        </dd>
+        
+        <dt>dbaName</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div><b>Note:</b> This attribute is valid when component <code>type</code> is set to <code>weblogic</code> only.<p>Username for the Oracle Database Cloud - Database as a Service instance administrator.<p>For service instances based on Oracle WebLogic Server 11<i>g</i> (10.3.6), this value must be set to a database user with DBA role. You can use the default user <code>SYSTEM</code> or a user that has been granted the <code>DBA</code> role.<p>For service instances based on Oracle WebLogic Server 12<i>c</i> (12.1.3), this value must be set to a database user with SYSDBA system privileges. You can use the default user <code>SYS</code> or a user that has been granted the <code>SYSDBA</code> privilege.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>dbaPassword</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div><b>Note:</b> This attribute is valid when component <code>type</code> is set to <code>weblogic</code> only.<p>Password for the Oracle Database Cloud - Database as a Service instance administrator.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>dbNetwork</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Path to the network through which the Oracle SOA Cloud Service instance accesses the database.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>listenerPortsEnabled</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Default Value: <code>false</code></div>
+
+
+
+
+
+
+
+<div><b>Note:</b> This attribute is valid when component <code>type</code> is set to <code>otd</code> only; it is not valid for <code>weblogic</code>.<p>Flag that specifies whether the listener ports are enabled on the load balancer. This flag defaults to <code>true</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>loadBalancingPolicy</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div><b>Note:</b> This attribute is valid when component <code>type</code> is set to <code>otd</code> only; it is not valid for <code>weblogic</code>.<p>Policy to use for routing requests to the load balancer. Valid policies include: <ul><li><code><b>least&#95;connection&#95;count</b></code> - Passes each new request to the Managed Server with the least number of connections. This policy is useful for smoothing distribution when Managed Servers get bogged down. Managed Servers with greater processing power to handle requests will receive more connections over time. This is the default.</li><li><code>least&#95;response&#95;time</code> - Passes each new request to the Managed Server with the fastest response time. This policy is useful when Managed Servers are distributed across networks.</li><li><code>round&#95;robin</code> - Passes each new request to the next Managed Server in line, evenly distributing requests across all Managed Servers regardless of the number of connections or response time.</li></ul></div>
+
+
+
+            
+        </dd>
+        
+        <dt>managedServerCount</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div><b>Note:</b> This attribute is valid when component <code>type</code> is set to <code>weblogic</code> or <code>otd</code> only.<p>Number of managed servers. Allowed values are 1, 2, or 4.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>otdAdminPassword</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div><b>Note:</b> This attribute is valid when component <code>type</code> is set to <code>otd</code> only.<p>Password for Oracle Traffic Director administrator. The password must meet the following requirements:<ul><li>Starts with a letter</li><li>Is between 8 and 30 characters long</li><li>Contains letters, at least one number, and optionally, any number of these special characters: dollar sign ($), pound sign (#), and underscore (_).</li></ul><p>This value defaults to the WebLogic Server administrator password, if not specified.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>otdAdminUserName</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div><b>Note:</b> This attribute is valid when component <code>type</code> is set to <code>otd</code> only.<p>Username for the Oracle Traffic Director administrator. The name must be between 8 and 128 characters long and cannot contain any of the following characters:<ul><li>Tab</li><li>Brackets</li><li>Parentheses</li><li>The following special characters: left angle bracket (&lt;), right angle bracket (&gt;), ampersand (&), pound sign (#), pipe symbol (|), and question mark (?).</li></ul><p>This value defaults to the WebLogic Server administrator username, if not specified.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>shape</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div><b>Note:</b> This attribute is valid when component <code>type</code> is set to <code>weblogic</code> or <code>otd</code> only.<p>Desired compute shape. A shape defines the number of Oracle Compute Units (OCPUs) and amount of memory (RAM). Valid <code>weblogic</code> shapes include: <ul><li>oc1m: 1 OCPU, 15 GB memory</li><li>oc2m: 2 OCPUs, 30 GB memory</li><li>oc3m: 4 OCPUs, 60 GB memory</li><li>oc4m: 8 OCPUs, 120 GB memory</li><li>oc5m: 16 OCPUs, 240 GB memory</li></ul><p>Valid <code>otd</code> shapes include: <ul><li>oc3: 1 OCPU, 7.5 GB memory</li><li>oc4: 2 OCPUs, 15 GB memory</li><li>oc5: 4 OCPUs, 30 GB memory</li><li>oc6: 8 OCPUs, 60 GB memory</li><li>oc7: 16 OCPUs, 120 GB memory</li></ul><p>See <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=STCSG-GUID-1DD0FA71-AC7B-461C-B8C1-14892725AA69' target='_blank'>About Machine Images and Shapes</a> in <i>Using Oracle Compute Cloud Service</i> for more information about shapes. See <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=GUID-5B6FC827-31BF-42DA-90FA-CD7F45F979B1'  target='_blank'>About Custom Capacity Units and Advanced Configuration for Oracle SOA Cloud Service-Coherence Instances</a> in <i>Using Oracle SOA Cloud Service</i> for guidelines on defining properties for a custom capacity unit.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>type</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Component type to which the set of parameters applies. Valid values include: <ul><li><code>weblogic</code> - Oracle WebLogic Server</li><li><code>otd</code> - Oracle Traffic Director (load balancer)</li></ul>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>version</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div><b>Note:</b> This attribute is valid when component <code>type</code> is set to <code>weblogic</code> only; it is not valid for <code>otd</code>.<p>Oracle WebLogic Server software version. Valid values include: <code>12.1.3.0.4</code> and <code>10.3.6.0.9</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>VMsPublicKey</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div><b>Note:</b> This attribute is valid when component <code>type</code> is set to <code>weblogic</code> or <code>otd</code> only.<p>Name of the compute SSH key object referring to the public key. You generate an SSH public-private key pair using a standard SSH key generation tool. <p>If not specified for the load balancer, this value defaults to the <code>VMsPublicKeyName</code> object provided for the WebLogic Server.<p><b>Note:</b> You must specify exactly one of the following attributes: <code>VMsPublicKey</code> or <code>VMsPublicKeyName</code> for both WebLogic Server and the load balancer.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    </div>
+
+                                    
+                                    
+                                    
+                                    		
+                                </div>
+                            </div>
+                            
+
+
+
+                            
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="response">
+                            <h3 class="visible-print-block">Response</h3>
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                        
+                            
+                            
+                                        <li class="list-group-item">text/plain</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">Default Response <span class="glyphicon  response-symbol" data-response-code="default" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    successful operation
+                                </div>
+
+                                
+                                
+
+                                
+
+                            </div>
+                            
+
+
+                        </div>
+                        
+                        <div role="tabpanel" class="tab-pane fade" id="examples">
+                            <h3>Examples</h3>
+                            <div class="body conbody">
+ <p class="p">The following example shows how to create an Oracle SOA Cloud Service instance by submitting a POST request on the REST resource using cURL For more information, see <a class="xref" href="Use%20cURL.html" target="_blank">Use cURL</a></p> 
+ <p class="p">See also <a class="xref" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=CSBCS-GUID-27812696-7861-4DCD-B37D-997D98B81F23" target="_blank">Exploring the Oracle SOA Cloud Service Console</a>.</p> 
+ <div class="section">
+  <h3 class="title sectiontitle">cURL Command</h3>
+  <pre class="pre">curl -i -X POST -u joe@example.com:Welcome123! -d @create.json -H "Content-Type:application/json" -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://api-host/paas/service/soa/api/v1.1/instances/ExampleIdentityDomain
+</pre> 
+  <div class="note note">
+   <span class="notetitle">Note::</span> This example uses the URL prefix for the United States (
+   <samp class="ph codeph">soacs</samp>). For information about the URL prefixes for other regions of the world, see 
+   <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a>.
+  </div> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Request Body</h3>
+  <p class="p">The following shows an example of the request body in JSON format. </p> 
+  <pre class="pre">{
+  "serviceName": "MyFirstInstance",
+  "level": "PAAS",
+  "description": "My first instance using the REST API",
+  "provisionOTD": true,
+  "cloudStorageContainer" : "<em class="ph i"><strong class="ph b">yourRemoteStorage</strong></em>",
+  "publicNetwork":"<strong class="ph b"><em class="ph i">yourPublicNetwork</em></strong>",
+  "parameters": [
+    {
+      "version": "12.1.3",
+      "edition":"SUITE",
+      "managedServerCount":"1",
+      "templates":"full",
+      "adminUserName": "weblogic",
+      "adminPassword": "welcome1",
+      "connectString" : "<em class="ph i"><strong class="ph b">yourDBConnectString</strong></em>",
+      "dbaName" : "<strong class="ph b"><em class="ph i">yourDBUsername</em></strong>",
+      "dbaPassword" : "<strong class="ph b"><em class="ph i">yourDBPassword</em></strong>",
+      "dbNetwork" : "<strong class="ph b"><em class="ph i">yourDBNetwork</em></strong>",
+      "shape": "oc1m",
+      "VMsPublicKey": "ssh-rsa keystring xperiment",
+      "type": "weblogic"
+    },
+    {
+      "listenerPortsEnabled": true,
+      "loadBalancingPolicy": "LEAST_CONNECTION_COUNT",
+      "otdAdminUserName": "otdadmin",
+      "otdAdminPassword": "welcome1",
+      "shape": "oc3",
+      "type": "OTD"
+    }
+  ]
+}</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Header</h3>
+  <p class="p">The following shows an example of the response header.</p> 
+  <p class="p">The <samp class="ph codeph">Location</samp> header returns the REST resource that can be used to access the status of the create service instance request. For more information, see <a class="xref" href="op-instances-%7BidentityId%7D-status-%7Boperation%7D-job-%7BjobId%7D-get.html" target="_blank">Get Service Provisioning Status</a>.</p> 
+  <pre class="pre">
+HTTP/1.1 100 Continue
+
+HTTP/1.1 202 Accepted
+Date: Fri, 23 Jan 2015 22:18:26 GMT
+Location: <strong class="ph b">https://api-host/paas/service/soa/api/v1.1/instances/ExampleIdentityDomain/status/create/job/5261</strong>
+Content-Length: 0
+Content-Type: application/json
+</pre> 
+ </div> 
+</div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+        </article>
+    </body>
+</html>

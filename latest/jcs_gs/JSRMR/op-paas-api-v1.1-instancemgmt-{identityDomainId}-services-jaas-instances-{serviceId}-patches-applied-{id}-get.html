@@ -1,0 +1,3847 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service - View a Patch Operation</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-patches-%7BrollbackId%7D-rollback-put.html" title="Previous" type="text/html">
+        <link rel="next" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-patches-checks-get.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-patches-%7BrollbackId%7D-rollback-put.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-patches-checks-get.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            
+            <header>
+
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li>Tasks</li>
+                    
+                    <li class="active">
+                        
+                        <a href="api-Patches.html">Patches</a>
+                        
+                    </li>
+                    
+                </ol>
+                
+                <p class="draftsubtitle"></p>
+                
+                <h2>View a Patch Operation</h2>
+                <div>
+                    <div class="label label-get text-uppercase">get</div>
+                    <p style="word-break: break-word;"><strong>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/jaas/instances/{serviceId}/patches/applied/{id}</strong></p>
+                </div>
+            </header>
+            <section>
+
+                <div class="description">Returns information about the specified patching operation for an Oracle Java Cloud Service instance.</div>
+
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                        <li role="presentation" class="active"><a href="#request" aria-controls="request" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-in" aria-hidden="true"></span> Request</a></li>
+                        <li role="presentation"><a href="#response" aria-controls="response" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-out" aria-hidden="true"></span> Response</a></li>
+                        
+                        <li role="presentation"><a href="#examples" aria-controls="examples" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-edit" aria-hidden="true"></span> Examples</a></li>
+                        
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="request">
+                            <h3 class="visible-print-block">Request</h3>
+                            
+
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Path Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>id</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Unique ID of the patching operation. The ID can be retrieved by getting the list of applied patches.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                        <dt>identityDomainId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account (on Oracle Public Cloud).<p>Tenant name for the Oracle Java Cloud Service instance (on Oracle Cloud Machine).</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                        <dt>serviceId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the Oracle Java Cloud Service instance.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+
+                            
+                            
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Header Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>X-ID-TENANT-NAME</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account (on Oracle Public Cloud).<p>Tenant name for the Oracle Java Cloud Service instance (on Oracle Cloud Machine).</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+
+
+                            
+
+
+
+                            
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="response">
+                            <h3 class="visible-print-block">Response</h3>
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">200 Response <span class="glyphicon glyphicon-ok-sign response-symbol" data-response-code="200" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    OK. See <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=jcs_rest_statuscodes'>Status Codes</a> for information about other possible HTTP status codes.
+                                </div>
+
+                                
+                                
+
+                                
+                                <div class="panel panel-default">
+
+                                    <div class="panel-heading">Body</div>
+                                    <div class="panel-body">
+                                        
+                                        <div>Information about an applied patch.</div>
+                                        
+
+                                        <div class="schema-container">
+                                        
+                                        <div id="200-definitions-applied-patch" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : applied-patch</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Information about an applied patch.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-applied-patch-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-applied-patch-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-applied-patch-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-applied-patch-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-applied-patch-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>additionalNote</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Free-form text to provide additional information about the patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>appliedBy</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the user that applied the patch. <code>system</code> displays if the patch was applied by an auto-update scheduled job.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>appliedDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time that the patch was applied.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>backupId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Backup ID. You can use the backup ID to manage the backup.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>backupStatus</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Whether a backup of the software was created before the patch was applied. Valid values include: <code>Available</code>, <code>SameVersion</code>, <code>Unavailable</code>, <code>Unknown</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>componentPatches</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-applied-patch-properties-componentPatches" role="button" class="btn btn-default btn-sm">componentPatches</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>A map that groups details of a component in the patch. A component could be WLS, JDK, OTD_JDK, or ORACLE_TOOLS.</div>
+
+            
+        </dd>
+        
+        <dt>currentPatchLevel</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Current patch level for the component.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>displayName</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Display name of the patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>id</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Unique ID of the patching operation. Use this ID to get details of a patching operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>inProgress</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether the patch is still in progress.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>jobId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Job ID for the patch operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>lastStatus</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Status of the patch operation. For example: <code>IN PROGRESS</code>, <code>COMPLETED</code>, and <code>FAILED</code>. <code>COMPLETED_ROLLBACK</code> is displayed when an applied patch has been rolled back.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>lastStatusMessage</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Last message logged for the patch operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>operationType</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Patch operating being performed. Valid values include: <code>Rollback</code>, <code>Patching</code>, and <code>None</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>patchCategory</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Category of the patch. For example: <code>General</code>, <code>Multiple</code>, <code>Security</code>, and so on.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>patchDescription</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Description of the patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>patchId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Patch ID.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>patchingResult</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-patching-result" role="button" class="btn btn-default btn-sm">patching-result</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about the results of the patch.</div>
+
+            
+        </dd>
+        
+        <dt>patchReleaseUrl</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>URL that provides more information about the patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>patchSeverity</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Severity of the patch. For example <code>Normal</code>, <code>Mandatory</code>, <code>Recommended</code>, and so on.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>patchType</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Patch type classification. For example:<ul><li><code>COMPOSITE</code>- composite patch</li><li><code>JAAS_TOOLS</code>- Oracle Java Cloud Service tools update</li><li><code>JDK</code>- JDK update</li><li><code>JRF_UPDATE</code>- Oracle JRF update</li><li><code>PS</code>- patch set</li><li><code>PSU</code>- patch set update</li></ul></div>
+
+
+
+            
+        </dd>
+        
+        <dt>releaseDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time patch was released.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>resultMessage</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Patch results message.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>rollbackId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>ID of the rollback that is associated to the completed patching operation. The ID is used to rollback a patch operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>rollbackResult</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-rollback-result" role="button" class="btn btn-default btn-sm">rollback-result</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about the results of the rollback operation. This attribute displays only when a rollback of the patch had been performed.</div>
+
+            
+        </dd>
+        
+        <dt>rollbackVersion</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Version to which the patched component will be rolled back.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>totalTime</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Duration of the patch operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>toVersion</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Version of Oracle Java Cloud Service instance that was patched.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-applied-patch-properties-componentPatches" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : componentPatches</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>A map that groups details of a component in the patch. A component could be WLS, JDK, OTD_JDK, or ORACLE_TOOLS.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-applied-patch-properties-componentPatches-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-applied-patch-properties-componentPatches-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-applied-patch-properties-componentPatches-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-applied-patch-properties-componentPatches-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-applied-patch-properties-componentPatches-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>id</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>ID of a component patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>releaseVersion</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Release version of the component in this patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>version</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Version of the patch component.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>zipBundles</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-applied-patch-properties-componentPatches-properties-zipBundles" role="button" class="btn btn-default btn-sm">zipBundles</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Zips that contain the patched binaries or patches for the service volumes.</div>
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-patching-result" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : patching-result</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about the results of the patch.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-patching-result-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-patching-result-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-patching-result-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-patching-result-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-patching-result-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>additionalNote</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Free-form text to provide additional information about the patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>appliedBy</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the user that applied the patch. <code>system</code> displays if the patch was applied by an auto-update scheduled job.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>backupId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Backup ID. You can use the backup ID to manage the backup.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>completeLog</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>System messages that track the patch operations.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>customRollbackId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>ID to be used in a rollback operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>endDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date the patch operation ended.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>jobId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Job ID for the patch operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>metaVersionBeforeThisPatch</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Version of the metadata service manager before the patch was applied.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>patchingId</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>ID of the applied patch operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>patchingStatus</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Status of the patching operation. For example, <code>COMPLETED</code>. <code>COMPLETED_ROLLBACK</code> is displayed when an applied patch has been rolled back.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>progressMessages</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-patching-result-properties-progressMessages" role="button" class="btn btn-default btn-sm">progressMessages</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>List of progress messages for the patch.</div>
+
+            
+        </dd>
+        
+        <dt>resultMessage</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>System message that describes the patching operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>startDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time that the patch operation started.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>strategy</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Patching strategy. For example, <code>Rolling</code>. To minimize service disruption, the patch is applied in a rolling pattern, patching a single node at a time.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>versionBeforeThisPatch</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Version of the component before the patch was applied.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-rollback-result" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : rollback-result</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about the results of the rollback operation. This attribute displays only when a rollback of the patch had been performed.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-rollback-result-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-rollback-result-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-rollback-result-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-rollback-result-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-rollback-result-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>additionalNote</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Free-form text to provide additional information about the rollback.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>appliedBy</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the user that performed the rollback.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>completeLog</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>System messages that track the rollback operations.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>endDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date the rollback operation ended.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>jobId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Job ID for the rollback operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>patchingStatus</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Status of the rollback operation. For example, <code>COMPLETED_ROLLBACK</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>progressMessages</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-rollback-result-properties-progressMessages" role="button" class="btn btn-default btn-sm">progressMessages</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>List of progress messages for the rollback.</div>
+
+            
+        </dd>
+        
+        <dt>resultMessage</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>System message that describes the rollback operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>rollbackId</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>ID of the rollback operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>startDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time that the rollback operation started.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-applied-patch-properties-componentPatches-properties-zipBundles" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : zipBundles</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Zips that contain the patched binaries or patches for the service volumes.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-applied-patch-properties-componentPatches-properties-zipBundles-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-applied-patch-properties-componentPatches-properties-zipBundles-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-applied-patch-properties-componentPatches-properties-zipBundles-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-applied-patch-properties-componentPatches-properties-zipBundles-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-applied-patch-properties-componentPatches-properties-zipBundles-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>id</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>ID of a component patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>md5sum</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Checksum used to validate the patch binary.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>provisioningObjectRef</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Location of binary to use when creating a new service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>storageKey</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Location of the patch zip on the cloud.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>zipVersion</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Software version that is included in the zip.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-patching-result-properties-progressMessages" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : progressMessages</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>List of progress messages for the patch.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-patching-result-properties-progressMessages-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-patching-result-properties-progressMessages-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-patching-result-properties-progressMessages-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-patching-result-properties-progressMessages-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-patching-result-properties-progressMessages-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-rollback-result-properties-progressMessages" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : progressMessages</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>List of progress messages for the rollback.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-rollback-result-properties-progressMessages-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-rollback-result-properties-progressMessages-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-rollback-result-properties-progressMessages-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-rollback-result-properties-progressMessages-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-rollback-result-properties-progressMessages-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+
+
+                        </div>
+                        
+                        <div role="tabpanel" class="tab-pane fade" id="examples">
+                            <h3>Examples</h3>
+                            <div class="body conbody">
+ <p class="p">The following example shows how to view a patch operation for an Oracle Java Cloud Service instance by submitting a GET request on the REST resource using cURL.</p> 
+ <p class="p"><strong class="ph b">Note:</strong> The command in this example uses the URL structure <samp class="ph codeph">https://rest_server_url/<em class="ph i">resource-path</em></samp>, where <samp class="ph codeph">rest_server_url</samp> is the Oracle Public Cloud or Oracle Cloud Machine REST server to contact for your identity domain or tenant name. See <a class="xref" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=jcs_rest_sendrequest" target="_blank">Send Requests</a> for the appropriate URL structure to use on Oracle Public Cloud or Oracle Cloud Machine.</p> 
+ <div class="section">
+  <h3 class="title sectiontitle">cURL Command</h3>
+  <pre class="pre">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/api/v1.1/instancemgmt/ExampleIdentityDomain/services/jaas/instances/ExampleInstance/patches/applied/110375
+</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Header</h3>
+  <p class="p">The following shows an example of the response header:</p> 
+  <pre class="pre">HTTP/1.1 200 OK
+Date: Wed, 18 May 2016 17:52:37 GMT
+Transfer-Encoding: chunked
+Content-Type: application/json</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Body</h3>
+  <p class="p">The following shows an example of the response body in JSON format. </p> 
+  <pre class="pre">[
+    {
+        "backupStatus":"Available",
+        "additionalNote":"Applying JDK patch 1.7.0_95",
+        "appliedBy":"username",
+        "appliedDate":"May 18, 2016 5:28:38 PM",
+        "totalTime":"22 min, 47 sec",
+        "patchId":"Patch_jdk1.7.0_95",
+        "patchDescription":"Update to latest version of JDK, 1.7.0_95.",
+        "patchReleaseUrl":"http://www.oracle.com/technetwork/java/javase/7u95-relnotes-2775806.html",
+        "releaseDate":"Jan 15, 2016 8:00:00 AM",
+        "resultMessage":"Completed",
+        "lastStatus":"COMPLETED",
+        "lastStatusMessage":"Completed",
+        "componentPatches":
+        {
+            "JDK":
+            {
+                "id":719,
+                "version":"1.7.0_95",
+                "releaseVersion":"1.7.0_95",
+                "zipBundles":
+                {
+                    "JDK":
+                    {
+                        "id":689,
+                        "md5sum":"4d26465bff5b0744ff7ccbeed11dd308",
+                        "provisioningObjectRef":"JDK/7.0.95/151225/jdk.zip",
+                        "storageKey":"PATCH/JDK/jdk1.7.0_95",
+                        "zipVersion":"1.7.0_95"
+                    }
+                }
+            }
+        },
+        "patchType":"JDK",
+        "patchCategory":"JDK",
+        "patchSeverity":"Normal",
+        "jobId":"4021824",
+        "displayName":"1.7.0_95",
+        "backupId":"1463593063559",
+        "inProgress":false,
+        "operationType":"None",
+        "id":110375,
+        "patchingResult":
+        {
+            "patchingId":97382,
+            "backupId":"1463593063559",
+            "versionBeforeThisPatch":"JDK 1.7.0_91",
+            "strategy":"Rolling",
+            "customRollbackId":"4021824_1463592518215",
+            "startDate":"May 18, 2016 5:28:38 PM",
+            "endDate":"May 18, 2016 5:51:25 PM",
+            "patchingStatus":"COMPLETED",
+            "resultMessage":"Completed",
+            "additionalNote":"Applying JDK patch 1.7.0_95",
+            "appliedBy":"username",
+            "jobId":"4021824",
+            "completeLog":"",
+            "progressMessages":
+            [
+                "5:28:38.159 PM Phase initialize started",
+                "5:28:38.251 PM Phase initialize completed",
+                "5:28:38.328 PM Phase pre-check started",
+                "5:28:38.421 PM Phase pre-check-rex started",
+                ...
+                "5:51:24.804 PM Phase patch-rex completed",
+                "5:51:25.061 PM Phase patch completed",
+                "5:51:25.153 PM Phase finalize started",
+                "5:51:25.215 PM Completed"
+            ]
+        },
+        "rollbackId":"110375",
+        "rollbackVersion":"JDK 1.7.0_91",
+        "currentPatchLevel":"JDK 1.7.0_95",
+    }
+]</pre> 
+  <p class="p">When an applied patch has been rolled back, <samp class="ph codeph">rollbackResult</samp> is also displayed: </p> 
+  <pre class="pre">        "rollbackResult":
+        {
+            "rollbackId":151,
+            "startDate":"Jun 3, 2016 4:32:59 PM",
+            "endDate":"Jun 3, 2016 4:46:17 PM",
+            "patchingStatus":"COMPLETED_ROLLBACK",
+            "resultMessage":"Completed",
+            "additionalNote":"Rolling back the WLS patch",
+            "appliedBy":"username",
+            "jobId":"4538993",
+            "completeLog":"",
+            "progressMessages":
+            [
+                "4:32:59.860 PM Phase initialize started",
+                "4:32:59.895 PM Phase initialize completed",
+                "4:32:59.936 PM Phase restore started",
+                "4:46:17.548 PM Phase restore completed",
+                "4:46:17.578 PM Phase finalize started",
+                "4:46:17.596 PM Completed"
+            ]
+        }</pre> 
+ </div> 
+</div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+        </article>
+    </body>
+</html>

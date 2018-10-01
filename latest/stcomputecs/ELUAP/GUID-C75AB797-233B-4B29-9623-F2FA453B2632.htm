@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Get JNLP file to Access VNC</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="This API enables you to download the Java Network Launching Protocol (JNLP) file, also known as Java Web Start (JWS), from the node hosting the instance. You can use this JNLP file to access VNC." />
+<meta name="dcterms.created" content="2017-04-07T05:33:13Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine REST API Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E68443-07" />
+<meta name="dcterms.isVersionOf" content="ELUAP" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-82519A3B-9046-44B1-B06C-72F8333CB529.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-25D36D45-7AD2-459D-97FC-DBAF99D23FC0.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUAP.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-C75AB797-233B-4B29-9623-F2FA453B2632"></a> <span id="PAGE" style="display:none;">20/40</span> <!-- End Header -->
+<h1 id="ELUAP-GUID-C75AB797-233B-4B29-9623-F2FA453B2632" class="sect1">Get JNLP file to Access VNC</h1>
+<div>
+<p>This API enables you to download the Java Network Launching Protocol (JNLP) file, also known as Java Web Start (JWS), from the node hosting the instance. You can use this JNLP file to access VNC.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-C75AB797-233B-4B29-9623-F2FA453B2632__GUID-CC105082-9B42-49C1-9E5C-A5A3BD82AA68">
+<p class="notep1">Note:</p>
+If the <code class="codeph">VNC client jar is missing</code> error message is displayed, contact your Oracle Cloud Administrator to upload the required JAR files for VNC access.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<div class="infobox-note" id="GUID-C75AB797-233B-4B29-9623-F2FA453B2632__GUID-0E22ECDC-8878-4900-A2E7-A29BCDCE8C7D">
+<p class="notep1">Note:</p>
+If the <code class="codeph">Application Blocked by Java Security</code> error message is displayed, you must add the displayed address to the Exception Site List.&nbsp;For more information on editing the Exception Site List, see the following link:<a href="https://www.java.com/en/download/faq/exception_sitelist.xml" target="_blank">https://www.java.com/en/download/faq/exception_sitelist.xml</a></div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Method</p>
+<p><code class="codeph">GET</code></p>
+<p>The <code class="codeph">Accept</code> header in the API Request must be set to the value <code class="codeph">application/x-java-jnlp-file</code>.</p>
+<p>The&nbsp;<code class="codeph">Content-Type</code>&nbsp;of the returned data (JNLP file) in the response body is set to <code class="codeph">application/x-java-jnlp-file</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">REST Resource</p>
+<p><code class="codeph">/instancevnc/<span class="variable">instance_id</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/instancevnc/<span class="variable">instance_id</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">URI Parameter</p>
+<div class="tblformal" id="GUID-C75AB797-233B-4B29-9623-F2FA453B2632__GUID-7047F015-7CE4-4481-86F0-F427A9409F16">
+<table class="cellalignment62" summary="Parameters for downloading JNLP file of a specific instance.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d15727e85">Parameter</th>
+<th class="cellalignment64" id="d15727e87">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d15727e91" headers="d15727e85">instance_id</td>
+<td class="cellalignment66" headers="d15727e91 d15727e87">Instance identifier for which the JNLP file will be downloaded</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/instancevnc/mytenant/public/d5baeacd-e97d-4933-b170-fcfad113bf1e</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Sample Output</p>
+<pre dir="ltr">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;jnlp spec="1.0+" codebase="https://192.168.128.5:443"&gt;
+&lt;information&gt;
+&lt;title&gt;Oracle Compute VNC&lt;/title&gt;
+&lt;vendor&gt;Oracle America&lt;/vendor&gt;
+&lt;offline-allowed/&gt;
+&lt;/information&gt;
+..............
+..............
+-----END RSA PRIVATE KEY-----&lt;/argument&gt;
+&lt;/application-desc&gt;
+&lt;/jnlp&gt;
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment49">
+<tr>
+<td class="cellalignment59">
+<table class="cellalignment54">
+<tr>
+<td class="cellalignment53"><a href="GUID-82519A3B-9046-44B1-B06C-72F8333CB529.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment53"><a href="GUID-25D36D45-7AD2-459D-97FC-DBAF99D23FC0.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment61">
+<table class="cellalignment52">
+<tr>
+<td class="cellalignment53"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment53"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

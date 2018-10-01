@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Overview of Load Balancer Administration Tasks for an Oracle Java Cloud Service Instance</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You perform load balancer administration tasks for an Oracle Java Cloud Service instance as required." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-A568C26C-D1EC-4B9A-AF09-556D31933BCE.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-5D722781-44AD-4BAA-B726-A285154F8534.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-190012B5-6CC3-4CF2-8EAA-BAD5FA2C06D4"></a> <span id="PAGE" style="display:none;">93/131</span> <!-- End Header -->
+<a id="JSCUG3339"></a>
+<h1 id="JSCUG-GUID-190012B5-6CC3-4CF2-8EAA-BAD5FA2C06D4" class="sect1">Overview of Load Balancer Administration Tasks for an Oracle Java Cloud Service Instance</h1>
+<div>
+<p>You perform load balancer administration tasks for an Oracle Java Cloud Service instance as required.</p>
+<div class="tblformalwide" id="GUID-190012B5-6CC3-4CF2-8EAA-BAD5FA2C06D4__GUID-DC5D540C-17CC-49BE-89A8-8FF94F1C0A6D">
+<table class="cellalignment30" summary="This table describes load balancer administration tasks for an Oracle Java Cloud Service instance.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment35" id="d47233e18">Task</th>
+<th class="cellalignment35" id="d47233e21">Description</th>
+<th class="cellalignment44" id="d47233e24">More Information</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d47233e29" headers="d47233e18">
+<p>Disable or enable the load balancer</p>
+</td>
+<td class="cellalignment38" headers="d47233e29 d47233e21">
+<p>Disable the load balancer to suspend an Oracle Java Cloud Service instance during maintenance, or enable the load balancer to resume a service instance after maintenance.</p>
+</td>
+<td class="cellalignment45" headers="d47233e29 d47233e24">
+<p><a href="GUID-5D722781-44AD-4BAA-B726-A285154F8534.htm#GUID-5D722781-44AD-4BAA-B726-A285154F8534" title="You can disable the load balancer for an Oracle Java Cloud Service instance to suspend the service instance during maintenance, or enable the load balancer to resume a service instance after maintenance.">Disabling or Enabling the Load Balancer for an Oracle Java Cloud Service Instance</a></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d47233e47" headers="d47233e18">
+<p>Add a load balancer</p>
+</td>
+<td class="cellalignment38" headers="d47233e47 d47233e21">
+<p>Add a load balancer to an Oracle Java Cloud Service instance that was created without a load balancer.</p>
+<p>Add up to two load balancer nodes.</p>
+</td>
+<td class="cellalignment45" headers="d47233e47 d47233e24">
+<p><a href="GUID-6B2C2199-C004-4DA0-81FE-979FFB98B7C6.htm" title="You can add a load balancer to an Oracle Java Cloud Service instance after its creation.">Adding a Load Balancer to an Oracle Java Cloud Service Instance</a></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d47233e67" headers="d47233e18">
+<p>Add a second load balancer</p>
+</td>
+<td class="cellalignment38" headers="d47233e67 d47233e21">
+<p>Add a second load balancer node to an Oracle Java Cloud Service instance that already has one load balancer node.</p>
+</td>
+<td class="cellalignment45" headers="d47233e67 d47233e24">
+<p><a href="GUID-7D16153E-6028-4FDD-9CFD-49F48D6F379E.htm" title="If your Oracle Java Cloud Service instance has an existing load balancer node you can add a second active load balancer node to the same instance.">Adding a Second Load Balancer to an Oracle Java Cloud Service Instance on OPCM</a></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d47233e84" headers="d47233e18">
+<p>Remove a load balancer</p>
+</td>
+<td class="cellalignment38" headers="d47233e84 d47233e21">
+<p>Delete an existing load balancer node from an Oracle Java Cloud Service instance.</p>
+</td>
+<td class="cellalignment45" headers="d47233e84 d47233e24">
+<p><a href="GUID-8D9D9EDC-38B4-4E23-A94C-CD4ACCACFD22.htm" title="You can remove an existing load balancer node from anOracle Java Cloud Service instance.">Removing a Load Balancer from an Oracle Java Cloud Service Instance on OPCM</a></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d47233e101" headers="d47233e18">
+<p>Configure the load balancer</p>
+</td>
+<td class="cellalignment38" headers="d47233e101 d47233e21">
+<p>Use the Oracle Traffic Director administration console to configure the Oracle Traffic Director software that is used as the load balancer for an Oracle Java Cloud Service instance.</p>
+</td>
+<td class="cellalignment45" headers="d47233e101 d47233e24">
+<p><a href="GUID-4D705FE3-4FB0-4EEE-B5C9-86F3A20C5869.htm#GUID-4D705FE3-4FB0-4EEE-B5C9-86F3A20C5869" title="Oracle Traffic Director is used as the load balancer for an Oracle Java Cloud Service instance.">Configuring a Load Balancer for an Oracle Java Cloud Service Instance</a></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d47233e119" headers="d47233e18">
+<p>Configure a custom domain name</p>
+</td>
+<td class="cellalignment38" headers="d47233e119 d47233e21">
+<p>Configure a custom "vanity" domain name (such as <code class="codeph">example.com</code>) in the load balancer.</p>
+</td>
+<td class="cellalignment45" headers="d47233e119 d47233e24">
+<p><a href="GUID-0D852E2F-3E75-4425-8D96-EBCBF316FE9D.htm#GUID-0D852E2F-3E75-4425-8D96-EBCBF316FE9D" title='By using the load balancer as the front-end, you can quickly and easily associate a custom "vanity" domain name to your application environment. For example, rather than accessing your applications using a public IP address, you can define a custom URL, such as example.com.'>Defining a Custom Domain Name for an Oracle Java Cloud Service Instance</a></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d47233e139" headers="d47233e18">
+<p>Configure a custom application URL</p>
+</td>
+<td class="cellalignment38" headers="d47233e139 d47233e21">
+<p>Configure a custom "vanity" URL (such as <code class="codeph">/apps/mystore</code>) in the load balancer.</p>
+</td>
+<td class="cellalignment45" headers="d47233e139 d47233e24">
+<p><a href="GUID-4CA04D5D-510D-4B7E-A6DB-70416871409D.htm#GUID-4CA04D5D-510D-4B7E-A6DB-70416871409D" title='You can define a custom "vanity" URL for an application deployed to an Oracle Java Cloud Service instance.'>Defining a Custom URL for an Application Deployed to an Oracle Java Cloud Service Instance</a></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d47233e159" headers="d47233e18">
+<p>Configure SSL</p>
+</td>
+<td class="cellalignment38" headers="d47233e159 d47233e21">
+<p>Configure SSL between the client browser and the load balancer. Ensure applications are accessed securely using a custom SSL certificate.</p>
+</td>
+<td class="cellalignment45" headers="d47233e159 d47233e24">
+<p><a href="GUID-B862044D-A55B-48D3-A3E2-CC2D55A8279B.htm#GUID-B862044D-A55B-48D3-A3E2-CC2D55A8279B" title="Secure Socket Layer (SSL) is the most commonly-used method of securing data sent across the internet, and assures visitors that transactions with your application are secure. You can configure SSL between the client browser and the load balancer in your Oracle Java Cloud Service instance in order to ensure that applications are accessed securely.">Configuring SSL for an Oracle Java Cloud Service Instance</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-A568C26C-D1EC-4B9A-AF09-556D31933BCE.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-5D722781-44AD-4BAA-B726-A285154F8534.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

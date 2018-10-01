@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Troubleshooting Oracle Java Cloud Service on Oracle Public Cloud Machine</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="This section describes common problems that you might encounter when using Oracle Java Cloud Service and explains how to solve them." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-FE484476-7B40-4217-A9DC-2D6F19AC3114.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-532426CF-56C0-4768-B2C7-93677630F798.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-8FA398E4-7DEF-45E2-ACCA-0620E9AD79D0"></a> <span id="PAGE" style="display:none;">116/131</span> <!-- End Header -->
+<h1 id="JSCUG-GUID-8FA398E4-7DEF-45E2-ACCA-0620E9AD79D0" class="sect1"><span class="enumeration_chapter">12</span> Troubleshooting Oracle Java Cloud Service <span>on <span>Oracle Public Cloud Machine</span></span></h1>
+<div>
+<div><span>This section describes common problems that you might encounter when using Oracle Java Cloud Service and explains how to solve them.</span></div>
+<div class="section">
+<p class="subhead1">Topics:</p>
+</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-532426CF-56C0-4768-B2C7-93677630F798.htm#GUID-532426CF-56C0-4768-B2C7-93677630F798" title="Before you begin troubleshooting, perform the following tasks.">Before You Begin</a></p>
+</li>
+<li>
+<p><a href="GUID-6EBA48D9-F5FB-4AE1-9573-937ABE9EBD0C.htm#GUID-6EBA48D9-F5FB-4AE1-9573-937ABE9EBD0C" title="You can use the WebLogic Administration Console and other tools to find more information about problems with Oracle Java Cloud Service and help you troubleshoot them.">Finding Diagnostic Information to Help with Troubleshooting</a></p>
+</li>
+<li>
+<p><a href="GUID-DDAA8721-472D-4062-8379-AD0A0A883BC9.htm" title="An Oracle Java Cloud Service instance can fail suddenly and issue password expiry error messages.">Problems with Failure of a Running Service When the User Schema Password Expires</a></p>
+</li>
+<li>
+<p><a href="GUID-48386DD4-8E26-4979-8FD0-98FFE0DA5600.htm#GUID-48386DD4-8E26-4979-8FD0-98FFE0DA5600" title="You might experience problems when creating services.">Problems with Creating Service Instances</a></p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-48386DD4-8E26-4979-8FD0-98FFE0DA5600.htm#GUID-48386DD4-8E26-4979-8FD0-98FFE0DA5600__IRECEIVEANERRORMESSAGESTATINGTHATTH-52359671">I receive a database connectivity error message</a></p>
+</li>
+<li>
+<p><a href="GUID-48386DD4-8E26-4979-8FD0-98FFE0DA5600.htm#GUID-48386DD4-8E26-4979-8FD0-98FFE0DA5600__CJAJGCGG">I cannot create a service when I have many service instances</a></p>
+</li>
+<li>
+<p><a href="GUID-48386DD4-8E26-4979-8FD0-98FFE0DA5600.htm#GUID-48386DD4-8E26-4979-8FD0-98FFE0DA5600__CJAJGAHG">I cannot create a service instance, even after waiting for an hour</a></p>
+</li>
+<li>
+<p><a href="GUID-48386DD4-8E26-4979-8FD0-98FFE0DA5600.htm#GUID-48386DD4-8E26-4979-8FD0-98FFE0DA5600__ICANNOTCREATEANINSTANCEWHENTHEINSTA-0BB00E7C">I cannot create a service instance when the service instance name is not unique</a></p>
+</li>
+<li>
+<p><a href="GUID-48386DD4-8E26-4979-8FD0-98FFE0DA5600.htm#GUID-48386DD4-8E26-4979-8FD0-98FFE0DA5600__ICANCREATEANINSTANCEBUTTHECOHERENCE-1B1E90F2">I can create a service instance but the Coherence Data Tier failed to create</a></p>
+</li>
+<li>
+<p><a href="GUID-48386DD4-8E26-4979-8FD0-98FFE0DA5600.htm#GUID-48386DD4-8E26-4979-8FD0-98FFE0DA5600__INMYTRIALSUBSCRIPTIONTHEDETAILSMESS-17603798">In my trial subscription, the Details message states &ldquo;Failed to create Compute resources&rdquo;</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="GUID-00B3BAA0-AE0C-4909-A777-38475EBD38FE.htm" title="Problems might occur when you attempt deploy or access an application.">Problems with Deploying and Accessing Applications</a></p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-00B3BAA0-AE0C-4909-A777-38475EBD38FE.htm#GUID-00B3BAA0-AE0C-4909-A777-38475EBD38FE__ICANTDEPLOYANAPPLICATIONTOANORACLEJ-3F9E8188">I can&rsquo;t deploy an application to an Oracle Java Cloud Service instance based on WebLogic Server 11g</a></p>
+</li>
+<li>
+<p><a href="GUID-00B3BAA0-AE0C-4909-A777-38475EBD38FE.htm#GUID-00B3BAA0-AE0C-4909-A777-38475EBD38FE__ICANTACCESSANAPPLICATIONUSINGTHEURL-42B55EDC">I can&rsquo;t access an application using the URL from the WebLogic Server Administration Console Testing tab</a></p>
+</li>
+<li>
+<p><a href="GUID-00B3BAA0-AE0C-4909-A777-38475EBD38FE.htm#GUID-00B3BAA0-AE0C-4909-A777-38475EBD38FE__ICANTACCESSANAPPLICATIONTHROUGHTHEH-67BF2555">I can&rsquo;t access an application through the HTTP port</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="GUID-875E41A2-A30F-43F2-BE7E-597367E38FEA.htm#GUID-875E41A2-A30F-43F2-BE7E-597367E38FEA" title="Problems might occur when you attempt a scaling operation.">Problems with Scaling</a></p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-875E41A2-A30F-43F2-BE7E-597367E38FEA.htm#GUID-875E41A2-A30F-43F2-BE7E-597367E38FEA__BABFEADG">My scale-out operation does not start</a></p>
+</li>
+<li>
+<p><a href="GUID-875E41A2-A30F-43F2-BE7E-597367E38FEA.htm#GUID-875E41A2-A30F-43F2-BE7E-597367E38FEA__BABGEAJA">My scale-in operation is not allowed</a></p>
+</li>
+<li>
+<p><a href="GUID-875E41A2-A30F-43F2-BE7E-597367E38FEA.htm#GUID-875E41A2-A30F-43F2-BE7E-597367E38FEA__BABIEBDD">My service is too busy to allow scaling</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="GUID-803431F3-331F-4A05-9FB1-A63B0E176EB4.htm#GUID-803431F3-331F-4A05-9FB1-A63B0E176EB4" title="This section identifies some potential issues you may face after patching and rollback operations.">Problems with Patching and Rollback</a></p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-803431F3-331F-4A05-9FB1-A63B0E176EB4.htm#GUID-803431F3-331F-4A05-9FB1-A63B0E176EB4__MYCUSTOMIDENTITYKEYSTOREANDTRUSTSTO-642C9E34">My identity key store and trust store are missing after a patching, rollback, or restoration operation</a></p>
+</li>
+<li>
+<p><a href="GUID-803431F3-331F-4A05-9FB1-A63B0E176EB4.htm#GUID-803431F3-331F-4A05-9FB1-A63B0E176EB4__BABDJGIF">I receive a message stating that the virtual machines are unhealthy</a></p>
+</li>
+<li>
+<p><a href="GUID-803431F3-331F-4A05-9FB1-A63B0E176EB4.htm#GUID-803431F3-331F-4A05-9FB1-A63B0E176EB4__BABJGAHB">I receive a message stating that the service is busy with another operation</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="GUID-40C84ED1-D56C-4183-B88F-E271D5BAE5B9.htm#GUID-40C84ED1-D56C-4183-B88F-E271D5BAE5B9" title="Problems might occur when you attempt backup or restoration.">Problems with Backup and Restoration</a></p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-40C84ED1-D56C-4183-B88F-E271D5BAE5B9.htm#GUID-40C84ED1-D56C-4183-B88F-E271D5BAE5B9__BACKUPSFAILAFTERTHEIDENTITYDOMAINPA-9A3B90A4">Backups fail after the identity domain password changes</a></p>
+</li>
+<li>
+<p><a href="GUID-40C84ED1-D56C-4183-B88F-E271D5BAE5B9.htm#GUID-40C84ED1-D56C-4183-B88F-E271D5BAE5B9__BABEIGHF">The Oracle Traffic Director is not backed up</a></p>
+</li>
+<li>
+<p><a href="GUID-40C84ED1-D56C-4183-B88F-E271D5BAE5B9.htm#GUID-40C84ED1-D56C-4183-B88F-E271D5BAE5B9__BABCAFEE">There is not enough space for my backup</a></p>
+</li>
+<li>
+<p><a href="GUID-40C84ED1-D56C-4183-B88F-E271D5BAE5B9.htm#GUID-40C84ED1-D56C-4183-B88F-E271D5BAE5B9__BABDIEDJ">The restoration operation fails and generates an error about pre-check failure</a></p>
+</li>
+<li>
+<p><a href="GUID-40C84ED1-D56C-4183-B88F-E271D5BAE5B9.htm#GUID-40C84ED1-D56C-4183-B88F-E271D5BAE5B9__ONEOFMYBACKUPSISSHOWINGAWARNINGICON-266F1D36">One of my backups is showing a warning icon</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="GUID-02C08728-3652-4BA0-8C5F-325720234DA4.htm" title="Depending on access patterns and memory usage, an Oracle Java Cloud Service &mdash; Coherence instance might show performance problems under a heavy load. You might see long, multi-second garbage collection times on Managed Servers of the Coherence data tier. To address this issue, you can change the garbage collection scheme to CMS.">Problems With Performance of Oracle Java Cloud Service&mdash;Coherence Service Instances</a></p>
+</li>
+<li>
+<p><a href="GUID-48546683-5132-49E5-B4A6-0D96A3455B3E.htm" title="You might experience unexpected side-effects after restarting an Oracle Java Cloud Service instance or individual VMs. These effects can also occur after patching, which restarts VMs.">Problems with Restart</a></p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-48546683-5132-49E5-B4A6-0D96A3455B3E.htm#GUID-48546683-5132-49E5-B4A6-0D96A3455B3E__MYCUSTOMSTORAGEVOLUMESHAVEBECOMEDET-7CD72314">My custom storage volumes have become detached</a></p>
+</li>
+<li>
+<p><a href="GUID-48546683-5132-49E5-B4A6-0D96A3455B3E.htm#GUID-48546683-5132-49E5-B4A6-0D96A3455B3E__MYCONTENTCHANGESONTHEBOOTOSVOLUMEAR-7CD7292D">My content changes on the Boot/OS volume are gone</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="GUID-C8F398EC-A733-4017-BB11-4C8F87C1C97F.htm" title="Problems might occur when you attempt to connect to an Oracle Java Cloud Service instance.">Problems with Connectivity</a></p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-C8F398EC-A733-4017-BB11-4C8F87C1C97F.htm#GUID-C8F398EC-A733-4017-BB11-4C8F87C1C97F__MYPRIVATEKEYISLOSTORCORRUPTED-E8F9537E">My private key is lost or corrupted</a></p>
+</li>
+<li>
+<p><a href="GUID-C8F398EC-A733-4017-BB11-4C8F87C1C97F.htm#GUID-C8F398EC-A733-4017-BB11-4C8F87C1C97F__IRECEIVEDAHOSTNAMEVERIFICATIONERROR-E8F9554C">I received a hostname verification error when attempting to connect to Node Manager</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="GUID-051BFF82-6C83-45AE-ACD3-26FE4B1E77E6.htm" title="Problems may occur if you are trying to restart the Administration Server through the Node Manager.">Problems with the Node Manager</a></p>
+</li>
+<li>
+<p><a href="GUID-B6BC055D-6D11-400E-A3C7-9C2F0A379BF7.htm" title="You can experience problems opening the WebLogic Server Administration Console from Fusion Middleware Control.">Problems Opening the WebLogic Server Administration Console from Fusion Middleware Control</a></p>
+</li>
+<li>
+<p><a href="GUID-829E7DB9-50D5-4819-96DE-28284A5056BD.htm#GUID-829E7DB9-50D5-4819-96DE-28284A5056BD" title="Performance issues might occur when you are using the Oracle Java Cloud Service.">How can I Fine-Tune Performance?</a></p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-FE484476-7B40-4217-A9DC-2D6F19AC3114.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-532426CF-56C0-4768-B2C7-93677630F798.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>About Scaling an Oracle Java Cloud Service Instance</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can scale an Oracle Java Cloud Service instance by scaling a cluster, a node, or the Coherence data tier in the service instance." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-2B7339B1-19CB-455E-8433-9530F6F56A0B.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-0EA0FE0E-888C-426B-97C7-AF596438BA65.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-02D79DE3-643B-44B9-A979-340BD472B529"></a> <span id="PAGE" style="display:none;">57/131</span> <!-- End Header -->
+<a id="JSCUG3289"></a>
+<h1 id="JSCUG-GUID-02D79DE3-643B-44B9-A979-340BD472B529" class="sect1">About Scaling an Oracle Java Cloud Service Instance</h1>
+<div>
+<div><span>You can scale an Oracle Java Cloud Service instance by scaling a cluster, a node, or the Coherence data tier in the service instance.</span></div>
+<p>Determine what you need to scale from metrics associated with the service instance. For example, if response times are long, consider scaling out the cluster. Or if heap usage is high, consider scaling up the nodes in the cluster. <a href="GUID-B76602B2-156D-4EAE-91F4-08A0520844FD.htm#GUID-B76602B2-156D-4EAE-91F4-08A0520844FD" title="Oracle Java Cloud Service provides a graph view that enables you to view heap usage metrics and response times for service instances.">Viewing Service Metrics in Oracle Java Cloud Service on OPCM</a> provides information about metrics that Oracle Java Cloud Service provides for a service instance.</p>
+<p>You cannot scale a service instance if the service instance is under maintenance, such as during patching or backing up.</p>
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-02D79DE3-643B-44B9-A979-340BD472B529.htm#GUID-7B6EBABE-A01C-4AC6-A339-16225DA4A69C" title="Scale an Oracle Java Cloud Service cluster to add nodes to or remove nodes from the cluster in response to changes in the load on the cluster. A node is a virtual machine (VM) running a Managed Server instance that is a member of a cluster.">About Scaling an Oracle Java Cloud Service Cluster</a></p>
+</li>
+<li>
+<p><a href="GUID-02D79DE3-643B-44B9-A979-340BD472B529.htm#GUID-842BB0D4-BA9A-482E-8FFB-805E8D256CA6" title="You can scale an Oracle Java Cloud Service node to change its compute shape in response to changes in workload or to add block storage to a node that is running out of storage. However, you cannot remove block storage from a node.">About Scaling an Oracle Java Cloud Service Node</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-7B6EBABE-A01C-4AC6-A339-16225DA4A69C"></a>
+<h2 id="JSCUG-GUID-7B6EBABE-A01C-4AC6-A339-16225DA4A69C" class="sect2">About Scaling an Oracle Java Cloud Service Cluster</h2>
+<div>
+<p>Scale an Oracle Java Cloud Service cluster to add nodes to or remove nodes from the cluster in response to changes in the load on the cluster. A node is a virtual machine (VM) running a Managed Server instance that is a member of a cluster.</p>
+<div class="infobox-note" id="GUID-7B6EBABE-A01C-4AC6-A339-16225DA4A69C__GUID-5372EFB3-B8F8-41E5-B738-14A808974235">
+<p class="notep1">Note:</p>
+Scaling a cluster is <span class="bold">not</span> supported by Oracle Java Cloud Service&mdash;Virtual Image instances.</div>
+<div class="section">
+<p class="subhead2">About Scaling Out an Oracle Java Cloud Service Cluster</p>
+<p>Scaling out an Oracle Java Cloud Service cluster adds one node to the cluster.</p>
+<p>Before scaling out an Oracle Java Cloud Service cluster, ensure that all these conditions are met:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The service instance is <span class="bold">not</span> under maintenance.</p>
+</li>
+</ul>
+<p>If any of these conditions is not met, the scaling operation fails and Oracle Java Cloud Service logs an error message.</p>
+<p>Oracle Java Cloud Service logs a message when scaling out is started or completed, or when a failure is detected. See <a href="GUID-BD8C7EA1-460C-48A7-B6C7-2E7665D2A73E.htm#GUID-BD8C7EA1-460C-48A7-B6C7-2E7665D2A73E" title="You can view scaling requests to check the status of ongoing scaling requests, and the success or failure of previous requests.">Viewing Scaling Requests on OPCM</a>.</p>
+<p>If an attempt to scale out a cluster fails, Oracle Java Cloud Service does the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Logs any diagnostic information.</p>
+</li>
+<li>
+<p>Sets the status of the service instance to <code class="codeph">RUNNING</code> to allow other operations to continue.</p>
+</li>
+<li>
+<p>Returns the service instance to its original shape.</p>
+</li>
+<li>
+<p>Deletes the VM that it created to run the additional Managed Server instance.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">About Scaling In an Oracle Java Cloud Service Cluster</p>
+<p>Scaling in an Oracle Java Cloud Service cluster removes the selected node from the cluster.</p>
+<p>Before scaling in an Oracle Java Cloud Service cluster, ensure that the cluster contains at least one Managed Server node in addition to the node for the Administration Server and first Managed Server. You cannot scale in a cluster that contains only the node for the Administration Server and first Managed Server. If you no longer require that node, you must delete the entire service instance. See <a href="GUID-A58DDD63-CD0F-49F4-AF78-AF4FA5C42C3A.htm#GUID-A58DDD63-CD0F-49F4-AF78-AF4FA5C42C3A" title="When you no longer require an Oracle Java Cloud Service instance, you can delete it. Your account is no longer charged for the instance.">Deleting an Oracle Java Cloud Service Instance</a>.</p>
+<p>By default, Oracle Java Cloud Service scales in a cluster gracefully by shutting down the Managed Server instance before removing the Managed Server instance from the cluster and terminating its VM. To ensure that the node is removed even if the Managed Server instance is unresponsive, you can choose to forcibly scale in a cluster.</p>
+<p>If an attempt to scale in a cluster fails, Oracle Java Cloud Service does the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Logs any diagnostic information.</p>
+</li>
+<li>
+<p>Sets the status of the service instance to <code class="codeph">RUNNING</code> to allow other operations to continue.</p>
+</li>
+<li>
+<p>Cleans up any stale resources.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">About Adding a New Cluster</p>
+<p>In some cases, you might want to scale out an instance but a cluster doesn't exist or you want to add the new managed server to a new cluster. You can add a cluster to an instance by using the REST API to add a managed server and include the <code class="codeph">createClusterIfMissing=true</code> query parameter on the scale out REST endpoint. Once the cluster is added, you can verify that it was added when it will appears in the Topology tile. This will not only add the cluster but will scale it out to include the new node.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-842BB0D4-BA9A-482E-8FFB-805E8D256CA6"></a>
+<h2 id="JSCUG-GUID-842BB0D4-BA9A-482E-8FFB-805E8D256CA6" class="sect2">About Scaling an Oracle Java Cloud Service Node</h2>
+<div>
+<p>You can scale an Oracle Java Cloud Service node to change its compute shape in response to changes in workload or to add block storage to a node that is running out of storage. However, you <span class="bold">cannot</span> remove block storage from a node.</p>
+<p>You can scale only the Administration Server node and Managed Server nodes in a WebLogic Server cluster. Oracle Java Cloud Service does <span class="bold">not</span> support scaling for other nodes in a service instance, such as the load balancer node or capacity unit nodes in the Coherence data tier.</p>
+<p>You must scale each node in a cluster individually. You cannot scale all nodes in a cluster in a single operation.</p>
+<div class="section">
+<p class="subhead2">About Changing the Compute Shape of a Node</p>
+<p>You can change the compute shape of a node to adjust capacity in response to changes in workload. The compute shape specifies the number of Oracle Compute Units (OCPUs) and amount of memory (RAM) that you want to allocate to the node.</p>
+<p><span>Oracle Java Cloud Service provides a set of compute shapes that are optimized for different use cases. Choose from a set of all-purpose and memory-intensive shapes. The larger the compute shape, the greater the processing power. <span>For more information about the defined compute shapes, contact your Oracle Cloud Administrator.</span></span></p>
+<ul style="list-style-type: disc;">
+<li>
+<p>To meet the demands of heavier workloads, scale up the compute shape of a node by choosing a larger compute shape.</p>
+<p>For example, changing the compute shape from OC3 to OC4 doubles the capacity of the node from one OCPU to two OCPUs and doubles the amount of RAM allocated to the node.</p>
+</li>
+<li>
+<p>To save costs if the workload is lightened, scale down the compute shape of a node by choosing a smaller compute shape.</p>
+<p>For example, changing the compute shape from OC4 to OC3 reduces the capacity of the node by half from two OCPUs to one OCPU and reduces the amount of RAM allocated to the node by half.</p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-842BB0D4-BA9A-482E-8FFB-805E8D256CA6__GUID-A7AFA8F8-821A-432F-A909-63F25118A892">
+<p class="notep1">Note:</p>
+To optimize performance and balance the load on Managed Sever instances correctly, ensure that the compute shapes of all nodes in a cluster are the same. When routing requests to Managed Server instances, the load balancer treats all Managed Sever instances as being equivalent.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">About Adding Block Storage to a Node</p>
+<p>You can add block storage to a node that is running out of storage. When you add storage to a node, an Oracle Compute Cloud Service storage volume is created and attached to the node&rsquo;s VM.</p>
+<div class="infobox-note" id="GUID-842BB0D4-BA9A-482E-8FFB-805E8D256CA6__GUID-8037B4C3-3B9E-4103-870E-6539D0797F1C">
+<p class="notep1">Note:</p>
+You <span class="bold">cannot</span> remove block storage from a node.</div>
+<p>The new storage volume created by scaling remains attached and available to the node&rsquo;s VM even when the service instance is restarted or is stopped and then started. Also, this storage volume exists until you delete the service instance, at which time the storage volume is also deleted.</p>
+<p>You can add the storage to a new volume or one of the following existing volumes:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Backup storage volume (Administration Server node only)</p>
+</li>
+<li>
+<p>Domain home storage volume</p>
+</li>
+<li>
+<p>Middleware home storage volume</p>
+</li>
+</ul>
+<p>For details of these volumes, see <a href="GUID-CD8653E2-142A-4186-8365-911433DB96E1.htm#GUID-AAE72531-41A4-4462-B90C-D2D812EEA68E" title="You have access to all Oracle Compute Cloud Service virtual machine instances created for Oracle Java Cloud Service, including the virtual machine on which the WebLogic Administration Server is running.">About the Disk Volumes</a>.</p>
+<p>You can add storage a maximum of five times to a storage volume.</p>
+<div class="infobox-note" id="GUID-842BB0D4-BA9A-482E-8FFB-805E8D256CA6__GUID-D192D640-4EBC-4B6D-BDE2-75C6B2FEC6A5">
+<p class="notep1">Caution:</p>
+Before adding storage to the domain home or middleware home storage volume, back up the service instance to avoid the risk of data loss. For instructions, see <a href="GUID-20AE6F0E-FF15-47F2-9CBF-7B9CC31BBFCA.htm#GUID-20AE6F0E-FF15-47F2-9CBF-7B9CC31BBFCA" title="You can create a full backup immediately without having to wait for the next scheduled backup.">Initiating an On-Demand Backup of an Oracle Java Cloud Service Instance on OPCM</a>.</div>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-2B7339B1-19CB-455E-8433-9530F6F56A0B.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-0EA0FE0E-888C-426B-97C7-AF596438BA65.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

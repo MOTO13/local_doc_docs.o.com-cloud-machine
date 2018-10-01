@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="Update%20the%20Default%20Access%20Ports.html" title="Previous" type="text/html">
+        <link rel="next" href="Monitoring%20the%20Health%20of%20Your%20Oracle%20Java%20Cloud%20Service%20Instances.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="Update%20the%20Default%20Access%20Ports.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="Monitoring%20the%20Health%20of%20Your%20Oracle%20Java%20Cloud%20Service%20Instances.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">Stopping and Starting a Service Instance and Individual VMs</h2> 
+<div class="body taskbody">
+ <p class="shortdesc">You can control the lifecycle state of a service instance and individual virtual machines (VMs) using the REST API. Specifically, you can:</p> 
+ <div class="section">
+  <ul class="ul">
+   <li class="li"><p class="p">Stop and start an Oracle Java Cloud Service instance and all of its VMs</p> </li> 
+   <li class="li"><p class="p">Restart the Administration Server and its associated VM</p> </li> 
+   <li class="li"><p class="p">Stop, start, or restart the load balancer and its associated VM</p> </li> 
+   <li class="li"><p class="p">Stop, start, or restart a Managed Server and its associated VM</p> </li> 
+  </ul> 
+  <p class="p">Consider the following before you attempt to stop and start a service instance and individual VMs: </p> 
+  <ul class="ul">
+   <li class="li"><p class="p">You cannot stop or start an individual Managed Server that resides on the same VM as the Administration Server. In this case, only restart is allowed.</p> </li> 
+   <li class="li"><p class="p">You cannot stop, start, or restart an individual Managed Server in the Coherence data tier. In this case, you must stop and start an Oracle Java Cloud Service instance and all of its VMs.</p> </li> 
+   <li class="li"><p class="p">Any in-process jobs, such as scheduled cron jobs, running on the VM(s) that are stopped or restarted will be terminated, and all data in the Coherence cache will be lost (if this feature is enabled).</p> </li> 
+   <li class="li"><p class="p">If the service instance is stopped, you cannot stop, start, or restart the Managed Server or load balancer.</p> </li> 
+   <li class="li"><p class="p">On Oracle Public Cloud: If your metered subscription is based on an hourly billing frequency, you will not be charged for the time that an Oracle Java Cloud Service instance is in stopped state.</p> </li> 
+  </ul> 
+  <p class="p"><strong class="ph b">Note:</strong> The cURL command examples use the URL structure <samp class="ph codeph">https://rest_server_url/<em class="ph i">resource-path</em></samp>, where <samp class="ph codeph">rest_server_url</samp> is the Oracle Public Cloud or Oracle Cloud Machine REST server to contact for your identity domain or tenant name. See <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a> for the appropriate URL structure to use on Oracle Public Cloud or Oracle Cloud Machine.</p> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Stopping and Starting a Service Instance</h3>
+  <p class="p">To stop and start a service instance, perform the steps described in the following procedure. You cannot restart a service instance using a <samp class="ph codeph">restart</samp> lifecycle state operation. To restart a service instance, issue a <samp class="ph codeph">stop</samp> lifecycle state request followed by a <samp class="ph codeph">start</samp> lifecycle state request. </p> 
+  <div class="p">
+   To stop and start a service instance:
+   <ol class="ol">
+    <li class="li"><p class="p">Before stopping a service instance, ensure there are no in-process jobs that must be completed. Any in-process jobs will be terminated when you stop the service instance.</p> </li> 
+    <li class="li"><p class="p">To stop a service instance, first create a JSON document, <samp class="ph codeph">stopinstance.json</samp>, that defines the details of the stop service instance lifecycle state request, as follows:</p> <pre class="pre codeblock">{  
+    "lifecycleState"  : "stop",
+    "lifecycleTimeout" : "30" 
+}
+</pre> <p class="p">Optionally, you can specify a timeout value for the request, in minutes, using the <samp class="ph codeph">lifecycleTimeout</samp> attribute. If not specified, it defaults to 60 minutes. For more information about the request attributes, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-post.html" target="_blank">Stop and Start a Service Instance and Individual VMs</a>.</p> </li> 
+    <li class="li"><p class="p">Stop the service instance and all of its VMs, passing the JSON document created in the previous step.</p> <pre class="pre"><strong class="ph b">curl -i -X POST -u username:userPassword1! -d @stopinstance.json -H "Content-Type:application/vnd.com.oracle.oracloud.provisioning.Service+json" -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance</strong>
+</pre> <p class="p">Specify the following options on the cURL command line:</p> 
+     <ul class="ul">
+      <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">POST</samp>).</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-d</samp> option to identify the request document, in JSON format, on the local machine (<samp class="ph codeph">stopinstance.json</samp>).</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to identify the content type as <samp class="ph codeph">application/vnd.com.oracle.oracloud.provisioning.Service+json</samp> and define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+     </ul> <p class="p">The following shows an example of the response header.</p> <pre class="pre codeblock">HTTP/1.1 202 Accepted
+Date: Wed, 22 Jun 2016 20:22:01 GMT
+Location: <strong class="ph b">https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/status/control/job/810275</strong>
+Content-Length: 0
+Content-Type: application/json
+Service-URI: https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance
+</pre> </li> 
+    <li class="li"><p class="p">Check the status of the lifecycle state request using the resource URI returned in the <samp class="ph codeph">Location</samp> header. For more information, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-status-%7BrequestName%7D-job-%7BjobId%7D-get.html" target="_blank">View the Status of a Service Instance Lifecycle Operation</a>.</p> <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/status/control/job/810275</strong></pre> <p class="p">Specify the following options on the cURL command line:</p> 
+     <ul class="ul">
+      <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+     </ul> <p class="p">The following example shows the contents of the response body, including the status messages. In the example, the operation is completed as indicated by the "Stopped" status of the service instance:</p> <pre class="pre codeblock">{
+    "service_name": "ExampleInstance",
+    "version": "12cR3",
+    "wlsVersion": "12.1.3.0.xxxxxx",
+    "status": "Stopped",
+    "error_status_desc": "",
+    "compliance_status": "",
+    "compliance_status_desc": "",
+    "auto_update": "true",
+    "description": "Example, Inc product distribution",
+    "identity_domain": "ExampleIdentityDomain",
+    "creation_time": "Mon Jun 6 19:37:41 UTC 2016",
+    "last_modified_time": "Mon Jun 6 19:37:39 UTC 2016",
+    "created_by": "username",
+    "service_uri": "https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/ExampleInstance",
+    "message": [
+      "Stopping service [ExampleInstance]...",
+      "Stopped service [ExampleInstance].",
+      "    Stopped all Compute resources..."
+    ]
+}</pre> </li> 
+    <li class="li"><p class="p">To start a service instance, first create a JSON document, <samp class="ph codeph">startinstance.json</samp>, that defines the details of the start service instance lifecycle state request, as follows:</p> <pre class="pre codeblock">{ "lifecycleState"  : "start" }
+</pre> <p class="p">For more information about the request attributes, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-post.html" target="_blank">Stop and Start a Service Instance and Individual VMs</a>.</p> </li> 
+    <li class="li"><p class="p">Start the service instance and all of its VMs, passing in the JSON document created in the previous step.</p> <pre class="pre"><strong class="ph b">curl -i -X POST -u username:userPassword1! -d @startinstance.json -H "Content-Type:application/vnd.com.oracle.oracloud.provisioning.Service+json" -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance</strong>
+</pre> <p class="p">Specify the following options on the cURL command line:</p> 
+     <ul class="ul">
+      <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">POST</samp>).</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-d</samp> option to identify the request document, in JSON format, on the local machine (<samp class="ph codeph">startinstance.json</samp>).</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to identify the content type as <samp class="ph codeph">application/vnd.com.oracle.oracloud.provisioning.Service+json</samp> and define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+     </ul> <p class="p">The following shows an example of the response header.</p> <pre class="pre codeblock">HTTP/1.1 202 Accepted
+Date: Wed, 22 Jun 2016 22:53:23 GMT
+Location: <strong class="ph b">https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/status/control/job/810368</strong>
+Content-Length: 0
+Content-Type: application/json
+Service-URI: https://rest_server_ur;/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance
+</pre> </li> 
+    <li class="li"><p class="p">Check the status of the lifecycle state request using the resource URI returned in the <samp class="ph codeph">Location</samp> header. For more information, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-status-%7BrequestName%7D-job-%7BjobId%7D-get.html" target="_blank">View the Status of a Service Instance Lifecycle Operation</a>.</p> <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/status/control/job/810368</strong></pre> <p class="p">Specify the following options on the cURL command line:</p> 
+     <ul class="ul">
+      <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+     </ul> <p class="p">The following example shows the contents of the response body, including the status messages. In the example, the operation is completed as indicated by the "Running" status of the service instance:</p> <pre class="pre codeblock">{
+    "service_name": "ExampleInstance",
+    "version": "12cR3",
+    "wlsVersion": "12.1.3.0.xxxxxx",
+    "status": "Running",
+    "error_status_desc": "",
+    "compliance_status": "",
+    "compliance_status_desc": "",
+    "auto_update": "true",
+    "description": "Example, Inc product distribution",
+    "identity_domain": "ExampleIdentityDomain",
+    "creation_time": "Mon Jun 6 19:37:41 UTC 2016",
+    "last_modified_time": "Mon Jun 6 19:37:39 UTC 2016",
+    "created_by": "username",
+    "service_uri": "https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/ExampleInstance",
+    "message": [
+      "Starting service [ExampleInstance]...",
+      "Started service [ExampleInstance].",
+      "    Started all Compute resources..."
+    ]
+}</pre> </li> 
+   </ol> 
+  </div> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Restarting the Administration Server</h3>
+  <p class="p">To restart the Administration Server, perform the steps described in the following procedure. You can only restart the Administration Server using a <samp class="ph codeph">restart</samp> lifecycle state operation. You cannot use the <samp class="ph codeph">stop</samp> or <samp class="ph codeph">start</samp> lifecycle state operation to control the lifecycle state of the Administration Server.</p> 
+  <div class="p">
+   To restart the Administration Server:
+   <ol class="ol">
+    <li class="li"><p class="p">Before restarting the Administration Server, ensure there are no in-process jobs running on its associated VM that must be completed. Any in-process jobs will be terminated when you stop the Administration Server.</p> </li> 
+    <li class="li"><p class="p">Create a JSON document, <samp class="ph codeph">restartadminserver.json</samp>, that defines the details of the restart Administration Server lifecycle state request, as follows:</p> <pre class="pre codeblock">{  
+    "lifecycleState"  : "restart",
+    "serverName" : "ExampleI_server_1",
+    "force" : true
+}
+</pre> <p class="p">See <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-servers-get.html" target="_blank">View All Managed Servers</a> to retrieve the name of the Administration Server.</p> <p class="p">To control the lifecycle state of the Administration Server, the <samp class="ph codeph">lifecycleState</samp> can only be set to <samp class="ph codeph">restart</samp>. For <samp class="ph codeph">serverName</samp>, you can specify the name of the Administration Server or a Managed Server that runs on the same VM as the Administration Server. You must set the <samp class="ph codeph">force</samp> flag to <samp class="ph codeph">true</samp> to ensure the lifecycle state operation proceeds if other Managed Servers are running on the same VM. For more information about the request attributes, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-post.html" target="_blank">Stop and Start a Service Instance and Individual VMs</a>.</p> </li> 
+    <li class="li"><p class="p">Restart the Administration Server and its associated VM, passing in the JSON document created in the previous step.</p> <pre class="pre"><strong class="ph b">curl -i -X POST -u username:userPassword1! -d @restartadminserver.json -H "Content-Type:application/vnd.com.oracle.oracloud.provisioning.Service+json" -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance</strong>
+</pre> <p class="p">Specify the following options on the cURL command line:</p> 
+     <ul class="ul">
+      <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">POST</samp>).</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-d</samp> option to identify the request document, in JSON format, on the local machine (<samp class="ph codeph">restartadminserver.json</samp>).</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to identify the content type as <samp class="ph codeph">application/vnd.com.oracle.oracloud.provisioning.Service+json</samp> and define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+     </ul> <p class="p">The following shows an example of the response header.</p> <pre class="pre codeblock">HTTP/1.1 202 Accepted
+Date: Wed, 22 Jun 2016 23:42:29 GMT
+Location: <strong class="ph b">https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/status/control/job/810398</strong>
+Content-Length: 0
+Content-Type: application/json
+Service-URI: https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance
+</pre> </li> 
+    <li class="li"><p class="p">Check the status of the lifecycle state request using the resource URI returned in the <samp class="ph codeph">Location</samp> header. For more information, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-status-%7BrequestName%7D-job-%7BjobId%7D-get.html" target="_blank">View the Status of a Service Instance Lifecycle Operation</a>.</p> <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/status/control/job/810398</strong></pre> <p class="p">Specify the following options on the cURL command line:</p> 
+     <ul class="ul">
+      <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+     </ul> <p class="p">The following example shows the contents of the response body, including the status messages. In the example, the operation is not yet completed as indicated by the "Maintenance" status of the service instance. The status is "Running" when the operation is completed.</p> <pre class="pre codeblock">{
+    "service_name": "ExampleInstance",
+    "version": "12cR3",
+    "wlsVersion": "12.1.3.0.xxxxxx",
+    "status": "Maintenance",
+    "error_status_desc": "",
+    "compliance_status": "",
+    "compliance_status_desc": "",
+    "auto_update": "true",
+    "description": "Example, Inc product distribution",
+    "identity_domain": "ExampleIdentityDomain",
+    "creation_time": "Mon Jun 6 19:37:41 UTC 2016",
+    "last_modified_time": "Mon Jun 6 19:37:39 UTC 2016",
+    "created_by": "username",
+    "service_uri": "https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/ExampleInstance",
+    "message": [
+      "Restarting service member [ExampleI_server_1] of service [ExampleInstance]...",
+      "    Stopping Virtual Machine wls\/vm-1..."
+    ]
+}</pre> </li> 
+   </ol> 
+  </div> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Restarting a Managed Server</h3>
+  <p class="p">To restart a Managed Server, perform the steps described in the following procedure. In addition to using the <samp class="ph codeph">restart</samp> lifecycle state operation described in this procedure, you can use the <samp class="ph codeph">stop</samp> or <samp class="ph codeph">start</samp> lifecycle state operations to control the lifecycle state of a Managed Server, but only if that Managed Server does not reside on the same VM as the Administration Server. For more information, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-post.html" target="_blank">Stop and Start a Service Instance and Individual VMs</a>.</p> 
+  <div class="p">
+   To restart a Managed Server:
+   <ol class="ol">
+    <li class="li"><p class="p">Before restarting the Managed Server, ensure there are no in-process jobs running on its associated VM that must be completed. Any in-process jobs will be terminated when you stop the Managed Server.</p> </li> 
+    <li class="li"><p class="p">Create a JSON document, <samp class="ph codeph">restartserver.json</samp>, that defines the details of the restart Managed Server lifecycle state request, as follows:</p> <pre class="pre codeblock">{  
+    "lifecycleState"  : "restart",
+    "serverName" : "ExampleI_server_2",
+    "force" : true
+}
+</pre> <p class="p">See <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-servers-get.html" target="_blank">View All Managed Servers</a> to retrieve the name of the Managed Server.</p> <p class="p">Use <samp class="ph codeph">serverName</samp> to specify the name of the Managed Server that you want to restart. Optionally, you can set the <samp class="ph codeph">force</samp> flag to <samp class="ph codeph">true</samp> to ensure the lifecycle state operation proceeds if other Managed Servers are running on the same VM. For more information about the request attributes, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-post.html" target="_blank">Stop and Start a Service Instance and Individual VMs</a>.</p> </li> 
+    <li class="li"><p class="p">Restart the Managed Server and its associated VM, passing in the JSON document created in the previous step.</p> <pre class="pre"><strong class="ph b">curl -i -X POST -u username:userPassword1! -d @restartserver.json -H "Content-Type:application/vnd.com.oracle.oracloud.provisioning.Service+json" -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance</strong>
+</pre> <p class="p">Specify the following options on the cURL command line:</p> 
+     <ul class="ul">
+      <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">POST</samp>).</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-d</samp> option to identify the request document, in JSON format, on the local machine (<samp class="ph codeph">restartserver.json</samp>).</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to identify the content type as <samp class="ph codeph">application/vnd.com.oracle.oracloud.provisioning.Service+json</samp> and define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+     </ul> <p class="p">The following shows an example of the response header.</p> <pre class="pre codeblock">HTTP/1.1 202 Accepted
+Date: Thu, 23 Jun 2016 00:04:41 GMT
+Location: <strong class="ph b">https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/status/control/job/811634</strong>
+Content-Length: 0
+Content-Type: application/json
+Service-URI: https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance
+</pre> </li> 
+    <li class="li"><p class="p">Check the status of the lifecycle state request using the resource URI returned in the <samp class="ph codeph">Location</samp> header. For more information, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-status-%7BrequestName%7D-job-%7BjobId%7D-get.html" target="_blank">View the Status of a Service Instance Lifecycle Operation</a>.</p> <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/status/control/job/811634</strong></pre> <p class="p">Specify the following options on the cURL command line:</p> 
+     <ul class="ul">
+      <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+     </ul> <p class="p">The following example shows the contents of the response body, including the status messages. In the example, the operation is not yet completed as indicated by the "Maintenance" status of the service instance. The status is "Running" when the operation is completed.</p> <pre class="pre codeblock">{
+    "service_name": "ExampleInstance",
+    "version": "12cR3",
+    "wlsVersion": "12.1.3.0.xxxxxx",
+    "status": "Maintenance",
+    "error_status_desc": "",
+    "compliance_status": "",
+    "compliance_status_desc": "",
+    "auto_update": "true",
+    "description": "Example, Inc product distribution",
+    "identity_domain": "ExampleIdentityDomain",
+    "creation_time": "Mon Jun 6 19:37:41 UTC 2016",
+    "last_modified_time": "Mon Jun 6 19:37:39 UTC 2016",
+    "created_by": "username",
+    "service_uri": "https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/ExampleInstance",
+    "message": [
+      "Restarting service member [ExampleI_server_2] of service [ExampleInstance]...",
+      "    Stopping Virtual Machine wls\/vm-2..."
+    ]
+}</pre> </li> 
+   </ol> 
+  </div> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Restarting the Load Balancer</h3>
+  <p class="p">To restart the load balancer, perform the steps described in the following procedure. In addition to using the <samp class="ph codeph">restart</samp> lifecycle state operation described in this procedure, you can use the <samp class="ph codeph">stop</samp> or <samp class="ph codeph">start</samp> lifecycle state operations to control the lifecycle state of the load balancer. For more information, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-post.html" target="_blank">Stop and Start a Service Instance and Individual VMs</a>.</p> 
+  <div class="p">
+   To restart the load balancer:
+   <ol class="ol">
+    <li class="li"><p class="p">Create a JSON document, <samp class="ph codeph">restartlb.json</samp>, that defines the details of the restart load balancer lifecycle state request, as follows:</p> <pre class="pre codeblock">{  
+    "lifecycleState"  : "restart",
+    "lbAdminHostName" : "ExampleInstance-lb-1"
+}
+</pre> <p class="p">By default the host name of the load balancer is <samp class="ph codeph"><em class="ph i">serviceinstancename</em>-lb-1</samp>, where <samp class="ph codeph"><em class="ph i">serviceinstancename</em></samp> is the name of your Oracle Java Cloud Service instance.</p> </li> 
+    <li class="li"><p class="p">Restart the load balancer and its associated VM, passing in the JSON document created in the previous step.</p> <pre class="pre"><strong class="ph b">curl -i -X POST -u username:userPassword1! -d @restartlb.json -H "Content-Type:application/vnd.com.oracle.oracloud.provisioning.Service+json" -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance</strong>
+</pre> <p class="p">Specify the following options on the cURL command line:</p> 
+     <ul class="ul">
+      <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">POST</samp>).</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-d</samp> option to identify the request document, in JSON format, on the local machine (<samp class="ph codeph">restartlb.json</samp>).</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to identify the content type as <samp class="ph codeph">application/vnd.com.oracle.oracloud.provisioning.Service+json</samp> and define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+     </ul> <p class="p">The following shows an example of the response header.</p> <pre class="pre codeblock">HTTP/1.1 202 Accepted
+Date: Thu, 23 Jun 2016 20:29:08 GMT
+Location: <strong class="ph b">https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/status/control/job/812640</strong>
+Content-Length: 0
+Content-Type: application/json
+Service-URI: https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance
+</pre> </li> 
+    <li class="li"><p class="p">Check the status of the lifecycle state request using the resource URI returned in the <samp class="ph codeph">Location</samp> header. For more information, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-status-%7BrequestName%7D-job-%7BjobId%7D-get.html" target="_blank">View the Status of a Service Instance Lifecycle Operation</a>.</p> <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/status/control/job/812640</strong></pre> <p class="p">Specify the following options on the cURL command line:</p> 
+     <ul class="ul">
+      <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+     </ul> <p class="p">The following example shows the contents of the response body, including the status messages. In the example, the operation is completed as indicated by the "Running" status of the service instance:</p> <pre class="pre codeblock">{
+    "service_name": "ExampleInstance",
+    "version": "12cR3",
+    "wlsVersion": "12.1.3.0.xxxxxx",
+    "status": "Running",
+    "error_status_desc": "",
+    "compliance_status": "",
+    "compliance_status_desc": "",
+    "auto_update": "true",
+    "description": "Example, Inc product distribution",
+    "identity_domain": "ExampleIdentityDomain",
+    "creation_time": "Mon Jun 6 19:37:41 UTC 2016",
+    "last_modified_time": "Mon Jun 6 19:37:39 UTC 2016",
+    "created_by": "username",
+    "service_uri": "https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/ExampleInstance",
+    "message": [
+      "Restarting service member [ExampleInstance-lb-1] of service [ExampleInstance]...",
+      "Restarted service member [ExampleInstance-lb-1] of service [ExampleInstance].",
+      "    Stopped service member [ExampleInstance-lb-1] of service [ExampleInstance].",
+      "        Stopped Virtual Machine lb\/vm-1...",
+      "    Started service member [ExampleInstance-lb-1] of service [ExampleInstance].",
+      "        Started Virtual Machine lb\/vm-1..."
+    ]
+}</pre> </li> 
+   </ol> 
+  </div> 
+ </div> 
+</div></div>
+        </article>
+    </body>
+</html>

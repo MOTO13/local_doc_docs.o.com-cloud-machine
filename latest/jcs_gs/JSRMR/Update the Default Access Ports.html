@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="Creating%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html" title="Previous" type="text/html">
+        <link rel="next" href="Stopping%20and%20Starting%20a%20Service%20Instance%20and%20Individual%20VMs.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="Creating%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="Stopping%20and%20Starting%20a%20Service%20Instance%20and%20Individual%20VMs.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">Updating the Default Access Ports When Creating a Service Instance</h2> 
+<div class="body taskbody">
+ <p class="shortdesc">Resources available within your Oracle Java Cloud Service instances are accessible through default ports. The ports can be reconfigured when you create a service instance.</p> 
+ <div class="section prereq p">
+  <p class="p">Follow the steps described in <a class="xref" href="Creating%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html" target="_blank">Creating a Service Instance</a>. In step 2, when creating the JSON document, update the desired port values using the request attributes defined in the following tables. See <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-post.html" target="_blank">Create a Service Instance</a> if you need more information. </p> 
+  <p class="p"><strong class="ph b">Ports Available from Within the Oracle Cloud Network</strong></p> 
+  <div class="tablenoborder">
+   <span class="desc tabledesc">The following table lists the ports available from within the Oracle Cloud Network.</span>
+   <table cellpadding="4" cellspacing="0" summary="" id="GUID-2A117645-5F69-45ED-AA4E-E3195FC55D50__GUID-CF53AB75-60E2-48AC-9F1D-26FC72DD5DCE" class="table" frame="border" border="1" rules="all">
+    <thead class="thead" align="left">
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d16527e36">Resource</th> 
+      <th class="entry" valign="top" id="d16527e38">Protocol</th> 
+      <th class="entry" valign="top" id="d16527e40">Default Port</th> 
+      <th class="entry" valign="top" id="d16527e42">Attribute</th> 
+     </tr> 
+    </thead> 
+    <tbody class="tbody">
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d16527e46" headers="d16527e36 ">Oracle WebLogic Server Administration Console</th> 
+      <td class="entry" valign="top" headers="d16527e46 d16527e38 ">HTTP</td> 
+      <td class="entry" valign="top" headers="d16527e46 d16527e40 "><samp class="ph codeph">7001</samp></td> 
+      <td class="entry" valign="top" headers="d16527e46 d16527e42 "><samp class="ph codeph">adminPort</samp><p class="p">(<samp class="ph codeph">"type":"weblogic"</samp>)</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d16527e62" headers="d16527e36 ">Oracle WebLogic Server Administration Console using WLST</th> 
+      <td class="entry" valign="top" headers="d16527e62 d16527e38 ">HTTP</td> 
+      <td class="entry" valign="top" headers="d16527e62 d16527e40 "><samp class="ph codeph">9001</samp></td> 
+      <td class="entry" valign="top" headers="d16527e62 d16527e42 "><samp class="ph codeph">deploymentChannelPort</samp><p class="p">(<samp class="ph codeph">"type":"weblogic"</samp>)</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d16527e78" headers="d16527e36 ">Oracle Fusion Middleware Control</th> 
+      <td class="entry" valign="top" headers="d16527e78 d16527e38 ">HTTP</td> 
+      <td class="entry" valign="top" headers="d16527e78 d16527e40 "><samp class="ph codeph">7001</samp></td> 
+      <td class="entry" valign="top" headers="d16527e78 d16527e42 "><samp class="ph codeph">adminPort</samp><p class="p">(<samp class="ph codeph">"type":"weblogic"</samp>)</p> </td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <p class="p"><strong class="ph b">Ports Available from Outside the Oracle Cloud Network</strong></p> 
+  <div class="tablenoborder">
+   <span class="desc tabledesc">The following table lists the ports available from outside the Oracle Cloud Network.</span>
+   <table cellpadding="4" cellspacing="0" summary="" id="GUID-2A117645-5F69-45ED-AA4E-E3195FC55D50__GUID-E96C7BC1-684D-4953-ADD6-4F750806710C" class="table" frame="border" border="1" rules="all">
+    <thead class="thead" align="left">
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d16527e106">Resource</th> 
+      <th class="entry" valign="top" id="d16527e108">Protocol</th> 
+      <th class="entry" valign="top" id="d16527e110">Default Port</th> 
+      <th class="entry" valign="top" id="d16527e112">Attribute</th> 
+     </tr> 
+    </thead> 
+    <tbody class="tbody">
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d16527e116" headers="d16527e106 ">Oracle WebLogic Server Administration Console</th> 
+      <td class="entry" valign="top" headers="d16527e116 d16527e108 ">HTTPS</td> 
+      <td class="entry" valign="top" headers="d16527e116 d16527e110 "><samp class="ph codeph">7002</samp></td> 
+      <td class="entry" valign="top" headers="d16527e116 d16527e112 "><samp class="ph codeph">securedAdminPort</samp><p class="p">(<samp class="ph codeph">"type":"weblogic"</samp>)</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d16527e132" headers="d16527e106 ">Oracle Fusion Middleware Control</th> 
+      <td class="entry" valign="top" headers="d16527e132 d16527e108 ">HTTPS</td> 
+      <td class="entry" valign="top" headers="d16527e132 d16527e110 "><samp class="ph codeph">7002</samp></td> 
+      <td class="entry" valign="top" headers="d16527e132 d16527e112 "><samp class="ph codeph">securedAdminPort</samp><p class="p">(<samp class="ph codeph">"type":"weblogic"</samp>)</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d16527e148" headers="d16527e106 ">Oracle Traffic Director Administration Console</th> 
+      <td class="entry" valign="top" headers="d16527e148 d16527e108 ">HTTPS</td> 
+      <td class="entry" valign="top" headers="d16527e148 d16527e110 "><samp class="ph codeph">8989</samp></td> 
+      <td class="entry" valign="top" headers="d16527e148 d16527e112 "><samp class="ph codeph">adminPort</samp><p class="p">(<samp class="ph codeph">"type":"otd"</samp>)</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d16527e164" headers="d16527e106 ">End-user applications when load balancer is enabled</th> 
+      <td class="entry" valign="top" headers="d16527e164 d16527e108 ">HTTP</td> 
+      <td class="entry" valign="top" headers="d16527e164 d16527e110 "><samp class="ph codeph">8080</samp></td> 
+      <td class="entry" valign="top" headers="d16527e164 d16527e112 "><samp class="ph codeph">listenerPort</samp><p class="p">(<samp class="ph codeph">"type":"otd"</samp>)</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d16527e180" headers="d16527e106 ">End-user applications when load balancer is enabled</th> 
+      <td class="entry" valign="top" headers="d16527e180 d16527e108 ">HTTPS</td> 
+      <td class="entry" valign="top" headers="d16527e180 d16527e110 "><samp class="ph codeph">8081</samp></td> 
+      <td class="entry" valign="top" headers="d16527e180 d16527e112 "><samp class="ph codeph">securedListenerPort</samp><p class="p">(<samp class="ph codeph">"type":"otd"</samp>)</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d16527e196" headers="d16527e106 ">End-user applications when load balancer is enabled</th> 
+      <td class="entry" valign="top" headers="d16527e196 d16527e108 ">Privileged HTTP (Default)</td> 
+      <td class="entry" valign="top" headers="d16527e196 d16527e110 "><samp class="ph codeph">80</samp></td> 
+      <td class="entry" valign="top" headers="d16527e196 d16527e112 "><samp class="ph codeph">privilegedListenerPort</samp><p class="p">(<samp class="ph codeph">"type":"otd"</samp>)</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d16527e212" headers="d16527e106 ">End-user applications when load balancer is enabled</th> 
+      <td class="entry" valign="top" headers="d16527e212 d16527e108 ">Privileged HTTPS (Default) </td> 
+      <td class="entry" valign="top" headers="d16527e212 d16527e110 "><samp class="ph codeph">443</samp></td> 
+      <td class="entry" valign="top" headers="d16527e212 d16527e112 "><samp class="ph codeph">privilegedSecureddListenerPort</samp><p class="p">(<samp class="ph codeph">"type":"otd"</samp>)</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d16527e228" headers="d16527e106 ">End-user applications when load balancer is disabled, single Managed Server</th> 
+      <td class="entry" valign="top" headers="d16527e228 d16527e108 ">HTTP</td> 
+      <td class="entry" valign="top" headers="d16527e228 d16527e110 "><samp class="ph codeph">8001</samp></td> 
+      <td class="entry" valign="top" headers="d16527e228 d16527e112 "><samp class="ph codeph">contentPort</samp><p class="p">(<samp class="ph codeph">"type":"weblogic"</samp>)</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d16527e244" headers="d16527e106 ">End-user applications when load balancer is disabled, single Managed Server</th> 
+      <td class="entry" valign="top" headers="d16527e244 d16527e108 ">HTTPS</td> 
+      <td class="entry" valign="top" headers="d16527e244 d16527e110 "><samp class="ph codeph">8002</samp></td> 
+      <td class="entry" valign="top" headers="d16527e244 d16527e112 "><samp class="ph codeph">securedContentPort</samp><p class="p">(<samp class="ph codeph">"type":"weblogic"</samp>)</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d16527e260" headers="d16527e106 ">End-user applications when load balancer is disabled, single Managed Server</th> 
+      <td class="entry" valign="top" headers="d16527e260 d16527e108 ">Privileged HTTP (Default)</td> 
+      <td class="entry" valign="top" headers="d16527e260 d16527e110 "><samp class="ph codeph">80</samp></td> 
+      <td class="entry" valign="top" headers="d16527e260 d16527e112 "><samp class="ph codeph">privilegedContentPort</samp><p class="p">(<samp class="ph codeph">"type":"weblogic"</samp>)</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d16527e276" headers="d16527e106 ">End-user applications when load balancer is disabled, single Managed Server</th> 
+      <td class="entry" valign="top" headers="d16527e276 d16527e108 ">Privileged HTTPS (Default)</td> 
+      <td class="entry" valign="top" headers="d16527e276 d16527e110 "><samp class="ph codeph">443</samp></td> 
+      <td class="entry" valign="top" headers="d16527e276 d16527e112 "><samp class="ph codeph">privilegedSecuredContentPort</samp><p class="p">(<samp class="ph codeph">"type":"weblogic"</samp>)</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d16527e293" headers="d16527e106 ">End-user applications when load balancer is disabled, multiple Managed Servers</th> 
+      <td class="entry" valign="top" headers="d16527e293 d16527e108 ">HTTP</td> 
+      <td class="entry" valign="top" headers="d16527e293 d16527e110 "><samp class="ph codeph">8001</samp></td> 
+      <td class="entry" valign="top" headers="d16527e293 d16527e112 "><samp class="ph codeph">contentPort</samp><p class="p">(<samp class="ph codeph">"type":"weblogic"</samp>)</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d16527e309" headers="d16527e106 ">End-user applications when load balancer is disabled, multiple Managed Servers</th> 
+      <td class="entry" valign="top" headers="d16527e309 d16527e108 ">HTTPS</td> 
+      <td class="entry" valign="top" headers="d16527e309 d16527e110 "><samp class="ph codeph">8002</samp></td> 
+      <td class="entry" valign="top" headers="d16527e309 d16527e112 "><samp class="ph codeph">securedContentPort</samp><p class="p">(<samp class="ph codeph">"type":"weblogic"</samp>)</p> </td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <p class="p">On Oracle Public Cloud, see <a class="xref" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=JSCUG3404" target="_blank">Understanding the Default Access Ports</a> in <em class="ph i">Using Oracle Java Cloud Service</em> for a complete list of the default ports. On Oracle Cloud Machine, see <a class="xref" href="../JSCUG/GUID-EDC1BD9B-1C42-4220-8163-4B27AADDA98F.htm#JSCUG3404" target="_blank">Understanding the Default Access Ports</a> in <em class="ph i">Using Oracle Java Cloud Service on OPCM</em>.</p> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example: Updating the Default Access Port for End-User Applications</h3>
+  <p class="p">When the load balancer is enabled, you can update the privileged port values by setting the <samp class="ph codeph">privilegedListenerPort</samp> and <samp class="ph codeph">privlegedSecuredListenerPort</samp> attributes, respectively, within the Oracle Traffic Director (<samp class="ph codeph">"type":"otd"</samp>) parameter grouping to the desired values. When the load balancer is disabled, you can update the privileged port values by setting the <samp class="ph codeph">privilegedContentPort</samp> and <samp class="ph codeph">privlegedSecuredContentPort</samp> attributes, respectively, within the Oracle WebLogic Server (<samp class="ph codeph">"type":"weblogic"</samp>) parameter grouping to the desired values.</p> 
+  <p class="p">To enable the use of non-privileged ports, you must disable the use of privileged ports by setting the corresponding privileged port attributes to <samp class="ph codeph">0</samp>. Again, you would need to set the attribute values for both the <samp class="ph codeph">"type":"otd</samp>" and <samp class="ph codeph">"type":"weblogic"</samp> to enable the use of non-privileged ports when the load balancer is available and when it is not, respectively.</p> 
+  <p class="p">The following example shows how to configure the non-privileged ports for the Oracle WebLogic Server Administration Console, Oracle Fusion Middleware Console, and the load balancer.</p> 
+  <pre class="pre codeblock">{
+    "serviceName" : "ExampleInstance",
+    . . .
+    "parameters" : [
+    {
+        "type" : "weblogic",
+        "privilegedContentPort" : "0",
+        "privilegedSecuredContentPort" : "0",
+        "contentPort" : "8001",
+        "securedContentPort" : "8002",
+    . . .
+
+    },
+    {
+        "type" : "otd",
+        "listenerPortsEnabled" : true,
+        "privilegedListenerPort" : "0",
+        "privilegedSecuredListenerPort" : "0",
+        "listenerPort" : "8080",
+        "securedListenerPort" : "8081",
+    . . .
+    }
+    ]
+}</pre> 
+ </div> 
+</div></div>
+        </article>
+    </body>
+</html>

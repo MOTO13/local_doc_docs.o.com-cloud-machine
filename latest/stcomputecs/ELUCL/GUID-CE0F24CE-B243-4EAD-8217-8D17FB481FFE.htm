@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Managing Users</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-07T05:55:01Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine CLI Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E69222-06" />
+<meta name="dcterms.isVersionOf" content="ELUCL" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-ADDF21C4-2B79-4A5D-A3AA-1068218CFC15.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-137014B6-4301-418F-BB31-BA3097E1263A.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUCL.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE"></a> <span id="PAGE" style="display:none;">10/40</span> <!-- End Header -->
+<h1 id="ELUCL-GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE" class="sect1">Managing Users</h1>
+<div>
+<div class="section">User names are unique within a specific tenant, and tenant names are unique within the system as a whole.</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE.htm#GUID-62660B40-A83F-4C86-B9B4-372750B4AD45" title="This command enables you to add new users.">add user</a></p>
+</li>
+<li>
+<p><a href="GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE.htm#GUID-C889B479-63F9-4D79-B5F6-5370FCAE4F24" title="This command enables you to delete an existing user.">delete user</a></p>
+</li>
+<li>
+<p><a href="GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE.htm#GUID-A6016669-F2E8-4524-9B99-87E38B3BC131" title="This command enables you to update user information.">update user</a></p>
+</li>
+<li>
+<p><a href="GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE.htm#GUID-21FD97EF-1368-49A2-875E-5364CF874DAF" title="This command enables you to specify authentication credentials for a user.">authenticate user</a></p>
+</li>
+<li>
+<p><a href="GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE.htm#GUID-F09B4C03-7B44-4ADB-99A4-1527688E2492" title="This command enables you to discover a list of users in a specific container.This command enables you to retrieve information for a specific user.This command enables you to list users in a specific container.">Retrieve User Details</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-62660B40-A83F-4C86-B9B4-372750B4AD45"></a>
+<h2 id="ELUCL-GUID-62660B40-A83F-4C86-B9B4-372750B4AD45" class="sect2">add user</h2>
+<div>
+<p>This command enables you to add new users.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-62660B40-A83F-4C86-B9B4-372750B4AD45__GUID-D33C3A43-7D5D-46FE-8648-DFCF7D3DC4CB">
+<p class="notep1">Note:</p>
+Only a tenant administrator can add a new user.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute add user <span class="variable">username</span> <span class="variable">fullname</span> <span class="variable">email</span> [ <span class="variable">--role</span>] [ <span class="variable">--password</span>]</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-62660B40-A83F-4C86-B9B4-372750B4AD45__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table lists parameters and descriptions for adding a new user.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d4634e120">Parameter</th>
+<th class="cellalignment26" id="d4634e122">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d4634e126" headers="d4634e120">username</td>
+<td class="cellalignment27" headers="d4634e126 d4634e122">An unique hierarchical name for a user. For example, <code class="codeph">/mytenant/myuser</code>.
+<p>Object names can contain only alphanumeric characters, hyphens, and periods. Object names are case-sensitive.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d4634e136" headers="d4634e120">fullname</td>
+<td class="cellalignment27" headers="d4634e136 d4634e122">Full name of the user</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d4634e141" headers="d4634e120">email</td>
+<td class="cellalignment27" headers="d4634e141 d4634e122">Valid email address</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d4634e146" headers="d4634e120">--role</td>
+<td class="cellalignment27" headers="d4634e146 d4634e122">(Optional) The role of a user in the system.
+<p>This option can be specified only by the Oracle Cloud Administrator. A user can be granted one of the following roles:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph">/cloud/admin</code> for Oracle Cloud Administrators</p>
+</li>
+<li>
+<p><code class="codeph">/cloud/monitor</code> for cloud monitors</p>
+</li>
+<li>
+<p><code class="codeph">/<span class="variable">tenant_name</span>/admin</code> for tenant administrators</p>
+</li>
+<li>
+<p><code class="codeph">/<span class="variable">tenant_name</span>/users</code> for tenant users</p>
+</li>
+</ul>
+<p>If this option is not specified, then the default role of <code class="codeph">/tenant_name/users</code> is granted.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d4634e185" headers="d4634e120">--password</td>
+<td class="cellalignment27" headers="d4634e185 d4634e122">(Optional) User password. The password should be specified in a regular file, or should be entered from the terminal.
+<p>You can supply the password in one of the following ways:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Specify the full path and name of the file containing the password .</p>
+<p>Note that it must be a text file that is not world-readable (permission level: 600).</p>
+</li>
+<li>
+<p>Use a hyphen (-), to denote that you want to be prompted for the password value and enter it directly into the terminal.</p>
+</li>
+</ul>
+<p>If you omit this option, you will be prompted to enter and confirm the password. The password is stored in an encrypted format.</p>
+<div class="p">The password for a user must meet the following requirements:
+<ul style="list-style-type: disc;">
+<li>
+<p>Alphanumeric.</p>
+</li>
+<li>
+<p>At least 6 characters&nbsp;in length.</p>
+</li>
+<li>
+<p>At least 5 unique characters. For example, "azylaz" is not a valid password but "azylmz" is valid.&nbsp;</p>
+</li>
+<li>
+<p>Can contain underscore and dash.</p>
+</li>
+<li>
+<p>Must not contain a sequence of characters. For example, "abcde1" and "asdfgh" are not valid passwords.&nbsp;</p>
+</li>
+<li>
+<p>Must not contain a dictionary word.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute add user /mytenant/myuser &ldquo;User name&rdquo; name@example.com --password /root/myuser_pwd.txt</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-C889B479-63F9-4D79-B5F6-5370FCAE4F24"></a>
+<h2 id="ELUCL-GUID-C889B479-63F9-4D79-B5F6-5370FCAE4F24" class="sect2">delete user</h2>
+<div>
+<p>This command enables you to delete an existing user.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-C889B479-63F9-4D79-B5F6-5370FCAE4F24__GUID-2E5FD054-4B20-452C-8D53-23DDCF63C3EE">
+<p class="notep1">Note:</p>
+Only the tenant administrator can delete a user.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute delete user <span class="variable">username</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-C889B479-63F9-4D79-B5F6-5370FCAE4F24__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies parameter and description for deleting a user.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d4634e279">Parameter</th>
+<th class="cellalignment26" id="d4634e281">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d4634e285" headers="d4634e279">username</td>
+<td class="cellalignment27" headers="d4634e285 d4634e281">Hierarchical name of the user to be deleted. For example, <code class="codeph">/mytenant/myuser</code> and <code class="codeph">/cloud/myuser</code> .</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute delete user /mytenant/myuser</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-A6016669-F2E8-4524-9B99-87E38B3BC131"></a>
+<h2 id="ELUCL-GUID-A6016669-F2E8-4524-9B99-87E38B3BC131" class="sect2">update user</h2>
+<div>
+<p>This command enables you to update user information.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-A6016669-F2E8-4524-9B99-87E38B3BC131__GUID-A0016F78-3A56-4E7A-8499-292503A85AE6">
+<p class="notep1">Note:</p>
+Tenant users can only update their password and email address.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute update user <span class="variable">username</span> [<span class="variable">--fullname</span>] [<span class="variable">--email</span>] [<span class="variable">--role</span>] [<span class="variable">--password</span>] [<span class="variable">--blacklisted</span>]</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-A6016669-F2E8-4524-9B99-87E38B3BC131__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for updating a user.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d4634e368">Parameter</th>
+<th class="cellalignment26" id="d4634e370">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d4634e374" headers="d4634e368">username</td>
+<td class="cellalignment27" headers="d4634e374 d4634e370">A unique hierarchical name for a user. For example, <code class="codeph">/mytenant/myuser</code> and <code class="codeph">/cloud/myuser</code>.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d4634e385" headers="d4634e368">--fullname</td>
+<td class="cellalignment27" headers="d4634e385 d4634e370">(Optional) Full name of the user</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d4634e390" headers="d4634e368">--email</td>
+<td class="cellalignment27" headers="d4634e390 d4634e370">(Optional) Valid email address</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d4634e395" headers="d4634e368">--role</td>
+<td class="cellalignment27" headers="d4634e395 d4634e370">(Optional) The role of a user in the system.
+<p>This option can be specified only by the Oracle Cloud Administrator. A user can be granted any one of the following roles:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph">/cloud/admin</code> for cloud administrators.</p>
+</li>
+<li>
+<p><code class="codeph">/cloud/monitor</code> for cloud monitors.</p>
+</li>
+<li>
+<p><code class="codeph">/<span class="variable">tenant_name</span>/admin</code> for tenant administrators.</p>
+</li>
+<li>
+<p><code class="codeph">/<span class="variable">tenant_name</span>/users</code> for tenant users</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d4634e429" headers="d4634e368">--password</td>
+<td class="cellalignment27" headers="d4634e429 d4634e370">(Optional) User password. The password must be specified in a regular text file or entered from the terminal.
+<div class="p">The password for a user must meet the following requirements:
+<ul style="list-style-type: disc;">
+<li>
+<p>Alphanumeric.</p>
+</li>
+<li>
+<p>At least 6 characters&nbsp;in length.</p>
+</li>
+<li>
+<p>At least 5 unique characters. For example, "azylaz" is not a valid password but "azylmz" is valid.&nbsp;</p>
+</li>
+<li>
+<p>Can contain underscore and dash.</p>
+</li>
+<li>
+<p>Must not contain a sequence of characters. For example, "abcde1" and "asdfgh" are not valid passwords.&nbsp;</p>
+</li>
+<li>
+<p>Must not contain a dictionary word.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d4634e455" headers="d4634e368">--blacklisted</td>
+<td class="cellalignment27" headers="d4634e455 d4634e370">(Optional) Specifies if the user is blacklisted.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute update user /mytenant/myuser --email new.email@example.com</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+uri              username         id                                   fullname   email       customer role      blacklisted
+https://api/user /mytenant/myuser f36f54ca-e8d2-4e56-9371-0acae392c4f1 myuserfull new.email@e mytenant /mytenant False
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-21FD97EF-1368-49A2-875E-5364CF874DAF"></a>
+<h2 id="ELUCL-GUID-21FD97EF-1368-49A2-875E-5364CF874DAF" class="sect2">authenticate user</h2>
+<div>
+<p>This command enables you to specify authentication credentials for a user.</p>
+<div class="section">
+<p>Authentication is generally used for testing the credentials for a user. This command returns an authentication cookie that you can use in future CLI requests. You can export this cookie to the ORACLE_COMPUTE_COOKIE environment variable. When you export the cookie, you no longer have to specify <code class="codeph">-u</code> or <code class="codeph">-p</code> options for future CLI requests; instead, the authentication information in the cookie is used.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p>Use either of the following commands to specify the authentication credentials of the user:</p>
+<p><code class="codeph">oracle-compute auth user <span class="variable">username</span> <span class="variable">password</span></code></p>
+<p><code class="codeph">oracle-compute authenticate user <span class="variable">username</span> <span class="variable">password</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-21FD97EF-1368-49A2-875E-5364CF874DAF__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameters and description for authenticating a user.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d4634e539">Parameter</th>
+<th class="cellalignment26" id="d4634e541">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d4634e545" headers="d4634e539">username</td>
+<td class="cellalignment27" headers="d4634e545 d4634e541">Name of the user</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d4634e550" headers="d4634e539">password</td>
+<td class="cellalignment27" headers="d4634e550 d4634e541">Password for the user
+<div class="infobox-note" id="GUID-21FD97EF-1368-49A2-875E-5364CF874DAF__GUID-6E4771B3-67B1-42CF-814E-2906170134F9">
+<p class="notep1">Note:</p>
+The password can either be supplied as a command-line argument (in which case the value must be the name of a text file that is not world-readable, containing the password) or omitted from the command and entered directly from the terminal.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute auth user /mytenant/administrator pwdfile.txt</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Sample Output</p>
+<p>The following sample cookie is returned.</p>
+<pre dir="ltr">
+export ORACLE_COMPUTE_COOKIE='{"identity": "{\"realm\": \"myExa-Site\", \"value\": \"{\\\"customer\\\": \\\"mytenant\...+Kpdvzg==\"}"}'
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-F09B4C03-7B44-4ADB-99A4-1527688E2492"></a>
+<h2 id="ELUCL-GUID-F09B4C03-7B44-4ADB-99A4-1527688E2492" class="sect2">Retrieve User Details</h2>
+<div>
+<div class="section">You can retrieve the user details using CLI.</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE.htm#GUID-1E521D8A-0E6E-423B-B0E6-D41A603FADB0" title="This command enables you to discover a list of users in a specific container.">discover user</a></p>
+</li>
+<li>
+<p><a href="GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE.htm#GUID-E4BAFBE9-6DBF-400D-97CD-99452B25F552" title="This command enables you to retrieve information for a specific user.">get user</a></p>
+</li>
+<li>
+<p><a href="GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE.htm#GUID-5BA2E78A-FC80-4952-8BA3-16B96761C6E9" title="This command enables you to list users in a specific container.">list user</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect3"><a id="GUID-1E521D8A-0E6E-423B-B0E6-D41A603FADB0"></a>
+<h3 id="ELUCL-GUID-1E521D8A-0E6E-423B-B0E6-D41A603FADB0" class="sect3">discover user</h3>
+<div>
+<p>This command enables you to discover a list of users in a specific container.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-1E521D8A-0E6E-423B-B0E6-D41A603FADB0__GUID-9215DC7C-2B64-4526-8BB8-4F7E91217459">
+<p class="notep1">Note:</p>
+You can discover only tenant users in your tenancy.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Syntax</p>
+<p><code class="codeph">oracle-compute discover user <span class="variable">container</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-1E521D8A-0E6E-423B-B0E6-D41A603FADB0__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for listing all users in a container.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d4634e664">Parameter</th>
+<th class="cellalignment26" id="d4634e666">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d4634e670" headers="d4634e664">container</td>
+<td class="cellalignment27" headers="d4634e670 d4634e666">Hierarchical name-space for users</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<p><code class="codeph">$ oracle-compute discover user /mytenant</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute discover  user /mytenant
+entry
+/mytenant/administrator
+/mytenant/myuser
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-E4BAFBE9-6DBF-400D-97CD-99452B25F552"></a>
+<h3 id="ELUCL-GUID-E4BAFBE9-6DBF-400D-97CD-99452B25F552" class="sect3">get user</h3>
+<div>
+<p>This command enables you to retrieve information for a specific user.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-E4BAFBE9-6DBF-400D-97CD-99452B25F552__GUID-B48ECB03-78CC-425B-8907-B238A94E71D6">
+<p class="notep1">Note:</p>
+You can retrieve information only for tenant users in your tenancy.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Syntax</p>
+<p><code class="codeph">oracle-compute get user <span class="variable">username</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-E4BAFBE9-6DBF-400D-97CD-99452B25F552__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for retrieving details of a user.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d4634e736">Parameter</th>
+<th class="cellalignment26" id="d4634e738">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d4634e742" headers="d4634e736">username</td>
+<td class="cellalignment27" headers="d4634e742 d4634e738">Hierarchical name of the user. For example, <code class="codeph">/mytenant/myuser</code> and <code class="codeph">/cloud/myuser</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<p><code class="codeph">$ oracle-compute get user /mytenant/myuser</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute get user /mytenant/myuser -F username,id,fullname,email,blacklisted
+uri               username        id             fullname email            blackisted
+https://api/.../ /mytenant/myuser b730fb22...e7  MyUser   user@example.com False
+
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-5BA2E78A-FC80-4952-8BA3-16B96761C6E9"></a>
+<h3 id="ELUCL-GUID-5BA2E78A-FC80-4952-8BA3-16B96761C6E9" class="sect3">list user</h3>
+<div>
+<p>This command enables you to list users in a specific container.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-5BA2E78A-FC80-4952-8BA3-16B96761C6E9__GUID-50F26E8D-5D3E-4B92-B817-70EDE47F8059">
+<p class="notep1">Note:</p>
+You can list only tenant users in your tenancy.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Syntax</p>
+<p><code class="codeph">oracle-compute list user <span class="variable">container</span> [<span class="variable">--role</span>]</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-5BA2E78A-FC80-4952-8BA3-16B96761C6E9__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameters and descriptions for listing users.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d4634e817">Parameter</th>
+<th class="cellalignment26" id="d4634e819">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d4634e823" headers="d4634e817">container</td>
+<td class="cellalignment27" headers="d4634e823 d4634e819">Hierarchical name-space for the user</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d4634e828" headers="d4634e817">--role</td>
+<td class="cellalignment27" headers="d4634e828 d4634e819">(Optional) The role of a user in the system.
+<div class="p">You can filter the list output based on user role by specifying one of the following:
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph">/cloud/admin</code> for cloud administrators</p>
+</li>
+<li>
+<p><code class="codeph">/cloud/monitor</code> for cloud monitors</p>
+</li>
+<li>
+<p><code class="codeph">/<span class="variable">tenant_name</span>/admin</code> for tenant administrators</p>
+</li>
+<li>
+<p><code class="codeph">/<span class="variable">tenant_name</span>/users</code> for tenant users</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<p><code class="codeph">$ oracle-compute list user /</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute list user / -F username,role
+username           role
+/mytenant/myuser1  /mytenant/users
+/mytenant/myuser2  /mytenant/users
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-ADDF21C4-2B79-4A5D-A3AA-1068218CFC15.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-137014B6-4301-418F-BB31-BA3097E1263A.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

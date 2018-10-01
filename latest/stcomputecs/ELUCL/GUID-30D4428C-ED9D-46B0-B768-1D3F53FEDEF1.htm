@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Managing Machine Images</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-07T05:55:01Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine CLI Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E69222-06" />
+<meta name="dcterms.isVersionOf" content="ELUCL" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-25D36D45-7AD2-459D-97FC-DBAF99D23FC0.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-3E374B99-1E54-4435-B541-52526F61E535.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUCL.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1"></a> <span id="PAGE" style="display:none;">21/40</span> <!-- End Header -->
+<h1 id="ELUCL-GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1" class="sect1">Managing Machine Images</h1>
+<div>
+<div class="section">
+<p>A machine image is a hard disk snapshot used to launch a virtual machine instance. The machine image archive must be a single raw disk image (including partition table and kernel) stored at the root of a tar archive and compressed with gzip. All machine images must be based on the Oracle Public Cloud Machine templates. A machine image template can be created only by a Oracle Cloud Administrator. For more information about building machine images and templates, see <span id="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1__USINGORACLECOMPUTECLOUDSERVICE-EF70D0A3"><span class="italic"><a class="olink ELUSE-GUID-0912C100-2A92-4E06-B35E-846D27FE6747" target="_blank" href="../ELUSE/GUID-0912C100-2A92-4E06-B35E-846D27FE6747.htm#ELUSE-GUID-0912C100-2A92-4E06-B35E-846D27FE6747">Using Oracle Compute Cloud Service</a></span></span>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1.htm#GUID-55A92A6F-F65B-4400-9361-803E1474182E" title="This command enables you to add a new machine image to the system.">add machineimage</a></p>
+</li>
+<li>
+<p><a href="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1.htm#GUID-0078AB32-579A-4820-8078-92A3355A1DBD" title="This command enables you to delete an existing machine image.">delete machineimage</a></p>
+</li>
+<li>
+<p><a href="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1.htm#GUID-ED426F2C-66F4-433E-931B-37FB98AC572E" title="This command enables you to download one or more machine images.">download machineimage</a></p>
+</li>
+<li>
+<p><a href="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1.htm#GUID-5242A2D5-730A-481E-9EFD-2AC957B71E74" title="This command enables you to discover machine images in a specific container.This command enables you to retrieve information for a specific machine image.This command enables you to retrieve information for the machine images in a specific container.">Retrieve Machine Image Details</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-55A92A6F-F65B-4400-9361-803E1474182E"></a>
+<h2 id="ELUCL-GUID-55A92A6F-F65B-4400-9361-803E1474182E" class="sect2">add machineimage</h2>
+<div>
+<p>This command enables you to add a new machine image to the system.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-55A92A6F-F65B-4400-9361-803E1474182E__GUID-EE0F6C41-D45C-40AD-B3DB-4EB179FA40DC">
+<p class="notep1">Note:</p>
+You can add only private machine images to the system. To make a public machine image on the system, contact your Oracle Cloud Administrator.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute add machineimage <span class="variable">name</span> <span class="variable">file</span> [<span class="variable">--attributes</span>] [<span class="variable">--quota</span>]</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-55A92A6F-F65B-4400-9361-803E1474182E__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table lists the parameters and their descriptions for adding a machine image">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d13107e117">Parameter</th>
+<th class="cellalignment26" id="d13107e119">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d13107e123" headers="d13107e117">name</td>
+<td class="cellalignment27" headers="d13107e123 d13107e119">A unique hierarchical name for the machine image. For example, <code class="codeph">/mytenant/public/mymachineimage</code>.
+<p>Object names can contain only alphanumeric characters, hyphens, and periods. Object names are case-sensitive.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d13107e133" headers="d13107e117">file</td>
+<td class="cellalignment27" headers="d13107e133 d13107e119">Name of the file containing the disk image (<code class="codeph">.tar.gz</code>)</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d13107e141" headers="d13107e117">--attributes</td>
+<td class="cellalignment27" headers="d13107e141 d13107e119">
+<p>(Optional) User-defined parameters that can be passed to an instance of this machine image when it is launched. These parameters are passed as JSON objects. Syntax (key/value pairs): '{ "key1": "value1", "key2": "value2" }'</p>
+<p>User-defined parameters that can be passed to an instance of this machine image when it is launched. These parameters are passed as JSON objects.</p>
+<p>For example, you can specify the location of a database server and login details, which are then passed to the machine image during launch.</p>
+<p>For more information about attributes, see <span class="italic"><a class="olink ELUSE-GUID-F7D91076-1736-4B54-89D5-73C23A45BF85" target="_blank" href="../ELUSE/GUID-F7D91076-1736-4B54-89D5-73C23A45BF85.htm#ELUSE-GUID-F7D91076-1736-4B54-89D5-73C23A45BF85">Orchestration Templates</a></span> in <span class="italic">Using Oracle Compute Cloud Service</span>.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d13107e161" headers="d13107e117">--quota</td>
+<td class="cellalignment27" headers="d13107e161 d13107e119">(Optional) &nbsp;The quota against which this image will be created</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute add machineimage /mytenant/public/mymachineimage image.tar.gz</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-0078AB32-579A-4820-8078-92A3355A1DBD"></a>
+<h2 id="ELUCL-GUID-0078AB32-579A-4820-8078-92A3355A1DBD" class="sect2">delete machineimage</h2>
+<div>
+<p>This command enables you to delete an existing machine image.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-0078AB32-579A-4820-8078-92A3355A1DBD__GUID-D6707E77-CAC4-4763-9F05-A90F31D41DBA">
+<p class="notep1">Note:</p>
+You can delete only those private machine images that you have created.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute delete machineimage <span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-0078AB32-579A-4820-8078-92A3355A1DBD__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for deleting a machine image.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d13107e220">Parameter</th>
+<th class="cellalignment26" id="d13107e222">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d13107e226" headers="d13107e220">name</td>
+<td class="cellalignment27" headers="d13107e226 d13107e222">A unique hierarchical name for the machine image. For example, <code class="codeph">/mytenant/public/mymachineimage</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute delete machineimage /mytenant/public/mymachineimage</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-ED426F2C-66F4-433E-931B-37FB98AC572E"></a>
+<h2 id="ELUCL-GUID-ED426F2C-66F4-433E-931B-37FB98AC572E" class="sect2">download machineimage</h2>
+<div>
+<p>This command enables you to download one or more machine images.</p>
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute download machineimage <span class="variable">path</span> [<span class="variable">--outputdir</span>]</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-ED426F2C-66F4-433E-931B-37FB98AC572E__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameters and descriptions for downloading machine image.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d13107e290">Parameter</th>
+<th class="cellalignment26" id="d13107e292">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d13107e296" headers="d13107e290">path</td>
+<td class="cellalignment27" headers="d13107e296 d13107e292">The full path name of your machine image. You can specify either the full path name of a single machine image, or a container. If a container is specified, then all machine images in that container are downloaded.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d13107e301" headers="d13107e290">--outputdir</td>
+<td class="cellalignment27" headers="d13107e301 d13107e292">(Optional) Specifies the directory to which all the machine images will be downloaded</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute download machineimage /oracle/public/oel6</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-5242A2D5-730A-481E-9EFD-2AC957B71E74"></a>
+<h2 id="ELUCL-GUID-5242A2D5-730A-481E-9EFD-2AC957B71E74" class="sect2">Retrieve Machine Image Details</h2>
+<div>
+<div class="section">You can view machine image details by using the CLI.</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1.htm#GUID-577BFF5A-67EB-4E92-A835-71D87392C305" title="This command enables you to discover machine images in a specific container.">discover machineimage</a></p>
+</li>
+<li>
+<p><a href="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1.htm#GUID-4FA66B2C-BBE2-49CB-82D9-CED111CF4206" title="This command enables you to retrieve information for a specific machine image.">get machineimage</a></p>
+</li>
+<li>
+<p><a href="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1.htm#GUID-1B383D9E-4863-45F1-BAFC-D2861FC23DE1" title="This command enables you to retrieve information for the machine images in a specific container.">list machineimage</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect3"><a id="GUID-577BFF5A-67EB-4E92-A835-71D87392C305"></a>
+<h3 id="ELUCL-GUID-577BFF5A-67EB-4E92-A835-71D87392C305" class="sect3">discover machineimage</h3>
+<div>
+<p>This command enables you to discover machine images in a specific container.</p>
+<div class="section">
+<p class="subhead3">Syntax</p>
+<p><code class="codeph">oracle-compute discover machineimage <span class="variable">container</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-577BFF5A-67EB-4E92-A835-71D87392C305__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for discovering machine images.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d13107e403">Parameter</th>
+<th class="cellalignment26" id="d13107e405">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d13107e409" headers="d13107e403">container</td>
+<td class="cellalignment27" headers="d13107e409 d13107e405">Hierarchical name-space for machine images</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<p><code class="codeph">$ oracle-compute discover machineimage /oracle/public</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute discover machineimage /oracle/public
+entry
+/oracle/public/linux5_16.1.2_64                      
+/oracle/public/linux6_16.1.2_64                      
+/oracle/public/linux6_12.2.1.0.0_64_jaas_16.2.1.0.103
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-4FA66B2C-BBE2-49CB-82D9-CED111CF4206"></a>
+<h3 id="ELUCL-GUID-4FA66B2C-BBE2-49CB-82D9-CED111CF4206" class="sect3">get machineimage</h3>
+<div>
+<p>This command enables you to retrieve information for a specific machine image.</p>
+<div class="section">
+<p class="subhead3">Syntax</p>
+<p><code class="codeph">oracle-compute get machineimage <span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-4FA66B2C-BBE2-49CB-82D9-CED111CF4206__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for fetching details of a specific machine image.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d13107e471">Parameter</th>
+<th class="cellalignment26" id="d13107e473">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d13107e477" headers="d13107e471">name</td>
+<td class="cellalignment27" headers="d13107e477 d13107e473">A unique hierarchical name for the machine image. For example, <code class="codeph">/mytenant/public/mymachineimage</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<p><code class="codeph">oracle-compute get machineimage /oracle/public/linux6_16.1.2_64 -f json</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute get machineimage /oracle/public/linux6_16.1.2_64 -f json 
+{
+ "list": [
+  {
+   "name": "/oracle/public/linux6_16.1.2_64", 
+   "sizes": {
+    "uploaded": 2176821211, 
+    "total": 2176821211, 
+    "decompressed": 19327352832
+   }, 
+   "no_upload": false, 
+   "quota": null, 
+   "uri": "https://api/machineimage/oracle/public/linux6_16.1.2_64", 
+   "state": "available", 
+   "signed_by": null, 
+   "file": "https://api:443/machineimage/oracle/public/linux6_16.1.2_64", 
+   "checksums": null, 
+   "attributes": {}, 
+   "error_reason": null, 
+   "audited": null
+  }
+ ]
+}
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-1B383D9E-4863-45F1-BAFC-D2861FC23DE1"></a>
+<h3 id="ELUCL-GUID-1B383D9E-4863-45F1-BAFC-D2861FC23DE1" class="sect3">list machineimage</h3>
+<div>
+<p>This command enables you to retrieve information for the machine images in a specific container.</p>
+<div class="section">
+<p class="subhead3">Syntax</p>
+<p><code class="codeph">oracle-compute list machineimage <span class="variable">container</span> [<span class="variable">--quota</span>]</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="infobox-note" id="GUID-1B383D9E-4863-45F1-BAFC-D2861FC23DE1__GUID-56600106-470C-488B-84C0-0C7D58FCF2B7">
+<p class="notep1">Note:</p>
+The output of this command is filtered based on the optional parameters (if specified).</div>
+<div class="tblformal" id="GUID-1B383D9E-4863-45F1-BAFC-D2861FC23DE1__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameters and description for listing machine images.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d13107e549">Parameter</th>
+<th class="cellalignment26" id="d13107e551">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d13107e555" headers="d13107e549">container</td>
+<td class="cellalignment27" headers="d13107e555 d13107e551">Hierarchical name-space for machine images</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d13107e560" headers="d13107e549">--quota</td>
+<td class="cellalignment27" headers="d13107e560 d13107e551">(Optional) Quota associated with the image</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<p><code class="codeph">$ oracle-compute list machineimage /oracle/public</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute list machineimage /oracle/public -F name,quota,state 
+name                                                  quota    state  
+/oracle/public/linux5_16.1.2_64                       None     available  
+/oracle/public/linux6_16.1.2_64                       None     available  
+/oracle/public/linux6_12.2.1.0.0_64_jaas_16.2.1.0.103 None     available
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-25D36D45-7AD2-459D-97FC-DBAF99D23FC0.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-3E374B99-1E54-4435-B541-52526F61E535.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

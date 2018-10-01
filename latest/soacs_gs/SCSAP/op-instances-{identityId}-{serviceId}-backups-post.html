@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine - Create a New Service Backup</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Use the REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine to manage, monitor, and perform operations on SOA services and servers.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine">
+        <meta property="og:description" content="Use the REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine to manage, monitor, and perform operations on SOA services and servers.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="op-instances-%7BidentityId%7D-%7BserviceId%7D-backups-%7BbackupId%7D-post.html" title="Previous" type="text/html">
+        <link rel="next" href="op-instances-%7BidentityId%7D-%7BserviceId%7D-backups-%7BbackupId%7D-delete.html" title="Next" type="text/html">
+    
+                    <script>var w=window;if(w.performance||w.mozPerformance||w.msPerformance||w.webkitPerformance){var d=document;AKSB=w.AKSB||{},AKSB.q=AKSB.q||[],AKSB.mark=AKSB.mark||function(e,_){AKSB.q.push(["mark",e,_||(new Date).getTime()])},AKSB.measure=AKSB.measure||function(e,_,t){AKSB.q.push(["measure",e,_,t||(new Date).getTime()])},AKSB.done=AKSB.done||function(e){AKSB.q.push(["done",e])},AKSB.mark("firstbyte",(new Date).getTime()),AKSB.prof={custid:"322179",ustr:"",originlat:"0",clientrtt:"1",ghostip:"23.212.3.15",ipv6:false,pct:"10",clientip:"45.78.37.67",requestid:"258a9e4",region:"32996",protocol:"",blver:14,akM:"dsca",akN:"ae",akTT:"O",akTX:"1",akTI:"258a9e4",ai:"206465",ra:"false",pmgn:"",pmgi:"",pmp:"",qc:""},function(e){var _=d.createElement("script");_.async="async",_.src=e;var t=d.getElementsByTagName("script"),t=t[t.length-1];t.parentNode.insertBefore(_,t)}(("https:"===d.location.protocol?"https:":"http:")+"//ds-aksb-a.akamaihd.net/aksb.min.js")}</script>
+                    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="op-instances-%7BidentityId%7D-%7BserviceId%7D-backups-%7BbackupId%7D-post.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="op-instances-%7BidentityId%7D-%7BserviceId%7D-backups-%7BbackupId%7D-delete.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            
+            <header>
+
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine</a></li>
+                    <li>Tasks</li>
+                    
+                    <li class="active">
+                        
+                        <a href="api-Manage%20Service%20Backups.html">Manage Service Backups</a>
+                        
+                    </li>
+                    
+                </ol>
+                
+                <p class="draftsubtitle"></p>
+                
+                <h2>Create a New Service Backup</h2>
+                <div>
+                    <div class="label label-post text-uppercase">post</div>
+                    <p style="word-break: break-word;"><strong>/api/v1.1/instances/{identityId}/{serviceId}/backups</strong></p>
+                </div>
+            </header>
+            <section>
+
+                <div class="description">Creates a new backup for a service instance.</div>
+
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                        <li role="presentation" class="active"><a href="#request" aria-controls="request" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-in" aria-hidden="true"></span> Request</a></li>
+                        <li role="presentation"><a href="#response" aria-controls="response" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-out" aria-hidden="true"></span> Response</a></li>
+                        
+                        <li role="presentation"><a href="#examples" aria-controls="examples" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-edit" aria-hidden="true"></span> Examples</a></li>
+                        
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="request">
+                            <h3 class="visible-print-block">Request</h3>
+                            
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+
+                            
+                            
+                            
+
+                            
+                            
+
+                            
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">Body Parameter</div>
+                                <div style="padding-bottom: 0px" class="panel-body">
+                                    
+
+                                    <div class="schema-container">
+                                    
+                                    <div id="request-definitions-BackupServiceInstancePayload" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : BackupServiceInstancePayload</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-BackupServiceInstancePayload-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-BackupServiceInstancePayload-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-BackupServiceInstancePayload-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-BackupServiceInstancePayload-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-BackupServiceInstancePayload-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>expirationDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time that the backup will be deleted automatically from storage. For full backups, you can set this value to null (no quotes) to specify no expiration date.<br>By default, backups are retained for the default retention period defined in the backup configuration;</div>
+
+
+
+            
+        </dd>
+        
+        <dt>notes</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Free-form text to provide additional information about the backup.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    </div>
+
+                                    
+                                    
+                                    
+                                    		
+                                </div>
+                            </div>
+                            
+
+
+
+                            
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="response">
+                            <h3 class="visible-print-block">Response</h3>
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">202 Response <span class="glyphicon glyphicon-ok-sign response-symbol" data-response-code="202" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    Accepted
+                                </div>
+
+                                
+                                
+
+                                
+                                <div class="panel panel-default">
+
+                                    <div class="panel-heading">Body</div>
+                                    <div class="panel-body">
+                                        
+
+                                        <div class="schema-container">
+                                        
+                                        <div id="202-definitions-BackupTheInstanceResponse" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : BackupTheInstanceResponse</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-202-definitions-BackupTheInstanceResponse-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-202-definitions-BackupTheInstanceResponse-properties" aria-expanded="false" aria-controls="collapseListGroup-202-definitions-BackupTheInstanceResponse-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-202-definitions-BackupTheInstanceResponse-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-202-definitions-BackupTheInstanceResponse-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>jobId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Job ID for the backup operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>operationName</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Operation performed. Set to: start-backup.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>target_uri</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>URI of the backup resource.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+
+
+                        </div>
+                        
+                        <div role="tabpanel" class="tab-pane fade" id="examples">
+                            <h3>Examples</h3>
+                            <div class="body conbody">
+ <p class="p">The following example shows how to initiate an on-demand backup for an Oracle SOA Cloud Service instance by submitting a POST request on the REST resource using cURL. For more information, see<a class="xref" href="Use%20cURL.html" target="_blank"> Use cURL</a> .</p> 
+ <p class="p">See also <a class="xref" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=CSBCS-GUID-42A5AC87-022C-4FE2-96C1-72485AE9C3BE" target="_blank">Initiate an On-Demand Backup of an Oracle SOA Cloud Service Instance</a>.</p> 
+ <div class="section">
+  <h3 class="title sectiontitle">cURL Command</h3>
+  <pre class="pre">curl -i -X POST -u joe@example.com:Welcome1! -d @backup.json -H "Content-Type:application/json" -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://api-host/paas/service/soa/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance/backups
+</pre> 
+  <div class="note note">
+   <span class="notetitle">Note::</span> This example uses the URL prefix for the United States (
+   <samp class="ph codeph">soacs</samp>). For information about the URL prefixes for other regions of the world, see 
+   <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a>.
+  </div> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Request Body</h3>
+  <p class="p">The following shows an example of the request body in JSON format. </p> 
+  <pre class="pre">{
+   "expirationDate":null,
+   "full":true,
+   "note":"On-demand backup request."
+}
+</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Header</h3>
+  <p class="p">The following shows an example of the response header:</p> 
+  <pre class="pre">HTTP/1.1 202 Accepted
+Date: Wed, 04 Feb 2015 20:17:03 GMT
+Transfer-Encoding: chunked
+Content-Type: application/json</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Body</h3>
+  <p class="p">The following shows an example of the response body in JSON format, including the backup URI that you can use to view, update, or delete the backup.</p> 
+  <pre class="pre">{
+    "operationName":"start-backup",
+    "target_uri":"https:\/\/api-host\/paas\/service\/soa\/api\/v1.1\/instances\/ExampleIdentityDomain\/ExampleInstance\/backups\/1406814125722",
+    "job_id":"1035"}
+}
+</pre> 
+ </div> 
+</div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+        </article>
+    </body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Viewing Service Metrics in Oracle Java Cloud Service on OPCM</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Oracle Java Cloud Service provides a graph view that enables you to view heap usage metrics and response times for service instances." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-FA69844B-7BAF-4B67-AF29-15CAB3ED89FB.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-41A9CF0D-028D-4C62-B9C6-D369452D5937.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-B76602B2-156D-4EAE-91F4-08A0520844FD"></a> <span id="PAGE" style="display:none;">22/131</span> <!-- End Header -->
+<h1 id="JSCUG-GUID-B76602B2-156D-4EAE-91F4-08A0520844FD" class="sect1">Viewing Service Metrics in Oracle Java Cloud Service <span>on <span>OPCM</span></span></h1>
+<div>
+<p>Oracle Java Cloud Service provides a graph view that enables you to view heap usage metrics and response times for service instances.</p>
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-B76602B2-156D-4EAE-91F4-08A0520844FD.htm#GUID-8819CE01-312D-44AC-8024-44A2324A0C3A" title="You can use the Service Metrics graph to view heap usage or response time (if a load balancer is present) for your Oracle Java Cloud Service instance.">About Service Metrics for Oracle Java Cloud Service</a></p>
+</li>
+<li>
+<p><a href="GUID-B76602B2-156D-4EAE-91F4-08A0520844FD.htm#GUID-EE38ADC2-BD32-43CB-A36D-842CD3AB85A2" title="The Service Metrics graph displays either heap usage or response time (if a load balancer is present) for an Oracle Java Cloud Service instance.">Viewing Heap Usage and Load Balancer Response Time for Oracle Java Cloud Service</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-8819CE01-312D-44AC-8024-44A2324A0C3A"></a>
+<h2 id="JSCUG-GUID-8819CE01-312D-44AC-8024-44A2324A0C3A" class="sect2">About Service Metrics for Oracle Java Cloud Service</h2>
+<div>
+<p>You can use the Service Metrics graph to view heap usage or response time (if a load balancer is present) for your Oracle Java Cloud Service instance.</p>
+<p>Heap usage percentage data appears numerically on the Oracle Java Cloud Service Instance Overview page, but the Service Metrics graph enables you to visualize this information.</p>
+<div class="section">
+<p class="subhead2">Accessing the Service Metrics Graph</p>
+<ol>
+<li>
+<p>Select the <img width="30" height="27" src="img/GUID-A8F36F9D-F116-43FF-8AA1-87BEA0B4E33B-default.png" alt="Health Check icon" title="Health Check icon" /> Health Check icon in the icon bar.</p>
+<p>Heap usage is displayed for each server and the load balancer.</p>
+</li>
+<li>
+<p>Click the heap usage number.</p>
+<p>The Service Metrics graph is displayed.</p>
+</li>
+</ol>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Information the Graph Displays</p>
+<p>The graph gives you the option of displaying heap usage metrics or request response times over the past 60 minutes.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Heap Usage</p>
+&mdash;You can select the server(s) whose heap usage interests you, and the data are displayed in a graph of percentage of heap used versus time.</li>
+<li>
+<p>Average Response Time</p>
+&mdash;Request response time is displayed if a load balancer is present. The graph displays response time in milliseconds (response time) versus elapsed time.</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Refreshing Data</p>
+<p>You can refresh graph data by clicking on the <img width="23" height="22" src="img/GUID-08E43FD3-B338-4802-8EBB-C8ABD091FB88-default.png" alt="Refresh icon" title="Refresh icon" /> <span class="bold">Refresh</span> icon on the upper right corner of the graph. The graph provides 5&ndash;minute snapshots of the data. The graph only fetches the data the first time you enter the page or when you refresh the page. If you exit the page then access it again, previous data are displayed. You must click <span class="bold">Refresh</span> to see new data.</p>
+<div class="infobox-note" id="GUID-8819CE01-312D-44AC-8024-44A2324A0C3A__GUID-6DB67ADC-39B3-406F-89F9-3ECC40DA2CC0">
+<p class="notep1">Note:</p>
+The graph takes some time to load the data. If it doesn&rsquo;t appear right away, wait.</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-EE38ADC2-BD32-43CB-A36D-842CD3AB85A2"></a>
+<h2 id="JSCUG-GUID-EE38ADC2-BD32-43CB-A36D-842CD3AB85A2" class="sect2">Viewing Heap Usage and Request Response Time for Oracle Java Cloud Service</h2>
+<div>
+<p>The Service Metrics graph displays either heap usage or response time (if a load balancer is present) for an Oracle Java Cloud Service instance.</p>
+<div class="section">To view the Service Metrics graph:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Access the Service Metrics graph from the Instance Overview page.</span></li>
+<li class="stepexpand"><span>On the Service Metrics graph, select one of the following graph types:</span>
+<ul>
+<li>Heap Usage (default)</li>
+<li>Average Response Time (if a load balancer is present)</li>
+</ul>
+<div>The graph displays either heap usage or response time data.</div>
+</li>
+<li class="stepexpand"><span>In the Heap Usage Selection field, choose one or more of the following:</span>
+<ul>
+<li>All servers (default)</li>
+<li>Admin Server</li>
+<li>Overall Managed Servers</li>
+<li>Individual managed server (<code class="codeph"><span class="codeinlineitalic">serverName</span>_server_<span class="codeinlineitalic">n</span>)</code></li>
+</ul>
+<div>A graph of your selections is displayed.</div>
+</li>
+<li class="stepexpand"><span>To return to the Oracle Java Cloud Service Instance Overview page, click the name of the service instance.</span></li>
+</ol>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-FA69844B-7BAF-4B67-AF29-15CAB3ED89FB.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-41A9CF0D-028D-4C62-B9C6-D369452D5937.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

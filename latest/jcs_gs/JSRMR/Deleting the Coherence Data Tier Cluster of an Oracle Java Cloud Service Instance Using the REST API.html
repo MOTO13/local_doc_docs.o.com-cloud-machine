@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="Patching%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html" title="Previous" type="text/html">
+        <link rel="next" href="Deleting%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="Patching%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="Deleting%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">Deleting the Coherence Data Tier Cluster of a Service Instance</h2> 
+<div class="body taskbody">
+ <p class="shortdesc">You can delete the entire Coherence data tier or storage-enabled WebLogic Server cluster of an Oracle Java Cloud Service instance using the REST API, as described in the following procedure. </p> 
+ <div class="section">
+  <p class="p">This section applies only to Oracle Java Cloud Service instances that have Oracle Coherence enabled.</p> 
+  <p class="p">Deleting the Coherence data tier cluster of Managed Servers means you are removing Oracle Coherence from a service instance. To use Oracle Coherence in the service instance again, you will have to add a Coherence data tier cluster, as described in <a class="xref" href="Adding%20a%20Coherence%20Data%20Tier%20Cluster%20to%20an%20Oracle%20Java%20Cloud%20Service%20Using%20the%20REST%20API.html" target="_blank">Adding a Coherence Data Tier Cluster to a Service Instance</a>.</p> 
+  <p class="p"><strong class="ph b">Note:</strong> </p> 
+  <ul class="ul">
+   <li class="li"><p class="p">The term <em class="ph i">scaling unit</em> used in the REST API means the same as capacity unit.</p> </li> 
+   <li class="li"><p class="p"> The cURL command examples use the URL structure <samp class="ph codeph">https://rest_server_url/<em class="ph i">resource-path</em></samp>, where <samp class="ph codeph">rest_server_url</samp> is the Oracle Public Cloud or Oracle Cloud Machine REST server to contact for your identity domain or tenant name. See <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a> for the appropriate URL structure to use on Oracle Public Cloud or Oracle Cloud Machine.</p> </li> 
+  </ul> 
+  <p class="p">To delete the Coherence data tier cluster from an Oracle Java Cloud Service instance:</p> 
+ </div> 
+ <ol class="ol steps">
+  <li class="li step stepexpand"><span class="ph cmd">Before deleting the Coherence data tier cluster, review the service instance to confirm the name of the storage-enabled WebLogic Server cluster you want to delete.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_urlm/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance</strong>
+</pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">For more information, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-get.html" target="_blank">View a Service Instance</a>.</p> 
+    <p class="p">When you view a service instance that has a Coherence data tier, you will see detailed information about the instance, including data tier details in the option <samp class="ph codeph">"type": "datagrid"</samp>. The following shows an example of the <samp class="ph codeph">"type": "datagrid"</samp> option in the response body. In this example, there is one capacity unit (with three Managed Servers) in the Coherence data tier cluster <samp class="ph codeph">ExampleDGCluster</samp>.</p> 
+    <pre class="pre codeblock">    "options": [{
+      "type": "datagrid",
+      "clusters": [{
+        "clusterName": "<strong class="ph b">ExampleDGCluster</strong>",
+        "scalingUnitCount": 1,
+        "scalingUnitName": "SMALL",
+        "shape": "oc3",
+        "vmCount": 3,
+        "jvmCount": 1,
+        "heapSize": "4608M",
+        "maxScalingUnit": 10,
+        "heapIncrements": "13824M",
+        "primaryIncrements": "4608M",
+        "totalHeap": "13824M",
+        "totalPrimary": "4608M",
+        "maxHeap": "138240M",
+        "maxPrimary": "46080M",
+        "scalingUnitInstances": [{
+          "servers": [
+            {"name": "ExampleI_server_5_DG"},
+            {"name": "ExampleI_server_4_DG"},
+            {"name": "ExampleI_server_3_DG"}
+          ],
+          "scalingUnitInstanceId": 296,
+          "status": "Ready"
+        }]
+      }]
+    }],
+</pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">Remove the storage-enabled WebLogic Server cluster by specifying the name <samp class="ph codeph">ExampleDGCluster</samp>.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X DELETE -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance/clusters/ExampleDGCluster</strong>
+</pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">DELETE</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">For more information, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-clusters-%7BclusterName%7D-delete.html" target="_blank">Delete a Coherence Data Tier Cluster</a>.</p> 
+    <p class="p">The following shows an example of the response header.</p> 
+    <pre class="pre codeblock">HTTP/1.1 202 Accepted
+Date: Tue, 06 Oct 2015 21:15:16 GMT
+Location: https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/status/scale/job/735
+Content-Length: 0
+Content-Type: application/vnd.com.oracle.oracloud.datagrid.Service+json
+Service-URI: https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance/clusters/ExampleDGCluster
+Retry-After: 60
+</pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">Check the status of the delete request using the resource URI returned in the <samp class="ph codeph">Location</samp> header. </span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/status/scale/job/735</strong>
+</pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">For more information, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-status-%7BrequestName%7D-job-%7BjobId%7D-get.html" target="_blank">View the Status of a Service Instance Lifecycle Operation</a>.</p> 
+    <p class="p">The following shows an example of the job status response body returned in JSON format.</p> 
+    <pre class="pre codeblock">{
+  "service_name": "ExampleInstance",
+  "version": "12cR3",
+  "wlsVersion": "12.1.3.0.xxxxxx",
+  "status": "Running",
+  "error_status_desc": "",
+  "compliance_status": "",
+  "compliance_status_desc": "",
+  "auto_update": "true",
+  "description": "ExampleInstance",
+  "identity_domain": "ExampleIdentityDomain",
+  "creation_time": "Tue Oct 6 16:24:8 UTC 2015",
+  "last_modified_time": "Tue Oct 6 21:20:6 UTC 2015",
+  "created_by": "username",
+  "service_uri": "https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/ExampleInstance"
+,
+  "message": [
+    "Successfully deleted DataGrid option",
+    "    Successfully removed [1] capacity unit(s) used by DataGrid WebLogic Cluster [ExampleDGCluster]",
+    "        Deleting capacity unit(s) containing [3] virtual machines...",
+    "        Started shutting down and removing managed servers from Admin.",
+    "        Started shutting down and removing managed servers from Admin.",
+    "        Completed removing managed servers from Admin.",
+    "        Stopping and removing resources for capacity unit(s) containing [3] virtual machines...",
+    "        Successfully deleted capacity unit(s) and [3] virtual machines",
+    "    Successfully deleted WebLogic Cluster [ExampleDGCluster] used by DataGrid option"
+  ]
+}</pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">When the operation completes and the service instance is running, review the service instance details to confirm the Coherence data tier cluster has been removed.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance</strong>
+</pre> 
+    <p class="p">You should no longer see the <samp class="ph codeph">"type": "datagrid"</samp> option in the response body.</p> 
+    <p class="p">The following shows an example of the response body on Oracle Public Cloud.</p> 
+    <pre class="pre codeblock">{
+    "service_name": "ExampleInstance",
+    "version": "12cR3",
+    "wlsVersion": "12.1.3.0.xxxxxx",
+    "status": "Running",
+    "error_status_desc": "",
+    "compliance_status": "",
+    "compliance_status_desc": "",
+    "auto_update": "true",
+    "description": "ExampleInstance",
+    "identity_domain": "ExampleIdentityDomain",
+    "creation_time": "Tue Oct 6 16:24:8 UTC 2015",
+    "last_modified_time": "Tue Oct 6 21:20:6 UTC 2015",
+    "created_by": "username",
+    "service_uri": "https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/ExampleInstance",
+    "domain_name": "ExampleI_domain",
+    "domain_mode": "PRODUCTION",
+    "cluster_name": "ExampleI_cluster",
+    "num_nodes": 3,
+    "level": "PAAS",
+    "subscription_type": "MONTHLY",
+    "edition": "SUITE",
+    "shape": "oc3",
+    "otd_provisioned": "yes",
+    "otd_shape": "oc3",
+    "otd_storage_size": 40960,
+    "service_components": [
+    {
+      "type": "JDK",
+      "version": "1.7.0_xxx"
+    },
+    {
+      "type": "OTD",
+      "version": "11.1.1.9.x"
+    },
+    {
+      "type": "OTD_JDK",
+      "version": "1.7.0_xxx"
+    },
+    {
+      "type": "WLS",
+      "version": "12.1.3.0.xxxxxx"
+    }
+    ],
+    "creation_job_id": "231638",
+    "deletion_job_id": 0,
+    "db_info": "DBExample2:1521\/PDB1.ExampleIdentityDomain.oraclecloud.example",
+    "db_service_name": "DBExample2",
+    "num_ip_reservations": 3,
+    "wls_admin_url": "https:\/\/192.0.2.0:7002\/console",
+    "fmw_control_url": "https:\/\/192.0.2.0:7002\/em",
+    "otd_admin_url": "https:\/\/192.0.1.23:8989",
+    "sample_app_url": "https:\/\/192.0.1.23\/sample-app\/",
+    "content_url" : "http:\/\/192.0.1.23",
+    "secure_content_url": "https:\/\/192.0.1.23",
+    "wls_deployment_channel_port": 9001,
+    "psm_plugin_version": "16.3.5-x-xxx",
+    "compute_site_name": "US000_Z00",
+    "db_associations": [    
+    {
+        "db_service_name": "myDBService",
+        "db_infra": true,
+        "db_connect_string": "myDBService:1521\/PDB1.exampleidentitydomain.oraclecloud.internal",
+        "pdb_service_name": "PDB1",
+        "db_version": "12.1.0.2"
+    }]
+}</pre> 
+    <p class="p">The following shows an example of the response body on Oracle Cloud Machine.</p> 
+    <pre class="pre codeblock">{
+    "service_name" : "ExampleInstance",
+    "version" : "12cR3",
+    "wlsVersion" : "12.1.3.0.xxxxxx",
+    "status" : "Running",
+    "error_status_desc": "",
+    "compliance_status": "",
+    "compliance_status_desc": "",
+    "auto_update": "true",
+    "description" : "ExampleInstance",
+    "identity_domain" : "myTenantName",
+    "creation_time": "Mon Nov 23 21:21:28 UTC 2015",
+    "last_modified_time": "Tue Nov 24 1:40:23 UTC 2015",
+    "created_by":"username",
+    "service_uri" : "https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/myTenantName\/ExampleInstance",
+    "domain_name" : "ExampleI_domain",
+    "domain_mode" : "PRODUCTION",
+    "cluster_name" : "ExampleI_cluster",
+    "num_nodes" : 3,
+    "level" : "PAAS",
+    "subscription_type" : "HOURLY",
+    "edition" : "SUITE",
+    "shape" : "oc3",
+    "otd_provisioned" : "yes",
+    "otd_shape" : "oc3",
+    "otd_storage_size": 40960,
+    "service_components": [
+      {
+        "type": "WLS",
+        "version": "12.1.3.0.xxxxxx"
+      },
+      {
+        "type": "OTD_JDK",
+        "version": "1.7.0_xxx"
+      },
+      {
+        "type": "OTD",
+        "version": "11.1.1.9.x"
+      },
+      {
+        "type": "JDK",
+        "version": "1.7.0_xxx"
+      }
+    ],
+    "creation_job_id": "22431",
+    "deletion_job_id": 0,
+    "db_info": "mydbhost:1521\/dbservicename",
+    "num_ip_reservations": 3,
+    "wls_admin_url" : "https:\/\/thehost:7002\/console",
+    "fmw_control_url" : "https:\/\/thehost:7002\/em",
+    "otd_admin_url" : "https:\/\/thelbhost:8989",
+    "sample_app_url": "https:\/\/thehost\/sample-app\/",
+    "secure_content_url" : "https:\/\/thehost",
+    "wls_deployment_channel_port": 9001,
+    "psm_plugin_version": "16.3.3-1-168",
+    "compute_site_name": "PRIVATE_SITE",
+    "db_associations": [
+    {
+        "db_connect_string": "mydbhost:1521\/dbservicename",
+        "db_infra": true
+    }]
+}</pre> 
+   </div></li> 
+ </ol> 
+</div></div>
+        </article>
+    </body>
+</html>

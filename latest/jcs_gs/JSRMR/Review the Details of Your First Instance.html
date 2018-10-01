@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="Create%20Your%20First%20Instance.html" title="Previous" type="text/html">
+        <link rel="next" href="SendRequests.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="Create%20Your%20First%20Instance.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="SendRequests.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">Review the Details of Your First Service Instance</h2> 
+<div class="body conbody">
+ <p class="shortdesc">After the service instance is created, use the following cURL command to view the service instance details. On the cURL command line, specify the user name and password for your Oracle Java Cloud Service account, and the identity domain ID (on Oracle Public Cloud) or tenant name (on Oracle Cloud Machine).</p> 
+ <div class="section">
+  <p class="p"><strong class="ph b">Note: </strong>The command in the example uses the URL structure <samp class="ph codeph">https://rest_server_url/<em class="ph i">resource-path</em></samp>, where <samp class="ph codeph">rest_server_url</samp> is the Oracle Public Cloud or Oracle Cloud Machine REST server to contact for your identity domain or tenant name. See <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a> for the appropriate URL structure to use for Oracle Public Cloud or Oracle Cloud Machine.</p> 
+  <div class="p">
+   <pre class="pre codeblock">C:&gt; curl -i -X GET -u <em class="ph i">yourUserName</em>:<em class="ph i">yourPassword</em> -H X-ID-TENANT-NAME:<em class="ph i">yourIdentityDomain</em> https://rest_server_url/paas/service/jcs/api/v1.1/instances/<em class="ph i">yourIdentityDomain</em>/MyFirstInstance</pre> 
+  </div> 
+  <p class="p"><strong class="ph b">Oracle Public Cloud:</strong> The following example shows the contents of the response in JSON format on Oracle Public Cloud.</p> 
+  <pre class="pre codeblock">{
+    "service_name" : "MyFirstInstance",
+    "version" : "12cR3",
+    "wlsVersion" : "12.1.3.0.xxxxxx",
+    "status" : "Running",
+    "error_status_desc": "",
+    "compliance_status": "",
+    "compliance_status_desc": "",
+    "auto_update": "true",    
+    "description" : "My first instance using the REST API.",
+    "identity_domain" : "<em class="ph i">yourIdentityDomain</em>",
+    "creation_time": "Thu Jul 14 23:16:58 UTC 2016",
+    "last_modified_time": "Thu Jul 14 23:16:56 UTC 2016",
+    "created_by" : "<em class="ph i">yourUserName</em>",
+    "service_uri" : "https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/<em class="ph i">yourIdentityDomain</em>\/MyFirstInstance",
+    "domain_name" : "MyDomain",
+    "domain_mode" : "PRODUCTION",
+    "cluster_name" : "MyDomain_Cluster",
+    "num_nodes" : 6,
+    "level" : "PAAS",
+    "subscription_type" : "HOURLY",
+    "edition" : "SUITE",
+    "shape" : "oc3",
+    "otd_provisioned" : "yes",
+    "otd_shape": "oc3",
+    "otd_storage_size": 41984, 
+    "service_components": [
+    {
+        "type": "WLS",
+        "version": "12.1.3.0.xxxxxx"
+    },
+    {
+        "type": "OTD",
+        "version": "11.1.1.9.x"
+    },
+    {
+        "type": "OTD_JDK",
+        "version": "1.7.0_xxx"
+    },
+    {
+        "type": "JDK",
+        "version": "1.7.0_xxx"
+    }],  
+    "options": [{
+        "type": "datagrid",
+        "clusters": [{
+            "clusterName": "ExampleDGCluster",
+            "scalingUnitCount": 1,
+            "scalingUnitName": "SMALL",
+            "shape": "oc3",
+            "vmCount": 3,
+            "jvmCount": 1,
+            "heapSize": "4608M",
+            "maxScalingUnit": 10,
+            "heapIncrements": "13824M",
+            "primaryIncrements": "4608M",
+            "totalHeap": "13824M",
+            "totalPrimary": "4608M",
+            "maxHeap": "138240M",
+            "maxPrimary": "46080M",
+            "scalingUnitInstances": [{
+                "servers": [
+                {"name": "MyFirstI_server_3_DG"},
+                {"name": "MyFirstI_server_4_DG"},
+                {"name": "MyFirstI_server_5_DG"}
+                ],
+            "scalingUnitInstanceId": 2,
+            "status": "Ready"
+            }]
+        }]
+    }],
+    "creation_job_id" : "8466",
+    "deletion_job_id": 0,
+    "db_info" : "yourDBServiceInfo",
+    "db_service_name": "yourDBServiceName",
+    "num_ip_reservations" : 6,
+    "wls_admin_url" : "https:\/\/100.111.122.200:7002\/console",
+    "fmw_control_url" : "https:\/\/100.111.122.200:7002\/em",
+    "otd_admin_url" : "https:\/\/100.111.222.333:8989",
+    "sample_app_url": "https:\/\/100.111.222.333\/sample-app\/",
+    "content_url" : "http:\/\/100.111.222.333",
+    "secure_content_url" : "https:\/\/100.111.222.333",
+    "wls_deployment_channel_port": 9001,
+    "psm_plugin_version": "16.x.x-xxx",
+    "compute_site_name": "US000_Z00",
+    "db_associations": [
+    {
+        "db_service_name": "yourDBServiceName",
+        "db_infra": true,
+        "db_connect_string": "yourDBServiceInfo",
+        "pdb_service_name": "PDB1",
+        "db_version": "12.1.0.2"
+    }]
+}
+</pre> 
+  <p class="p"><strong class="ph b">Oracle Cloud Machine:</strong> The following example shows the contents of the response in JSON format on Oracle Cloud Machine.</p> 
+  <pre class="pre codeblock">{
+    "service_name" : "MyFirstInstance",
+    "version" : "12cR3",
+    "wlsVersion" : "12.1.3.0.xxxxxx",
+    "status" : "Running",
+    "error_status_desc": "",
+    "compliance_status": "",
+    "compliance_status_desc": "",
+    "auto_update": "true",    
+    "description" : "My first instance using the REST API.",
+    "identity_domain" : "<em class="ph i">yourTenantName</em>",
+    "creation_time": "Fri Sep 2 15:33:55 UTC 2016",
+    "last_modified_time": "Fri Sep 2 15:33:51 UTC 2016",
+    "created_by" : "<em class="ph i">yourUserName</em>",
+    "service_uri" : "https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/<em class="ph i">yourTenantName</em>\/MyFirstInstance",
+    "domain_name" : "MyDomain",
+    "domain_mode" : "PRODUCTION",
+    "cluster_name" : "MyDomain_Cluster",
+    "num_nodes" : 6,
+    "level" : "PAAS",
+    "subscription_type" : "MONTHLY",
+    "edition" : "SUITE",
+    "shape" : "oc3",
+    "otd_provisioned" : "yes",
+    "otd_shape": "oc3",
+    "otd_storage_size": 41984, 
+    "service_components": [
+    {
+      "type": "JDK",
+      "version": "1.7.0_xxx"
+    },
+    {
+      "type": "OTD_JDK",
+      "version": "1.7.0_xxx"
+    },
+    {
+      "type": "OTD",
+      "version": "11.1.1.9.x"
+    },
+    {
+      "type": "WLS",
+      "version": "12.1.3.0.xxxxxx"
+    }],
+    "options": [{
+        "type": "datagrid",
+        "clusters": [{
+            "clusterName": "ExampleDGCluster",
+            "scalingUnitCount": 1,
+            "scalingUnitName": "SMALL",
+            "shape": "oc3",
+            "vmCount": 3,
+            "jvmCount": 1,
+            "heapSize": "4608M",
+            "maxScalingUnit": 10,
+            "heapIncrements": "13824M",
+            "primaryIncrements": "4608M",
+            "totalHeap": "13824M",
+            "totalPrimary": "4608M",
+            "maxHeap": "138240M",
+            "maxPrimary": "46080M",
+            "scalingUnitInstances": [{
+                "servers": [
+                {"name": "MyFirstI_server_3_DG"},
+                {"name": "MyFirstI_server_4_DG"},
+                {"name": "MyFirstI_server_5_DG"}
+                ],
+            "scalingUnitInstanceId": 2,
+            "status": "Ready"
+            }]
+        }]
+    }],
+    "creation_job_id": "10002",
+    "deletion_job_id": 0,
+    "db_info": "mydbhost:1521\/yourDBInfo",
+    "num_ip_reservations" : 6,
+    "wls_admin_url": "https:\/\/myvmhost:7002\/console",
+    "fmw_control_url": "https:\/\/myvmhost:7002\/em",
+    "otd_admin_url": "https:\/\/mylbhost:8989",
+    "sample_app_url": "https:\/\/mylbhost\/sample-app\/",
+    "content_url": "http:\/\/mylbhost",
+    "secure_content_url": "https:\/\/mylbhost",
+    "wls_deployment_channel_port": 9001,
+    "psm_plugin_version": "16.x.x-x-xxx",
+    "compute_site_name": "PRIVATE_SITE",
+    "db_associations": [
+    {
+        "db_connect_string": "mydbhost:1521\/yourDBInfo",
+        "db_infra": true
+    }]
+}
+</pre> 
+ </div> 
+</div></div>
+        </article>
+    </body>
+</html>

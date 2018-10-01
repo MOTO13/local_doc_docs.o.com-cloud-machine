@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>dbaascli netsec config</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="The netsec config subcommand of the dbaascli utility is used to configure Oracle Net encryption and integrity settings." />
+<meta name="dcterms.created" content="2017-06-19T15:22:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Database Cloud Service" />
+<meta name="dcterms.identifier" content="E72994-04" />
+<meta name="dcterms.isVersionOf" content="CSDBI" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-DB17A8B8-692D-4960-ABE3-721C2B1F994B.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-1BF11950-D597-48F0-99F1-B3241C46F791.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSDBI.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSDBI.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSDBI.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-69A5DB14-61F4-4FBA-9C3A-116D04CE8ABF"></a> <span id="PAGE" style="display:none;">165/190</span> <!-- End Header -->
+<h1 id="CSDBI-GUID-69A5DB14-61F4-4FBA-9C3A-116D04CE8ABF" class="sect1">dbaascli netsec config</h1>
+<div>
+<p>The <code class="codeph">netsec config</code> subcommand of the <code class="codeph">dbaascli</code> utility is used to configure Oracle Net encryption and integrity settings.</p>
+<div class="section">
+<p>By default, database deployments on <span>Database Cloud Service</span> are configured to enable native Oracle Net encryption and integrity. You can use the <code class="codeph">netsec config</code> subcommand to change Oracle Net encryption and integrity settings. For detailed information on Oracle Net encryption and integrity, see <span class="q">"Configuring Network Data Encryption and&nbsp;Integrity"</span> in <cite>Oracle Database Security Guide</cite> for Release <a href="http://www.oracle.com/pls/topic/lookup?ctx=db122&amp;id=DBSEG020" target="_blank">12.2</a>, <a href="http://www.oracle.com/pls/topic/lookup?ctx=db121&amp;id=DBSEG020" target="_blank">12.1</a> or <a href="http://www.oracle.com/pls/topic/lookup?ctx=db112&amp;id=ASOAG020" target="_blank">11.2</a>.</p>
+<p>If you only want to configure encryption settings, see <a href="GUID-1BF11950-D597-48F0-99F1-B3241C46F791.htm" title="The netsec config encryption subcommand of the dbaascli utility is used to configure Oracle Net encryption settings.">dbaascli netsec config encryption</a>. If you only to configure integrity settings, see <a href="GUID-E8B9572D-AB84-4D95-BCF1-A7E94F3D019A.htm" title="The netsec config integrity subcommand of the dbaascli utility is used to configure Oracle Net integrity settings.">dbaascli netsec config integrity</a>.</p>
+<p>Execute this command as the <code class="codeph">oracle</code> user.</p>
+<pre dir="ltr">
+dbaascli netsec config 
+  --encryption_methods <span class="italic">algorithm</span>[,<span class="italic">algorithm</span>]... 
+  --encryption_target client|server 
+  --encryption_type accepted|rejected|requested|required 
+  --integrity_clevel accepted|rejected|requested|required 
+  --integrity_methods <span class="italic">algorithm</span>[,<span class="italic">algorithm</span>]... 
+  --integrity_target client|server
+</pre>
+<p>Options of this subcommand are as follows.</p>
+<div class="tblformal" id="GUID-69A5DB14-61F4-4FBA-9C3A-116D04CE8ABF__GUID-046C0A8A-474D-49F9-851C-EF50D1B249E0">
+<table class="cellalignment11" summary="This table describes the options of the dbaascli netsec config subcommand.">
+<thead>
+<tr class="cellalignment2">
+<th class="cellalignment12" id="d45208e96">Option</th>
+<th class="cellalignment13" id="d45208e100">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d45208e106" headers="d45208e96">
+<p><code class="codeph">encryption_methods <span class="codeinlineitalic">algorithm</span>[,<span class="codeinlineitalic">algorithm</span>]...</code></p>
+</td>
+<td class="cellalignment15" headers="d45208e106 d45208e100">
+<p>The <code class="codeph">encryption_methods</code> option is used to specify the encryption algorithm(s). Valid values are: <code class="codeph">AES128</code>, <code class="codeph">AES192</code>, and <code class="codeph">AES256</code>.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d45208e132" headers="d45208e96">
+<p><code class="codeph">encryption_target client|server</code></p>
+</td>
+<td class="cellalignment15" headers="d45208e132 d45208e100">
+<p>The <code class="codeph">encryption_target</code> option is used to specify whether the encryption setting applies to the client or server. Use <code class="codeph">server</code>.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d45208e146" headers="d45208e96">
+<p><code class="codeph">encryption_type accepted|rejected|requested|required</code></p>
+</td>
+<td class="cellalignment15" headers="d45208e146 d45208e100">
+<p>The <code class="codeph">encryption_type</code> option is used to specify the action to take when negotiating encryption.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph">rejected</code>&mdash;Enter this value if you do not elect to enable data encryption, even if required by the client.</p>
+<p>In this scenario, this side of the connection specifies that data encryption is not permitted. If the client side is set to <code class="codeph">required</code>, the connection terminates with error message <code class="codeph">ORA-12650</code>. If the client side is set to <code class="codeph">requested</code>, <code class="codeph">accepted</code> or <code class="codeph">rejected</code>, the connection continues without error and without data encryption enabled.</p>
+</li>
+<li>
+<p><code class="codeph">accepted</code>&mdash;Select this value to enable data encryption if required or requested by the client.</p>
+<p>In this scenario, this side of the connection does not require data encryption, but it is enabled if the client side is set to <code class="codeph">required</code> or <code class="codeph">requested</code>. If the client side is set to <code class="codeph">required</code> or <code class="codeph">requested</code>, and an encryption algorithm match is found, the connection continues without error and with data encryption enabled. If the client side is set to <code class="codeph">required</code> and no algorithm match is found, the connection terminates with error message <code class="codeph">ORA-12650</code>.</p>
+<p>If the client side is set to <code class="codeph">requested</code> and no algorithm match is found, or if the client side is set to <code class="codeph">accepted</code> or <code class="codeph">rejected</code>, the connection continues without error and without data encryption enabled.</p>
+</li>
+<li>
+<p><code class="codeph">requested</code>&mdash;Select this value to enable data encryption if the client permits it.</p>
+<p>In this scenario, this side of the connection specifies that data encryption is desired but not required. Data encryption is enabled if the client side specifies <code class="codeph">accepted</code>, <code class="codeph">requested</code>, or <code class="codeph">required</code>. There must be a matching algorithm available, otherwise data encryption is not enabled. If the client side specifies <code class="codeph">required</code> and there is no matching algorithm, the connection fails.</p>
+</li>
+<li>
+<p><code class="codeph">required</code>&mdash;Select this value to enable data encryption or preclude the connection.</p>
+<p>In this scenario, this side of the connection specifies that data encryption must be enabled. The connection fails if the client side specifies <code class="codeph">rejected</code> or if there is no compatible algorithm.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d45208e246" headers="d45208e96">
+<p><code class="codeph">integrity_clevel accepted|rejected|requested|required</code></p>
+</td>
+<td class="cellalignment15" headers="d45208e246 d45208e100">
+<p>The <code class="codeph">integrity_clevel</code> option is used to specify the checksum level.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph">rejected</code>&mdash;Enter this value if you do not elect to enable data integrity, even if required by the client.</p>
+<p>In this scenario, this side of the connection specifies that data integrity is not permitted. If the client side is set to <code class="codeph">required</code>, the connection terminates with error message <code class="codeph">ORA-12650</code>. If the client side is set to <code class="codeph">requested</code>, <code class="codeph">accepted</code> or <code class="codeph">rejected</code>, the connection continues without error and without data integrity enabled.</p>
+</li>
+<li>
+<p><code class="codeph">accepted</code>&mdash;Select this value to enable data integrity if required or requested by the client.</p>
+<p>In this scenario, this side of the connection does not require data integrity, but it is enabled if the client side is set to <code class="codeph">required</code> or <code class="codeph">requested</code>. If the client side is set to <code class="codeph">required</code> or <code class="codeph">requested</code>, and an integrity algorithm match is found, the connection continues without error and with data integrity enabled. If the client side is set to <code class="codeph">required</code> and no algorithm match is found, the connection terminates with error message <code class="codeph">ORA-12650</code>.</p>
+<p>If the client side is set to <code class="codeph">requested</code> and no algorithm match is found, or if the client side is set to <code class="codeph">accepted</code> or <code class="codeph">rejected</code>, the connection continues without error and without data integrity enabled.</p>
+</li>
+<li>
+<p><code class="codeph">requested</code>&mdash;Select this value to enable data integrity if the client permits it.</p>
+<p>In this scenario, this side of the connection specifies that data integrity is desired but not required. Data integrity is enabled if the client side specifies <code class="codeph">accepted</code>, <code class="codeph">requested</code>, or <code class="codeph">required</code>. There must be a matching algorithm available, otherwise data integrity is not enabled. If the client side specifies <code class="codeph">required</code> and there is no matching algorithm, the connection fails.</p>
+</li>
+<li>
+<p><code class="codeph">required</code>&mdash;Select this value to enable data integrity or preclude the connection.</p>
+<p>In this scenario, this side of the connection specifies that data integrity must be enabled. The connection fails if the client side specifies <code class="codeph">rejected</code> or if there is no compatible algorithm.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d45208e346" headers="d45208e96">
+<p><code class="codeph">integrity_methods <span class="codeinlineitalic">algorithm</span>[,<span class="codeinlineitalic">algorithm</span>]...</code></p>
+</td>
+<td class="cellalignment15" headers="d45208e346 d45208e100">
+<p>The <code class="codeph">integrity_methods</code> option is used to specify the integrity algorithm. Valid values are: <code class="codeph">SHA1</code>, <code class="codeph">SHA256</code>, <code class="codeph">SHA384</code>, and <code class="codeph">SHA512</code>.<code class="codeph">SHA1</code> is the only algorithm supported by Oracle Database 11<span class="italic">g</span>.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d45208e382" headers="d45208e96">
+<p><code class="codeph">integrity_target client|server</code></p>
+</td>
+<td class="cellalignment15" headers="d45208e382 d45208e100">
+<p>The <code class="codeph">integrity_target</code> option is used to specify whether the integrity setting applies to the client or server. Use <code class="codeph">server</code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="GUID-DB17A8B8-692D-4960-ABE3-721C2B1F994B.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="GUID-1BF11950-D597-48F0-99F1-B3241C46F791.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Connecting to an Instance VNC Console</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-07T05:33:13Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine REST API Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E68443-07" />
+<meta name="dcterms.isVersionOf" content="ELUAP" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-91DB5163-DF72-44F2-A08E-FD58BBF6BFAD.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-82519A3B-9046-44B1-B06C-72F8333CB529.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUAP.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-7D04FD96-6C9F-49BC-A2FC-2C840A3C9BA0"></a> <span id="PAGE" style="display:none;">18/40</span> <!-- End Header -->
+<h1 id="ELUAP-GUID-7D04FD96-6C9F-49BC-A2FC-2C840A3C9BA0" class="sect1">Connecting to an Instance VNC Console</h1>
+<div>
+<div class="section">To gain access to a virtual machine's (VM) Virtual Network Computing (VNC) console, a SSH tunnel from the local machine through the API endpoint to the node hosting the VM has to be created. Once the SSH tunnel is created, a VNC client is then launched on the local machine and connects to a specific local port. Each VM's SSH connection has a specific user, port and SSH keys.
+<p>There are two methods of creating the SSH tunnel&mdash;downloading the VNC key information and manually setting up SSH port forwarding, or downloading a JNLP file that creates the SSH connection and starts a VNC client.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-82519A3B-9046-44B1-B06C-72F8333CB529.htm" title="This API enables you to get information for accessing the VNC for the instance, such as VNC/SSH IP address, SSH port, VNC port, SSH user, and SSH private key. This information is used to create an SSH tunnel, which enables a local VNC client to connect to the VM's console.">Get Instance VNC Key</a></p>
+</li>
+<li>
+<p><a href="GUID-C75AB797-233B-4B29-9623-F2FA453B2632.htm" title="This API enables you to download the Java Network Launching Protocol (JNLP) file, also known as Java Web Start (JWS), from the node hosting the instance. You can use this JNLP file to access VNC.">Get JNLP file to Access VNC</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment49">
+<tr>
+<td class="cellalignment59">
+<table class="cellalignment54">
+<tr>
+<td class="cellalignment53"><a href="GUID-91DB5163-DF72-44F2-A08E-FD58BBF6BFAD.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment53"><a href="GUID-82519A3B-9046-44B1-B06C-72F8333CB529.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment61">
+<table class="cellalignment52">
+<tr>
+<td class="cellalignment53"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment53"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

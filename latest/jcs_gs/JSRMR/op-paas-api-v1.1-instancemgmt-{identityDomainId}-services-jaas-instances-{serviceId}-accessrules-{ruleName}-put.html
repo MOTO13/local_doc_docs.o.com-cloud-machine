@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service - Update an Access Rule</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-accessrules-post.html" title="Previous" type="text/html">
+        <link rel="next" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-accessrules-get.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-accessrules-post.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-accessrules-get.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            
+            <header>
+
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li>Tasks</li>
+                    
+                    <li class="active">
+                        
+                        <a href="api-Access%20Rules.html">Access Rules</a>
+                        
+                    </li>
+                    
+                </ol>
+                
+                <p class="draftsubtitle"></p>
+                
+                <h2>Update an Access Rule</h2>
+                <div>
+                    <div class="label label-put text-uppercase">put</div>
+                    <p style="word-break: break-word;"><strong>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/jaas/instances/{serviceId}/accessrules/{ruleName}</strong></p>
+                </div>
+            </header>
+            <section>
+
+                <div class="description">This endpoint is only available on Oracle Public Cloud.<p>Disable, enable, or delete an access rule only. You cannot change the rule details.<p>The access rules that control external communication to the WebLogic Server Administration Console, Fusion Middleware Control, and Load Balancer Console are disabled by default if you did not set <code>enableAdminConsole</code> to <code>true</code> when you provisioned the service instance. To gain access to the administration consoles, you are required to explicitly enable the access rules for them, namely:<ul><li><code>ora_p2admin_ahttps</code> for WebLogic Server Administration Console and Fusion Middleware Control</li><li><code>ora_p2otd_ahttps</code> for Oracle Traffic Director (Load Balancer) Administration Console</li></ul></div>
+
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                        <li role="presentation" class="active"><a href="#request" aria-controls="request" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-in" aria-hidden="true"></span> Request</a></li>
+                        <li role="presentation"><a href="#response" aria-controls="response" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-out" aria-hidden="true"></span> Response</a></li>
+                        
+                        <li role="presentation"><a href="#examples" aria-controls="examples" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-edit" aria-hidden="true"></span> Examples</a></li>
+                        
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="request">
+                            <h3 class="visible-print-block">Request</h3>
+                            
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Path Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>identityDomainId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                        <dt>ruleName</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the access rule to disable or enable.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                        <dt>serviceId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the Oracle Java Cloud Service instance.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+
+                            
+                            
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Header Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>X-ID-TENANT-NAME</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">Body Parameter</div>
+                                <div style="padding-bottom: 0px" class="panel-body">
+                                    
+                                    <div style="margin-bottom: 8px">The request body defines the details of the disable, enable, or delete request.</div>
+                                    
+
+                                    <div class="schema-container">
+                                    
+                                    <div id="request-definitions-updatesecrule-putrequest" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : updatesecrule-putrequest</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-updatesecrule-putrequest-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-updatesecrule-putrequest-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-updatesecrule-putrequest-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-updatesecrule-putrequest-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-updatesecrule-putrequest-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>operation</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Type of operation to perform on the access rule. Valid values are: <code>update</code> (to disable or enable a rule) and <code>delete</code> (to delete a rule).</div>
+
+
+
+            
+        </dd>
+        
+        <dt>status</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>State of the access rule to update to. This attribute is required only when you disable or enable a rule. Valid value is <code>disable</code> or <code>enable</code>.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    </div>
+
+                                    
+                                    
+                                    
+                                    		
+                                </div>
+                            </div>
+                            
+
+
+
+                            
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="response">
+                            <h3 class="visible-print-block">Response</h3>
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">200 Response <span class="glyphicon glyphicon-ok-sign response-symbol" data-response-code="200" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    OK (enable or disable rule). See Root-Schema below.
+                                </div>
+
+                                
+                                
+
+                                
+
+                            </div>
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">202 Response <span class="glyphicon glyphicon-ok-sign response-symbol" data-response-code="202" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    Accepted (delete rule). See <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=jcs_rest_statuscodes'>Status Codes</a> for information about other possible HTTP status codes.
+                                </div>
+
+                                
+                                
+
+                                
+                                <div class="panel panel-default">
+
+                                    <div class="panel-heading">Body</div>
+                                    <div class="panel-body">
+                                        
+
+                                        <div class="schema-container">
+                                        
+                                        <div id="202-definitions-updatesecrule-response" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : updatesecrule-response</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-202-definitions-updatesecrule-response-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-202-definitions-updatesecrule-response-properties" aria-expanded="false" aria-controls="collapseListGroup-202-definitions-updatesecrule-response-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-202-definitions-updatesecrule-response-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-202-definitions-updatesecrule-response-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>description</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Description of the rule.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>destination</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The service component to allow traffic to.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>ports</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Ports for the rule.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>rule</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about rules. This attribute is returned when you delete a rule.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>ruleName</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the rule.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>ruleType</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Type of rule.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>source</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The hosts from which traffic is allowed.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>status</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Status of the rule.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+
+
+                        </div>
+                        
+                        <div role="tabpanel" class="tab-pane fade" id="examples">
+                            <h3>Examples</h3>
+                            <div class="body conbody">
+ <p class="p">The following example shows how to update an access rule by submitting a PUT request on the REST resource using cURL. </p> 
+ <p class="p"><strong class="ph b">Note:</strong> The command in this example uses the URL structure <samp class="ph codeph">https://rest_server_url/<em class="ph i">resource-path</em></samp>, where <samp class="ph codeph">rest_server_url</samp> is the Oracle Public Cloud REST server to contact for your identity domain. See <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a> for the appropriate URL structure to use for Oracle Public Cloud.</p> 
+ <div class="section">
+  <h3 class="title sectiontitle">cURL Command</h3>
+  <pre class="pre">curl -i -X PUT -u username:userPassword1! -d @updaterule.json -H "Content-Type:application/json" -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/api/v1.1/instancemgmt/ExampleIdentityDomain/services/jaas/instances/ExampleInstance/accessrules/my_corp_vnc</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Request Body (Disable a Rule)</h3>
+  <p class="p">The following shows an example of the request body in JSON format for disabling a rule.</p> 
+  <pre class="pre">{
+    "operation":"update",
+    "status":"disabled"
+}</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Request Body (Enable a Rule)</h3>
+  <p class="p">The following shows an example of the request body in JSON format for enabling a rule.</p> 
+  <pre class="pre">{
+    "operation":"update",
+    "status":"enabled"
+}</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Request Body (Delete a Rule)</h3>
+  <p class="p">The following shows an example of the request body in JSON format for deleting a rule.</p> 
+  <pre class="pre">{
+    "operation":"delete"
+}</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Header (Disable or Enable a Rule)</h3>
+  <p class="p">The following shows an example of the response header when you disable or enable a rule.</p> 
+  <pre class="pre">HTTP/1.1 200 OK
+Date: Wed, 27 Apr 2016 01:04:03 GMT
+Transfer-Encoding: chunked
+Content-Type: application/json</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Header (Delete a Rule)</h3>
+  <p class="p">The following shows an example of the response header when you delete a rule.</p> 
+  <pre class="pre">HTTP/1.1 202 Accepted
+Date: Wed, 27 Apr 2016 01:09:29 GMT
+Transfer-Encoding: chunked
+Content-Type: application/json</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Body (Disable a Rule)</h3>
+  <p class="p">The following shows an example of the response body when you disable a rule.</p> 
+  <pre class="pre">{  
+    "ruleName": "my_corp_vnc",
+    "description": "corporate to VNC to Admin Server",
+    "ports": "5900",
+    "protocol": "tcp",
+    "status": "disabled",
+    "source": "192.123.45.6/32",
+    "destination": "WLS_ADMIN_SERVER"
+}</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Body (Enable a Rule)</h3>
+  <p class="p">The following shows an example of the response body when you enable a rule.</p> 
+  <pre class="pre">{  
+    "ruleName": "my_corp_vnc",
+    "description": "corporate to VNC to Admin Server",
+    "ports": "5900",
+    "protocol": "tcp",
+    "status": "enabled",
+    "source": "192.123.45.6/32",
+    "destination": "WLS_ADMIN_SERVER"
+}</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Body (Delete a Rule)</h3>
+  <p class="p">The following shows an example of the response body when you delete a rule.</p> 
+  <pre class="pre">{
+    "rule":
+    {
+        "ruleName": "my_corp_vnc",
+        "description": "corporate to VNC to Admin Server",
+        "ports": "5900",
+        "protocol": "tcp",
+        "status": "disabled",
+        "source": "192.123.45.6/32",
+        "destination": "WLS_ADMIN_SERVER"
+    }
+}</pre> 
+ </div> 
+</div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+        </article>
+    </body>
+</html>

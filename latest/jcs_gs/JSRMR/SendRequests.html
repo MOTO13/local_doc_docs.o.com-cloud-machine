@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="Review%20the%20Details%20of%20Your%20First%20Instance.html" title="Previous" type="text/html">
+        <link rel="next" href="Authentication.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="Review%20the%20Details%20of%20Your%20First%20Instance.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="Authentication.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">Send Requests</h2> 
+<div class="body conbody">
+ <p class="shortdesc">Review the following information before sending requests using the Oracle Java Cloud Service REST API.</p> 
+ <div class="section" id="GUID-446D467D-7FD4-45E2-85EB-E617B34D48E8__URLStructure-4AE44A29">
+  <h3 class="title sectiontitle">URL Structure (Oracle Public Cloud)</h3>
+  <p class="p">Access the Oracle Java Cloud Service REST resources using the URL structure:</p> 
+  <pre class="pre">https://<em class="ph i">region-prefix</em>.oraclecloud.com/<em class="ph i">resource-path</em></pre> 
+  <div class="p">
+   Where:
+   <ul class="ul">
+    <li class="li">
+     <div class="p">
+      <samp class="ph codeph"><em class="ph i">region-prefix</em></samp> is the URL prefix based on region. Valid values include: 
+      <ul class="ul">
+       <li class="li"><p class="p">United States: <samp class="ph codeph">jaas</samp></p> <p class="p">For example: <samp class="ph codeph">https://jaas.oraclecloud.com/<em class="ph i">resource-path</em></samp></p> </li> 
+       <li class="li"><p class="p">EMEA (Europe, the Middle East, and Africa): <samp class="ph codeph">jcs.emea</samp></p> <p class="p">For example: <samp class="ph codeph">https://jcs.emea.oraclecloud.com/<em class="ph i">resource-path</em></samp></p> </li> 
+      </ul> 
+     </div> 
+     <div class="p">
+      To find the region value of your URL prefix:
+      <ol class="ol">
+       <li class="li"><p class="p">Sign in to the My Services dashboard for your identity domain.</p> </li> 
+       <li class="li"><p class="p">From the Customize Dashboard dropdown menu, choose Java.</p> </li> 
+       <li class="li"><p class="p">Locate the <strong class="ph b">REST Endpoint</strong> field, which shows the URL to the REST server starting with your region prefix.</p> </li> 
+      </ol> 
+     </div> </li> 
+    <li class="li"><p class="p"><samp class="ph codeph"><em class="ph i">resource-path</em></samp> : Relative path that defines the REST endpoint. For a complete list of REST endpoints, see <a class="xref" href="rest-endpoints.html" target="_blank">All REST Endpoints</a>.</p> </li> 
+   </ul> 
+  </div> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">URL Structure (Oracle Cloud Machine)</h3>
+  <p class="p">Get the complete URL structure for the Oracle Java Cloud Service REST API from your Oracle Cloud Administrator or Tenant Administrator.</p> 
+  <p class="p">Access the Oracle Java Cloud Service REST resources using the URL structure:</p> 
+  <pre class="pre">https://<em class="ph i">my_api_url</em>/<em class="ph i">resource-path</em></pre> 
+  <div class="p">
+   Where:
+   <ul class="ul">
+    <li class="li"><p class="p"><samp class="ph codeph"><em class="ph i">my_api_url</em></samp>: Host name. Get the host name (which may or may not include a port number) from your Oracle Cloud Administrator or Tenant Administrator.</p> </li> 
+    <li class="li"><p class="p"><samp class="ph codeph"><em class="ph i">resource-path</em></samp> : Relative path that defines the REST endpoint. For a complete list of REST endpoints, see <a class="xref" href="rest-endpoints.html" target="_blank">All REST Endpoints</a>.</p> </li> 
+   </ul> 
+  </div> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Supported Methods</h3>
+  <p class="p">Perform basic CRUD operations (create, read, update, and delete) on your Oracle Java Cloud Service instances using standard HTTP method requests.</p> 
+  <div class="p"> 
+   <div class="tablenoborder">
+    <span class="desc tabledesc">This table lists the methods for managing Oracle Java Cloud Service instances using the REST API.</span>
+    <table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all">
+     <thead class="thead" align="left">
+      <tr class="row">
+       <th class="firstcol" valign="top" id="d13462e128">HTTP Method</th> 
+       <th class="entry" valign="top" id="d13462e130">Description</th> 
+      </tr> 
+     </thead> 
+     <tbody class="tbody">
+      <tr class="row">
+       <th class="firstcol" valign="top" id="d13462e134" headers="d13462e128 "><samp class="ph codeph">GET</samp></th> 
+       <td class="entry" valign="top" headers="d13462e134 d13462e130 ">Retrieve information about an Oracle Java Cloud Service instance or a service instance component, for example, a Managed Server.</td> 
+      </tr> 
+      <tr class="row">
+       <th class="firstcol" valign="top" id="d13462e141" headers="d13462e128 "><samp class="ph codeph">POST</samp></th> 
+       <td class="entry" valign="top" headers="d13462e141 d13462e130 ">Create, stop, start, scale out, backup, or restore an Oracle Java Cloud Service instance.</td> 
+      </tr> 
+      <tr class="row">
+       <th class="firstcol" valign="top" id="d13462e147" headers="d13462e128 "><samp class="ph codeph">PUT</samp></th> 
+       <td class="entry" valign="top" headers="d13462e147 d13462e130 ">Delete an Oracle Java Cloud Service instance or update a service instance, for example, scale up a node or apply a patch.</td> 
+      </tr> 
+      <tr class="row">
+       <th class="firstcol" valign="top" id="d13462e153" headers="d13462e128 "><samp class="ph codeph">DELETE</samp></th> 
+       <td class="entry" valign="top" headers="d13462e153 d13462e130 ">Delete an Oracle Java Cloud Service instance component, for example, delete a backup or Managed Server node.</td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+  </div> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Supported Headers</h3>
+  <p class="p">The Oracle Java Cloud Service REST API supports headers that may be passed in the header section of an HTTP request or response.</p> 
+  <div class="p"> 
+   <div class="tablenoborder">
+    <span class="desc tabledesc">This table lists the standard and custom headers that can be passed when using the REST API to manage Oracle Java Cloud Service instances.</span>
+    <table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all">
+     <thead class="thead" align="left">
+      <tr class="row">
+       <th class="firstcol" valign="top" id="d13462e172">Header</th> 
+       <th class="entry" valign="top" id="d13462e174">Description and Example</th> 
+      </tr> 
+     </thead> 
+     <tbody class="tbody">
+      <tr class="row">
+       <th class="firstcol" valign="top" id="d13462e178" headers="d13462e172 "><p class="p"><samp class="ph codeph">Accept-Language</samp></p> </th> 
+       <td class="entry" valign="top" headers="d13462e178 d13462e174 "><p class="p">Set of natural languages that are preferred as a response to a request.</p> <p class="p">Examples:</p> <p class="p"><samp class="ph codeph">Accept-Language:ja</samp></p> <p class="p"><samp class="ph codeph">Accept-Language:da, en-gb;q=0.8, en;q=0.7</samp></p> </td> 
+      </tr> 
+      <tr class="row">
+       <th class="firstcol" valign="top" id="d13462e194" headers="d13462e172 "><p class="p"><samp class="ph codeph">Content-Type</samp></p> </th> 
+       <td class="entry" valign="top" headers="d13462e194 d13462e174 "><p class="p">Media type of the request body. Required for POST and PUT requests.</p> <p class="p">Examples:</p> <p class="p"><samp class="ph codeph">Content-Type:application/json</samp></p> <p class="p"><samp class="ph codeph">Content-Type:application/vnd.com.oracle.oracloud.provisioning.Service+json</samp></p> <p class="p"><samp class="ph codeph">Content-Type:application/vnd.com.oracle.oracloud.datagrid.Service+json</samp></p> <p class="p"><samp class="ph codeph">Content-type:multipart/form-data</samp></p> </td> 
+      </tr> 
+      <tr class="row">
+       <th class="firstcol" valign="top" id="d13462e216" headers="d13462e172 "><p class="p"><samp class="ph codeph">X-ID-TENANT-NAME</samp></p> </th> 
+       <td class="entry" valign="top" headers="d13462e216 d13462e174 "><p class="p">Identity domain ID or tenant name of the Oracle Java Cloud Service instance, must be used for authentication.</p> <p class="p">Examples:</p> <p class="p"><samp class="ph codeph">X-ID-TENANT-NAME:ExampleIdentityDomain</samp></p> <p class="p"><samp class="ph codeph">X-ID-TENANT-NAME:myTenantName</samp></p> </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+  </div> 
+ </div> 
+</div></div>
+        </article>
+    </body>
+</html>

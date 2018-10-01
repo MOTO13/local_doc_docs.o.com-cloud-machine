@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Managing Machine Images</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-07T05:33:13Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine REST API Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E68443-07" />
+<meta name="dcterms.isVersionOf" content="ELUAP" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-25D36D45-7AD2-459D-97FC-DBAF99D23FC0.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-3E374B99-1E54-4435-B541-52526F61E535.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUAP.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1"></a> <span id="PAGE" style="display:none;">22/40</span> <!-- End Header -->
+<h1 id="ELUAP-GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1" class="sect1">Managing Machine Images</h1>
+<div>
+<div class="section">
+<p>A machine image is a hard disk snapshot used to launch a virtual machine instance. The machine image archive must be a single raw disk image (including partition table and kernel) stored at the root of a tar archive and compressed with gzip. All machine images must be based on the Oracle Public Cloud Machine templates. A machine image template can be created only by a Oracle Cloud Administrator. For more information about building machine images and templates, see <span id="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1__USINGORACLECOMPUTECLOUDSERVICE-EF70D0A3"><span class="italic"><a class="olink ELUSE-GUID-0912C100-2A92-4E06-B35E-846D27FE6747" target="_blank" href="../ELUSE/GUID-0912C100-2A92-4E06-B35E-846D27FE6747.htm#ELUSE-GUID-0912C100-2A92-4E06-B35E-846D27FE6747">Using Oracle Compute Cloud Service</a></span></span>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1.htm#GUID-34448BB4-CE6A-429C-9DFB-011E413D660E" title="This API enables you to add a private machine image to the system.">Add Machine Image</a></p>
+</li>
+<li>
+<p><a href="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1.htm#GUID-79C52D99-AF57-4B51-BF56-DCC27C9A8DA0" title="This API enables you to delete a machine image.">Delete Machine Image</a></p>
+</li>
+<li>
+<p><a href="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1.htm#GUID-5242A2D5-730A-481E-9EFD-2AC957B71E74" title="This API enables you to discover a list of machine images present in a specific container.This API enables you to retrieve details of a specified machine image.This API enables you to retrieve details of all machine images in a container.">Retrieve Machine Image Details</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="props_rev_3"><a id="GUID-34448BB4-CE6A-429C-9DFB-011E413D660E"></a>
+<h2 id="ELUAP-GUID-34448BB4-CE6A-429C-9DFB-011E413D660E" class="sect2">Add Machine Image</h2>
+<div>
+<p>This API enables you to add a private machine image to the system.</p>
+<div class="section">
+<p class="subhead2">Method</p>
+<p><code class="codeph">POST</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<div class="p">To add a machine image to the system, two <code class="codeph">POST</code> requests are required:
+<ol>
+<li>
+<p><code class="codeph">POST</code> request to create a machine image object&mdash;This request creates a new machine image object, and returns the URI of this object in the response body.</p>
+</li>
+<li>
+<p><code class="codeph">POST</code> request to upload machine image file&mdash;This request uses the URI returned from the first step, and uploads the corresponding machine image on the system. The machine image file (in tar.gzip format) is passed in the HTTP request with the following headers:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph">Accept:application/oracle-compute-v3+json</code></p>
+</li>
+<li>
+<p><code class="codeph">Accept-Encoding:gzip;q=1.0,identity;q=0.5</code></p>
+</li>
+<li>
+<p><code class="codeph">Content-Type:application/x-tar</code></p>
+</li>
+<li>
+<p><code class="codeph">Content-Length:&lt;length of the machine image file&gt;</code></p>
+</li>
+<li>
+<p><code class="codeph">Content-Range:bytes &lt;filesize in the format {0&ndash;[filesize in bytes&mdash;1]/filesize}&gt;</code></p>
+</li>
+</ul>
+</li>
+</ol>
+<div class="infobox-note" id="GUID-34448BB4-CE6A-429C-9DFB-011E413D660E__GUID-4A84CD86-41DF-42E2-995B-DE5138E4D920">
+<p class="notep1">Note:</p>
+Chunked encoding is not supported.</div>
+</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/machineimage/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/machineimage/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Request Body Parameters</p>
+<div class="tblformal" id="GUID-34448BB4-CE6A-429C-9DFB-011E413D660E__GUID-41F88F14-4AC1-4828-85C6-25CD1AE14870">
+<table class="cellalignment62" summary="This table lists the request body parameters and their descriptions for adding a machine image using API.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d16037e144">Parameter</th>
+<th class="cellalignment64" id="d16037e147">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d16037e152" headers="d16037e144">name</td>
+<td class="cellalignment66" headers="d16037e152 d16037e147">A unique hierarchical name for the machine image. For example, <code class="codeph">/mytenant/public/mymachineimage</code>.</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d16037e160" headers="d16037e144">no_upload</td>
+<td class="cellalignment66" headers="d16037e160 d16037e147">Indicates if the image file is available in the system. This must always be set to <code class="codeph">False</code>.</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d16037e168" headers="d16037e144">attributes</td>
+<td class="cellalignment66" headers="d16037e168 d16037e147">
+<p>(Optional) User-defined parameters that can be passed to an instance of this machine image when it is launched. These parameters are passed as JSON objects. Syntax (key/value pairs): '{ "key1": "value1", "key2": "value2" }'</p>
+<p>For example, you can specify the location of a database server and login details, which are then passed to the machine image during launch.</p>
+<p>For more information on attributes, see <span class="italic"><a class="olink ELUSE-GUID-F7D91076-1736-4B54-89D5-73C23A45BF85" target="_blank" href="../ELUSE/GUID-F7D91076-1736-4B54-89D5-73C23A45BF85.htm#ELUSE-GUID-F7D91076-1736-4B54-89D5-73C23A45BF85">Orchestration Templates</a></span> in <span class="italic">Using Oracle Compute Cloud Service</span>.</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d16037e186" headers="d16037e144">quota</td>
+<td class="cellalignment66" headers="d16037e186 d16037e147">(Optional) &nbsp;The quota against which this image will be created.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example: Add Machine Image</p>
+<p><span class="bold">Part 1 : Create Machine Image Object</span></p>
+<dl class="0.78* 3.22*">
+<dt class="dlterm"><a id="GUID-34448BB4-CE6A-429C-9DFB-011E413D660E__GUID-755361CC-B17A-4820-A30F-FBD2494D9F49"><!-- --></a>Request URI</dt>
+<dd><code class="codeph">POST https://api.oc.example.com/machineimage/</code></dd>
+<dt class="dlterm"><a id="GUID-34448BB4-CE6A-429C-9DFB-011E413D660E__GUID-4CAF57EB-F4DF-43B5-8C92-10A30FAAA8EC"><!-- --></a>Request Body</dt>
+<dd>
+<pre dir="ltr">
+{
+   "name": "/oracle/public/TestImage3", 
+   "sizes": {"total": "3684711429"}, 
+   "no_upload": false,  
+   "attributes": {"type": "linux"}
+}
+</pre></dd>
+<dt class="dlterm"><a id="GUID-34448BB4-CE6A-429C-9DFB-011E413D660E__GUID-A35CA2C0-57B4-48D6-8FEC-3092ED044713"><!-- --></a>Response Body</dt>
+<dd>
+<pre dir="ltr">
+{
+ "account": "/oracle/public", 
+ "name": "/oracle/public/TestImage3", 
+ "sizes": {"uploaded": null, "total": 360, "decompressed": null}, 
+ "signature": "", 
+ "no_upload": false, 
+ "uri": "http://api.oc.example.com/machineimage/oracle/public/TestImage3", 
+ "quota": "/oracle/public/64b1345d-b729-4cbc-a2dc-44a164f2e4a6", 
+ "state": "available", 
+ "signed_by": null, 
+ "file": "http://api.oc.example.com:80/machineimage/oracle/public/TestImage3", 
+ "attributes": {}, 
+ "checksums": {}, 
+ "error_reason": "", 
+ "audited": null
+}
+</pre></dd>
+</dl>
+<p><span class="bold">Part 2: Upload Machine Image Object</span></p>
+<div class="infobox-note" id="GUID-34448BB4-CE6A-429C-9DFB-011E413D660E__GUID-447E386A-5865-48D1-A3E6-26CC31D2F63E">
+<p class="notep1">Note:</p>
+Specifying the machine image file contents differs depending on the tool or language being used to interact with the API. Refer to the documentation for the tool or language you are using for details on how to specify the file contents.</div>
+<dl class="0.78* 3.22*">
+<dt class="dlterm"><a id="GUID-34448BB4-CE6A-429C-9DFB-011E413D660E__GUID-B061CC04-D4F3-4428-ADD6-54197D0F4FE0"><!-- --></a>Request URI</dt>
+<dd><code class="codeph">POST http://api.oc.example.com:80/machineimage/oracle/public/TestImage3</code></dd>
+<dt class="dlterm"><a id="GUID-34448BB4-CE6A-429C-9DFB-011E413D660E__GUID-8F191B6C-47A2-4971-A925-BA1D34B9877F"><!-- --></a>Request Headers</dt>
+<dd>
+<pre dir="ltr">
+Accept:application/oracle-compute-v3+json
+Accept-Encoding:gzip;q=1.0,identity;q=0.5
+Content-Type:application/x-tar
+Content-Length:3684711429
+Content-Range:bytes bytes 0-3684711428/3684711439
+</pre></dd>
+</dl>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example: Add Machine Image using cURL</p>
+<div class="p">
+<div class="infobox-note" id="GUID-34448BB4-CE6A-429C-9DFB-011E413D660E__GUID-544181AC-46A6-49CE-98FC-810A6D61EA36">
+<p class="notep1">Note:</p>
+For more information on cURL, see <a href="GUID-A06DABC3-C214-455A-9264-9946B712FD8E.htm#GUID-1F5C6A8F-DF05-440B-8AFF-914628330700" title="You can interact with the REST API of Oracle Compute Cloud Service by sending HTTP requests to the appropriate resource URIs. Several tools are available for making REST API calls, including clients that are extensions or plug-ins for popular browsers. cURL is a command-line tool that you can use to construct and send HTTP requests. This topic illustrates how to use cURL to send REST API calls to Oracle Compute Cloud Service.">Invoking REST API Calls Using cURL</a>.</div>
+</div>
+<dl class="0.78* 3.22*">
+<dt class="dlterm"><a><!-- --></a>Authentication</dt>
+<dd><code class="codeph">$ curl -c /tmp/cookie -X POST -H "Content-Type: text/plain" -d '{"result": null, "password": "abc123", "uri": null, "user": "/mytenant/myuser"}' http://api.oc.example.com/authenticate/</code></dd>
+<dt class="dlterm"><a><!-- --></a>First POST</dt>
+<dd>
+<pre dir="ltr">
+$curl -v -b /tmp/cookie -X POST -H "Content-Type: application/oracle-compute-v3+json" -d '
+{"name": "/oracle/public/TestImage3", "sizes": {"total" : 376857280 }, "no_upload": false, 
+"attributes": {"type": "linux"}}' http://api.oc.example.com/machineimage/
+</pre></dd>
+<dt class="dlterm"><a id="GUID-34448BB4-CE6A-429C-9DFB-011E413D660E__GUID-BEE350DD-F3DC-4C3B-BF9F-D6D00668FD21"><!-- --></a>Second POST</dt>
+<dd>
+<pre dir="ltr">
+$ curl -v -b /tmp/cookie -X POST -H "Expect: " -H "Accept-Encoding: gzip;q=1.0, identity; q=0.5" -H 
+"Accept: application/oracle-compute-v3+json" -H "Content-Range: bytes 0-376857279/376857280"
+-H "Content-Type: application/x-tar" --data-binary "@MACHINE_IMAGE.tar.gz" 
+http://api.oc.example.com/machineimage/oracle/public/TestImage3
+</pre></dd>
+</dl>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-79C52D99-AF57-4B51-BF56-DCC27C9A8DA0"></a>
+<h2 id="ELUAP-GUID-79C52D99-AF57-4B51-BF56-DCC27C9A8DA0" class="sect2">Delete Machine Image</h2>
+<div>
+<p>This API enables you to delete a machine image.</p>
+<div class="section">You can delete only those private machine images that you have created.</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Method</p>
+<p><code class="codeph">DELETE</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/machineimage/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/machineimage/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI Parameter</p>
+<div class="tblformal" id="GUID-79C52D99-AF57-4B51-BF56-DCC27C9A8DA0__GUID-E95E47DA-1A6A-47A3-B59D-373E5AE7EF3D">
+<table class="cellalignment62" summary="This table specifies the URI parameter and description for deleting a machine image using API.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d16037e323">Parameter</th>
+<th class="cellalignment64" id="d16037e326">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d16037e331" headers="d16037e323">name</td>
+<td class="cellalignment66" headers="d16037e331 d16037e326">A unique hierarchical name for the machine image. For example, <code class="codeph">/mytenant/public/mymachineimage</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p><code class="codeph">https://api.oc.example.com/machineimage/mytenant/public/webserver-20130912</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-5242A2D5-730A-481E-9EFD-2AC957B71E74"></a>
+<h2 id="ELUAP-GUID-5242A2D5-730A-481E-9EFD-2AC957B71E74" class="sect2">Retrieve Machine Image Details</h2>
+<div>
+<div class="section">You can view machine image details by using the REST API.</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1.htm#GUID-E64EC663-159C-4E8C-9DCD-0B3F38C1F7B9" title="This API enables you to discover a list of machine images present in a specific container.">Discover Machine Images</a></p>
+</li>
+<li>
+<p><a href="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1.htm#GUID-54D0A071-CC72-498C-90F8-1725D0341FE6" title="This API enables you to retrieve details of a specified machine image.">Get Machine Image</a></p>
+</li>
+<li>
+<p><a href="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1.htm#GUID-22E2257E-1246-4A21-B172-93AA1526C809" title="This API enables you to retrieve details of all machine images in a container.">List Machine Images</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="props_rev_3"><a id="GUID-E64EC663-159C-4E8C-9DCD-0B3F38C1F7B9"></a>
+<h3 id="ELUAP-GUID-E64EC663-159C-4E8C-9DCD-0B3F38C1F7B9" class="sect3">Discover Machine Images</h3>
+<div>
+<p>This API enables you to discover a list of machine images present in a specific container.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-E64EC663-159C-4E8C-9DCD-0B3F38C1F7B9__GUID-063B2442-8A69-4814-ACE1-1F094DFE23F4">
+<p class="notep1">Note:</p>
+The discover API calls display the names of the objects in the specified container, not the details about the objects. To list the names of the objects, you must set the <code class="codeph">Accept</code> header to <code class="codeph">application/oracle-compute-v3+directory+json</code>. For all other purposes, you must set the <code class="codeph">Accept</code> header to <code class="codeph">application/oracle-compute-v3+json</code>.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Method</p>
+<p><code class="codeph">GET</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">REST Resource</p>
+<p><code class="codeph">/machineimage/<span class="variable">container</span>/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/machineimage/<span class="variable">container</span>/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI Parameter</p>
+<div class="tblformal" id="GUID-E64EC663-159C-4E8C-9DCD-0B3F38C1F7B9__GUID-6D6B744A-AB4B-44AA-886F-8440B0947584">
+<table class="cellalignment62" summary="This table specifies the URI parameter and description for discovering machine images.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d16037e465">Parameter</th>
+<th class="cellalignment64" id="d16037e468">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d16037e473" headers="d16037e465">container</td>
+<td class="cellalignment66" headers="d16037e473 d16037e468">Hierarchical name-space for machine images</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/machineimage/mytenant/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example Response Body</p>
+<pre dir="ltr">
+{"result": ["/mytenant/public/oraclelinux-x64", "/mytenant/public/OL6.6_20GB"]}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-54D0A071-CC72-498C-90F8-1725D0341FE6"></a>
+<h3 id="ELUAP-GUID-54D0A071-CC72-498C-90F8-1725D0341FE6" class="sect3">Get Machine Image</h3>
+<div>
+<p>This API enables you to retrieve details of a specified machine image.</p>
+<div class="section">
+<p class="subhead3">Method</p>
+<p><code class="codeph">GET</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">REST Resource</p>
+<p><code class="codeph">/machineimage/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI</p>
+<p><code class="codeph">https://<code class="codeph">api_endpoint</code>/machineimage/<code class="codeph">name</code></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI Parameter</p>
+<div class="tblformal" id="GUID-54D0A071-CC72-498C-90F8-1725D0341FE6__GUID-55741093-90B3-41A6-93CD-899803C22376">
+<table class="cellalignment62" summary="This table specifies the URI parameter and description for fetching details of a specific machine image.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d16037e545">Parameter</th>
+<th class="cellalignment64" id="d16037e548">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d16037e553" headers="d16037e545">name</td>
+<td class="cellalignment66" headers="d16037e553 d16037e548">A unique hierarchical name for the machine image. For example, <code class="codeph">/mytenant/public/mymachineimage</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/machineimage/oracle/public/linux6_16.1.2_64</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example Response Body</p>
+<pre dir="ltr">
+{
+"account": null, 
+"name": "/oracle/public/linux6_16.1.2_64", 
+"sizes": {"uploaded": 1572050349, "total": 1572050349, "decompressed": 11811160064}, 
+"signature": null, 
+"no_upload": false, 
+"uri": "https://api/machineimage/oracle/public/linux6_16.1.2_64", 
+"quota": null, 
+"state": "available", 
+"signed_by": null, 
+"file": "https://api:444/machineimage/oracle/public/linux6_16.1.2_64", 
+"attributes": {}, 
+"checksums": null, 
+"error_reason": null, 
+"audited": null
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-22E2257E-1246-4A21-B172-93AA1526C809"></a>
+<h3 id="ELUAP-GUID-22E2257E-1246-4A21-B172-93AA1526C809" class="sect3">List Machine Images</h3>
+<div>
+<p>This API enables you to retrieve details of all machine images in a container.</p>
+<div class="section">
+<p class="subhead3">Method</p>
+<p><code class="codeph">GET</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">REST Resource</p>
+<p><code class="codeph">/machineimage/<span class="variable">container</span>/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/machineimage/<span class="variable">container</span>/?quota=<span class="variable">quotaValue</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI Parameters</p>
+<div class="tblformal" id="GUID-22E2257E-1246-4A21-B172-93AA1526C809__GUID-6D6B744A-AB4B-44AA-886F-8440B0947584">
+<table class="cellalignment62" summary="This table specifies the URI parameters and description for listing machine images.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d16037e632">Parameter</th>
+<th class="cellalignment64" id="d16037e635">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d16037e640" headers="d16037e632">container</td>
+<td class="cellalignment66" headers="d16037e640 d16037e635">Hierarchical name-space for machine images</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d16037e645" headers="d16037e632">quota=<span class="variable">quotaValue</span></td>
+<td class="cellalignment66" headers="d16037e645 d16037e635">(Optional) Quota associated with the image</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example URI</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p><code class="codeph">https://api.oc.example.com/mytenant</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example Response Body</p>
+<pre dir="ltr">
+{
+"result": [
+{
+   "account": "/mytenant/cloud_storage", 
+   "name": "/mytenant/public/oraclelinux-x64", 
+   "sizes": {
+    "uploaded": 1853334188, 
+    "total": 1853334188, 
+    "decompressed": 22020096000
+   }, 
+   "uri": "http://api.oc.example.com/machineimage/mytenant/public/oraclelinux-x64", 
+   "quota": null, 
+   "no_upload": true, 
+   "state": "available", 
+   "signed_by": null, 
+   "file": "http://api.oc.example.com/machineimage/mytenant/public/oraclelinux-x64", 
+   "signature": "", 
+   "checksums": {}, 
+   "attributes": {}, 
+   "error_reason": "", 
+   "audited": null
+},
+{
+  "account": "/mytenant/cloud_storage",
+  "name": "/mytenant/public/OL6.6_20GB",
+  "sizes": {
+    "uploaded": 1545137187,
+    "total": 1545137187,
+    "decompressed": 21474836480
+  },
+  "signature": "",
+  "no_upload": true,
+  "uri": "https://api.oc.example.com/machineimage/mytenant/public/OL6.6_20GB",
+  "quota": "/mytenant/4123456f-e94g-39e1-ac96-ef23a930692e",
+  "state": "available",
+  "signed_by": null,
+  "file": "https://api.oc.com/machineimage/mytenant/public/OL6.6_20GB",
+  "attributes": {},
+  "checksums": {},
+  "error_reason": "",
+  "audited": null
+}
+]
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment49">
+<tr>
+<td class="cellalignment59">
+<table class="cellalignment54">
+<tr>
+<td class="cellalignment53"><a href="GUID-25D36D45-7AD2-459D-97FC-DBAF99D23FC0.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment53"><a href="GUID-3E374B99-1E54-4435-B541-52526F61E535.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment61">
+<table class="cellalignment52">
+<tr>
+<td class="cellalignment53"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment53"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

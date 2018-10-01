@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Configuring Basic Information Properties</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can enter a name and description on the Basic Info page of each trigger and invoke adapter in your integration." />
+<meta name="dcterms.created" content="2017-03-02T11:32:56Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Integration Cloud Service" />
+<meta name="dcterms.identifier" content="E67461-04" />
+<meta name="dcterms.isVersionOf" content="ICSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-C347192C-EC09-43CB-8988-F87B35CEF268.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-92CE8884-ABF4-4377-B814-F30A65E2ED76.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-D1BCD094-7FBD-4BFC-A82B-CF6C090AFE4F"></a> <span id="PAGE" style="display:none;">69/116</span> <!-- End Header -->
+<h1 id="ICSUG-GUID-D1BCD094-7FBD-4BFC-A82B-CF6C090AFE4F" class="sect1">Configuring Basic Information Properties</h1>
+<div>
+<p>You can enter a name and description on the Basic Info page of each trigger and invoke adapter in your integration.</p>
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-D1BCD094-7FBD-4BFC-A82B-CF6C090AFE4F.htm#GUID-B73E6866-6766-4BA3-BC66-213F6854C2D0" title="You can specify the following values on the Basic Info page. The Basic Info page is the initial wizard page that is displayed whenever you drag an adapter to the trigger (source) or invoke (target) area supported by your adapter.">What You Can Do from the Basic Info Page</a></p>
+</li>
+<li>
+<p><a href="GUID-D1BCD094-7FBD-4BFC-A82B-CF6C090AFE4F.htm#GUID-5BF2617C-51FF-4B46-A0C2-E2CD7E5C8DCD" title="The following table describes the key information on the Basic Info page.">What You See on the Basic Info Page</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-B73E6866-6766-4BA3-BC66-213F6854C2D0"></a>
+<h2 id="ICSUG-GUID-B73E6866-6766-4BA3-BC66-213F6854C2D0" class="sect2">What You Can Do from the Basic Info Page</h2>
+<div>
+<p>You can specify the following values on the Basic Info page. The Basic Info page is the initial wizard page that is displayed whenever you drag an adapter to the trigger (source) or invoke (target) area supported by your adapter.</p>
+<ul>
+<li><span>Specify a meaningful name.</span></li>
+<li><span>Specify a description of the responsibilities.</span></li>
+</ul>
+</div>
+</div>
+<div class="sect2"><a id="GUID-5BF2617C-51FF-4B46-A0C2-E2CD7E5C8DCD"></a>
+<h2 id="ICSUG-GUID-5BF2617C-51FF-4B46-A0C2-E2CD7E5C8DCD" class="sect2">What You See on the Basic Info Page</h2>
+<div>
+<p>The following table describes the key information on the Basic Info page.</p>
+<div class="section">
+<div class="tblformal" id="GUID-5BF2617C-51FF-4B46-A0C2-E2CD7E5C8DCD__GUID-2F7D5ADB-0AB7-4A39-AEA6-CA1A638FCF38">
+<table class="cellalignment367" summary="Descriptions and usage of elements on the Basic Info page.">
+<thead>
+<tr class="cellalignment355">
+<th class="cellalignment368" id="d32397e104">Element</th>
+<th class="cellalignment368" id="d32397e106">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e110" headers="d32397e104">
+<p><span class="bold">What do you want to call your endpoint?</span></p>
+</td>
+<td class="cellalignment355" headers="d32397e110 d32397e106">
+<div class="p">Provide a meaningful name so that others can understand the responsibilities of this connection. You can include English alphabetic characters, numbers, underscores, and dashes in the name. You cannot include the following:
+<ul style="list-style-type: disc;">
+<li>
+<p>Blank spaces (for example, <code class="codeph">My Inbound Connection</code>)</p>
+</li>
+<li>
+<p>Special characters (for example,&nbsp; <code class="codeph">#;83&amp;</code> or <code class="codeph">righ(t)now4</code>)</p>
+</li>
+<li>
+<p>Multibyte characters</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e137" headers="d32397e104">
+<p><span class="bold">What does this endpoint do?</span></p>
+</td>
+<td class="cellalignment355" headers="d32397e137 d32397e106">
+<p>Enter an optional description of the connection&rsquo;s responsibilities. For example: <code class="codeph">This connection receives an inbound request to synchronize account information with the cloud application.</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+<div class="sect3"><a id="GUID-4D5C949F-620B-4F5F-BEEB-917C25B56537"></a>
+<h3 id="ICSUG-GUID-4D5C949F-620B-4F5F-BEEB-917C25B56537" class="sect3">Where to Go Next</h3>
+<div>
+<p>The following table describes where to go after completing the Basic Info page.</p>
+<div class="section">
+<div class="p">See the following section based on the direction of the connection you are creating.
+<div class="infobox-note" id="GUID-4D5C949F-620B-4F5F-BEEB-917C25B56537__GUID-BFDB09FC-D0CE-42BE-AA07-284AC6320E20">
+<p class="notep1">Note:</p>
+The Oracle REST adapter has its own unique Basic Info page. References to that page are provided in the following table.</div>
+</div>
+<div class="tblformal" id="GUID-4D5C949F-620B-4F5F-BEEB-917C25B56537__GUID-E10B533F-949E-4EF1-BA4F-3348D36D14D5">
+<table class="cellalignment364">
+<thead>
+<tr class="cellalignment355">
+<th class="cellalignment368" id="d32397e181">If Configuring this Connection...</th>
+<th class="cellalignment368" id="d32397e183">As a Source...</th>
+<th class="cellalignment368" id="d32397e185">As a Target...</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e189" headers="d32397e181">
+<p>Oracle RightNow Cloud</p>
+</td>
+<td class="cellalignment355" headers="d32397e189 d32397e183">
+<p><a href="GUID-766E1367-962F-4D5B-9B05-135AF579DDC6.htm#GUID-766E1367-962F-4D5B-9B05-135AF579DDC6" title="Enter the Oracle RightNow Cloud trigger request values for your integration. The values you specify start the integration.">Configuring Oracle RightNow Cloud Source Request Properties</a></p>
+</td>
+<td class="cellalignment355" headers="d32397e189 d32397e185">
+<p><a href="GUID-95B60A76-51CB-4B0A-9CDA-1F595FB4D71E.htm#GUID-95B60A76-51CB-4B0A-9CDA-1F595FB4D71E" title="Enter the Oracle RightNow Cloud invoke operation values for your integration.">Configuring Oracle RightNow Cloud Target Operations Properties</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e209" headers="d32397e181">
+<p>Oracle Sales Cloud</p>
+</td>
+<td class="cellalignment355" headers="d32397e209 d32397e183">
+<p><a href="GUID-0AA991DC-24CC-4A3D-8310-C5430956EFC2.htm#GUID-0AA991DC-24CC-4A3D-8310-C5430956EFC2" title="Enter the Oracle Sales Cloud connection trigger request values for your integration. The values you specify start the integration.">Configuring Oracle Sales Cloud Source Request Properties</a></p>
+</td>
+<td class="cellalignment355" headers="d32397e209 d32397e185">
+<p><a href="GUID-46A89D9E-2D1E-45B0-B797-880D36C6446B.htm#GUID-46A89D9E-2D1E-45B0-B797-880D36C6446B" title="Enter the Oracle Sales Cloud invoke operation values for your integration.">Configuring Oracle Sales Cloud Target Operations Properties</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e229" headers="d32397e181">
+<p>Oracle HCM Cloud</p>
+</td>
+<td class="cellalignment355" headers="d32397e229 d32397e183">
+<p><a href="GUID-4CE0BA8B-D4CD-46BA-BF80-9F8732469B48.htm#GUID-4CE0BA8B-D4CD-46BA-BF80-9F8732469B48" title="Enter the Oracle HCM Cloud trigger request values for your integration. The values you specify start the integration.">Configuring Oracle HCM Cloud Source Request Properties</a></p>
+</td>
+<td class="cellalignment355" headers="d32397e229 d32397e185">
+<p><a href="GUID-8B811326-EF94-4F56-800E-3290072F74AD.htm#GUID-8B811326-EF94-4F56-800E-3290072F74AD" title="Enter the Oracle HCM Cloud invoke operation values for your integration.">Configuring Oracle HCM Cloud Target Operation Properties</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e249" headers="d32397e181">
+<p>Oracle ERP Cloud</p>
+</td>
+<td class="cellalignment355" headers="d32397e249 d32397e183">
+<p><a href="GUID-0EEEF200-64AE-470C-86AC-063BCC72D3ED.htm#GUID-0EEEF200-64AE-470C-86AC-063BCC72D3ED" title="Enter the Oracle ERP Cloud connection trigger request values for your integration. The values you specify start the integration.">Configuring Oracle ERP Cloud Trigger Request Properties</a></p>
+</td>
+<td class="cellalignment355" headers="d32397e249 d32397e185">
+<p><a href="GUID-A6D97799-3DE6-48F5-9ACE-A2142E83FFE2.htm#GUID-A6D97799-3DE6-48F5-9ACE-A2142E83FFE2" title="Enter the Oracle ERP Cloud invoke operation values for your integration.">Configuring Oracle ERP Cloud Invoke Operation Properties</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e267" headers="d32397e181">
+<p>Oracle Eloqua Cloud</p>
+</td>
+<td class="cellalignment355" headers="d32397e267 d32397e183">
+<p>N/A</p>
+</td>
+<td class="cellalignment355" headers="d32397e267 d32397e185">
+<p><a href="GUID-29147179-0170-484F-A2E4-E53E8DF5660C.htm#GUID-29147179-0170-484F-A2E4-E53E8DF5660C" title="Enter the Oracle Eloqua Cloud invoke operation values for your integration.">Configuring Oracle Eloqua Cloud Target Operations Properties</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e282" headers="d32397e181">
+<p>Oracle Messaging Cloud Service</p>
+</td>
+<td class="cellalignment355" headers="d32397e282 d32397e183">
+<p><a href="GUID-CD777515-565A-4899-899D-3A4A661750D0.htm#GUID-CD777515-565A-4899-899D-3A4A661750D0" title="Enter the Oracle Messaging Cloud Service trigger operation values for your integration.">Configuring Oracle Messaging Cloud Service Source Operations Properties</a></p>
+</td>
+<td class="cellalignment355" headers="d32397e282 d32397e185">
+<p><a href="GUID-6AF3756D-F352-46C9-936A-7FB6790510D6.htm#GUID-6AF3756D-F352-46C9-936A-7FB6790510D6" title="Enter the Oracle Messaging Cloud Service invoke operation values for your integration.">Configuring Oracle Messaging Cloud Service Target Operations Properties</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e302" headers="d32397e181">
+<p>Salesforce Cloud</p>
+</td>
+<td class="cellalignment355" headers="d32397e302 d32397e183">
+<p><a href="GUID-90FC9CE0-5D34-47FA-96F1-8C6E47ACAEDF.htm#GUID-90FC9CE0-5D34-47FA-96F1-8C6E47ACAEDF" title="Enter the Salesforce trigger outbound messaging values for your integration.">Configuring Salesforce Trigger Outbound Messaging Properties</a></p>
+</td>
+<td class="cellalignment355" headers="d32397e302 d32397e185">
+<p><a href="GUID-13437EA0-C9A6-47C5-9223-1659B3881DB8.htm#GUID-13437EA0-C9A6-47C5-9223-1659B3881DB8" title="Enter the Salesforce invoke operation values for your integration.">Configuring Oracle Salesforce Target Operations Properties</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e321" headers="d32397e181">
+<p>Oracle CPQ Cloud</p>
+</td>
+<td class="cellalignment355" headers="d32397e321 d32397e183">
+<p><a href="GUID-16999E5C-27CD-4CF4-B6FC-8B92AB807C38.htm#GUID-16999E5C-27CD-4CF4-B6FC-8B92AB807C38" title="View the Oracle CPQ Cloud trigger request values for your integration.">Configuring Oracle CPQ Trigger Request Properties</a></p>
+</td>
+<td class="cellalignment355" headers="d32397e321 d32397e185">
+<p><a href="GUID-83BE009B-D5A6-409D-9856-649B48944CCE.htm#GUID-83BE009B-D5A6-409D-9856-649B48944CCE" title="View and configure the Oracle CPQ Cloud invoke operation values for your integration.">Configuring Oracle CPQ Invoke Operation Properties</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e339" headers="d32397e181">
+<p>Oracle REST Adapter</p>
+</td>
+<td class="cellalignment355" headers="d32397e339 d32397e183">
+<p><a href="GUID-D399B423-D6DF-49DD-92CB-4049CBF89E10.htm#GUID-D399B423-D6DF-49DD-92CB-4049CBF89E10" title="Enter the REST Adapter user name, description, relative resource URI, and endpoint action. You can also select to add query and template parameters or configure a request and/or response for the endpoint.">Configuring REST Adapter Basic Information Properties</a></p>
+</td>
+<td class="cellalignment355" headers="d32397e339 d32397e185">
+<p><a href="GUID-D399B423-D6DF-49DD-92CB-4049CBF89E10.htm#GUID-D399B423-D6DF-49DD-92CB-4049CBF89E10" title="Enter the REST Adapter user name, description, relative resource URI, and endpoint action. You can also select to add query and template parameters or configure a request and/or response for the endpoint.">Configuring REST Adapter Basic Information Properties</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e357" headers="d32397e181">
+<p>NetSuite Adapter</p>
+</td>
+<td class="cellalignment355" headers="d32397e357 d32397e183">
+<p>N/A</p>
+</td>
+<td class="cellalignment355" headers="d32397e357 d32397e185">
+<p><a href="GUID-FC893B1F-B684-4C7C-AB9D-680BA733C7AF.htm#GUID-FC893B1F-B684-4C7C-AB9D-680BA733C7AF" title="Enter the NetSuite Adapter invoke operation values for your integration.">Configuring NetSuite Adapter Invoke Operation Properties</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e371" headers="d32397e181">
+<p>Oracle SOAP Adapter</p>
+</td>
+<td class="cellalignment355" headers="d32397e371 d32397e183">
+<p><a href="GUID-F0B3F848-8786-48F1-9CAB-3B4F0C177FF3.htm#GUID-F0B3F848-8786-48F1-9CAB-3B4F0C177FF3" title="Enter the port type and operation for the SOAP Adapter.">Configuring SOAP Adapter Trigger Operation Properties</a></p>
+</td>
+<td class="cellalignment355" headers="d32397e371 d32397e185">
+<p><a href="GUID-9DAB4E58-5066-48F6-A5AF-9E70EE29F5FE.htm#GUID-9DAB4E58-5066-48F6-A5AF-9E70EE29F5FE" title="Enter the port, operation, and service for the SOAP Adapter.">Configuring SOAP Adapter Invoke Operation Properties</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e390" headers="d32397e181">
+<p>Oracle Siebel Adapter</p>
+</td>
+<td class="cellalignment355" headers="d32397e390 d32397e183">
+<p><a class="olink ICSSI" target="_blank" href="../ICSSI/toc.htm">Using the Oracle Siebel Adapter</a></p>
+</td>
+<td class="cellalignment355" headers="d32397e390 d32397e185">
+<p><a class="olink ICSSI" target="_blank" href="../ICSSI/toc.htm">Using the Oracle Siebel Adapter</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e404" headers="d32397e181">
+<p>Oracle E-Business Suite Adapter</p>
+</td>
+<td class="cellalignment355" headers="d32397e404 d32397e183">
+<p>N/A</p>
+</td>
+<td class="cellalignment355" headers="d32397e404 d32397e185">
+<p><a class="olink ICSEA" target="_blank" href="../ICSEA/toc.htm">Using Oracle E-Business Suite Adapter</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e416" headers="d32397e181">
+<p>SAP Adapter</p>
+</td>
+<td class="cellalignment355" headers="d32397e416 d32397e183">
+<p><a class="olink ICSSA" target="_blank" href="../ICSSA/toc.htm">Using the SAP Adapter</a></p>
+</td>
+<td class="cellalignment355" headers="d32397e416 d32397e185">
+<p><a class="olink ICSSA" target="_blank" href="../ICSSA/toc.htm">Using the SAP Adapter</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e430" headers="d32397e181">
+<p>Google Calendar Adapter</p>
+</td>
+<td class="cellalignment355" headers="d32397e430 d32397e183">
+<p>N/A</p>
+</td>
+<td class="cellalignment355" headers="d32397e430 d32397e185">
+<p><a class="olink ICSGO" target="_blank" href="../ICSGO/toc.htm">Using the Google Calendar Adapter</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e442" headers="d32397e181">
+<p>Google Task Adapter</p>
+</td>
+<td class="cellalignment355" headers="d32397e442 d32397e183">
+<p>N/A</p>
+</td>
+<td class="cellalignment355" headers="d32397e442 d32397e185">
+<p><a class="olink ICSGT" target="_blank" href="../ICSGT/toc.htm">Using the Google Task Adapter</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e454" headers="d32397e181">
+<p>Oracle Database Adapter</p>
+</td>
+<td class="cellalignment355" headers="d32397e454 d32397e183">
+<p><a class="olink ICSSB" target="_blank" href="../ICSSB/toc.htm">Using the Oracle Database Adapter</a></p>
+</td>
+<td class="cellalignment355" headers="d32397e454 d32397e185">
+<p><a class="olink ICSSB" target="_blank" href="../ICSSB/toc.htm">Using the Oracle Database Adapter</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e468" headers="d32397e181">
+<p>Evernote Adapter</p>
+</td>
+<td class="cellalignment355" headers="d32397e468 d32397e183">
+<p>N/A</p>
+</td>
+<td class="cellalignment355" headers="d32397e468 d32397e185">
+<p><a class="olink ICSEN" target="_blank" href="../ICSEN/toc.htm">Using Oracle Evernote Cloud Adapter</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e480" headers="d32397e181">
+<p>Eventbrite Adapter</p>
+</td>
+<td class="cellalignment355" headers="d32397e480 d32397e183">
+<p>N/A</p>
+</td>
+<td class="cellalignment355" headers="d32397e480 d32397e185">
+<p><a class="olink ICSEB" target="_blank" href="../ICSEB/toc.htm">Using the Eventbrite Adapter</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e492" headers="d32397e181">
+<p>LinkedIn Adapter</p>
+</td>
+<td class="cellalignment355" headers="d32397e492 d32397e183">
+<p>N/A</p>
+</td>
+<td class="cellalignment355" headers="d32397e492 d32397e185">
+<p><a class="olink ICSLI" target="_blank" href="../ICSLI/toc.htm">Using the LinkedIn Adapter</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e504" headers="d32397e181">
+<p>Facebook Adapter</p>
+</td>
+<td class="cellalignment355" headers="d32397e504 d32397e183">
+<p>N/A</p>
+</td>
+<td class="cellalignment355" headers="d32397e504 d32397e185">
+<p><a class="olink ICSFB" target="_blank" href="../ICSFB/toc.htm">Using the Facebook Adapter</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e516" headers="d32397e181">
+<p>Gmail Adapter</p>
+</td>
+<td class="cellalignment355" headers="d32397e516 d32397e183">
+<p>N/A</p>
+</td>
+<td class="cellalignment355" headers="d32397e516 d32397e185">
+<p><a class="olink ICSGM" target="_blank" href="../ICSGM/toc.htm">Using the Gmail Adapter</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e529" headers="d32397e181">
+<p>Twitter Adapter</p>
+</td>
+<td class="cellalignment355" headers="d32397e529 d32397e183">
+<p>N/A</p>
+</td>
+<td class="cellalignment355" headers="d32397e529 d32397e185">
+<p><a class="olink ICSTW" target="_blank" href="../ICSTW/toc.htm">Using the Twitter Adapter</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e541" headers="d32397e181">
+<p>Oracle Commerce Adapter Cloud</p>
+</td>
+<td class="cellalignment355" headers="d32397e541 d32397e183">
+<p><a class="olink ICSCC" target="_blank" href="../ICSCC/toc.htm">Using the Oracle Commerce Cloud Adapter</a></p>
+</td>
+<td class="cellalignment355" headers="d32397e541 d32397e185">
+<p><a class="olink ICSCC" target="_blank" href="../ICSCC/toc.htm">Using the Oracle Commerce Cloud Adapter</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e555" headers="d32397e181">
+<p>Microsoft Email Adapter</p>
+</td>
+<td class="cellalignment355" headers="d32397e555 d32397e183">
+<p>N/A</p>
+</td>
+<td class="cellalignment355" headers="d32397e555 d32397e185">
+<p><a class="olink ICSME" target="_blank" href="../ICSME/toc.htm">Using the Microsoft Email Adapter</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e567" headers="d32397e181">
+<p>Microsoft Contact Adapter</p>
+</td>
+<td class="cellalignment355" headers="d32397e567 d32397e183">
+<p>N/A</p>
+</td>
+<td class="cellalignment355" headers="d32397e567 d32397e185">
+<p><a class="olink ICSMT" target="_blank" href="../ICSMT/toc.htm">Using the Microsoft Contact Adapter</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e579" headers="d32397e181">
+<p>Microsoft Calendar Adapter</p>
+</td>
+<td class="cellalignment355" headers="d32397e579 d32397e183">
+<p>N/A</p>
+</td>
+<td class="cellalignment355" headers="d32397e579 d32397e185">
+<p><a class="olink ICSMS" target="_blank" href="../ICSMS/toc.htm">Using the Microsoft Calendar Adapter</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e591" headers="d32397e181">
+<p>MySQL Adapter</p>
+</td>
+<td class="cellalignment355" headers="d32397e591 d32397e183">
+<p>N/A</p>
+</td>
+<td class="cellalignment355" headers="d32397e591 d32397e185">
+<p><a class="olink ICSSQ" target="_blank" href="../ICSSQ/toc.htm">Using the MySQL Adapter</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e603" headers="d32397e181">
+<p>MailChimp Adapter</p>
+</td>
+<td class="cellalignment355" headers="d32397e603 d32397e183">
+<p>N/A</p>
+</td>
+<td class="cellalignment355" headers="d32397e603 d32397e185">
+<p><a class="olink ICSCH" target="_blank" href="../ICSCH/toc.htm">Using the MailChimp Adapter</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e615" headers="d32397e181">
+<p>SurveyMonkey Adapter</p>
+</td>
+<td class="cellalignment355" headers="d32397e615 d32397e183">
+<p>N/A</p>
+</td>
+<td class="cellalignment355" headers="d32397e615 d32397e185">
+<p><a class="olink ICSSM" target="_blank" href="../ICSSM/toc.htm">Using the SurveyMonkey Adapter</a></p>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d32397e627" headers="d32397e181">
+<p>FTP Adapter</p>
+</td>
+<td class="cellalignment355" headers="d32397e627 d32397e183">
+<p><a class="olink ICSFT" target="_blank" href="../ICSFT/toc.htm">Using the FTP Adapter</a></p>
+</td>
+<td class="cellalignment355" headers="d32397e627 d32397e185">
+<p><a class="olink ICSFT" target="_blank" href="../ICSFT/toc.htm">Using the FTP Adapter</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment354">
+<tr>
+<td class="cellalignment361">
+<table class="cellalignment359">
+<tr>
+<td class="cellalignment358"><a href="GUID-C347192C-EC09-43CB-8988-F87B35CEF268.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment358"><a href="GUID-92CE8884-ABF4-4377-B814-F30A65E2ED76.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment363">
+<table class="cellalignment357">
+<tr>
+<td class="cellalignment358"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment358"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment358"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

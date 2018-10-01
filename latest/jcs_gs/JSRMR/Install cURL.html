@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="Obtain%20Account%20Information.html" title="Previous" type="text/html">
+        <link rel="next" href="Create%20the%20Request%20Document.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="Obtain%20Account%20Information.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="Create%20the%20Request%20Document.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">Install cURL</h2> 
+<div class="body conbody">
+ <p class="shortdesc">The examples use the cURL command-line tool to demonstrate how to access the Oracle Java Cloud Service REST API. To connect securely to the REST server, you must install a version of cURL that supports SSL.</p> 
+ <div class="section">
+  <p class="p">To install cURL on your system:</p> 
+  <ol class="ol">
+   <li class="li"><p class="p">In your browser, navigate to the cURL home page at <a class="xref" href="http://curl.haxx.se" target="_blank">http://curl.haxx.se</a> and click <strong class="ph b">Download</strong> in the navigation menu.</p> </li> 
+   <li class="li"><p class="p">On the cURL Releases and Downloads page, locate the SSL-enabled version of the cURL software that corresponds to your operating system. Click the link to download the ZIP file, and extract the executable to the desired folder.</p> </li> 
+  </ol> 
+  <p class="p">When running cURL from a Windows command shell only, you must provide an SSL certificate authority (CA) file or bundle to authenticate against the Verisign CS certificate.</p> 
+  <ol class="ol">
+   <li class="li"><p class="p">Navigate to the cURL CA Extract page at <a class="xref" href="http://curl.haxx.se/docs/caextract.html" target="_blank">http://curl.haxx.se/docs/caextract.html</a> and download the <strong class="ph b">cacert.pem</strong> SSL CA certificate file in the folder where you installed cURL.</p> </li> 
+   <li class="li"><p class="p">Open a command window, navigate to the directory where you installed cURL, and set the cURL environment variable, <samp class="ph codeph">CURL_CA_BUNDLE</samp>, to the location of the SSL CA certificate file. For example, on a Windows system you would enter:</p> <p class="p"><samp class="ph codeph">C:\curl&gt; set CURL_CA_BUNDLE=cacert.pem</samp></p> </li> 
+  </ol> 
+  <p class="p">You are now ready to send REST requests to the Oracle Java Cloud Service instance using cURL. See <a class="xref" href="Authentication.html">Authentication</a>, <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a>, and <a class="xref" href="Use%20cURL.html" title="cURL is an open source, command-line tool for transferring data with URL syntax, supporting various protocols including HTTP and HTTPS.">Use cURL</a>.</p> 
+ </div> 
+</div></div>
+        </article>
+    </body>
+</html>

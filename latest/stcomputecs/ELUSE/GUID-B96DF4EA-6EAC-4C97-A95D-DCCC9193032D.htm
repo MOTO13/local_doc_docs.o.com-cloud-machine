@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>About Instances</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="An instance is a logical representation of a compute resource that has attributes that defines network, storage RAM, and vCPU requirements." />
+<meta name="dcterms.created" content="2018-05-15T07:53:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E62130-11" />
+<meta name="dcterms.isVersionOf" content="ELUSE" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-618A1CE4-8DBC-4795-A7E5-3B5F49D80FFB.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-E9CF1073-8DDC-4262-91D7-9DDF3F856942.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUSE.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-B96DF4EA-6EAC-4C97-A95D-DCCC9193032D"></a> <span id="PAGE" style="display:none;">43/81</span> <!-- End Header -->
+<h1 id="ELUSE-GUID-B96DF4EA-6EAC-4C97-A95D-DCCC9193032D" class="sect1">About Instances</h1>
+<div>
+<p>An instance is a logical representation of a compute resource that has attributes that defines network, storage RAM, and vCPU requirements.</p>
+<p>When an instance is launched, a virtual machine is created and configured based on the instance attributes. During the life of a single instance, many virtual machines are created and destroyed if the instance is shut down and restarted. Storage and network resources allocated when the instance is launched are released only when the instance is deleted. Storage and network resources are not released when the instance is shut down. This enables an instance to be shut down and restarted any number of times, similar to powering off and powering on a physical machine. Each time an instance is shut down the corresponding virtual machine is destroyed and the compute resources it was using (RAM, vCPU) are also released. When the instance is restarted, a new virtual machine is created and configured to use the existing storage and network resources, and new compute resources (RAM, vCPU) are allocated.</p>
+<p>The identity of the instance is also preserved across shutdown or restart boundaries. Instances can only be created or launched through orchestrations. A single orchestration can contain one or more instances, and relationships can be defined among the instances to control their relative placement on the physical hardware. For example, instances that need to share resources or communicate frequently need to be placed on the same node. However, if an application must be highly available, then each instance must be placed on a different node. Once an instance is running, it can be shut down and restarted individually. If an instance is shut down outside the context of the owning orchestration, then the orchestration registers a warning state indicating that an instance it expects to be running was explicitly shut down by a user. If an instance terminates unexpectedly, then the orchestration registers an error state.</p>
+<p>When defining an instance, you can specify the following attributes:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Number of CPUs and RAM in the form of shapes</p>
+</li>
+<li>
+<p>EoIB network for external access</p>
+</li>
+<li>
+<p>IPoIB network for internal communication</p>
+</li>
+<li>
+<p>Service networks</p>
+</li>
+<li>
+<p>Domain Naming System (DNS)</p>
+</li>
+<li>
+<p>NIS</p>
+</li>
+<li>
+<p>Storage volumes</p>
+</li>
+<li>
+<p>SSH keys for passwordless access</p>
+</li>
+<li>
+<p>Attributes</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment95">
+<tr>
+<td class="cellalignment102">
+<table class="cellalignment100">
+<tr>
+<td class="cellalignment99"><a href="GUID-618A1CE4-8DBC-4795-A7E5-3B5F49D80FFB.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment99"><a href="GUID-E9CF1073-8DDC-4262-91D7-9DDF3F856942.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment104">
+<table class="cellalignment98">
+<tr>
+<td class="cellalignment99"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment99"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

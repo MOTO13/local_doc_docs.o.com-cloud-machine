@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Network Management</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-07T05:33:13Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine REST API Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E68443-07" />
+<meta name="dcterms.isVersionOf" content="ELUAP" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-A16DDE28-6E7C-4908-9D16-6D8D54216D01.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-807812AE-1FAE-4F72-9CC3-34E59BF309F8.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUAP.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-8CBE0F4E-E376-4C93-BB56-884836273168"></a> <span id="PAGE" style="display:none;">34/40</span> <!-- End Header -->
+<h1 id="ELUAP-GUID-8CBE0F4E-E376-4C93-BB56-884836273168" class="sect1"><span class="enumeration_chapter">10</span> Network Management</h1>
+<div>
+<div class="section">The Oracle Public Cloud Machine includes compute nodes, a storage appliance, switches, and other components that require connectivity to your network. The network connections allow clients and administrators to use the compute resources remotely, by accessing the IaaS, and PaaS user interfaces and APIs, as well as virtual machines running on compute nodes.
+<div class="p">The following three types of networks are supported:
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Infrastructure service networks</span>: Infrastructure service networks are service networks that are created during the installation process while configuring the <span id="GUID-8CBE0F4E-E376-4C93-BB56-884836273168__EXALOGICELASTICCLOUD-881D7151">Oracle Public Cloud Machine</span>. This network type is managed by Oracle Cloud Administrator. Oracle Cloud Administrator can provide access to specific tenants, like for ZFSSA or OMS access.</p>
+</li>
+<li>
+<p><span class="bold">Service networks</span>: Service networks provide shared services across multiple tenants. The shared services include access to storage, networks, and other engineered systems. The service networks are further classified as public networks (EoIB) and private networks (IPoIB). This network type is created and shared by Oracle Cloud Administrators, and used by tenant administrators and tenant users.</p>
+</li>
+<li>
+<p><span class="bold">Tenant networks</span>: Networks that are assigned exclusively for a specific tenant.&nbsp;Only the instances in that tenant can use this network. The tenant networks are further classified as public networks (EoIB) and private (IPoIB) networks.</p>
+<p>EoIB networks are created by Oracle Cloud Administrators, and used by tenant administrators and tenant users. IPoIB networks are fully managed by tenant administrators and tenant users.</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-807812AE-1FAE-4F72-9CC3-34E59BF309F8.htm#GUID-807812AE-1FAE-4F72-9CC3-34E59BF309F8" title="This API enables you to discover a list of service networks defined within a container. This API enables you to retrieve information for a specific service network.This API enables you to retrieve information for all the service networks within a specific container.">Viewing Service Networks</a></p>
+</li>
+<li>
+<p><a href="GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99.htm#GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99" title="This API enables you to add a virtual Ethernet to the network.This API enables you to delete virtual EthernetThis API enables you to update information for a specific virtual Ethernet.This API enables you to discover virtual Ethernets configured in a specific container.This API enables you to retrieve information for the configured virtual Ethernets in a specific container or subcontainer.">Managing vEthernet</a></p>
+</li>
+<li>
+<p><a href="GUID-4B893928-826E-4227-B82D-00C928C0BD58.htm#GUID-4B893928-826E-4227-B82D-00C928C0BD58" title="This API enables you to add a new virtual network for a tenant.This API enables you to delete an existing vNET entity. You cannot delete a vNET if it is used by any instance, or if there is an existing vNET Reservation associated with the vNET.This API enables you to update information for a specific tenant vNET. This API enables you to discover a list of configured vNETs in a specific container or subcontainer.This API enables you to retrieve information for a specific vNET.This API enables you to retrieve information for all the vNETs in a specific container.">Managing vNET</a></p>
+</li>
+<li>
+<p><a href="GUID-FF435881-D472-44A0-84D9-B72692659D5B.htm#GUID-FF435881-D472-44A0-84D9-B72692659D5B" title="This API enables you to discover a list of vNet Access entities configured in a specific container.This API enables you list information for all the vNet Access entities in a container.This API enables you to retrieve information for a specific vNET access entity in a specific container.">Viewing vNET Access</a></p>
+</li>
+<li>
+<p><a href="GUID-759A67D1-F616-4825-B657-F8A14DDB86ED.htm#GUID-759A67D1-F616-4825-B657-F8A14DDB86ED" title="This API enables you to add new vNET Reservation.This API enables you to delete a specific vNET Reservation.This API enables you to discover all the vNET Reservations listed in a specific container or subcontainer.This API enables you to retrieve information for a specific vNET Reservation.This API enables you to retrieve information for all the vNET Reservations in a specific container.">Managing vNET Reservations</a></p>
+</li>
+<li>
+<p><a href="GUID-348A49EB-2431-46FD-9CB3-8C590E207E9D.htm#GUID-348A49EB-2431-46FD-9CB3-8C590E207E9D" title="This API enables you to discover vCable objects in a specific container.This API enables you to retrieve information for a specific vCable.This API enables you to retrieve information for vCables in a specific container.">Viewing vCables</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment49">
+<tr>
+<td class="cellalignment59">
+<table class="cellalignment54">
+<tr>
+<td class="cellalignment53"><a href="GUID-A16DDE28-6E7C-4908-9D16-6D8D54216D01.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment53"><a href="GUID-807812AE-1FAE-4F72-9CC3-34E59BF309F8.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment61">
+<table class="cellalignment52">
+<tr>
+<td class="cellalignment53"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment53"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

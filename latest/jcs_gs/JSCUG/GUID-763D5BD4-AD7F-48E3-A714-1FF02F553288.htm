@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Monitoring Applications with Java Flight Recorder and Java Mission Control</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can use Oracle&rsquo;s commercial profiling tools, Java Flight Recorder and Java Mission Control, to analyze the performance of applications deployed on Oracle Java Cloud Service." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-75A0CF03-6FB1-4F70-B5C5-762480677EEC.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-0D852E2F-3E75-4425-8D96-EBCBF316FE9D.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-763D5BD4-AD7F-48E3-A714-1FF02F553288"></a> <span id="PAGE" style="display:none;">43/131</span> <!-- End Header -->
+<h1 id="JSCUG-GUID-763D5BD4-AD7F-48E3-A714-1FF02F553288" class="sect1">Monitoring Applications with Java Flight Recorder and Java Mission Control</h1>
+<div>
+<p>You can use Oracle&rsquo;s commercial profiling tools, Java Flight Recorder and Java Mission Control, to analyze the performance of applications deployed on Oracle Java Cloud Service.</p>
+<p>Java Flight Recorder (JFR) and Java Mission Control (JMC) collect detailed runtime information so that you can analyze incidents after they occur. JFR, available in Oracle HotSpot JVM, is a performance monitoring and profiling tool that records diagnostic information on a continuous basis, making it always available, even in the wake of catastrophic failure such as a system crash. JMC enables you to monitor and manage Java applications without introducing the performance overhead normally associated with these types of tools. It includes the JFR user interface, which allows users who are running a Java Flight Recorder-compliant version of Oracle HotSpot to view JVM recordings, current recording settings, and runtime parameters. The JFR interface includes the Events Type View, which gives you direct access to event information that has been recorded in the .jfr file, such as event producers and types, event logging and graphing, event by thread, event stack traces, and event histograms.</p>
+<div class="section">
+<p class="subhead1">Basic Workflow for Profiling Applications with JFR and JMC</p>
+</div>
+<!-- class="section" -->
+<p>Monitoring applications with JFR and JMC comprises these steps:</p>
+<ol>
+<li>
+<p>Enable JFR in your WebLogic Server instance.</p>
+</li>
+<li>
+<p>Obtain the flight recording by generating a diagnostic image capture.</p>
+</li>
+<li>
+<p>Analyze the recording witht he Flight Recorder UI.</p>
+</li>
+</ol>
+<div class="section">
+<p class="subhead1">Enable JFR in Your WebLogic Server Instance</p>
+<p>Because it is a commercial feature, if WebLogic Server is configured with Oracle HotSpot, Java Flight Recorder is, by default, disabled. To enable it, use the following JVM commands in the startup script for the WebLogic Server instance in which the JVM runs:</p>
+<pre dir="ltr">
+-XX:+UnlockCommercialFeatures -XX:+FlightRecorder
+</pre>
+<div class="infobox-note" id="GUID-763D5BD4-AD7F-48E3-A714-1FF02F553288__GUID-2ADD7726-6BFE-48CA-AE60-CD2D85433541">
+<p class="notep1">Note:</p>
+<p>The sequence of these commands is critical: <code class="codeph">+UnlockCommercialFeatures</code> command advises the JVM to recognize the command <code class="codeph">+FlightRecorder</code>. The commands must be entered in that order or the JVM will not start.</p>
+</div>
+<p>For example:</p>
+<pre dir="ltr">
+java <span class="bold">-XX:+UnlockCommercialFeatures -XX:+FlightRecorder</span> -XX:FlightRecorderOptions=defaultrecording=true,maxage=20m MyApp
+</pre>
+<p>You can also enter the <code class="codeph">+UnlockCommercialFeatures</code> and <code class="codeph">+FlightRecorder</code> commands in the WebLogic Server configuration file&rsquo;s <code class="codeph">JAVA_OPTIONS</code> (or equivalent) variable.</p>
+</div>
+<!-- class="section" -->
+<p>For more detailed information on enabling JFR, see <a href="http://www.oracle.com/pls/topic/lookup?ctx=javacomponents&amp;id=JFRRT164" target="_blank">Running Java Flight Recorder</a> in the <span class="italic">Java Platform, Standard Edition Java Flight Recorder Runtime Guide</span>.</p>
+<div class="section">
+<p class="subhead1">Obtain the Flight Recording by Generating a Diagnostic Image Capture</p>
+<p>The diagnostic image capture itself is a single JFR file that contains individual images produced by the different server subsystems. If the JFR file is available, it is included in the diagnostic image as the file <code>FlightRecording.jfr</code>.</p>
+<p>You can generate a diagnostic image capture on-demand &mdash; for example, from the WebLogic Server Administration Console, Fusion Middleware Control, WLST, or a JMX application &mdash; or as the result of an image action. To generate a diagnostic image captures and configure the location in which they are created, see <a class="olink WLDFC150" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=E70959-01&amp;id=WLDFC150">Configuring and Capturing Diagnostic Images</a> in <span class="italic">Oracle&reg; Fusion Middleware Configuring and Using the Diagnostics Framework for Oracle WebLogic Server</span>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Analyze the Recording with the Flight Recorder UI</p>
+<p>Once you&rsquo;ve obtained the recording, you can then view and analyze it by using the Flight Recorder user interface, a JMC component. Assuming you are running a Java Flight Recorder-compliant version of Oracle HotSpot, the JFRUI allows you to view JVM recordings, current recording settings, and runtime parameters. The JFR interface includes the Events Type View, which gives you direct access to event information that has been recorded in the JFR file, such as event producers and types, event logging and graphing, event by thread, event stack traces, and event histograms. Some of the activity you can monitor on the JFR UI includes:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Display Event Data for a Product Subcomponent</p>
+</li>
+<li>
+<p>View the Event Log to Display Details</p>
+</li>
+<li>
+<p>Track Execution Flow by Analyzing an Operative Set</p>
+</li>
+<li>
+<p>Expand the Operative Set and View Correlated Diagnostic Data</p>
+</li>
+</ul>
+<p>Use of the JFR UI for these tasks and more is described in greater detail in <a class="olink WLDFC471" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=E70959-01&amp;id=WLDFC471">Analyzing Java Flight Recorder Data</a> in <span class="italic">Oracle&reg; Fusion Middleware Configuring and Using the Diagnostics Framework for Oracle WebLogic Server</span>.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-75A0CF03-6FB1-4F70-B5C5-762480677EEC.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-0D852E2F-3E75-4425-8D96-EBCBF316FE9D.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

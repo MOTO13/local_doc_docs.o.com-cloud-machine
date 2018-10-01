@@ -1,0 +1,1976 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service - View the Backup Configuration</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-restoredbackups-get.html" title="Previous" type="text/html">
+        <link rel="next" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-restoredbackups-%7BjobId%7D-get.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-restoredbackups-get.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-restoredbackups-%7BjobId%7D-get.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            
+            <header>
+
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li>Tasks</li>
+                    
+                    <li class="active">
+                        
+                        <a href="api-Backups%20and%20Restorations.html">Backups and Restorations</a>
+                        
+                    </li>
+                    
+                </ol>
+                
+                <p class="draftsubtitle"></p>
+                
+                <h2>View the Backup Configuration</h2>
+                <div>
+                    <div class="label label-get text-uppercase">get</div>
+                    <p style="word-break: break-word;"><strong>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/jaas/instances/{serviceId}/backupconfig</strong></p>
+                </div>
+            </header>
+            <section>
+
+                <div class="description">Returns the backup configuration for the Oracle Java Cloud Service. The information includes:<ul><li>Schedule for full and incremental backups</li><li>Date and time of the last successful backup</li><li>Date and time for the next scheduled backup (both full and incremental)</li><li>Default retention time for incremental backups and full on-demand backups; full scheduled backups are retained until their last related incremental backup is no longer available, if any</li><li>State of the backup service for the service instance</li></ul><p>On Oracle Public Cloud, other information includes:<ul><li>Oracle Storage Cloud Service URI and user name for the container used to store backups</li><li>Usage statistics for the Oracle Storage Cloud Service container and backup volume</li></ul><p>On Oracle Cloud Machine, other information includes:<ul><li>NFS URI of the remote storage used to store backups</li><li>Usage statistics for the NFS remote storage and backup volume</li></ul><p>On Oracle Public Cloud, see <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=JSCUG3312' target='_blank'>About Backup and Restoration of Oracle Java Cloud Service Instances</a> in <i>Using Oracle Java Cloud Service</i> for complete information about scheduled automated backups, contents of backups, and where backups are stored. On Oracle Cloud Machine, see <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloudopcm&id=JSCUG3312' target='_blank'>About Backup and Restoration of Oracle Java Cloud Service Instances</a> in <i>Using Oracle Java Cloud Service on OPCM</i>.<p><b>Note:</b> The legacy path <i>/paas/service/jcs/api/v1.1/instances/{identityDomainId}/{serviceId}/backupconfig</i> is deprecated but it will continue to be supported for the near term. However, it is recommended that you migrate your applications to use the new path at your earliest convenience to minimize any disruption in the future when the deprecated URL structure is no longer supported.</div>
+
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                        <li role="presentation" class="active"><a href="#request" aria-controls="request" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-in" aria-hidden="true"></span> Request</a></li>
+                        <li role="presentation"><a href="#response" aria-controls="response" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-out" aria-hidden="true"></span> Response</a></li>
+                        
+                        <li role="presentation"><a href="#examples" aria-controls="examples" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-edit" aria-hidden="true"></span> Examples</a></li>
+                        
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="request">
+                            <h3 class="visible-print-block">Request</h3>
+                            
+
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Path Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>identityDomainId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account (on Oracle Public Cloud).<p>Tenant name for the Oracle Java Cloud Service instance (on Oracle Cloud Machine).</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                        <dt>serviceId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the Oracle Java Cloud Service instance.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+
+                            
+                            
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Header Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>X-ID-TENANT-NAME</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account (on Oracle Public Cloud).<p>Tenant name for the Oracle Java Cloud Service instance (on Oracle Cloud Machine).</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+
+
+                            
+
+
+
+                            
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="response">
+                            <h3 class="visible-print-block">Response</h3>
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">200 Response <span class="glyphicon glyphicon-ok-sign response-symbol" data-response-code="200" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    OK. See <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=jcs_rest_statuscodes'>Status Codes</a> for information about other possible HTTP status codes.
+                                </div>
+
+                                
+                                
+
+                                
+                                <div class="panel panel-default">
+
+                                    <div class="panel-heading">Body</div>
+                                    <div class="panel-body">
+                                        
+                                        <div>The response body includes information about the backup configuration. If specific changes in the backup configuration are requested and successfully completed, the response body shows the updated configuration. Otherwise, the response body shows the existing backup configuration for the service instance.</div>
+                                        
+
+                                        <div class="schema-container">
+                                        
+                                        <div id="200-definitions-backupconfig-response" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : backupconfig-response</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The response body includes information about the backup configuration. If specific changes in the backup configuration are requested and successfully completed, the response body shows the updated configuration. Otherwise, the response body shows the existing backup configuration for the service instance.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-backupconfig-response-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-backupconfig-response-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-backupconfig-response-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-backupconfig-response-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-backupconfig-response-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>backupDestination</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Location of the backups (for <code>PAAS</code> service level instances only).<p>Note the difference between Oracle Public Cloud and Oracle Cloud Machine.<p>On Oracle Public Cloud, this configurable value defaults to <code>BOTH</code> (which means Disk and Oracle Storage Cloud Service Container).<p>On Oracle Cloud Machine, this non-configurable value defaults to Disk and NFS remote storage.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>cloudStorageContainer</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Where service instance backups are stored.<p>On Oracle Public Cloud, this is the URI of the Oracle Storage Cloud Service container.<p>On Oracle Cloud Machine, this is the NFS URI of the remote storage.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>cloudStorageUser</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>User name to access the specified Oracle Storage Cloud Service container. This attribute is only available on Oracle Public Cloud.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>defaultRetention</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Number of days incremental backups and full on-demand backups are retained. If set to <code>null</code>, backups are retained indefinitely or until you manually delete them.<p>Full scheduled backups are retained until their last related incremental backup is no longer available, if any.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>extendedRestoreTypes</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Only value is <code>NONE</code>. This means that restoration of backups is supported only by using a backup ID.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>fullBackupSchedule</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-backupconfig-response-properties-fullBackupSchedule" role="button" class="btn btn-default btn-sm">fullBackupSchedule</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Schedule for the next full backup.</div>
+
+            
+        </dd>
+        
+        <dt>incrementalBackupSchedule</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-backupconfig-response-properties-incrementalBackupSchedule" role="button" class="btn btn-default btn-sm">incrementalBackupSchedule</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Schedule for the next incremental backup.</div>
+
+            
+        </dd>
+        
+        <dt>lastBackupDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time that the last backup completed.<p><b>Note:</b> If there have been no backups, this attribute is omitted. </div>
+
+
+
+            
+        </dd>
+        
+        <dt>lastSuccessfulCleanupDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time that the last successful cleanup job completed. The cleanup job is run after the scheduled backup for the day is completed. The cleanup job purges old records, deletes expired backups or removes expired local copies (that are due to be deleted or removed that day).</div>
+
+
+
+            
+        </dd>
+        
+        <dt>nextFullBackupDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Scheduled date and time for next full backup.<p>On Oracle Public Cloud, this attribute is not available when the state of the backup service is disabled for the service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>nextIncrementalBackupDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Scheduled date and time for next incremental backup.<p>On Oracle Public Cloud, this attribute is not available when the state of the backup service is disabled for the service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>percentBackupVolumeUsed</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Total percent of the backup volume that is currently in use.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>scheduledBackups</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Type of scheduled backups. Only value is <code>ALL</code>. This means both full and incremental scheduled backups are enabled.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>state</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>State of the backup service for the service instance. For example, <code>ENABLED</code> or <code>DISABLED</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>totalBackupVolumeUsed</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Total amount (in GBs) of the backup volume that is currently in use.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>totalBackupVolumeUsedInBytes</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Total amount (in Bytes) of the backup volume that is currently in use.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>totalCloudStorageContainerUsed</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>On Oracle Public Cloud, the total amount (in GBs) of the Storage Cloud Service container space that is currently in use.<p>On Oracle Cloud Machine, the total amount (in GBs) of the NFS remote storage disk that is currently in use.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>totalCloudStorageContainerUsedInBytes</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>On Oracle Public Cloud, the total amount (in Bytes) of the Storage Cloud Service container space that is currently in use.<p>On Oracle Cloud Machine, the total amount (in Bytes) of the NFS remote storage disk that is currently in use.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-backupconfig-response-properties-fullBackupSchedule" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : fullBackupSchedule</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Schedule for the next full backup.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-backupconfig-response-properties-fullBackupSchedule-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-backupconfig-response-properties-fullBackupSchedule-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-backupconfig-response-properties-fullBackupSchedule-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-backupconfig-response-properties-fullBackupSchedule-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-backupconfig-response-properties-fullBackupSchedule-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-backupschedule" role="button" class="btn btn-default btn-sm">backupschedule</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Attributes for <code>fullBackupSchedule</code> and <code>incrementalBackupSchedule</code>.</div>
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-backupconfig-response-properties-incrementalBackupSchedule" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : incrementalBackupSchedule</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Schedule for the next incremental backup.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-backupconfig-response-properties-incrementalBackupSchedule-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-backupconfig-response-properties-incrementalBackupSchedule-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-backupconfig-response-properties-incrementalBackupSchedule-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-backupconfig-response-properties-incrementalBackupSchedule-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-backupconfig-response-properties-incrementalBackupSchedule-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-backupschedule" role="button" class="btn btn-default btn-sm">backupschedule</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Attributes for <code>fullBackupSchedule</code> and <code>incrementalBackupSchedule</code>.</div>
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-backupschedule" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : backupschedule</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Attributes for <code>fullBackupSchedule</code> and <code>incrementalBackupSchedule</code>.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-backupschedule-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-backupschedule-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-backupschedule-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-backupschedule-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-backupschedule-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>dayOfMonth</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Day of the month. This value is not configurable. It defaults to all days of the month (&#42;).</div>
+
+
+
+            
+        </dd>
+        
+        <dt>dayOfWeek</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Day of the week. Valid values are: Mon, Tue, Wed, Thu, Fri, Sat, Sun. For full backups, only one value (day) is allowed. For incremental backups, one or more values (days) are allowed. If a value is not specified for incremental backups, the default value is calculated as all days except the day that full backups are initiated.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>hour</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Hours. Valid values are 0 to 23.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>minute</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Minutes. Valid values are 0 to 59.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>month</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Month. This value is not configurable. It defaults to all months (&#42;).</div>
+
+
+
+            
+        </dd>
+        
+        <dt>second</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Seconds. This value is not configurable. It defaults to 0.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>year</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Year. This value is not configurable. It defaults to all years (&#42;).</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+
+
+                        </div>
+                        
+                        <div role="tabpanel" class="tab-pane fade" id="examples">
+                            <h3>Examples</h3>
+                            <div class="body conbody">
+ <p class="p">The following example shows how to view the backup configuration for an Oracle Java Cloud Service instance by submitting a GET request on the REST resource using cURL.</p> 
+ <p class="p"><strong class="ph b">Note:</strong> The command in this example uses the URL structure <samp class="ph codeph">https://rest_server_url/<em class="ph i">resource-path</em></samp>, where <samp class="ph codeph">rest_server_url</samp> is the Oracle Public Cloud or Oracle Cloud Machine REST server to contact for your identity domain or tenant name. See <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a> for the appropriate URL structure to use on Oracle Public Cloud or Oracle Cloud Machine.</p> 
+ <div class="section">
+  <h3 class="title sectiontitle">cURL Command</h3>
+  <pre class="pre">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/api/v1.1/instancemgmt/ExampleIdentityDomain/services/jaas/instances/ExampleInstance/backupconfig
+</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Header</h3>
+  <p class="p">The following shows an example of the response header:</p> 
+  <pre class="pre">HTTP/1.1 200 OK
+Date: Mon, 20 Jun 2016 16:55:34 GMT
+Transfer-Encoding: chunked
+Content-Type: application/json
+</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Body</h3>
+  <p class="p">The following shows an example of the response returned in JSON format on Oracle Public Cloud.</p> 
+  <pre class="pre">{
+    "state": "ENABLED",
+    "defaultRetention":"30 days",
+    "fullBackupSchedule":
+    {
+        "second":"0",
+        "minute":"20",
+        "hour":"14",
+        "dayOfMonth":"*",
+        "month":"*",
+        "dayOfWeek":"Sat",
+        "year":"*"
+    },
+    "incrementalBackupSchedule":
+    {
+        "second":"0",
+        "minute":"20",
+        "hour":"14",
+        "dayOfMonth":"*",
+        "month":"*",
+        "dayOfWeek":"Sun,Mon,Tue,Wed,Thu,Fri",
+        "year":"*"
+    },
+    "scheduledBackups":"ALL",
+    "extendedRestoreTypes":"NONE",
+    "lastBackupDate":"Mon Jun 20 14:20:00 GMT 2016",
+    "lastSuccessfulCleanupDate":"Mon Jun 20 14:37:29 GMT 2016",
+    "nextFullBackupDate":"Sat Jun 25 14:20:00 GMT 2016",
+    "nextIncrementalBackupDate":"Tue Jun 21 14:20:00 GMT 2016",
+    "backupDestination":"BOTH",
+    "cloudStorageContainer":"Storage-ExampleIdentityDomain\/mybackupcontainer",
+    "cloudStorageUser":"username",
+    "totalCloudStorageContainerUsed":"46.3MB",
+    "totalCloudStorageContainerUsedInBytes":48513508,
+    "totalBackupVolumeUsed":"46.3MB",
+    "totalBackupVolumeUsedInBytes":48513508,
+    "percentBackupVolumeUsed":0.022590864449739456
+}</pre> 
+  <p class="p">On Oracle Cloud Machine, you would see similar output, except you would not see <samp class="ph codeph">cloudStorageUser</samp>, and for <samp class="ph codeph">cloudStorageContainer</samp> you would see the following instead:</p> 
+  <pre class="pre codeblock">    "cloudStorageContainer":"123.34.0.1:\/export\/XYZ\/abcd05\/mybackup",</pre> 
+  <p class="p">The following example shows another response returned in JSON format on Oracle Public Cloud, where the backup service is disabled. </p> 
+  <pre class="pre">{
+    "state": "DISABLED",
+    "defaultRetention":"30 days",
+    "fullBackupSchedule":
+    {
+        "second":"0",
+        "minute":"20",
+        "hour":"14",
+        "dayOfMonth":"*",
+        "month":"*",
+        "dayOfWeek":"Sat",
+        "year":"*"
+    },
+    "incrementalBackupSchedule":
+    {
+        "second":"0",
+        "minute":"20",
+        "hour":"14",
+        "dayOfMonth":"*",
+        "month":"*",
+        "dayOfWeek":"Sun,Mon,Tue,Wed,Thu,Fri",
+        "year":"*"
+    },
+    "scheduledBackups":"ALL",
+    "extendedRestoreTypes":"NONE",
+    "lastBackupDate":"Mon Jun 20 14:20:00 GMT 2016",
+    "lastSuccessfulCleanupDate":"Mon Jun 20 14:37:29 GMT 2016",
+    "backupDestination":"BOTH",
+    "cloudStorageContainer":"Storage-ExampleIdentityDomain\/mybackupcontainer",
+    "cloudStorageUser":"username",
+    "totalCloudStorageContainerUsed":"46.3MB",
+    "totalCloudStorageContainerUsedInBytes":48513508,
+    "totalBackupVolumeUsed":"46.3MB",
+    "totalBackupVolumeUsedInBytes":48513508,
+    "percentBackupVolumeUsed":0.022590864449739456
+}</pre> 
+  <p class="p">On Oracle Cloud Machine, you would see similar output, except you would not see <samp class="ph codeph">cloudStorageUser</samp>, and for <samp class="ph codeph">cloudStorageContainer</samp> you would see the following instead:</p> 
+  <pre class="pre codeblock">    "cloudStorageContainer":"123.34.0.1:\/export\/XYZ\/abcd05\/mybackup",</pre> 
+ </div> 
+</div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+        </article>
+    </body>
+</html>

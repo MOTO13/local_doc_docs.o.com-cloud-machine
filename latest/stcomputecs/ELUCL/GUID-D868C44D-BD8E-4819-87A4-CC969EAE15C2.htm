@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Managing Orchestrations</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-07T05:55:01Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine CLI Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E69222-06" />
+<meta name="dcterms.isVersionOf" content="ELUCL" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-26C605BD-B81A-43A2-AE12-5021CD755271.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-91DB5163-DF72-44F2-A08E-FD58BBF6BFAD.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUCL.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2"></a> <span id="PAGE" style="display:none;">15/40</span> <!-- End Header -->
+<h1 id="ELUCL-GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2" class="sect1">Managing Orchestrations</h1>
+<div>
+<div class="section">
+<p>Orchestration automates the management of your system components for high availability, monitoring, and persistence.</p>
+<p>Orchestration ties together the components that you create into a single, manageable collection.&nbsp;In addition, you can specify the dependencies to control the sequence in which the components are created.&nbsp;For example, you can coordinate the creation of network and storage resources with the creation of the instance and, if high availability is enabled, restart the instance automatically if it terminates unexpectedly.&nbsp;In Oracle Compute Cloud Service, all instances are created using orchestrations.</p>
+<div class="infobox-note" id="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2__GUID-DAC728AA-57BC-4FDE-BB6F-9E475FCBCFD2">
+<p class="notep1">Note:</p>
+Life-cycle commands (such as <code class="codeph">start</code>, <code class="codeph">stop</code>, <code class="codeph">restart</code> etc.) that change the status of an orchestration, return immediately with the status change proceeding on the server side. Orchestration status can be monitored by retrieving the orchestration details.</div>
+<p>For more information about procedures related to orchestrations, see <span class="italic"><a class="olink ELUSE-GUID-F7D91076-1736-4B54-89D5-73C23A45BF85" target="_blank" href="../ELUSE/GUID-F7D91076-1736-4B54-89D5-73C23A45BF85.htm#ELUSE-GUID-F7D91076-1736-4B54-89D5-73C23A45BF85">Orchestration Templates</a></span> in <span class="italic">Using Oracle Compute Cloud Service</span>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-FEBA848E-4902-427B-BC81-564E67C5E414" title="This command enables you to create a new orchestration from a JSON file.">add orchestration</a></p>
+</li>
+<li>
+<p><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-66CA1850-182E-4C5E-9D14-B8CE30B2B937" title="This command enables you to delete a specific orchestration. The orchestration must be stopped to be deleted. No response is returned for the delete action if the command is successful.">delete orchestration</a></p>
+</li>
+<li>
+<p><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-D9432A15-9F07-40A1-81BC-ACBBE73E2A7F" title="This command enables you to download a previously added orchestration to a file. The downloaded orchestration is saved in JSON format. You can later use this file to edit and launch a new orchestration.">download orchestration</a></p>
+</li>
+<li>
+<p><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-F2741C67-74E8-4193-94FC-2F7D7ADA7C1E" title="This command enables you to update information for a specific orchestration.">update orchestration</a></p>
+</li>
+<li>
+<p><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-C1898926-AE40-4163-95C9-4131EE589F2F" title="This command enables you to shut down all VM instance members of an orchestration while preserving the resources used by the instance, such as IP addresses and boot disk contents. If you do not want to preserve these resources, then use stop orchestration. You can shut down orchestrations with a ready or warning status.">shutdown orchestration</a></p>
+</li>
+<li>
+<p><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-17976026-65B5-4D97-A5A3-5ECE1D7394D2" title="This command enables you to restart an orchestration that was previously in shut_down status. You can also restart an orchestration when it is in warning or error status.">restart orchestration</a></p>
+</li>
+<li>
+<p><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-C5F76C65-E4AD-4510-93D1-BF2D26BE3D5C" title="This command enables you to start a specific orchestration. You can start only orchestrations with a stopped status.">start orchestration</a></p>
+</li>
+<li>
+<p><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-39BB64B0-AB78-4A1E-99AD-C29F888278F5" title="This command enables you to stop a specific orchestration. Stopping an orchestration deletes all instances, releasing all resources allocated by the orchestration.. This includes all boot (root) disks and all unreserved IP addresses. It is valid to stop orchestrations with the following statuses: ready, shut_down, warning, and error. You can start the orchestration again, creating new instances and allocating new resources.">stop orchestration</a></p>
+</li>
+<li>
+<p><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-DF823D62-9411-4BC3-A92B-69B91B2ED391" title="This command enables you to retrieve information for a specific orchestration.This command enables you to list a set of orchestrations in a specific container.This command enables you to discover an orchestration within a specific container or subcontainer.">Retrieve Orchestration Details</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-FEBA848E-4902-427B-BC81-564E67C5E414"></a>
+<h2 id="ELUCL-GUID-FEBA848E-4902-427B-BC81-564E67C5E414" class="sect2">add orchestration</h2>
+<div>
+<p>This command enables you to create a new orchestration from a JSON file.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-FEBA848E-4902-427B-BC81-564E67C5E414__GUID-4C6C52E4-6741-4879-A0DE-DF6174C2DCBF">
+<p class="notep1">Note:</p>
+For more information about how to create an orchestration JSON file and the supported attributes, see <span class="italic"><a class="olink ELUSE-GUID-F7D91076-1736-4B54-89D5-73C23A45BF85" target="_blank" href="../ELUSE/GUID-F7D91076-1736-4B54-89D5-73C23A45BF85.htm#ELUSE-GUID-F7D91076-1736-4B54-89D5-73C23A45BF85">Orchestration Templates</a></span> in <span class="italic">Using Oracle Compute Cloud Service</span>.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute add orchestration <span class="variable">filename</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-FEBA848E-4902-427B-BC81-564E67C5E414__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description to add orchestration.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d10165e201">Parameter</th>
+<th class="cellalignment26" id="d10165e203">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d10165e207" headers="d10165e201">filename</td>
+<td class="cellalignment27" headers="d10165e207 d10165e203">Name of an orchestration JSON file containing the configuration of the orchestration</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute add orchestration mytenant_orchest.json</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-66CA1850-182E-4C5E-9D14-B8CE30B2B937"></a>
+<h2 id="ELUCL-GUID-66CA1850-182E-4C5E-9D14-B8CE30B2B937" class="sect2">delete orchestration</h2>
+<div>
+<p>This command enables you to delete a specific orchestration. The orchestration must be stopped to be deleted. No response is returned for the delete action if the command is successful.</p>
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute delete orchestration <span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-66CA1850-182E-4C5E-9D14-B8CE30B2B937__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for deleting orchestration.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d10165e263">Parameter</th>
+<th class="cellalignment26" id="d10165e265">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d10165e269" headers="d10165e263">name</td>
+<td class="cellalignment27" headers="d10165e269 d10165e265">A unique hierarchical name of an orchestration. For example, /mytenant/public/myorch.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">oracle-compute delete orchestration /mytenant/public/myorch</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-D9432A15-9F07-40A1-81BC-ACBBE73E2A7F"></a>
+<h2 id="ELUCL-GUID-D9432A15-9F07-40A1-81BC-ACBBE73E2A7F" class="sect2">download orchestration</h2>
+<div>
+<p>This command enables you to download a previously added orchestration to a file. The downloaded orchestration is saved in JSON format. You can later use this file to edit and launch a new orchestration.</p>
+<div class="section"></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute download orchestration <span class="variable">name</span> [<span class="variable">--filename</span>]</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-D9432A15-9F07-40A1-81BC-ACBBE73E2A7F__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for downloading an orchestration in JSON format.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d10165e331">Parameter</th>
+<th class="cellalignment26" id="d10165e333">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d10165e337" headers="d10165e331">name</td>
+<td class="cellalignment27" headers="d10165e337 d10165e333">A unique hierarchical name of an orchestration. For example, /mytenant/public/myorch.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d10165e342" headers="d10165e331">--filename</td>
+<td class="cellalignment27" headers="d10165e342 d10165e333">(Optional) Name of an orchestration file to which the JSON file will be downloaded. If this parameter is not specified, then a file named with the last part of the orchestration name will be created in the current directory. For example, if the orchestration name is <code class="codeph">/mytenant/public/user1/test-vm</code> and <code class="codeph">--filename</code> is not given, then a file called <code class="codeph">test-vm.json</code> will be created.
+<div class="infobox-note" id="GUID-D9432A15-9F07-40A1-81BC-ACBBE73E2A7F__GUID-187414E1-BF86-458F-A1CD-646C8B0BA97D">
+<p class="notep1">Note:</p>
+For more information about how to create and modify a JSON file, see <span class="italic"><a class="olink ELUSE-GUID-F7D91076-1736-4B54-89D5-73C23A45BF85" target="_blank" href="../ELUSE/GUID-F7D91076-1736-4B54-89D5-73C23A45BF85.htm#ELUSE-GUID-F7D91076-1736-4B54-89D5-73C23A45BF85">Orchestration Templates</a></span> in <span class="italic">Using Oracle Compute Cloud Service</span>.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute download orchestration /mytenant/public/user1/test-vm --filename mytenant_orch.json</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-F2741C67-74E8-4193-94FC-2F7D7ADA7C1E"></a>
+<h2 id="ELUCL-GUID-F2741C67-74E8-4193-94FC-2F7D7ADA7C1E" class="sect2">update orchestration</h2>
+<div>
+<p>This command enables you to update information for a specific orchestration.</p>
+<div class="section">
+<p>You can update any part of an orchestration aside from the name when it is in <code class="codeph">stopped</code> status. When the orchestration is in <code class="codeph">ready</code> status, you can update the <code class="codeph">ha_policy</code> and <code class="codeph">label</code> of an existing oplan in the orchestration. You can also add and remove oplans. Added oplans will be <code class="codeph">started</code>, and removed oplans will be <code class="codeph">stopped</code>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute update orchestration <span class="variable">name</span> [<span class="variable">--filename</span>] [<span class="variable">--oplan_label</span>] [<span class="variable">--ha_policy</span>]</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-F2741C67-74E8-4193-94FC-2F7D7ADA7C1E__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for updating an orchestration.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d10165e450">Parameter</th>
+<th class="cellalignment26" id="d10165e452">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d10165e456" headers="d10165e450">name</td>
+<td class="cellalignment27" headers="d10165e456 d10165e452">A unique hierarchical name of an orchestration. For example, <code class="codeph">/mytenant/public/myorch</code>.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d10165e464" headers="d10165e450">--filename</td>
+<td class="cellalignment27" headers="d10165e464 d10165e452">(Optional) Name of the updated orchestration JSON file containing the configuration of the orchestration.
+<div class="infobox-note" id="GUID-F2741C67-74E8-4193-94FC-2F7D7ADA7C1E__GUID-1F1E5D35-C7D4-4341-8726-0A101714CEBE">
+<p class="notep1">Note:</p>
+For more information about how to create and modify a JSON file, see <span class="italic"><a class="olink ELUSE-GUID-F7D91076-1736-4B54-89D5-73C23A45BF85" target="_blank" href="../ELUSE/GUID-F7D91076-1736-4B54-89D5-73C23A45BF85.htm#ELUSE-GUID-F7D91076-1736-4B54-89D5-73C23A45BF85">Orchestration Templates</a></span> in <span class="italic">Using Oracle Compute Cloud Service</span>.</div>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d10165e479" headers="d10165e450">--oplan_label</td>
+<td class="cellalignment27" headers="d10165e479 d10165e452">(Optional) Label of an object plan (oplan) to update. An oplan is an element within an orchestration defining a specific object creation action.
+<div class="infobox-note" id="GUID-F2741C67-74E8-4193-94FC-2F7D7ADA7C1E__GUID-C96ECFB4-D2B8-47D8-9515-D2EAB0BE8064">
+<p class="notep1">Note:</p>
+You must specify the <code class="codeph">ha_policy</code> parameter when the <code class="codeph">oplan_label</code> parameter is provided.</div>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d10165e492" headers="d10165e450">--ha_policy</td>
+<td class="cellalignment27" headers="d10165e492 d10165e452">(Optional) High availability policy can only be set to <code class="codeph">active</code> (for instances) or <code class="codeph">monitor</code> (for instances and volumes). Attempting to set high availability policy on any other elements results in an error. The default is no high availability.
+<div class="infobox-note" id="GUID-F2741C67-74E8-4193-94FC-2F7D7ADA7C1E__GUID-A937EF1C-1834-4629-8310-7C7147F5C216">
+<p class="notep1">Note:</p>
+You must specify the <code class="codeph">oplan_label</code> parameter when the <code class="codeph">ha_policy</code> parameter is provided.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute update orchestration myorch.json</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-C1898926-AE40-4163-95C9-4131EE589F2F"></a>
+<h2 id="ELUCL-GUID-C1898926-AE40-4163-95C9-4131EE589F2F" class="sect2">shutdown orchestration</h2>
+<div>
+<p>This command enables you to shut down all VM instance members of an orchestration while preserving the resources used by the instance, such as IP addresses and boot disk contents. If you do not want to preserve these resources, then use <code class="codeph">stop orchestration</code>. You can shut down orchestrations with a <code class="codeph">ready</code> or <code class="codeph">warning</code> status.</p>
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute shutdown orchestration <span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-C1898926-AE40-4163-95C9-4131EE589F2F__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for shutting down an orchestration.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d10165e571">Parameter</th>
+<th class="cellalignment26" id="d10165e573">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d10165e577" headers="d10165e571">name</td>
+<td class="cellalignment27" headers="d10165e577 d10165e573">A unique hierarchical name of an orchestration. For example, <code class="codeph">/mytenant/public/myorch</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute shutdown orchestration /mytenant/public/user1/test-vm</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-17976026-65B5-4D97-A5A3-5ECE1D7394D2"></a>
+<h2 id="ELUCL-GUID-17976026-65B5-4D97-A5A3-5ECE1D7394D2" class="sect2">restart orchestration</h2>
+<div>
+<p>This command enables you to restart an orchestration that was previously in <code class="codeph">shut_down</code> status. You can also restart an orchestration when it is in <code class="codeph">warning</code> or <code class="codeph">error</code> status.</p>
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute restart orchestration <span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-17976026-65B5-4D97-A5A3-5ECE1D7394D2__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for restarting an orchestration.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d10165e646">Parameter</th>
+<th class="cellalignment26" id="d10165e648">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d10165e652" headers="d10165e646">name</td>
+<td class="cellalignment27" headers="d10165e652 d10165e648">A unique hierarchical name of an orchestration. For example, <code class="codeph">/mytenant/public/myorch</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute restart orchestration /mytenant/public/user1/test-vm</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-C5F76C65-E4AD-4510-93D1-BF2D26BE3D5C"></a>
+<h2 id="ELUCL-GUID-C5F76C65-E4AD-4510-93D1-BF2D26BE3D5C" class="sect2">start orchestration</h2>
+<div>
+<p>This command enables you to start a specific orchestration. You can start only orchestrations with a <code class="codeph">stopped</code> status.</p>
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute start orchestration <span class="variable">name</span></code></p>
+<p>Starting an orchestration creates all of the objects defined in the orchestration. The status of the orchestration changes over time. You can view the details of the orchestration to see the status as the orchestration progresses. The <code class="codeph">start</code> command returns the response immediately; however the start operation continues on the server. The start operation is completed only when the orchestration status reaches the <code class="codeph">ready</code> status.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-C5F76C65-E4AD-4510-93D1-BF2D26BE3D5C__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for starting an orchestration.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d10165e723">Parameter</th>
+<th class="cellalignment26" id="d10165e725">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d10165e729" headers="d10165e723">name</td>
+<td class="cellalignment27" headers="d10165e729 d10165e725">A unique hierarchical name of an orchestration. For example, <code class="codeph">/mytenant/public/myorch</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute start orchestration /mytenant/public/user1/test-vm</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-39BB64B0-AB78-4A1E-99AD-C29F888278F5"></a>
+<h2 id="ELUCL-GUID-39BB64B0-AB78-4A1E-99AD-C29F888278F5" class="sect2">stop orchestration</h2>
+<div>
+<p>This command enables you to stop a specific orchestration. Stopping an orchestration deletes all instances, releasing all resources allocated by the orchestration.. This includes all boot (root) disks and all unreserved IP addresses. It is valid to stop orchestrations with the following statuses: <code class="codeph">ready</code>, <code class="codeph">shut_down</code>, <code class="codeph">warning</code>, and <code class="codeph">error</code>. You can start the orchestration again, creating new instances and allocating new resources.</p>
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute stop orchestration <span class="variable">name</span> [<span class="variable">--confirm</span>]</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-39BB64B0-AB78-4A1E-99AD-C29F888278F5__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameters and descriptions for stopping an orchestration.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d10165e804">Parameter</th>
+<th class="cellalignment26" id="d10165e806">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d10165e810" headers="d10165e804">name</td>
+<td class="cellalignment27" headers="d10165e810 d10165e806">A unique hierarchical name of an orchestration. For example, <code class="codeph">/mytenant/public/myorch</code>.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d10165e818" headers="d10165e804">--confirm</td>
+<td class="cellalignment27" headers="d10165e818 d10165e806">(Optional) Confirms the action to stop an orchestration. If the option is not specified, then a warning message is displayed and the operation is not executed.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute stop orchestration /mytenant/public/user1/test-vm</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-DF823D62-9411-4BC3-A92B-69B91B2ED391"></a>
+<h2 id="ELUCL-GUID-DF823D62-9411-4BC3-A92B-69B91B2ED391" class="sect2">Retrieve Orchestration Details</h2>
+<div>
+<div class="section">You can retrieve the orchestration details by using the CLI.</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-61268A6B-6088-4ACC-A1BD-8B590917A5F9" title="This command enables you to discover an orchestration within a specific container or subcontainer.">discover orchestration</a></p>
+</li>
+<li>
+<p><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-943AF864-CA9A-491E-BE34-C8A745528161" title="This command enables you to retrieve information for a specific orchestration.">get orchestration</a></p>
+</li>
+<li>
+<p><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-9C3074D8-A7EA-4896-A45E-2BF0B6542C80" title="This command enables you to list a set of orchestrations in a specific container.">list orchestration</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect3"><a id="GUID-943AF864-CA9A-491E-BE34-C8A745528161"></a>
+<h3 id="ELUCL-GUID-943AF864-CA9A-491E-BE34-C8A745528161" class="sect3">get orchestration</h3>
+<div>
+<p>This command enables you to retrieve information for a specific orchestration.</p>
+<div class="section">
+<p class="subhead3">Syntax</p>
+<p><code class="codeph">oracle-compute get orchestration <span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-943AF864-CA9A-491E-BE34-C8A745528161__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for retrieving details of an orchestration.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d10165e921">Parameter</th>
+<th class="cellalignment26" id="d10165e923">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d10165e927" headers="d10165e921">name</td>
+<td class="cellalignment27" headers="d10165e927 d10165e923">A unique hierarchical name of an orchestration. For example, <code class="codeph">/mytenant/public/myorch</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<p><code class="codeph">$ oracle-compute get orchestration /mytenant/public/el-db-vms</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute get orchestration  /mytenant/public/el-db-vms -F name,status,info
+name                          status         info
+/mytenant/public/el-db-vms    ready          {"errors": {}, "warnings": {}}
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-9C3074D8-A7EA-4896-A45E-2BF0B6542C80"></a>
+<h3 id="ELUCL-GUID-9C3074D8-A7EA-4896-A45E-2BF0B6542C80" class="sect3">list orchestration</h3>
+<div>
+<p>This command enables you to list a set of orchestrations in a specific container.</p>
+<div class="section">
+<p class="subhead3">Syntax</p>
+<p><code class="codeph">oracle-compute list orchestration <span class="variable">container</span> [<span class="variable">--status</span>]</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-9C3074D8-A7EA-4896-A45E-2BF0B6542C80__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameters and descriptions for listing orchestrations.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d10165e996">Parameter</th>
+<th class="cellalignment26" id="d10165e998">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d10165e1002" headers="d10165e996">container</td>
+<td class="cellalignment27" headers="d10165e1002 d10165e998">Hierarchical name-space for orchestrations</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d10165e1007" headers="d10165e996">--status</td>
+<td class="cellalignment27" headers="d10165e1007 d10165e998">(Optional) Current status of the orchestration. The following status options are supported:
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph">ready</code></p>
+</li>
+<li>
+<p><code class="codeph">scheduled</code></p>
+</li>
+<li>
+<p><code class="codeph">warning</code></p>
+</li>
+<li>
+<p><code class="codeph">error</code></p>
+</li>
+<li>
+<p><code class="codeph">starting</code></p>
+</li>
+<li>
+<p><code class="codeph">stopping</code></p>
+</li>
+<li>
+<p><code class="codeph">updating</code></p>
+</li>
+<li>
+<p><code class="codeph">shut_down</code></p>
+</li>
+<li>
+<p><code class="codeph">shutting_down</code></p>
+</li>
+<li>
+<p><code class="codeph">restarting</code></p>
+</li>
+</ul>
+<p>If this parameter is specified,&nbsp;then the list orchestration output is filtered for the given status.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<p><code class="codeph">$ oracle-compute list orchestration /mytenant/public --status=ready</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute list orchestration /mytenant/public --status=ready -F name,status
+name                                      status
+/mytenant/public/el-control-vms           ready
+/mytenant/public/el-db-vms                ready
+
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-61268A6B-6088-4ACC-A1BD-8B590917A5F9"></a>
+<h3 id="ELUCL-GUID-61268A6B-6088-4ACC-A1BD-8B590917A5F9" class="sect3">discover orchestration</h3>
+<div>
+<p>This command enables you to discover an orchestration within a specific container or subcontainer.</p>
+<div class="section">
+<p class="subhead3">Syntax</p>
+<p><code class="codeph">oracle-compute discover orchestration <span class="variable">container</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-61268A6B-6088-4ACC-A1BD-8B590917A5F9__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for listing all orchestrations in a container.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d10165e1113">Parameter</th>
+<th class="cellalignment26" id="d10165e1115">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d10165e1119" headers="d10165e1113">container</td>
+<td class="cellalignment27" headers="d10165e1119 d10165e1115">Hierarchical name-space for orchestrations</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<p><code class="codeph">$ oracle-compute discover orchestration /mytenant/public</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute discover orchestration /mytenant/public
+entry
+/mytenant/public/el-control-vms
+/mytenant/public/el-db-vms
+/mytenant/public/el-grill-vms
+/mytenant/public/el-sim-vms
+/mytenant/public/scae09-sdi-sdivm-el1-4-storagevolume-app
+/mytenant/public/scae09-sdi-sdivm-el1-5-storagevolume-ops
+/mytenant/public/scae09-sdi-sdivm-el1-6-storagevolume-data
+/mytenant/public/scae09-sdi-sdivm-el1-8-instance
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-26C605BD-B81A-43A2-AE12-5021CD755271.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-91DB5163-DF72-44F2-A08E-FD58BBF6BFAD.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

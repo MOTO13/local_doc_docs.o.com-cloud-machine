@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Use the REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine to manage, monitor, and perform operations on SOA services and servers.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine">
+        <meta property="og:description" content="Use the REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine to manage, monitor, and perform operations on SOA services and servers.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="Use%20cURL.html" title="Previous" type="text/html">
+        <link rel="next" href="api-Manage%20Restore%20Operations.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="Use%20cURL.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="api-Manage%20Restore%20Operations.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">Status Codes</h2> 
+<div class="body refbody">
+ <p class="shortdesc">When you call any of the REST endpoints for Oracle SOA Cloud Service on Oracle Public Cloud Machine, the Response header returns one of the standard HTTP status codes defined in the following table.</p> 
+ <div class="section"> 
+  <div class="tablenoborder">
+   <span class="desc tabledesc">This table describes HTTP status codes supported in the Oracle SOA Cloud Service REST API.</span>
+   <table cellpadding="4" cellspacing="0" summary="" id="GUID-F901D0A3-7243-4848-A256-581F6C744FAC__GUID-46EB9FF7-D15A-4BEA-9E02-EC80BC1E6C9B" class="table" frame="border" border="1" rules="all">
+    <thead class="thead" align="left">
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d3125e21"><p class="p">HTTP Status Code</p> </th> 
+      <th class="entry" valign="top" id="d3125e24"><p class="p">Description</p> </th> 
+     </tr> 
+    </thead> 
+    <tbody class="tbody">
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d3125e29" headers="d3125e21 "><p class="p"><samp class="ph codeph">200 OK</samp></p> </th> 
+      <td class="entry" valign="top" headers="d3125e29 d3125e24 "><p class="p">The request was successfully completed. A 200 status is returned for a successful <samp class="ph codeph">GET</samp> or <samp class="ph codeph">POST</samp> method.</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d3125e43" headers="d3125e21 "><p class="p"><samp class="ph codeph">201 Created</samp></p> </th> 
+      <td class="entry" valign="top" headers="d3125e43 d3125e24 "><p class="p">The request has been fulfilled and resulted in a new resource being created. The response includes a Location header containing the canonical URI for the newly created resource.</p> <p class="p">A 201 status is returned from a synchronous resource creation or an asynchronous resource creation that completed before the response was returned.</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d3125e53" headers="d3125e21 "><p class="p"><samp class="ph codeph">202 Accepted</samp></p> </th> 
+      <td class="entry" valign="top" headers="d3125e53 d3125e24 "><p class="p">The request has been accepted for processing, but the processing has not been completed. The request may or may not eventually be acted upon, as it may be disallowed at the time processing actually takes place.</p> <p class="p">When specifying an asynchronous (<samp class="ph codeph">__detached=true</samp>) resource creation (for example, when deploying an application), or update (for example, when redeploying an application), a 202 is returned if the operation is still in progress. If <samp class="ph codeph">__detached=false</samp>, a 202 may be returned if the underlying operation does not complete in a reasonable amount of time.</p> <p class="p">The response contains a Location header of a job resource that the client should poll to determine when the job has finished. Also, returns an entity that contains the current state of the job</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d3125e71" headers="d3125e21 "><p class="p"><samp class="ph codeph">400 Bad Request</samp></p> </th> 
+      <td class="entry" valign="top" headers="d3125e71 d3125e24 "><p class="p">The request could not be processed because it contains missing or invalid information (such as, a validation error on an input field, a missing required value, and so on).</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d3125e79" headers="d3125e21 "><p class="p"><samp class="ph codeph">401 Unauthorized</samp></p> </th> 
+      <td class="entry" valign="top" headers="d3125e79 d3125e24 "><p class="p">The request is not authorized. The authentication credentials included with this request are missing or invalid.</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d3125e87" headers="d3125e21 "><samp class="ph codeph">403 Forbidden</samp></th> 
+      <td class="entry" valign="top" headers="d3125e87 d3125e24 "><p class="p">The user cannot be authenticated. The user does not have authorization to perform this request.</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d3125e94" headers="d3125e21 "><p class="p"><samp class="ph codeph">404 Not Found</samp></p> </th> 
+      <td class="entry" valign="top" headers="d3125e94 d3125e24 "><p class="p">The request includes a resource URI that does not exist.</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d3125e102" headers="d3125e21 "><p class="p"><samp class="ph codeph">405 Method Not Allowed</samp></p> </th> 
+      <td class="entry" valign="top" headers="d3125e102 d3125e24 "><p class="p">The HTTP verb specified in the request (<samp class="ph codeph">DELETE</samp>, <samp class="ph codeph">GET</samp>, <samp class="ph codeph">POST</samp>, <samp class="ph codeph">PUT</samp>) is not supported for this request URI.</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d3125e122" headers="d3125e21 "><p class="p"><samp class="ph codeph">406 Not Acceptable</samp></p> </th> 
+      <td class="entry" valign="top" headers="d3125e122 d3125e24 "><p class="p">The resource identified by this request is not capable of generating a representation corresponding to one of the media types in the Accept header of the request. For example, the client's Accept header request XML be returned, but the resource can only return JSON.</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d3125e130" headers="d3125e21 "><p class="p"><samp class="ph codeph">415 Not Acceptable</samp></p> </th> 
+      <td class="entry" valign="top" headers="d3125e130 d3125e24 "><p class="p">The client's ContentType header is not correct (for example, the client attempts to send the request in XML, but the resource can only accept JSON).</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d3125e138" headers="d3125e21 "><p class="p"><samp class="ph codeph">500 Internal Server Error</samp></p> </th> 
+      <td class="entry" valign="top" headers="d3125e138 d3125e24 "><p class="p">The server encountered an unexpected condition that prevented it from fulfilling the request.</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d3125e147" headers="d3125e21 "><p class="p"><samp class="ph codeph">503 Service Unavailable</samp></p> </th> 
+      <td class="entry" valign="top" headers="d3125e147 d3125e24 "><p class="p">The server is unable to handle the request due to temporary overloading or maintenance of the server. The REST web application is not currently running.</p> </td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+ </div> 
+</div></div>
+        </article>
+    </body>
+</html>

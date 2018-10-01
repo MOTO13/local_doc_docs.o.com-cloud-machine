@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Monitoring Integration Cloud Services</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Use the Integration Cloud Service dashboard to see how your integrations are performing. The dashboard provides multiple views for you to check your running services." />
+<meta name="dcterms.created" content="2017-03-02T11:32:56Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Integration Cloud Service" />
+<meta name="dcterms.identifier" content="E67461-04" />
+<meta name="dcterms.isVersionOf" content="ICSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-B231549B-5C18-4609-9ECB-7D73D6FC0EB9.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-5A46810A-78EF-4B65-A822-24539C1B97C9.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-45976C83-37F1-4A6D-B79E-C749121B4E9E"></a> <span id="PAGE" style="display:none;">56/116</span> <!-- End Header -->
+<h1 id="ICSUG-GUID-45976C83-37F1-4A6D-B79E-C749121B4E9E" class="sect1">Monitoring Integration Cloud Services</h1>
+<div>
+<p>Use the Integration Cloud Service dashboard to see how your integrations are performing. The dashboard provides multiple views for you to check your running services.</p>
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-45976C83-37F1-4A6D-B79E-C749121B4E9E.htm#GUID-A18B7212-6246-40A1-A7BB-E495EE29A92A" title="Use the Integration Cloud Service dashboard to view information about messages.">Viewing the Dashboard</a></p>
+</li>
+<li>
+<p><a href="GUID-45976C83-37F1-4A6D-B79E-C749121B4E9E.htm#GUID-5E722590-C9A8-4A9C-96C3-08B313DF0F18" title="On the Integration Cloud Service dashboard, you can see how your running integrations are processing messages, such as how many messages have been received and processed, how many successful messages and errors have occurred, and the overall success rate.">Monitoring Integrations</a></p>
+</li>
+<li>
+<p><a href="GUID-45976C83-37F1-4A6D-B79E-C749121B4E9E.htm#GUID-E6345CC5-3AD7-414A-AA70-0E4ED99059F4" title="The Integration Cloud Service dashboard provides a view into the activity stream for your running integrations, such as details about successful responses received from the target application, successful responses sent to the source application, and target application invocations.">Monitoring Activity Streams</a></p>
+</li>
+<li>
+<p><a href="GUID-45976C83-37F1-4A6D-B79E-C749121B4E9E.htm#GUID-B32DACD8-CC7C-4FC6-97CB-495071EC468B" title="You can monitor the agent groups and their associated on-premises agents in Oracle Integration Cloud Service.">Monitoring Agents</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-A18B7212-6246-40A1-A7BB-E495EE29A92A"></a>
+<h2 id="ICSUG-GUID-A18B7212-6246-40A1-A7BB-E495EE29A92A" class="sect2">Viewing the Dashboard</h2>
+<div>
+<p>Use the Integration Cloud Service dashboard to view information about messages.</p>
+<div class="section">You can view information about how your integrations are performing. The main page of the integration shows a snapshot of a state of all running integrations.</div>
+<!-- class="section" -->
+<div class="section">To view the dashboard:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Access the dashboard through one of the following methods:</span>
+<ol>
+<li><span>On the Integration Cloud Service toolbar, click <span class="bold">Monitoring</span>.<br />
+<img width="254" height="41" src="img/GUID-3664B62B-EFE9-4648-9C6C-135EFD500B35-default.png" alt="Description of GUID-3664B62B-EFE9-4648-9C6C-135EFD500B35-default.png follows" title="Description of GUID-3664B62B-EFE9-4648-9C6C-135EFD500B35-default.png follows" /><br />
+<a href="img_text/GUID-3664B62B-EFE9-4648-9C6C-135EFD500B35-default.htm">Description of the illustration GUID-3664B62B-EFE9-4648-9C6C-135EFD500B35-default.png</a><br /></span></li>
+<li><span>On the Integration Cloud Service Home page, click the <span class="bold">Monitor</span> diagram.</span></li>
+</ol>
+<div>The dashboard is displayed and shows a snapshot of the current state of your system and each running integration.
+<div class="infobox-note" id="GUID-A18B7212-6246-40A1-A7BB-E495EE29A92A__GUID-4E95978D-422E-4A51-BB73-CF2D3884527C">
+<p class="notep1">Note:</p>
+When one of two managed nodes is down, the data on the Dashboard page is removed. A value of <span class="bold">0</span> is displayed for the fields, including <span class="bold">Total Messages Processed</span>, <span class="bold">Errors</span>, and <span class="bold">Success Rate</span>.</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-5E722590-C9A8-4A9C-96C3-08B313DF0F18"></a>
+<h2 id="ICSUG-GUID-5E722590-C9A8-4A9C-96C3-08B313DF0F18" class="sect2">Monitoring Integrations</h2>
+<div>
+<p>On the Integration Cloud Service dashboard, you can see how your running integrations are processing messages, such as how many messages have been received and processed, how many successful messages and errors have occurred, and the overall success rate.</p>
+<div class="section">To monitor integrations:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>On the Integration Cloud Service toolbar, click <span class="bold">Monitoring</span>.<br />
+<img width="254" height="41" src="img/GUID-3664B62B-EFE9-4648-9C6C-135EFD500B35-default.png" alt="Description of GUID-3664B62B-EFE9-4648-9C6C-135EFD500B35-default.png follows" title="Description of GUID-3664B62B-EFE9-4648-9C6C-135EFD500B35-default.png follows" /><br />
+<a href="img_text/GUID-3664B62B-EFE9-4648-9C6C-135EFD500B35-default.htm">Description of the illustration GUID-3664B62B-EFE9-4648-9C6C-135EFD500B35-default.png</a><br /></span>
+<div>The dashboard appears, and shows processing information for all your running integrations.</div>
+</li>
+<li class="stepexpand"><span>In the navigator, click <span class="bold">Integrations</span>.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-E6345CC5-3AD7-414A-AA70-0E4ED99059F4"></a>
+<h2 id="ICSUG-GUID-E6345CC5-3AD7-414A-AA70-0E4ED99059F4" class="sect2">Monitoring Activity Streams and Log Files</h2>
+<div>
+<p>The Integration Cloud Service dashboard provides a view into the activity stream for your running integrations, such as details about successful responses received from the target application, successful responses sent to the source application, and target application invocations.</p>
+<div class="section">To monitor activity streams and log files:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>On the Integration Cloud Service toolbar, click <span class="bold">Monitoring</span>.</span>
+<div>The dashboard appears, and shows processing information for all your running integrations.</div>
+</li>
+<li class="stepexpand"><span>Click the <span class="bold">Activity Stream</span> tab.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Refresh Logs</span> to refresh the view to display the latest activities.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Download Logs</span> to download the <code class="codeph">ics-logs.zip</code> file for offline analysis.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-B32DACD8-CC7C-4FC6-97CB-495071EC468B"></a>
+<h2 id="ICSUG-GUID-B32DACD8-CC7C-4FC6-97CB-495071EC468B" class="sect2">Monitoring Agents</h2>
+<div>
+<p>You can monitor the agent groups and their associated on-premises agents in Oracle Integration Cloud Service.</p>
+<div class="p">To monitor an agent:
+<ol>
+<li>
+<p>In the Integration Cloud Service toolbar, click <span class="bold">Monitoring</span>.</p>
+</li>
+<li>
+<p>In the navigation panel on the left, click <span class="bold">Agents</span>.</p>
+</li>
+<li>
+<p>The Agent Monitoring page shows details such as the time at which the agent was last updated and the on-premises agents associated with the agent groups.<br />
+<img width="1427" height="374" src="img/GUID-3113D09A-22FA-493D-96CA-DB16029F682F-default.png" alt="Description of GUID-3113D09A-22FA-493D-96CA-DB16029F682F-default.png follows" title="Description of GUID-3113D09A-22FA-493D-96CA-DB16029F682F-default.png follows" /><br />
+<a href="img_text/GUID-3113D09A-22FA-493D-96CA-DB16029F682F-default.htm">Description of the illustration GUID-3113D09A-22FA-493D-96CA-DB16029F682F-default.png</a><br /></p>
+</li>
+<li>
+<p>Click the number above <span class="bold">AGENTS</span> or click the agent group name to see the on-premises agent associated with this group.</p>
+</li>
+<li>
+<p>At the far right, click the information icon to display details about the agent group such as creation date and the last startup date of the on-premises agent.</p>
+</li>
+<li>
+<p>Click <span class="bold">Sort By</span> to sort by agent name or the date at which the on-premises agent was last started.</p>
+</li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment354">
+<tr>
+<td class="cellalignment361">
+<table class="cellalignment359">
+<tr>
+<td class="cellalignment358"><a href="GUID-B231549B-5C18-4609-9ECB-7D73D6FC0EB9.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment358"><a href="GUID-5A46810A-78EF-4B65-A822-24539C1B97C9.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment363">
+<table class="cellalignment357">
+<tr>
+<td class="cellalignment358"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment358"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment358"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

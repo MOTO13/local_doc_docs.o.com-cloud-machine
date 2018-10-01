@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Orchestration Templates</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="An orchestration is stored in a file in JSON format." />
+<meta name="dcterms.created" content="2018-05-15T07:53:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E62130-11" />
+<meta name="dcterms.isVersionOf" content="ELUSE" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-9F8B9F08-81DF-4B6C-82A3-3A062F20BE66.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-58BBCE21-E8CE-4607-AFE5-C534DF286682.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUSE.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-F7D91076-1736-4B54-89D5-73C23A45BF85"></a> <span id="PAGE" style="display:none;">80/81</span> <!-- End Header -->
+<h1 id="ELUSE-GUID-F7D91076-1736-4B54-89D5-73C23A45BF85" class="sect1"><span class="enumeration_appendix">A</span> Orchestration Templates</h1>
+<div>
+<p>An orchestration is stored in a file in JSON format.</p>
+<p>The following sample JSON file shows the high-level structure of an orchestration. The primary structure is called an object plan (<span class="bold">oplan</span>). In a single orchestration, you can include up to 10 oplans. Oplans contain objects and can have dependencies declared through relationships.</p>
+<div class="infobox-note" id="GUID-F7D91076-1736-4B54-89D5-73C23A45BF85__GUID-34BDF968-E329-44B1-8E02-BF6BE2D8CAAD">
+<p class="notep1">Note:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The orchestration templates use placeholder text for object names, labels, and other user-specific values. When you use these templates to build your orchestration, remember to replace placeholder values with values specific to your environment.</p>
+</li>
+<li>
+<p>In the JSON file, a comma is required between each element of an orchestration.</p>
+</li>
+</ul>
+</div>
+<pre dir="ltr">
+{
+    "description": "<span class="italic"><span class="bold">someDescriptionHere</span></span>",
+    "name": "<span class="italic"><span class="bold">/&lt;tenant_name&gt;/public/&lt;orchestration_name&gt;</span></span>",
+    "oplans": [
+        {
+            "ha_policy": "active",
+                "label": "<span class="italic"><span class="bold">someText</span></span>",
+            "obj_type": "<span class="italic"><span class="bold">objectType</span></span>",
+            "objects": [
+                {
+                    <span class="italic"><span class="bold">definitions of objects specific to this object type</span></span>
+                }
+            ]
+        },
+        {
+            "label": "<span class="italic"><span class="bold">someText</span></span>",
+            "obj_type": "<span class="italic"><span class="bold">objectType</span></span>",
+            "objects": [
+                {
+                    <span class="italic"><span class="bold">definitions of objects specific to this object type</span></span>
+                }
+            ]
+        },
+                                        .
+                                        . up to 10 oplans
+                                        .
+    ]
+}
+</pre>
+<div class="infobox-note" id="GUID-F7D91076-1736-4B54-89D5-73C23A45BF85__GUID-D86A1F93-7E1D-4A21-AC83-C4FE7098B534">
+<p class="notep1">Note:</p>
+<p>An object is used with an orchestration to encapsulate the various orchestratable system components. For example, for a launch plan, the <code class="codeph">obj_type</code> is <code class="codeph">launchplan</code>. &nbsp;The fields in the objects section vary with the object type.</p>
+</div>
+<p>The following table describes the elements in the orchestration.</p>
+<div class="tblformal" id="GUID-F7D91076-1736-4B54-89D5-73C23A45BF85__GUID-103EACF3-F01E-4C3A-BA66-E06F73B81B1D">
+<p class="titleintable">Table A-1 Orchestration Elements</p>
+<table class="cellalignment105" title="Orchestration Elements" summary="This table describes the elements in an orchestration.">
+<thead>
+<tr class="cellalignment96">
+<th class="cellalignment113" id="d16432e89">Object Identifier</th>
+<th class="cellalignment120" id="d16432e92">Description</th>
+<th class="cellalignment121" id="d16432e95">Permitted Elements or Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment96">
+<td class="cellalignment115" id="d16432e100" headers="d16432e89">
+<p><code class="codeph">description</code></p>
+</td>
+<td class="cellalignment122" headers="d16432e100 d16432e92">
+<p>A description of the orchestration</p>
+</td>
+<td class="cellalignment123" headers="d16432e100 d16432e95">
+<p>Text that describes the orchestration.</p>
+</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment115" id="d16432e111" headers="d16432e89">
+<p><code class="codeph">name</code></p>
+</td>
+<td class="cellalignment122" headers="d16432e111 d16432e92">
+<p>Name of the orchestration. It consists of three components and begins with <code class="codeph">/<span class="variable">tenant_name</span>/public/</code></p>
+<p>Example: <code class="codeph">/mytenant/public/single_instance</code></p>
+</td>
+<td class="cellalignment123" headers="d16432e111 d16432e95">
+<p>Text that provides the name of the orchestration.</p>
+</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment115" id="d16432e131" headers="d16432e89">
+<p><code class="codeph">oplans</code></p>
+</td>
+<td class="cellalignment122" headers="d16432e131 d16432e92">
+<p>An object plan is the primary structure of the orchestration for defining objects in an orchestration.</p>
+</td>
+<td class="cellalignment123" headers="d16432e131 d16432e95">
+<p>A list of oplans that have elements for defining different objects in an orchestration: <code class="codeph">ha_policy</code>, <code class="codeph">label</code>, <code class="codeph">obj_type</code>, and <code class="codeph">objects</code>.</p>
+</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment115" id="d16432e154" headers="d16432e89">
+<p><code class="codeph">label</code></p>
+</td>
+<td class="cellalignment122" headers="d16432e154 d16432e92">
+<p>User-specified name for an object. Labels are used to specify relationships and appear in error messages at the orchestration level to identify an oplan that is in error.</p>
+</td>
+<td class="cellalignment123" headers="d16432e154 d16432e95">
+<p>Text that describes the object.</p>
+</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment115" id="d16432e165" headers="d16432e89">
+<p><code class="codeph">relationships</code></p>
+</td>
+<td class="cellalignment122" headers="d16432e165 d16432e92">
+<p>A container structure to specify the sequence in which the components in an orchestration start. In the relationships section of the orchestration, specify the labels of the oplans and the relationship type.</p>
+</td>
+<td class="cellalignment123" headers="d16432e165 d16432e95">
+<p>A JSON structured element that describes the relationship.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>The following table describes the elements in the <code class="codeph">oplans</code>.</p>
+<div class="tblformal" id="GUID-F7D91076-1736-4B54-89D5-73C23A45BF85__GUID-A6873305-E2AB-4E7E-9558-3CF811F9B9F7">
+<p class="titleintable">Table A-2 Oplan Elements</p>
+<table class="cellalignment110" title="Oplan Elements" summary="This table describes the elements in an oplan.">
+<thead>
+<tr class="cellalignment96">
+<th class="cellalignment117" id="d16432e191">Object Identifier</th>
+<th class="cellalignment117" id="d16432e193">Description</th>
+<th class="cellalignment117" id="d16432e195">Permitted Values or Elements</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment96">
+<td class="cellalignment96" id="d16432e199" headers="d16432e191">
+<p><code class="codeph">ha_policy</code></p>
+</td>
+<td class="cellalignment96" headers="d16432e199 d16432e193">
+<p>An optional element to specify a high availability policy for an object type (<code class="codeph">obj_type</code>).</p>
+<p>If you do not want high availability or monitoring, do not include the <code class="codeph">ha_policy</code> element. Launch plans are monitored by default.</p>
+</td>
+<td class="cellalignment96" headers="d16432e199 d16432e195">
+<p><code class="codeph">active</code>: Only set for object type <code class="codeph">launchplan</code>.</p>
+<div class="p"><code class="codeph">monitor</code>: Only set for object types
+<pre dir="ltr">
+launchplan
+</pre>
+and <code class="codeph">storage/volume</code>.</div>
+<p><code class="codeph">none</code>: To disable HA policy or for using with objects that not supported.</p>
+</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment96" id="d16432e237" headers="d16432e191">
+<p><code class="codeph">obj_type</code></p>
+</td>
+<td class="cellalignment96" headers="d16432e237 d16432e193">
+<p>A type of object to be defined.</p>
+</td>
+<td class="cellalignment96" headers="d16432e237 d16432e195">
+<p><code class="codeph">launchplan</code>, <code class="codeph">storage/volume</code>, and <code class="codeph">vnetreservation</code>.</p>
+</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment96" id="d16432e256" headers="d16432e191">
+<p><code class="codeph">objects</code></p>
+</td>
+<td class="cellalignment96" headers="d16432e256 d16432e193">
+<p>A container structure for defining objects for an object type.</p>
+</td>
+<td class="cellalignment96" headers="d16432e256 d16432e195">
+<p><code class="codeph">launchplan</code>: instances, relationships.</p>
+<p><code class="codeph">storage/ volume</code>: name, size, properties.</p>
+<p><code class="codeph">ip/reservation</code>: vnetreservation.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>Unless they were created beforehand, the network, storage, or other objects referred to in an orchestration are created when the orchestration starts, and they are destroyed when the orchestration stops.</p>
+<p>The orchestration structure and the schema for its elements are described in detail in the following sections.</p>
+<div class="section">
+<p class="subhead1">Orchestration Structure</p>
+<pre dir="ltr">
+{
+"name": &lt;string&gt;,
+"description": &lt;string&gt;,
+"oplans": [ &lt;oplan&gt;,...]
+"relationships": [ &lt;oplan_relationship&gt;,...] (optional)
+}
+</pre>
+<p>The following table describes the elements of the orchestration.</p>
+<div class="tblformal" id="GUID-F7D91076-1736-4B54-89D5-73C23A45BF85__GUID-881B72C7-02C8-480F-B74C-FD1867293756">
+<table class="cellalignment110" summary="This table lists and describes the various fields of an orchestration">
+<thead>
+<tr class="cellalignment96">
+<th class="cellalignment111" id="d16432e295">Fields</th>
+<th class="cellalignment111" id="d16432e297">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e301" headers="d16432e295"><code class="codeph">name</code></td>
+<td class="cellalignment112" headers="d16432e301 d16432e297">Name of the orchestration plan</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e307" headers="d16432e295"><code class="codeph">description</code></td>
+<td class="cellalignment112" headers="d16432e307 d16432e297">Description of the orchestration plan</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e313" headers="d16432e295"><code class="codeph">oplans</code></td>
+<td class="cellalignment112" headers="d16432e313 d16432e297">List of oplans</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e319" headers="d16432e295"><code class="codeph">relationships</code></td>
+<td class="cellalignment112" headers="d16432e319 d16432e297">A list of relationship specifications to be satisfied on this orchestration</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Orchestration Template for Oplans</p>
+<p>An&nbsp;object plan, or&nbsp;<code class="codeph">oplan</code>, is a top-level orchestration attribute. Within an object plan, you can specify various object types and define one or more objects for each object type.</p>
+<pre dir="ltr">
+{
+"label": &lt;string&gt;
+,"obj_type": "launchplan" | "storage/volume",
+"objects": [ &lt;objtype_launchplan&gt;,...] | [ &lt;objtype_storagevolume&gt;,...]
+"ha_policy": "monitor" | "active", (optional)
+}
+</pre>
+<p>The following table describes the object plan attributes.</p>
+<div class="tblformal" id="GUID-F7D91076-1736-4B54-89D5-73C23A45BF85__GUID-95B4E8D5-365A-4954-BA30-8491D716081B">
+<table class="cellalignment110" summary="This table lists the possible attributes of an object plan and their descriptions">
+<thead>
+<tr class="cellalignment96">
+<th class="cellalignment111" id="d16432e345">Fields</th>
+<th class="cellalignment111" id="d16432e347">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e351" headers="d16432e345"><code class="codeph">ha_policy</code></td>
+<td class="cellalignment112" headers="d16432e351 d16432e347">Determines the HA behavior of an oplan. Specifying <code class="codeph">active</code> applies only to launch plans and if an instance terminates unexpectedly, then the instance is automatically restarted. Specifying <code class="codeph">monitor</code> applies to all object types: the&nbsp;state of all&nbsp;the objects is monitored so changes in state are reflected in the orchestration. If <code class="codeph">ha_policy</code> is not specified, then storage volumes are not monitored. Launch plan are monitored by default and omission of this property does not have any effect on objects of type <code class="codeph">launchplan</code>.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e369" headers="d16432e345"><code class="codeph">label</code></td>
+<td class="cellalignment112" headers="d16432e369 d16432e347">Description of the oplan.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e375" headers="d16432e345"><code class="codeph">obj_type</code></td>
+<td class="cellalignment112" headers="d16432e375 d16432e347">Type of the object.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e381" headers="d16432e345"><code class="codeph">objects</code></td>
+<td class="cellalignment112" headers="d16432e381 d16432e347">List of all objects of type <code class="codeph">obj_type</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Oplan Relationship</p>
+<pre dir="ltr">
+{
+ "oplan": &lt;string&gt;,
+ "to_oplan": &lt;string&gt;,
+ "type": "depends",
+}
+</pre>
+<p>The following table describes the attributes of oplan relationship.</p>
+<div class="tblformal" id="GUID-F7D91076-1736-4B54-89D5-73C23A45BF85__GUID-9A3FECD6-6017-42AA-A3B4-E2D2FEEC69B0">
+<table class="cellalignment110" summary="This table lists the attributes of an oplan relationship and their descriptions.">
+<thead>
+<tr class="cellalignment96">
+<th class="cellalignment111" id="d16432e404">Fields</th>
+<th class="cellalignment111" id="d16432e406">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e410" headers="d16432e404"><code class="codeph">oplan</code></td>
+<td class="cellalignment112" headers="d16432e410 d16432e406">Label of <code class="codeph">oplan1</code></td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e418" headers="d16432e404"><code class="codeph">to_oplan</code></td>
+<td class="cellalignment112" headers="d16432e418 d16432e406">Label of an oplan on which <code class="codeph">oplan1</code> depends</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e427" headers="d16432e404"><code class="codeph">type</code></td>
+<td class="cellalignment112" headers="d16432e427 d16432e406">Type of the relationship. It must be <code class="codeph">depends</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Orchestration Template for Object Type: Launch Plan</p>
+<p>Use this object type if you want to define one or more instances. In an orchestration,&nbsp;<code class="codeph">instance</code>&nbsp;is an attribute of the&nbsp;<code class="codeph">launchplan</code>&nbsp;object type.</p>
+<pre dir="ltr">
+{
+ "instances": [ &lt;instance&gt;,...]
+ "relationships": [ &lt;instance_relationship&gt;,...] (optional)
+}
+</pre>
+<p>The following table describes the attributes for <code class="codeph">launchplan</code>.</p>
+<div class="tblformal" id="GUID-F7D91076-1736-4B54-89D5-73C23A45BF85__GUID-E49EC5FF-2537-46EE-A6CC-54D7084B08F7">
+<table class="cellalignment110" summary="This table lists the attributes of a launchplan and their descriptions.">
+<thead>
+<tr class="cellalignment96">
+<th class="cellalignment111" id="d16432e461">Fields</th>
+<th class="cellalignment111" id="d16432e463">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e467" headers="d16432e461"><code class="codeph">instances</code></td>
+<td class="cellalignment112" headers="d16432e467 d16432e463">List of instances defined by the launch plan.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e473" headers="d16432e461"><code class="codeph">relationships</code></td>
+<td class="cellalignment112" headers="d16432e473 d16432e463">List of relationships that exist between the instances in the launch plan and the instances that are currently running.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Orchestration Template for Object Type: Storage/Volume</p>
+<p>Use this object type to create storage volumes that you want to attach to your instances.&nbsp;</p>
+<pre dir="ltr">
+{
+"name": &lt;string&gt;,
+"properties": [ &lt;string&gt;, ...]
+"size": &lt;string&gt;,
+"description": &lt;string&gt;, (optional)
+"source_storagevolume_name": &lt;string&gt;, (optional)
+"imagelist": &lt;string&gt;, (optional)
+"imagelist_entry": &lt;number&gt;, (optional)
+"tags": [ &lt;string&gt;, ...] (optional)
+"quota": &lt;string&gt;, (optional)
+}
+</pre>
+<p>The following table describes the attributes for <code class="codeph">storage/volume</code>.</p>
+<div class="tblformal" id="GUID-F7D91076-1736-4B54-89D5-73C23A45BF85__GUID-81A4831D-D390-4BF3-8A12-13D0705BE53F">
+<table class="cellalignment110" summary="This table lists the attributes of storage volumes and their descriptions.">
+<thead>
+<tr class="cellalignment96">
+<th class="cellalignment111" id="d16432e498">Fields</th>
+<th class="cellalignment111" id="d16432e500">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e504" headers="d16432e498"><code class="codeph">name</code></td>
+<td class="cellalignment112" headers="d16432e504 d16432e500">Name of the storage volume</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e510" headers="d16432e498"><code class="codeph">properties</code></td>
+<td class="cellalignment112" headers="d16432e510 d16432e500">A list of the storage properties that are associated with this storage volume.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e516" headers="d16432e498"><code class="codeph">size</code></td>
+<td class="cellalignment112" headers="d16432e516 d16432e500">The size of this storage volume measured in the number of bytes or multiples of bytes</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e522" headers="d16432e498"><code class="codeph">description</code></td>
+<td class="cellalignment112" headers="d16432e522 d16432e500">Description of the storage volume.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e528" headers="d16432e498"><code class="codeph">source_storagevolume_name</code></td>
+<td class="cellalignment112" headers="d16432e528 d16432e500">Name of existing storage volume to copy from onto this volume when created. Cannot be used when specifying imagelist option.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e534" headers="d16432e498"><code class="codeph">imagelist</code></td>
+<td class="cellalignment112" headers="d16432e534 d16432e500">Name of the machine image to extract onto this volume when created. Cannot be used when specifying the <code class="codeph">source_storagevolume_name</code> option.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e543" headers="d16432e498"><code class="codeph">imagelist_entry</code></td>
+<td class="cellalignment112" headers="d16432e543 d16432e500">Specific image list entry version to extract.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e549" headers="d16432e498"><code class="codeph">tags</code></td>
+<td class="cellalignment112" headers="d16432e549 d16432e500">A list of strings that will tag the storage volume.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e555" headers="d16432e498"><code class="codeph">quota</code></td>
+<td class="cellalignment112" headers="d16432e555 d16432e500">The quota against which this volume will be created.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Instance Attributes</p>
+<p>In an orchestration,&nbsp;<code class="codeph">instance</code>&nbsp;is an attribute of the&nbsp;<code class="codeph">launchplan</code>&nbsp;object type. If any of the objects referred to in instance attributes are defined in the same orchestration as the instance, you must specify a relationship between each object and the instance launch plan.</p>
+<pre dir="ltr">
+{
+"shape": &lt;string&gt;,
+"networking": &lt;string&gt;,
+"imagelist": &lt;string&gt;,
+"label": &lt;string&gt;, (optional but recommended)
+"name": &lt;string&gt;, (optional but recommended)
+"storage_attachments": [ &lt;storage_attachment&gt;, ...] (optional)
+"tags": [ &lt;string&gt;, ...] (optional)
+"attributes": &lt;userdata&gt;, (optional)
+"nis": &lt;nis&gt;, (optional)
+"sshkeys": [ &lt;string&gt;, ...] (optional)
+"entry": &lt;number&gt;, (optional)
+"quota": &lt;string&gt;, (optional)
+}
+</pre>
+<p>The following table describes the attributes for <code class="codeph">instances</code>.</p>
+<div class="tblformal" id="GUID-F7D91076-1736-4B54-89D5-73C23A45BF85__GUID-0C6C8E61-0C81-445A-B3EB-8F9EB5979F40">
+<table class="cellalignment110" summary="This table lists the attributes of instances and their descriptions.">
+<thead>
+<tr class="cellalignment96">
+<th class="cellalignment111" id="d16432e586">Fields</th>
+<th class="cellalignment111" id="d16432e588">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e592" headers="d16432e586"><code class="codeph">shape</code></td>
+<td class="cellalignment112" headers="d16432e592 d16432e588">Defines the size or resource requirements (memory/CPUs) for the instance. Must correspond to one of the shapes defined in the site configuration.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e598" headers="d16432e586"><code class="codeph">networking</code></td>
+<td class="cellalignment112" headers="d16432e598 d16432e588">Mapping of the device name to network specifiers for virtual NICs to be attached to the instance.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e604" headers="d16432e586"><code class="codeph">imagelist</code></td>
+<td class="cellalignment112" headers="d16432e604 d16432e588">Name of the image list to be launched.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e610" headers="d16432e586"><code class="codeph">label</code></td>
+<td class="cellalignment112" headers="d16432e610 d16432e588">A label assigned by the user, specifically for defining inter-instance relationships. Optional but recommended. Also used in some error and status messages. If not specified, a label will be automatically assigned.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e616" headers="d16432e586"><code class="codeph">name</code></td>
+<td class="cellalignment112" headers="d16432e616 d16432e588">Name of the instance generated by the server. It is optional but recommended. Specifying a name prefix makes it easier to find and identify the instances when using CLI commands, such as <code class="codeph">list instance</code>.&nbsp;Users can specify a name prefix and a system generated UUID will be appended to the prefix.&nbsp;Example: <code class="codeph"><span class="variable">tenant_name</span>/public/<span class="variable">instance_name</span></code> results in the instance name <code class="codeph"><span class="variable">tenant_name</span>/public/<span class="variable">instance_name</span>/<span class="variable">uuid</span></code>.&nbsp;If the name is not specified, the name will be <code class="codeph"><span class="variable">tenant_name</span>/public/<span class="variable">uuid</span></code>.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e649" headers="d16432e586"><code class="codeph">storage_attachments</code></td>
+<td class="cellalignment112" headers="d16432e649 d16432e588">List of dictionaries that contain storage attachment information.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e655" headers="d16432e586"><code class="codeph">tags</code></td>
+<td class="cellalignment112" headers="d16432e655 d16432e588">A list of strings that will tag the instance.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e661" headers="d16432e586"><code class="codeph">attributes</code></td>
+<td class="cellalignment112" headers="d16432e661 d16432e588">A collection of user-defined key and value pairs that is made available to an instance through the metadata service.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e667" headers="d16432e586"><code class="codeph">placement_requirements</code></td>
+<td class="cellalignment112" headers="d16432e667 d16432e588">Not applicable.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e673" headers="d16432e586"><code class="codeph">nis</code></td>
+<td class="cellalignment112" headers="d16432e673 d16432e588">Network Information Service configuration.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e679" headers="d16432e586"><code class="codeph">sshkeys</code></td>
+<td class="cellalignment112" headers="d16432e679 d16432e588">The SSH key that is installed on the instance.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e686" headers="d16432e586"><code class="codeph">entry</code></td>
+<td class="cellalignment112" headers="d16432e686 d16432e588">Optional image list entry number. The default will be used if one is not specified.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e692" headers="d16432e586"><code class="codeph">quota</code></td>
+<td class="cellalignment112" headers="d16432e692 d16432e588">The quota against which this instance will be run.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Relationships Attributes</p>
+<p>In an orchestration,&nbsp;<code class="codeph">relationships</code>&nbsp;is an attribute of the&nbsp;<code class="codeph">launchplan</code>&nbsp;object type.</p>
+<pre dir="ltr">
+{
+"instances": [ &lt;string&gt;, ...]
+"type": "same_node" | "different_node",
+}
+</pre>
+<p>The following table describes the attributes for <code class="codeph">relationships</code>.</p>
+<div class="tblformal" id="GUID-F7D91076-1736-4B54-89D5-73C23A45BF85__GUID-A26F43BA-4946-4E58-9460-E685C9FA4FA4">
+<table class="cellalignment110" summary="This table lists the attributes for relationships and their descriptions.">
+<thead>
+<tr class="cellalignment96">
+<th class="cellalignment111" id="d16432e723">Fields</th>
+<th class="cellalignment111" id="d16432e725">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e729" headers="d16432e723"><code class="codeph">instances</code></td>
+<td class="cellalignment112" headers="d16432e729 d16432e725">List of instance labels. Can also use <code class="codeph">instance: <span class="variable">running instance name</span></code> to create a relationship between an instance in the <code class="codeph">launchplan</code> and an instance that is already running.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e743" headers="d16432e723"><code class="codeph">type</code></td>
+<td class="cellalignment112" headers="d16432e743 d16432e725">Type of relationship between the specified instances.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">nis Attributes</p>
+<pre dir="ltr">
+{    
+"domain": &lt;string&gt;,    
+"servers": [ &lt;nis_server&gt;, ... ] 
+}
+</pre>
+<p>The following table describes the <code class="codeph">nis</code> attributes.</p>
+<div class="tblformal" id="GUID-F7D91076-1736-4B54-89D5-73C23A45BF85__GUID-6714BB55-18B6-4D44-AFD8-45921AE01AFB">
+<table class="cellalignment110" summary="This table lists the attributes for nis and their descriptions.">
+<thead>
+<tr class="cellalignment96">
+<th class="cellalignment111" id="d16432e766">Fields</th>
+<th class="cellalignment111" id="d16432e768">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e772" headers="d16432e766"><code class="codeph">domain</code></td>
+<td class="cellalignment112" headers="d16432e772 d16432e768">The NIS domain name.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e778" headers="d16432e766"><code class="codeph">servers</code></td>
+<td class="cellalignment112" headers="d16432e778 d16432e768">List of NIS server entries.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">nis_server Attributes</p>
+<pre dir="ltr">
+{    
+"name": &lt;string&gt;,    
+"ip": &lt;string&gt;, 
+}
+</pre>
+<p>The following table describes the attributes for <code class="codeph">nis_server</code>.</p>
+<div class="tblformal" id="GUID-F7D91076-1736-4B54-89D5-73C23A45BF85__GUID-ADFC603A-14EB-45F1-A057-3F53CD0425A9">
+<table class="cellalignment110" summary="This table lists the attributes for nis_server and their descriptions.">
+<thead>
+<tr class="cellalignment96">
+<th class="cellalignment117" id="d16432e801">Fields</th>
+<th class="cellalignment117" id="d16432e803">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment96">
+<td class="cellalignment96" id="d16432e807" headers="d16432e801"><code class="codeph">name</code></td>
+<td class="cellalignment96" headers="d16432e807 d16432e803">The name of the NIS server.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment96" id="d16432e813" headers="d16432e801"><code class="codeph">ip</code></td>
+<td class="cellalignment96" headers="d16432e813 d16432e803">The IP address of the NIS server.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">userdata Attributes</p>
+<pre dir="ltr">
+{    
+"userdata": { &lt;string&gt;: &lt;string&gt;, ... } 
+}
+</pre>
+<p>The following table describes the attributes for <code class="codeph">userdata</code>.</p>
+<div class="tblformal" id="GUID-F7D91076-1736-4B54-89D5-73C23A45BF85__GUID-44EA457F-C62A-4FFA-BA96-A4A14EBBCE45">
+<table class="cellalignment110" summary="This table lists the attributes for userdata and their descriptions.">
+<thead>
+<tr class="cellalignment96">
+<th class="cellalignment111" id="d16432e836">Fields</th>
+<th class="cellalignment111" id="d16432e838">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e842" headers="d16432e836"><code class="codeph">userdata</code></td>
+<td class="cellalignment112" headers="d16432e842 d16432e838">A collection of user-defined key and value pairs that will be made available to an instance through the metadata service.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Networking Attributes</p>
+<pre dir="ltr">
+{    &lt;string&gt;: &lt;networkblock&gt;,
+...
+ }
+</pre>
+<p>The following table describes the attributes for <code class="codeph">networking</code>.</p>
+<div class="tblformal" id="GUID-F7D91076-1736-4B54-89D5-73C23A45BF85__GUID-CDCF896D-C31B-4158-9A86-34773E9541A1">
+<table class="cellalignment110" summary="This table lists the attributes for networking and their descriptions.">
+<thead>
+<tr class="cellalignment96">
+<th class="cellalignment111" id="d16432e865">Fields</th>
+<th class="cellalignment111" id="d16432e867">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e871" headers="d16432e865"><code class="codeph"><span class="variable">string</span></code></td>
+<td class="cellalignment112" headers="d16432e871 d16432e867">A unique label for the network described by <code class="codeph">networkblock</code>. A short string is used such as <code class="codeph">net0</code>. Network entries are processed in sorted order using this key and not the order they appear in the document.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">storage_attachment Attributes</p>
+<pre dir="ltr">
+{    
+"volume": &lt;string&gt;,    
+"index: &lt;number&gt;, 
+}
+</pre>
+<p>The following table describes the attributes for <code class="codeph">storage_attachment</code>.</p>
+<div class="tblformal" id="GUID-F7D91076-1736-4B54-89D5-73C23A45BF85__GUID-B7DE514B-8EF2-4401-B754-661EFCCCB212">
+<table class="cellalignment110" summary="This table lists the attributes for storage_attachment and their descriptions.">
+<thead>
+<tr class="cellalignment96">
+<th class="cellalignment111" id="d16432e901">Fields</th>
+<th class="cellalignment111" id="d16432e903">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e907" headers="d16432e901"><code class="codeph">volume</code></td>
+<td class="cellalignment112" headers="d16432e907 d16432e903">Name of the storage volume to which the instance will be attached.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e913" headers="d16432e901"><code class="codeph">index</code></td>
+<td class="cellalignment112" headers="d16432e913 d16432e903">The integer index used when generating the device name, for example, 1 in <code>/dev/sda1</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">networkblock Attributes</p>
+<pre dir="ltr">
+{    
+"vnet" | "vnetreservation": &lt;string&gt;,    
+"options": &lt;networkblock_options&gt;, (optional) 
+}
+</pre>
+<p>The following table describes the attributes for <code class="codeph">networkblock</code>.</p>
+<div class="tblformal" id="GUID-F7D91076-1736-4B54-89D5-73C23A45BF85__GUID-C0D4FD22-6FEF-47D6-B7BE-44C5407DD6DF">
+<table class="cellalignment110" summary="This table lists the attributes for networkblock and their descriptions.">
+<thead>
+<tr class="cellalignment96">
+<th class="cellalignment111" id="d16432e940">Fields</th>
+<th class="cellalignment111" id="d16432e942">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e946" headers="d16432e940"><code class="codeph">vnet</code></td>
+<td class="cellalignment112" headers="d16432e946 d16432e942">The full vNet name. Only one vNet or vNet reservation can be specified.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e952" headers="d16432e940"><code class="codeph">options</code></td>
+<td class="cellalignment112" headers="d16432e952 d16432e942">The set of options for the networking configuration of the instance. When more than one network contain options, the first block to specify a particular option is used and the others are ignored.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">networkblock_options Attributes</p>
+<pre dir="ltr">
+{    
+ "dns": &lt;networkblock_dns&gt;, (optional)   
+  "hostname": &lt;string&gt;, (optional)    
+ "network_route": [ &lt;networkblock_route&gt;,... ] (optional)    
+ "default_gateway": &lt;boolean&gt;, (optional)   
+ "provider": &lt;boolean&gt;, (optional)    
+ "primary": &lt;boolean&gt;, (optional) 
+}
+</pre>
+<p>The following table describes the attributes for <code class="codeph">networkblock_options</code>.</p>
+<div class="tblformal" id="GUID-F7D91076-1736-4B54-89D5-73C23A45BF85__GUID-A2EEAD3E-0B00-4F60-BE8A-DD7D37390897">
+<table class="cellalignment110" summary="This table lists the attributes for networkblock_options and their descriptions.">
+<thead>
+<tr class="cellalignment96">
+<th class="cellalignment111" id="d16432e975">Fields</th>
+<th class="cellalignment111" id="d16432e977">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e981" headers="d16432e975"><code class="codeph">hostname</code></td>
+<td class="cellalignment112" headers="d16432e981 d16432e977">Specifies the host name associated with the instance network IP. When multiple host names are specified on multiple networks, the primary host name must be indicated with boolean <code class="codeph">primary</code> attribute. Otherwise, the host name on the first network (sorted by key) is used as the instance host name.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e990" headers="d16432e975"><code class="codeph">network_route</code></td>
+<td class="cellalignment112" headers="d16432e990 d16432e977">A list of routing rules.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e996" headers="d16432e975"><code class="codeph">default_gateway</code></td>
+<td class="cellalignment112" headers="d16432e996 d16432e977">A Boolean flag that indicates that this network's gateway must be used for default routing. The default is false if not set.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e1002" headers="d16432e975"><code class="codeph">provider</code></td>
+<td class="cellalignment112" headers="d16432e1002 d16432e977">A Boolean flag that can be used to configure the instance as a provider (full membership) on an underlying service network.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e1008" headers="d16432e975"><code class="codeph">primary</code></td>
+<td class="cellalignment112" headers="d16432e1008 d16432e977">A Boolean flag that indicates that the host name specified for this network must be used as the instance host name. The default is false if not specified. If not specified as true for any network, then the first network (sorted by key) will be used as the instance host name.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">networkblock_dns Attributes</p>
+<pre dir="ltr">
+{    
+"search_domains": &lt;string&gt;,    
+"servers": &lt;string&gt;, 
+}
+</pre>
+<p>The following table describes the attributes for <code class="codeph">networkblock_dns</code>.</p>
+<div class="tblformal" id="GUID-F7D91076-1736-4B54-89D5-73C23A45BF85__GUID-C6A67582-7A8A-4A5E-9E65-C16DB7B58503">
+<table class="cellalignment110" summary="This table lists the attributes for networkblock_dns and their descriptions.">
+<thead>
+<tr class="cellalignment96">
+<th class="cellalignment111" id="d16432e1031">Fields</th>
+<th class="cellalignment111" id="d16432e1033">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e1037" headers="d16432e1031"><code class="codeph">search_domains</code></td>
+<td class="cellalignment112" headers="d16432e1037 d16432e1033">A single string in comma-separated value format that specifies the set of DNS search domains to configure for the instance.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e1043" headers="d16432e1031"><code class="codeph">servers</code></td>
+<td class="cellalignment112" headers="d16432e1043 d16432e1033">A single string in comma-separated value format that specifies the set of DNS servers to configure for the instance.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">networkblock_route Attributes</p>
+<pre dir="ltr">
+{    
+"type": "rule" | "static" | "policy"    
+"name": "SameNICReply" # only if "rule"    
+"ip_network": &lt;string&gt;, # only if "static" or "policy"    
+"via": &lt;string&gt;,       # only if "static" or "policy" 
+}
+</pre>
+<p>The following table describes the attributes for <code class="codeph">networkblock_route</code>.</p>
+<div class="tblformal" id="GUID-F7D91076-1736-4B54-89D5-73C23A45BF85__GUID-3B484099-BE35-4815-AD1F-AB55FD8926C6">
+<table class="cellalignment110" summary="This table lists the attributes for networkblock_route and their descriptions.">
+<thead>
+<tr class="cellalignment96">
+<th class="cellalignment111" id="d16432e1066">Fields</th>
+<th class="cellalignment111" id="d16432e1068">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e1072" headers="d16432e1066"><code class="codeph">type</code></td>
+<td class="cellalignment112" headers="d16432e1072 d16432e1068">A string that must be <code class="codeph">rule</code>, <code class="codeph">static</code>, or <code class="codeph">policy</code>. All other properties must be specified as documented according to this value.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e1087" headers="d16432e1066"><code class="codeph">name</code></td>
+<td class="cellalignment112" headers="d16432e1087 d16432e1068">Only valid if type is <code class="codeph">rule</code>. A string that specifies the name of the rule to use. Currently only <code class="codeph">SameNICReply</code> is accepted. This rule results in a source-based routing rule created on the instance, designed to route reply packets back through the same network interface on which the packets to the vNet IP were received.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e1099" headers="d16432e1066"><code class="codeph">ip_network</code></td>
+<td class="cellalignment112" headers="d16432e1099 d16432e1068">Only valid if the type is <code class="codeph">static</code> or <code class="codeph">policy</code>. A string that specifies the destination IP address range in the CIDR format.</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d16432e1111" headers="d16432e1066"><code class="codeph">via</code></td>
+<td class="cellalignment112" headers="d16432e1111 d16432e1068">Only valid if type is <code class="codeph">static</code> or <code class="codeph">policy</code>. A string that specifies the gateway IP address.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment95">
+<tr>
+<td class="cellalignment102">
+<table class="cellalignment100">
+<tr>
+<td class="cellalignment99"><a href="GUID-9F8B9F08-81DF-4B6C-82A3-3A062F20BE66.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment99"><a href="GUID-58BBCE21-E8CE-4607-AFE5-C534DF286682.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment104">
+<table class="cellalignment98">
+<tr>
+<td class="cellalignment99"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment99"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

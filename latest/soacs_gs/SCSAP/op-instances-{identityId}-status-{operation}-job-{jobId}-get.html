@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine - Get Service Provisioning Status</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Use the REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine to manage, monitor, and perform operations on SOA services and servers.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine">
+        <meta property="og:description" content="Use the REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine to manage, monitor, and perform operations on SOA services and servers.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="api-View%20Service%20Provisioning%20Status.html" title="Previous" type="text/html">
+        
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="api-View%20Service%20Provisioning%20Status.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            
+            <header>
+
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine</a></li>
+                    <li>Tasks</li>
+                    
+                    <li class="active">
+                        
+                        <a href="api-View%20Service%20Provisioning%20Status.html">View Service Provisioning Status</a>
+                        
+                    </li>
+                    
+                </ol>
+                
+                <p class="draftsubtitle"></p>
+                
+                <h2>Get Service Provisioning Status</h2>
+                <div>
+                    <div class="label label-get text-uppercase">get</div>
+                    <p style="word-break: break-word;"><strong>/api/v1.1/instances/{identityId}/status/{operation}/job/{jobId}</strong></p>
+                </div>
+            </header>
+            <section>
+
+                <div class="description">Returns the instance provisioning status.</div>
+
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                        <li role="presentation" class="active"><a href="#request" aria-controls="request" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-in" aria-hidden="true"></span> Request</a></li>
+                        <li role="presentation"><a href="#response" aria-controls="response" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-out" aria-hidden="true"></span> Response</a></li>
+                        
+                        <li role="presentation"><a href="#examples" aria-controls="examples" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-edit" aria-hidden="true"></span> Examples</a></li>
+                        
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="request">
+                            <h3 class="visible-print-block">Request</h3>
+                            
+
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Path Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>identityId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the identity domain for the Oracle Cloud Service account.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                        <dt>jobId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Job ID of the provisioning operation.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                        <dt>operation</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the provisioning operation.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+
+                            
+                            
+                            
+
+                            
+                            
+
+                            
+
+
+                            
+
+
+
+                            
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="response">
+                            <h3 class="visible-print-block">Response</h3>
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">200 Response <span class="glyphicon glyphicon-ok-sign response-symbol" data-response-code="200" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    success
+                                </div>
+
+                                
+                                
+
+                                
+                                <div class="panel panel-default">
+
+                                    <div class="panel-heading">Body</div>
+                                    <div class="panel-body">
+                                        
+
+                                        <div class="schema-container">
+                                        
+                                        <div id="200-definitions-GetInstanceInfoResponse" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : GetInstanceInfoResponse</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-GetInstanceInfoResponse-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-GetInstanceInfoResponse-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-GetInstanceInfoResponse-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-GetInstanceInfoResponse-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-GetInstanceInfoResponse-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>created_by</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the user account used to create the Oracle SOA Cloud Service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>creation_job_id</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Default Value: <code>false</code></div>
+
+
+
+
+
+
+
+<div>Job ID for the create job.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>creation_time</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time the Oracle SOA Service instance was created.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>description</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Free-form text that provides additional information about the service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>identity_domain</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain name.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>last_modified_time</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time the Oracle SOA Service instance was last modified.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>resource_count</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Number of resources in the Stack Service Instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>resources</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The details of the individual resources in the SOA Service Instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>service_id</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Globally unique identifier for an Oracle SOA Service Instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>service_type</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The type of the service. Valid values include:<ul><li><code>osb</code> - Oracle Service Bus Topology.</li><li><code>soa</code> - Service Oriented Architecture.</li><li><code>soaosb</code> - Both OSB and SOA Topology.</li><li><code>b2b</code> - Both B2B (Business to Business) and SOA Topology.</li><li><code>mft</code> - MFT (Managed File Transfer) Topology.</li><li><code>insight</code> - Oracle Business Insight (Business Activity Monitoring) Topology.</li></ul></div>
+
+
+
+            
+        </dd>
+        
+        <dt>service_uri</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Resource URL for the Oracle SOA Service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>serviceName</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the Oracle SOA Service Instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>status</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies the status of the Oracle SOA Service instance. Valid values include: Provisioning Not Started, Running, In Progress, Terminating, and Failed.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+
+
+                        </div>
+                        
+                        <div role="tabpanel" class="tab-pane fade" id="examples">
+                            <h3>Examples</h3>
+                            <div class="body conbody">
+ <p class="p">The following example shows how to view the status of an Oracle SOA Cloud Service instance create operation by submitting a GET request on the REST resource using cURL. The REST resource URI is returned in the <samp class="ph codeph">Location</samp> header when submitting the create service instance request, as described in <a class="xref" href="op-instances-%7BidentityId%7D-post.html" target="_blank">Provision a New Service Instance</a>. For more information, see <a class="xref" href="Use%20cURL.html" target="_blank">Use cURL</a>.</p> 
+ <p class="p">See also <a class="xref" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=CSBCS-GUID-27812696-7861-4DCD-B37D-997D98B81F23" target="_blank">Exploring the Oracle SOA Cloud Service Console</a>.</p> 
+ <div class="section">
+  <h3 class="title sectiontitle">cURL Command</h3>
+  <pre class="pre">curl -i -X GET -u joe@example.com:Welcome1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://api-host/paas/service/soa/api/v1.1/instances/ExampleIdentityDomain/status/create/job/7495
+</pre> 
+  <div class="note note">
+   <span class="notetitle">Note::</span> This example uses the URL prefix for the United States (
+   <samp class="ph codeph">soacs</samp>). For information about the URL prefixes for other regions of the world, see 
+   <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a>.
+  </div> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Header</h3>
+  <p class="p">The following shows an example of the response header:</p> 
+  <pre class="pre">HTTP/1.1 200 OK
+Date: Thu, 29 Jan 2015 21:38:18 GMT
+Transfer-Encoding: chunked
+Content-Type: application/json</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Body</h3>
+  <p class="p">The following example shows the contents of the response, including the status messages:</p> 
+  <pre class="pre">{
+  "service_name": "ExampleInstance",
+  "version": "12cR3",
+  "wlsVersion": "12.1.3.0.4",
+  "status": "In Progress",
+  "error_status_desc": "",
+  "compliance_status": "",
+  "compliance_status_desc": "",
+  "auto_update": "true",
+  "description": "Example, Inc product distribution",
+  "identity_domain": "ExampleIdentityDomain",
+  "creation_time": "Fri Jan 23 22:18:26 UTC 2015",
+  "last_modified_time": "Fri Jan 23 22:18:26 UTC 2015",
+  "created_by": "joe@example.com",
+  "service_uri" : "https:\/\/api-host\/paas\/service\/soa\/api\/v1.1\/instances\/ExampleIdentityDomain\/ExampleInstance",
+  "message": [
+    "Created Compute resources for WebLogic Server...",
+    "Created security resources for the service...",
+    "Started all Compute resources...",
+    "Established SSH connectivity to WebLogic Administration Server...",
+    "WebLogic Administration Server Configuration completed...",
+    "WebLogic Managed Servers Configuration completed...",
+    "    Configuration check for Host [exampleinstance-wls-1] containing WebLogic Managed Server(s) [[ExampleI_server_1]] completed...",
+    "Successfully provisioned WebLogic Administration Server and 1 Managed Servers...",
+    "    Service Reachabilty Check (SRC) of WebLogic Administration Server completed...",
+    "    Service Reachabilty Check (SRC) of WebLogic Managed Server(s) [ExampleI_server_1] completed...",
+    "Established SSH connectivity to Load Balancer...",
+    "Configured Load Balancer...",
+    "Performing Service Reachability Check (SRC) of Load Balancer...",
+    "Service Reachabilty Check (SRC) of Load Balancer completed..."  ]
+}</pre> 
+ </div> 
+</div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+        </article>
+    </body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>About the Components of Oracle Java Cloud Service</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Each Oracle Java Cloud Service instance is comprised of several cloud and middleware components." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-35AC2310-F95C-46F7-AF22-C198C0DBF8A2.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-8EBFCEEA-AF39-4C0C-B149-7C428DB5451B.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-4AA3AC21-EF21-4F95-9A67-964E94036DD4"></a> <span id="PAGE" style="display:none;">6/131</span> <!-- End Header -->
+<a id="JSCUG3118"></a>
+<h1 id="JSCUG-GUID-4AA3AC21-EF21-4F95-9A67-964E94036DD4" class="sect1">About the Components of <span>Oracle Java Cloud Service</span></h1>
+<div>
+<p>Each <span>Oracle Java Cloud Service</span> instance is comprised of several cloud and middleware components.</p>
+<p>Each service instance has a single Oracle WebLogic Server domain that consists of one WebLogic Administration Server and a cluster of Managed Servers to host your Java application deployments. <span>When Oracle Coherence is enabled for a service instance,</span> there is a second cluster of Managed Servers that provide an in-memory data grid for your applications.</p>
+<p>The components of <span>Oracle Java Cloud Service</span> and its related Oracle Cloud components that are part of the infrastructure and platform service offerings are described in the following sections.</p>
+<div class="section">
+<p class="subhead1"><span>Oracle Java Cloud Service</span></p>
+<p>You use the <span>Oracle Java Cloud Service</span> Console to create <span>Oracle Java Cloud Service</span> instances, and to access and manage the life cycle of service instances. If Oracle Traffic Director is enabled as a load balancer for a service instance, you can use the <span>Oracle Java Cloud Service</span> Console to disable or enable the load balancer as the need arises. If <span>Oracle Coherence</span> is enabled for a service instance, you use the same console to perform all major lifecycle operations on the <span>Oracle Java Cloud Service&mdash;Coherence instance</span>, such as patching and scaling the Coherence data tier.</p>
+<p>See <a href="GUID-19357F9E-2790-48E0-81C0-0AD7FD4E33EE.htm#GUID-19357F9E-2790-48E0-81C0-0AD7FD4E33EE" title="You can use the Oracle Java Cloud Service Console to view all Oracle Java Cloud Service instances.">Exploring the Oracle Java Cloud Service Console</a>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1"><span>Oracle Database Cloud Service</span></p>
+<p>Each <span>Oracle Java Cloud Service</span> instance must be associated with an Oracle database, which can be provisioned as an <span>Oracle Database Cloud Service</span> deployment. <span>Oracle Java Cloud Service</span> relies on this database to host the required Oracle schema.</p>
+<p>See <a href="GUID-D0ACADB5-2415-450C-AE6A-0600752BDBA0.htm#GUID-D0ACADB5-2415-450C-AE6A-0600752BDBA0" title="Before you begin using Oracle Java Cloud Service to create service instances, you must provision an Oracle database. You may also need to satisfy additional prerequisites depending on your requirements.">Before You Begin with Oracle Java Cloud Service</a> for details about what you must create in <span>Oracle Database Cloud Service</span> before you can provision <span>Oracle Java Cloud Service</span> instances.</p>
+<p>See <a href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=CSDBI3315" target="_blank"><span>About Oracle Database Cloud Service</span></a>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Oracle Compute Cloud Service</p>
+<p><span>Oracle Java Cloud Service</span> is built on top of infrastructure provided by Oracle Compute Cloud Service. <span>Oracle Java Cloud Service</span> instances are hosted on Oracle Compute virtual machines (VMs) that are based on the Oracle Linux 6 (OEL6) 60-GB disk image.</p>
+<p>If load balancing is enabled for a service instance, an Oracle Traffic Director instance is hosted on its own virtual machine (VM). For information about the VM deployment topology that is set up and configured for you when you provision an <span>Oracle Java Cloud Service</span> instance.</p>
+<p>See <a href="GUID-CD8653E2-142A-4186-8365-911433DB96E1.htm#GUID-2008E65A-5F33-44D6-8010-C1B72EBBDF9A" title="Using Oracle Java Cloud Service simplifies the work you've to do in order to provision and configure an Oracle WebLogic Server domain and cluster, Oracle Coherence as the caching and data tier, and Oracle Traffic Director as the software load balancer.">About the Deployment Topology of Virtual Machines</a>.</p>
+<p>If <span>Oracle Coherence</span> is enabled for a service instance, a VM on the Coherence data tier can have one or more Managed Servers. For information about the VM deployment topology that is set up and configured for you when you provision <span>Oracle Coherence</span> for a service instance.</p>
+<p>See <a href="GUID-2BF3A152-1A20-44CD-A29D-B0949A73F2CA.htm#GUID-39831180-625F-4E4F-957C-D8B2038759A6" title="When Oracle Coherence is enabled for a service instance in Oracle Java Cloud Service, the Oracle Compute VM deployment topology is similar to the topology for a service instance that doesn't have Coherence enabled, with the addition of VMs and Managed Servers for a Coherence data tier."><span>About Oracle Coherence and the Compute Environment in Oracle Java Cloud Service</span></a>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1"><span>Oracle Coherence</span></p>
+<p><span>Oracle Coherence</span> is an in-memory data grid and caching solution that enables organizations to predictably scale applications by providing fast access to frequently used data. You can enable Oracle Coherence for an <span>Oracle Java Cloud Service</span> instance to use in-memory data grid and caching for Coherence applications deployed to Oracle WebLogic Server environments in the cloud. <span>When Oracle Coherence is enabled for a service instance,</span> <span>Oracle Coherence</span> is configured as a container subsystem within Oracle WebLogic Server in your environment. See <a href="GUID-6A6F5F1D-8F76-41EF-B652-D338C3F07683.htm" title="Enable Oracle Coherence in Oracle Java Cloud Service to use in-memory data grid and caching for Coherence applications that are deployed to Oracle WebLogic Server environments in the cloud.">Using Oracle Coherence in Oracle Java Cloud Service</a> to learn about creating and managing <span>Oracle Java Cloud Service</span>&ndash;Coherence instances.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1"><span>Oracle Traffic Director</span></p>
+<p>If load balancing is enabled for an <span>Oracle Java Cloud Service</span> instance, Oracle Traffic Director software is used as the load balancer for the service instance. Oracle Traffic Director implements the mod_wl_oh plug-in, which serves as the proxy to route client requests to Oracle WebLogic Server.</p>
+<p>If you add a load balancer to a service instance while creating the service instance, <span>Oracle Java Cloud Service</span> sets the WebLogic Plug-in Enabled control in Oracle WebLogic Server. If you add a load balancer to an <span>Oracle Java Cloud Service</span> instance after the service instance was created, you must set the WebLogic Plug-in Enabled control manually.</p>
+<p>The Oracle Traffic Director Administration Console can be used for advanced configuration, such as SSL certificate management and routing policy management.</p>
+<p>See <a href="GUID-4D705FE3-4FB0-4EEE-B5C9-86F3A20C5869.htm#GUID-4D705FE3-4FB0-4EEE-B5C9-86F3A20C5869" title="Oracle Traffic Director is used as the load balancer for an Oracle Java Cloud Service instance.">Configuring a Load Balancer for an <span>Oracle Java Cloud Service</span> Instance</a>.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-35AC2310-F95C-46F7-AF22-C198C0DBF8A2.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-8EBFCEEA-AF39-4C0C-B149-7C428DB5451B.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

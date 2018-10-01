@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Stopping and Starting an Oracle Java Cloud Service Instance and Individual VMs</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can stop and start an Oracle Java Cloud Service instance and, when the service instance is running, start, stop, and restart individual server or Load Balancer VMs." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-41A9CF0D-028D-4C62-B9C6-D369452D5937.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-A58DDD63-CD0F-49F4-AF78-AF4FA5C42C3A.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-A0491DD0-6E6C-405D-A00C-A213AABDF91C"></a> <span id="PAGE" style="display:none;">24/131</span> <!-- End Header -->
+<h1 id="JSCUG-GUID-A0491DD0-6E6C-405D-A00C-A213AABDF91C" class="sect1">Stopping and Starting an Oracle Java Cloud Service Instance and Individual VMs</h1>
+<div>
+<p>You can stop and start an Oracle Java Cloud Service instance and, when the service instance is running, start, stop, and restart individual server or Load Balancer VMs.</p>
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-A0491DD0-6E6C-405D-A00C-A213AABDF91C.htm#GUID-B663B1CE-1B99-40FF-9CDA-9BC76E43134E" title="You can stop and start an Oracle Java Cloud Service instance and, when the service instance is running, stop, start, and restart individual server or load balancer VMs.">About Stopping and Starting an Oracle Java Cloud Service Instance and Individual VMs</a></p>
+</li>
+<li>
+<p><a href="GUID-A0491DD0-6E6C-405D-A00C-A213AABDF91C.htm#GUID-E77701F5-F6E9-4696-9A52-37FAAC26013A" title="You can stop and start an Oracle Java Cloud Service instance through the Oracle Java Cloud Service Instance Overview page or the Topology page.">Stopping and Starting an Oracle Java Cloud Service Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-A0491DD0-6E6C-405D-A00C-A213AABDF91C.htm#GUID-1BCCC685-9CF7-4A46-A0A5-9B8359F1C99C" title="You can restart the VM on which the Administration Server is running, in an Oracle Java Cloud Service instance that is in a running state.">Restarting the Administration Server VM</a></p>
+</li>
+<li>
+<p><a href="GUID-A0491DD0-6E6C-405D-A00C-A213AABDF91C.htm#GUID-B35AE4EE-14DF-47D0-A5E9-1F40F6DB7C72" title="You can stop, start, and restart the VMs on which the Managed Servers or the load balancer are running in an Oracle Java Cloud Service instance if the service instance is in a running state. Restarting a Managed Server or load balancer VM is the same as stopping it, then starting it.">Stopping Starting and Restarting Managed Server and Load Balancer VMs</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-B663B1CE-1B99-40FF-9CDA-9BC76E43134E"></a>
+<h2 id="JSCUG-GUID-B663B1CE-1B99-40FF-9CDA-9BC76E43134E" class="sect2">About Stopping and Starting an Oracle Java Cloud Service Instance and Individual VMs</h2>
+<div>
+<p>You can stop and start an Oracle Java Cloud Service instance and, when the service instance is running, stop, start, and restart individual server or load balancer VMs.</p>
+<div class="infobox-note" id="GUID-B663B1CE-1B99-40FF-9CDA-9BC76E43134E__GUID-4ADC9651-65F8-43B6-AEA0-616A6A7454D0">
+<p class="notep1">Note:</p>
+The stop and restart procedures affect entire VMs. If you want to shut down the WebLogic Administration Server or Managed Server processes running on the VMs, without stopping the VMs, see <a href="GUID-BD5190E0-5DE4-454E-BAD3-E889C575D432.htm#GUID-BD5190E0-5DE4-454E-BAD3-E889C575D432" title="You can shut down and start WebLogic Servers (including Administration Servers) employed in your Oracle Java Cloud Service instance.">Shutting Down and Starting the WebLogic Server Managed Servers and Administration Server Processes on VMs</a>. You might want to do this if you have other processes besides the servers running on the VMs and you do not want to shut down these other processes.</div>
+<p>This topic describes why you would want to stop or start a service instance, or stop, start, or restart individual server or load balancer VMs. This topic also describes what happens when service instances are stopped and started, and how to monitor these operations.</p>
+<div class="section">
+<p class="subhead2">Why Stop an Oracle Java Cloud Service Instance</p>
+<p>Stopping an Oracle Java Cloud Service instance frees up compute resources used by the service instance&rsquo;s VMs. Metering for those resources stops.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">What Happens When an Oracle Java Cloud Service Instance is Stopped or Started</p>
+<p>Stopping and starting an Oracle Java Cloud Service instance has the following results:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Stopping the service instance</span>: The VMs on which the Administration Server, Managed Servers, load balancer, and Coherence Data Tier are running are stopped. You cannot start, stop, or restart the Administration Server, Manager Server, or load balancer VMs individually while the service instance is stopped.</p>
+</li>
+<li>
+<p><span class="bold">Starting the service instance</span>: All VMs on which the Administration Server, Managed Server, load balancer, and Coherence Data Tier are running are started. You can restart the Administration Server, and stop, start, or restart the Managed Servers and load balancer VMs individually. You cannot do the same for Coherence Data Tier VMs individually.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Why Stop, Start, or Restart an Administration Server, Managed Server, or Load Balancer VM</p>
+<p>If an Oracle Java Cloud Service instance is running:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>You can restart the VMs on which the Administration Server, Managed Server, or load balancer are running if you are experiencing problems with the server that would warrant a reboot. The restart operation is the same as stopping the server or load balancer VM, then starting it immediately.</p>
+</li>
+<li>
+<p>You can stop the VMs on which the Managed Server or the load balancer are running to free up resources and stop metering those resources. You might also want to stop the service instance instead of scaling, keeping the server or load balancer ready for a later time. If you stop all Managed Servers VMs except for one, you might want to stop the load balancer VM because it is not needed.</p>
+</li>
+<li>
+<p>You can start a Managed Server or load balancer VM if it is stopped and you want to use it again. Metering begins again.</p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-B663B1CE-1B99-40FF-9CDA-9BC76E43134E__GUID-0D42C7BB-D0B0-474B-BC18-DAA2B78F9A0D">
+<p class="notep1">Note:</p>
+You can restart the Administration Server, and stop, start, and restart individual Managed Servers and the load balancer only if you specified Oracle WebLogic Server 12c (12.1.3) or Oracle WebLogic Server 12<span class="italic">c</span> (12.2.1) when you provisioned the service instance. This feature is not supported if you specified Oracle WebLogic Server 11g.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">What Happens to the Coherence Data Tier When a Service Instance is Stopped or Started</p>
+<p>All VMs in a Coherence Data Tier, including the data grid servers, are stopped when an Oracle Java Cloud Service is stopped, and started if an Oracle Java Cloud Service instance is started.</p>
+<div class="infobox-note" id="GUID-B663B1CE-1B99-40FF-9CDA-9BC76E43134E__GUID-E4219E01-9400-4151-B1DC-8303E2276070">
+<p class="notep1">Note:</p>
+When the service instance is stopped, all data in the Coherence cache is lost.</div>
+<p>Stopping, starting, and restarting Coherence Data Tier Managed Server VMs is not supported. The only way you can stop or start the data tier is to stop or start the Oracle Java Cloud Service instance.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">How Do I Monitor the Stop, Start, or Restart Operation</p>
+<p>You can monitor progress of a stop, start, or restart operation on the Activity page. See <a href="GUID-45D5725E-A2D4-4228-B082-1ACD18A11ECE.htm" title="Use the Activity page to view activities for Oracle Java Cloud Service instances in your identity domain. You can restrict the list of activities displayed by using search filters.">Viewing Activity for Service Instances in an Identity Domain</a>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">What Happens When a Service Instance Is Stuck in Maintenance Mode While Stopping</p>
+<p>When you try to stop an Oracle Java Cloud Service instance, on rare occasions it might become stuck in maintenance mode due to some problem with the service instance.</p>
+<p>For six hours, the software will continue to attempt to stop the service instance, then change the instance status from maintenance state to error state. At this point, you can debug the problem causing the error and attempt to stop the service instance again.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-E77701F5-F6E9-4696-9A52-37FAAC26013A"></a>
+<h2 id="JSCUG-GUID-E77701F5-F6E9-4696-9A52-37FAAC26013A" class="sect2">Stopping and Starting an Oracle Java Cloud Service Instance</h2>
+<div>
+<p>You can stop and start an Oracle Java Cloud Service instance through the Oracle Java Cloud Service Instance Overview page or the Topology page.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-E77701F5-F6E9-4696-9A52-37FAAC26013A__GUID-83083CEE-1FD5-429F-A24D-4AE6D3B63DE4">
+<p class="notep1">Note:</p>
+When you stop an Oracle Java Cloud Service instance, all data in the Coherence cache (if present) will be lost.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2"></p>
+</div>
+<!-- class="section" -->
+<div class="section">To stop or start an Oracle Java Cloud Service instance:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Navigate to the Oracle Java Cloud Service Instance Overview page.</span></li>
+<li class="stepexpand"><span>Complete one of the following actions:</span>
+<ul>
+<li>Click the <img width="14" height="15" src="img/GUID-D0E9F26E-D981-4A6C-9C9C-E53E732DCDA2-default.gif" alt="Menu icon" title="Menu icon" /> Menu icon adjacent to the service name and select <span class="bold">Start</span> or <span class="bold">Stop</span>.</li>
+<li>Click the <img width="67" height="45" src="img/GUID-C759BCCD-CEBB-452B-B445-C0AF7D9AF659-default.png" alt="Start and stop icons" title="Start and stop icons" />Start or Stop icon.</li>
+</ul>
+<div>A confirmation dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">OK</span> in the confirmation dialog.</span>
+<div>
+<p>A yellow status icon is displayed adjacent to the service instance icon while the service instance is in the process of stopping or starting.</p>
+<p>When the operation completes, the Oracle Java Cloud Service instance is stopped or started. The yellow icon is no longer displayed. A red icon is displayed when the service instance is stopped. On the Activity page, the entry for the service shows that the stop or start operation has ended.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-1BCCC685-9CF7-4A46-A0A5-9B8359F1C99C"></a>
+<h2 id="JSCUG-GUID-1BCCC685-9CF7-4A46-A0A5-9B8359F1C99C" class="sect2">Restarting the Administration Server VM</h2>
+<div>
+<p>You can restart the VM on which the Administration Server is running, in an Oracle Java Cloud Service instance that is in a running state.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-1BCCC685-9CF7-4A46-A0A5-9B8359F1C99C__GUID-102D5376-47AD-4A48-9B93-AC25D0BE5B21">
+<p class="notep1">Note:</p>
+You can restart the Administration Server only if you specified Oracle WebLogic Server 12c (12.1.3) or Oracle WebLogic Server 12<span class="italic">c</span> (12.2.1) when you provisioned the service instance. This feature is not supported if you specified Oracle WebLogic Server 11g.</div>
+</div>
+<!-- class="section" -->
+<div class="section">To restart the Administration Server:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Navigate to the Oracle Java Cloud Service Instance Overview page.</span></li>
+<li class="stepexpand"><span>Click the <img width="14" height="15" src="img/GUID-D0E9F26E-D981-4A6C-9C9C-E53E732DCDA2-default.gif" alt="Menu icon" title="Menu icon" /> Menu icon adjacent to the Administration Server row and select <span class="bold">Restart</span>.</span>
+<div>A confirmation dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">OK</span> in the confirmation dialog.</span>
+<div>
+<p>A yellow status icon is displayed next to the service icon.</p>
+<p>The Administration Server VM starts. The yellow icon is no longer displayed.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-B35AE4EE-14DF-47D0-A5E9-1F40F6DB7C72"></a>
+<h2 id="JSCUG-GUID-B35AE4EE-14DF-47D0-A5E9-1F40F6DB7C72" class="sect2">Stopping, Starting, and Restarting Managed Server and Load Balancer VMs</h2>
+<div>
+<p>You can stop, start, and restart the VMs on which the Managed Servers or the load balancer are running in an Oracle Java Cloud Service instance if the service instance is in a running state. Restarting a Managed Server or load balancer VM is the same as stopping it, then starting it.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-B35AE4EE-14DF-47D0-A5E9-1F40F6DB7C72__GUID-5ECF0720-2AAB-427B-B827-85E1FE91FF64">
+<p class="notep1">Note:</p>
+You can stop, start, and restart individual Managed Servers and the load balancer only if you specified Oracle WebLogic Server 12c (12.1.3) or Oracle WebLogic Server 12<span class="italic">c</span> (12.2.1) when you provisioned the service instance. This feature is not supported if you specified Oracle WebLogic Server 11g.</div>
+To stop, start, or restart the Managed Server or load balancer VM:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Navigate to the Oracle Java Cloud Service Instance Overview page.</span></li>
+<li class="stepexpand"><span>Click the <img width="14" height="15" src="img/GUID-D0E9F26E-D981-4A6C-9C9C-E53E732DCDA2-default.gif" alt="Menu icon" title="Menu icon" /> Menu icon to the right of the Managed Server or load balancer row and select <span class="bold">Stop</span>, <span class="bold">Start</span>, or <span class="bold">Restart</span>.</span>
+<div>A confirmation dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">OK</span> in the confirmation dialog.</span>
+<div>The Managed Server or load balancer VM is stopped, started, or restarted.</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-41A9CF0D-028D-4C62-B9C6-D369452D5937.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-A58DDD63-CD0F-49F4-AF78-AF4FA5C42C3A.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,6817 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service - Import a WebLogic Server Domain Configuration</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="api-AppToCloud%20Migration.html" title="Previous" type="text/html">
+        <link rel="next" href="api-Automatic%20Scaling.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="api-AppToCloud%20Migration.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="api-Automatic%20Scaling.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            
+            <header>
+
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li>Tasks</li>
+                    
+                    <li class="active">
+                        
+                        <a href="api-AppToCloud%20Migration.html">AppToCloud Migration</a>
+                        
+                    </li>
+                    
+                </ol>
+                
+                <p class="draftsubtitle"></p>
+                
+                <h2>Import a WebLogic Server Domain Configuration</h2>
+                <div>
+                    <div class="label label-post text-uppercase">post</div>
+                    <p style="word-break: break-word;"><strong>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/jaas/instances/{serviceId}/import</strong></p>
+                </div>
+            </header>
+            <section>
+
+                <div class="description">This endpoint is only available on Oracle Public Cloud.<p>Imports an on-premises WebLogic Server domain configuration and its deployed applications into an existing Oracle Java Cloud Service instance. The service instance must have been provisioned with the appropriate AppToCloud artifacts that are uploaded to an Oracle Storage Cloud Service container.<p>The AppToCloud infrastructure enables you to quickly migrate existing Java applications and their supporting Oracle WebLogic Server resources to Oracle Java Cloud Service. There are certain prerequisites that must be met, and certain on-premises tasks and Oracle Cloud tasks that must be performed before you can import the domain and applications. See <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=JSCUG-GUID-9873F59C-09B7-4F89-8FC6-B889056D2442' target='_blank'>About AppToCloud Prerequisites</a> and <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=JSCUG-GUID-052B3FFD-E447-4D4E-B20A-F169BA2C45E4' target='_blank'>Typical Workflow for Migrating Applications to Oracle Java Cloud Service</a> in <i>Using Oracle Java Cloud Service</i>.<p>Briefly, the mandatory tasks are:<ul><li>Install the on-premises AppToCloud tools</li><li>Check the health of the on-premises domain</li><li>Export the on-premises domain</li><li>Migrate application databases to Database Cloud Service</li><li>Create a service instance with AppToCloud</li><li>Import the domain configuration and applications into the service instance</li><li>Recreate some domain resources, if necessary</li></ul><p>After completing the prerequisite tasks and before you can import the domain configuration and applications, you must create a service instance with AppToCloud to associate the service instance with the exported files that were generated with the AppToCloud tools. The payload you use to create a service instance with AppToCloud is the same as that described in <a href='op-paas-service-jcs-api-v1.1-instances-{identityDomainId}-post.html'>Create a Service Instance</a>, with the additional mandatory <code>customPayload</code> parameter in the request body. You can import the domain and applications only after you have created a service instance with <code>customPayload</code>.<p><b>Note:</b> Back up your service instance prior to performing an import. If the import fails, you will be able to restore the service instance to a known working state.</div>
+
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                        <li role="presentation" class="active"><a href="#request" aria-controls="request" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-in" aria-hidden="true"></span> Request</a></li>
+                        <li role="presentation"><a href="#response" aria-controls="response" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-out" aria-hidden="true"></span> Response</a></li>
+                        
+                        <li role="presentation"><a href="#examples" aria-controls="examples" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-edit" aria-hidden="true"></span> Examples</a></li>
+                        
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="request">
+                            <h3 class="visible-print-block">Request</h3>
+                            
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Path Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>identityDomainId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                        <dt>serviceId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the Oracle Java Cloud Service instance.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+
+                            
+                            
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Header Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>X-ID-TENANT-NAME</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">Body Parameter</div>
+                                <div style="padding-bottom: 0px" class="panel-body">
+                                    
+                                    <div style="margin-bottom: 8px">The request body defines the location of your AppToCloud artifacts in an Oracle Storage Cloud Service container. It also defines the data sources, foreign JNDI providers, and other resources as configured in the source domain. Look in your exported JSON file for the data source bindings, service bindings, and other resource bindings.</div>
+                                    
+
+                                    <div class="schema-container">
+                                    
+                                    <div id="request-definitions-import-postrequest" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : import-postrequest</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-import-postrequest-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-import-postrequest-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-import-postrequest-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-import-postrequest-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-import-postrequest-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>customPayload</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#request-definitions-import-postrequest-properties-customPayload" role="button" class="btn btn-default btn-sm">customPayload</a></div>
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about the data sources, foreign JNDI providers, and other resources as configured in the source on-premises WebLogic Server domain. Each data source in the original domain must be associated with an existing Oracle Database Cloud Service database deployment. <p>This <code>customPayload</code> is the same <code>customPayload</code> that is used in creating the service instance with AppToCloud artifacts.</div>
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-import-postrequest-properties-customPayload" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : customPayload</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about the data sources, foreign JNDI providers, and other resources as configured in the source on-premises WebLogic Server domain. Each data source in the original domain must be associated with an existing Oracle Database Cloud Service database deployment. <p>This <code>customPayload</code> is the same <code>customPayload</code> that is used in creating the service instance with AppToCloud artifacts.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-import-postrequest-properties-customPayload-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-import-postrequest-properties-customPayload-items" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-import-postrequest-properties-customPayload-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-import-postrequest-properties-customPayload-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-import-postrequest-properties-customPayload-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#request-definitions-custompayload-details" role="button" class="btn btn-default btn-sm">custompayload-details</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-custompayload-details" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : custompayload-details</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-custompayload-details-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-custompayload-details-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-custompayload-details-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-custompayload-details-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-custompayload-details-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>ds</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-definitions-custompayload-details-properties-ds" role="button" class="btn btn-default btn-sm">ds</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about one or more data sources as configured in the source domain.<p>Each data source must be mapped to a database deployment in Oracle Database Cloud Service.</div>
+
+            
+        </dd>
+        
+        <dt>jmsMessageBridgeDestination</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-definitions-custompayload-details-properties-jmsMessageBridgeDestination" role="button" class="btn btn-default btn-sm">jmsMessageBridgeDestination</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about one or more message bridge destinations as configured in the source domain.<p>Each JMS message bridge destination must have a connection URL or destination information for an existing Oracle Java Cloud Service instance.</div>
+
+            
+        </dd>
+        
+        <dt>jmsMessagingBridge</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-definitions-custompayload-details-properties-jmsMessagingBridge" role="button" class="btn btn-default btn-sm">jmsMessagingBridge</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about one or more messaging bridges as configured in the source domain.<p>Each JMS messaging bridge can have a source JMS bridge destination and a target JMS bridge destination.</div>
+
+            
+        </dd>
+        
+        <dt>jmsModule</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-definitions-custompayload-details-properties-jmsModule" role="button" class="btn btn-default btn-sm">jmsModule</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about one or more JMS modules as configured in the source domain.<p>Each JMS module can have zero or more foreign JMS servers, and zero or more remote Store-and-Forward (SAF) contexts.</div>
+
+            
+        </dd>
+        
+        <dt>jndi</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-definitions-custompayload-details-properties-jndi" role="button" class="btn btn-default btn-sm">jndi</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about one or more foreign Java Naming and Directory Interface (JNDI) providers as configured in the source domain.<p>Each foreign JNDI provider must be configured with the URL that WebLogic Server uses to contact the JNDI provider, or destination information for an existing Oracle Java Cloud Service instance.</div>
+
+            
+        </dd>
+        
+        <dt>mailSession</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-definitions-custompayload-details-properties-mailSession" role="button" class="btn btn-default btn-sm">mailSession</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about one or more Java mail sessions as configured in the source domain.<p>Each mail session can have a default, send, and receive object. A send or receive object cannot be added if the source domain does not have a transport (send) or store (receive) property.</div>
+
+            
+        </dd>
+        
+        <dt>storage</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-definitions-custompayload-details-properties-storage" role="button" class="btn btn-default btn-sm">storage</a></div>
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about the Oracle Storage Cloud Service container that contains the AppToCloud artifacts generated by the Export tool.</div>
+
+            
+        </dd>
+        
+        <dt>type</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The value must be <code>app2cloud</code>.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-custompayload-details-properties-ds" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : ds</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about one or more data sources as configured in the source domain.<p>Each data source must be mapped to a database deployment in Oracle Database Cloud Service.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-custompayload-details-properties-ds-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-custompayload-details-properties-ds-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-custompayload-details-properties-ds-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-custompayload-details-properties-ds-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-custompayload-details-properties-ds-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>datasource</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-definitions-custompayload-details-properties-ds-properties-datasource" role="button" class="btn btn-default btn-sm">datasource</a></div>
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Replace this with the actual <code>dataSourceName</code> name of a <code>dataSourceBindings</code>, as found in the exported JSON file. Specify one data source object for each <code>dataSourceName</code> found in the exported JSON file.</div>
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-custompayload-details-properties-jmsMessageBridgeDestination" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : jmsMessageBridgeDestination</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about one or more message bridge destinations as configured in the source domain.<p>Each JMS message bridge destination must have a connection URL or destination information for an existing Oracle Java Cloud Service instance.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-custompayload-details-properties-jmsMessageBridgeDestination-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-custompayload-details-properties-jmsMessageBridgeDestination-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-custompayload-details-properties-jmsMessageBridgeDestination-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-custompayload-details-properties-jmsMessageBridgeDestination-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-custompayload-details-properties-jmsMessageBridgeDestination-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>messagebridgedestination</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-definitions-custompayload-details-properties-jmsMessageBridgeDestination-properties-messagebridgedestination" role="button" class="btn btn-default btn-sm">messagebridgedestination</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Replace this with the actual <code>resourceRef</code> name of a <code>JMSBridgeDestinationBinding</code> in <code>jmsBindings</code>, as found in the exported JSON file.</div>
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-custompayload-details-properties-jmsMessagingBridge" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : jmsMessagingBridge</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about one or more messaging bridges as configured in the source domain.<p>Each JMS messaging bridge can have a source JMS bridge destination and a target JMS bridge destination.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-custompayload-details-properties-jmsMessagingBridge-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-custompayload-details-properties-jmsMessagingBridge-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-custompayload-details-properties-jmsMessagingBridge-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-custompayload-details-properties-jmsMessagingBridge-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-custompayload-details-properties-jmsMessagingBridge-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>messagingbridge</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-definitions-custompayload-details-properties-jmsMessagingBridge-properties-messagingbridge" role="button" class="btn btn-default btn-sm">messagingbridge</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Replace this with the actual <code>resourceRef</code> name of a <code>JMSBridgeBinding</code> in <code>jmsBindings</code>, as found in the exported JSON file.<p>The source and target destination must match the value of the source and target destination in the <code>JMSBridgeBinding</code>. The bridge destinations cannot be changed. If the source or target destination of the binding is empty, this indicates the destination is local to the server or cluster to which the bridge is targeted.</div>
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-custompayload-details-properties-jmsModule" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : jmsModule</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about one or more JMS modules as configured in the source domain.<p>Each JMS module can have zero or more foreign JMS servers, and zero or more remote Store-and-Forward (SAF) contexts.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-custompayload-details-properties-jmsModule-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-custompayload-details-properties-jmsModule-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-custompayload-details-properties-jmsModule-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-custompayload-details-properties-jmsModule-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-custompayload-details-properties-jmsModule-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>jmsmodule</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule" role="button" class="btn btn-default btn-sm">jmsmodule</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Replace this with the actual <code>resourceRef</code> name of a <code>JMSModuleBinding</code> in <code>jmsBindings</code>, as found in the exported JSON file. Specify one object for each JMS module binding found in the exported JSON file. Each object can have zero or more <code>jmsForeignServer</code>, and zero or more <code>safRemoteContext</code>.</div>
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-custompayload-details-properties-jndi" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : jndi</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about one or more foreign Java Naming and Directory Interface (JNDI) providers as configured in the source domain.<p>Each foreign JNDI provider must be configured with the URL that WebLogic Server uses to contact the JNDI provider, or destination information for an existing Oracle Java Cloud Service instance.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-custompayload-details-properties-jndi-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-custompayload-details-properties-jndi-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-custompayload-details-properties-jndi-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-custompayload-details-properties-jndi-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-custompayload-details-properties-jndi-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>foreignjndi</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-definitions-custompayload-details-properties-jndi-properties-foreignjndi" role="button" class="btn btn-default btn-sm">foreignjndi</a></div>
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Replace this with the actual <code>resourceRef</code> name of a foreign JNDI provider binding in <code>serviceBindings</code>, as found in the exported JSON file. Specify one object for each foreign JNDI provider binding found in the exported JSON file.</div>
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-custompayload-details-properties-mailSession" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : mailSession</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about one or more Java mail sessions as configured in the source domain.<p>Each mail session can have a default, send, and receive object. A send or receive object cannot be added if the source domain does not have a transport (send) or store (receive) property.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-custompayload-details-properties-mailSession-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-custompayload-details-properties-mailSession-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-custompayload-details-properties-mailSession-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-custompayload-details-properties-mailSession-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-custompayload-details-properties-mailSession-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>javamailsession</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-definitions-custompayload-details-properties-mailSession-properties-javamailsession" role="button" class="btn btn-default btn-sm">javamailsession</a></div>
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Replace this with the actual <code>resourceRef</code> name of a mail session binding in <code>serviceBindings</code>, as found in the exported JSON file. Specify one object for each mail session binding found in the exported JSON file.</div>
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-custompayload-details-properties-storage" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : storage</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about the Oracle Storage Cloud Service container that contains the AppToCloud artifacts generated by the Export tool.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-custompayload-details-properties-storage-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-custompayload-details-properties-storage-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-custompayload-details-properties-storage-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-custompayload-details-properties-storage-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-custompayload-details-properties-storage-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>a2cModelJsonLocation</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Location of the the Model Metadata Override JSON file that was generated when you used the AppToCloud Export tool on the domain configuration you wish to import into a service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>cloudStoragePwd</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Password for the Oracle Storage Cloud Service user who has access to the container.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>cloudStorageUser</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>User name for the Oracle Storage Cloud Service user who has access to the container.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-custompayload-details-properties-ds-properties-datasource" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : datasource</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Replace this with the actual <code>dataSourceName</code> name of a <code>dataSourceBindings</code>, as found in the exported JSON file. Specify one data source object for each <code>dataSourceName</code> found in the exported JSON file.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-custompayload-details-properties-ds-properties-datasource-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-custompayload-details-properties-ds-properties-datasource-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-custompayload-details-properties-ds-properties-datasource-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-custompayload-details-properties-ds-properties-datasource-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-custompayload-details-properties-ds-properties-datasource-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>datasource</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Replace this with the actual <code>dataSourceName</code> name of a <code>dataSourceBindings</code> as found in the exported JSON file. The data source types supported at this time are: <code>Generic</code>, <code>Multi</code>, and <code>GridLink</code>. The value is the Database Cloud Service database deployment.<p><b>Note:</b> For <code>GridLink</code> and <code>Multi</code> data sources, use a Database Cloud Service database deployment that hosts an Oracle Real Application Clusters (Oracle RAC) database.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>password</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Password for the database administrator.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>targetDataSourceType</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The value can be one of the following: <code>Generic</code>, <code>Multi</code>, and <code>GridLink</code>.<p>If the specified Database Cloud Service database deployment does not use Oracle RAC, the value must be <code>Generic</code>.<p>If the specified Database Cloud Service database deployment uses Oracle RAC and the specified <code>edition</code> (for WebLogic Server software) is <code>EE</code>, the value must be <code>Multi</code>.<p>If the specified Database Cloud Service database deployment uses Oracle RAC and the specified <code>edition</code>  (for WebLogic Server software) is <code>SUITE</code>, the value can be <code>GridLink</code> or <code>Multi</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>username</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>User name for the database administrator.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-custompayload-details-properties-jmsMessageBridgeDestination-properties-messagebridgedestination" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : messagebridgedestination</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Replace this with the actual <code>resourceRef</code> name of a <code>JMSBridgeDestinationBinding</code> in <code>jmsBindings</code>, as found in the exported JSON file.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-custompayload-details-properties-jmsMessageBridgeDestination-properties-messagebridgedestination-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-custompayload-details-properties-jmsMessageBridgeDestination-properties-messagebridgedestination-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-custompayload-details-properties-jmsMessageBridgeDestination-properties-messagebridgedestination-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-custompayload-details-properties-jmsMessageBridgeDestination-properties-messagebridgedestination-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-custompayload-details-properties-jmsMessageBridgeDestination-properties-messagebridgedestination-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>bypassPrecheck</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether to validate the connection during the import operation precheck. Default is <code>false</code>, which means validation is performed and the operation does not continue if the connection is invalid. Set to <code>true</code> if you want to skip the connection validation during the operation precheck.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>connectionUrl</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Connection URL for the JMS bridge destination.<p>Note that either <code>destination</code> or <code>connectionUrl</code> must be specified for each bridge destination.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>destination</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-definitions-custompayload-details-properties-jmsMessageBridgeDestination-properties-messagebridgedestination-properties-destination" role="button" class="btn btn-default btn-sm">destination</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Information about an existing Oracle Java Cloud Service instance. Provide either <code>server</code> or <code>cluster</code> details for the <code>destination</code>.<p>Note that either <code>destination</code> or <code>connectionUrl</code> must be specified for each bridge destination.</div>
+
+            
+        </dd>
+        
+        <dt>password</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Can include a password. Must be specified if <code>username</code> is specified.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>username</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Can include a user name. Must be specified if <code>password</code> is specified.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-custompayload-details-properties-jmsMessageBridgeDestination-properties-messagebridgedestination-properties-destination" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : destination</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Information about an existing Oracle Java Cloud Service instance. Provide either <code>server</code> or <code>cluster</code> details for the <code>destination</code>.<p>Note that either <code>destination</code> or <code>connectionUrl</code> must be specified for each bridge destination.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-custompayload-details-properties-jmsMessageBridgeDestination-properties-messagebridgedestination-properties-destination-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-custompayload-details-properties-jmsMessageBridgeDestination-properties-messagebridgedestination-properties-destination-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-custompayload-details-properties-jmsMessageBridgeDestination-properties-messagebridgedestination-properties-destination-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-custompayload-details-properties-jmsMessageBridgeDestination-properties-messagebridgedestination-properties-destination-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-custompayload-details-properties-jmsMessageBridgeDestination-properties-messagebridgedestination-properties-destination-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>cluster</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of cluster in the associated service instance. Either <code>cluster</code> or <code>server</code> must be supplied.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>jaasInstance</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the Oracle Java Cloud Service instance to associate with.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>protocol</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>A valid protocol type: t3, t3s, iiop or iiops.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>server</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of server in the associated service instance. Either <code>server</code> or <code>cluster</code> must be supplied.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-custompayload-details-properties-jmsMessagingBridge-properties-messagingbridge" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : messagingbridge</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Replace this with the actual <code>resourceRef</code> name of a <code>JMSBridgeBinding</code> in <code>jmsBindings</code>, as found in the exported JSON file.<p>The source and target destination must match the value of the source and target destination in the <code>JMSBridgeBinding</code>. The bridge destinations cannot be changed. If the source or target destination of the binding is empty, this indicates the destination is local to the server or cluster to which the bridge is targeted.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-custompayload-details-properties-jmsMessagingBridge-properties-messagingbridge-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-custompayload-details-properties-jmsMessagingBridge-properties-messagingbridge-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-custompayload-details-properties-jmsMessagingBridge-properties-messagingbridge-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-custompayload-details-properties-jmsMessagingBridge-properties-messagingbridge-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-custompayload-details-properties-jmsMessagingBridge-properties-messagingbridge-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>sourceDestination</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Source JMS bridge destination from which messages are received by the bridge.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>targetDestination</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Target JMS bridge destination to which messages are sent from the bridge.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : jmsmodule</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Replace this with the actual <code>resourceRef</code> name of a <code>JMSModuleBinding</code> in <code>jmsBindings</code>, as found in the exported JSON file. Specify one object for each JMS module binding found in the exported JSON file. Each object can have zero or more <code>jmsForeignServer</code>, and zero or more <code>safRemoteContext</code>.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>jmsForeignServer</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-jmsForeignServer" role="button" class="btn btn-default btn-sm">jmsForeignServer</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about one or more JMS foreign servers.<p>Each JMS foreign server must have a JNDI connection URL or destination information for an existing Oracle Java Cloud Service instance.</div>
+
+            
+        </dd>
+        
+        <dt>safRemoteContext</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-safRemoteContext" role="button" class="btn btn-default btn-sm">safRemoteContext</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about one or more remote Store-and-Forward (SAF) contexts.<p>Each remote SAF context must have an URL or destination information for an existing Oracle Java Cloud Service instance.</div>
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-jmsForeignServer" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : jmsForeignServer</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about one or more JMS foreign servers.<p>Each JMS foreign server must have a JNDI connection URL or destination information for an existing Oracle Java Cloud Service instance.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-jmsForeignServer-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-jmsForeignServer-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-jmsForeignServer-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-jmsForeignServer-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-jmsForeignServer-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>jmsforeignserver</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-jmsForeignServer-properties-jmsforeignserver" role="button" class="btn btn-default btn-sm">jmsforeignserver</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Replace this with the actual <code>resourceRef</code> name of the foreign server binding.</div>
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-safRemoteContext" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : safRemoteContext</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about one or more remote Store-and-Forward (SAF) contexts.<p>Each remote SAF context must have an URL or destination information for an existing Oracle Java Cloud Service instance.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-safRemoteContext-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-safRemoteContext-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-safRemoteContext-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-safRemoteContext-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-safRemoteContext-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>safremotecontext</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-safRemoteContext-properties-safremotecontext" role="button" class="btn btn-default btn-sm">safremotecontext</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Replace this with the actual <code>resourceRef</code> name of the remote SAF context binding.</div>
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-jmsForeignServer-properties-jmsforeignserver" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : jmsforeignserver</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Replace this with the actual <code>resourceRef</code> name of the foreign server binding.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-jmsForeignServer-properties-jmsforeignserver-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-jmsForeignServer-properties-jmsforeignserver-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-jmsForeignServer-properties-jmsforeignserver-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-jmsForeignServer-properties-jmsforeignserver-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-jmsForeignServer-properties-jmsforeignserver-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>bypassPrecheck</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether to validate the connection to the server during the import operation precheck. Default is <code>false</code>, which means validation is performed and the operation does not continue if the connection is invalid. Set to <code>true</code> if you want to skip the connection validation during the operation precheck.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>destination</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-jmsForeignServer-properties-jmsforeignserver-properties-destination" role="button" class="btn btn-default btn-sm">destination</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Information about an existing Oracle Java Cloud Service instance. Provide either <code>server</code> or <code>cluster</code> details for the <code>destination</code>.<p>Note that either <code>destination</code> or <code>jndiConnectionUrl</code> must be specified for each foreign JMS server object.</div>
+
+            
+        </dd>
+        
+        <dt>jndiConnectionUrl</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>JNDI connection URL.<p>Note that either <code>destination</code> or <code>jndiConnectionUrl</code> must be specified for each foreign JMS server object.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>password</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Can include a password. Must be specified if <code>username</code> is specified.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>username</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Can include a user name. Must be specified if <code>password</code> is specified.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-jmsForeignServer-properties-jmsforeignserver-properties-destination" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : destination</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Information about an existing Oracle Java Cloud Service instance. Provide either <code>server</code> or <code>cluster</code> details for the <code>destination</code>.<p>Note that either <code>destination</code> or <code>jndiConnectionUrl</code> must be specified for each foreign JMS server object.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-jmsForeignServer-properties-jmsforeignserver-properties-destination-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-jmsForeignServer-properties-jmsforeignserver-properties-destination-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-jmsForeignServer-properties-jmsforeignserver-properties-destination-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-jmsForeignServer-properties-jmsforeignserver-properties-destination-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-jmsForeignServer-properties-jmsforeignserver-properties-destination-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>cluster</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of cluster in the associated service instance. Either <code>cluster</code> or <code>server</code> must be supplied.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>jaasInstance</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the Oracle Java Cloud Service instance to associate with.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>protocol</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>A valid protocol type: t3, t3s, iiop or iiops.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>server</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of server in the associated service instance. Either <code>server</code> or <code>cluster</code> must be supplied.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-safRemoteContext-properties-safremotecontext" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : safremotecontext</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Replace this with the actual <code>resourceRef</code> name of the remote SAF context binding.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-safRemoteContext-properties-safremotecontext-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-safRemoteContext-properties-safremotecontext-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-safRemoteContext-properties-safremotecontext-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-safRemoteContext-properties-safremotecontext-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-safRemoteContext-properties-safremotecontext-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>bypassPrecheck</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether to validate the connection to the remote context during the import operation precheck. Default is <code>false</code>, which means validation is performed and the operation does not continue if the connection is invalid. Set to <code>true</code> if you want to skip the connection validation during the operation precheck.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>destination</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-safRemoteContext-properties-safremotecontext-properties-destination" role="button" class="btn btn-default btn-sm">destination</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Information about an existing Oracle Java Cloud Service instance. Provide either <code>server</code> or <code>cluster</code> details for the <code>destination</code>.<p>Note that either <code>destination</code> or <code>url</code> must be specified for each remote SAF context.</div>
+
+            
+        </dd>
+        
+        <dt>password</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Can include a password. Must be specified if <code>username</code> is specified.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>url</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The URL that the domain will use to connect to the remote server or cluster.<p>Note that either <code>destination</code> or <code>url</code> must be specified for each remote SAF context.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>username</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Can include a user name. Must be specified if <code>password</code> is specified.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-safRemoteContext-properties-safremotecontext-properties-destination" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : destination</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Information about an existing Oracle Java Cloud Service instance. Provide either <code>server</code> or <code>cluster</code> details for the <code>destination</code>.<p>Note that either <code>destination</code> or <code>url</code> must be specified for each remote SAF context.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-safRemoteContext-properties-safremotecontext-properties-destination-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-safRemoteContext-properties-safremotecontext-properties-destination-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-safRemoteContext-properties-safremotecontext-properties-destination-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-safRemoteContext-properties-safremotecontext-properties-destination-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-custompayload-details-properties-jmsModule-properties-jmsmodule-properties-safRemoteContext-properties-safremotecontext-properties-destination-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>cluster</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of cluster in the associated service instance. Either <code>cluster</code> or <code>server</code> must be supplied.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>jaasInstance</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the Oracle Java Cloud Service instance to associate with.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>protocol</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>A valid protocol type: t3, t3s, iiop or iiops.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>server</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of server in the associated service instance. Either <code>server</code> or <code>cluster</code> must be supplied.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-custompayload-details-properties-jndi-properties-foreignjndi" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : foreignjndi</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Replace this with the actual <code>resourceRef</code> name of a foreign JNDI provider binding in <code>serviceBindings</code>, as found in the exported JSON file. Specify one object for each foreign JNDI provider binding found in the exported JSON file.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-custompayload-details-properties-jndi-properties-foreignjndi-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-custompayload-details-properties-jndi-properties-foreignjndi-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-custompayload-details-properties-jndi-properties-foreignjndi-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-custompayload-details-properties-jndi-properties-foreignjndi-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-custompayload-details-properties-jndi-properties-foreignjndi-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>bypassPrecheck</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether to validate the connection to the provider during the import operation precheck. Default is <code>false</code>, which means validation is performed and the operation does not continue if the connection is invalid. Set to <code>true</code> if you want to skip the connection validation during the operation precheck.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>destination</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-definitions-custompayload-details-properties-jndi-properties-foreignjndi-properties-destination" role="button" class="btn btn-default btn-sm">destination</a></div>
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Information about an existing Oracle Java Cloud Service instance. Provide either <code>server</code> or <code>cluster</code> details for the <code>destination</code>.<p>Note that either <code>destination</code> or <code>provider</code> must be specified for each foreign JNDI provider object.</div>
+
+            
+        </dd>
+        
+        <dt>password</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Can include a password. Must be specified if <code>username</code> is specified.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>provider</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The foreign JNDI provider URL.<p>Note that either <code>destination</code> or <code>provider</code> must be specified for each foreign JNDI provider object.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>username</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Can include a user name. Must be specified if <code>password</code> is specified.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-custompayload-details-properties-jndi-properties-foreignjndi-properties-destination" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : destination</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Information about an existing Oracle Java Cloud Service instance. Provide either <code>server</code> or <code>cluster</code> details for the <code>destination</code>.<p>Note that either <code>destination</code> or <code>provider</code> must be specified for each foreign JNDI provider object.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-custompayload-details-properties-jndi-properties-foreignjndi-properties-destination-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-custompayload-details-properties-jndi-properties-foreignjndi-properties-destination-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-custompayload-details-properties-jndi-properties-foreignjndi-properties-destination-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-custompayload-details-properties-jndi-properties-foreignjndi-properties-destination-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-custompayload-details-properties-jndi-properties-foreignjndi-properties-destination-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>cluster</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of cluster in the associated service instance. Either <code>cluster</code> or <code>server</code> must be supplied.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>jaasInstance</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the Oracle Java Cloud Service instance to associate with.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>protocol</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>A valid protocol type: t3, t3s, iiop or iiops.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>server</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of server in the associated service instance. Either <code>server</code> or <code>cluster</code> must be supplied.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-custompayload-details-properties-mailSession-properties-javamailsession" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : javamailsession</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Replace this with the actual <code>resourceRef</code> name of a mail session binding in <code>serviceBindings</code>, as found in the exported JSON file. Specify one object for each mail session binding found in the exported JSON file.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>bypassPrecheck</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether to validate a connection during the import operation precheck. Default is <code>false</code>, which means validation is performed and the operation does not continue if the connection is invalid. Set to <code>true</code> if you want to skip the connection validation during the operation precheck.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>defaultMail</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties-defaultMail" role="button" class="btn btn-default btn-sm">defaultMail</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Default property values for the mail host.</div>
+
+            
+        </dd>
+        
+        <dt>mailSessionName</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>This is the <code>resourceRef</code> name of a mail session binding as found in the exported JSON file.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>optionalProperties</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties-optionalProperties" role="button" class="btn btn-default btn-sm">optionalProperties</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups other Java mail properties.</div>
+
+            
+        </dd>
+        
+        <dt>receive</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties-receive" role="button" class="btn btn-default btn-sm">receive</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Property values for the receive mail host.</div>
+
+            
+        </dd>
+        
+        <dt>send</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties-send" role="button" class="btn btn-default btn-sm">send</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Property values for the send mail host.</div>
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties-defaultMail" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : defaultMail</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Default property values for the mail host.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties-defaultMail-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties-defaultMail-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties-defaultMail-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties-defaultMail-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties-defaultMail-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>host</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the mail host machine. Must be specified if the send or receive host is not specified.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>password</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Can include a password. Must be specified if <code>username</code> is specified.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>port</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Port number on the default mail host to use if a protocol-specific mail port is not specified for the send host, receive host, or both.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>type</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Valid value is Default.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>username</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Can include a user name. Must be specified if <code>password</code> is specified.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties-optionalProperties" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : optionalProperties</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups other Java mail properties.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties-optionalProperties-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties-optionalProperties-items" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties-optionalProperties-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties-optionalProperties-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties-optionalProperties-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>One or more String name and value pairs of other Java mail properties. Do not include host, port, credentials, and protocol properties for connecting to the mail server.</div>
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties-receive" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : receive</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Property values for the receive mail host.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties-receive-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties-receive-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties-receive-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties-receive-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties-receive-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>host</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the receive mail host machine. If this is not specified, the default mail host is used.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>password</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Can include a password. Must be specified if <code>username</code> is specified.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>port</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Port number on the protocol-specific receive host.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>protocol</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Protocol for receiving mail.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>type</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Valid value is Receive.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>username</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Can include a user name. Must be specified if <code>password</code> is specified.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties-send" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : send</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Property values for the send mail host.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties-send-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties-send-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties-send-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties-send-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-custompayload-details-properties-mailSession-properties-javamailsession-properties-send-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>host</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the send mail host machine. If this is not specified, the default mail host is used.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>password</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Can include a password. Must be specified if <code>username</code> is specified.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>port</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Port number on the protocol-specific send host.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>protocol</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Protocol for sending mail.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>type</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Valid value is Send.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>username</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Can include a user name. Must be specified if <code>password</code> is specified.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    </div>
+
+                                    
+                                    
+                                    
+                                    		
+                                </div>
+                            </div>
+                            
+
+
+
+                            
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="response">
+                            <h3 class="visible-print-block">Response</h3>
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">200 Response <span class="glyphicon glyphicon-ok-sign response-symbol" data-response-code="200" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    OK. See <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=jcs_rest_statuscodes'>Status Codes</a> for information about other HTTP status codes.
+                                </div>
+
+                                
+                                
+
+                                
+
+                            </div>
+                            
+
+
+                        </div>
+                        
+                        <div role="tabpanel" class="tab-pane fade" id="examples">
+                            <h3>Examples</h3>
+                            <div class="body conbody">
+ <p class="p">The following example shows how to import a WebLogic Server domain configuration from an on-premises environment into your Oracle Java Cloud Service instance that was created with AppToCloud artifacts.</p> 
+ <p class="p"><strong class="ph b">Note:</strong> The command in this example uses the URL structure <samp class="ph codeph">https://rest_server_url/<em class="ph i">resource-path</em></samp>, where <samp class="ph codeph">rest_server_url</samp> is the Oracle Public Cloud REST server to contact for your identity domain. See <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a> for the appropriate URL structure to use for Oracle Public Cloud.</p> 
+ <div class="section">
+  <h3 class="title sectiontitle">cURL Command</h3>
+  <pre class="pre">curl -i -X POST -u username:userPassword1! -d @importcustompayload.json -H "Content-Type:application/json" -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/api/v1.1/instancemgmt/ExampleIdentityDomain/services/jaas/instances/ExampleInstance/import</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Request Body</h3>
+  <p class="p">Each data source in the original WebLogic Server domain must be associated with an existing Oracle Database Cloud Service database deployment. For <samp class="ph codeph">GridLink</samp> and <samp class="ph codeph">Multi</samp> data sources, use a Database Cloud Service database deployment that hosts an Oracle Real Application Clusters (Oracle RAC) database. </p> 
+  <p class="p">The following is an example of the request body in JSON format. </p> 
+  <p class="p"><strong class="ph b">Note:</strong> The <samp class="ph codeph">customPayLoad</samp> details used in the import POST request are the same as the <samp class="ph codeph">customPayLoad</samp> details used in the create service instance POST request.</p> 
+  <pre class="pre">{
+    "customPayload": [
+    {  
+        "ds":
+        {
+            "mymultidatasource":
+            {
+                "username":"sys as sysdba",
+                "password":"MyDBPassword1#",
+                "mymultidatasource":"some-db-cloud-instance",
+                "targetDataSourceType":"Generic"
+            },
+            "grid-2":
+            {
+                "username":"sys as sysdba",
+                "password":"MyDBPassword1#",
+                "grid-2":"some-db-cloud-instance",
+                "targetDataSourceType":"Generic"
+            },
+            "JDBC Data Source-0":
+            {
+                "username":"sys as sysdba",
+                "password":"MyDBPassword1#",
+                "JDBC Data Source-0":"some-db-cloud-instance",
+                "targetDataSourceType":"Generic"
+            },
+            "abcdjdbc":
+            {
+              "username":"sys as sysdba",
+              "password":"Welcome#1",
+              "abcdjdbc":"some-db-cloud-instance",
+              "targetDataSourceType":"Generic"
+            }
+        },
+        "jndi":
+        {
+            "myforeign-jndi":
+            {
+                "bypassPrecheck": "false",
+                "username":"myweblogicuser",
+                "password":"myweblogic1password",
+                "provider":"T3_WEBLOGIC_SERVER_URL"
+            },
+            "abcd":
+            {
+                "bypassPrecheck": "false",
+                "username":"myweblogicuser",
+                "password":"myweblogic1password",
+                "provider":"T3_WEBLOGIC_SERVER_URL"
+            },
+            "abcd provider jndi":
+            {
+                "bypassPrecheck": "false",
+                "username":"myweblogicuser",
+                "password":"myweblogic1password",
+                "destination":
+                {
+                    "jaasInstance": "targetJCSInstance",
+                    "server": "myserver",
+                    "protocol": "t3"
+                }
+            }
+        },
+        "mailSession": 
+        {
+            "MyMailSession-0": 
+            {
+                "mailSessionName": "MyMailSession-0",
+                "defaultMail": 
+                {
+                    "port": "asdasd",
+                    "username": "asdasd",
+                    "host": "asad",
+                    "type": "Default",
+                    "password":"testPassword"
+                },
+                "send": 
+                {
+                    "port": "465",
+                    "username": "asdsad",
+                    "protocol": "smtp",
+                    "host": "anexample.example.com",
+                    "type": "Send",
+                    "password":"testPassword"
+                },
+                "bypassPrecheck": "false",
+                "receive": 
+                {
+                    "port": "993",
+                    "username": "asdsad",
+                    "protocol": "imap",
+                    "host": "anexample.example.com",
+                    "type": "Receive",
+                    "password":"testPassword"
+                },
+                "optionalProperties": 
+                {
+                    "mail.smtp.ssl.enable": "true",
+                    "mail.imap.starttls.enable": "true",
+                    "mail.imap.ssl.enable": "true",
+                    "mail.smtp.auth": "true",
+                    "mail.smtp.starttls.enable": "true",
+                    "mail.imap.auth": "true"
+                }
+            },
+            "MyMailSession-1": 
+            {
+                "mailSessionName": "MyMailSession-1",
+                "defaultMail": 
+                {
+                    "port": "asdsad",
+                    "username": "asdsd",
+                    "host": "asdasd",
+                    "type": "Default",
+                    "password":"testPassword"
+                },
+                "send": 
+                {
+                    "port": "465",
+                    "username": "asdasd",
+                    "protocol": "smtp",
+                    "host": "anexample.example.com",
+                    "type": "Send",
+                    "password":"testPassword"
+                },
+                "bypassPrecheck": "false",
+                "optionalProperties": 
+                {
+                    "mail.smtp.ssl.enable": "true",
+                    "mail.smtp.auth": "true",
+                    "mail.smtp.password":"testPassword",
+                    "mail.smtp.starttls.enable": "true"
+                }
+            }
+        },
+        "jmsModule": 
+        {
+            "My Advanced Jms Module 1": 
+            {
+                "jmsForeignServer": 
+                {
+                    "MyForeignJMS3": 
+                    {
+                        "username": "asdsd",
+                        "jndiConnectionUrl": "t3:\/\/127.0.0.1:8101",
+                        "bypassPrecheck": "false",
+                        "password":"testPassword"
+                    }
+                },
+                "safRemoteContext": 
+                {
+                    "MyRemoteSAFcontext-0": 
+                    {
+                        "username": "asdasd",
+                        "bypassPrecheck": "false",
+                        "password":"testPassword",
+                        "url": "t3:\/\/127.0.0.1:8101"
+                    },
+                    "MyRemoteSAFcontext-1": 
+                    {
+                        "username": "tjghgh",
+                        "bypassPrecheck": "false",
+                        "password":"testPassword",
+                        "url": "t3:\/\/127.0.0.1:8101"
+                    },
+                    "MyRemoteSAFcontext-2":
+                    {
+                        "username": "egertert",
+                        "bypassPrecheck": "false",
+                        "password":"testPassword",
+                        "destination":
+                        {
+                            "jaasInstance": "targetJCSInstance",
+                            "server": "mycluster",
+                            "protocol": "t3"
+                        }   
+                    }
+                }
+            },
+            "MyAdvancedJmsModule2": 
+            {
+                "jmsForeignServer": 
+                {
+                    "My Foreign JMS 0": 
+                    {
+                        "username": "dfhrtuu",
+                        "jndiConnectionUrl": "t3:\/\/127.0.0.1:8101",
+                        "bypassPrecheck": "false",
+                        "password":"testPassword"
+                    },
+                    "ForeignServer-10": 
+                    {
+                        "username": "username3",
+                        "password": "password3",
+                        "bypassPrecheck": "false",
+                        "destination": { 
+                            "jaasInstance": "targetJCSInstance", 
+                            "cluster": "my cluster", 
+                            "protocol": "t3"
+                        } 
+                    }
+                },
+                "safRemoteContext": 
+                {
+                    "MyRemoteSAFcontext-0": 
+                    {
+                        "username": "were545",
+                        "bypassPrecheck": "false",
+                        "password":"testPassword",
+                        "url": "t3:\/\/127.0.0.1:8101"
+                    },
+                    "MyRemoteSAFcontext-1": 
+                    {
+                        "username": "sdfsdfs",
+                        "bypassPrecheck": "false",
+                        "password":"testPassword",
+                        "url": "t3:\/\/127.0.0.1:8101"
+                    },
+                    "MyRemoteSAFcontext-2": 
+                    {
+                        "username": "uuyhmn",
+                        "bypassPrecheck": "false",
+                        "password":"testPassword",
+                        "url": "t3:\/\/127.0.0.1:8101"
+                    }
+                }
+            }
+        },
+        "jmsMessageBridgeDestination": 
+        {
+            "JMS Bridge Remote Destination": 
+            {
+                "connectionUrl": "t3:\/\/127.0.0.1:8101",
+                "bypassPrecheck": "false",
+                "username": "someusername",
+                "password": "somepassword"
+            },
+            "JMS Bridge Local Destination": 
+            {
+                "connectionUrl": "t3:\/\/127.0.0.1:8101",
+                "bypassPrecheck": "false",
+                "username": "someusername",
+                "password": "somepassword"
+            },
+            "JMS Bridge Another Local Destination": 
+            {
+                "connectionUrl": "t3:\/\/127.0.0.1:8101",
+                "bypassPrecheck": "false",
+                "username": "someusername",
+                "password": "somepassword"
+            },
+            "JMS Bridge Another Remote Destination": 
+            {
+                "bypassPrecheck": "false",
+                "username": "someusername",
+                "password": "somepassword",
+                "destination":
+                {
+                    "jaasInstance": "targetJCSInstance",
+                    "server": "mycluster",
+                    "protocol": "t3"
+                }               
+            }
+        },
+        "jmsMessagingBridge": 
+        {
+            "MyMessagingBridge-2": 
+            {
+                "sourceDestination": "JMS Bridge Remote Destination",
+                "targetDestination": "JMS Bridge Local Destination"
+            },
+            "MyMessagingBridge-1": 
+            {
+                "sourceDestination": "JMS Bridge Local Destination",
+                "targetDestination": "JMS Bridge Remote Destination"
+            },
+            "Another Messaging Bridge-2": 
+            {
+                "sourceDestination": "JMS Bridge Another Remote Destination",
+                "targetDestination": "JMS Bridge Another Local Destination"
+            }
+        },
+        "storage":
+        {
+            "a2cModelJsonLocation": "https://storage-url/v1/storage-storageidentitydomain/containername/domain1.json",
+            "cloudStoragePwd": "MyPassword1#",
+            "cloudStorageUser": "joe@example.com"
+        },
+        "type": "app2cloud"
+    }
+    ]
+}
+</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Header</h3>
+  <p class="p">The following shows an example of the response header.</p> 
+  <pre class="pre">HTTP/1.1 200 OK
+Date: Tue, 19 Jul 2016 23:22:09 GMT
+Content-Length: 0
+Content-Type: application/json
+</pre> 
+ </div> 
+</div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+        </article>
+    </body>
+</html>

@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine - Restore from a Backup Point</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Use the REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine to manage, monitor, and perform operations on SOA services and servers.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine">
+        <meta property="og:description" content="Use the REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine to manage, monitor, and perform operations on SOA services and servers.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="op-instances-%7BidentityId%7D-%7BserviceId%7D-restoredbackups-get.html" title="Previous" type="text/html">
+        <link rel="next" href="api-Manage%20Servers.html" title="Next" type="text/html">
+    
+                    <script>var w=window;if(w.performance||w.mozPerformance||w.msPerformance||w.webkitPerformance){var d=document;AKSB=w.AKSB||{},AKSB.q=AKSB.q||[],AKSB.mark=AKSB.mark||function(e,_){AKSB.q.push(["mark",e,_||(new Date).getTime()])},AKSB.measure=AKSB.measure||function(e,_,t){AKSB.q.push(["measure",e,_,t||(new Date).getTime()])},AKSB.done=AKSB.done||function(e){AKSB.q.push(["done",e])},AKSB.mark("firstbyte",(new Date).getTime()),AKSB.prof={custid:"322179",ustr:"",originlat:"0",clientrtt:"1",ghostip:"23.212.3.15",ipv6:false,pct:"10",clientip:"45.78.37.67",requestid:"258a5a9",region:"32996",protocol:"",blver:14,akM:"dsca",akN:"ae",akTT:"O",akTX:"1",akTI:"258a5a9",ai:"206465",ra:"false",pmgn:"",pmgi:"",pmp:"",qc:""},function(e){var _=d.createElement("script");_.async="async",_.src=e;var t=d.getElementsByTagName("script"),t=t[t.length-1];t.parentNode.insertBefore(_,t)}(("https:"===d.location.protocol?"https:":"http:")+"//ds-aksb-a.akamaihd.net/aksb.min.js")}</script>
+                    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="op-instances-%7BidentityId%7D-%7BserviceId%7D-restoredbackups-get.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="api-Manage%20Servers.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            
+            <header>
+
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine</a></li>
+                    <li>Tasks</li>
+                    
+                    <li class="active">
+                        
+                        <a href="api-Manage%20Restore%20Operations.html">Manage Restore Operations</a>
+                        
+                    </li>
+                    
+                </ol>
+                
+                <p class="draftsubtitle"></p>
+                
+                <h2>Restore from a Backup Point</h2>
+                <div>
+                    <div class="label label-post text-uppercase">post</div>
+                    <p style="word-break: break-word;"><strong>/api/v1.1/instances/{identityId}/{serviceId}/restoredbackups</strong></p>
+                </div>
+            </header>
+            <section>
+
+                <div class="description">Restores a service from a specified backup point.</div>
+
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                        <li role="presentation" class="active"><a href="#request" aria-controls="request" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-in" aria-hidden="true"></span> Request</a></li>
+                        <li role="presentation"><a href="#response" aria-controls="response" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-out" aria-hidden="true"></span> Response</a></li>
+                        
+                        <li role="presentation"><a href="#examples" aria-controls="examples" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-edit" aria-hidden="true"></span> Examples</a></li>
+                        
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="request">
+                            <h3 class="visible-print-block">Request</h3>
+                            
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Path Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>identityId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the identity domain for the Oracle Cloud Service account.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                        <dt>serviceId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>ID of the service instance.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+
+                            
+                            
+                            
+
+                            
+                            
+
+                            
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">Body Parameter</div>
+                                <div style="padding-bottom: 0px" class="panel-body">
+                                    
+                                    <div style="margin-bottom: 8px">The request body defines the details of the restoration request. <b>Bold</b> indicates a required value.</div>
+                                    
+
+                                    <div class="schema-container">
+                                    
+                                    <div id="request-definitions-RestoreBackupPayload" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : RestoreBackupPayload</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The request body defines the details of the restoration request. <b>Bold</b> indicates a required value.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-RestoreBackupPayload-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-RestoreBackupPayload-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-RestoreBackupPayload-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-RestoreBackupPayload-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-RestoreBackupPayload-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>backupId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Backup ID</div>
+
+
+
+            
+        </dd>
+        
+        <dt>forceScaleIn</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether to automatically scale in the Oracle SOA Cloud Service instance if there are Managed Servers configured that are not included in the backup being restored. This value defaults to <code>false</code>, indicating that the service instance should not be scaled in automatically.<p>If this flag is set to <code>false</code> and the Oracle SOA Cloud Service instance has Managed Servers configured that are not included in the backup being restored, the operation fails and the following error message is returned:<p><code>JAAS-BR-105: Unable to restore configuration data for managed servers that are not part of the backup. The affected managedsServers are: [managedserver_x, managedserver_y]. Scale in the service instance to remove these managed servers' nodes and then try to restore the service instance again.</code><p><b>Note:</b> This flag is valid only when restoring configuration data (<code>restoreConfig</code> is set to <code>true</code>).</div>
+
+
+
+            
+        </dd>
+        
+        <dt>notes</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Free-form text to provide additional information about the restoration operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>pauseOTD</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether to pause the load balancer during the restoration process. This value defaults to <code>false</code>.<p>If set to <code>true</code>, the load balancer is paused and stops forwarding requests to the Managed Servers in the service instance during the restoration process, and responds with an HTTP 503 status code to client requests. After the restoration process completes, the load balancer is restarted.<p>If pause or restart of the load balancer fails, for example, because the load balancer Administration Server is not available, the restoration process proceeds. The restoration process will fail, however, if the load balancer health check fails.<p>You should not rely on this feature if any manual tasks are required to be performed once the restoration completes. For more information, see <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=JSCUG3420' target='_blank'>Returning an Oracle SOA Cloud Service Instance to Service After Restoration from a Backup</a> in <i>Using Oracle SOA Cloud Service</i>.<p><b>Note:</b> This flag is valid only if the load balancer is enabled.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    </div>
+
+                                    
+                                    
+                                    
+                                    		
+                                </div>
+                            </div>
+                            
+
+
+
+                            
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="response">
+                            <h3 class="visible-print-block">Response</h3>
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">202 Response <span class="glyphicon glyphicon-ok-sign response-symbol" data-response-code="202" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    Accepted
+                                </div>
+
+                                
+                                
+
+                                
+                                <div class="panel panel-default">
+
+                                    <div class="panel-heading">Body</div>
+                                    <div class="panel-body">
+                                        
+
+                                        <div class="schema-container">
+                                        
+                                        <div id="202-definitions-RestoreBackupResponse" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : RestoreBackupResponse</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-202-definitions-RestoreBackupResponse-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-202-definitions-RestoreBackupResponse-properties" aria-expanded="false" aria-controls="collapseListGroup-202-definitions-RestoreBackupResponse-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-202-definitions-RestoreBackupResponse-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-202-definitions-RestoreBackupResponse-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>jobId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Job ID for the restoration operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>operationName</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Operation performed. This value is set to: restore-backup.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>target_uri</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>URI of the backup resource.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+
+
+                        </div>
+                        
+                        <div role="tabpanel" class="tab-pane fade" id="examples">
+                            <h3>Examples</h3>
+                            <div class="body conbody">
+ <p class="p">The following example shows how to restore an Oracle SOA Cloud Service instance by submitting a POST request on the REST resource using cURL. For more information, see <a class="xref" href="Use%20cURL.html" target="_blank">Use cURL</a>.</p> 
+ <p class="p">See also <a class="xref" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=CSBCS-GUID-388B4818-9123-4389-9116-1511BA9A42DF" target="_blank">Restoring an Oracle SOA Cloud Service Instance from a Backup</a>.</p> 
+ <div class="section">
+  <h3 class="title sectiontitle">cURL Command</h3>
+  <pre class="pre">curl -i -X POST -u joe@example.com:Welcome1! -d @restore.json -H "Content-Type:application/json" -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://api-host/paas/service/soa/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance/restoredbackups</pre> 
+  <div class="note note">
+   <span class="notetitle">Note::</span> This example uses the URL prefix for the United States (
+   <samp class="ph codeph">soacs</samp>). For information about the URL prefixes for other regions of the world, see 
+   <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a>.
+  </div> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Request Body</h3>
+  <p class="p">The following shows an example of the request body in JSON format. </p> 
+  <pre class="pre">{
+ "backupId":"1386382930068" 
+} 
+</pre> 
+  <p class="p">To retrieve the backup ID, see <a class="xref" href="op-instances-%7BidentityId%7D-%7BserviceId%7D-backups-get.html" target="_blank">List Service Backups</a>.</p> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Header</h3>
+  <p class="p">The following shows an example of the response header:</p> 
+  <pre class="pre">HTTP/1.1 202 Accepted
+Date: Thu, 05 Feb 2015 22:08:03 GMT
+Transfer-Encoding: chunked
+Content-Type: application/json</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Body</h3>
+  <p class="p">The following shows an example of the response JSON document.</p> 
+  <pre class="pre">{
+ "operationName":"restore-backup", 
+ "job_id":"2001",
+ "target_uri":"https:\/\/api-host/\/paas\/service\/soa\/api\/v1.1\/instances\/ExmapleIdentityDomain\/ExampleInstance\/restoredbackups\/2001"
+} 
+</pre> 
+ </div> 
+</div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+        </article>
+    </body>
+</html>

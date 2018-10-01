@@ -1,0 +1,1660 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service - View All Restoration Operations</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-deletedbackups-get.html" title="Previous" type="text/html">
+        <link rel="next" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-backupconfig-get.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-deletedbackups-get.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-backupconfig-get.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            
+            <header>
+
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li>Tasks</li>
+                    
+                    <li class="active">
+                        
+                        <a href="api-Backups%20and%20Restorations.html">Backups and Restorations</a>
+                        
+                    </li>
+                    
+                </ol>
+                
+                <p class="draftsubtitle"></p>
+                
+                <h2>View All Restoration Operations</h2>
+                <div>
+                    <div class="label label-get text-uppercase">get</div>
+                    <p style="word-break: break-word;"><strong>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/jaas/instances/{serviceId}/restoredbackups</strong></p>
+                </div>
+            </header>
+            <section>
+
+                <div class="description">Returns information for all restoration operations for an Oracle Java Cloud Service instance.<p>By default, only successful restoration operations are included. Set the <code>?includeFailed</code> query parameter to <code>true</code> to include both successful and failed restoration operations.<p><b>Note:</b> The legacy path <i>/paas/service/jcs/api/v1.1/instances/{identityDomainId}/{serviceId}/restoredbackups</i> is deprecated but it will continue to be supported for the near term. However, it is recommended that you migrate your applications to use the new path at your earliest convenience to minimize any disruption in the future when the deprecated URL structure is no longer supported.</div>
+
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                        <li role="presentation" class="active"><a href="#request" aria-controls="request" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-in" aria-hidden="true"></span> Request</a></li>
+                        <li role="presentation"><a href="#response" aria-controls="response" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-out" aria-hidden="true"></span> Response</a></li>
+                        
+                        <li role="presentation"><a href="#examples" aria-controls="examples" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-edit" aria-hidden="true"></span> Examples</a></li>
+                        
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="request">
+                            <h3 class="visible-print-block">Request</h3>
+                            
+
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Path Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>identityDomainId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account (on Oracle Public Cloud).<p>Tenant name for the Oracle Java Cloud Service instance (on Oracle Cloud Machine).</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                        <dt>serviceId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the Oracle Java Cloud Service instance.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Query Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>includeFailed</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether to include (<code>true</code>) or exclude (<code>false</code>) failed restoration operations. Defaults to <code>false</code>.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Header Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>X-ID-TENANT-NAME</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account (on Oracle Public Cloud).<p>Tenant name for the Oracle Java Cloud Service instance (on Oracle Cloud Machine).</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+
+
+                            
+
+
+
+                            
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="response">
+                            <h3 class="visible-print-block">Response</h3>
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">200 Response <span class="glyphicon glyphicon-ok-sign response-symbol" data-response-code="200" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    OK. See <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=jcs_rest_statuscodes'>Status Codes</a> for information about other possible HTTP status codes.
+                                </div>
+
+                                
+                                
+
+                                
+                                <div class="panel panel-default">
+
+                                    <div class="panel-heading">Body</div>
+                                    <div class="panel-body">
+                                        
+                                        <div>The response body contains the details of the restoration operations.</div>
+                                        
+
+                                        <div class="schema-container">
+                                        
+                                        <div id="200-definitions-viewallrestorations-response" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : viewallrestorations-response</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The response body contains the details of the restoration operations.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-viewallrestorations-response-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-viewallrestorations-response-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-viewallrestorations-response-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-viewallrestorations-response-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-viewallrestorations-response-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>restoreHistory</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-viewallrestorations-response-properties-restoreHistory" role="button" class="btn btn-default btn-sm">restoreHistory</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups all completed restoration operations.</div>
+
+            
+        </dd>
+        
+        <dt>restoreInProgress</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-viewallrestorations-response-properties-restoreInProgress" role="button" class="btn btn-default btn-sm">restoreInProgress</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups details of a restoration operation currently in progress, if any.</div>
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-viewallrestorations-response-properties-restoreHistory" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : restoreHistory</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups all completed restoration operations.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-viewallrestorations-response-properties-restoreHistory-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-viewallrestorations-response-properties-restoreHistory-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-viewallrestorations-response-properties-restoreHistory-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-viewallrestorations-response-properties-restoreHistory-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-viewallrestorations-response-properties-restoreHistory-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-restoreHistory" role="button" class="btn btn-default btn-sm">restoreHistory</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-viewallrestorations-response-properties-restoreInProgress" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : restoreInProgress</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups details of a restoration operation currently in progress, if any.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-viewallrestorations-response-properties-restoreInProgress-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-viewallrestorations-response-properties-restoreInProgress-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-viewallrestorations-response-properties-restoreInProgress-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-viewallrestorations-response-properties-restoreInProgress-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-viewallrestorations-response-properties-restoreInProgress-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-restoreHistory" role="button" class="btn btn-default btn-sm">restoreHistory</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-restoreHistory" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : restoreHistory</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-restoreHistory-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-restoreHistory-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-restoreHistory-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-restoreHistory-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-restoreHistory-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>backupDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time of the backup.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>backupId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Backup ID.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>configDataIncluded</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies configuration data was restored (<code>true</code>).</div>
+
+
+
+            
+        </dd>
+        
+        <dt>databaseIncluded</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>This attribute is only applicable to Oracle Public Cloud. Flag that specifies the database files for the associated Database Cloud Service database deployment were not included in the Oracle Java Cloud Service instance restoration operation (<code>false</code>). If a database backup was performed, the database files must be restored manually.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>jobId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Job ID for the restore operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>notes</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Free-form text that provides additional information about the restoration operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>otdIncluded</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether the load balancer was restored (<code>true</code>). If OTD is not provisioned or was not provisioned at the time of the backup, the value is <code>false</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>recoveryCompleteDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time that the restoration operation completed. This information is not displayed for restorations that are still in progress.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>recoveryStartDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time that the restoration operation started.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>restoreBinariesType</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Type of binary restoration, whether binary restoration was invoked explicitly (<code>resetBinaries</code> is <code>true</code>) or as part of a patch rollback. Valid values include: <code>reset</code> or <code>rollback</code>.<p>If <code>staticDataIncluded</code> is <code>true</code>, the exact static restore type is displayed.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>staticDataIncluded</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies the static binary files were not included (<code>false</code>) or included (<code>true</code>) in the restoration operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>status</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Status of the operation. Valid values include: <code>Completed</code>, <code>Failed</code>, or <code>In Progress</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>statusDetails</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>History of system messages. Each message is separated by an ellipses (...).</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+
+
+                        </div>
+                        
+                        <div role="tabpanel" class="tab-pane fade" id="examples">
+                            <h3>Examples</h3>
+                            <div class="body conbody">
+ <p class="p">The following example shows how to view all restoration operations for an Oracle Java Cloud Service instance by submitting a GET request on the REST resource using cURL.</p> 
+ <p class="p"><strong class="ph b">Note:</strong> The command in this example uses the URL structure <samp class="ph codeph">https://rest_server_url/<em class="ph i">resource-path</em></samp>, where <samp class="ph codeph">rest_server_url</samp> is the Oracle Public Cloud or Oracle Cloud Machine REST server to contact for your identity domain or tenant name. See <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a> for the appropriate URL structure to use on Oracle Public Cloud or Oracle Cloud Machine.</p> 
+ <div class="section">
+  <h3 class="title sectiontitle">cURL Command</h3>
+  <pre class="pre">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/api/v1.1/instancemgmt/ExampleIdentityDomain/services/jaas/instances/ExampleInstance/restoredbackups
+</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example Response Header</h3>
+  <p class="p">The following shows an example of the response header.</p> 
+  <pre class="pre">HTTP/1.1 200 OK
+Date: Tue, 08 Dec 2015 23:44:33 GMT
+Transfer-Encoding: chunked
+Content-Type: application/json</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example Response Body (Oracle Public Cloud)</h3>
+  <p class="p">The following shows an example of the response body in JSON format.</p> 
+  <pre class="pre">{
+    "restoreHistory":[
+    {
+        "backupId":"1449332100032",
+        "backupDate":"Sat Dec 05 16:15:00 GMT 2015",
+        "jobId":"8226",
+        "recoveryStartDate":"Sat Dec 05 23:39:02 GMT 2015",
+        "recoveryCompleteDate":"Sat Dec 05 23:57:53 GMT 2015",
+        "status":"Completed",
+        "statusDetails":"The backup archive already exists in the block storage and does not need to be downloaded from the Oracle Storage Cloud Service container...
+          Submitted the restoration precheck for remote execution...
+          Restoration precheck passed...Disabled the load balancer...Submitted the restoration for remote execution...
+          These managed servers were added after the backup was created: ['exampleinstance-wls-3']. The instance will be scaled in with force=true to remove these managed servers...Stopping WebLogic Server...
+          Stopped WebLogic Server...Restoring the configuration data for WebLogic Server administration server on host exampleinstance-wls-1...
+          Restored the configuration data for WebLogic Server administration server on host exampleinstance-wls-1...Restoring Oracle Traffic Director on host exampleinstance-lb-1...
+          Restored Oracle Traffic Director on host exampleinstance-lb-1...Restoring the configuration data for WebLogic Server administration server on host exampleinstance-wls-2...
+          Restored the configuration data for WebLogic Server administration server on host exampleinstance-wls-2...Starting WebLogic Server...
+          Started WebLogic Server...Unlocked the WebLogic Server domain configuration...
+          Completed the restoration...Enabled the load balancer...Validated the load balancer",
+        "staticDataIncluded":false,
+        "configDataIncluded":true,
+        "otdIncluded":true,
+        "databaseIncluded":false
+    }],
+    "restoreInProgress":
+    {
+        "backupId":"1449340039298",
+        "backupDate":"Sat Dec 05 18:27:19 GMT 2015",
+        "jobId":"8386",
+        "recoveryStartDate":"Tue Dec 08 23:43:49 GMT 2015",
+        "status":"In Progress",
+        "staticDataIncluded":true,
+        "restoreBinariesType":"reset",
+        "configDataIncluded":true,
+        "otdIncluded":true,
+        "databaseIncluded":false,
+        "notes":"Restore and reset binary files"
+    }
+}</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example Response Body (Oracle Cloud Machine)</h3>
+  <p class="p">The following shows an example of the response body in JSON format.</p> 
+  <pre class="pre">{
+    "restoreHistory":[
+    {
+        "backupId":"1472840593076",
+        "backupDate":"Fri Sep 02 18:23:13 GMT 2016",
+        "jobId":"841",
+        "recoveryStartDate":"Fri Sep 02 18:43:15 GMT 2016",
+        "recoveryCompleteDate":"Fri Sep 02 18:52:03 GMT 2016",
+        "status":"Completed",
+        "statusDetails":"Downloading the MWH archive from the remote filesystem...Downloaded the MWH archive from the Oracle Storage Cloud Service container...
+           The backup archive already exists in the block storage and does not need to be downloaded from the Oracle Storage Cloud Service container...
+           Submitted the restoration precheck for remote execution...Restoration precheck passed...
+           Submitted the restoration for remote execution...Stopping WebLogic Server...
+           Stopped WebLogic Server...Restoring the binary data for WebLogic Server administration server on host exampleinstance-wls-1...
+           JDK home restoration is not requested...Restored the binary data for WebLogic Server administration server on host exampleinstance-wls-1...
+           Restoring the binary data for WebLogic Server administration server on host exampleinstance-wls-2...
+           JDK home restoration is not requested...Restored the binary data for WebLogic Server administration server on host exampleinstance-wls-2...
+           Starting WebLogic Server...Started WebLogic Server...Unlocked the WebLogic Server domain configuration...
+           Completed the restoration",
+        "staticDataIncluded":true,
+        "restoreBinariesType":"rollback",
+        "configDataIncluded":false,
+        "otdIncluded":false,
+        "databaseIncluded":false,
+        "notes":"Roll back PSU"
+    },
+    {
+        "backupId":"1472874600045",
+        "backupDate":"Sat Sep 03 03:50:00 GMT 2016",
+        "jobId":"1267",
+        "recoveryStartDate":"Wed Sep 07 22:28:33 GMT 2016",
+        "recoveryCompleteDate":"Wed Sep 07 22:39:21 GMT 2016",
+        "status":"Completed",
+        "statusDetails":"The backup archive already exists in the block storage and does not need to be downloaded from the Oracle Storage Cloud Service container...
+           Submitted the restoration precheck for remote execution...Restoration precheck passed...
+           Submitted the restoration for remote execution...Stopping WebLogic Server...Stopped WebLogic Server...
+           Restoring the configuration data for WebLogic Server administration server on host exampleinstance-wls-1...
+           Restored the configuration data for WebLogic Server administration server on host exampleinstance-wls-1...
+           Restoring the configuration data for WebLogic Server administration server on host exampleinstance-wls-2...
+           Restored the configuration data for WebLogic Server administration server on host  exampleinstance-wls-2...
+           Starting WebLogic Server...Started WebLogic Server...Unlocked the WebLogic Server domain configuration...
+           Completed the restoration",
+        "staticDataIncluded":false,
+        "configDataIncluded":true,
+        "otdIncluded":false,
+        "databaseIncluded":false,
+        "notes":"restore using default values"
+    }
+    ]
+}</pre> 
+ </div> 
+</div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+        </article>
+    </body>
+</html>

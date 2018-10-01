@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Managing vNET</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-07T05:55:01Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine CLI Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E69222-06" />
+<meta name="dcterms.isVersionOf" content="ELUCL" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-FF435881-D472-44A0-84D9-B72692659D5B.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUCL.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-4B893928-826E-4227-B82D-00C928C0BD58"></a> <span id="PAGE" style="display:none;">36/40</span> <!-- End Header -->
+<h1 id="ELUCL-GUID-4B893928-826E-4227-B82D-00C928C0BD58" class="sect1">Managing vNET</h1>
+<div>
+<div class="section">A virtual network (vNET) is deployed in the scope of a service network or tenant network.&nbsp;vNET represents an IP subnet and defines an IP address range.&nbsp;You require a vEthernet to create a vNET.</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-4B893928-826E-4227-B82D-00C928C0BD58.htm#GUID-3BD4C692-EFCE-4A3C-A004-37FF71351CC7" title="This command enables you to add a new virtual network for a tenant.">add vnet</a></p>
+</li>
+<li>
+<p><a href="GUID-4B893928-826E-4227-B82D-00C928C0BD58.htm#GUID-38759A66-A5C4-41A1-8352-0549251E7FD0" title="This command enables you to delete a specific vNET for a tenant. You cannot delete a vNET if it is used by any instance, or if there is an existing vNET Reservation associated with the vNET.">delete vnet</a></p>
+</li>
+<li>
+<p><a href="GUID-4B893928-826E-4227-B82D-00C928C0BD58.htm#GUID-8061A4DB-D38F-48B1-A517-738F96EF5DEE" title="This command enables you to update information for a specific tenant vNET.">update vnet</a></p>
+</li>
+<li>
+<p><a href="GUID-4B893928-826E-4227-B82D-00C928C0BD58.htm#GUID-7200FEF9-4E3C-468B-9105-A136A8B2472B" title="This command enables you to discover a list of configured vNETs in a specific container or subcontainer.This command enables you to retrieve information for a specific vNET.This command enables you to retrieve information for all the vNETs in a specific container.">Retrieve vNET Details</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-3BD4C692-EFCE-4A3C-A004-37FF71351CC7"></a>
+<h2 id="ELUCL-GUID-3BD4C692-EFCE-4A3C-A004-37FF71351CC7" class="sect2">add vnet</h2>
+<div>
+<p>This command enables you to add a new virtual network for a tenant.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-3BD4C692-EFCE-4A3C-A004-37FF71351CC7__GUID-FA2085C8-4E8A-4878-BAAC-387A88CF4EB9">
+<p class="notep1">Note:</p>
+The tenant users can only add vNETs that are tied to IPoIB type vEthernets. However, if EoIB vNET is needed the Oracle Cloud Administrator must create it in the tenancy for the tenant user to use.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute add vnet <span class="variable">name</span> <span class="variable">vethernet</span> [<span class="variable">--cidr</span>] [<span class="variable">--ipranges</span>] [<span class="variable">--description</span>] [<span class="variable">--global_ip_num</span>]</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-3BD4C692-EFCE-4A3C-A004-37FF71351CC7__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table lists the request body parameters and descriptions for adding vNet.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d21264e117">Parameter</th>
+<th class="cellalignment26" id="d21264e119">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d21264e123" headers="d21264e117">name</td>
+<td class="cellalignment27" headers="d21264e123 d21264e119">A unique hierarchical name for a vNET . For example, <code class="codeph">/mytenant/public/myvnet</code>.
+<p>Object names can contain only alphanumeric characters, hyphens, and periods. Object names are case-sensitive.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d21264e133" headers="d21264e117">vethernet</td>
+<td class="cellalignment27" headers="d21264e133 d21264e119">vEthernet to be associated with this vNET. For tenant user, only IPoIB vEthernet is supported.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d21264e138" headers="d21264e117">--cidr</td>
+<td class="cellalignment27" headers="d21264e138 d21264e119">(Optional) Specifies the subnet Classless Inter-Domain Routing (CIDR) for vNET. Optional for IPoIB network.
+<p>Format: <code class="codeph"><span class="variable">ip_address</span>/#</code>. For example, <code class="codeph">192.0.1.0/24</code></p>
+<p>If <code class="codeph">cidr</code> is not specified for <code class="codeph">IPoIB</code> networks, then <code class="codeph">global_ip_num</code> parameter must be specified.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d21264e163" headers="d21264e117">--ipranges</td>
+<td class="cellalignment27" headers="d21264e163 d21264e119">(Optional) IP address range for the vNET. It's a comma-separated list that can have individual IP addresses or ranges using &ldquo;-&ldquo; as a separator. For example, 192.0.1.10, 192.0.1.20-192.0.1.30
+<p>If no IP range is provided, then the entire CIDR (from .1 to .254) is used for IP addresses.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d21264e170" headers="d21264e117">--description</td>
+<td class="cellalignment27" headers="d21264e170 d21264e119">(Optional) Description to correlate this vNET with an internal tenant schema</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d21264e175" headers="d21264e117">--global_ip_num</td>
+<td class="cellalignment27" headers="d21264e175 d21264e119">(Optional) Specifies the number of IP addresses to be used from the global IP pool. Not valid for EoIB network.
+<p>If the global IP pool is enabled in Oracle Compute Cloud Service, using this option will create a vNET by allocating a specified number of IP addresses from the global pool of IP addresses to guarantee uniqueness. This option is mutually exclusive of <code class="codeph">cidr</code> and <code class="codeph">ipranges</code> options.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute add vnet /mytenant/public/IPoIB /mytenant/public/IPoIB --cidr 192.0.2.1/21</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-38759A66-A5C4-41A1-8352-0549251E7FD0"></a>
+<h2 id="ELUCL-GUID-38759A66-A5C4-41A1-8352-0549251E7FD0" class="sect2">delete vnet</h2>
+<div>
+<p>This command enables you to delete a specific vNET for a tenant. You cannot delete a vNET if it is used by any instance, or if there is an existing vNET Reservation associated with the vNET.</p>
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute delete vnet <span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-38759A66-A5C4-41A1-8352-0549251E7FD0__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for deleting a vNET.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d21264e239">Parameter</th>
+<th class="cellalignment26" id="d21264e241">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d21264e245" headers="d21264e239">name</td>
+<td class="cellalignment27" headers="d21264e245 d21264e241">A unique hierarchical name for a vNET . For example, <code class="codeph">/mytenant/public/myvnet</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute delete vnet /mytenant/public/IPoIB-service-manager-c2</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-8061A4DB-D38F-48B1-A517-738F96EF5DEE"></a>
+<h2 id="ELUCL-GUID-8061A4DB-D38F-48B1-A517-738F96EF5DEE" class="sect2">update vnet</h2>
+<div>
+<p>This command enables you to update information for a specific tenant vNET.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-8061A4DB-D38F-48B1-A517-738F96EF5DEE__GUID-FA2085C8-4E8A-4878-BAAC-387A88CF4EB9">
+<p class="notep1">Note:</p>
+The tenant users can only update vNETs that are tied to IPoIB vEthernets.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute update vnet <span class="variable">name</span> [<span class="variable">--cidr</span>] [<span class="variable">--ipranges</span>] [<span class="variable">--gateway</span>] [<span class="variable">--description</span>] [<span class="variable">--global_ip_num</span>]</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-8061A4DB-D38F-48B1-A517-738F96EF5DEE__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for updating a vNET.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d21264e324">Parameter</th>
+<th class="cellalignment26" id="d21264e326">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d21264e330" headers="d21264e324">name</td>
+<td class="cellalignment27" headers="d21264e330 d21264e326">A unique hierarchical name for a vNET . For example, <code class="codeph">/mytenant/public/myvnet</code> .</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d21264e338" headers="d21264e324">--cidr</td>
+<td class="cellalignment27" headers="d21264e338 d21264e326">(Optional) Specifies the subnet Classless Inter-Domain Routing (CIDR) for vNET. Optional for IPoIB network.
+<p>Format: <code class="codeph"><span class="variable">ip_address</span>/#</code>. For example, 192.0.1.0/24</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d21264e351" headers="d21264e324">--ipranges</td>
+<td class="cellalignment27" headers="d21264e351 d21264e326">(Optional) IP address range for the vNET. It is a comma separated list that can have individual IP addresses or ranges using &ldquo;-&ldquo; as a separator. For example, 192.0.1.10, 192.0.1.20-192.0.1.30
+<p>If no IP range is provided, then the entire CIDR (from .1 to .254) is used for IP addresses.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d21264e358" headers="d21264e324">--description</td>
+<td class="cellalignment27" headers="d21264e358 d21264e326">(Optional) Description to correlate this vNET with the internal tenant schema</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d21264e363" headers="d21264e324">--global_ip_num</td>
+<td class="cellalignment27" headers="d21264e363 d21264e326">(Optional) Specifies the number of IP addresses to be used from the global IP pool. Not valid for EoIB network.
+<p>If the global IP pool is enabled in Oracle Compute, using this option will create a vNET by allocating a specified number of IP addresses from the global pool of IP addresses to guarantee uniqueness. This option is mutually exclusive of <code class="codeph">cidr</code> and <code class="codeph">ipranges</code> options.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute update vnet /mytenant/public/IPoIB --ipranges 192.0.10.1-192.0.10.10</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-7200FEF9-4E3C-468B-9105-A136A8B2472B"></a>
+<h2 id="ELUCL-GUID-7200FEF9-4E3C-468B-9105-A136A8B2472B" class="sect2">Retrieve vNET Details</h2>
+<div>
+<div class="section">You can retrieve vNET details by using the CLI.
+<div class="infobox-note" id="GUID-7200FEF9-4E3C-468B-9105-A136A8B2472B__GUID-C8EC9BF8-C58B-46FE-A1BF-371978C47E6C">
+<p class="notep1">Note:</p>
+You can view the details of any vNET in your own tenancy, as well as vNETs you have been given access to by the Oracle Cloud Administrator.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-4B893928-826E-4227-B82D-00C928C0BD58.htm#GUID-39784254-1286-4E74-ACDD-47684893DFA9" title="This command enables you to discover a list of configured vNETs in a specific container or subcontainer.">discover vnet</a></p>
+</li>
+<li>
+<p><a href="GUID-4B893928-826E-4227-B82D-00C928C0BD58.htm#GUID-111D3DCB-4B01-4258-8001-BB824CEAA5A1" title="This command enables you to retrieve information for a specific vNET.">get vnet</a></p>
+</li>
+<li>
+<p><a href="GUID-4B893928-826E-4227-B82D-00C928C0BD58.htm#GUID-48E5DA1E-4602-4E10-B027-3782E461EF76" title="This command enables you to retrieve information for all the vNETs in a specific container.">list vnet</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect3"><a id="GUID-39784254-1286-4E74-ACDD-47684893DFA9"></a>
+<h3 id="ELUCL-GUID-39784254-1286-4E74-ACDD-47684893DFA9" class="sect3">discover vnet</h3>
+<div>
+<p>This command enables you to discover a list of configured vNETs in a specific container or subcontainer.</p>
+<div class="section">
+<p class="subhead3">Syntax</p>
+<p><code class="codeph">oracle-compute discover vnet <span class="variable">container</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-39784254-1286-4E74-ACDD-47684893DFA9__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies parameter and description for listing all vNETs in a container.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d21264e475">Parameter</th>
+<th class="cellalignment26" id="d21264e477">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d21264e481" headers="d21264e475">container</td>
+<td class="cellalignment27" headers="d21264e481 d21264e477">Hierarchical name-space for vNET. For example, <code class="codeph">/mytenant/public/</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<p><code class="codeph">$ oracle-compute discover vnet /mytenant/public/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute discover vnet /mytenant/public/
+entry
+/mytenant/public/IPoIB-private-c2
+/mytenant/public/eth-admin
+$
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-111D3DCB-4B01-4258-8001-BB824CEAA5A1"></a>
+<h3 id="ELUCL-GUID-111D3DCB-4B01-4258-8001-BB824CEAA5A1" class="sect3">get vnet</h3>
+<div>
+<p>This command enables you to retrieve information for a specific vNET.</p>
+<div class="section">
+<p class="subhead3">Syntax</p>
+<p><code class="codeph">oracle-compute get vnet <span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-111D3DCB-4B01-4258-8001-BB824CEAA5A1__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for retrieving details of a vNET.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d21264e546">Parameter</th>
+<th class="cellalignment26" id="d21264e548">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d21264e552" headers="d21264e546">name</td>
+<td class="cellalignment27" headers="d21264e552 d21264e548">An unique hierarchical name for a vNET . For example, <code class="codeph">/mytenant/public/IPoIB</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<p><code class="codeph">$ oracle-compute get vnet /mytenant/public/IPoIB</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute get vnet /mytenant/public/IPoIB   -F name,vethernet,cidr
+name                      vethernet               cidr          
+/mytenant/public/IPoIB   /mytenant/public/IPoIB   10.128.38.0/23 
+$
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-48E5DA1E-4602-4E10-B027-3782E461EF76"></a>
+<h3 id="ELUCL-GUID-48E5DA1E-4602-4E10-B027-3782E461EF76" class="sect3">list vnet</h3>
+<div>
+<p>This command enables you to retrieve information for all the vNETs in a specific container.</p>
+<div class="section">
+<p class="subhead3">Syntax</p>
+<p><code class="codeph">oracle-compute list vnet <span class="variable">container</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-48E5DA1E-4602-4E10-B027-3782E461EF76__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for listing all vNETs in a container.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d21264e617">Parameter</th>
+<th class="cellalignment26" id="d21264e619">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d21264e623" headers="d21264e617">container</td>
+<td class="cellalignment27" headers="d21264e623 d21264e619">Hierarchical name-space for vNET. For example, <code class="codeph">/mytenant/public/myVNET</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<p><code class="codeph">$ oracle-compute list vnet /cloud/public/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute list vnet  /cloud/public/ -F name,vethernet,cidr,ipranges
+name                                    vethernet                            cidr             ipranges
+/cloud/public/EoIB-OMS               /cloud/public/EoIB-OMS               10.196.38.0/23   10.196.38.101-10.196.38.245
+/cloud/public/EoIB-management        /cloud/public/EoIB-management        10.196.36.0/23   10.196.36.55, 10.196.36.56, 10.196.36.58
+/cloud/public/IPoIB-instance-storage /cloud/public/IPoIB-instance-storage 10.196.0.0/16    10.196.0.2-172.38.255.254
+/cloud/public/IPoIB-ldap-internal    /cloud/public/IPoIB-ldap-internal    192.168.120.0/24 192.168.120.1-192.168.120.254
+/cloud/public/IPoIB-load-balancer    /cloud/public/IPoIB-load-balancer    192.168.127.0/24 192.168.127.1-192.168.127.254
+/cloud/public/IPoIB-management       /cloud/public/IPoIB-management       192.168.90.0/24  192.168.90.43, 192.168.90.44, 192.168.90.45
+/cloud/public/IPoIB-service-manager  /cloud/public/IPoIB-service-manager  192.168.126.0/24 192.168.126.1-192.168.126.254
+/cloud/public/vnet-EoIB-vlan3072     /cloud/public/veth-EoIB-vlan3072     10.196.206.0/23  10.196.206.74-10.196.206.93
+
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-FF435881-D472-44A0-84D9-B72692659D5B.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

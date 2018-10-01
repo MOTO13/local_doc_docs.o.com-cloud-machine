@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>About Database Cloud Service Roles and Users</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-06-19T15:22:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Database Cloud Service" />
+<meta name="dcterms.identifier" content="E72994-04" />
+<meta name="dcterms.isVersionOf" content="CSDBI" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-EB9DC20F-C296-41E1-A3A1-3291AABCABE2.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-8F431574-D82A-45A0-8637-7605E2333381.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSDBI.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSDBI.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSDBI.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-8A0FDB3E-4B54-48E6-98D8-440DC057682E"></a> <span id="PAGE" style="display:none;">8/190</span> <!-- End Header -->
+<a id="CSDBI3484"></a><a id="CSDBI3330"></a>
+<h1 id="CSDBI-GUID-8A0FDB3E-4B54-48E6-98D8-440DC057682E" class="sect1">About <span>Database Cloud Service</span> Roles and Users</h1>
+<div>
+<div class="section">
+<p><span>Oracle Database Cloud Service</span> uses roles to control access to tasks and resources. A role assigned to a user gives certain privileges to the user.</p>
+<p>The following table summarizes the responsibilities of each cloud role in the context of <span>Database Cloud Service</span>.</p>
+<div class="tblformal" id="GUID-8A0FDB3E-4B54-48E6-98D8-440DC057682E__GUID-FCFDFEBF-9CBB-4339-8B4E-5EC831DA9A5D">
+<table class="cellalignment11" summary="Database Cloud Service roles and responsibilities.">
+<thead>
+<tr class="cellalignment2">
+<th class="cellalignment27" id="d3462e31">Role</th>
+<th class="cellalignment28" id="d3462e34">Privileges</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment2">
+<td class="cellalignment29" id="d3462e39" headers="d3462e31">
+<p>Tenant User</p>
+</td>
+<td class="cellalignment30" headers="d3462e39 d3462e34">
+<ul style="list-style-type: disc;">
+<li>
+<p>Use the <span>Oracle Database Cloud Service</span> console to create and manage database deployments within a specific tenant. See the next table for more details.</p>
+</li>
+<li>
+<p>Consume the network, compute, and storage resources allocated to a specific tenant.</p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-8A0FDB3E-4B54-48E6-98D8-440DC057682E__GUID-85E192BA-2F69-4F97-963F-B25BE094BE2C">
+<p class="notep1">Note:</p>
+Tenant Users should contact their Oracle Cloud Administrator or Tenant Administrator for their user sign-in credentials and the URL to access the <span>Oracle Database Cloud Service</span> console.</div>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment29" id="d3462e59" headers="d3462e31">
+<p>Tenant Administrator</p>
+</td>
+<td class="cellalignment30" headers="d3462e59 d3462e34">
+<ul style="list-style-type: disc;">
+<li>
+<p>Like a tenant user, use the <span>Oracle Database Cloud Service</span> console to create and manage database deployments within a specific tenant. See the next table for more details.</p>
+</li>
+<li>
+<p>Like a tenant user, consume the network, compute, and storage resources allocated to a specific tenant.</p>
+</li>
+<li>
+<p>Create and manage Tenant Users within a specific tenant.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment29" id="d3462e77" headers="d3462e31">
+<p>Oracle Cloud Administrator</p>
+</td>
+<td class="cellalignment30" headers="d3462e77 d3462e34">
+<ul style="list-style-type: disc;">
+<li>
+<p>Create cloud tenants and configure the tenants for <span>Database Cloud Service</span>.</p>
+</li>
+<li>
+<p>Create users and assign them roles.</p>
+</li>
+<li>
+<p>Create cloud networks and assign them to tenants.</p>
+</li>
+<li>
+<p>Create remote file systems to use for <span>Database Cloud Service</span> backups.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p>The following table summarizes the privileges given to a <span class="bold">Tenant User</span> in <span>Database Cloud Service</span>.</p>
+<div class="tblformal" id="GUID-8A0FDB3E-4B54-48E6-98D8-440DC057682E__GUID-9A722AF4-08DB-4335-BE2B-762D62E17FA5">
+<table class="cellalignment11" summary="Privileges of tenant users.">
+<thead>
+<tr class="cellalignment2">
+<th class="cellalignment40" id="d3462e118">Description of Privilege</th>
+<th class="cellalignment40" id="d3462e121">More Information</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment2">
+<td class="cellalignment41" id="d3462e126" headers="d3462e118">
+<p>Can create and delete database deployments</p>
+</td>
+<td class="cellalignment41" headers="d3462e126 d3462e121">
+<p><a href="GUID-5A4C1A90-E71E-4CDD-BB0B-80D18621109E.htm" title="To create a database deployment on Oracle Database Cloud Service, use the Provision New Oracle Database Cloud Service wizard as described in the following procedure.">Creating a Database Deployment</a></p>
+<p><a href="GUID-CABE689F-4346-4626-B64F-1E272AE87B5E.htm">Deleting a Database Deployment</a></p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment41" id="d3462e146" headers="d3462e118">
+<p>Can scale, patch, and back up or restore database deployments</p>
+</td>
+<td class="cellalignment41" headers="d3462e146 d3462e121">
+<p><a href="GUID-457D283C-D890-4B4F-B65C-26D05B4C80CC.htm">Scaling a Database Deployment</a></p>
+<p><a href="GUID-59CE35D2-4948-4274-8707-F8F447721DF2.htm" title="This section explains how to apply a patch to Oracle Database Cloud Service, and roll back the patch as necessary.">Patching Database Cloud Service</a></p>
+<p><a href="GUID-0864AA36-8FE4-4D62-9F18-A0550D4BC89B.htm" title="This section explains how to back up and restore Oracle databases on Oracle Database Cloud Service.">Backing Up and Restoring Databases on Database Cloud Service</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="GUID-EB9DC20F-C296-41E1-A3A1-3291AABCABE2.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="GUID-8F431574-D82A-45A0-8637-7605E2333381.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

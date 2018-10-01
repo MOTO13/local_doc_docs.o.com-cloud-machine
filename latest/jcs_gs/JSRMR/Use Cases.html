@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="Status%20Codes.html" title="Previous" type="text/html">
+        <link rel="next" href="Creating%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="Status%20Codes.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="Creating%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">Use Cases</h2> 
+<div class="body conbody">
+ <p class="shortdesc">Step through typical use cases using the Oracle Java Cloud Service REST API, as summarized in the following table. </p> 
+ <p class="p">For complete details about the REST resources described in the use cases, see <a class="xref" href="rest-endpoints.html" target="_blank">All REST Endpoints</a>.</p> 
+ <div class="tablenoborder">
+  <span class="desc tabledesc">This table lists a typical set of use cases for creating and managing an Oracle Java Cloud Service instance.</span>
+  <table cellpadding="4" cellspacing="0" summary="" id="GUID-E414ED61-516F-4DF4-A185-D815F54FC9CA__GUID-F64704BF-800D-4F31-A383-839585487347" class="table" width="100%" frame="border" border="1" rules="all">
+   <thead class="thead" align="left">
+    <tr class="row">
+     <th class="firstcol" valign="top" width="60%" id="d18199e27">Task</th> 
+     <th class="entry" valign="top" width="40%" id="d18199e29">More Information</th> 
+    </tr> 
+   </thead> 
+   <tbody class="tbody">
+    <tr class="row">
+     <th class="firstcol" valign="top" width="60%" id="d18199e33" headers="d18199e27 "><p class="p">Create a new Oracle Java Cloud Service instance</p> <p class="p">(This use case shows how to use the <samp class="ph codeph">datagrid</samp> option to enable Oracle Coherence when creating a service instance)</p> </th> 
+     <td class="entry" valign="top" width="40%" headers="d18199e33 d18199e29 "><p class="p"><a class="xref" href="Creating%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html" title="You can create an Oracle Java Cloud Service instance using the REST API, as described in the following procedure.">Creating a Service Instance</a></p> </td> 
+    </tr> 
+    <tr class="row">
+     <th class="firstcol" valign="top" width="60%" id="d18199e50" headers="d18199e27 "><p class="p">Update the default access ports when creating a service instance</p> </th> 
+     <td class="entry" valign="top" width="40%" headers="d18199e50 d18199e29 "><p class="p"><a class="xref" href="Update%20the%20Default%20Access%20Ports.html" title="Resources available within your Oracle Java Cloud Service instances are accessible through default ports. The ports can be reconfigured when you create a service instance.">Updating the Default Access Ports When Creating a Service Instance</a></p> </td> 
+    </tr> 
+    <tr class="row">
+     <th class="firstcol" valign="top" width="60%" id="d18199e62" headers="d18199e27 "><p class="p">Stop or start an Oracle Java Cloud Service instance and individual VMs</p> </th> 
+     <td class="entry" valign="top" width="40%" headers="d18199e62 d18199e29 "><p class="p"><a class="xref" href="Stopping%20and%20Starting%20a%20Service%20Instance%20and%20Individual%20VMs.html" title="You can control the lifecycle state of a service instance and individual virtual machines (VMs) using the REST API. Specifically, you can:">Stopping and Starting a Service Instance and Individual VMs</a></p> </td> 
+    </tr> 
+    <tr class="row">
+     <th class="firstcol" valign="top" width="60%" id="d18199e74" headers="d18199e27 "><p class="p">Add or remove a Managed Server from an Oracle Java Cloud Service instance (scale a cluster), or scale the Administration Server or a Managed Server to change the compute shape or add additional storage (scale a node).</p> </th> 
+     <td class="entry" valign="top" width="40%" headers="d18199e74 d18199e29 "><p class="p"><a class="xref" href="Scaling%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html" title="You can use the REST API to scale an Oracle Java Cloud Service instance on-demand, as described in the following procedures.">Scaling a Service Instance</a></p> </td> 
+    </tr> 
+    <tr class="row">
+     <th class="firstcol" valign="top" width="60%" id="d18199e86" headers="d18199e27 "><p class="p">Monitor the health of your Oracle Java Cloud Service instance and its components</p> </th> 
+     <td class="entry" valign="top" width="40%" headers="d18199e86 d18199e29 "><a class="xref" href="Monitoring%20the%20Health%20of%20Your%20Oracle%20Java%20Cloud%20Service%20Instances.html" title="You can monitor the health of an Oracle Java Cloud Service instance using the REST API, as described in the following procedure.">Monitoring a Service Instance</a></td> 
+    </tr> 
+    <tr class="row">
+     <th class="firstcol" valign="top" width="60%" id="d18199e97" headers="d18199e27 "><p class="p">Add a Coherence data tier cluster to an existing Oracle Java Cloud Service instance</p> </th> 
+     <td class="entry" valign="top" width="40%" headers="d18199e97 d18199e29 "><p class="p"><a class="xref" href="Adding%20a%20Coherence%20Data%20Tier%20Cluster%20to%20an%20Oracle%20Java%20Cloud%20Service%20Using%20the%20REST%20API.html" title="When you add a Coherence data tier cluster to an existing Oracle Java Cloud Service instance, it means you are enabling Oracle Coherence for the service instance, as described in the following procedure.">Adding a Coherence Data Tier Cluster to a Service Instance</a></p> </td> 
+    </tr> 
+    <tr class="row">
+     <th class="firstcol" valign="top" width="60%" id="d18199e109" headers="d18199e27 "><p class="p">Scale the Coherence data tier of an Oracle Java Cloud Service instance</p> </th> 
+     <td class="entry" valign="top" width="40%" headers="d18199e109 d18199e29 "><p class="p"><a class="xref" href="Scaling%20the%20Coherence%20Data%20Tier%20of%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html" title="When you scale the Coherence data tier, it means you are adding Managed Servers to or removing Managed Servers from the storage-enabled WebLogic Server cluster of an Oracle Java Cloud Service instance, as described in the following procedure.">Scaling the Coherence Data Tier of a Service Instance</a></p> </td> 
+    </tr> 
+    <tr class="row">
+     <th class="firstcol" valign="top" width="60%" id="d18199e121" headers="d18199e27 "><p class="p">Configure automated backups for an Oracle Java Cloud Service instance</p> </th> 
+     <td class="entry" valign="top" width="40%" headers="d18199e121 d18199e29 "><p class="p"><a class="xref" href="Configuring%20Automated%20Backups%20for%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html" title="You can configure automated backups for an Oracle Java Cloud Service instance using the REST API. Specifically, you can customize the default retention time for backups, and when the service instance is automatically backed up as described in the following procedure.">Configuring Automated Backups for a Service Instance</a></p> </td> 
+    </tr> 
+    <tr class="row">
+     <th class="firstcol" valign="top" width="60%" id="d18199e133" headers="d18199e27 "><p class="p">Initiate an on-demand full backup for an Oracle Java Cloud Service instance</p> </th> 
+     <td class="entry" valign="top" width="40%" headers="d18199e133 d18199e29 "><p class="p"><a class="xref" href="Initiating%20an%20On-demand%20Backup%20for%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html" title="You can initiate an on-demand backup for an Oracle Java Cloud Service instance using REST resources, as described in the following procedure.">Initiating an On-demand Backup for a Service Instance</a></p> </td> 
+    </tr> 
+    <tr class="row">
+     <th class="firstcol" valign="top" width="60%" id="d18199e145" headers="d18199e27 "><p class="p">Download or archive a backup for an Oracle Java Cloud Service instance</p> </th> 
+     <td class="entry" valign="top" width="40%" headers="d18199e145 d18199e29 "><p class="p"><a class="xref" href="Downloading%20a%20Backup%20for%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html" title="When you download a backup for an Oracle Java Cloud Service instance, you move the backup from the cloud storage container (on Oracle Public Cloud) or the NFS remote storage disk (on Oracle Cloud Machine) to block storage that is on the Administration Server. When you archive a backup for a service instance, you move the backup from block storage on the Administration Server VM to the cloud storage container (on Oracle Public Cloud) or the NFS remote storage disk (on Oracle Cloud Machine).">Downloading or Archiving a Backup for a Service Instance</a></p> </td> 
+    </tr> 
+    <tr class="row">
+     <th class="firstcol" valign="top" width="60%" id="d18199e158" headers="d18199e27 "><p class="p">Restore an Oracle Java Cloud Service instance from an existing backup</p> </th> 
+     <td class="entry" valign="top" width="40%" headers="d18199e158 d18199e29 "><p class="p"><a class="xref" href="Restoring%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20From%20a%20Backup%20Using%20the%20REST%20API.html" title="You can restore an Oracle Java Cloud Service instance from a backup using the REST API, as described in the following procedure. You use a restore operation to undo configuration changes you do not want by returning the service instance to a particular state.">Restoring a Service Instance</a></p> </td> 
+    </tr> 
+    <tr class="row">
+     <th class="firstcol" valign="top" width="60%" id="d18199e171" headers="d18199e27 "><p class="p">Patch an Oracle Java Cloud Service instance using one of the patches available to your instance</p> </th> 
+     <td class="entry" valign="top" width="40%" headers="d18199e171 d18199e29 "><p class="p"><a class="xref" href="Patching%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html" title="You can patch an Oracle Java Cloud Service instance using the REST API, as described in the following procedure.">Patching a Service Instance</a></p> </td> 
+    </tr> 
+    <tr class="row">
+     <th class="firstcol" valign="top" width="60%" id="d18199e183" headers="d18199e27 "><p class="p">Delete the Coherence data tier cluster of an Oracle Java Cloud Service instance</p> </th> 
+     <td class="entry" valign="top" width="40%" headers="d18199e183 d18199e29 "><p class="p"><a class="xref" href="Deleting%20the%20Coherence%20Data%20Tier%20Cluster%20of%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html" title="You can delete the entire Coherence data tier or storage-enabled WebLogic Server cluster of an Oracle Java Cloud Service instance using the REST API, as described in the following procedure.">Deleting the Coherence Data Tier Cluster of a Service Instance</a></p> </td> 
+    </tr> 
+    <tr class="row">
+     <th class="firstcol" valign="top" width="60%" id="d18199e195" headers="d18199e27 "><p class="p">Delete the Oracle Java Cloud Service instance when it is no longer needed</p> </th> 
+     <td class="entry" valign="top" width="40%" headers="d18199e195 d18199e29 "><p class="p"><a class="xref" href="Deleting%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html" title="You can delete an Oracle Java Cloud Service instance using the REST API, as described in the following procedure.">Deleting a Service Instance</a></p> </td> 
+    </tr> 
+   </tbody> 
+  </table> 
+ </div> 
+</div></div>
+        </article>
+    </body>
+</html>

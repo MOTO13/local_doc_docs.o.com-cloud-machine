@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Working with Orchestrations</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="This section describes how to manage orchestrations." />
+<meta name="dcterms.created" content="2018-05-15T07:53:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E62130-11" />
+<meta name="dcterms.isVersionOf" content="ELUSE" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-99EEAA7C-E15B-4807-B87C-FA25BE9EE890.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-FA870840-5077-4D1E-9AA2-09E4FEBB4D9D.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUSE.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-87D95036-C62A-48CF-8F85-691972D9B4EA"></a> <span id="PAGE" style="display:none;">31/81</span> <!-- End Header -->
+<a id="ELUSE310"></a><a id="ELUSE305"></a>
+<h1 id="ELUSE-GUID-87D95036-C62A-48CF-8F85-691972D9B4EA" class="sect1"><span class="enumeration_chapter">5</span> Working with Orchestrations</h1>
+<div>
+<p>This section describes how to manage orchestrations.</p>
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-FA870840-5077-4D1E-9AA2-09E4FEBB4D9D.htm#GUID-FA870840-5077-4D1E-9AA2-09E4FEBB4D9D" title="An orchestration is a container that groups one or more objects, such as instances and storage volumes, to manage them as a unit. Within an orchestration, you can specify dependencies to control the sequence in which the objects are created and destroyed. For example, if an instance uses a storage volume, then the storage volume must be created before the instance can be launched, and the instance must be stopped before the storage volume can be destroyed.">About Orchestrations</a></p>
+</li>
+<li>
+<p><a href="GUID-8523F896-2EEB-415D-929B-8FF6A66CBAEC.htm" title="An&nbsp;orchestration&nbsp;defines the attributes and interdependencies of a collection of compute, networking, and storage resources in&nbsp;Oracle Compute Cloud Service. Orchestrations are specified in JSON format and are used to launch the instances in Oracle Compute Cloud Service.">Workflow for Creating Instances Using Orchestrations</a></p>
+</li>
+<li>
+<p><a href="GUID-E2F33BA3-65CA-46F6-86A0-2B137B828C1E.htm" title="The high availability (HA) policy for an orchestration affects how the orchestration is managed by the system.">High Availability Policies</a></p>
+</li>
+<li>
+<p><a href="GUID-684EB6F0-9B7F-4B38-8AEE-AB815BB73717.htm#GUID-684EB6F0-9B7F-4B38-8AEE-AB815BB73717" title="You can discover the orchestrations that are not discovered and displayed in the UI, and promote them as instances. For example, if you used the CLI to create and start an orchestration, then the orchestration does not display automatically in the UI. Instead, you must discover the orchestration from the UI to view it.">Discovering Orchestrations</a></p>
+</li>
+<li>
+<p><a href="GUID-AECAAE6D-F6FA-4995-B4A0-264E55D27AEE.htm#GUID-AECAAE6D-F6FA-4995-B4A0-264E55D27AEE" title="When you start an orchestration, the objects defined in it are created. You start an orchestration that is in ready or stopped state.">Starting an Orchestration</a></p>
+</li>
+<li>
+<p><a href="GUID-E44EB604-5E8C-4F90-86FC-A0AF39217C4B.htm#GUID-E44EB604-5E8C-4F90-86FC-A0AF39217C4B" title="When you shut down an orchestration, all the instances are gracefully shut down and their network configuration, storage volumes, and disks metadata associated with the instance are preserved. You can restart a shutdown orchestration to move instances to a running state.">Shutting Down an Orchestration</a></p>
+</li>
+<li>
+<p><a href="GUID-703822A2-46BE-4656-8EBE-8F7FB615AFF2.htm#GUID-703822A2-46BE-4656-8EBE-8F7FB615AFF2" title="You restart an instance that is in Shut_down or error status.">Restarting an Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-58076227-DE03-49A0-A6A1-CF6AD40E276D.htm#GUID-58076227-DE03-49A0-A6A1-CF6AD40E276D" title="When you stop an orchestration, all the instances and other resources provisioned by the orchestration are permanently deleted.">Stopping an Orchestration</a></p>
+</li>
+<li>
+<p><a href="GUID-AA4984D7-A6D9-4DC2-BC07-DA4ED39DDB6C.htm#GUID-AA4984D7-A6D9-4DC2-BC07-DA4ED39DDB6C" title="You can modify the configuration parameters for the instances in an orchestration. To update an orchestration, you must stop the orchestration.">Updating an Orchestration</a></p>
+</li>
+<li>
+<p><a href="GUID-C9B759BA-DEE9-45F1-8BD9-1249AF60C82C.htm#GUID-C9B759BA-DEE9-45F1-8BD9-1249AF60C82C" title="You must stop an orchestration before deleting it.">Deleting an Orchestration</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment95">
+<tr>
+<td class="cellalignment102">
+<table class="cellalignment100">
+<tr>
+<td class="cellalignment99"><a href="GUID-99EEAA7C-E15B-4807-B87C-FA25BE9EE890.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment99"><a href="GUID-FA870840-5077-4D1E-9AA2-09E4FEBB4D9D.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment104">
+<table class="cellalignment98">
+<tr>
+<td class="cellalignment99"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment99"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

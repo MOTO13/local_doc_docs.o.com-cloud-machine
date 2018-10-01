@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Customizing the Current Backup Configuration</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-06-19T15:22:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Database Cloud Service" />
+<meta name="dcterms.identifier" content="E72994-04" />
+<meta name="dcterms.isVersionOf" content="CSDBI" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-36CA96BF-2D23-48AD-B8F9-4414CDCA0767.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-4C4D7BB4-0C69-41E9-9A7E-2E7334D0EE4E.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSDBI.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSDBI.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSDBI.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-78848793-B095-47F1-B87E-C4F8DC697824"></a> <span id="PAGE" style="display:none;">48/190</span> <!-- End Header -->
+<a id="CSDBI3512"></a><a id="CSDBI3513"></a><a id="CSDBI3514"></a><a id="CSDBI3515"></a><a id="CSDBI3516"></a><a id="CSDBI3517"></a><a id="CSDBI3518"></a><a id="CSDBI3417"></a>
+<h1 id="CSDBI-GUID-78848793-B095-47F1-B87E-C4F8DC697824" class="sect1">Customizing the Current Backup Configuration</h1>
+<div>
+<div class="section">
+<p>How you customize the current backup configuration depends on the type of database running in the database deployment.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-78848793-B095-47F1-B87E-C4F8DC697824.htm#GUID-ADF73049-B959-4753-9877-EE011FBF0A18" title="You can customize many of the characteristics of the automatic backup configuration.">Customizing the Current Backup Configuration on Database Deployments Hosting Single-Instance Databases</a></p>
+</li>
+<li>
+<p><a href="GUID-78848793-B095-47F1-B87E-C4F8DC697824.htm#GUID-11B5783B-F3DC-4823-B603-E16D2F81CC57" title="You can customize many of the characteristics of the backup configuration.">Customizing the Current Backup Configuration on Database Deployments Hosting Oracle RAC Databases</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="props_rev_3"><a id="GUID-ADF73049-B959-4753-9877-EE011FBF0A18"></a>
+<h2 id="CSDBI-GUID-ADF73049-B959-4753-9877-EE011FBF0A18" class="sect2">Customizing the Current Backup Configuration <span>on Database Deployments Hosting Single-Instance Databases</span></h2>
+<div>
+<p>You can customize many of the characteristics of the automatic backup configuration.</p>
+<div class="section">
+<p class="subhead2">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-78848793-B095-47F1-B87E-C4F8DC697824.htm#GUID-ADF73049-B959-4753-9877-EE011FBF0A18__RMAN">Customizing How the Database Is Backed Up</a></p>
+</li>
+<li>
+<p><a href="GUID-78848793-B095-47F1-B87E-C4F8DC697824.htm#GUID-ADF73049-B959-4753-9877-EE011FBF0A18__OSCFG">Customizing Which System Files Are Backed Up</a></p>
+</li>
+<li>
+<p><a href="GUID-78848793-B095-47F1-B87E-C4F8DC697824.htm#GUID-ADF73049-B959-4753-9877-EE011FBF0A18__DBCFG">Customizing Which Database Configuration Files Are Backed Up</a></p>
+</li>
+<li>
+<p><a href="GUID-78848793-B095-47F1-B87E-C4F8DC697824.htm#GUID-ADF73049-B959-4753-9877-EE011FBF0A18__CRON">Customizing the Frequency of Automatic Backups</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-ADF73049-B959-4753-9877-EE011FBF0A18__RMAN">
+<p class="subhead2">Customizing How the Database Is Backed Up</p>
+<p>To change how the Oracle database is backed up, you use the RMAN utility. For information about using RMAN, see <cite>Oracle Database Backup and Recovery User's Guide</cite> for Release <a href="http://www.oracle.com/pls/topic/lookup?ctx=db122&amp;id=BRADV8001" target="_blank">12.2</a>, <a href="http://www.oracle.com/pls/topic/lookup?ctx=db121&amp;id=BRADV8001" target="_blank">12.1</a> or <a href="http://www.oracle.com/pls/topic/lookup?ctx=db112&amp;id=BRADV8001" target="_blank">11.2</a>.</p>
+<div class="infobox-note" id="GUID-ADF73049-B959-4753-9877-EE011FBF0A18__GUID-8E5BF908-C455-4E5E-AD27-73FA0F0A7890">
+<p class="notep1">Caution:</p>
+<p>Do not use the RMAN utility to change the retention period.</p>
+</div>
+<p>To view the current RMAN configuration, use the RMAN command SHOW ALL:</p>
+<ol>
+<li>
+<p>Connect as the <code class="codeph"><span class="bold">oracle</span></code> user to the compute node.</p>
+<p>For detailed instructions, see <a href="GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1.htm#GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1">Connecting to a Compute Node Through Secure Shell (SSH)</a>.</p>
+</li>
+<li>
+<p>Start an RMAN session:</p>
+<pre dir="ltr">
+$ <span class="bold">rman target=/</span>
+...
+RMAN&gt; 
+</pre></li>
+<li>
+<p>Enter the SHOW ALL command:</p>
+<pre dir="ltr">
+RMAN&gt; <span class="bold">show all;
+...</span>
+</pre>
+<p>A listing of your configuration is displayed.</p>
+</li>
+<li>
+<p>Use RMAN commands to make any changes to your configuration.</p>
+</li>
+<li>
+<p>Exit the RMAN session:</p>
+<pre dir="ltr">
+RMAN&gt; <span class="bold">exit;</span>
+$ 
+</pre></li>
+</ol>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-ADF73049-B959-4753-9877-EE011FBF0A18__OSCFG">
+<p class="subhead2">Customizing Which System Files Are Backed Up</p>
+<p>To change which system files and directories are backed up:</p>
+<ol>
+<li>
+<p>Connect as the <code class="codeph"><span class="bold">oracle</span></code> user to the compute node.</p>
+<p>For detailed instructions, see <a href="GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1.htm#GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1">Connecting to a Compute Node Through Secure Shell (SSH)</a>.</p>
+</li>
+<li>
+<p>Edit the contents of the <code class="codeph">/home/oracle/bkup/oscfg.spec</code> file.</p>
+<p>The backup feature provided by <span>Oracle Database Cloud Service</span> backs up the files and folders listed in this specification file.</p>
+<p>An example of an <code class="codeph">oscfg.spec</code> file with a default configuration is as follows:</p>
+<pre dir="ltr">
+## OS Configuration Files
+#
+# Doc Spec
+oscfg.spec
+#
+# Directories
+/etc/rc.d
+/home/oracle/bkup
+#
+# Single files
+/home/oracle/.bashrc
+/etc/crontab
+/etc/sysctl.conf
+/etc/passwd
+/etc/group
+/etc/oraInst.loc
+/etc/oratab
+/etc/fstab
+</pre></li>
+</ol>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-ADF73049-B959-4753-9877-EE011FBF0A18__DBCFG">
+<p class="subhead2">Customizing Which Database Configuration Files Are Backed Up</p>
+<p>To change which database configuration files are backed up:</p>
+<ol>
+<li>
+<p>Connect as the <code class="codeph"><span class="bold">oracle</span></code> user to the compute node.</p>
+<p>For detailed instructions, see <a href="GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1.htm#GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1">Connecting to a Compute Node Through Secure Shell (SSH)</a>.</p>
+</li>
+<li>
+<p>Edit the contents of the <code class="codeph">/home/oracle/bkup/dbcfg.spec</code> file:</p>
+<p>The backup feature provided by <span>Oracle Database Cloud Service</span> backs up the files and folders listed in this specification file.</p>
+<p>An example of a <code class="codeph">dbcfg.spec</code> file with a default configuration is as follows:</p>
+<pre dir="ltr">
+### Oracle_Home configuration files.
+#
+# Doc Spec
+dbcfg.spec
+# DB id
+dbid
+#
+# Directories
+/u01/app/oracle/product/12.1.0/dbhome_1/admin/ORCL/xdb_wallet
+/u01/app/oracle/admin/ORCL/xdb_wallet
+/u01/app/oracle/admin/ORCL/opc_wallet
+# Note: tde_wallet must be backed up in a different location than DATA bkup.
+/u01/app/oracle/admin/ORCL/tde_wallet
+/u01/app/oracle/admin/ORCL/cat_wallet
+#/u01/app/oracle/product/12.1.0/dbhome_1/dbs
+#/u01/app/oracle/product/12.1.0/dbhome_1/network/admin
+#/u01/app/oraInventory
+#
+# Single files
+/u01/app/oracle/product/12.1.0/dbhome_1/dbs/opcORCL.ora
+/u01/app/oracle/product/12.1.0/dbhome_1/dbs/orapworcl
+/u01/app/oracle/product/12.1.0/dbhome_1/network/admin/listener.ora
+/u01/app/oracle/product/12.1.0/dbhome_1/network/admin/sqlnet.ora
+/u01/app/oracle/product/12.1.0/dbhome_1/network/admin/tnsnames.ora
+/u01/app/oracle/product/12.1.0/dbhome_1/rdbms/lib/env_rdbms.mk
+/u01/app/oracle/product/12.1.0/dbhome_1/rdbms/lib/ins_rdbms.mk
+</pre></li>
+</ol>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-ADF73049-B959-4753-9877-EE011FBF0A18__CRON">
+<p class="subhead2">Customizing the Frequency of Automatic Backups</p>
+<p>The backup feature provided by <span>Oracle Database Cloud Service</span> uses the Linux <code class="codeph">cron</code> job scheduler to perform automatic backups.</p>
+<p>If automatic backups are enabled, the following job entry is defined in the system-wide scheduler file, <code class="codeph">/etc/crontab</code>:</p>
+<pre dir="ltr">
+<span class="italic">MM</span> <span class="italic">HH</span> * * * root /var/opt/oracle/bkup_api/bkup_api bkup_start --dbname=<span class="italic">dbname</span>
+</pre>
+<p>The <code class="codeph">/etc/crontab</code> entry causes the <code class="codeph">bkup_api</code> script to be run daily at <span class="italic">HH</span>:<span class="italic">MM</span> (on a 24-hour clock) by the <code class="codeph">root</code> user. The <code class="codeph">bkup_api</code> script sends log messages to the file <code class="codeph">/home/oracle/bkup/log/obkup.log</code>.</p>
+<p>To change this frequency, or to add the entry if automatic backups were not enabled when the database deployment was created, edit the <code class="codeph">/etc/crontab</code> file. You must have root-user access to edit this file, so you must connect as the <code class="codeph">opc</code> user and then run the command <code class="codeph">sudo -s</code> to start a root-user shell.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-11B5783B-F3DC-4823-B603-E16D2F81CC57"></a>
+<h2 id="CSDBI-GUID-11B5783B-F3DC-4823-B603-E16D2F81CC57" class="sect2">Customizing the Current Backup Configuration on Database Deployments Hosting Oracle RAC Databases</h2>
+<div>
+<p>You can customize many of the characteristics of the backup configuration.</p>
+<div class="section">
+<p class="subhead2">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-78848793-B095-47F1-B87E-C4F8DC697824.htm#GUID-11B5783B-F3DC-4823-B603-E16D2F81CC57__RMAN">Customizing How the Database Is Backed Up</a></p>
+</li>
+<li>
+<p><a href="GUID-78848793-B095-47F1-B87E-C4F8DC697824.htm#GUID-11B5783B-F3DC-4823-B603-E16D2F81CC57__OSCFG">Customizing Which System Files Are Backed Up</a></p>
+</li>
+<li>
+<p><a href="GUID-78848793-B095-47F1-B87E-C4F8DC697824.htm#GUID-11B5783B-F3DC-4823-B603-E16D2F81CC57__DBCFG">Customizing Which Database Configuration Files Are Backed Up</a></p>
+</li>
+<li>
+<p><a href="GUID-78848793-B095-47F1-B87E-C4F8DC697824.htm#GUID-11B5783B-F3DC-4823-B603-E16D2F81CC57__GICFG">Customizing Which Grid Infrastructure Configuration Files Are Backed Up</a></p>
+</li>
+<li>
+<p><a href="GUID-78848793-B095-47F1-B87E-C4F8DC697824.htm#GUID-11B5783B-F3DC-4823-B603-E16D2F81CC57__CRON">Customizing the Time of Automatic Daily Backups</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-11B5783B-F3DC-4823-B603-E16D2F81CC57__RMAN">
+<p class="subhead2">Customizing How the Database Is Backed Up</p>
+<p>To change how the Oracle database is backed up, you use the RMAN utility. For information about using RMAN, see <cite>Oracle Database Backup and Recovery User's Guide</cite> for Release <a href="http://www.oracle.com/pls/topic/lookup?ctx=db122&amp;id=BRADV8001" target="_blank">12.2</a>, <a href="http://www.oracle.com/pls/topic/lookup?ctx=db121&amp;id=BRADV8001" target="_blank">12.1</a> or <a href="http://www.oracle.com/pls/topic/lookup?ctx=db112&amp;id=BRADV8001" target="_blank">11.2</a>.</p>
+<div class="infobox-note" id="GUID-11B5783B-F3DC-4823-B603-E16D2F81CC57__GUID-8E5BF908-C455-4E5E-AD27-73FA0F0A7890">
+<p class="notep1">Caution:</p>
+<p>Do not use the RMAN utility to change the retention period.</p>
+</div>
+<p>To view the current RMAN configuration, use the RMAN command SHOW ALL:</p>
+<ol>
+<li>
+<p>Connect as the <code class="codeph"><span class="bold">opc</span></code> user to the compute node.</p>
+<p>For detailed instructions, see <a href="GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1.htm#GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1">Connecting to a Compute Node Through Secure Shell (SSH)</a>.</p>
+</li>
+<li>
+<p>Change to the <code class="codeph"><span class="bold">oracle</span></code> user:</p>
+<pre dir="ltr">
+$ sudo -s
+# su - oracle
+</pre></li>
+<li>
+<p>Start an RMAN session:</p>
+<pre dir="ltr">
+$ <span class="bold">rman target=/</span>
+...
+RMAN&gt; 
+</pre></li>
+<li>
+<p>Enter the SHOW ALL command:</p>
+<pre dir="ltr">
+RMAN&gt; <span class="bold">show all;
+...</span>
+</pre>
+<p>A listing of your configuration is displayed.</p>
+</li>
+<li>
+<p>Use RMAN commands to make any changes to your configuration.</p>
+</li>
+<li>
+<p>Exit the RMAN session:</p>
+<pre dir="ltr">
+RMAN&gt; <span class="bold">exit;</span>
+$ 
+</pre></li>
+</ol>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-11B5783B-F3DC-4823-B603-E16D2F81CC57__OSCFG">
+<p class="subhead2">Customizing Which System Files Are Backed Up</p>
+<p>To change which system files and directories are backed up:</p>
+<ol>
+<li>
+<p>Connect as the <code class="codeph"><span class="bold">opc</span></code> user to the compute node.</p>
+<p>For detailed instructions, see <a href="GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1.htm#GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1">Connecting to a Compute Node Through Secure Shell (SSH)</a>.</p>
+</li>
+<li>
+<p>Edit the contents of the <code class="codeph">/opt/oracle/dcs/rdbaas/config/oscfg.spec</code> file.</p>
+<p>The backup feature provided by <span>Oracle Database Cloud Service</span> backs up the files and folders listed in this specification file.</p>
+</li>
+</ol>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-11B5783B-F3DC-4823-B603-E16D2F81CC57__DBCFG">
+<p class="subhead2">Customizing Which Database Configuration Files Are Backed Up</p>
+<p>To change which database configuration files are backed up:</p>
+<ol>
+<li>
+<p>Connect as the <code class="codeph"><span class="bold">opc</span></code> user to the compute node.</p>
+<p>For detailed instructions, see <a href="GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1.htm#GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1">Connecting to a Compute Node Through Secure Shell (SSH)</a>.</p>
+</li>
+<li>
+<p>Edit the contents of the <code class="codeph">/opt/oracle/dcs/rdbaas/config/dbcfg.spec</code> file.</p>
+<p>The backup feature provided by <span>Oracle Database Cloud Service</span> backs up the files and folders listed in this specification file.</p>
+</li>
+</ol>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-11B5783B-F3DC-4823-B603-E16D2F81CC57__GICFG">
+<p class="subhead2">Customizing Which Grid Infrastructure Configuration Files Are Backed Up</p>
+<p>To change which grid infrastructure configuration files are backed up:</p>
+<ol>
+<li>
+<p>Connect as the <code class="codeph"><span class="bold">opc</span></code> user to the compute node.</p>
+<p>For detailed instructions, see <a href="GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1.htm#GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1">Connecting to a Compute Node Through Secure Shell (SSH)</a>.</p>
+</li>
+<li>
+<p>Edit the contents of the <code class="codeph">/opt/oracle/dcs/rdbaas/config/gicfg.spec</code> file.</p>
+<p>The backup feature provided by <span>Oracle Database Cloud Service</span> backs up the files and folders listed in this specification file.</p>
+</li>
+</ol>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-11B5783B-F3DC-4823-B603-E16D2F81CC57__CRON">
+<p class="subhead2">Customizing the Time of Automatic Daily Backups</p>
+<p>To change the time of day when daily automatic backups are performed:</p>
+<ol>
+<li>
+<p>Connect as the <code class="codeph"><span class="bold">opc</span></code> user to the compute node.</p>
+<p>For detailed instructions, see <a href="GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1.htm#GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1">Connecting to a Compute Node Through Secure Shell (SSH)</a>.</p>
+</li>
+<li>
+<p>Enter this <code class="codeph">raccli</code> command:</p>
+<pre dir="ltr">
+$ <span class="bold">raccli update backupconfig -params '{"cronDate" : "<span class="italic">time</span>"}'</span>
+</pre>
+<p>where <span class="italic"><span class="bold"><code class="codeph">time</code></span></span> is the time (using 24-hour, HH:MM format) when daily backups are to occur. For example, <code class="codeph">"02:45"</code> is 2:45 AM, and <code class="codeph">"14:45"</code> is 2:45 PM.</p>
+</li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="GUID-36CA96BF-2D23-48AD-B8F9-4414CDCA0767.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="GUID-4C4D7BB4-0C69-41E9-9A7E-2E7334D0EE4E.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

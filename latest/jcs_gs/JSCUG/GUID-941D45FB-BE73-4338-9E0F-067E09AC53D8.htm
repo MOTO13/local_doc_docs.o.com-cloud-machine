@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>About Life Cycle Management of Oracle Java Cloud Service Instances</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="With a few clicks of the mouse, you can create a WebLogic Server production environment in the cloud that is based on best practices, and optimized for high performance and reliability." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-F3EF20BD-06DA-4467-AF32-3B2CABBB2A59.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-DB265806-BD36-43F8-9B68-C725A875088E.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-941D45FB-BE73-4338-9E0F-067E09AC53D8"></a> <span id="PAGE" style="display:none;">13/131</span> <!-- End Header -->
+<a id="JSCUG3371"></a>
+<h1 id="JSCUG-GUID-941D45FB-BE73-4338-9E0F-067E09AC53D8" class="sect1">About Life Cycle Management of Oracle Java Cloud Service Instances</h1>
+<div>
+<p><span>With a few clicks of the mouse, you can create a WebLogic Server production environment in the cloud that is based on best practices, and optimized for high performance and reliability.</span></p>
+<p>When you create an Oracle Java Cloud Service instance, you create and configure a Oracle Fusion Middleware Infrastructure domain with the resources defined in the following table.</p>
+<div class="tblformalwide" id="GUID-941D45FB-BE73-4338-9E0F-067E09AC53D8__THISTABLESUMMARIZESTHERESOURCESINAD-6074871B">
+<table class="cellalignment30" summary="This table summarizes the resources in a domain.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment40" id="d7845e20">Resources</th>
+<th class="cellalignment41" id="d7845e23">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d7845e28" headers="d7845e20">
+<p>Administration Server</p>
+</td>
+<td class="cellalignment43" headers="d7845e28 d7845e23">
+<p>Operates as the central control entity for the configuration of the entire domain. It maintains the domain's configuration documents and distributes changes in the configuration documents to Managed Servers.</p>
+<p>Each Oracle Java Cloud Service instance has one server instance that hosts the Administration Server.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d7845e37" headers="d7845e20">
+<p>Managed Servers</p>
+</td>
+<td class="cellalignment43" headers="d7845e37 d7845e23">
+<p>Host business applications, application components, Web services, and their associated resources.</p>
+<p>When creating a service instance, you can configure up to four Managed Servers, then scale out, as needed.</p>
+<p>Each Oracle Java Cloud Service instance has one or more Managed Servers, each hosted on its own Virtual Machine (VM).</p>
+<p>By default, the Managed Servers are named as follows: <span class="italic"><code class="codeph">first8charsOfDomainName</code></span><code class="codeph">_server_</code><span class="italic"><code class="codeph">n</code></span> (where <span class="italic"><code class="codeph">n</code></span> starts with 1 and is incremented by 1 for each additional Managed Server to guarantee unique names).</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d7845e63" headers="d7845e20">
+<p>Cluster</p>
+</td>
+<td class="cellalignment43" headers="d7845e63 d7845e23">
+<p>Consists of multiple Oracle WebLogic Server instances running simultaneously and working together to provide increased scalability and reliability. In a cluster, most resources and services are deployed identically to each Managed Server (as opposed to a single Managed Server), enabling failover and load balancing.</p>
+<p>A cluster is configured automatically for a production-level service instance.</p>
+<p>By default, the cluster name will be generated from the first eight characters of the Oracle Java Cloud Service instance name using the following format: <span class="italic"><code class="codeph">first8charsOfServiceInstanceName</code></span><code class="codeph">_cluster</code>.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d7845e80" headers="d7845e20">
+<p>Load Balancer</p>
+</td>
+<td class="cellalignment43" headers="d7845e80 d7845e23">
+<p>Employs Oracle Traffic Director for load balancing to manage routing requests across all Managed Servers and provide failover and replication.</p>
+<p>It is recommended that you enable the load balancer when you configure more than one Managed Server in your environment. Enabling the load balancer is optional.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p><span>When Oracle Coherence is enabled for a service instance,</span> additional resources related to Coherence are defined in a domain.</p>
+<div class="tblformalwide" id="GUID-941D45FB-BE73-4338-9E0F-067E09AC53D8__THISTABLESUMMARIZESTHECOHERENCERESO-60748C17">
+<table class="cellalignment30" summary="This table summarizes the Coherence resources in a domain.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment40" id="d7845e100">Resources</th>
+<th class="cellalignment41" id="d7845e103">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d7845e108" headers="d7845e100">
+<p>Managed Servers (Coherence data tier, storage-enabled)</p>
+</td>
+<td class="cellalignment43" headers="d7845e108 d7845e103">
+<p>Each <span>Oracle Java Cloud Service&mdash;Coherence</span> instance has a Coherence data tier cluster, in which one or more Virtual Machines (VMs) can have one or more Managed Servers each.</p>
+<p>By default, the storage-enabled Managed Servers are named as follows: <span class="italic"><code class="codeph">first8charsOfDomainName</code></span><code class="codeph">_server_</code><span class="italic"><code class="codeph">n</code></span><code class="codeph">_DG</code> (where <span class="italic"><code class="codeph">n</code></span> is a number that&rsquo;s incremented by 1 for each additional Managed Server to guarantee unique names).</p>
+<p>The storage-enabled Managed Servers are responsible for storing and distributing data (both primary and backup) on the cluster. Coherence artifacts (such as Coherence configuration files, POF serialization classes, filters, entry processors, and aggregators) are packaged as a GridARchive (GAR) and deployed on the Managed Servers.</p>
+<p>Note that when you stop or start a service instance, all the VMs for the Managed Servers on the Coherence data tier will also stop or start. If stopped, all data in the Coherence cache will be lost.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d7845e139" headers="d7845e100">
+<p>Managed Servers (Application tier, storage-disabled)</p>
+</td>
+<td class="cellalignment43" headers="d7845e139 d7845e103">
+<p>The storage-disabled Managed Servers (identified by the name format <span class="italic"><code class="codeph">first8charsOfDomainName</code></span><code class="codeph">_server_</code><span class="italic"><code class="codeph">n</code></span>) in the first WebLogic Server cluster host Coherence applications (cache clients), and are not responsible for storing data. Clients in the application tier are deployed as EARs. Coherence artifacts (such as Coherence configuration files, POF serialization classes, filters, entry processors, and aggregators) are packaged as a GridARchive (GAR) and deployed within an EAR.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d7845e155" headers="d7845e100">
+<p>Cluster (Coherence data tier)</p>
+</td>
+<td class="cellalignment43" headers="d7845e155 d7845e103">
+<p>A second WebLogic Server cluster is configured in the domain for storing and distributing data. The Coherence data tier cluster is associated with the Coherence cluster <code class="codeph">DataGridConfig</code>. The cluster members are storage-enabled by default.</p>
+<p>By default, the cluster name will be generated from the first eight characters of the service instance name using the following format: <span class="italic"><code class="codeph">first8charsOfServiceInstanceName</code></span><code class="codeph">_DGCluster</code>.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d7845e173" headers="d7845e100">
+<p>Cluster (Application tier)</p>
+</td>
+<td class="cellalignment43" headers="d7845e173 d7845e103">
+<p>The first WebLogic Server cluster (identified by the name format <span class="italic"><code class="codeph">first8charsOfServiceInstanceName</code></span><code class="codeph">_cluster</code>) is referred to as the application tier cluster. The cluster is also associated with the Coherence cluster <code class="codeph">DataGridConfig</code>, and the cluster members are storage-disabled by default.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d7845e189" headers="d7845e100">
+<p>Coherence Cluster</p>
+</td>
+<td class="cellalignment43" headers="d7845e189 d7845e103">
+<p>The system-level resource (<code class="codeph">CoherenceClusterSystemResource</code>) has the default name <code class="codeph">DataGridConfig</code>. Both the application tier WebLogic Server cluster (storage-disabled) and the data tier WebLogic Server cluster (storage-enabled) are associated with the Coherence cluster.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>For more information about WebLogic domains, see:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Oracle Fusion Middleware 12.2.1: <a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=INTRO173" target="_blank">WebLogic Server Domains</a> in <span class="italic">Understanding Oracle WebLogic Server</span></p>
+</li>
+<li>
+<p>Oracle Fusion Middleware 12.1.3: <a href="http://www.oracle.com/pls/topic/lookup?ctx=fmw121300&amp;id=INTRO173" target="_blank">WebLogic Server Domains</a> in <span class="italic">Understanding Oracle WebLogic Server</span></p>
+</li>
+<li>
+<p>Oracle Fusion Middleware 11.1.1.7: <a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudas111170&amp;id=DOMCF115" target="_blank">Understanding Oracle WebLogic Server Domains</a> in <span class="italic">Understanding Domain Configuration for Oracle WebLogic Server</span>.</p>
+</li>
+<li>
+<p><span>When Oracle Coherence is enabled for a service instance:</span> (Oracle Fusion Middleware 12.1.3) <a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw121300&amp;id=CLUST629" target="_blank">Configuring and Managing Coherence Clusters</a> in <cite>Administering Clusters for Oracle WebLogic Server</cite> or (Oracle Fusion Middleware 12.2.1) <a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=CLUST629" target="_blank">Configuring and Managing Coherence Clusters</a> in <cite>Administering Clusters for Oracle WebLogic Server</cite>.</p>
+</li>
+</ul>
+<p>After the Oracle Java Cloud Service instance is created, the Administration Server in the domain is started automatically. You can deploy applications and manage the domain resources using the standard administration tools, including Enterprise Manager Fusion Middleware Control, Oracle WebLogic Server Administration Console, Oracle WebLogic Scripting Tool (WLST), Node Manager, and Oracle Traffic Director Console.</p>
+<p>Using the Oracle Java Cloud Service Console or REST API, you can stop, start, or restart a service instance or individual VMs. For example, you can stop service instances or individual server VMs to stop metering for these resources, or restart the Administration Server or individual server VMs if reboot is needed.</p>
+<p>A sample application is deployed automatically when the service instance is created. For more information, see <a href="GUID-35722F36-98FE-4685-98EC-606A4C5F7DCA.htm" title="When you create an Oracle Java Cloud Service instance, a sample application is deployed automatically to the instance&rsquo;s managed servers and started.">About the Sample Application Deployed to an Oracle Java Cloud Service Instance</a>.</p>
+<div class="infobox-note" id="GUID-941D45FB-BE73-4338-9E0F-067E09AC53D8__GUID-0E1AF2DF-1147-433B-BB3B-F8F93FE46C34">
+<p class="notep1">Note:</p>
+<p>If you extend your domain using the administration tools, for example, to add an additional cluster, you are responsible for maintaining those additional resources.</p>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-F3EF20BD-06DA-4467-AF32-3B2CABBB2A59.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-DB265806-BD36-43F8-9B68-C725A875088E.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

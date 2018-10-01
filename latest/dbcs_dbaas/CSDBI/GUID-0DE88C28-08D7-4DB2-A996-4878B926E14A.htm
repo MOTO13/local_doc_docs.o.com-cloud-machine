@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Data Pump Transportable Tablespace</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can use this method only if the on-premises platform is little endian, and the database character sets of your on-premises database and Oracle Database Cloud Service database are compatible." />
+<meta name="dcterms.created" content="2017-06-19T15:22:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Database Cloud Service" />
+<meta name="dcterms.identifier" content="E72994-04" />
+<meta name="dcterms.isVersionOf" content="CSDBI" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-B553F50F-C5A7-43EC-913F-E9C5278EB684.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-01F75B4A-B57F-4C41-9FE9-0710E8DBBC90.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSDBI.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSDBI.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSDBI.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-0DE88C28-08D7-4DB2-A996-4878B926E14A"></a> <span id="PAGE" style="display:none;">90/190</span> <!-- End Header -->
+<h1 id="CSDBI-GUID-0DE88C28-08D7-4DB2-A996-4878B926E14A" class="sect1">Data Pump Transportable Tablespace</h1>
+<div>
+<p>You can use this method only if the on-premises platform is little endian, and the database character sets of your on-premises database and <span>Oracle Database Cloud Service</span> database are compatible.</p>
+<p>The Transportable Tablespace method is generally much faster than a conventional export/import of the same data because the data files containing all of the actual data are simply copied to the destination location. You use Data Pump to transfer only the metadata of the tablespace objects to the new database.</p>
+<p>To migrate an on-premises source database to the database deployment on <span>Oracle Database Cloud Service</span> using the Data Pump Transportable Tablespace method, you perform these tasks:</p>
+<ol>
+<li>
+<p>On the on-premises database host, prepare the database for the Data Pump transportable tablespace export.</p>
+</li>
+<li>
+<p>On the on-premises database host, invoke Data Pump Export to perform the transportable tablespace export.</p>
+</li>
+<li>
+<p>Use a secure copy utility to transfer the Data Pump Export dump file and the tablespace datafiles to the <span>Database Cloud Service</span> compute node.</p>
+</li>
+<li>
+<p>Set the on-premises tablespaces back to <code class="codeph">READ WRITE</code>.</p>
+</li>
+<li>
+<p>On the <span>Database Cloud Service</span> compute node, prepare the database for the tablespace import.</p>
+</li>
+<li>
+<p>On the <span>Database Cloud Service</span> compute node, invoke Data Pump Import and connect to the database.</p>
+</li>
+<li>
+<p>Set the tablespaces on the <span>Database Cloud Service</span> database to <code class="codeph">READ WRITE</code> mode.</p>
+</li>
+<li>
+<p>After verifying that the data has been imported successfully, you can delete the dump file.</p>
+</li>
+</ol>
+</div>
+<div class="sect2"><a id="GUID-C3EBB753-6BB4-4C68-8C5E-9169E13C3180"></a>
+<h2 id="CSDBI-GUID-C3EBB753-6BB4-4C68-8C5E-9169E13C3180" class="sect2">Data Pump Transportable Tablespace: Example</h2>
+<div>
+<p>This example provides a step-by-step demonstration of the tasks required to migrate tablespaces in an on-premises Oracle database to an <span>Oracle Database Cloud Service</span> database.</p>
+<p>This example performs a migration of the <code class="codeph">FSDATA</code> and <code class="codeph">FSINDEX</code> tablespaces.</p>
+<p>In this example, the on-premises database is on a Linux host.</p>
+<ol>
+<li>
+<p>On the on-premises database host, prepare the database for the Data Pump transportable tablespace export.</p>
+<ol>
+<li>
+<p>On the on-premises database host, create a directory in the operating system to use for the on-premises export.</p>
+<pre dir="ltr">
+$ <span class="bold">mkdir /u01/app/oracle/admin/orcl/dpdump/for_cloud</span>
+</pre></li>
+<li>
+<p>On the on-premises database host, invoke SQL*Plus and log in to the on-premises database as the <code class="codeph">SYSTEM</code> user.</p>
+<pre dir="ltr">
+$ <span class="bold">sqlplus system</span>
+Enter password: <span class="bold"><span class="italic">&lt;enter the password for the SYSTEM user&gt;</span></span>
+</pre></li>
+<li>
+<p>Create a directory object in the on-premises database to reference the operating system directory.</p>
+<pre dir="ltr">
+SQL&gt; <span class="bold">CREATE DIRECTORY dp_for_cloud AS '/u01/app/oracle/admin/orcl/dpdump/for_cloud';</span>
+</pre></li>
+<li>
+<p>Determine the name(s) of the datafiles that belong to the <code class="codeph">FSDATA</code> and <code class="codeph">FSINDEX</code> tablespaces by querying DBA_DATA_FILES. These files will also be listed in the export output.</p>
+<pre dir="ltr">
+SQL&gt; <span class="bold">SELECT file_name FROM dba_data_files</span>
+  2  <span class="bold">WHERE tablespace_name = 'FSDATA';</span>
+
+FILE_NAME
+-----------------------------------------------------------------
+/u01/app/oracle/oradata/orcl/fsdata01.dbf
+
+SQL&gt; <span class="bold">SELECT file_name FROM dba_data_files</span> 
+  2  <span class="bold">WHERE tablespace_name = 'FSINDEX';</span>
+
+FILE_NAME
+-----------------------------------------------------------------
+/u01/app/oracle/oradata/orcl/fsindex01.dbf
+</pre></li>
+<li>
+<p>On the on-premises database host, set all tablespaces that will be transported (the transportable set) to <code class="codeph">READ ONLY</code> mode.</p>
+<pre dir="ltr">
+SQL&gt; <span class="bold">ALTER TABLESPACE fsindex READ ONLY;</span>
+Tablespace altered.
+SQL&gt; <span class="bold">ALTER TABLESPACE fsdata READ ONLY;</span>
+Tablespace altered.
+</pre></li>
+<li>
+<p>Exit from SQL*Plus.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>On the on-premises database host, invoke Data Pump Export to perform the transportable tablespace export.</p>
+<p>On the on-premises database host, invoke Data Pump Export and connect to the on-premises database. Export the on-premises tablespaces using the <code class="codeph">TRANSPORT_TABLESPACES</code> option. Provide the password for the <code class="codeph">SYSTEM</code> user when prompted.</p>
+<pre dir="ltr">
+$ <span class="bold">expdp system TRANSPORT_TABLESPACES=fsdata,fsindex TRANSPORT_FULL_CHECK=YES DIRECTORY=dp_for_cloud</span>
+</pre></li>
+<li>
+<p>Use a secure copy utility to transfer the Data Pump Export dump file and the tablespace datafiles to the <span>Database Cloud Service</span> compute node.</p>
+<p>In this example the dump file is copied to the <code class="codeph">/u01</code> directory. Choose the appropriate location based on the size of the file that will be transferred.</p>
+<ol>
+<li>
+<p>On the <span>Database Cloud Service</span> compute node, create a directory for the dump file.</p>
+<pre dir="ltr">
+$ <span class="bold">mkdir /u01/app/oracle/admin/ORCL/dpdump/from_onprem</span>
+</pre></li>
+<li>
+<p>Before using the <code class="codeph">scp</code> utility to copy files, make sure the SSH private key that provides access to the <span>Database Cloud Service</span> compute node is available on your on-premises host.</p>
+</li>
+<li>
+<p>On the on-premises database host, use the <code class="codeph">scp</code> utility to transfer the dump file and all datafiles of the transportable set to the <span>Database Cloud Service</span> compute node.</p>
+<pre dir="ltr">
+$ <span class="bold">scp -i <span class="italic">private_key_file</span> \</span>
+<span class="bold">/u01/app/oracle/admin/orcl/dpdump/for_cloud/expdat.dmp \</span>
+<span class="bold">oracle@<span class="italic">IP_address_DBaaS_VM</span>:/u01/app/oracle/admin/ORCL/dpdump/from_onprem</span>
+
+$ <span class="bold">scp -i <span class="italic">private_key_file</span> \</span>
+<span class="bold">/u01/app/oracle/oradata/orcl/fsdata01.dbf \</span>
+<span class="bold">oracle@IP_address_DBaaS_VM:/u02/app/oracle/oradata/ORCL</span>
+
+$ <span class="bold">scp -i <span class="italic">private_key_file</span> \</span>
+<span class="bold">/u01/app/oracle/oradata/orcl/fsindex01.dbf \</span>
+<span class="bold">oracle@IP_address_DBaaS_VM:/u02/app/oracle/oradata/ORCL</span>
+</pre></li>
+</ol>
+</li>
+<li>
+<p>Set the on-premises tablespaces back to <code class="codeph">READ WRITE</code>.</p>
+<ol>
+<li>
+<p>Invoke SQL*Plus and log in as the <code class="codeph">SYSTEM</code> user.</p>
+</li>
+<li>
+<p>Set the <code class="codeph">FSDATA</code> and <code class="codeph">FSINDEX</code> tablespaces back to <code class="codeph">READ WRITE</code> mode.</p>
+<pre dir="ltr">
+SQL&gt; <span class="bold">ALTER TABLESPACE fsdata READ WRITE;</span>
+Tablespace altered.
+SQL&gt; <span class="bold">ALTER TABLESPACE fsindex READ WRITE;</span>
+Tablespace altered.
+</pre></li>
+<li>
+<p>Exit from SQL*Plus.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>On the <span>Database Cloud Service</span> compute node, prepare the database for the tablespace import.</p>
+<ol>
+<li>
+<p>On the <span>Database Cloud Service</span> compute node, invoke SQL*Plus and log in to the database as the <code class="codeph">SYSTEM</code> user.</p>
+</li>
+<li>
+<p>Create a directory object in the <span>Database Cloud Service</span> database.</p>
+<pre dir="ltr">
+SQL&gt; <span class="bold">CREATE DIRECTORY dp_from_onprem AS '/u01/app/oracle/admin/ORCL/dpdump/from_onprem';</span>
+</pre></li>
+<li>
+<p>If the owners of the objects that will be imported do not exist in the database, create them before performing the import. The transportable tablespace mode of import does not create the users.</p>
+<pre dir="ltr">
+SQL&gt; <span class="bold">CREATE USER fsowner</span>
+  2  <span class="bold">PROFILE default</span>
+  3  <span class="bold">IDENTIFIED BY fspass</span>
+  4  <span class="bold">TEMPORARY TABLESPACE temp</span>
+  5  <span class="bold">ACCOUNT UNLOCK;</span>
+</pre></li>
+</ol>
+</li>
+<li>
+<p>On the <span>Database Cloud Service</span> compute node, invoke Data Pump Import and connect to the database.</p>
+<p>Import the data into the database using the <code class="codeph">TRANSPORT_DATAFILES</code> option.</p>
+<pre dir="ltr">
+$ <span class="bold">impdp system DIRECTORY=dp_from_onprem \</span>
+<span class="bold">TRANSPORT_DATAFILES='/u02/app/oracle/oradata/ORCL/fsdata01.dbf', \</span>
+<span class="bold">'/u02/app/oracle/oradata/ORCL/fsindex01.dbf'</span>
+</pre></li>
+<li>
+<p>Set the tablespaces on the <span>Database Cloud Service</span> database to <code class="codeph">READ WRITE</code> mode.</p>
+<ol>
+<li>
+<p>Invoke SQL*Plus and log in as the <code class="codeph">SYSTEM</code> user.</p>
+</li>
+<li>
+<p>Set the <code class="codeph">FSDATA</code> and <code class="codeph">FSINDEX</code> tablespaces to <code class="codeph">READ WRITE</code> mode.</p>
+<pre dir="ltr">
+SQL&gt; <span class="bold">ALTER TABLESPACE fsdata READ WRITE;</span>
+Tablespace altered.
+SQL&gt; <span class="bold">ALTER TABLESPACE fsindex READ WRITE;</span>
+Tablespace altered.
+</pre></li>
+<li>
+<p>Exit from SQL*Plus.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>After verifying that the data has been imported successfully, you can delete the <code class="codeph">expdat.dmp</code> dump file.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="GUID-B553F50F-C5A7-43EC-913F-E9C5278EB684.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="GUID-01F75B4A-B57F-4C41-9FE9-0710E8DBBC90.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

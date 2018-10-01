@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Problems with Failure of a Running Service When the Schema User Password Expires</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="An Oracle Java Cloud Service instance can fail suddenly and issue password expiry error messages." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-6EBA48D9-F5FB-4AE1-9573-937ABE9EBD0C.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-48386DD4-8E26-4979-8FD0-98FFE0DA5600.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-DDAA8721-472D-4062-8379-AD0A0A883BC9"></a> <span id="PAGE" style="display:none;">119/131</span> <!-- End Header -->
+<h1 id="JSCUG-GUID-DDAA8721-472D-4062-8379-AD0A0A883BC9" class="sect1">Problems with Failure of a Running Service When the Schema User Password Expires</h1>
+<div>
+<p>An <span>Oracle Java Cloud Service</span> instance can fail suddenly and issue password expiry error messages.</p>
+<div class="section">This failure is due to the fact that the user password for the infrastructure repository schemas is set to expire in 180 days after an <span>Oracle Java Cloud Service</span> instance is created. You will get the following error messages:
+<pre dir="ltr">
+Received exception while creating connection for pool X: ORA-28001: 
+the password has expired
+</pre>
+<pre dir="ltr">
+java.sql.SQLException: ORA-01017: invalid username/password; logon denied
+</pre>
+<p>Another symptom of this problem is that a patch precheck, restoration, or scale out operation may fail.</p>
+</div>
+<!-- class="section" -->
+<div class="p">
+<p>You must be able to log onto the VM that hosts the WebLogic Server Administration Server as <code class="codeph">opc</code>. Doing so allows you to <code class="codeph">sudo</code> as <code class="codeph">oracle</code>. All actions on files on the VM that hosts the Administration Server or VMs that host Managed Servers should be executed as <code class="codeph">oracle</code>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p>Summary of steps in this procedure:</p>
+<ol>
+<li>
+<p>Update each&nbsp;infrastructure repository schema's&nbsp;password on the database deployment.</p>
+</li>
+<li>
+<p>If WebLogic Servers are running and the WebLogic Server Console is accessible, change the password for all the corresponding&nbsp;datasources from the Weblogic Administration Console.</p>
+</li>
+<li>
+<p>If WebLogic Servers are not running and WebLogic Server Console is inaccessible, manual change the passwords in WebLogic Server configuration.</p>
+</li>
+<li>
+<p>Run offline WLST command <code class="codeph">modifyBootStrapCredential</code>.</p>
+</li>
+<li>
+<p>Start the Administration Server through Node Manager,&nbsp;and then start the Managed Servers.</p>
+</li>
+</ol>
+</div>
+<!-- class="section" -->
+<div class="section">To remedy this problem:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Update each&nbsp;infrastructure repository schema's&nbsp;password on the database deployment.</span>
+<div>
+<p>&nbsp;If the schema prefix is already known, jump to Step b.</p>
+</div>
+<ol>
+<li class="substepexpand"><span>Login to the Java Cloud Service Instance VM that hosts the Administration Server, and get the value of the schema prefix. &nbsp;</span>
+<div>
+<pre dir="ltr">
+ssh -i &lt;private_key&gt; opc@&lt;IP_address_of_admin_server_VM&gt;
+sudo su oracle
+curl http://192.1.1.192/latest/user-data/chef/initial_attributes/wlss/schema_prefix
+</pre></div>
+<div>The Schema Prefix value returned would be similar to the following:
+<pre dir="ltr">
+SP255951777
+</pre></div>
+</li>
+<li class="substepexpand"><span>Login to the <span>Oracle Database Cloud Service</span> database deployment VM.</span>
+<div>
+<pre dir="ltr">
+ssh -i &lt;ssh_key&gt; opc@&lt;DB_vm_ip_address&gt;
+sudo su oracle
+</pre></div>
+</li>
+<li class="substepexpand"><span>Connect to the <span>Oracle Database Cloud Service</span> database deployment.</span>
+<div>
+<pre dir="ltr">
+sqlplus / as sysdba
+</pre>
+<p>Use the username provided when provisioning the database deployment.</p>
+</div>
+<div>If your database deployment version is 12<span class="italic">c</span>, the following step is also required:
+<pre dir="ltr">
+alter session set container=PDB1 
+</pre>
+<p>Use the PDB name provided during <span>Oracle Java Cloud Service</span>.</p>
+</div>
+</li>
+<li class="substepexpand"><span>Change the password for the infrastructure repository schema users to new password.</span>
+<div>
+<div class="infobox-note" id="GUID-DDAA8721-472D-4062-8379-AD0A0A883BC9__GUID-B15F0670-A41C-4041-9AAF-30DE2A2D9BDA">
+<p class="notep1">Note:</p>
+<p>The following schema users must have their passwords changed:</p>
+<div class="tblformalwide" id="GUID-DDAA8721-472D-4062-8379-AD0A0A883BC9__THISTABLEDESCRIBESSCALINGTASKSFORAN-8A3E6F8A">
+<table class="cellalignment77" summary="This table shows schema users that need to have the password changed to a new password.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment35" id="d60168e126">For Fusion Middleware 11g</th>
+<th class="cellalignment35" id="d60168e131">For Fusion Middleware 12.1.3</th>
+<th class="cellalignment44" id="d60168e134">For Fusion Middleware 12.2.1.x</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d60168e139" headers="d60168e126">
+<p><code class="codeph">&lt;schema_prefix&gt;_IAU</code></p>
+<p><code class="codeph">&lt;schema_prefix&gt;_IAUOES</code></p>
+<p><code class="codeph">&lt;schema_prefix&gt;_IAUOES_APPEND</code></p>
+<p><code class="codeph">&lt;schema_prefix&gt;_IAUOES_VIEWER</code></p>
+<p><code class="codeph">&lt;schema_prefix&gt;_IAU_APPEND</code></p>
+<p><code class="codeph">&lt;schema_prefix&gt;_IAU_VIEWER</code></p>
+<p><code class="codeph">&lt;schema_prefix&gt;_MDS</code></p>
+<p><code class="codeph">&lt;schema_prefix&gt;_OPSS</code></p>
+</td>
+<td class="cellalignment38" headers="d60168e139 d60168e131">
+<p><code class="codeph">&lt;schema_prefix&gt;_IAU</code></p>
+<p><code class="codeph">&lt;schema_prefix&gt;_IAU_APPEND</code></p>
+<p><code class="codeph">&lt;schema_prefix&gt;_IAU_VIEWER</code></p>
+<p><code class="codeph">&lt;schema_prefix&gt;_MDS</code></p>
+<p><code class="codeph">&lt;schema_prefix&gt;_OPSS</code></p>
+<p><code class="codeph">&lt;schema_prefix&gt;_STB</code></p>
+</td>
+<td class="cellalignment45" headers="d60168e139 d60168e134">
+<p><code class="codeph">&lt;schema_prefix&gt;_IAU</code></p>
+<p><code class="codeph">&lt;schema_prefix&gt;_IAU_APPEND</code></p>
+<p><code class="codeph">&lt;schema_prefix&gt;_IAU_VIEWER</code></p>
+<p><code class="codeph">&lt;schema_prefix&gt;_MDS</code></p>
+<p><code class="codeph">&lt;schema_prefix&gt;_OPSS</code></p>
+<p><code class="codeph">&lt;schema_prefix&gt;_STB</code></p>
+<p><code class="codeph">&lt;schema_prefix&gt;_UMS</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<div>Change the password for each of the schema users pertaining to the WebLogic Server version on the database deployment. For example:
+<pre dir="ltr">
+ALTER USER &lt;schema_prefix&gt;_IUA identified by &lt;new_password&gt;;
+</pre></div>
+</li>
+<li class="substepexpand"><span>Unlock all the user accounts on the database to cover for the case that they are locked due to repeated login failures after password expiry.</span>
+<div>
+<pre dir="ltr">
+ALTER USER &lt;schema_prefix&gt;_IAU ACCOUNT UNLOCK;
+</pre></div>
+<div>
+<div class="infobox-note" id="GUID-DDAA8721-472D-4062-8379-AD0A0A883BC9__GUID-3FAEA503-2004-49E8-80C0-1FAAB44A981E">
+<p class="notep1">Note:</p>
+If the WebLogic Administration Server is running and the WebLogic Administration Console is accessible, follow Step 2, else jump to Step 3.</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="stepexpand"><span>Update all the datasources from the WebLogic Administration Console to reflect the new password.</span>
+<ol>
+<li class="substepexpand"><span>Log in to the WebLogic Administration Console and navigate to the Services &gt; Datasources menu on the Domain Structure box.</span></li>
+<li class="substepexpand"><span>Click <span class="bold">Lock &amp; Edit</span>.</span></li>
+<li class="substepexpand"><span>For each datasource, navigate to the Datasource Name &gt; Configuration &gt; Connection Pool tab and update the Password and Confirm Password field with the new password.</span></li>
+<li class="substepexpand"><span>Click on <span class="bold">Save</span> button on this page, and then <span class="bold">Activate</span>.&nbsp;</span></li>
+<li class="substepexpand"><span>Stop all the WebLogic Servers.</span>
+<div>
+<p>From the WebLogic Administration Console, navigation to the Environment &gt; Servers &gt; Control tab.</p>
+</div>
+<div>
+<p>Select all the servers and click Shutdown &gt; Force Shutdown Now.</p>
+</div>
+<div>
+<p>Proceed to Step 4.</p>
+</div>
+</li>
+</ol>
+</li>
+<li class="stepexpand"><span>If the WebLogic Server is not running or the Administration Console is not accessible:</span>
+<ol>
+<li class="substepexpand"><span>Encrypt the new schema password and Update Data Source Configuration files</span>
+<div>
+<pre dir="ltr">
+ssh -i &lt;private_keyopc@&lt;ipaddress_of Admin_VM&gt;
+sudo su oracle; cd /u01/data/domain/&lt;domain_name&gt;
+</pre></div>
+<div>Ensure WebLogic Servers are not running. If running, to stop the processes:
+<pre dir="ltr">
+kill -9 &lt;pid&gt;
+</pre>
+then run:
+<pre dir="ltr">
+. &lt;domain_home/bin/setDomainEnv.sh
+</pre></div>
+</li>
+</ol>
+<ol>
+<li class="substepexpand"><span>Run the WebLogic Encryption Utility and enter the password you set for the database schemas.</span>
+<div>
+<pre dir="ltr">
+/u01/jdk/bin/java weblogic.security.Encrypt
+ password: &lt;Enter the new password for the schema user&gt;
+</pre></div>
+</li>
+<li class="substepexpand"><span>An encrypted password will be required such as:</span>
+<div>
+<pre dir="ltr">
+AES}JHyrhOMB5hVRuDU/pV0qX86qz98ZV0xWXBSEAANA4Gs=
+</pre>
+<p>Note the encrypted password output for future reference.</p>
+</div>
+</li>
+<li class="substepexpand"><span>Update the new password in the datasource xml files.</span>
+<div>
+<pre dir="ltr">
+cd &lt;domain_home&gt;/&lt;domain_name&gt;/config/jdbc
+</pre>
+<p>Open the datasource xml files found in the <code class="codeph">&lt;domain_home/&lt;domain_name&gt;/config/jdbc</code> directory that need to be updated with the new encrypted password:</p>
+</div>
+<div>
+<div class="tblformalwide" id="GUID-DDAA8721-472D-4062-8379-AD0A0A883BC9__THISTABLESHOWSSCHEMAUSERSTHATNEEDTO-8A43CEEB">
+<table class="cellalignment77" summary="This table shows schema users that need to have the password changed to the new password.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment35" id="d60168e309">For Fusion Middleware 11g</th>
+<th class="cellalignment35" id="d60168e314">For Fusion Middleware 12.1.3</th>
+<th class="cellalignment44" id="d60168e317">For Fusion Middleware 12.2.1.x</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d60168e322" headers="d60168e309">
+<p><code class="codeph">mds-owsm-jbdc.xml</code></p>
+<p><code class="codeph">opss-ds-jdbc.xml</code></p>
+</td>
+<td class="cellalignment38" headers="d60168e322 d60168e314">
+<p><code class="codeph">LocalSvcTblDataSource-jdbc.xml</code></p>
+<p><code class="codeph">opss-auditview-jdbc.xml</code></p>
+<p><code class="codeph">mds-owsm-jdbc.xml</code></p>
+<p><code class="codeph">opss-datasource-jdbc.xml</code></p>
+<p><code class="codeph">opss-audit-jdbc.xml</code></p>
+</td>
+<td class="cellalignment45" headers="d60168e322 d60168e317">
+<p><code class="codeph">LocalSvcTblDataSource-jdbc.xml</code></p>
+<p><code class="codeph">opss-auditview-jdbc.xml</code></p>
+<p><code class="codeph">mds-owsm-jdbc.xml</code></p>
+<p><code class="codeph">opss-datasource-jdbc.xml</code></p>
+<p><code class="codeph">opss-audit-jdbc.xml</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</li>
+</ol>
+</li>
+<li class="stepexpand"><span>Run the <code class="codeph">Modify BootStrapCredential</code> WLST command to update <code class="codeph">jps-config.xml</code> with the new password for <code class="codeph">&lt;SCHEMA_PREFIX&gt;_OPSS</code> user. See Step 2b.</span>
+<ol>
+<li class="substepexpand"><span>Login to the <span>Oracle Java Cloud Service</span> VM hosting the Administration Server.</span>
+<div>
+<pre dir="ltr">
+ssh -i &lt;private_key&gt; opc@&lt;IP_of_admin_server&gt;
+sudo su oracle
+</pre></div>
+</li>
+<li class="substepexpand"><span>Invoke WLST.</span>
+<div>
+<pre dir="ltr">
+/u01/app/oracle/middleware/oracle_common/common/bin/wlst.sh
+</pre></div>
+</li>
+<li class="substepexpand"><span>Run the <code class="codeph">modifyBootStrapCredential</code> command to update the <code class="codeph">jps-config</code> file with the new password for the schema user.</span>
+<div>
+<div class="infobox-note" id="GUID-DDAA8721-472D-4062-8379-AD0A0A883BC9__GUID-4A1B9056-7E23-40F3-912B-8A0D6391C226">
+<p class="notep1">Note:</p>
+The full path to the JPS config file must be specified.</div>
+</div>
+<div>
+<p>For example:</p>
+<pre dir="ltr">
+wls:/offline&gt;modifyBootStrapCredential(jpsCconfig_File='&lt;domain_home&gt;/&lt;domain_name&gt;/config/fmwconfig/jps-config.xml',username='&lt;schema_prefix&gt;_OPSS',password='&lt;new_password_set_for_this_schema_user&gt;')
+</pre></div>
+</li>
+</ol>
+</li>
+<li class="stepexpand"><span>Start the Administration Server through the Node Manager and then the Managed Server(s).</span>
+<ol>
+<li class="substepexpand"><span>Log in to the <span>Oracle Java Cloud Service</span> VM hosting the WebLogic Administration Server.</span></li>
+<li class="substepexpand"><span>Start WLST.</span>
+<div>
+<pre dir="ltr">
+/u01/app/oracle/middleware/oracle_common/common/bin/wlst.sh
+</pre></div>
+</li>
+<li class="substepexpand"><span>Connect to the Node Manager.</span>
+<div>Before running the command, get the required values of some of the variables involved.</div>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>Host name &mdash; On the command prompt, type <code class="codeph">hostname</code>.</p>
+</li>
+<li>
+<p>Node Manager port number, domain name, domain home &mdash; Open the nodemanager.properties files to determine the respective values.</p>
+<div class="p">For 11<span class="italic">g</span>:
+<pre dir="ltr">
+u01/app/oracle/middleware/wlserver_10.3/common/nodemanager/nodemanager.properties
+</pre></div>
+<div class="p">For 12<span class="italic">c</span>:
+<pre dir="ltr">
+/u01/data/domains/&lt;domain_name&gt;/nodemanager/nodemanager.properties
+</pre></div>
+</li>
+<li>
+<div class="p">Administration Server name &mdash;
+<pre dir="ltr">
+cd /u01/data/domains/&lt;domain_name&gt;/servers.
+</pre></div>
+<p>Look for the server name ending in <code class="codeph">adminserver</code>.</p>
+</li>
+</ul>
+</div>
+<div>Run the <code class="codeph">nmConnect</code> command.
+<pre dir="ltr">
+nmConnect('&lt;weblogic_username&gt;','&lt;weblogic_password&gt;','&lt;hostname&gt;','&lt;domain_name&gt;','&lt;domain_home&gt;/&lt;domain_name&gt;','ssl')
+</pre></div>
+</li>
+<li class="substepexpand"><span>Start the Administration Server.</span>
+<div>
+<pre dir="ltr">
+nmStart("&lt;admin_server_name&gt;")
+</pre></div>
+</li>
+<li class="substepexpand"><span>If the Administration Server has status RUNNING, access the WebLogic Administration Console and start the Managed Servers.</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>Click on Servers under Environments in the Domain Structure section.</p>
+</li>
+<li>
+<p>Under the Control tab, select the Managed Servers and click <span class="bold">Start</span>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+<div class="section">The password expiry problem has been fixed.</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-6EBA48D9-F5FB-4AE1-9573-937ABE9EBD0C.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-48386DD4-8E26-4979-8FD0-98FFE0DA5600.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

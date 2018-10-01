@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Using Oracle Real Application Clusters (RAC) in Database Cloud Service</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can create an Oracle RAC database when creating a database deployment on Oracle Database Cloud Service." />
+<meta name="dcterms.created" content="2017-06-19T15:22:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Database Cloud Service" />
+<meta name="dcterms.identifier" content="E72994-04" />
+<meta name="dcterms.isVersionOf" content="CSDBI" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-83C34A10-D2CD-4323-ADF1-D3C63D204DE1.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-D7DB2194-A3A6-4151-818D-AC86BAC10832.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSDBI.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSDBI.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSDBI.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-EB0BB703-B7D0-4C3C-B40B-B77D3F08127A"></a> <span id="PAGE" style="display:none;">71/190</span> <!-- End Header -->
+<h1 id="CSDBI-GUID-EB0BB703-B7D0-4C3C-B40B-B77D3F08127A" class="sect1">Using Oracle Real Application Clusters (RAC) in <span>Database Cloud Service</span></h1>
+<div>
+<p>You can create an Oracle RAC database when creating a database deployment on <span>Oracle Database Cloud Service</span>.</p>
+<p>Oracle RAC enhances Oracle Database capabilities so that you can concurrently use multiple database instances on different compute nodes. This allows you to scale workload across multiple database instances in order to efficiently store, update, and retrieve data.</p>
+<p>Oracle RAC provides the software that manages multiple servers and database instances as a single set of servers, called a cluster. The data files that comprise the database reside on shared storage that is accessible from all servers that are part of the cluster. Each server in the cluster runs the Oracle RAC software.</p>
+<p>Unlike a single-instance Oracle database, which has a one-to-one relationship between data files and the database instance, Oracle RAC databases have a one-to-many relationship between data files and database instances. This means that in an Oracle RAC database multiple database instances access a single set of database files concurrently, allowing you to access the data from any database instance in the database cluster.</p>
+<p>This allows you to use horizontal scalability beyond the scope of one compute node, in case this compute node is insufficient to run the desired workload. It also increases availability of the database and the data in case a database instance or compute node fails. The remaining database instance can be used to continue operations while the failed database instance or compute node is being restarted. Having more than one database instance also allows you to perform rolling patch upgrades.</p>
+<p>To create an Oracle RAC database in <span>Database Cloud Service</span>, make the following choices in the <span>Provision New Oracle Database Cloud Service</span> wizard:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>For Service Level, choose <span class="bold">Oracle Database Cloud Service</span>.</p>
+</li>
+<li>
+<p>For Software Edition, choose <span class="bold">Enterprise Edition - Extreme Performance</span>.</p>
+</li>
+<li>
+<p>For Database Type, choose <span class="bold">Database Clustering with RAC</span>.</p>
+</li>
+<li>
+<p>For Compute Shape (on the Service Details page), choose a shape with <span>two OCPUs for trial accounts or a shape with four or more OCPUs for subscription accounts</span>.</p>
+</li>
+</ul>
+<p>When you make these choices, <span>Database Cloud Service</span> creates a two-node Oracle RAC database, hosting the database on two independent compute nodes that share data, fast recovery area, and redo log storage. It creates these compute nodes using computing, storage and networking resources provided by Oracle Compute Cloud service.</p>
+<div class="section">
+<p class="subhead1">Managing a Deployment that Uses Oracle RAC Compared to a Deployment that Doesn&rsquo;t</p>
+<p>Because <span>a Database Cloud Service</span> deployment that uses Oracle RAC comprises two compute nodes that each host a RAC database instance, you manage the deployment in slightly different ways:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Cloud tooling: you use <code class="codeph">raccli</code> instead of <code class="codeph">bkup_api</code> or <code class="codeph">dbaascli</code>. For more information, see <a href="GUID-51FEB715-4757-407B-939D-917C775DF969.htm" title="The raccli utility is provided on Oracle Database Cloud Service deployments that use Oracle Real Application Clusters (RAC) to perform a variety of life-cycle and administration operations.">The raccli Utility</a>.</p>
+</li>
+<li>
+<p>You can stop and start the database instances and even the compute nodes independently of each other. Thus, the database can remain available even when you need to perform maintenance that requires you to stop a database instance or compute node.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">More About the Oracle RAC Configuration on <span>Database Cloud Service</span></p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Cluster size: currently, the Oracle RAC database on <span>a Database Cloud Service</span> deployment is limited to a two-node cluster.</p>
+</li>
+<li>
+<p>Cloud tooling: Oracle Cloud tooling is provided for the common administrative tasks of scaling, backing up and recovering, and patching. For more information, see <a href="GUID-457D283C-D890-4B4F-B65C-26D05B4C80CC.htm">Scaling a Database Deployment</a> and <a href="GUID-51FEB715-4757-407B-939D-917C775DF969.htm" title="The raccli utility is provided on Oracle Database Cloud Service deployments that use Oracle Real Application Clusters (RAC) to perform a variety of life-cycle and administration operations.">The raccli Utility</a>.</p>
+</li>
+<li>
+<p>Networking for client access: to make client connections to the Oracle RAC database, you include particular options in the connection&rsquo;s entry in the client&rsquo;s <code class="codeph">tnsnames.ora</code> file. For more information, see <a href="GUID-372D4233-9793-47EC-8DFC-AFD6CF32866C.htm">Connecting Remotely to the Database by Using Oracle Net Services</a>.</p>
+</li>
+<li>
+<p>Database file storage: storage for database data files, the fast recovery area, and the redo logs is created and managed using Oracle Automatic Storage Management (ASM) and Oracle Automatic Storage Management Cluster File System (ACFS) instead of Linux LVM.</p>
+</li>
+<li>
+<p>Included software: Oracle Grid Infrastructure, Oracle ASM and Oracle ACFS are included; Oracle Application Express, Oracle REST Data Services, and Oracle DBaaS Monitor are not currently included.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="GUID-83C34A10-D2CD-4323-ADF1-D3C63D204DE1.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="GUID-D7DB2194-A3A6-4151-818D-AC86BAC10832.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

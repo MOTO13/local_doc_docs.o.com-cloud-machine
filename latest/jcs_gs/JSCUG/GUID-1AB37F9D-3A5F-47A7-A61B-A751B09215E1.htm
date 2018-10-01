@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>About Capacity Units for Oracle Java Cloud Service&mdash;Coherence Instances</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Oracle Java Cloud Service uses capacity units to provision Oracle WebLogic Server and Oracle Coherence environments that provide a preconfigured amount of Coherence cache capacity. A capacity unit is a group of virtual machines (VMs) running a number of JVMs (Managed Coherence Servers), and is meant to scale linearly in the context of your application. Capacity is defined as a fixed amount of primary cache storage to allocate for Coherence, based on the general rule of splitting the JVM heap size into thirds, using 1/3rd for primary cache storage, 1/3rd for backup storage, and 1/3rd for scratch space." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-7BEF123A-54F3-4E37-8CCC-518CFFFF817B.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-8A746C30-70CF-4C73-9EAE-9ABA2E0093D8.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-1AB37F9D-3A5F-47A7-A61B-A751B09215E1"></a> <span id="PAGE" style="display:none;">108/131</span> <!-- End Header -->
+<h1 id="JSCUG-GUID-1AB37F9D-3A5F-47A7-A61B-A751B09215E1" class="sect1">About Capacity Units for <span>Oracle Java Cloud Service&mdash;Coherence</span> Instances</h1>
+<div>
+<p><span>Oracle Java Cloud Service</span> uses capacity units to provision Oracle WebLogic Server and <span>Oracle Coherence</span> environments that provide a preconfigured amount of Coherence cache capacity. A capacity unit is a group of virtual machines (VMs) running a number of JVMs (Managed Coherence Servers), and is meant to scale linearly in the context of your application. Capacity is defined as a fixed amount of primary cache storage to allocate for Coherence, based on the general rule of splitting the JVM heap size into thirds, using 1/3rd for primary cache storage, 1/3rd for backup storage, and 1/3rd for scratch space.</p>
+<div class="section">
+<p class="subhead1">Topics:</p>
+</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-1AB37F9D-3A5F-47A7-A61B-A751B09215E1.htm#GUID-05E7385D-2E4E-4D5C-A66F-2352A484BDEA" title="Oracle Java Cloud Service uses a capacity unit to create the Coherence data tier when you enable Oracle Coherence for a service instance during provisioning. A capacity unit definition has properties that determine the amount of Coherence cache capacity to provide, based on how the VMs, JVMs, and JVM heap are configured.">About Properties of a Capacity Unit Definition</a></p>
+</li>
+<li>
+<p><a href="GUID-1AB37F9D-3A5F-47A7-A61B-A751B09215E1.htm#GUID-CB493A54-15A9-458C-B6C1-F8E40F10D433" title="When you provision an Oracle Java Cloud Service instance using the Create Java Cloud Service wizard, you can use a default capacity unit to enable Oracle Coherence for the service instance. Oracle Java Cloud Service provides a set of default capacity units that are optimized for different use cases.">About Default Capacity Units for Oracle Java Cloud Service&mdash;Coherence Instances</a></p>
+</li>
+<li>
+<p><a href="GUID-1AB37F9D-3A5F-47A7-A61B-A751B09215E1.htm#GUID-5B6FC827-31BF-42DA-90FA-CD7F45F979B1" title="When you provision an Oracle Java Cloud Service&mdash;Coherence instance using the Create Java Cloud Service wizard, instead of using a default capacity unit, you can choose the Advanced option and then define your own properties for a custom capacity unit.">About Custom Capacity Units and Advanced Configuration for Oracle Java Cloud Service&mdash;Coherence Instances</a></p>
+</li>
+</ul>
+<p>When provisioning an <span>Oracle Java Cloud Service&mdash;Coherence</span> instance, a capacity unit must be declared for the service instance. A capacity unit is a well-defined unit of VMs and JVMs, preconfigured by properties that specify:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The processing power of the VMs to provision on the Coherence data tier of the WebLogic Server domain</p>
+</li>
+<li>
+<p>The amount of primary cache storage to allocate for Coherence</p>
+</li>
+</ul>
+<p>When provisioning a service instance using the Create Java Cloud Service wizard, you can choose from a list of default capacity unit definitions (for example, Basic, Small, Medium, or Large) or define a custom capacity unit that meets your resource requirements. Each default capacity unit definition provides a different amount of primary cache capacity for Coherence, based on the number of VMs and JVMs configured in the unit. Each default capacity unit (except the Basic configuration) is defined as a group of three VMs to provide a high availability (HA) unit, three being the smallest unit of VMs that will provide Coherence HA. When using a custom capacity unit, Coherence HA is achieved when you specify three VMs per custom unit. After a service instance has been provisioned, you can&rsquo;t change the default capacity unit you used or the configuration of a custom capacity unit you defined.</p>
+<div class="infobox-note" id="GUID-1AB37F9D-3A5F-47A7-A61B-A751B09215E1__GUID-0E9BFD2A-C6AA-46B3-944E-832108E6A4C3">
+<p class="notep1">Note:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Only one capacity unit is provisioned upon initial creation of an <span>Oracle Java Cloud Service&mdash;Coherence</span> instance. The default capacity unit you choose or the custom unit you define during provisioning determines how <span>Oracle Java Cloud Service</span> scales the service instance when you initiate a scaling operation on the Coherence data tier.</p>
+</li>
+<li>
+<p>Based on the capacity unit definition declared for the service instance, a scaling operation always increases or decreases the total cache capacity for Coherence by a preconfigured, fixed amount, adding or removing a group of VMs at a time.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2"><a id="GUID-05E7385D-2E4E-4D5C-A66F-2352A484BDEA"></a>
+<h2 id="JSCUG-GUID-05E7385D-2E4E-4D5C-A66F-2352A484BDEA" class="sect2">About Properties of a Capacity Unit Definition</h2>
+<div>
+<p><span>Oracle Java Cloud Service</span> uses a capacity unit to create the Coherence data tier when you enable <span>Oracle Coherence</span> for a service instance during provisioning. A capacity unit definition has properties that determine the amount of Coherence cache capacity to provide, based on how the VMs, JVMs, and JVM heap are configured.</p>
+<p>When creating an <span>Oracle Java Cloud Service&mdash;Coherence</span> instance, you don&rsquo;t have to worry about defining any properties if you use a default capacity unit.</p>
+<p>If you want to define your own configuration for a custom capacity unit (by using Advanced configuration during provisioning), you will have to specify a collection of properties for the custom unit.</p>
+<p>The properties of a default or custom capacity unit definition are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>VM count: Each capacity unit has a predefined number of VMs.</p>
+</li>
+<li>
+<p>VM shape: Each VM has the same shape. A shape, which is the number of Oracle Compute Units (OCPUs) and amount of RAM, determines the processing power of the VM and the amount of memory available for JVM heap. For example, the shape <code class="codeph">oc3</code> has 1 OCPU and 7.5 GB of memory.</p>
+</li>
+<li>
+<p>JVM count: Each VM is configured to run the same number of JVMs (Managed Coherence Servers).</p>
+</li>
+<li>
+<p>JVM heap: The same heap size is configured with each JVM. The memory available for heap is 75% of the remaining shape memory after reserving 1.5 GB for the operating system. The heap size per JVM is the available memory divided by the number of JVMs per capacity unit. The general rule is to use 1/3rd of heap for primary cache storage.</p>
+</li>
+</ul>
+<p>The cache size or cache capacity of a capacity unit is the amount of primary cache storage to configure for Coherence, which is based on:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The predefined number of JVMs (Managed Coherence Servers) on each VM</p>
+</li>
+<li>
+<p>The predefined heap size on each JVM (Managed Coherence Server)</p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-05E7385D-2E4E-4D5C-A66F-2352A484BDEA__GUID-22B6CC92-B63A-46AB-895D-67BF51A30069">
+<p class="notep1">Note:</p>
+Only one capacity unit of VMs and JVMs is provisioned and configured upon initial creation of an <span>Oracle Java Cloud Service&mdash;Coherence</span> instance. To increase the cache capacity provided by a service instance, you scale out the Coherence data tier by adding one capacity unit at a time.</div>
+</div>
+</div>
+<div class="sect2"><a id="GUID-CB493A54-15A9-458C-B6C1-F8E40F10D433"></a>
+<h2 id="JSCUG-GUID-CB493A54-15A9-458C-B6C1-F8E40F10D433" class="sect2">About Default Capacity Units for <span>Oracle Java Cloud Service&mdash;Coherence</span> Instances</h2>
+<div>
+<p>When you provision an <span>Oracle Java Cloud Service</span> instance using the Create Java Cloud Service wizard, you can use a default capacity unit to enable <span>Oracle Coherence</span> for the service instance. <span>Oracle Java Cloud Service</span> provides a set of default capacity units that are optimized for different use cases.</p>
+<p>Each default capacity unit definition provides a different combination of primary cache storage and VM processing power that fits most application and workflow requirements.</p>
+<p>A default capacity unit has:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>A name (for example, Basic, Small, Medium, or Large)</p>
+</li>
+<li>
+<p>A shape (for example, low or high processing power, and standard memory or memory-intensive)</p>
+</li>
+<li>
+<p>A cache capacity or cache size, which is a fixed amount of primary cache storage to allocate for Coherence, based on the unit's predefined properties for number of VMs, number of JVMs per VM, and heap size for each JVM.</p>
+</li>
+</ul>
+<p>With the exception of the Basic definition, a default capacity unit is a group of three VMs, which is the smallest unit that will provide Coherence high availability. The Basic definition is configured with one VM only.</p>
+<p>Use the following capacity unit properties to help you decide which default capacity unit definition to use:</p>
+<div class="tblformal" id="GUID-CB493A54-15A9-458C-B6C1-F8E40F10D433__GUID-B244CC48-4A04-4379-8BC1-6C3A18C8E4C0">
+<table class="cellalignment33" summary="This table describes the properties of default capacity unit definitions that are available for your use.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment31" id="d55110e194">Default Capacity Unit Name</th>
+<th class="cellalignment31" id="d55110e197">Number of VMs per Unit</th>
+<th class="cellalignment31" id="d55110e200">Shape</th>
+<th class="cellalignment31" id="d55110e203">OCPUs</th>
+<th class="cellalignment31" id="d55110e206">Memory (RAM in GB)</th>
+<th class="cellalignment31" id="d55110e209">Number of JVMs per VM</th>
+<th class="cellalignment31" id="d55110e212">Heap Size per JVM (MB)</th>
+<th class="cellalignment31" id="d55110e215">Total Primary Cache (MB) per Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d55110e220" headers="d55110e194">
+<p>Basic (non-HA)</p>
+</td>
+<td class="cellalignment32" headers="d55110e220 d55110e197">
+<p>1</p>
+</td>
+<td class="cellalignment32" headers="d55110e220 d55110e200">
+<p>oc3</p>
+</td>
+<td class="cellalignment32" headers="d55110e220 d55110e203">
+<p>1</p>
+</td>
+<td class="cellalignment32" headers="d55110e220 d55110e206">
+<p>7.5</p>
+</td>
+<td class="cellalignment32" headers="d55110e220 d55110e209">
+<p>1</p>
+</td>
+<td class="cellalignment32" headers="d55110e220 d55110e212">
+<p>4608</p>
+</td>
+<td class="cellalignment32" headers="d55110e220 d55110e215">
+<p>1536</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d55110e245" headers="d55110e194">
+<p>Small</p>
+</td>
+<td class="cellalignment32" headers="d55110e245 d55110e197">
+<p>3</p>
+</td>
+<td class="cellalignment32" headers="d55110e245 d55110e200">
+<p>oc3</p>
+</td>
+<td class="cellalignment32" headers="d55110e245 d55110e203">
+<p>1</p>
+</td>
+<td class="cellalignment32" headers="d55110e245 d55110e206">
+<p>7.5</p>
+</td>
+<td class="cellalignment32" headers="d55110e245 d55110e209">
+<p>1</p>
+</td>
+<td class="cellalignment32" headers="d55110e245 d55110e212">
+<p>4608</p>
+</td>
+<td class="cellalignment32" headers="d55110e245 d55110e215">
+<p>4608</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d55110e270" headers="d55110e194">
+<p>Medium</p>
+</td>
+<td class="cellalignment32" headers="d55110e270 d55110e197">
+<p>3</p>
+</td>
+<td class="cellalignment32" headers="d55110e270 d55110e200">
+<p>oc4</p>
+</td>
+<td class="cellalignment32" headers="d55110e270 d55110e203">
+<p>2</p>
+</td>
+<td class="cellalignment32" headers="d55110e270 d55110e206">
+<p>15</p>
+</td>
+<td class="cellalignment32" headers="d55110e270 d55110e209">
+<p>2</p>
+</td>
+<td class="cellalignment32" headers="d55110e270 d55110e212">
+<p>5120</p>
+</td>
+<td class="cellalignment32" headers="d55110e270 d55110e215">
+<p>10240</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d55110e295" headers="d55110e194">
+<p>Large</p>
+</td>
+<td class="cellalignment32" headers="d55110e295 d55110e197">
+<p>3</p>
+</td>
+<td class="cellalignment32" headers="d55110e295 d55110e200">
+<p>oc5</p>
+</td>
+<td class="cellalignment32" headers="d55110e295 d55110e203">
+<p>4</p>
+</td>
+<td class="cellalignment32" headers="d55110e295 d55110e206">
+<p>30</p>
+</td>
+<td class="cellalignment32" headers="d55110e295 d55110e209">
+<p>4</p>
+</td>
+<td class="cellalignment32" headers="d55110e295 d55110e212">
+<p>5632</p>
+</td>
+<td class="cellalignment32" headers="d55110e295 d55110e215">
+<p>22528</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>Note the following when using a default capacity unit:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The amount of memory for JVM heap is based on a shape&rsquo;s memory (RAM). The total memory that&rsquo;s used for heap configuration is 75% of the remaining shape memory after reserving 1.5 GB for the operating system. The heap size per JVM is the available memory divided by the number of JVMs per capacity unit.</p>
+</li>
+<li>
+<p>The total primary cache storage to allocate for Coherence is based on the general rule of splitting the JVM heap size into thirds, using 1/3rd for primary cache storage, 1/3rd for backup storage, and 1/3rd for scratch space.</p>
+</li>
+<li>
+<p>Only one capacity unit of VMs and JVMs is provisioned and configured upon initial creation of an <span>Oracle Java Cloud Service&mdash;Coherence instance</span>. To increase the cache capacity provided by a service instance, you scale out the Coherence data tier by adding one capacity unit at a time.</p>
+</li>
+<li>
+<p>The smaller the cache size of a capacity unit (total primary cache capacity), the smaller the cache increment (or decrement) by which the cluster will grow (or shrink) when you initiate a scaling operation on the cluster.</p>
+</li>
+<li>
+<p>You can scale out the cluster to the maximum cache capacity supported by the data center site.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2"><a id="GUID-5B6FC827-31BF-42DA-90FA-CD7F45F979B1"></a>
+<h2 id="JSCUG-GUID-5B6FC827-31BF-42DA-90FA-CD7F45F979B1" class="sect2">About Custom Capacity Units and Advanced Configuration for <span>Oracle Java Cloud Service&mdash;Coherence</span> Instances</h2>
+<div>
+<p>When you provision an <span>Oracle Java Cloud Service&mdash;Coherence</span> instance using the Create Java Cloud Service wizard, instead of using a default capacity unit, you can choose the Advanced option and then define your own properties for a custom capacity unit.</p>
+<p>When defining a custom capacity unit in the Create Java Cloud Service wizard, use these guidelines when you specify the following properties:</p>
+<div class="tblformal" id="GUID-5B6FC827-31BF-42DA-90FA-CD7F45F979B1__GUID-95806348-5DF1-4DCC-932B-3AD541747EF6">
+<table class="cellalignment33" summary="This table describes the properties you must specify when you define a custom capacity unit.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment31" id="d55110e367">Property</th>
+<th class="cellalignment31" id="d55110e370">Description</th>
+<th class="cellalignment31" id="d55110e373">Guideline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d55110e378" headers="d55110e367">
+<p>Shape</p>
+</td>
+<td class="cellalignment32" headers="d55110e378 d55110e370">
+<p>The compute shape to use for VMs on the Coherence data tier. All VMs have the same shape, which is the number of Oracle Compute Units (OCPUs) and amount of RAM (system memory) available for a VM instance.</p>
+</td>
+<td class="cellalignment32" headers="d55110e378 d55110e373">
+<p><span>For information about the defined compute shapes, contact your Oracle Cloud administrator.</span></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d55110e389" headers="d55110e367">
+<p>Nodes</p>
+</td>
+<td class="cellalignment32" headers="d55110e389 d55110e370">
+<p>The number of VMs to configure per capacity unit.</p>
+</td>
+<td class="cellalignment32" headers="d55110e389 d55110e373">
+<p>Depending on the given Compute Shape, use a number from 1 to 3.</p>
+<p>To achieve Coherence high availability, select 3. This is because three is the smallest number of VMs that will provide Coherence high availability.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d55110e401" headers="d55110e367">
+<p>Managed Servers per Node</p>
+</td>
+<td class="cellalignment32" headers="d55110e401 d55110e370">
+<p>The number of JVMs or Managed Coherence Servers to start on each VM for the selected Compute Shape. All VMs have the same number of JVMs.</p>
+</td>
+<td class="cellalignment32" headers="d55110e401 d55110e373">
+<p>Depending on the given shape, use a number from 1 to 8.</p>
+<p>Using more servers can improve concurrency and memory management but can require more processors.</p>
+<p>The maximum number of servers you can configure per VM is based on using the minimum of 1 GB for individual JVM heap size. For example, if the memory available for heap is 4.5 GB, then the maximum number of servers you can select is 4.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>Consider the following when defining a custom capacity unit:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The memory available for JVM heap configuration is based on a shape&rsquo;s memory (RAM). The total memory that&rsquo;s available is 75% of the remaining shape memory after reserving 1.5 GB for the operating system. The heap size to configure for each JVM is the available memory divided by the number of JVMs per unit.</p>
+<p>For example, if a capacity unit uses a shape that has 7.5 GB of memory, the memory available for heap configuration is 75% of 6 GB or 4.5 GB. If the capacity unit is predefined with 1 VM and is configured to run 2 JVMs per VM, then the heap size per JVM is half of 4.5 GB or 2.25 GB.</p>
+<p>When you provision a service instance using the service creation wizard available through the <span>Oracle Java Cloud Service</span> Console, the maximum individual heap size that will be configured is 16 GB. While you can use the WebLogic Server Administration Console to increase the heap size after the service instance is created, the change is not reflected in the <span>Oracle Java Cloud Service</span> Console or capacity unit definition for your service instance. When you initiate a scale out operation, the original heap size will be configured for new JVMs.</p>
+</li>
+<li>
+<p>As with default capacity units, the total amount of primary cache storage to allocate for Coherence in the domain is based on the general rule of splitting the JVM heap size into thirds, using 1/3rd for primary cache storage, 1/3rd for backup storage, and 1/3rd for scratch space.</p>
+<p>Following the example described earlier: Provisioning one capacity unit would provide (4.5/3) or 1.5 GB of primary cache to allocate for Coherence.</p>
+<p>However, if your custom capacity unit is configured with a single VM, there might not be space to store a backup copy of the Coherence data, so the actual data available might be more than 1/3 of the JVM heap size.</p>
+</li>
+<li>
+<p>The larger the cache size of a capacity unit (total primary cache capacity), the larger the cache increment (or decrement) by which the cluster will grow (or shrink) when you initiate a scaling operation on the cluster.</p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-5B6FC827-31BF-42DA-90FA-CD7F45F979B1__GUID-08DCCF17-9B86-418D-8EC0-B5B47664F9CE">
+<p class="notep1">Note:</p>
+Only one capacity unit of VMs and JVMs is provisioned and configured upon initial creation of an <span>Oracle Java Cloud Service&mdash;Coherence instance</span>. To increase the cache capacity provided by a service instance, you scale out the Coherence data tier by adding one capacity unit at a time.</div>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-7BEF123A-54F3-4E37-8CCC-518CFFFF817B.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-8A746C30-70CF-4C73-9EAE-9ABA2E0093D8.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>About the Oracle Compute Cloud Service Environment in Oracle Java Cloud Service</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Oracle Java Cloud Service is built on top of infrastructure and functionality that are provided by Oracle Compute Cloud Service. The work involved in setting up and managing the compute virtual machines and storage resources for your Java EE applications is done for you." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-1315F452-E0C6-4A96-A0C6-B21E054C4F1C.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-455C1BD1-5361-460C-B1FA-7CA96A0B701C.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-CD8653E2-142A-4186-8365-911433DB96E1"></a> <span id="PAGE" style="display:none;">102/131</span> <!-- End Header -->
+<h1 id="JSCUG-GUID-CD8653E2-142A-4186-8365-911433DB96E1" class="sect1">About the Oracle Compute Cloud Service Environment in Oracle Java Cloud Service</h1>
+<div>
+<p>Oracle Java Cloud Service is built on top of infrastructure and functionality that are provided by Oracle Compute Cloud Service. The work involved in setting up and managing the compute virtual machines and storage resources for your Java EE applications is done for you.</p>
+<div class="section">
+<p class="subhead1">Topics:</p>
+</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-CD8653E2-142A-4186-8365-911433DB96E1.htm#GUID-2008E65A-5F33-44D6-8010-C1B72EBBDF9A" title="Using Oracle Java Cloud Service simplifies the work you've to do in order to provision and configure an Oracle WebLogic Server domain and cluster, Oracle Coherence as the caching and data tier, and Oracle Traffic Director as the software load balancer.">About the Deployment Topology of Virtual Machines</a></p>
+</li>
+<li>
+<p><a href="GUID-CD8653E2-142A-4186-8365-911433DB96E1.htm#GUID-EB9A68A2-E924-450F-B78D-D3794E2AE37B" title="The Oracle Compute virtual machines in an Oracle Java Cloud Service environment are based on the Oracle Linux 6 (OEL6) 60-GB disk image. These virtual machines are highly available and the underlying infrastructure contains built-in capabilities to migrate an unhealthy virtual machine (VM) to a separate hardware cluster.">About the Virtual Machines</a></p>
+</li>
+<li>
+<p><a href="GUID-CD8653E2-142A-4186-8365-911433DB96E1.htm#GUID-AAE72531-41A4-4462-B90C-D2D812EEA68E" title="You have access to all Oracle Compute Cloud Service virtual machine instances created for Oracle Java Cloud Service, including the virtual machine on which the WebLogic Administration Server is running.">About the Disk Volumes</a></p>
+</li>
+</ul>
+</div>
+<div class="props_rev_3"><a id="GUID-2008E65A-5F33-44D6-8010-C1B72EBBDF9A"></a>
+<h2 id="JSCUG-GUID-2008E65A-5F33-44D6-8010-C1B72EBBDF9A" class="sect2">About the Deployment Topology of Virtual Machines</h2>
+<div>
+<p>Using Oracle Java Cloud Service simplifies the work you've to do in order to provision and configure an Oracle WebLogic Server domain and cluster, Oracle Coherence as the caching and data tier, and Oracle Traffic Director as the software load balancer.</p>
+<p>The following illustration shows an example of the Oracle Java Cloud Service virtual machine (VM) deployment topology that is set up and configured for you when you provision an Oracle Java Cloud Service instance with two Managed Servers and also enable two load balancers:</p>
+<div class="figure" id="GUID-2008E65A-5F33-44D6-8010-C1B72EBBDF9A__FIG-132-987ED0A0"><img width="467" height="553" src="img/GUID-0E09E62B-9FB3-464F-BF75-D227233C93B5-default.png" alt="Description of GUID-0E09E62B-9FB3-464F-BF75-D227233C93B5-default.png follows" title="Description of GUID-0E09E62B-9FB3-464F-BF75-D227233C93B5-default.png follows" /><br />
+<a href="img_text/GUID-0E09E62B-9FB3-464F-BF75-D227233C93B5-default.htm">Description of the illustration GUID-0E09E62B-9FB3-464F-BF75-D227233C93B5-default.png</a></div>
+<!-- class="figure" -->
+<div class="infobox-note" id="GUID-2008E65A-5F33-44D6-8010-C1B72EBBDF9A__GUID-175AE45F-DCFF-4236-B0CA-AFB5A0A574E4">
+<p class="notep1">Note:</p>
+<p>For information about the network protocols and default ports that can be used from within Oracle Cloud and from outside Oracle Cloud, see <a href="GUID-EDC1BD9B-1C42-4220-8163-4B27AADDA98F.htm#GUID-EDC1BD9B-1C42-4220-8163-4B27AADDA98F" title="To use the resources available within your Oracle Java Cloud Service instances, access them through the default ports.">Understanding the Default Access Ports</a>. Note that the HTTP port is disabled if you created the Oracle Java Cloud Service instance by using the service instance creation wizard available through the Oracle Java Cloud Service Console.</p>
+</div>
+<p>As shown in the illustration, an Oracle Java Cloud Service instance is a single Oracle WebLogic Server domain that consists of one WebLogic Administration Server and one WebLogic Server cluster of Managed Servers for hosting applications. The example in the topology illustration shows a cluster of two Managed Servers.</p>
+<p><span>When Oracle Coherence is enabled for a service instance,</span> there is a second WebLogic Server cluster of Managed Servers for storing Coherence data. Both WebLogic Server clusters are associated with the single Coherence cluster in the domain. For information about the VM deployment topology when <span>Oracle Coherence</span> is enabled for a service instance in Oracle Java Cloud Service, see <a href="GUID-2BF3A152-1A20-44CD-A29D-B0949A73F2CA.htm#GUID-39831180-625F-4E4F-957C-D8B2038759A6" title="When Oracle Coherence is enabled for a service instance in Oracle Java Cloud Service, the Oracle Compute VM deployment topology is similar to the topology for a service instance that doesn't have Coherence enabled, with the addition of VMs and Managed Servers for a Coherence data tier.">About Oracle Coherence and the Compute Environment in Oracle Java Cloud Service</a>.</p>
+</div>
+</div>
+<div class="props_rev_3"><a id="GUID-EB9A68A2-E924-450F-B78D-D3794E2AE37B"></a>
+<h2 id="JSCUG-GUID-EB9A68A2-E924-450F-B78D-D3794E2AE37B" class="sect2">About the Virtual Machines</h2>
+<div>
+<p>The Oracle Compute virtual machines in an Oracle Java Cloud Service environment are based on the Oracle Linux 6 (OEL6) 60-GB disk image. These virtual machines are highly available and the underlying infrastructure contains built-in capabilities to migrate an unhealthy virtual machine (VM) to a separate hardware cluster.</p>
+<p>Each Oracle Java Cloud Service instance that you create can contain one or more Oracle Compute VM instances. The first VM always contains the WebLogic Administration Server and the first Managed Server. Each remaining Managed Server is hosted on its own VM. When the service instance is scaled out, each additional Managed Server is also on its own VM.</p>
+<p>If a load balancer is enabled for a service instance, the Oracle Traffic Director (OTD) administration server is hosted on one VM. A second OTD node can optionally be hosted on another VM.</p>
+<p>When using the wizard to provision an Oracle Java Cloud Service instance, you can create up to four Managed Servers in the cluster. <span>You can also create up to two load balancers VMs.</span> The following table summarizes the number of Managed Servers you can have in the WebLogic Server cluster, and the corresponding VMs:</p>
+<div class="tblformal" id="GUID-EB9A68A2-E924-450F-B78D-D3794E2AE37B__GUID-4707073C-08D9-492D-BF83-8F81C4215DD3">
+<table class="cellalignment33" summary="This table shows the number of VMs in a 1&ndash;node, 2&ndash;node, or 4&ndash;node cluster, and the contents of those VMs.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment69" id="d50809e109">VM Instance</th>
+<th class="cellalignment34" id="d50809e112">1&ndash;Node Cluster</th>
+<th class="cellalignment34" id="d50809e115">2&ndash;Node Cluster</th>
+<th class="cellalignment26" id="d50809e118">4&ndash;Node Cluster</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment70" id="d50809e123" headers="d50809e109">
+<p>1st VM</p>
+</td>
+<td class="cellalignment37" headers="d50809e123 d50809e112">
+<p>Contains WebLogic Administration Server and Managed Server 1</p>
+</td>
+<td class="cellalignment37" headers="d50809e123 d50809e115">
+<p>Contains WebLogic Administration Server and Managed Server 1</p>
+</td>
+<td class="cellalignment28" headers="d50809e123 d50809e118">
+<p>Contains WebLogic Administration Server and Managed Server 1</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment70" id="d50809e136" headers="d50809e109">
+<p>2nd VM</p>
+</td>
+<td class="cellalignment37" headers="d50809e136 d50809e112">&nbsp;</td>
+<td class="cellalignment37" headers="d50809e136 d50809e115">
+<p>Contains Managed Server 2</p>
+</td>
+<td class="cellalignment28" headers="d50809e136 d50809e118">
+<p>Contains Managed Server 2</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment70" id="d50809e148" headers="d50809e109">
+<p>3rd VM</p>
+</td>
+<td class="cellalignment37" headers="d50809e148 d50809e112">&nbsp;</td>
+<td class="cellalignment37" headers="d50809e148 d50809e115">&nbsp;</td>
+<td class="cellalignment28" headers="d50809e148 d50809e118">
+<p>Contains Managed Server 3</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment70" id="d50809e159" headers="d50809e109">
+<p>4th VM</p>
+</td>
+<td class="cellalignment37" headers="d50809e159 d50809e112">&nbsp;</td>
+<td class="cellalignment37" headers="d50809e159 d50809e115">&nbsp;</td>
+<td class="cellalignment28" headers="d50809e159 d50809e118">
+<p>Contains Managed Server 4</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment70" id="d50809e170" headers="d50809e109">
+<p>5th VM</p>
+</td>
+<td class="cellalignment37" headers="d50809e170 d50809e112">
+<p>If present, the VM contains the OTD administration server</p>
+</td>
+<td class="cellalignment37" headers="d50809e170 d50809e115">
+<p>If present, the VM contains the OTD administration server</p>
+</td>
+<td class="cellalignment28" headers="d50809e170 d50809e118">
+<p>If present, the VM contains the OTD administration server</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment70" id="d50809e183" headers="d50809e109">
+<p>6th VM</p>
+</td>
+<td class="cellalignment37" headers="d50809e183 d50809e112">
+<p>If present, the VM contains a second OTD node</p>
+</td>
+<td class="cellalignment37" headers="d50809e183 d50809e115">
+<p>If present, the VM contains a second OTD node</p>
+</td>
+<td class="cellalignment28" headers="d50809e183 d50809e118">
+<p>If present, the VM contains a second OTD node</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<div class="infobox-note" id="GUID-EB9A68A2-E924-450F-B78D-D3794E2AE37B__GUID-0A0B3ABF-4443-48FF-B0A7-1D1B834C6C37">
+<p class="notep1">Note:</p>
+By default a load balancer is not enabled for a service instance that has a single-node cluster in the WebLogic Server domain, so the Oracle Traffic Director VM won't be present. When you create a service instance that consists of a multinode cluster in the domain, Oracle recommends that you enable a load balancer for the service instance. If enabled, the Oracle Traffic Director VM would be present.</div>
+<p><span>When Oracle Coherence is enabled for a service instance,</span> a VM on the Coherence data tier can have one or more storage-enabled Managed Servers. The number of Coherence VMs and the number of Managed Servers configured per VM are based on the capacity unit definition that was declared for the service instance during initial provisioning.</p>
+<p>The following table summarizes the number of VMs on the application tier and Coherence data tier, and the corresponding Managed Servers contained in the VMs for an <span>Oracle Java Cloud Service&mdash;Coherence</span> instance. The example in the table shows a configuration consisting of a 2-node application tier cluster (storage-disabled), and a 3-node Coherence data tier cluster (storage-enabled) that&rsquo;s created when you use a default capacity unit defined with three VMs and one Managed Server running on each VM:</p>
+<div class="tblformal" id="GUID-EB9A68A2-E924-450F-B78D-D3794E2AE37B__GUID-4F345B4A-7062-4656-898E-F79F46391BBC">
+<table class="cellalignment33" summary="This table shows the number of VMs and the corresponding Managed Servers contained in them for a configuration consisting of a 2-node application tier cluster (storage-disabled) and a 3-node Coherence data tier cluster (storage-enabled) that&rsquo;s defined to run one Managed Server per VM.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment31" id="d50809e215">VM Instance</th>
+<th class="cellalignment31" id="d50809e217">Contains</th>
+<th class="cellalignment31" id="d50809e219">WLS Cluster</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d50809e223" headers="d50809e215">1st VM</td>
+<td class="cellalignment32" headers="d50809e223 d50809e217">WebLogic Administration Server, Managed Server 1(storage-disabled)</td>
+<td class="cellalignment32" headers="d50809e223 d50809e219">Application Tier</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d50809e230" headers="d50809e215">2nd VM</td>
+<td class="cellalignment32" headers="d50809e230 d50809e217">Managed Server 2 (storage-disabled)</td>
+<td class="cellalignment32" headers="d50809e230 d50809e219">Application Tier</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d50809e237" headers="d50809e215">3rd VM</td>
+<td class="cellalignment32" headers="d50809e237 d50809e217">Managed Server 3_DG (storage-enabled)</td>
+<td class="cellalignment32" headers="d50809e237 d50809e219">Coherence Data Tier</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d50809e244" headers="d50809e215">4th VM</td>
+<td class="cellalignment32" headers="d50809e244 d50809e217">Managed Server 4_DG (storage-enabled)</td>
+<td class="cellalignment32" headers="d50809e244 d50809e219">Coherence Data Tier</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d50809e251" headers="d50809e215">5th VM</td>
+<td class="cellalignment32" headers="d50809e251 d50809e217">Managed Server 5_DG (storage-enabled)</td>
+<td class="cellalignment32" headers="d50809e251 d50809e219">Coherence Data Tier</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>Appropriate security rules are configured on the Oracle Java Cloud Service VMs to enable communication among the different VMs hosting the WebLogic managed servers, and also with the Oracle Traffic Director VM and the Oracle Database.</p>
+<p>You have access to all VM instances, including the VM on which the WebLogic Administration Server is running. You can use a Secure Shell (SSH) client to log into a VM, as described in <a href="GUID-B5656350-E387-4E43-91A6-8C20D78288A7.htm" title="You can access the services and resources that an Oracle Java Cloud Service instance's VM provides by logging into the VM as the opc user through SSH. You can use any SSH utility you want. For example, if you are using Windows, you might use PuTTY; if you are using Linux, you might use OpenSSH.">Accessing a VM Through a Secure Shell (SSH)</a>.</p>
+<p>For information about all Oracle Compute VM objects that are created or configured in an Oracle Java Cloud Service instance, see <a href="GUID-455C1BD1-5361-460C-B1FA-7CA96A0B701C.htm#GUID-455C1BD1-5361-460C-B1FA-7CA96A0B701C" title="When you provision a service instance in Oracle Java Cloud Service, all the Oracle Compute virtual machines (VMs) required to support your service instance are provisioned and configured for you.">About Compute Virtual Machine Objects in Oracle Java Cloud Service</a>.</p>
+</div>
+</div>
+<div class="props_rev_3"><a id="GUID-AAE72531-41A4-4462-B90C-D2D812EEA68E"></a>
+<h2 id="JSCUG-GUID-AAE72531-41A4-4462-B90C-D2D812EEA68E" class="sect2">About the Disk Volumes</h2>
+<div>
+<p>You have access to all Oracle Compute Cloud Service virtual machine instances created for Oracle Java Cloud Service, including the virtual machine on which the WebLogic Administration Server is running.</p>
+<p>The following table lists the disk volumes that are attached to Oracle Java Cloud Service virtual machines and the mount points:</p>
+<div class="tblformal" id="GUID-AAE72531-41A4-4462-B90C-D2D812EEA68E__GUID-D7EA5C30-3A62-4404-919F-4F471C105DB8">
+<table class="cellalignment33" summary="This table shows the disk volumes for an Oracle Java Cloud Service instance virtual machine.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d50809e309">Disk Volume</th>
+<th class="cellalignment58" id="d50809e312">Purpose</th>
+<th class="cellalignment46" id="d50809e315">Mount Point</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment28" id="d50809e320" headers="d50809e309">
+<p>Boot/OS volume</p>
+</td>
+<td class="cellalignment60" headers="d50809e320 d50809e312">
+<p>The boot volume as provided by the machine image. Contains the OS binaries.</p>
+</td>
+<td class="cellalignment48" headers="d50809e320 d50809e315">
+<p>Local disk, no mount point</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment28" id="d50809e330" headers="d50809e309">
+<p>Backup volume</p>
+</td>
+<td class="cellalignment60" headers="d50809e330 d50809e312">
+<p>Contains a copy of backups up to seven days old.</p>
+</td>
+<td class="cellalignment48" headers="d50809e330 d50809e315">
+<p><code class="codeph">/u01/data/backup</code></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment28" id="d50809e341" headers="d50809e309">
+<p><code class="codeph">DOMAIN_HOME</code></p>
+</td>
+<td class="cellalignment60" headers="d50809e341 d50809e312">
+<p>Contains data for the domain corresponding to the Oracle Java Cloud Service instance.</p>
+</td>
+<td class="cellalignment48" headers="d50809e341 d50809e315">
+<p><code class="codeph">/u01/data/domains</code></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment28" id="d50809e353" headers="d50809e309">
+<p><code class="codeph">APPLICATION_HOME</code></p>
+</td>
+<td class="cellalignment60" headers="d50809e353 d50809e312">
+<p>Contains deployed applications and application configuration files.</p>
+</td>
+<td class="cellalignment48" headers="d50809e353 d50809e315">
+<p><code class="codeph">/u01/data/domains</code></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment28" id="d50809e365" headers="d50809e309">
+<p><code class="codeph">MW_HOME</code></p>
+</td>
+<td class="cellalignment60" headers="d50809e365 d50809e312">
+<p>Contains Oracle WebLogic Server binaries and OTD binaries.</p>
+</td>
+<td class="cellalignment48" headers="d50809e365 d50809e315">
+<p><code class="codeph">/u01/app/oracle/middleware</code></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment28" id="d50809e377" headers="d50809e309">
+<p><code class="codeph">JCS_RESERVED</code></p>
+</td>
+<td class="cellalignment60" headers="d50809e377 d50809e312">
+<p>Contains files required by Oracle Java Cloud Service, that is, any binaries and related metadata that are required by the Oracle Java Cloud Service management layer.</p>
+</td>
+<td class="cellalignment48" headers="d50809e377 d50809e315">
+<p><code class="codeph">/u01/app/oracle/tools</code></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment28" id="d50809e389" headers="d50809e309">
+<p><code class="codeph">JDK_HOME</code></p>
+</td>
+<td class="cellalignment60" headers="d50809e389 d50809e312">
+<p>Contains JDK binaries.</p>
+</td>
+<td class="cellalignment48" headers="d50809e389 d50809e315">
+<p><code class="codeph">/u01/jdk</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<div class="infobox-note" id="GUID-AAE72531-41A4-4462-B90C-D2D812EEA68E__GUID-37A87A24-78EB-435E-AFA6-BD4F645C9850">
+<p class="notep1">Note:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>All volumes under <code class="codeph">/u01</code>, except <code class="codeph">DOMAIN_HOME</code> and <code class="codeph">APPLICATION_HOME</code>, should be treated as read-only volumes.</p>
+</li>
+<li>
+<p>The Backup volume is writable by the <code class="codeph">oracle</code> user; the <code class="codeph">opc</code> user has read-only access.</p>
+</li>
+<li>
+<p>The Boot/OS volume of a service instance is persistent. Content added to a persistent Boot/OS volume is retained if the service instance is restarted.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-1315F452-E0C6-4A96-A0C6-B21E054C4F1C.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-455C1BD1-5361-460C-B1FA-7CA96A0B701C.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

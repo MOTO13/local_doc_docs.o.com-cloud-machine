@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Using HDFS Transparent Encryption</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-05-03T11:44:48Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Big Data Cloud Machine" />
+<meta name="dcterms.identifier" content="E85986-01" />
+<meta name="dcterms.isVersionOf" content="CSBDM" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="http://docs.oracle.com/cloud-machine/latest/" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-BDDCF046-E234-4673-B9E4-AF316B84ED89.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-8AE99135-F40C-4EFD-B2A6-140FBCF775ED.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSBDM.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSBDM.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSBDM.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-16649C5A-2C88-4E75-809A-BBF8DE250EA3"></a> <span id="PAGE" style="display:none;">22/51</span> <!-- End Header -->
+<h1 id="CSBDM-GUID-16649C5A-2C88-4E75-809A-BBF8DE250EA3" class="sect1">Using HDFS Transparent Encryption</h1>
+<div>
+<p>HDFS Transparent Encryption protects Hadoop data that&rsquo;s at rest on disk. When the encryption is enabled for a cluster, data write and read operations on encrypted <span class="italic">zones</span> (HDFS directories) on the disk are automatically encrypted and decrypted. This process is &ldquo;transparent&rdquo; because it&rsquo;s invisible to the application working with the data. HDFS Transparent Encryption does not affect user access to Hadoop data, although it can have a minor impact on performance.</p>
+<div class="section">
+<p class="subhead1">Prerequisite</p>
+<p>The cluster where you want to use HDFS Transparent Encryption must have Kerberos enabled.</p>
+<div class="infobox-note" id="GUID-16649C5A-2C88-4E75-809A-BBF8DE250EA3__GUID-76C81254-188F-4E79-B2CD-19C09BB5EA90">
+<p class="notep1">Important:</p>
+<p>Security Setup must be enabled when creating the cluster. The person creating the cluster must choose the <span class="bold">Security Setup: Enabled</span> option on the Security page of the Create Cluster wizard, as described in <a href="GUID-817CB14B-F5F3-44E7-A77A-518ABA354260.htm" title="You can create a single cluster from the resources allocated in an Oracle Big Data Cloud Machine instance.">Creating a Cluster</a>. You can&rsquo;t enable Kerberos for a cluster after it&rsquo;s been created.</p>
+</div>
+<p>When you create a cluster with Security Setup enabled, the following takes place:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>HDFS Transparent Encryption is enabled on the cluster. You can verify this by entering the following at the command line:</p>
+<p><code class="codeph">bdacli getinfo cluster_hdfs_transparent_encryption_enabled</code></p>
+</li>
+<li>
+<p>MIT Kerberos, Sentry, Network Firewall, Network Encryption, and Auditing are also enabled on the cluster.</p>
+</li>
+<li>
+<p>Two principals are created as part of the Kerberos configuration:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph">hdfs/<span class="variable">clustername</span>@BDACLOUDSERVICE.ORACLE.COM</code> &mdash; The password for authenticating this principal is your Cloudera admin password.</p>
+</li>
+<li>
+<p><code class="codeph">oracle/<span class="variable">clustername</span>@BDACLOUDSERVICE.ORACLE.COM</code> &mdash; The password for authenticating this principal is your Oracle operating system password.</p>
+</li>
+</ul>
+<p>In both cases, <code class="codeph"><span class="variable">clustername</span></code> is the name of your cluster and <code class="codeph">BDACLOUDSERVICE.ORACLE.COM</code> is the Kerberos realm for <span>Oracle Big Data Cloud Machine</span>.</p>
+</li>
+<li>
+<p>A Key Trustee Server is installed and configured on the cluster. This server is used for managing keys and certificates for HDFS Transparent Encryption. See <a href="http://www.cloudera.com/documentation/enterprise/latest/topics/sg_key_trustee.html" target="_blank">Cloudera Navigator Key Trustee Server</a> for more information about this server. (You should back up Key Trustee Server databases and configuration files on a regular schedule. See the Cloudera documentation topic, <a href="http://www.cloudera.com/documentation/enterprise/5-5-x/topics/key_trustee_backup.html" target="_blank">Backing Up and Restoring Key Trustee Server</a>.)</p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-9DD5DC54-B7FF-4DCA-ACB6-9118F602DA11"></a>
+<h2 id="CSBDM-GUID-9DD5DC54-B7FF-4DCA-ACB6-9118F602DA11" class="sect2">Creating Encryption Zones on HDFS</h2>
+<div>
+<p>An encryption zone is an HDFS directory in which the contents are encrypted on a write operation and decrypted on a read operation.</p>
+<div class="section">
+<div class="infoboxnotealso" id="GUID-9DD5DC54-B7FF-4DCA-ACB6-9118F602DA11__GUID-E638636B-3763-498F-AD82-95B284C95776">
+<p class="notep1">See Also:</p>
+<p>Cloudera documentation <a href="http://www.cloudera.com/documentation/enterprise/5-5-x/topics/sg_hdfs_encryption_keys_zones.html" target="_blank">Managing Encryption Keys and Zones</a>.</p>
+</div>
+</div>
+<!-- class="section" -->
+<div class="p">
+<p>Prerequisites:</p>
+<ol>
+<li>
+<p>Make sure services are healthy in Cloudera Manager.&nbsp;Especially make sure the Key Trustee service is healthy.</p>
+</li>
+<li>
+<p>Make sure the two KMS hosts are in sync.</p>
+<p>On each KMS host run the commands below as the <code class="codeph">root</code> user. The output should be the same on each host. If not, open a service request (SR) with Oracle Support, because that would indicate a problem synchronizing the two Key Management Servers.</p>
+<pre dir="ltr">
+# <span class="bold">ls -l /var/lib/kms-keytrustee/keytrustee/.keytrustee</span> 
+# <span class="bold">cksum /var/lib/kms-keytrustee/keytrustee/.keytrustee/*</span> 
+# <span class="bold">gpg --homedir /var/lib/kms-keytrustee/keytrustee/.keytrustee --fingerprint;</span>
+</pre></li>
+</ol>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p>Perform the following steps on any node of the cluster as the <code class="codeph">root</code> user, unless otherwise specified.</p>
+</div>
+<!-- class="section" -->
+<div class="section">To create an encryption zone:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Create an encryption key for the zone:</span>
+<ol>
+<li class="substepexpand"><span>Authenticate the <code class="codeph">hdfs/<span class="variable">clustername</span>@BDACLOUDSERVICE.ORACLE.COM</code> principal using your Cloudera password, for example:</span>
+<div>
+<pre dir="ltr">
+# <span class="bold">kinit -p hdfs@BDACLOUDSERVICE.ORACLE.COM</span>
+Password for hdfs@BDACLOUDSERVICE.ORACLE.COM: ****
+</pre></div>
+</li>
+<li class="substepexpand"><span>Create the encryption key, using the following command::</span>
+<div>
+<pre dir="ltr">
+hadoop key create <span class="italic">keyname</span>
+</pre>
+<p>For example:</p>
+<pre dir="ltr">
+# <span class="bold">hadoop key create bdakey</span>
+bdakey has been successfully created with options Options{cipher='AES/CTR/NoPadding', bitLength=128, description='null', 
+attributes=null}. 
+org.apache.hadoop.crypto.key.kms.LoadBalancingKMSClientProvider@4145bad8 has been updated.
+</pre></div>
+</li>
+</ol>
+</li>
+<li class="stepexpand"><span>Create a new empty directory and make it an encryption zone using the key generated above with the following two commands:</span>
+<div>
+<pre dir="ltr">
+# <span class="bold">hadoop fs -mkdir <span class="italic">path</span></span>
+# <span class="bold">hdfs crypto -createZone -keyName <span class="italic">keyname</span> -path <span class="italic">path</span></span> 
+</pre>
+<p>For example:</p>
+<pre dir="ltr">
+# <span class="bold">hadoop fs -mkdir /zone</span> 
+# <span class="bold">hdfs crypto -createZone -keyName bdakey -path /zone</span>
+Added encryption zone /zone
+</pre>
+<div class="infobox-note" id="GUID-9DD5DC54-B7FF-4DCA-ACB6-9118F602DA11__GUID-261E7B91-DFBC-4D8F-A19E-7207B0880987">
+<p class="notep1">Note:</p>
+Encryption zones must be created as the super user, but after that access to encrypted file data and metadata is controlled by normal HDFS file system permissions.</div>
+</div>
+</li>
+<li class="stepexpand"><span>Verify creation of the new encryption zone by running the <code class="codeph">-listZones</code> command; for example:</span>
+<div>
+<pre dir="ltr">
+# <span class="bold">hdfs crypto -listZones</span>  
+/zone bdakey  
+</pre></div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-0E1EED40-5E82-430C-8E7F-B6367C826ACE"></a>
+<h2 id="CSBDM-GUID-0E1EED40-5E82-430C-8E7F-B6367C826ACE" class="sect2">Adding Files to Encryption Zones</h2>
+<div>
+<p>Use the <code class="codeph">hadoop fs -put</code> command to add files to the encryption zone.</p>
+<div class="example" id="GUID-0E1EED40-5E82-430C-8E7F-B6367C826ACE__GUID-D60C3B5C-67F1-4A17-B342-5FFBF2C5F4A7">
+<p>For example:</p>
+<pre dir="ltr">
+# hadoop fs -put helloWorld /zone
+</pre></div>
+<!-- class="example" --></div>
+</div>
+<div class="sect2"><a id="GUID-AF449BD3-BE24-4380-928C-DADF2FBF3859"></a>
+<h2 id="CSBDM-GUID-AF449BD3-BE24-4380-928C-DADF2FBF3859" class="sect2">Viewing Keys in Encryption Zones</h2>
+<div>
+<p>Use the <code class="codeph">hadoop key list</code> command to view keys in an encryption zone.</p>
+<div class="example" id="GUID-AF449BD3-BE24-4380-928C-DADF2FBF3859__GUID-D60C3B5C-67F1-4A17-B342-5FFBF2C5F4A7">
+<p>For example:</p>
+<pre dir="ltr">
+# <span class="bold">hadoop key list</span>
+Listing keys for KeyProvider: org.apache.hadoop.crypto.key.kms.LoadBalancingKMSClientProvider@xxxxxx 
+MYKEY1 
+MYKEY2
+</pre></div>
+<!-- class="example" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment67">
+<tr>
+<td class="cellalignment74">
+<table class="cellalignment72">
+<tr>
+<td class="cellalignment71"><a href="GUID-BDDCF046-E234-4673-B9E4-AF316B84ED89.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment71"><a href="GUID-8AE99135-F40C-4EFD-B2A6-140FBCF775ED.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment76">
+<table class="cellalignment70">
+<tr>
+<td class="cellalignment71"><a href="http://docs.oracle.com/cloud-machine/latest/"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment71"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment71"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment71"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

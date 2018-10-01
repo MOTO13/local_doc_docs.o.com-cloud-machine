@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>About Patching an Oracle Java Cloud Service Instance</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can quickly and easily apply patches to an Oracle Java Cloud Service instance, without any command-line intervention." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-127512FF-D1AA-43CF-A4F9-7985B98C831E.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-38F49FD6-BC5A-4601-A91F-C35D44C9857F.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-0BF293EB-603D-4391-A14E-5738EE384C50"></a> <span id="PAGE" style="display:none;">75/131</span> <!-- End Header -->
+<h1 id="JSCUG-GUID-0BF293EB-603D-4391-A14E-5738EE384C50" class="sect1">About Patching an Oracle Java Cloud Service Instance</h1>
+<div>
+<p>You can quickly and easily apply patches to an Oracle Java Cloud Service instance, without any command-line intervention.</p>
+<p>Once you navigate to the Patching page on the Oracle Java Cloud Service user interface, applying a patch to service instance is a one-click operation. See <a href="GUID-C6B38B48-B3D3-4EC1-BE6F-4407FBAD1A42.htm#GUID-C6B38B48-B3D3-4EC1-BE6F-4407FBAD1A42" title="You can use the Patching page to view available patches, initiate a patching process, and roll back a patch as necessary.">Exploring the Patching Page</a>.</p>
+<div class="section">
+<p class="subhead1">What kinds of patches are available</p>
+<p>You can patch the Oracle WebLogic Servers, JDK, or load balancer of an Oracle Java Cloud Service instance. A WebLogic Server patch is called a Patch Set Update (PSU). You can also apply a tools patch that patches the internal scripts that perform tooling operations such as backup and scaling. A tools patch is available after a PSU becomes available in production, and is applied automatically after a few hours if you do not apply it yourself.</p>
+<p>You apply all these types of patches in the same way: from the Patching page. See <a href="GUID-AFED906A-1E68-4772-A46A-DEF45379CA13.htm#GUID-AFED906A-1E68-4772-A46A-DEF45379CA13" title="You can use the Patching page to apply a patch to the Oracle WebLogic servers, JDK, or load balancer of an Oracle Java Cloud Service instance. You can also apply a patch to the internal scripts that perform tooling operations such a backup and scaling.">Applying a Patch to an Oracle Java Cloud Service Instance</a>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">About Operating System (OS) Patching</p>
+<p><span>Oracle Java Cloud Service</span> does not provide cloud tooling for OS patching. You are responsible for installing OS patches to existing service instances.</p>
+<p>You can obtain Oracle Linux OS patches from the Oracle&rsquo;s Unbreakable Linux Network if you have an Oracle Linux support subscription. You can also obtain Linux OS patches from the Oracle Linux Public yum server: <a href="http://public-yum.oracle.com" target="_blank"><code class="codeph">http://public-yum.oracle.com</code></a>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">When to Apply Patches</p>
+<p>New approved patches are available and displayed on the Patching page roughly on a quarterly basis. Apply the most recent patches promptly. Delaying patches could cause your service to be unsupported for future patching and upgrade.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">What Happens When Patching Starts</p>
+<p>As patching starts, the patching operation first performs internal prechecks. If the prechecks fail, the patching operation will fail and leave the service instance untouched.</p>
+<div class="p">The prechecks check for the following:
+<ul style="list-style-type: disc;">
+<li>
+<p>Disk space shortage</p>
+</li>
+<li>
+<p>Missing database connectivity</p>
+</li>
+<li>
+<p>Servers not running</p>
+</li>
+<li>
+<p>Storage access failure</p>
+</li>
+</ul>
+</div>
+<p>Next, the Node Manager, Administration Server, and Managed Servers are all restarted to ensure that they can be restarted after the patching operation performs a binary swap.</p>
+<p>The prechecks do not check whether another administration task (backup, restoration, or scaling) is in progress, which would prevent patching.</p>
+<p id="GUID-0BF293EB-603D-4391-A14E-5738EE384C50__GUID-D1CAF3C1-86F8-401F-AE2E-92E77A27E903">You can perform prechecks without attempting to patch, and first remedy any problems found. For more information, see <a href="GUID-F6218F23-FE53-41D8-A72C-8FF63CD0C94F.htm#GUID-F6218F23-FE53-41D8-A72C-8FF63CD0C94F" title="Optional patching prechecks identify possible sources of patching failure, if any, enabling you to identify and remedy problems before attempting to patch.">Performing Patching Prechecks and Addressing Patching Issues</a>.</p>
+<p>An automatic backup to use for rollback and restoration is created only after patching prechecks succeed. If you need to restore the state of the service instance, use the backup and run patching again.</p>
+<div class="infobox-note" id="GUID-0BF293EB-603D-4391-A14E-5738EE384C50__GUID-3B3DA1CF-52D2-4B94-AA55-1188F02CBAD5">
+<p class="notep1">Note:</p>
+If automatic backup fails, then the patching operation fails and does not apply the patch.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">What Happens to the Service During Patching</p>
+<p>The WebLogic Server and JDK patching operations are rolling operations, so the service functions with very little interruption during the patch process. The patching operation shuts down one VM at a time and applies the patch to the server or servers on the VM. If there is a load balancer, the load balancer automatically detects that the server is down and does not send requests to that server. The other servers process application requests without interruption. The patching operation continues patching the servers on one VM at a time until all servers are patched.</p>
+<p>For example, if you have a two-node cluster, each node exists on a separate machine, and one node keeps running while the other is being patched.</p>
+<p>If a load balancer is provisioned, when you patch the load balancer, the Managed Servers and the Administration Server remain running. No requests will be routed to these servers during load balancer patching. The load balancer is stopped while patching is in progress.</p>
+<p id="GUID-0BF293EB-603D-4391-A14E-5738EE384C50__GUID-A5BA0FB4-2C2A-4EBC-9F25-5BCA8502FF3D">Patching restarts VMs. For information about what happens when a VM is restarted, see <a href="GUID-A0491DD0-6E6C-405D-A00C-A213AABDF91C.htm#GUID-B663B1CE-1B99-40FF-9CDA-9BC76E43134E" title="You can stop and start an Oracle Java Cloud Service instance and, when the service instance is running, stop, start, and restart individual server or load balancer VMs.">About Starting and Stopping an Oracle Java Cloud Service Instance and Individual VMs</a>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">What Happens When Patching is Not Fully Successful or Fails</p>
+<p>Patching operations can be partially successful. Patching could succeed for the Administration Server and one or more Managed Servers, but the patching operation might not be able to start the remaining Managed Servers. In this case, you can start the Managed Servers manually. For more information, see <a href="GUID-BD5190E0-5DE4-454E-BAD3-E889C575D432.htm#GUID-C65E74C2-1FB9-45DB-90CA-1295518E0D2C" title="After you have started the Administration Server through the Node Manager by using WLST commands, you can start the Managed Servers through theWebLogic Server Administration Console.">Using the WebLogic Server Administration Console to Start Managed Servers</a>.</p>
+<p>If a patching operation fails, the patch information is displayed in the Patch History section. You can click on the icon to see an error report. After patching operation failure, the operation automatically reverts any change it has made to the Oracle Java Cloud Service instance. The operation moves the service instance back to the same state it was in before the patching operation started. If patching fails and the operation fails to revert the service back to the previous state, you can use the backup created at the beginning of the patching operation to restore the service manually.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">What Happens if Coherence is Enabled</p>
+<p><span>When Oracle Coherence is enabled for a service instance:</span> Applying a patch will do a rolling restart of Managed Coherence Servers on the Coherence data tier. By default, the patching operation checks that the <code class="codeph">StatusHA</code> state for a Coherence member is <code class="codeph">NODE-SAFE</code> before shutting down the node to apply the patch. You may choose to override the default behavior. See <a href="GUID-8A746C30-70CF-4C73-9EAE-9ABA2E0093D8.htm#GUID-4A35E3B3-BF4C-4CB7-9B5F-3EC3E94A5293" title="When released, patches for Oracle WebLogic Server, Oracle Traffic Director (load balancer), Oracle Fusion Middleware, and JDK are made available on the Oracle Java Cloud Service Console. When there is a PSU patch for Oracle Coherence, the patch is included as part of the Fusion Middleware patch. You can use the Oracle Java Cloud Service Console or the REST API to patch your Oracle Java Cloud Service&mdash;Coherence instance on your own schedule.">About Patching an Oracle Java Cloud Service&mdash;Coherence Instance</a> if you need more information.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-127512FF-D1AA-43CF-A4F9-7985B98C831E.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-38F49FD6-BC5A-4601-A91F-C35D44C9857F.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

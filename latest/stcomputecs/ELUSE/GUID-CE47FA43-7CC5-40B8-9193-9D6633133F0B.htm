@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Updating an IPoIB Tenant vNet</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can update the IPoIB tenant vNet details such as the CIDR and IP range." />
+<meta name="dcterms.created" content="2018-05-15T07:53:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E62130-11" />
+<meta name="dcterms.isVersionOf" content="ELUSE" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-135FABF1-8709-4F80-B091-3E42A198D12D.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-020160BE-A260-4DB8-93A0-8556B68E8CA2.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUSE.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-CE47FA43-7CC5-40B8-9193-9D6633133F0B"></a> <span id="PAGE" style="display:none;">27/81</span> <!-- End Header -->
+<a id="ELUSE293"></a><a id="ELUSE291"></a>
+<h1 id="ELUSE-GUID-CE47FA43-7CC5-40B8-9193-9D6633133F0B" class="sect1">Updating an IPoIB Tenant vNet</h1>
+<div>
+<p>You can update the IPoIB tenant vNet details such as the CIDR and IP range.</p>
+<div class="section">
+<p>The following table describes the conditions to update vNet details, such as IP CIDR, IP Range, and Global IP Pool.</p>
+<div class="tblformal" id="GUID-CE47FA43-7CC5-40B8-9193-9D6633133F0B__GUID-99B35843-0FB3-4123-807D-03210CA4F540">
+<table class="cellalignment110" summary="This table describes the conditions for updating the IPoIB vNet.">
+<thead>
+<tr class="cellalignment96">
+<th class="cellalignment117" id="d6246e33">IP CIDR</th>
+<th class="cellalignment117" id="d6246e35">IP Range</th>
+<th class="cellalignment117" id="d6246e37">Global IP Pool</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment96">
+<td class="cellalignment96" id="d6246e41" headers="d6246e33">
+<p>No IP addresses reserved in the vNet or assigned to an instance.</p>
+</td>
+<td class="cellalignment96" headers="d6246e41 d6246e35">Even if all the IP addresses in the range are reserved or in use, you can increase the number of IP addresses in the range.</td>
+<td class="cellalignment96" headers="d6246e41 d6246e37">
+<p>No IP addresses reserved in the vNet or assigned to an instance.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Log in to the UI and go to the <span class="bold">Self Service Portal</span>.</span></li>
+<li class="stepexpand"><span>In the <span class="bold">Self Service Portal</span>, click the <span class="bold">Networks</span> tab.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Tenant Networks</span> and choose the subnet that you want to modify.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Edit</span>.</span>
+<div>The <span class="bold">Update IPoIB Subnet</span> window is displayed.</div>
+</li>
+<li class="stepexpand"><span>For vNets created using CIDR, modify the CIDR and IP ranges. For vNets created using global IP pool, modify the number of IP addresses.</span></li>
+<li class="stepexpand"><span>To save the changes, click <span class="bold">Edit</span>.</span></li>
+</ol>
+</div>
+<div class="sect2"><a id="GUID-B56A5AA2-6EAC-42E4-8B21-FF3D5AD3826A"></a>
+<h2 id="ELUSE-GUID-B56A5AA2-6EAC-42E4-8B21-FF3D5AD3826A" class="sect2">Updating an IPoIB Tenant vNet Using the CLI or API</h2>
+<div>
+<div class="section">
+<p>Use the following command to update an IPoIB subnet:</p>
+<p><code class="codeph">oracle-compute update vnet <span class="variable">name</span> [--cidr] [--ipranges] [--gateway] [--description] [--global_ip_num]</code></p>
+<p>If you precede the IP range by +, then the IP range that is specified is added to the current set of IP addresses. If you precede the IP range by -, then the IP range that is specified is deleted from the current set of IP addresses.</p>
+<p>For more information, see <span class="italic"><a class="olink ELUCL-GUID-2FD61692-F7E8-48A0-8170-8524F09CD56C" target="_blank" href="../ELUCL/GUID-2FD61692-F7E8-48A0-8170-8524F09CD56C.htm#ELUCL-GUID-2FD61692-F7E8-48A0-8170-8524F09CD56C">CLI Reference for Oracle Compute Cloud Service</a></span>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p>To update an IPoIB tenant vNet using the API, use the <code class="codeph">PUT https://api.oc.example.com/vnet/<span class="variable">name</span></code> method.</p>
+<p>For more information, see <span class="italic"><a class="olink ELUAP-GUID-A5AFEE46-BD9C-4C99-BCAC-F38876F991DC" target="_blank" href="../ELUAP/GUID-A5AFEE46-BD9C-4C99-BCAC-F38876F991DC.htm#ELUAP-GUID-A5AFEE46-BD9C-4C99-BCAC-F38876F991DC">REST API Reference for Oracle Compute Cloud Service</a></span>.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment95">
+<tr>
+<td class="cellalignment102">
+<table class="cellalignment100">
+<tr>
+<td class="cellalignment99"><a href="GUID-135FABF1-8709-4F80-B091-3E42A198D12D.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment99"><a href="GUID-020160BE-A260-4DB8-93A0-8556B68E8CA2.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment104">
+<table class="cellalignment98">
+<tr>
+<td class="cellalignment99"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment99"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

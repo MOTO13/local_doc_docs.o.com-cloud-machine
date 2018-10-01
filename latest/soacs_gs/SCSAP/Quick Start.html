@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Use the REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine to manage, monitor, and perform operations on SOA services and servers.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine">
+        <meta property="og:description" content="Use the REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine to manage, monitor, and perform operations on SOA services and servers.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="rest-endpoints.html" title="Previous" type="text/html">
+        <link rel="next" href="Obtain%20Account%20Information.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="rest-endpoints.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="Obtain%20Account%20Information.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">Quick Start</h2> 
+<div class="body taskbody">
+ <p class="shortdesc">Set up your environment and create your first instance of Oracle SOA Cloud Service on Oracle Public Cloud Machine using the REST API by performing the tasks described below.</p> 
+ <div class="section">
+  <h3 class="title sectiontitle">Prerequisites</h3>
+  <p class="p">First, ensure that you have completed the prerequisite tasks.</p> 
+  <div class="tablenoborder">
+   <span class="desc tabledesc">This table describes the prerequisite tasks.</span>
+   <table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all">
+    <thead class="thead" align="left">
+     <tr class="row">
+      <th class="firstcol" valign="top" width="50%" id="d1808e26"><strong class="ph b">Prerequisite</strong></th> 
+      <th class="entry" valign="top" width="50%" id="d1808e29"><strong class="ph b">More Information</strong></th> 
+     </tr> 
+    </thead> 
+    <tbody class="tbody">
+     <tr class="row">
+      <th class="firstcol" valign="top" width="50%" id="d1808e34" headers="d1808e26 "><p class="p">Create an SSH public/private key pair</p> </th> 
+      <td class="entry" valign="top" width="50%" headers="d1808e34 d1808e29 ">
+       <ul class="ul">
+        <li class="li"><p class="p"><a class="xref" href="https://apexapps.oracle.com/pls/apex/f?p=44785:112:0:::112:P112_CONTENT_ID:10023" target="_blank">Creating SSH Keys for Use with Oracle Cloud Services</a> (tutorial)</p> </li> 
+        <li class="li"><p class="p"><a class="xref" href="http://docs.oracle.com/cloud/latest/soacs_gs/CSBCS/GUID-84074863-CBB2-471E-A097-365C23F46142.htm#CSBCS-GUID-84074863-CBB2-471E-A097-365C23F46142" target="_blank">Accessing a VM Through Secure Shell (SSH)</a> in <em class="ph i">Using Oracle SOA Cloud Service</em></p> </li> 
+       </ul> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" width="50%" id="d1808e54" headers="d1808e26 "><p class="p">Obtain connection details to a database</p> </th> 
+      <td class="entry" valign="top" width="50%" headers="d1808e54 d1808e29 "><p class="p">Contact your account administrator for the following:</p> 
+       <ul class="ul">
+        <li class="li"><p class="p">Connection string to a database in one of the following formats: <samp class="ph codeph"><em class="ph i">host</em>:<em class="ph i">port</em>:<em class="ph i">SID</em></samp> or <samp class="ph codeph"><em class="ph i">host</em>:<em class="ph i">port</em>/<em class="ph i">PDB_Name</em></samp></p> </li> 
+        <li class="li"><p class="p">User name for the database administrator</p> </li> 
+        <li class="li"><p class="p">Password for the database administrator</p> </li> 
+       </ul> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" width="50%" id="d1808e90" headers="d1808e26 "><p class="p">Obtain connection details to an external backup storage disk</p> </th> 
+      <td class="entry" valign="top" width="50%" headers="d1808e90 d1808e29 "><p class="p">Contact your account administrator for the URI to a remote networked disk share in one of the following formats:</p> 
+       <ul class="ul">
+        <li class="li"><p class="p"><samp class="ph codeph"><em class="ph i">host_name</em>:<em class="ph i">absolute_path_to_remote_backup_disk</em></samp></p> </li> 
+        <li class="li"><p class="p"><samp class="ph codeph"><em class="ph i">host_ip</em>:<em class="ph i">absolute_path_to_remote_backup_disk</em></samp></p> </li> 
+       </ul> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" width="50%" id="d1808e114" headers="d1808e26 "><p class="p">Obtain database network and public access network details</p> </th> 
+      <td class="entry" valign="top" width="50%" headers="d1808e114 d1808e29 "><p class="p">Contact your account administrator for the following networks:</p> 
+       <ul class="ul">
+        <li class="li"><p class="p"> Public Access Network: Path to the network that will be used to access the service instance, in the format <samp class="ph codeph">/<em class="ph i">tenant_name</em>/public/<em class="ph i">EoIB_vNet_name</em></samp>.</p> </li> 
+        <li class="li"><p class="p">Database Network: Path to the network through which the service instance will access the database that contains the Oracle Fusion Middleware component schemas. For example, <samp class="ph codeph">/mytenant/public/IPoIB_dbaccess</samp>.</p> </li> 
+       </ul> </td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Main Tasks</h3>
+  <p class="p">Next, perform the following tasks to create your first Oracle SOA Cloud Service instance using the REST API.</p> 
+  <div class="tablenoborder">
+   <span class="desc tabledesc">This table describes the main tasks.</span>
+   <table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all">
+    <thead class="thead" align="left">
+     <tr class="row">
+      <th class="firstcol" valign="top" width="50%" id="d1808e153"><strong class="ph b">Main Task</strong></th> 
+      <th class="entry" valign="top" width="50%" id="d1808e156"><strong class="ph b">More Information</strong></th> 
+     </tr> 
+    </thead> 
+    <tbody class="tbody">
+     <tr class="row">
+      <th class="firstcol" valign="top" width="50%" id="d1808e161" headers="d1808e153 ">Obtain the appropriate account credentials from your account administrator.</th> 
+      <td class="entry" valign="top" width="50%" headers="d1808e161 d1808e156 "><a class="xref" href="Obtain%20Account%20Information.html" target="_blank">Obtain Account Information</a></td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" width="50%" id="d1808e168" headers="d1808e153 ">Install cURL, the open source, command-line tool for transferring data with URL syntax, supporting various protocols including HTTP and HTTPs. The examples within this document use cURL to demonstrate how to access the Oracle SOA Cloud Service REST API.</th> 
+      <td class="entry" valign="top" width="50%" headers="d1808e168 d1808e156 "><a class="xref" href="Install%20cURL.html" target="_blank">Install cURL</a></td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" width="50%" id="d1808e175" headers="d1808e153 ">Create the request document, in JSON format, to define the details of your create service instance request.</th> 
+      <td class="entry" valign="top" width="50%" headers="d1808e175 d1808e156 "><a class="xref" href="Create%20the%20Request%20Document.html" target="_blank">Create the Request Document</a></td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" width="50%" id="d1808e182" headers="d1808e153 ">Create your first Oracle SOA Cloud Service instance, passing the request document defined previously.</th> 
+      <td class="entry" valign="top" width="50%" headers="d1808e182 d1808e156 "><a class="xref" href="Create%20Your%20First%20Instance.html" target="_blank">Create Your First Service Instance</a></td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" width="50%" id="d1808e189" headers="d1808e153 ">After the service instance is created, view the service instance details.</th> 
+      <td class="entry" valign="top" width="50%" headers="d1808e189 d1808e156 "><a class="xref" href="Review%20the%20Details%20of%20Your%20First%20Instance.html" target="_blank">Review the Details of Your First Service Instance</a></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+ </div> 
+</div></div>
+        </article>
+    </body>
+</html>

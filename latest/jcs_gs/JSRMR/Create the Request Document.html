@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="Install%20cURL.html" title="Previous" type="text/html">
+        <link rel="next" href="Create%20Your%20First%20Instance.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="Install%20cURL.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="Create%20Your%20First%20Instance.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">Create the Request Document</h2> 
+<div class="body conbody">
+ <p class="shortdesc">Before you create your first Oracle Java Cloud Service instance, you must create the request document that defines the details of your service instance.</p> 
+ <p class="p">Be sure to complete the prerequisite tasks as described in the <a class="xref" href="Quick%20Start.html" title="Set up your environment and use the REST API to create your first Oracle Java Cloud Service instance by performing the tasks described in the following sections.">Prerequisites</a> section in Quick Start before you create the request document.</p> 
+ <div class="section">
+  <h3 class="title sectiontitle">Sample Request Document for Oracle Public Cloud</h3>
+  <p class="p">The following provides a sample of a request document in JSON format for Oracle Public Cloud. Variable information that you will need to customize are shown in <strong class="ph b"><em class="ph i">bold italics</em></strong>. Copy the sample JSON document contents into a file named <samp class="ph codeph">create.json</samp>, then modify the values.</p> 
+  <pre class="pre">{
+    "serviceName" : "MyFirstInstance",
+    "level" : "PAAS",
+    "subscriptionType" : "HOURLY",
+    "enableAdminConsole" : true,
+    "description" : "My first instance using the REST API.",
+    "provisionOTD" : true,
+    "cloudStorageContainer" : "<em class="ph i"><strong class="ph b">yourCloudStorageContainer</strong></em>",
+    "cloudStorageUser" : "<em class="ph i"><strong class="ph b">yourCloudStorageUser</strong></em>",
+    "cloudStoragePassword" : "<em class="ph i"><strong class="ph b">yourCloudStoragePassword</strong></em>",
+    "createStorageContainerIfMissing" : true,
+    "sampleAppDeploymentRequested" : true,
+    "parameters" : [
+    {
+        "type" : "weblogic",
+        "version" : "12.1.3",
+        "edition" : "SUITE",
+        "domainMode" : "PRODUCTION",
+        "managedServerCount" : "2",
+        "adminPort" : "7001",
+        "deploymentChannelPort" : "9001",
+        "securedAdminPort" : "7002",
+        "contentPort" : "7003",
+        "securedContentPort" : "7004",
+        "domainName" : "MyDomain",
+        "clusterName" : "MyDomain_Cluster",
+        "adminUserName" : "<em class="ph i"><strong class="ph b">yourWLSAdminUserName</strong></em>",
+        "adminPassword" : "<em class="ph i"><strong class="ph b">yourWLSAdminPassword</strong></em>",
+        "nodeManagerPort" : "5556",
+        "nodeManagerUserName" : "<strong class="ph b"><em class="ph i">yourNMUserName</em></strong>",
+        "nodeManagerPassword" : "<strong class="ph b"><em class="ph i">yourNMPassword</em></strong>",
+        "dbServiceName" : "<strong class="ph b"><em class="ph i">yourDBCSName</em></strong>",
+        "dbaName" : "<strong class="ph b"><em class="ph i">yourDBUserName</em></strong>",
+        "dbaPassword" : "<strong class="ph b"><em class="ph i">yourDBCSPassword</em></strong>",
+        "shape" : "oc3",
+        "domainVolumeSize" : "10G",
+        "backupVolumeSize" : "50G",
+        "VMsPublicKey" : "<strong class="ph b"><em class="ph i">yourSSHPublicKeyString</em></strong>"
+    },
+    {
+        "type" : "OTD",
+        "adminUserName" : "<strong class="ph b"><em class="ph i">yourOTDUserName</em></strong>",
+        "adminPassword" : "<strong class="ph b"><em class="ph i">yourOTDPassword</em></strong>",
+        "listenerPortsEnabled" : true,
+        "listenerPort" : "8080",
+        "listenerType" : "http",
+        "securedListenerPort" : "8081",
+        "loadBalancingPolicy" : "least_connection_count",
+        "adminPort" : "8989",
+        "shape" : "oc3",
+        "VMsPublicKey" : "<strong class="ph b"><em class="ph i">yourSSHPublicKeyString</em></strong>"
+ 
+    },
+    {
+        "type" : "datagrid",
+        "scalingUnitCount"  : "1",
+        "clusterName"       : "ExampleDGCluster",
+        "scalingUnitName"   : "SMALL"
+    }  
+    ]
+}
+</pre> 
+  <p class="p"><strong class="ph b">Note:</strong> <samp class="ph codeph">enableAdminConsole</samp> is set to <samp class="ph codeph">true</samp> in the sample request document for Oracle Public Cloud. This means the access rules that control external communication to administration consoles (such as the WebLogic Server Administration Console) are enabled.</p> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Sample Request Document for Oracle Cloud Machine</h3>
+  <p class="p">The following provides a sample of a request document in JSON format for Oracle Cloud Machine. Variable information that you will need to customize are shown in <strong class="ph b"><em class="ph i">bold italics</em></strong>. Copy the sample JSON document contents into a file named <samp class="ph codeph">create.json</samp>, then modify the values.</p> 
+  <pre class="pre">{
+    "serviceName" : "MyFirstInstance",
+    "level" : "PAAS",
+    "description" : "My first instance using the REST API.",
+    "provisionOTD" : true,
+    "cloudStorageContainer" : "<em class="ph i"><strong class="ph b">yourRemoteStorage</strong></em>",
+    "publicNetwork":"<strong class="ph b"><em class="ph i">yourPublicNetwork</em></strong>",
+    "sampleAppDeploymentRequested" : true,
+    "parameters" : [
+    {
+        "type" : "weblogic",
+        "version" : "12.1.3",
+        "edition" : "SUITE",
+        "domainMode" : "PRODUCTION",
+        "managedServerCount" : "2",
+        "adminPort" : "7001",
+        "deploymentChannelPort" : "9001",
+        "securedAdminPort" : "7002",
+        "contentPort" : "8001",
+        "securedContentPort" : "8002",
+        "domainName" : "MyDomain",
+        "clusterName" : "MyDomain_Cluster",
+        "adminUserName" : "<em class="ph i"><strong class="ph b">yourWLSAdminUserName</strong></em>",
+        "adminPassword" : "<em class="ph i"><strong class="ph b">yourWLSAdminPassword</strong></em>",
+        "nodeManagerPort" : "5556",
+        "nodeManagerUserName" : "<strong class="ph b"><em class="ph i">yourNMUserName</em></strong>",
+        "nodeManagerPassword" : "<strong class="ph b"><em class="ph i">yourNMPassword</em></strong>",
+        "connectString" : "<em class="ph i"><strong class="ph b">yourDBConnectString</strong></em>",
+        "dbaName" : "<strong class="ph b"><em class="ph i">yourDBUsername</em></strong>",
+        "dbaPassword" : "<strong class="ph b"><em class="ph i">yourDBPassword</em></strong>",
+        "dbNetwork" : "<strong class="ph b"><em class="ph i">yourDBNetwork</em></strong>",
+        "shape" : "oc3",
+        "domainVolumeSize" : "10G",
+        "backupVolumeSize" : "50G",
+        "VMsPublicKey" : "<strong class="ph b"><em class="ph i">yourSSHPublicKeyString</em></strong>"
+    },
+    {
+        "type" : "OTD",
+        "adminUserName" : "<strong class="ph b"><em class="ph i">yourOTDUserName</em></strong>",
+        "adminPassword" : "<strong class="ph b"><em class="ph i">yourOTDPassword</em></strong>",
+        "listenerPortsEnabled" : true,
+        "listenerPort" : "8080",
+        "listenerType" : "http",
+        "securedListenerPort" : "8081",
+        "loadBalancingPolicy" : "least_connection_count",
+        "adminPort" : "8989",
+        "shape" : "oc3",
+        "VMsPublicKey" : "<strong class="ph b"><em class="ph i">yourSSHPublicKeyString</em></strong>"
+ 
+    },
+    {
+        "type" : "datagrid",
+        "scalingUnitCount"  : "1",
+        "clusterName"       : "ExampleDGCluster",
+        "scalingUnitName"   : "SMALL"
+    }  
+    ]
+}
+</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Values to Modify</h3>
+  <p class="p">After copying the sample JSON, modify the attributes as shown (on Oracle Public Cloud and Oracle Cloud Machine).</p> 
+  <div class="tablenoborder">
+   <span class="desc tabledesc">This table lists the attributes to be modified in the JSON file.</span>
+   <table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all">
+    <thead class="thead" align="left">
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d1730e189">Attribute</th> 
+      <th class="entry" valign="top" id="d1730e191">Description</th> 
+     </tr> 
+    </thead> 
+    <tbody class="tbody">
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d1730e195" headers="d1730e189 "><samp class="ph codeph">adminPassword</samp></th> 
+      <td class="entry" valign="top" headers="d1730e195 d1730e191 ">Password for WebLogic Server or Oracle Traffic Director administrator. The password must meet these requirements:
+       <ul class="ul">
+        <li class="li"><p class="p">Starts with a letter</p> </li> 
+        <li class="li"><p class="p">Is between 8 and 30 characters long</p> </li> 
+        <li class="li">
+         <div class="p">
+          Contains at least one upper case letter, at least one lower case letter, at least one number, and optionally any number of these special characters:
+          <ul class="ul">
+           <li class="li"><p class="p">Hyphen sign (-)</p> </li> 
+           <li class="li"><p class="p">Pound sign (#)</p> </li> 
+           <li class="li"><p class="p">Underscore (_)</p> </li> 
+           <li class="li"><p class="p">Dollar sign ($)</p> </li> 
+          </ul> 
+         </div> </li> 
+       </ul> <p class="p">For the Oracle Traffic Director (<samp class="ph codeph">"type":"otd"</samp>), this value defaults to the WebLogic Server administrator password, if not specified.</p> <p class="p"><strong class="ph b">Note for Oracle Public Cloud:</strong> If the service instance is using Exadata as the database, the password cannot contain the dollar sign ($).</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d1730e233" headers="d1730e189 "><samp class="ph codeph">adminUserName</samp></th> 
+      <td class="entry" valign="top" headers="d1730e233 d1730e191 ">User name for WebLogic Server or Oracle Traffic Director administrator. 
+       <div class="p">
+        The name must be between 8 and 128 characters long and 
+        <strong class="ph b">cannot</strong> contain any of the following characters.
+        <ul class="ul">
+         <li class="li"><p class="p">Tab</p> </li> 
+         <li class="li"><p class="p">Brackets</p> </li> 
+         <li class="li"><p class="p">Parentheses</p> </li> 
+         <li class="li">
+          <div class="p">
+           These special characters:
+           <ul class="ul">
+            <li class="li"><p class="p">Left angle bracket (&lt;)</p> </li> 
+            <li class="li"><p class="p">Right angle bracket (&gt;)</p> </li> 
+            <li class="li"><p class="p">Ampersand (&amp;)</p> </li> 
+            <li class="li"><p class="p">Pound sign (#)</p> </li> 
+            <li class="li"><p class="p">Pipe symbol (|)</p> </li> 
+            <li class="li"><p class="p">Question mark (?)</p> </li> 
+           </ul> 
+          </div> </li> 
+        </ul> 
+       </div> <p class="p">For the Oracle Traffic Director (<samp class="ph codeph">"type":"otd"</samp>), this value defaults to the WebLogic Server administrator user name, if not specified.</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d1730e281" headers="d1730e189 "><samp class="ph codeph">nodeManagerPassword</samp></th> 
+      <td class="entry" valign="top" headers="d1730e281 d1730e191 ">Password for Node Manager. This value defaults to the WebLogic administrator password.</td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d1730e287" headers="d1730e189 "><samp class="ph codeph">nodeManagerUserName</samp></th> 
+      <td class="entry" valign="top" headers="d1730e287 d1730e191 ">User name for Node Manager. This value defaults to the WebLogic administrator user name.</td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d1730e293" headers="d1730e189 "><samp class="ph codeph">VMsPublicKey</samp></th> 
+      <td class="entry" valign="top" headers="d1730e293 d1730e191 ">The public key for the secure shell (SSH). The key will be used for authentication when connecting to the Oracle Java Cloud Service instance using an SSH client.<p class="p">You generate an SSH public-private key pair using a standard SSH key generation tool.</p> <p class="p">You must specify a public key value for both the service instance and the load balancer.</p> </td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Values to Modify on Oracle Public Cloud</h3>
+  <p class="p">Additional attributes you need to modify on Oracle Public Cloud are described here.</p> 
+  <div class="tablenoborder">
+   <span class="desc tabledesc">This table lists the additional attributes to be modified on Oracle Public Cloud.</span>
+   <table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all">
+    <thead class="thead" align="left">
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d1730e315">Attribute</th> 
+      <th class="entry" valign="top" id="d1730e317">Description</th> 
+     </tr> 
+    </thead> 
+    <tbody class="tbody">
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d1730e321" headers="d1730e315 "><samp class="ph codeph">cloudStorageContainer</samp></th> 
+      <td class="entry" valign="top" headers="d1730e321 d1730e317 ">Name of the Oracle Storage Cloud Service container used to provide storage for your service instance backups. Use the following format to specify the container name:<pre class="pre">&lt;<em class="ph i">storageservicename</em>&gt;-&lt;<em class="ph i">storageidentitydomainid</em>&gt;/&lt;<em class="ph i">containername</em>&gt;
+</pre> <p class="p"><strong class="ph b">Note:</strong> Be sure to specify the identity domain ID. An Oracle Storage Cloud Service account is <em class="ph i">not</em> required if you are creating an Oracle Java Cloud Service-Virtual Image instance.</p> <p class="p">If you set <samp class="ph codeph">createStorageContainerIfMissing</samp> to <samp class="ph codeph">true</samp> and specify a container name that does not yet exist in Oracle Storage Cloud Service, the provisioning system will create the container before it provisions the Oracle Java Cloud Service instance.</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d1730e353" headers="d1730e315 "><samp class="ph codeph">cloudStoragePassword</samp></th> 
+      <td class="entry" valign="top" headers="d1730e353 d1730e317 ">Password of the Oracle Storage Cloud Service user who has read/write access to the existing or new container.</td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d1730e359" headers="d1730e315 "><samp class="ph codeph">cloudStorageUser</samp></th> 
+      <td class="entry" valign="top" headers="d1730e359 d1730e317 ">User name of the Oracle Storage Cloud Service user who has read/write access to the existing or new container. </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d1730e365" headers="d1730e315 "><samp class="ph codeph">dbaName</samp></th> 
+      <td class="entry" valign="top" headers="d1730e365 d1730e317 ">User name for the database administrator. For instances based on Oracle WebLogic Server 11<em class="ph i">g</em> (10.3.6), this value must be set to a database user with DBA role. You can use the default user <samp class="ph codeph">SYSTEM</samp> or a user that has been granted the <samp class="ph codeph">DBA</samp> role.<p class="p">For instances based on Oracle WebLogic Server 12<em class="ph i">c</em> (12.2.1 or 12.1.3), this value must be set to a database user with <samp class="ph codeph">SYSDBA</samp> system privileges. You can use the default user <samp class="ph codeph">SYS</samp> or a user that has been granted the <samp class="ph codeph">SYSDBA</samp> privilege.</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d1730e394" headers="d1730e315 "><samp class="ph codeph">dbaPassword</samp></th> 
+      <td class="entry" valign="top" headers="d1730e394 d1730e317 ">Database administrator password that was specified when the Oracle Database Cloud Service database deployment was created. </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d1730e400" headers="d1730e315 "><samp class="ph codeph">dbServiceName</samp></th> 
+      <td class="entry" valign="top" headers="d1730e400 d1730e317 ">Name of your Oracle Database Cloud Service database deployment. This database deployment is required to host the Oracle Required Schema for the Oracle Java Cloud Service instance.</td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Values to Modify on Oracle Cloud Machine</h3>
+  <p class="p">Additional attributes you need to modify on Oracle Cloud Machine are described here.</p> 
+  <div class="tablenoborder">
+   <span class="desc tabledesc">This table lists the additional attributes to be modified on Oracle Cloud Machine.</span>
+   <table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all">
+    <thead class="thead" align="left">
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d1730e418">Attribute</th> 
+      <th class="entry" valign="top" id="d1730e420">Description</th> 
+     </tr> 
+    </thead> 
+    <tbody class="tbody">
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d1730e424" headers="d1730e418 "><samp class="ph codeph">cloudStorageContainer</samp></th> 
+      <td class="entry" valign="top" headers="d1730e424 d1730e420 ">NFS URI of the remote storage disk used to store service instance backups. The format is: <samp class="ph codeph"><em class="ph i">ip-address:export-path</em></samp></td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d1730e433" headers="d1730e418 "><samp class="ph codeph">connectString</samp></th> 
+      <td class="entry" valign="top" headers="d1730e433 d1730e420 ">String that is used to connect to the database. The connection string must be entered using one of the following formats:
+       <ul class="ul">
+        <li class="li"><p class="p"><samp class="ph codeph"><em class="ph i">host:port:SID</em></samp></p> </li> 
+        <li class="li"><p class="p"><samp class="ph codeph"><em class="ph i">host:port/serviceName</em></samp></p> </li> 
+       </ul> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d1730e450" headers="d1730e418 "><samp class="ph codeph">dbaName</samp></th> 
+      <td class="entry" valign="top" headers="d1730e450 d1730e420 ">User name for the database network administrator.</td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d1730e456" headers="d1730e418 "><samp class="ph codeph">dbaPassword</samp></th> 
+      <td class="entry" valign="top" headers="d1730e456 d1730e420 ">Password for the database network administrator.</td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d1730e462" headers="d1730e418 "><samp class="ph codeph">dbNetwork</samp></th> 
+      <td class="entry" valign="top" headers="d1730e462 d1730e420 ">Path to the network through which the Oracle Java Cloud Service instance will access the database.</td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d1730e468" headers="d1730e418 "><samp class="ph codeph">publicNetwork</samp></th> 
+      <td class="entry" valign="top" headers="d1730e468 d1730e420 ">Path to the network from which the Oracle Java Cloud Service REST API will be accessed.</td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+ </div> 
+</div></div>
+        </article>
+    </body>
+</html>

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Creating a Database Deployment</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="To create a database deployment on Oracle Database Cloud Service, use the Provision New Oracle Database Cloud Service wizard as described in the following procedure." />
+<meta name="dcterms.created" content="2017-06-19T15:22:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Database Cloud Service" />
+<meta name="dcterms.identifier" content="E72994-04" />
+<meta name="dcterms.isVersionOf" content="CSDBI" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-210506A3-08AF-40F2-8377-16EFA709B5A9.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-ED74C8C7-8D57-4265-A79F-7D88816A0A3B.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSDBI.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSDBI.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSDBI.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-5A4C1A90-E71E-4CDD-BB0B-80D18621109E"></a> <span id="PAGE" style="display:none;">12/190</span> <!-- End Header -->
+<a id="CSDBI3336"></a><a id="CSDBI3337"></a><a id="CSDBI3299"></a>
+<h1 id="CSDBI-GUID-5A4C1A90-E71E-4CDD-BB0B-80D18621109E" class="sect1">Creating a Database Deployment</h1>
+<div>
+<p>To create a database deployment on <span>Oracle Database Cloud Service</span>, use the <span>Provision New Oracle Database Cloud Service</span> wizard as described in the following procedure.</p>
+<div class="section">
+<p>However, before using the <span>Provision New Oracle Database Cloud Service</span> wizard, you need to make sure that you have all of the necessary information, as described in <a href="GUID-5A4C1A90-E71E-4CDD-BB0B-80D18621109E.htm#GUID-5A4C1A90-E71E-4CDD-BB0B-80D18621109E__BEFOREYOUBEGIN">Before You Begin</a>. <span>Additionally, after your database deployment is created you need to perform a few follow-on tasks if you are creating a deployment hosting a single-instance database, as described in <a href="GUID-5A4C1A90-E71E-4CDD-BB0B-80D18621109E.htm#GUID-5A4C1A90-E71E-4CDD-BB0B-80D18621109E__AFTERCREATION">After Your Database Deployment Is Created</a>.</span></p>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-5A4C1A90-E71E-4CDD-BB0B-80D18621109E__BEFOREYOUBEGIN">
+<p class="subhead1">Before You Begin</p>
+<p>Before you create a database deployment on <span>a Database Cloud Service</span>, ensure you have created or acquired information about the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>An SSH public/private key pair</p>
+<p><span>You must associate an SSH public key with the compute infrastructure supporting the deployment.</span> An SSH public key is used for authentication when you use an SSH client to connect to a compute node associated with the deployment. When you connect, you must provide the private key that matches the public key.</p>
+<p>You can have the wizard create a public/private key pair for you, or you can create one beforehand and upload or paste its private key value. If you want to create a key pair beforehand, you can use a standard SSH key generation tool. See <a href="GUID-4285B8CF-A228-4B89-9552-FE6446B5A673.htm#GUID-4285B8CF-A228-4B89-9552-FE6446B5A673">Generating a Secure Shell (SSH) Public/Private Key Pair</a>.</p>
+</li>
+<li>
+<p>A public access network specification</p>
+<p>When creating a database deployment, you need to provide the public access network that the deployment will be available on. You get this information from your Tenant Administrator.</p>
+</li>
+<li>
+<p>An NFS remote backup location (Optional)</p>
+<p>When creating a database deployment, you can choose to configure automatic backups. To do so, you must provide an NFS remote backup location. The location, <span>which you get from your Tenant Administrator,</span> must be specified using one of the following formats:</p>
+<pre dir="ltr">
+<span class="italic">hostname</span>:<span class="italic">absolute-path</span>
+<span class="italic">ip-address</span>:<span class="italic">absolute-path</span>
+</pre></li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-5A4C1A90-E71E-4CDD-BB0B-80D18621109E__PROCEDURE-DBAAS">
+<p class="subhead1">Procedure</p>
+<p>To create a database deployment on <span>Database Cloud Service</span>:</p>
+<ol>
+<li>
+<p>Open the <span>Oracle Database Cloud Service</span> console.</p>
+<p>For detailed instructions, see <a href="GUID-8F431574-D82A-45A0-8637-7605E2333381.htm">Accessing the Oracle Database Cloud Service Console</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create Service</span>.</p>
+<p>The <span>Provision New Oracle Database Cloud Service</span> wizard starts and the Service page is displayed.</p>
+</li>
+<li>
+<p>On the Service page, provide a name and description for the database deployment, and provide information about its high-level characteristics. When you are finished, click <span class="bold">Next</span> to advance to the Service Details page.</p>
+<div class="tblformal" id="GUID-5A4C1A90-E71E-4CDD-BB0B-80D18621109E__GUID-83CA3D13-D886-43D0-947C-CAD11FEB24E2">
+<table class="cellalignment35" summary="Description of each element on the Service page of the Provision New Oracle Database Cloud Service wizard">
+<thead>
+<tr class="cellalignment2">
+<th class="cellalignment12" id="d4646e125">Element</th>
+<th class="cellalignment13" id="d4646e128">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d4646e133" headers="d4646e125">
+<p><span class="bold">Service Name</span></p>
+</td>
+<td class="cellalignment15" headers="d4646e133 d4646e128">
+<p>The name for the new database deployment. The name:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Must not exceed 50 characters <span>(15 characters for a deployment that uses Oracle RAC)</span>.</p>
+</li>
+<li>
+<p>Must start with a letter.</p>
+</li>
+<li>
+<p>Must contain only letters, numbers, or hyphens.</p>
+</li>
+<li>
+<p>Must not contain any other special characters.</p>
+</li>
+<li>
+<p>Must be unique within the identity domain.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d4646e160" headers="d4646e125">
+<p><span class="bold">Description</span></p>
+</td>
+<td class="cellalignment15" headers="d4646e160 d4646e128">
+<p>(Optional) A description for the new database deployment.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d4646e168" headers="d4646e125">
+<p><span class="bold">Service Level</span></p>
+</td>
+<td class="cellalignment15" headers="d4646e168 d4646e128">
+<p>The service level for the new deployment:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Oracle Database Cloud Service</span></p>
+</li>
+</ul>
+<p>See <a href="GUID-660363B8-0E2F-4A4F-A9BD-70A43F332A16.htm#GUID-5717CBF9-1D7A-4DDE-B250-7AD5C528C3B3">Service Level</a>.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d4646e186" headers="d4646e125">
+<p><span class="bold">Metering&nbsp;Frequency</span></p>
+</td>
+<td class="cellalignment15" headers="d4646e186 d4646e128">
+<p>The metering frequency for the new deployment:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Hourly</span></p>
+</li>
+<li>
+<p><span class="bold">Monthly</span></p>
+</li>
+</ul>
+<p>See <a href="GUID-660363B8-0E2F-4A4F-A9BD-70A43F332A16.htm#GUID-E1E78D34-4B7B-4FE9-9DC4-49C7E5DF241A">Metering Frequency</a>.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d4646e208" headers="d4646e125">
+<p><span class="bold">Software Release</span></p>
+</td>
+<td class="cellalignment15" headers="d4646e208 d4646e128">
+<p>The release version of Oracle Database for the new deployment:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Oracle Database 11g Release 2</span></p>
+</li>
+<li>
+<p><span class="bold">Oracle Database 12c Release 1</span></p>
+</li>
+<li>
+<p><span class="bold">Oracle Database 12c Release 2</span></p>
+</li>
+</ul>
+<p>See <a href="GUID-660363B8-0E2F-4A4F-A9BD-70A43F332A16.htm#GUID-634027B5-B318-41FC-8685-25BC892078B4">Oracle Database Software Release</a>.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d4646e234" headers="d4646e125">
+<p><span class="bold">Software Edition</span></p>
+</td>
+<td class="cellalignment15" headers="d4646e234 d4646e128">
+<p>The Oracle Database software package for the new deployment:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Standard Edition</span></p>
+</li>
+<li>
+<p><span class="bold">Enterprise Edition</span></p>
+</li>
+<li>
+<p><span class="bold">Enterprise Edition - High Performance</span></p>
+</li>
+<li>
+<p><span class="bold">Enterprise Edition - Extreme Performance</span></p>
+</li>
+</ul>
+<p>See <a href="GUID-660363B8-0E2F-4A4F-A9BD-70A43F332A16.htm#GUID-6C0B1E17-98A5-4522-A3B9-36EFA05E64F9">Oracle Database Software Edition</a>.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d4646e264" headers="d4646e125">
+<p><span class="bold">Database Type</span></p>
+</td>
+<td class="cellalignment15" headers="d4646e264 d4646e128">
+<p>The type of deployment to create:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Single Instance</span>&mdash;A single Oracle Database instance and database data store hosted on one compute node. For more information about this type, see <a href="GUID-17839AE1-45DD-48E2-A5A2-99A1428A3916.htm" title="This section provides information about the content and configuration of a newly created database deployment on Oracle Database Cloud Service using the Oracle Database Cloud Service service level.">Characteristics of an Oracle Database Cloud Deployment</a>.</p>
+</li>
+<li>
+<p><span class="bold">Database Clustering with RAC</span>&mdash;A two-node clustered database using Oracle Real Application Clusters technology; two compute nodes each host an Oracle Database instance, and the two instances access the same shared database data store. For more information about this type, see <a href="GUID-4D8BB260-2672-46BE-BF57-ABB9612D97D2.htm" title="This section provides information about the content and configuration of a newly created database deployment on Oracle Database Cloud Service that hosts an Oracle Real Application Clusters (Oracle RAC) database.">Characteristics of an Oracle Database Cloud Service Deployment Using Oracle RAC</a>.</p>
+</li>
+</ul>
+<p>Not all types are available with all combinations of service level and software edition:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Single Instance is the only type supported by the Standard Edition software edition.</p>
+</li>
+<li>
+<p>Database Clustering with RAC is available only with Enterprise Edition - Extreme Performance software edition.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></li>
+<li>
+<p>On the Service Details page, complete the <span class="bold">Database Configuration</span> section by providing information about the Oracle Database you want to create. <span>When you are finished, click <span class="bold">Next</span> to advance to the Confirmation page.</span></p>
+<div class="tblformal" id="GUID-5A4C1A90-E71E-4CDD-BB0B-80D18621109E__GUID-B4FAE319-CB41-491A-84C2-78870B13853B">
+<table class="cellalignment35" summary="Description of each element in the Database Configuration section on the Service Details page of the Provision New Oracle Database Cloud Service wizard">
+<thead>
+<tr class="cellalignment2">
+<th class="cellalignment12" id="d4646e331">Element</th>
+<th class="cellalignment13" id="d4646e334">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d4646e339" headers="d4646e331">
+<p><span class="bold">DB Name (SID)</span></p>
+</td>
+<td class="cellalignment15" headers="d4646e339 d4646e334">
+<p>The name for the database instance. The name:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Must not exceed 8 characters.</p>
+</li>
+<li>
+<p>Must start with a letter.</p>
+</li>
+<li>
+<p>Must contain only letters, numbers, or these symbols: _ (underscore), # (hash sign), or $ (dollar sign).</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d4646e357" headers="d4646e331">
+<p><span class="bold">PDB Name</span></p>
+</td>
+<td class="cellalignment15" headers="d4646e357 d4646e334">
+<p>(Available only for Oracle Database 12c.)</p>
+<p>The name for the default pluggable database (PDB). The name:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Must not exceed 8 characters.</p>
+</li>
+<li>
+<p>Must start with a letter.</p>
+</li>
+<li>
+<p>Must contain only letters, numbers, or these symbols: _ (underscore), # (hash sign), or $ (dollar sign).</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d4646e377" headers="d4646e331">
+<p><span class="bold">Administration Password</span></p>
+<p><span class="bold">Confirm Password</span></p>
+</td>
+<td class="cellalignment15" headers="d4646e377 d4646e334">
+<p>The password for the following administrative users:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Oracle Database administrative users</p>
+</li>
+<li>
+<p>Oracle Application Express admin user</p>
+</li>
+</ul>
+<p>The password:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Must be 8 to 30 characters in length.</p>
+</li>
+<li>
+<p>Must contain at least one lowercase letter</p>
+</li>
+<li>
+<p>Must contain at least one uppercase letter</p>
+</li>
+<li>
+<p>Must contain at least one number</p>
+</li>
+<li>
+<p>Must contain at least one of these symbols: _ (underscore), # (hash sign), or $ (dollar sign).</p>
+</li>
+<li>
+<p>Must not contain the word &ldquo;oracle&rdquo;.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d4646e416" headers="d4646e331">
+<p><span class="bold">Usable Database Storage (GB)</span></p>
+</td>
+<td class="cellalignment15" headers="d4646e416 d4646e334">
+<p>The amount of storage in GB for actual database data.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d4646e424" headers="d4646e331">
+<p><span class="bold">Total Data File Storage (GB)</span></p>
+</td>
+<td class="cellalignment15" headers="d4646e424 d4646e334">
+<p>The computed amount of storage in GB that will be allocated to the deployment, including space for operating system and product binaries, supporting files, database data and configuration files, and so on.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d4646e432" headers="d4646e331">
+<p><span class="bold">Compute Shape</span></p>
+</td>
+<td class="cellalignment15" headers="d4646e432 d4646e334">
+<p>The number of Oracle Compute Units (OCPUs) and amount of memory (RAM) for each compute node of the new database deployment. <span>Database Cloud Service</span> offers several OCPU/RAM combinations, as described in <a href="GUID-660363B8-0E2F-4A4F-A9BD-70A43F332A16.htm#GUID-ABDB48B9-01F5-4F32-AD35-08251F67B641">Computing Power</a>.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d4646e446" headers="d4646e331">
+<p><span class="bold">SSH Public Key</span></p>
+<p><span class="bold">Edit</span></p>
+</td>
+<td class="cellalignment15" headers="d4646e446 d4646e334">
+<p>The SSH public key to be used for authentication when using an SSH client to connect to a compute node that is associated with your database deployment.</p>
+<p>Click <span class="bold">Edit</span> to specify the public key. You can upload a file containing the public key value, paste in the value of a public key, or create a system-generated key pair.</p>
+<p>If you paste in the value, make sure the value does not contain line breaks or end with a line break.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d4646e464" headers="d4646e331">
+<p><span class="bold">Advanced Settings:</span> <span class="bold">Listener&nbsp;Port</span></p>
+</td>
+<td class="cellalignment15" headers="d4646e464 d4646e334">
+<p>The port number for the Oracle Net Listener.</p>
+<p>The port number must be between 1521 and 5499 (inclusive).</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d4646e477" headers="d4646e331">
+<p><span class="bold">Advanced Settings:</span> <span class="bold">Timezone</span></p>
+</td>
+<td class="cellalignment15" headers="d4646e477 d4646e334">
+<p>The time zone for the new database deployment. The default is Coordinated Universal Time (UTC).</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d4646e488" headers="d4646e331">
+<p><span class="bold">Advanced Settings:</span> <span class="bold">Character&nbsp;Set</span></p>
+</td>
+<td class="cellalignment15" headers="d4646e488 d4646e334">
+<p>The database character set for the database. The database character set is used for:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Data stored in SQL <code class="codeph">CHAR</code> data types (<code class="codeph">CHAR</code>, <code class="codeph">VARCHAR2</code>, <code class="codeph">CLOB</code>, and <code class="codeph">LONG</code>)</p>
+</li>
+<li>
+<p>Identifiers such as table names, column names, and PL/SQL variables</p>
+</li>
+<li>
+<p>Entering and storing SQL and PL/SQL source code</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d4646e524" headers="d4646e331">
+<p><span class="bold">Advanced Settings:</span> <span class="bold">National&nbsp;Character Set</span></p>
+</td>
+<td class="cellalignment15" headers="d4646e524 d4646e334">
+<p>The national character set for the database. The national character set is used for data stored in SQL <code class="codeph">NCHAR</code> data types (<code class="codeph">NCHAR</code>, <code class="codeph">NCLOB</code>, and <code class="codeph">NVARCHAR2</code>).</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d4646e548" headers="d4646e331">
+<p><span class="bold">Advanced Settings:</span> <span class="bold">Include&nbsp;"Demos"&nbsp;PDB</span></p>
+</td>
+<td class="cellalignment15" headers="d4646e548 d4646e334">
+<p>(Available only for Oracle Database 12c.)</p>
+<p>Controls whether the "Demos" PDB is to be included in the database. This PDB contains demos for many new features of Oracle Database 12c such as in-memory and multitenant. Usable Data File Storage must to be at least 25 GB to include this PDB.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></li>
+<li>
+<p>On the Service Details page, complete the <span class="bold">Backup and Recovery Configuration</span> section, choosing a backup option for the database deployment and, depending on your choice, providing information about the NFS remote backup location where backups are to be stored.</p>
+<div class="tblformal" id="GUID-5A4C1A90-E71E-4CDD-BB0B-80D18621109E__GUID-F8AEC82C-4E2D-4A3F-8DD5-108CB5EE7BC0">
+<table class="cellalignment35" summary="Description of each element in the Backup and Recovery Configuration section on the Service Details page of the Provision New Oracle Database Cloud Service wizard">
+<thead>
+<tr class="cellalignment2">
+<th class="cellalignment12" id="d4646e577">Element</th>
+<th class="cellalignment13" id="d4646e580">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d4646e585" headers="d4646e577">
+<p><span class="bold">Backup Destination</span></p>
+</td>
+<td class="cellalignment15" headers="d4646e585 d4646e580">
+<p>Controls how backups for the deployment are to be configured:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Remote Storage Only</span>&mdash;backups are configured to be created automatically and stored on an NFS remote backup location.</p>
+<p>If this choice is selected, the NFS Remote Backup field is displayed.</p>
+</li>
+<li>
+<p><span class="bold">None</span>&mdash;Backups are not configured for the deployment.</p>
+</li>
+</ul>
+<p>For more information about backups and backup configurations, see <a href="GUID-21980FCF-FA0C-4FD8-94DC-7C373CFB4C52.htm" title="By backing up your Oracle Database Cloud Service database deployments, you can protect the software, configuration and database against loss if a failure occurs. By restoring from a backup, you can restore the deployment's software, configuration, and database to their state at the time of the backup.">About Backing Up Database Deployments on Database Cloud Service</a>.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d4646e618" headers="d4646e577">
+<p><span class="bold">Total Estimated Monthly Storage</span></p>
+</td>
+<td class="cellalignment15" headers="d4646e618 d4646e580">
+<p>Storage for data files and backups.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d4646e626" headers="d4646e577">
+<p><span class="bold">NFS Remote Backup</span></p>
+</td>
+<td class="cellalignment15" headers="d4646e626 d4646e580">
+<p>The path of the NFS remote backup location where backups of the database deployment are to be stored. This path has one of the following formats:</p>
+<pre dir="ltr">
+<span class="italic">hostname</span>:<span class="italic">absolute-path</span>
+<span class="italic">ip-address</span>:<span class="italic">absolute-path</span>
+</pre></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></li>
+<li>
+<p>On the Service Details page, complete the <span class="bold">Networks</span> section by using the <span class="bold">Public Access Network</span> list to choose the network in which this database deployment will be available.</p>
+</li>
+<li>
+<p>On the Confirmation page, review the information listed. If you are satisfied with the information, click <span class="bold">Create</span>.</p>
+<p>If you need to change the information, use the navigation bar or <span class="bold">Back</span> button at the top of the wizard to step back through the pages in the wizard. Click <span class="bold">Cancel</span> to cancel out of the wizard without creating a new database deployment.</p>
+</li>
+</ol>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-5A4C1A90-E71E-4CDD-BB0B-80D18621109E__AFTERCREATION">
+<p class="subhead1">After Your Database Deployment Is Created</p>
+<p>After your database deployment is created, you need to perform the following actions if you created a deployment hosting a single-instance database:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Update cloud tooling.</span></p>
+<p>Update the cloud tooling on the deployment, as described in <a href="GUID-CD12878B-3F62-4E14-B12A-9F286B470294.htm">Updating the Cloud Tooling on Database Cloud Service</a>.</p>
+</li>
+<li>
+<p><span class="bold">Confirm correct configuration of automatic backups.</span></p>
+<p>If you specified remote backups to an NFS location, and the deployment is <span class="bold">not</span> going to be used by <span id="GUID-5A4C1A90-E71E-4CDD-BB0B-80D18621109E__CLOUDJAVASERV">Oracle Java Cloud Service</span>, check that the configuration for automatic backups is correct:</p>
+<ol>
+<li>
+<p>Connect as the <code class="codeph"><span class="bold">opc</span></code> user to the compute node.</p>
+<p>For detailed instructions, see <a href="GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1.htm#GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1">Connecting to a Compute Node Through Secure Shell (SSH)</a>.</p>
+</li>
+<li>
+<p>Start a root-user command shell:</p>
+<pre dir="ltr">
+$ <span class="bold">sudo -s</span>
+#
+</pre></li>
+<li>
+<p>View the system-wide <code class="codeph">crontab</code> file:</p>
+<pre dir="ltr">
+# <span class="bold">cat /etc/crontab</span>
+</pre></li>
+<li>
+<p>Check for a line of the following form:</p>
+<pre dir="ltr">
+<span class="italic">MM</span> <span class="italic">HH</span> * * * root /var/opt/oracle/bkup_api/bkup_api bkup_start --dbname=<span class="italic">SID</span>
+</pre>
+<p>where <span class="italic">MM</span> and <span class="italic">HH</span> are the minute and hour, respectively, of the backup time (on a 24-hour clock) and <span class="italic">SID</span> is the SID of the database.</p>
+</li>
+<li>
+<p>If you <span class="bold">do not</span> see such a line, edit the <code class="codeph">/etc/crontab</code> file and add a line of the following form:</p>
+<pre dir="ltr">
+15 0 * * * root /var/opt/oracle/bkup_api/bkup_api bkup_start --dbname=<span class="italic">SID</span>
+</pre></li>
+<li>
+<p>Exit the root-user command shell and disconnect from the compute node:</p>
+<pre dir="ltr">
+# <span class="bold">exit</span>
+$ <span class="bold">exit</span>
+</pre></li>
+</ol>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="GUID-210506A3-08AF-40F2-8377-16EFA709B5A9.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="GUID-ED74C8C7-8D57-4265-A79F-7D88816A0A3B.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

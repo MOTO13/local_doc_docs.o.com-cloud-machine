@@ -1,0 +1,192 @@
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Defining a Custom Domain Name for an Oracle Java Cloud Service Instance</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta content="By using the load balancer as the front-end, you can quickly and easily associate a custom" name="" />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-763D5BD4-AD7F-48E3-A714-1FF02F553288.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-4CA04D5D-510D-4B7E-A6DB-70416871409D.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-0D852E2F-3E75-4425-8D96-EBCBF316FE9D"></a> <span id="PAGE" style="display:none;">44/131</span> <!-- End Header -->
+<a id="JSCUG3422"></a><a id="JSCUG3414"></a>
+<h1 id="JSCUG-GUID-0D852E2F-3E75-4425-8D96-EBCBF316FE9D" class="sect1">Defining a Custom Domain Name for an Oracle Java Cloud Service Instance</h1>
+<div>
+<p>By using the load balancer as the front-end, you can quickly and easily associate a custom "vanity" domain name to your application environment. For example, rather than accessing your applications using a public IP address, you can define a custom URL, such as <code class="codeph">example.com</code>.</p>
+<div class="p">
+<p>To identify the public IP address for the load balancer see <a href="GUID-FA69844B-7BAF-4B67-AF29-15CAB3ED89FB.htm#GUID-FA69844B-7BAF-4B67-AF29-15CAB3ED89FB" title="From the Oracle Java Cloud Service Instance page, you can:">Viewing Detailed Information About an Oracle Java Cloud Service Instance</a>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Tasks:</p>
+</div>
+<!-- class="section" -->
+<ul>
+<li><span><a href="GUID-0D852E2F-3E75-4425-8D96-EBCBF316FE9D.htm#GUID-8A3AF3D6-CD2A-4416-830F-BD2B4CD598FA" title="Third-party vendors enable you to register custom domain names.">Registering a Custom Domain Name with a Third-Party Registration Vendor</a></span></li>
+<li><span><a href="GUID-0D852E2F-3E75-4425-8D96-EBCBF316FE9D.htm#GUID-A31A9BE4-9589-4416-A78B-A82FC75AED9D" title="You must update the load balancer configuration to use the custom domain name.">Updating the Load Balancer to Use the Custom Domain Name</a></span></li>
+</ul>
+</div>
+<a id="JSCUG3424"></a>
+<div class="props_rev_3"><a id="GUID-8A3AF3D6-CD2A-4416-830F-BD2B4CD598FA"></a>
+<h2 id="JSCUG-GUID-8A3AF3D6-CD2A-4416-830F-BD2B4CD598FA" class="sect2">Registering a Custom Domain Name with a Third-Party Registration Vendor</h2>
+<div>
+<p>Third-party vendors enable you to register custom domain names.</p>
+<div class="section">To register your custom domain and resolve it to the <span>Oracle Java Cloud Service</span> load balancer:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Register your domain name through a third-party domain registration vendor, such as <code class="codeph">Register.com</code>, <code class="codeph">Namecheap</code>, and so on.</span>
+<div>
+<p>For example, <code class="codeph">example.com</code>.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Resolve your domain name to the IP address of the <span>Oracle Java Cloud Service</span> load balancer, using the third-party domain registration vendor console.</span>
+<div>
+<p>For more information, refer to the third-party domain registration documentation.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<a id="JSCUG3425"></a>
+<div class="props_rev_3"><a id="GUID-A31A9BE4-9589-4416-A78B-A82FC75AED9D"></a>
+<h2 id="JSCUG-GUID-A31A9BE4-9589-4416-A78B-A82FC75AED9D" class="sect2">Updating the Load Balancer to Use the Custom Domain Name</h2>
+<div>
+<p>You must update the load balancer configuration to use the custom domain name.</p>
+<div class="p"></div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Navigate to the <span class="wintitle">Services</span> page of the <span>Oracle Java Cloud Service</span> console.</span></li>
+<li class="stepexpand"><span>Click <img width="14" height="15" src="img/GUID-D0E9F26E-D981-4A6C-9C9C-E53E732DCDA2-default.gif" alt="menu icon" title="menu icon" /> for the desired service instance and select <span class="bold">Open Load Balancer Console</span>.</span></li>
+<li class="stepexpand"><span>Log in to console using the credentials defined when provisioning your service instance.</span>
+<div>
+<p>If you created your service instance using the <span>Oracle Java Cloud Service</span> console, the user name and password default to the Oracle WebLogic Server Administration Console user name and password.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Access the load balancer configuration (for example, <code class="codeph">opc-config</code>):</span>
+<ul>
+<li>If your service instance is running Oracle Traffic Director 12<span class="italic">c</span>, click the <img width="46" height="44" src="img/GUID-A98A34F4-FC4D-47E9-B1E4-5FC89A2598D0-default.png" alt="Target Navigation icon" title="Target Navigation icon" /> Target Navigation icon. Expand the <span class="bold">Traffic Director</span> folder and click the name of the Traffic Director configuration.</li>
+<li>If your service instance is running Oracle Traffic Director 11<span class="italic">g</span>, click <span class="bold">Configurations</span> and then click the name of the Traffic Director configuration.</li>
+</ul>
+</li>
+<li class="stepexpand"><span>Navigate to the Virtual Server in this configuration (for example, <code class="codeph">opc-config</code>):</span>
+<ul>
+<li>
+<p>If your service instance is running Oracle Traffic Director 12<span class="italic">c</span>, click <span class="bold">Traffic Director Configuration</span> and select <span class="bold">Administration &gt; Virtual Servers</span>. Click the name of the virtual server.</p>
+</li>
+<li>
+<p>If your service instance is running Oracle Traffic Director 11<span class="italic">g</span>, expand <span class="bold">Virtual Servers</span> in the navigation pane and click the name of the virtual server.</p>
+</li>
+</ul>
+</li>
+<li class="stepexpand"><span>In the <span class="bold">General Settings</span> section edit the <span class="bold">Hosts</span> field. Enter the custom domain name (for example, <code class="codeph">example.com</code>) that you registered.</span>
+<div>
+<p>If there are multiple entries, separate each by a comma.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Activate your changes:</span>
+<ul>
+<li>
+<p>If your service instance is running Oracle Traffic Director 12<span class="italic">c</span>, click <span class="bold">Apply</span>.</p>
+</li>
+<li>
+<p>If your service instance is running Oracle Traffic Director 11<span class="italic">g</span>, click <span class="bold">Deploy Changes</span>.</p>
+</li>
+</ul>
+</li>
+</ol>
+<div class="section">
+<p>For more information about configuring the load balancer, see <a href="GUID-4D705FE3-4FB0-4EEE-B5C9-86F3A20C5869.htm#GUID-4D705FE3-4FB0-4EEE-B5C9-86F3A20C5869" title="Oracle Traffic Director is used as the load balancer for an Oracle Java Cloud Service instance.">Configuring a Load Balancer for an Oracle Java Cloud Service Instance on OPCM</a>.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-763D5BD4-AD7F-48E3-A714-1FF02F553288.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-4CA04D5D-510D-4B7E-A6DB-70416871409D.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

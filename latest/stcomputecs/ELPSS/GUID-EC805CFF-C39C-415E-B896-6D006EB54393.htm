@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Temperature and Humidity</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Review the temperature and humidity requirements for OPCM." />
+<meta name="dcterms.created" content="2017-04-10T14:54:01Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Customer Deployment Guide" />
+<meta name="dcterms.identifier" content="E65770-09" />
+<meta name="dcterms.isVersionOf" content="ELPSS" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-3A9544AC-A5AE-41CF-AD12-7F7AB03ED98F.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-2692CC02-8CF7-4233-A0D6-E6133163430C.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELPSS.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-EC805CFF-C39C-415E-B896-6D006EB54393"></a> <span id="PAGE" style="display:none;">11/16</span> <!-- End Header -->
+<h1 id="ELPSS-GUID-EC805CFF-C39C-415E-B896-6D006EB54393" class="sect1"><span class="enumeration_section">1.6</span> Temperature and Humidity</h1>
+<div>
+<p>Review the temperature and humidity requirements for <span id="ACRONYM-AF466053">OPCM</span>.</p>
+<div class="section">
+<p>Set conditions to the optimal temperature and humidity ranges to minimize the chance of downtime. Operating the system for extended periods near the operating or non-operating range limits could significantly increase hardware component failure.</p>
+<p>The ambient temperature range of 21 to 23 degrees Celsius (70 to 74 degrees Fahrenheit) is optimal for server reliability and operator comfort. Operating in this temperature range provides a safety buffer in the event that the air conditioning system goes down for a period of time.</p>
+<p>Most computer equipment can operate in a range of 20 to 80 percent of relative humidity, but the range of 45 to 50 percent is recommended for the following reasons:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Helps protect computer systems from corrosion problems associated with high humidity levels.</p>
+</li>
+<li>
+<p>Provides the greatest operating time buffer in the event of air conditioner control failure.</p>
+</li>
+<li>
+<p>Helps avoid failures or temporary malfunctions caused by intermittent interference from electrostatic discharges that may occur when relative humidity is too low (below 35 percent).</p>
+</li>
+</ul>
+<div class="figure" id="GUID-EC805CFF-C39C-415E-B896-6D006EB54393__GUID-DE75CCCA-5682-4B50-8418-A7BBFD9903BC">
+<p class="titleinfigure">Figure 1-1 Optimal Temperature, humidity, and Altitude requirements for <span id="GUID-EC805CFF-C39C-415E-B896-6D006EB54393__ACRONYM-AF466053">OPCM</span></p>
+<img width="450" height="433" src="img/GUID-B7F12C43-032B-4F33-BCE7-DBAF4D1BFC3D-default.png" alt="The figure is an illustration of an OPCM rack including information about the temperature, humidity, and maximum altitude requirements for OPCM." title="The figure is an illustration of an OPCM rack including information about the temperature, humidity, and maximum altitude requirements for OPCM." /></div>
+<!-- class="figure" -->
+<p>The following table lists the operating, non-operating, and optimal requirements for temperature, humidity, and altitude:</p>
+<div class="tblformal" id="GUID-EC805CFF-C39C-415E-B896-6D006EB54393__GUID-1668AAB8-9374-4128-A021-0933D1578DD6">
+<p class="titleintable">Table 1-12 <span>OPCM</span> Temperature and Humidity Requirements</p>
+<table class="cellalignment138" title="OPCM Temperature and Humidity Requirements" summary="The table contains four columns. The column with the Condition heading lists the temperature and humidity requirements for OPCM. The other three columns specify the values for operational, non-operational, and optimal conditions.">
+<thead>
+<tr class="cellalignment125">
+<th class="cellalignment139" id="d6353e74">Condition</th>
+<th class="cellalignment140" id="d6353e77">Operating Requirement</th>
+<th class="cellalignment141" id="d6353e80">Non-operating Requirement</th>
+<th class="cellalignment142" id="d6353e83">Optimal Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment125">
+<td class="cellalignment143" id="d6353e88" headers="d6353e74">
+<p>Temperature</p>
+</td>
+<td class="cellalignment144" headers="d6353e88 d6353e77">
+<p>5 to 32 degrees Celsius (59 to 89.6 degrees Fahrenheit)</p>
+</td>
+<td class="cellalignment145" headers="d6353e88 d6353e80">
+<p>-40 to 70 degrees Celsius (-40 to 158 degrees Fahrenheit).</p>
+</td>
+<td class="cellalignment146" headers="d6353e88 d6353e83">
+<p>For optimal rack cooling, data center temperatures from 21 to 23 degrees Celsius (70 to 74 degrees Fahrenheit).</p>
+</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment143" id="d6353e101" headers="d6353e74">
+<p>Relative humidity</p>
+</td>
+<td class="cellalignment144" headers="d6353e101 d6353e77">
+<p>10 to 90 percent relative humidity, non-condensing</p>
+</td>
+<td class="cellalignment145" headers="d6353e101 d6353e80">
+<p>Up to 93 percent relative humidity.</p>
+</td>
+<td class="cellalignment146" headers="d6353e101 d6353e83">
+<p>For optimal data center rack cooling, 45 to 50 percent, non-condensing.</p>
+</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment143" id="d6353e114" headers="d6353e74">
+<p>Altitude</p>
+</td>
+<td class="cellalignment144" headers="d6353e114 d6353e77">
+<p>3048 meters (10000 feet) maximum</p>
+</td>
+<td class="cellalignment145" headers="d6353e114 d6353e80">
+<p>12000 meters (40000 feet).</p>
+</td>
+<td class="cellalignment146" headers="d6353e114 d6353e83">
+<p>Ambient temperature is reduced by 1 degree Celsius per 300 m above 900 m altitude above sea level.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<div class="infobox-note" id="GUID-EC805CFF-C39C-415E-B896-6D006EB54393__GUID-C2B7EA95-3A0E-48D5-B792-0CB3BE059108">
+<p class="notep1">Note:</p>
+<p>Studies have shown that temperature increases of 10 degrees Celsius (15 degrees Fahrenheit) above 20 degrees Celsius (70 degrees Fahrenheit) reduce long-term electronics reliability by 50 percent.</p>
+<p>Excessive internal temperatures may result in full or partial shutdown of an <span>OPCM</span>.</p>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment124">
+<tr>
+<td class="cellalignment131">
+<table class="cellalignment129">
+<tr>
+<td class="cellalignment128"><a href="GUID-3A9544AC-A5AE-41CF-AD12-7F7AB03ED98F.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment128"><a href="GUID-2692CC02-8CF7-4233-A0D6-E6133163430C.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment133">
+<table class="cellalignment127">
+<tr>
+<td class="cellalignment128"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment128"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

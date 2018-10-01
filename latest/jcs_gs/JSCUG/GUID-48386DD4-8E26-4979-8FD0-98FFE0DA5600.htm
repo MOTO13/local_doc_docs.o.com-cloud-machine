@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Problems with Creating Service Instances</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You might experience problems when creating services." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-DDAA8721-472D-4062-8379-AD0A0A883BC9.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-00B3BAA0-AE0C-4909-A777-38475EBD38FE.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-48386DD4-8E26-4979-8FD0-98FFE0DA5600"></a> <span id="PAGE" style="display:none;">120/131</span> <!-- End Header -->
+<a id="JSCUG3244"></a><a id="JSCUG3245"></a><a id="JSCUG3243"></a>
+<h1 id="JSCUG-GUID-48386DD4-8E26-4979-8FD0-98FFE0DA5600" class="sect1">Problems with Creating Service Instances</h1>
+<div>
+<p>You might experience problems when creating services.</p>
+<p>In the process of creating a service, the operation failure becomes visible in the following way:</p>
+<ol>
+<li>
+<p>The service instance appears in the Services list in the Oracle Java Cloud Service Console.</p>
+</li>
+<li>
+<p>An <span class="bold">In progress...</span> message appears in the service instance details.</p>
+</li>
+<li>
+<p>When the creation process fails, a <span class="bold">Failed</span> message is displayed and a red exclamation mark appears on the service instance's icon.</p>
+</li>
+<li>
+<p>The service instance is listed in the <span class="bold">Instance create or delete history</span> section.</p>
+</li>
+<li>
+<p>Click on <span class="bold">Details</span> to receive progress and error messages.</p>
+<p>You can locate additional error messages using the procedure in <a href="GUID-6EBA48D9-F5FB-4AE1-9573-937ABE9EBD0C.htm#GUID-FEF60571-5FBB-42CE-A7FD-4F498350AF06" title="From the Oracle Java Cloud Service Console, you can view status messages to determine why an attempt to create a service instance failed.">Finding Status Messages for Oracle Java Cloud Service Instances</a>.</p>
+</li>
+</ol>
+<p>The most common sources of failure when creating a service instance include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Timeout errors</p>
+</li>
+<li>
+<p>SSH connection isssues</p>
+</li>
+<li>
+<p>Incorrect credentials</p>
+</li>
+<li>
+<p>Database listener down</p>
+</li>
+<li>
+<p>Exceeding resource quota (for trial subscriptions)</p>
+</li>
+</ul>
+<p>The following solutions apply to problems creating service instances for Oracle Java Cloud Service.</p>
+<div class="section" id="GUID-48386DD4-8E26-4979-8FD0-98FFE0DA5600__IRECEIVEANERRORMESSAGESTATINGTHATTH-52359671">
+<p class="subhead1">I receive a database connectivity error message</p>
+</div>
+<!-- class="section" -->
+<p>You might not be able to create an Oracle Java Cloud Service instance because the <code class="codeph">oracle</code> user does not have a password on <span>Oracle Database Cloud Service</span> instances. To modify the properties of the <code class="codeph">oracle</code> users so that the password does not expire, see <a class="olink CSDBI3473" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=E70959-01&amp;id=CSDBI3473">Problems Creating Instances</a> in <cite><span><cite>Using Oracle Database Cloud Service</cite></span></cite>.</p>
+<div class="section" id="GUID-48386DD4-8E26-4979-8FD0-98FFE0DA5600__CJAJGCGG">
+<p class="subhead1">I cannot create a service when I have many service instances</p>
+</div>
+<!-- class="section" -->
+<p>Your account might not have enough compute quota to create the service instance.</p>
+<p>If you have instances you do not need, delete them. If you need all your service instances, contact Oracle Sales and Services to buy more quota for your account.</p>
+<div class="section" id="GUID-48386DD4-8E26-4979-8FD0-98FFE0DA5600__CJAJGAHG">
+<p class="subhead1">I cannot create a service instance, even after waiting for an hour</p>
+</div>
+<!-- class="section" -->
+<p>If service creation fails after one hour, the system might be experiencing a heavy load, and resources are not yet available.</p>
+<p>Wait before you try again to create the service. If the problem persists, contact Oracle Support Services.</p>
+<div class="section" id="GUID-48386DD4-8E26-4979-8FD0-98FFE0DA5600__ICANNOTCREATEANINSTANCEWHENTHEINSTA-0BB00E7C">
+<p class="subhead1">I cannot create a service instance when the service instance name is not unique</p>
+</div>
+<!-- class="section" -->
+<p>Oracle Java Cloud Service instance creation can fail if the name you choose for the new service instance is identical to the name of another service instance, including a failed service instance. Also, the Oracle Java Cloud Service instance name cannot be the same as the name of an <span>Database Cloud Service</span> instance.</p>
+<p>After an attempt to create an Oracle Java Cloud Service instance fails, Oracle Java Cloud Service may require some time to remove items that were created during the attempt. If the new and failed service instance names are identical, a naming conflict may occur and the attempt to create the new service instance may fail.</p>
+<div class="infobox-note" id="GUID-48386DD4-8E26-4979-8FD0-98FFE0DA5600__GUID-982B2D1D-AF7B-4F6D-B829-E79AE693F64E">
+<p class="notep1">Note:</p>
+As a best practice, always ensure that your Oracle Java Cloud Service instance names are unique.</div>
+<div class="section" id="GUID-48386DD4-8E26-4979-8FD0-98FFE0DA5600__ICANCREATEANINSTANCEBUTTHECOHERENCE-1B1E90F2">
+<p class="subhead1">I can create a service instance but the Coherence Data Tier failed to create</p>
+</div>
+<!-- class="section" -->
+<p>Delete the service instance. Wait before you try again to create the service instance. If the problem persists, contact Oracle Support Services.</p>
+<div class="section" id="GUID-48386DD4-8E26-4979-8FD0-98FFE0DA5600__INMYTRIALSUBSCRIPTIONTHEDETAILSMESS-17603798">
+<p class="subhead1">In my trial subscription, the Details message states &ldquo;Failed to create Compute resources&rdquo;</p>
+<p>If you have an Oracle Java Cloud Service trial subscription, a common reason instance creation fails is exceeding the amount of compute resources allocated to your account. If you exceed your quota of compute resources, new services will not be created. To determine whether you have a quota breach, open the Dashboard to find a message such as <code class="codeph">1 Ongoing Quota Breach</code>.</p>
+<p>If you have exceeded your quota, delete unused or unwanted service instances. Once you delete the service instances, wait. The quota mechanism takes some to recalculate. After waiting, try again to create a new service instance.</p>
+<p>There is no quota for paid subscriptions.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-DDAA8721-472D-4062-8379-AD0A0A883BC9.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-00B3BAA0-AE0C-4909-A777-38475EBD38FE.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

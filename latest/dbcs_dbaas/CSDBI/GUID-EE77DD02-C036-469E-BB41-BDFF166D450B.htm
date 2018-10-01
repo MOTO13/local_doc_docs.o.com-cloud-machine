@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Migrating from Oracle Database 12c CDB to Oracle Database 12c in the Cloud</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can migrate Oracle Database 12c CDB databases from on-premises to Oracle Database 12c databases in Oracle Database Cloud using several different methods." />
+<meta name="dcterms.created" content="2017-06-19T15:22:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Database Cloud Service" />
+<meta name="dcterms.identifier" content="E72994-04" />
+<meta name="dcterms.isVersionOf" content="CSDBI" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-811C8688-EBA5-454A-A35B-8F06DCC4D271.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-FC3576DD-5DA8-4204-9B2C-6F1399B55DB2.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSDBI.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSDBI.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSDBI.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-EE77DD02-C036-469E-BB41-BDFF166D450B"></a> <span id="PAGE" style="display:none;">85/190</span> <!-- End Header -->
+<h1 id="CSDBI-GUID-EE77DD02-C036-469E-BB41-BDFF166D450B" class="sect1">Migrating from Oracle Database 12c CDB to Oracle Database 12c in the Cloud</h1>
+<div>
+<p>You can migrate Oracle Database 12c CDB databases from on-premises to Oracle Database 12c databases in Oracle Database Cloud using several different methods.</p>
+<p>The applicability of some of the migration methods depends on the on-premises database&rsquo;s database character set and platform endian format.</p>
+<p>If you have not already done so, determine the database character set of your on-premises database, and determine the endian format of the platform your on-premises database resides on. Use this information to help you choose an appropriate method.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Data Pump Conventional Export/Import</p>
+<p>This method can be used regardless of the endian format and database character set of the on-premises database.</p>
+<p>For the steps this method entails, see <a href="GUID-4B5A41CF-A129-4281-BD8A-12A42968C600.htm#GUID-4B5A41CF-A129-4281-BD8A-12A42968C600" title="You can use this method regardless of the endian format and database character set of the on-premises database.">Data Pump Conventional Export/Import</a>.</p>
+</li>
+<li>
+<p>Data Pump Transportable Tablespace</p>
+<p>This method can be used only if the on-premises platform is little endian, and the database character sets of your on-premises database and <span>Oracle Database Cloud Service</span> database are compatible.</p>
+<p>For the steps this method entails, see <a href="GUID-0DE88C28-08D7-4DB2-A996-4878B926E14A.htm#GUID-0DE88C28-08D7-4DB2-A996-4878B926E14A" title="You can use this method only if the on-premises platform is little endian, and the database character sets of your on-premises database and Oracle Database Cloud Service database are compatible.">Data Pump Transportable Tablespace</a>.</p>
+</li>
+<li>
+<p>RMAN Transportable Tablespace with Data Pump</p>
+<p>This method can be used only if the on-premises platform is little endian, and the database character sets of your on-premises database and <span>Oracle Database Cloud Service</span> database are compatible.</p>
+<p>For the steps this method entails, see <a href="GUID-3EB5D26C-F992-4E37-91FD-A47F027C265A.htm#GUID-3EB5D26C-F992-4E37-91FD-A47F027C265A" title="You can use this method only if the on-premises platform is little endian, and the database character sets of your on-premises database and Oracle Database Cloud Service database are compatible.">RMAN Transportable Tablespace with Data Pump</a>.</p>
+</li>
+<li>
+<p>RMAN <code class="codeph">CONVERT</code> Transportable Tablespace with Data Pump</p>
+<p>This method can be used only if the database character sets of your on-premises database and <span>Oracle Database Cloud Service</span> database are compatible.</p>
+<p>This method is similar to the Data Pump Transportable Tablespace method, with the addition of the RMAN <code class="codeph">CONVERT</code> command to enable transport between platforms with different endianness. Query <code class="codeph">V$TRANSPORTABLE_PLATFORM</code> to determine if the on-premises database platform supports cross-platform tablespace transport and to determine the endian format of the platform. The Oracle Database Cloud platform is little-endian format.</p>
+<p>For the steps this method entails, see <a href="GUID-AB361ED1-47DD-4078-A9E6-5089624D7C7B.htm#GUID-AB361ED1-47DD-4078-A9E6-5089624D7C7B" title="You can use this method only if the database character sets of your on-premises database and Oracle Database Cloud Service database are compatible.">RMAN CONVERT Transportable Tablespace with Data Pump</a>.</p>
+</li>
+<li>
+<p>RMAN Cross-Platform Transportable Tablespace Backup Sets</p>
+<p>This method can be used only if the database character sets of your on-premises database and <span>Oracle Database Cloud Service</span> database are compatible.</p>
+<p>For the steps this method entails, see <a href="GUID-A48A5429-CC29-43E2-83A5-8676302C91D8.htm#GUID-A48A5429-CC29-43E2-83A5-8676302C91D8" title="You can use this method only if the database character sets of your on-premises database and Oracle Database Cloud Service database are compatible.">RMAN Cross-Platform Transportable Tablespace Backup Sets</a>.</p>
+</li>
+<li>
+<p>Data Pump Full Transportable</p>
+<p>This method can be used only if the database character sets of your on-premises database and <span>Oracle Database Cloud Service</span> database are compatible.</p>
+<p>For the steps this method entails, see <a href="GUID-B553F50F-C5A7-43EC-913F-E9C5278EB684.htm#GUID-B553F50F-C5A7-43EC-913F-E9C5278EB684" title="You can use this method only if the source database release version is 11.2.0.3 or later, and the database character sets of your on-premises database and Oracle Database Cloud Service database are compatible.">Data Pump Full Transportable</a>.</p>
+</li>
+<li>
+<p>Unplugging/Plugging (CDB)</p>
+<p>This method can be used only if the on-premises platform is little endian, and the on-premises database and <span>Database Cloud Service</span> database have compatible database character sets and national character sets.</p>
+<p>For the steps this method entails, see <a href="GUID-A10B0819-0EC0-4B1D-B4BA-7A570CCF9A9F.htm" title="You can use this method only if the on-premises platform is little endian, and the on-premises database and Database Cloud Service database have compatible database character sets and national character sets.">Unplugging/Plugging a PDB</a>.</p>
+</li>
+<li>
+<p>Remote Cloning (CDB)</p>
+<p>This method can be used only if the on-premises platform is little endian, the on-premises database release is 12.1.0.2 or higher, and the on-premises database and <span>Database Cloud Service</span> database have compatible database character sets and national character sets.</p>
+<p>For the steps this method entails, see <a href="GUID-01F75B4A-B57F-4C41-9FE9-0710E8DBBC90.htm" title="You can use this method only if the on-premises platform is little endian, the on-premises database release is 12.1.0.2 or higher, and the on-premises database and Database Cloud Service database have compatible database character sets and national character sets.">Remote Cloning a PDB</a>.</p>
+</li>
+<li>
+<p>RMAN Cross-Platform Transportable PDB</p>
+<p>This method can be used only if the on-premises platform is little endian, and the database character sets of your on-premises database and <span>Oracle Database Cloud Service</span> database are compatible.</p>
+<p>For the steps this method entails, see <a href="GUID-B72BB3F3-4815-4745-B58F-45DE88A0460E.htm" title="This method can be used only if the on-premises platform is little endian, and the database character sets of your on-premises database and Oracle Database Cloud Service database are compatible.">RMAN Cross-Platform Transportable PDB</a>.</p>
+</li>
+<li>
+<p>SQL Developer and SQL*Loader to Migrate Selected Objects</p>
+<p>You can use SQL Developer to create a cart into which you add selected objects to be loaded into your Oracle Database 12c database on the cloud. In this method, you use SQL*Loader to load the data into your cloud database.</p>
+<p>For the steps this method entails, see <a href="GUID-5B30EC77-26FB-4252-8D95-CE923E0553C8.htm" title="You can use SQL Developer to create a cart into which you add selected objects to be loaded into an Oracle Database 12c database on Oracle Database Cloud Service.">SQL Developer and SQL*Loader to Migrate Selected Objects</a>.</p>
+</li>
+<li>
+<p>SQL Developer and <code class="codeph">INSERT</code> Statements to Migrate Selected Objects</p>
+<p>You can use SQL Developer to create a cart into which you add selected objects to be loaded into your Oracle Database 12c database on the cloud. In this method, you use SQL <code class="codeph">INSERT</code> statements to load the data into your cloud database.</p>
+<p>For the steps this method entails, see <a href="GUID-4B26453A-73D8-44C4-AD44-A2F86626E64F.htm" title="You can use SQL Developer to create a cart into which you add selected objects to be loaded into an Oracle Database 12c database on Oracle Database Cloud Service.">SQL Developer and INSERT Statements to Migrate Selected Objects</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="GUID-811C8688-EBA5-454A-A35B-8F06DCC4D271.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="GUID-FC3576DD-5DA8-4204-9B2C-6F1399B55DB2.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

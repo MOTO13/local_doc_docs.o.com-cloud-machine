@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Deleting a Backup on OPCM</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can delete a backup that you no longer require to release storage or prevent an Oracle Java Cloud Service instance from being restored from the backup." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-20AE6F0E-FF15-47F2-9CBF-7B9CC31BBFCA.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-7472FA73-3CD6-4E2F-A78F-BB715A57CC5B.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-61B5685C-2D85-48A8-82CA-4150069E7A08"></a> <span id="PAGE" style="display:none;">68/131</span> <!-- End Header -->
+<a id="JSCUG3188"></a>
+<h1 id="JSCUG-GUID-61B5685C-2D85-48A8-82CA-4150069E7A08" class="sect1">Deleting a Backup <span>on <span>OPCM</span></span></h1>
+<div>
+<p>You can delete a backup that you no longer require to release storage or prevent an Oracle Java Cloud Service instance from being restored from the backup.</p>
+<div class="section">
+<p>As an alternative to deleting a backup, you can move it from block storage to your NFS backup location. See <a href="../JSRMR/Archiving%20a%20Backup%20for%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html" target="_blank">Downloading or Archiving a Backup for a Service Instance</a> in <span><cite>REST API for Oracle Java Cloud Service</cite></span>.</p>
+<div class="infobox-note" id="GUID-61B5685C-2D85-48A8-82CA-4150069E7A08__GUID-E213CCF7-D6DA-4A42-B67C-8C7EE1CAF8B8">
+<p class="notep1">Note:</p>
+<p>You can&rsquo;t delete a full backup with linked incremental backups without deleting the incremental backups. If the backup you&rsquo;re deleting has linked incremental backups, Oracle Java Cloud Service asks if you want to delete both the full backup and its linked incremental backups. For more information, see <a href="GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300.htm#GUID-777806D0-C9C6-4D7E-86A1-6B4B7FA7667A" title="What a backup contains depends on whether the backup is an incremental backup or a full backup.">Contents of a Backup</a>.</p>
+</div>
+</div>
+<!-- class="section" -->
+<div class="section">To delete a backup:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Navigate to the <span class="wintitle">Backup</span> page.</span>
+<ol>
+<li class="substepexpand"><span>Access the Oracle Java Cloud Service console.</span></li>
+<li class="substepexpand"><span>Click the name of the service instance for which you want to delete a backup.</span>
+<div>The <span class="wintitle">Oracle Java Cloud Service Instance</span> page is displayed with the <span class="bold">Overview</span> tile in focus, displaying detailed information about the service instance.</div>
+</li>
+<li class="substepexpand"><span>Click the <span class="bold">Administration</span> tile.</span>
+<div>The <span class="wintitle">Oracle Java Cloud Service Instance</span> page is refreshed with the <span class="bold">Administration</span> tile in focus.</div>
+</li>
+<li class="substepexpand"><span>Click the <span class="bold">Backup</span> tab.</span>
+<div>The <span class="wintitle">Backup</span> page is displayed.</div>
+</li>
+</ol>
+</li>
+<li class="stepexpand"><span>From the <img width="14" height="15" src="img/GUID-D0E9F26E-D981-4A6C-9C9C-E53E732DCDA2-default.gif" alt="menu icon" title="menu icon" /> menu for the backup in the list of available backups, choose <span class="bold">Delete</span>.</span></li>
+<li class="stepexpand"><span>When prompted, confirm that you want to delete the backup.</span>
+<div>If the backup you&rsquo;re deleting has linked incremental backups, Oracle Java Cloud Service asks if you want to delete both the full backup and its linked incremental backups.</div>
+</li>
+</ol>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-20AE6F0E-FF15-47F2-9CBF-7B9CC31BBFCA.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-7472FA73-3CD6-4E2F-A78F-BB715A57CC5B.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

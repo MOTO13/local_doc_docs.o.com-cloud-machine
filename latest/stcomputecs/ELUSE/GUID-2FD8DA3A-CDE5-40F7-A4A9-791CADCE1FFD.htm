@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Creating a Storage Volume on the External Storage Appliance</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="If you have a subscription to the Database Cloud Service (DBCS), a tenant user can create storage volumes on the external storage appliance." />
+<meta name="dcterms.created" content="2018-05-15T07:53:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E62130-11" />
+<meta name="dcterms.isVersionOf" content="ELUSE" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-F7F6918E-FD9D-453F-BCEC-EB3876195519.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-62F264D7-E350-4E83-B242-8EA163BE6E51.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUSE.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-2FD8DA3A-CDE5-40F7-A4A9-791CADCE1FFD"></a> <span id="PAGE" style="display:none;">69/81</span> <!-- End Header -->
+<h1 id="ELUSE-GUID-2FD8DA3A-CDE5-40F7-A4A9-791CADCE1FFD" class="sect1">Creating a Storage Volume on the External Storage Appliance</h1>
+<div>
+<p>If you have a subscription to the Database Cloud Service (DBCS), a tenant user can create storage volumes on the external storage appliance.</p>
+<div class="section">An external storage appliance is included in the DBCS subscription of Oracle Public Cloud Machine. You can create storage volumes on this external storage appliance to attach to Oracle Compute Cloud Service instances.
+<div class="infobox-note" id="GUID-2FD8DA3A-CDE5-40F7-A4A9-791CADCE1FFD__GUID-9C7AC832-F653-4593-B3AF-74A27351BD98">
+<p class="notep1">Note:</p>
+You can run all the commands in this procedure as a tenant user.</div>
+<div class="infobox-note" id="GUID-2FD8DA3A-CDE5-40F7-A4A9-791CADCE1FFD__GUID-B758B520-BA2E-4D1A-A9BB-7D56CD77E875">
+<p class="notep1">Note:</p>
+You can only run single node Oracle databases on Oracle Compute Cloud Service on OPCM using customer-owned externally connected storage over 10 GbE. The&nbsp;internal&nbsp;block storage of OPCM&nbsp;cannot be used for databases running on Oracle Compute Cloud Service instances.</div>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Verify that the machine has the required storage properties on the external storage appliance:</span>
+<ol>
+<li class="substepexpand"><span>Verify that the <code class="codeph">latency</code> storage property exists by running the <code class="codeph">list property</code> command:</span>
+<div><code class="codeph">oracle-compute list property storage /oracle/public/storage/latency</code></div>
+<div>
+<p><span class="bold">Sample output:</span></p>
+<pre dir="ltr">
+uri                                                                  name                                     description
+https://api/property/storage/oracle/public/storage/latency           /oracle/public/storage/latency           Latency Optimized
+</pre></div>
+</li>
+<li class="substepexpand"><span>Verify that the <code class="codeph">throughput</code> storage property exists by running the <code class="codeph">list property</code> command:</span>
+<div><code class="codeph">oracle-compute list property storage /oracle/public/storage/throughput</code></div>
+<div>
+<p><span class="bold">Sample output:</span></p>
+<pre dir="ltr">
+uri                                                                  name                                     description
+https://api/property/storage/oracle/public/storage/throughput        /oracle/public/storage/throughput        Throughput Optimized
+</pre></div>
+</li>
+</ol>
+</li>
+<li class="stepexpand"><span>In the orchestration JSON section that specifies the storage volume, set the <code class="codeph">properties</code> field to <code class="codeph">/oracle/public/storage/latency</code> or <code class="codeph">/oracle/public/storage/throughput</code>.</span>
+<div>
+<p><span class="bold">Example:</span></p>
+<pre dir="ltr">
+{
+    "objects": [
+        {
+            "name": "/mytenant/public/data",
+            "<span class="bold">properties</span>": [
+                "<span class="bold">/oracle/public/storage/throughput</span>"
+            ],
+            "size": "50G",
+            "bootable": "False"
+        }
+    ],
+    "label": "data",
+    "obj_type": "storage/volume"
+}
+</pre>
+<p>In this orchestration, you are creating a storage volume of size 50 GB called <code class="codeph">/mytenant/public/data</code> on the external storage appliance with throughput write-bias.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Add the orchestration to your tenant using the <code class="codeph">add orchestration</code> command:</span>
+<div><code class="codeph">oracle-compute add orchestration <span class="variable">filename</span></code>
+<p>For more information, see <span class="italic"><a class="olink ELUCL-GUID-2FD61692-F7E8-48A0-8170-8524F09CD56C" target="_blank" href="../ELUCL/GUID-2FD61692-F7E8-48A0-8170-8524F09CD56C.htm#ELUCL-GUID-2FD61692-F7E8-48A0-8170-8524F09CD56C">CLI Reference for Oracle Compute Cloud Service</a></span>.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Start the orchestration using the <code class="codeph">start orchestration</code> command:</span>
+<div><code class="codeph">oracle-compute start orchestration <span class="variable">OrchestrationName</span></code>
+<p>The <code class="codeph">OrchestrationName</code> should be the hierarchal name of the orchestration specified in the JSON file.</p>
+<p>For more information, see <span class="italic"><a class="olink ELUCL-GUID-2FD61692-F7E8-48A0-8170-8524F09CD56C" target="_blank" href="../ELUCL/GUID-2FD61692-F7E8-48A0-8170-8524F09CD56C.htm#ELUCL-GUID-2FD61692-F7E8-48A0-8170-8524F09CD56C">CLI Reference for Oracle Compute Cloud Service</a></span>.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="sect2"><a id="GUID-CCB599D2-4AD9-4AD6-8DA4-252F02303A5A"></a>
+<h2 id="ELUSE-GUID-CCB599D2-4AD9-4AD6-8DA4-252F02303A5A" class="sect2">Mapping Database Storage Volumes to Storage Properties</h2>
+<div>
+<p>If you are deploying a legacy database instance on an Oracle Compute Cloud Service instance, Oracle recommends that you follow this mapping when creating storage volumes.</p>
+<div class="section">
+<p>The following table lists the storage volumes created for a DBCS instance and the storage property that is associated with each volume. Oracle recommends that you similarly map the storage volumes for your instance.</p>
+<div class="tblformal" id="GUID-CCB599D2-4AD9-4AD6-8DA4-252F02303A5A__GUID-CA6E3DF7-6B59-49AE-980F-A42701A9EAD9">
+<table class="cellalignment110" summary="This table lists the various storage volumes created by a DBCS instance in the first column. The second column describes the storage volume. The last column lists the storage property that should be associated with the volume.">
+<thead>
+<tr class="cellalignment96">
+<th class="cellalignment117" id="d13832e170">Storage Volume</th>
+<th class="cellalignment117" id="d13832e173">Description</th>
+<th class="cellalignment117" id="d13832e176">Storage Property</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment96">
+<td class="cellalignment96" id="d13832e181" headers="d13832e170">
+<p><code class="codeph">boot</code></p>
+</td>
+<td class="cellalignment96" headers="d13832e181 d13832e173">
+<p>Boot disk that hosts the Operating System.</p>
+</td>
+<td class="cellalignment96" headers="d13832e181 d13832e176">
+<p><code class="codeph">/oracle/public/storage/latency</code></p>
+</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment96" id="d13832e193" headers="d13832e170">
+<p><code class="codeph">bits</code></p>
+</td>
+<td class="cellalignment96" headers="d13832e193 d13832e173">
+<p>Hosts the Oracle database software.</p>
+</td>
+<td class="cellalignment96" headers="d13832e193 d13832e176">
+<p><code class="codeph">/oracle/public/storage/latency</code></p>
+</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment96" id="d13832e205" headers="d13832e170">
+<p><code class="codeph">redo</code></p>
+</td>
+<td class="cellalignment96" headers="d13832e205 d13832e173">
+<p>Hosts the redo log.</p>
+</td>
+<td class="cellalignment96" headers="d13832e205 d13832e176">
+<p><code class="codeph">/oracle/public/storage/latency</code></p>
+</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment96" id="d13832e217" headers="d13832e170">
+<p><code class="codeph">data</code></p>
+</td>
+<td class="cellalignment96" headers="d13832e217 d13832e173">
+<p>Used for the files of the database.</p>
+</td>
+<td class="cellalignment96" headers="d13832e217 d13832e176">
+<p><code class="codeph">/oracle/public/storage/throughput</code></p>
+</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment96" id="d13832e229" headers="d13832e170">
+<p><code class="codeph">fra</code></p>
+</td>
+<td class="cellalignment96" headers="d13832e229 d13832e173">
+<p>Used for flash recovery.</p>
+</td>
+<td class="cellalignment96" headers="d13832e229 d13832e176">
+<p><code class="codeph">/oracle/public/storage/throughput</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="example" id="GUID-CCB599D2-4AD9-4AD6-8DA4-252F02303A5A__GUID-5EC6E9C1-F69F-4D75-9BCA-5532A4B65EDE">
+<p><span class="bold">Sample JSON files for a Database Deployment:</span></p>
+<p>In the following samples, we will use two orchestrations to deploy a database:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Resources orchestration: Deploys the storage volumes and instance for the database.</p>
+</li>
+<li>
+<p>Launch plan orchestration: Links and launches the objects.</p>
+</li>
+</ul>
+<p><span class="bold">Sample Resources Orchestration</span></p>
+<pre dir="ltr">
+{
+  "name": "/tenant1/public/sample1-resources",
+  "oplans": [
+    {
+      "objects": [
+        {
+          "imagelist_entry": "1",
+          "name": "/tenant1/public/sample1-boot",
+          "imagelist": "/oracle/public/linux6_16.3.1_64",
+          "properties": [
+            "/oracle/public/storage/default"
+          ],
+          "size": "32GB",
+          "bootable": "True"
+        }
+      ],
+      "label": "sample1-boot",
+      "obj_type": "storage/volume"
+    },
+    {
+      "objects": [
+        {
+          "name": "/tenant1/public/sample1-data",
+          "properties": [
+            "/oracle/public/storage/throughput"
+          ],
+          "size": "25G",
+          "bootable": "False"
+        }
+      ],
+      "label": "sample1-data",
+      "obj_type": "storage/volume"
+    },
+    {
+      "objects": [
+        {
+          "name": "/tenant1/public/sample1-fra",
+          "properties": [
+            "/oracle/public/storage/throughput"
+          ],
+          "size": "10G",
+          "bootable": "False"
+        }
+      ],
+      "label": "sample1-fra",
+      "obj_type": "storage/volume"
+    },
+    {
+      "objects": [
+        {
+          "name": "/tenant1/public/sample1-bits",
+          "properties": [
+            "/oracle/public/storage/latency"
+          ],
+          "size": "30G",
+          "bootable": "False"
+        }
+      ],
+      "label": "sample1-bits",
+      "obj_type": "storage/volume"
+    },
+    {
+      "objects": [
+        {
+          "name": "/tenant1/public/sample1-redo",
+          "properties": [
+            "/oracle/public/storage/latency"
+          ],
+          "size": "10G",
+          "bootable": "False"
+        }
+      ],
+      "label": "sample1-redo",
+      "obj_type": "storage/volume"
+    }
+  ],
+  "description": "Resources orch for instance sample1"
+}
+</pre></div>
+<!-- class="example" -->
+<div class="example" id="GUID-CCB599D2-4AD9-4AD6-8DA4-252F02303A5A__GUID-0C9A5081-9260-43A3-A793-F6DCDB6FE1DD">
+<p><span class="bold">Sample Launch Plan JSON</span></p>
+<pre dir="ltr">
+{
+  "relationships": [],
+  "name": "/tenant1/public/sample1-launch",
+  "oplans": [
+    {
+      "ha_policy": "monitor",
+      "objects": [
+        {
+          "instances": [
+            {
+              "name": "/tenant1/public/sample1_instname",
+              "virtio": "false",
+              "storage_attachments": [
+                {
+                  "index": 1,
+                  "volume": "/tenant1/public/sample1-boot"
+                },
+                {
+                  "index": 2,
+                  "volume": "/tenant1/public/sample1-bits"
+                },
+                {
+                  "index": 3,
+                  "volume": "/tenant1/public/sample1-data"
+                },
+                {
+                  "index": 4,
+                  "volume": "/tenant1/public/sample1-fra"
+                },
+                {
+                  "index": 5,
+                  "volume": "/tenant1/public/sample1-redo"
+                }
+              ],
+              "tags": [],
+              "boot_order": [
+                1
+              ],
+              "shape": "oc3",
+              "label": "sample1",
+              "networking": {
+                "net0": {
+                  "vnet": "/tenant1/public/eoib-network",
+                  "options": {
+                    "default_gateway": "true",
+                    "hostname": "sample1",
+                    "dns": {
+                      "search_domains": "example.com",
+                      "servers": "10.10.10.7,10.10.10.8"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "relationships": []
+        }
+      ],
+      "label": "sample1-launch",
+      "obj_type": "launchplan"
+    }
+  ],
+  "description": "Orchestration for instance sample1"
+}
+</pre></div>
+<!-- class="example" --></div>
+</div>
+<div class="sect2"><a id="GUID-36F97048-BDFB-46EB-B9CF-C144C27BA5B5"></a>
+<h2 id="ELUSE-GUID-36F97048-BDFB-46EB-B9CF-C144C27BA5B5" class="sect2">Creating a Storage Volume on the External Storage Appliance Using the CLI or API</h2>
+<div>
+<div class="section">
+<p>You can create a storage volume on the external storage volume using the CLI by specifying one of the following storage properties:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>To create a storage volume on the <code class="codeph">latency</code> pool of the external storage appliance, use the following command:</p>
+<p><code class="codeph">oracle-compute add storagevolume <span class="variable">name</span> <span class="variable">size</span> <span class="bold">/oracle/public/storage/latency</span> [--description] [--source_storagevolume_name] [--imagelist] [--imagelist_entry] [--tags] [--quota]</code></p>
+</li>
+<li>
+<p>To create a storage volume on the <code class="codeph">throughput</code> pool of the external storage appliance, use the following command:</p>
+<p><code class="codeph">oracle-compute add storagevolume <span class="variable">name</span> <span class="variable">size</span> <span class="bold">/oracle/public/storage/throughput</span> [--description] [--source_storagevolume_name] [--imagelist] [--imagelist_entry] [--tags] [--quota]</code></p>
+</li>
+</ul>
+<p>For more information, see <span class="italic"><a class="olink ELUCL-GUID-2FD61692-F7E8-48A0-8170-8524F09CD56C" target="_blank" href="../ELUCL/GUID-2FD61692-F7E8-48A0-8170-8524F09CD56C.htm#ELUCL-GUID-2FD61692-F7E8-48A0-8170-8524F09CD56C">CLI Reference for Oracle Compute Cloud Service</a></span>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p>To create a storage volume using the API, use the <code class="codeph">POST https://api.oc.example.com/storage/volume/</code> method. In the <code class="codeph">properties</code> parameter, specify either <code class="codeph">/oracle/public/storage/latency</code> or <code class="codeph">/oracle/public/storage/throughput</code>.</p>
+<p>For more information, see <span class="italic"><a class="olink ELUAP-GUID-A5AFEE46-BD9C-4C99-BCAC-F38876F991DC" target="_blank" href="../ELUAP/GUID-A5AFEE46-BD9C-4C99-BCAC-F38876F991DC.htm#ELUAP-GUID-A5AFEE46-BD9C-4C99-BCAC-F38876F991DC">REST API Reference for Oracle Compute Cloud Service</a></span>.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment95">
+<tr>
+<td class="cellalignment102">
+<table class="cellalignment100">
+<tr>
+<td class="cellalignment99"><a href="GUID-F7F6918E-FD9D-453F-BCEC-EB3876195519.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment99"><a href="GUID-62F264D7-E350-4E83-B242-8EA163BE6E51.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment104">
+<table class="cellalignment98">
+<tr>
+<td class="cellalignment99"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment99"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

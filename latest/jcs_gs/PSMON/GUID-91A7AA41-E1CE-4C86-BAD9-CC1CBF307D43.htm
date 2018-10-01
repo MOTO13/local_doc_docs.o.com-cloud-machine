@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Exploring the Platform Services SSH Access Page</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="View and manage public SSH keys across multiple platform cloud services by using the SSH Access tab on the Platform Services page." />
+<meta name="dcterms.created" content="2017-04-07T09:41:03Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using the Platform Services Console on Oracle Public Cloud Machine" />
+<meta name="dcterms.identifier" content="E86640-01" />
+<meta name="dcterms.isVersionOf" content="PSMON" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-BD5460C0-125E-49A0-9566-89E3591BA7BE.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-E37BA79F-A12C-47F4-B39B-B4788831CF03.htm" title="Next" type="text/html" />
+<link rel="alternate" href="PSMON.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="PSMON.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="PSMON.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-91A7AA41-E1CE-4C86-BAD9-CC1CBF307D43"></a> <span id="PAGE" style="display:none;">20/21</span> <!-- End Header -->
+<h1 id="PSMON-GUID-91A7AA41-E1CE-4C86-BAD9-CC1CBF307D43" class="sect1">Exploring the Platform Services SSH Access Page</h1>
+<div>
+<p>View and manage public SSH keys across multiple platform cloud services by using the SSH Access tab on the Platform Services page.</p>
+<div class="section">
+<p class="subhead1">SSH Access Page Functionality</p>
+<div class="p">The SSH Access Page is divided into two sections:
+<ul style="list-style-type: disc;">
+<li>
+<p>The Search Activity pane, from which you can specify the service name and type when you want to see SSH information for a specific service or group of services.</p>
+</li>
+<li>
+<p>The Results pane, which shows the results of the search operation. You can limit the number of results to return, per page, to five, ten 50 or 100.</p>
+</li>
+</ul>
+For instructions on using this page, see <a href="GUID-E37BA79F-A12C-47F4-B39B-B4788831CF03.htm" title="Use the SSH Access page to view and add SSH public keys for the Platform Services instances in your identity domain.">Managing SSH Access for Service Instances in an Identity Domain</a>.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">What You See on the SSH Access Page</p>
+</div>
+<!-- class="section" -->
+<div class="p">
+<div class="tblformal" id="GUID-91A7AA41-E1CE-4C86-BAD9-CC1CBF307D43__GUID-FEF6B81C-B834-49C1-B64B-A58A4C54FBE8">
+<table class="cellalignment95" summary="Description of each element on the SSH Access page">
+<thead>
+<tr class="cellalignment81">
+<th class="cellalignment105" id="d3929e51">Element</th>
+<th class="cellalignment105" id="d3929e53">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment81">
+<td class="cellalignment81" id="d3929e57" headers="d3929e51">
+<p>Service Name</p>
+</td>
+<td class="cellalignment81" headers="d3929e57 d3929e53">
+<p>Filters the results to include SSH keys only for the specified service instance. You can enter a full or partial service instance name.</p>
+</td>
+</tr>
+<tr class="cellalignment81">
+<td class="cellalignment81" id="d3929e64" headers="d3929e51">
+<p>Service Type</p>
+</td>
+<td class="cellalignment81" headers="d3929e64 d3929e53">
+<p>Filters the results to include SSH keys only for instances of the specified service type. The default value is the current cloud service.</p>
+</td>
+</tr>
+<tr class="cellalignment81">
+<td class="cellalignment81" id="d3929e71" headers="d3929e51">
+<p><span class="bold">Search</span></p>
+</td>
+<td class="cellalignment81" headers="d3929e71 d3929e53">
+<p>Searches for SSH keys by applying the filters specified by the Service Name and Service Type fields, and displays the results in the table.</p>
+</td>
+</tr>
+<tr class="cellalignment81">
+<td class="cellalignment81" id="d3929e79" headers="d3929e51">
+<p>Results per page</p>
+</td>
+<td class="cellalignment81" headers="d3929e79 d3929e53">
+<p>Specifies the number of results you want to view per page. The default value is <code class="codeph">10</code>.</p>
+</td>
+</tr>
+<tr class="cellalignment81">
+<td class="cellalignment81" id="d3929e89" headers="d3929e51">
+<p><img width="38" height="36" src="img/GUID-AC7B1916-799B-4E74-9255-AD02259B66FD-default.png" alt="Expansion Arrow" title="Expansion Arrow" /></p>
+</td>
+<td class="cellalignment81" headers="d3929e89 d3929e53">
+<p>Displays a description of an item in the results table. Clicking on the resulting downward arrow hides the description.</p>
+</td>
+</tr>
+<tr class="cellalignment81">
+<td class="cellalignment81" id="d3929e98" headers="d3929e51">
+<p>Service Name</p>
+</td>
+<td class="cellalignment81" headers="d3929e98 d3929e53">
+<p>Shows the name of the service instance.</p>
+</td>
+</tr>
+<tr class="cellalignment81">
+<td class="cellalignment81" id="d3929e105" headers="d3929e51">
+<p>Service Type</p>
+</td>
+<td class="cellalignment81" headers="d3929e105 d3929e53">
+<p>Shows the type of cloud service for this instance.</p>
+</td>
+</tr>
+<tr class="cellalignment81">
+<td class="cellalignment81" id="d3929e112" headers="d3929e51">
+<p>Last Update</p>
+</td>
+<td class="cellalignment81" headers="d3929e112 d3929e53">
+<p>Shows the most recent time the SSH keys for this instance were updated. When the credential update is in progress, an hourglass icon is displayed before the date/time, indicating that the service instance is in Maintenance mode.</p>
+</td>
+</tr>
+<tr class="cellalignment81">
+<td class="cellalignment81" id="d3929e119" headers="d3929e51">
+<p>Actions</p>
+</td>
+<td class="cellalignment81" headers="d3929e119 d3929e53">
+<p>Click the <span class="bold">Add New Key</span> button to add a new SSH public key to this instance. This button is grayed out when the key is in the process of being added..</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment80">
+<tr>
+<td class="cellalignment92">
+<table class="cellalignment85">
+<tr>
+<td class="cellalignment84"><a href="GUID-BD5460C0-125E-49A0-9566-89E3591BA7BE.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment84"><a href="GUID-E37BA79F-A12C-47F4-B39B-B4788831CF03.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment94">
+<table class="cellalignment83">
+<tr>
+<td class="cellalignment84"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment84"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment84"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

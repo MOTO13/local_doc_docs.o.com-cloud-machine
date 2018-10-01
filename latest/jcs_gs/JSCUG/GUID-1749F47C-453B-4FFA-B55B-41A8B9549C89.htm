@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Connecting to a Managed Server VM</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can access a Managed Server VM through a secure shell (SSH) utility by using the Administration Server VM as a proxy." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-D03CE18B-E2D2-4F6F-AF60-696AE8256B01.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-BB107CDA-CB78-4E3B-B17C-A607A4869715.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-1749F47C-453B-4FFA-B55B-41A8B9549C89"></a> <span id="PAGE" style="display:none;">35/131</span> <!-- End Header -->
+<h1 id="JSCUG-GUID-1749F47C-453B-4FFA-B55B-41A8B9549C89" class="sect1">Connecting to a Managed Server VM</h1>
+<div>
+<p>You can access a Managed Server VM through a secure shell (SSH) utility by using the Administration Server VM as a proxy.</p>
+<div class="section">
+<p>Alternatively, you can connect to the Administration Server VM with SSH, and from within this SSH session start another SSH connection to the Managed Server VM.</p>
+<p>To connect to a Managed Server VM by using the proxy method:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Navigate to the Oracle Java Cloud Service Console.</span></li>
+<li class="stepexpand"><span>Click the service instance associated with the VM you want to access.</span>
+<div>The Oracle Java Cloud Service Instance page is displayed with the Overview tile in focus, displaying detailed information about the service instance.</div>
+</li>
+<li class="stepexpand"><span>From the list of virtual machines, identify the following information:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>The <span class="bold">Public IP</span> address of the Administration Server VM (used as the proxy).</p>
+</li>
+<li>
+<p>The <span class="bold">Host</span> name of the Managed Server VM to which you want to connect.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>On UNIX and UNIX-like platforms, use the standard OpenSSH command (<code class="codeph">ssh</code> ) to connect to the VM as the <code class="codeph">opc</code> user.</span>
+<div>Provide the following:
+<ul style="list-style-type: disc;">
+<li>
+<p>The path to the private key corresponding to the public key used at the time of provisioning.</p>
+</li>
+<li>
+<p>The Administration Server VM&rsquo;s public IP address.</p>
+</li>
+<li>
+<p>The Managed Server VM&rsquo;s host name.</p>
+</li>
+</ul>
+<p>in this format:</p>
+<pre dir="ltr">
+ssh -i <span class="variable">path_to_private_key</span> -o ProxyCommand="ssh -W %h:%p -i <span class="variable">path_to_private_key</span> opc@<span class="variable">admin_server_VM_IP_address</span>" opc@<span class="variable">managed_server_host_name</span>
+</pre></div>
+<div>For example:
+<pre dir="ltr">
+ssh -i /home/myuser/id_rsa -o ProxyCommand="ssh -W %h:%p -i /home/myuser/id_rsa opc@111.111.111.111" opc@myjcs-wls-2
+</pre></div>
+</li>
+<li class="stepexpand"><span>On Windows, you can use PuTTY, an open source networking client for the Windows platform, to connect to the VM as the <code class="codeph">opc</code> user.</span>
+<div>
+<p>To download PuTTY, go to <a href="http://www.putty.org/" target="_blank">http://www.putty.org/</a> and click the&nbsp;<span class="bold">You can download PuTTY here</span>&nbsp;link.</p>
+</div>
+<ol>
+<li class="substepexpand"><span>Launch PuTTY. If your private key was defined with a passphrase, then you must use the <code class="codeph">pageant</code> utility to launch PuTTY:</span>
+<div>
+<pre dir="ltr">
+pageant "<span class="variable">path to private key</span>" -c "<span class="variable">path to putty</span>"
+</pre></div>
+<div>For example:
+<pre dir="ltr">
+c:\PuTTY\pageant "c:\oracle\rsa.ppk" -c "c:\PuTTY\putty"
+</pre></div>
+</li>
+<li class="substepexpand"><span>If you used <code class="codeph">pageant</code> to start PuTTY, enter the passphrase for the private key.</span>
+<div>
+<p>The PuTTY Configuration window is displayed, showing the Session panel.</p>
+</div>
+</li>
+<li class="substepexpand"><span>In the&nbsp;<span class="bold">Host Name (or IP address)</span> field, enter the host name of the Managed Server VM.</span></li>
+<li class="substepexpand"><span>In the Category tree, expand <span class="bold">Connection</span> if necessary and then click <span class="bold">Data</span>.</span></li>
+<li class="substepexpand"><span>In the <span class="bold">Auto-login username</span> field, enter&nbsp;<code class="codeph">opc</code>.</span></li>
+<li class="substepexpand"><span>Confirm that the&nbsp;<span class="bold">When username is not specified</span> option is set to <span class="bold">Prompt</span>.</span></li>
+<li class="substepexpand"><span>In the Category tree, click&nbsp;<span class="bold">Connection &gt; Proxy</span>.</span></li>
+<li class="substepexpand"><span>Set <span class="bold">Proxy type</span> to <span class="bold">Local</span>.</span></li>
+<li class="substepexpand"><span>In the <span class="bold">Proxy hostname</span> field, enter the IP address of the Administration Server VM.</span></li>
+<li class="substepexpand"><span>Set the <span class="bold">Port</span> to 22.</span></li>
+<li class="substepexpand"><span>In the&nbsp;<span class="bold">Telnet command or local proxy command</span>&nbsp;field, enter the following value:</span>
+<div>
+<pre dir="ltr">
+plink -i "<span class="variable">path to private key</span>" opc@%proxyhost -nc %host:%port
+</pre></div>
+<div>For example:
+<pre dir="ltr">
+plink -i "c:\\oracle\\rsa.ppk" opc@%proxyhost -nc %host:%port
+</pre></div>
+</li>
+<li class="substepexpand"><span>In the Category tree, expand&nbsp;<span class="bold">Connection &gt; SSH</span>, and then click&nbsp;<span class="bold">Auth</span>.</span></li>
+<li class="substepexpand"><span>Under <span class="bold">Private key file for authentication</span>, click <span class="bold">Browse</span>.</span></li>
+<li class="substepexpand"><span>Navigate to and select your private key file. Then click <span class="bold">Open</span>.</span>
+<div>
+<div class="infobox-note" id="GUID-1749F47C-453B-4FFA-B55B-41A8B9549C89__GUID-EE656689-4562-4488-881A-5186556595D8">
+<p class="notep1">Note:</p>
+The&nbsp;<code class="codeph">.ppk</code>&nbsp;file extension indicates that the private key is in PuTTY's proprietary format. You must use a key of this format when using PuTTY. If you have to use a key saved in a different format, see the PuTTY documentation.</div>
+</div>
+</li>
+<li class="substepexpand"><span>Click&nbsp;<span class="bold">Open</span>&nbsp;to open the connection to the VM.</span>
+<div>
+<div class="infobox-note" id="GUID-1749F47C-453B-4FFA-B55B-41A8B9549C89__GUID-78A8E34E-9BF6-496F-9E65-76B3A20D97F9">
+<p class="notep1">Note:</p>
+You can optionally save this session configuration by navigating to the Session panel and clicking <span class="bold">Save</span>. When you open PuTTY the next time, you can load this configuration by selecting it and clicking&nbsp;<span class="bold">Load</span>.</div>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+<div class="section">When the VM command line appears, you can use any resource accessible from the VM.</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-D03CE18B-E2D2-4F6F-AF60-696AE8256B01.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-BB107CDA-CB78-4E3B-B17C-A607A4869715.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

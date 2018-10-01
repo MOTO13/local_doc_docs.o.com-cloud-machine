@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Public Cloud Machine REST API Reference for Oracle Compute Cloud Service - Contents</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-07T05:33:13Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine REST API Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E68443-07" />
+<meta name="dcterms.isVersionOf" content="ELUAP" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"   src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"   src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Next" href="title.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUAP.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript"  src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript"  src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript"  src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript"  src="../dcommon/js/foundation.min.js"></script>
+<script type="application/javascript"  src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript"  src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript"  src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="application/javascript"  src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="application/javascript"  src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="application/javascript"  src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="application/javascript"  src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<span id="PAGE" style="display:none;">1/40</span> <!-- End Header -->
+<h1 class="toc">Contents</h1>
+<h2 class="tocheader"><a href="title.htm">Title and Copyright Information</a></h2>
+<h2 class="tocheader"><a href="GUID-F3A1F5A3-5228-4618-AD46-DD4698A2D465.htm#GUID-F3A1F5A3-5228-4618-AD46-DD4698A2D465">Preface</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-F3A1F5A3-5228-4618-AD46-DD4698A2D465.htm#GUID-477B5DBA-6876-47F2-BD74-A279D2999A65">Audience</a></li>
+<li><a href="GUID-F3A1F5A3-5228-4618-AD46-DD4698A2D465.htm#GUID-C628ADF9-5776-4C8D-BA5D-A07350EEB762">Documentation Accessibility</a></li>
+<li><a href="GUID-F3A1F5A3-5228-4618-AD46-DD4698A2D465.htm#GUID-9A21DA73-DAAB-45D6-8752-69477A3ABFAC">Related Documents</a></li>
+<li><a href="GUID-F3A1F5A3-5228-4618-AD46-DD4698A2D465.htm#GUID-6FDEE5EF-1246-45E2-8BB7-5D222CF2831E">Conventions</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-A5AFEE46-BD9C-4C99-BCAC-F38876F991DC.htm#GUID-A5AFEE46-BD9C-4C99-BCAC-F38876F991DC"><span class="secnum">1</span> Getting Started with Oracle Compute Cloud Service REST API</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-A5AFEE46-BD9C-4C99-BCAC-F38876F991DC.htm#GUID-F3B6C5A7-7CAA-4139-AB96-D242B5518AC0">Roles of API Users</a></li>
+<li><a href="GUID-A5AFEE46-BD9C-4C99-BCAC-F38876F991DC.htm#GUID-BDE7703A-33BC-4000-8694-DEB9938D84A9">Oracle Compute Resource URIs</a></li>
+<li><a href="GUID-A5AFEE46-BD9C-4C99-BCAC-F38876F991DC.htm#GUID-A723D697-A39D-4BAE-A288-CB66A84DEDE8">Authenticating API Calls</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-A06DABC3-C214-455A-9264-9946B712FD8E.htm#GUID-A06DABC3-C214-455A-9264-9946B712FD8E"><span class="secnum">2</span> Overview of Oracle Compute REST API</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-A06DABC3-C214-455A-9264-9946B712FD8E.htm#GUID-A5FB61AB-6355-4881-A3BB-BF00650320C6">About REST API Requests and Responses</a></li>
+<li><a href="GUID-A06DABC3-C214-455A-9264-9946B712FD8E.htm#GUID-186AB88E-CD46-489B-A7D1-1661BE85A12C">Supported HTTP Methods</a></li>
+<li><a href="GUID-A06DABC3-C214-455A-9264-9946B712FD8E.htm#GUID-76AC05DE-1F60-4F87-BE04-0CE7DE31453A">About Object Names</a></li>
+<li><a href="GUID-A06DABC3-C214-455A-9264-9946B712FD8E.htm#GUID-DE1A3B76-E57A-4E97-A9AF-E3FA157BBA47">REST API Request Headers</a></li>
+<li><a href="GUID-A06DABC3-C214-455A-9264-9946B712FD8E.htm#GUID-8DEE73A0-236B-4DF9-9781-E80F0C67ED95">HTTP Response Codes</a></li>
+<li><a href="GUID-A06DABC3-C214-455A-9264-9946B712FD8E.htm#GUID-1F5C6A8F-DF05-440B-8AFF-914628330700">Invoking REST API Calls Using cURL</a></li>
+<li><a href="GUID-A06DABC3-C214-455A-9264-9946B712FD8E.htm#GUID-62EA9656-0C52-4B7A-9D5F-E57D2245C964">Summary of REST APIs, Alphabetical by Resource Path</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-961D93C4-7CD7-4327-AF56-C3712328960C.htm#GUID-961D93C4-7CD7-4327-AF56-C3712328960C"><span class="secnum">3</span> Authentication</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-961D93C4-7CD7-4327-AF56-C3712328960C.htm#GUID-0DC990C5-C441-46C8-A635-F3725CDBCDB6">Authenticate User</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-E11D9ED0-2E92-42D6-9E89-F21463626929.htm"><span class="secnum">4</span> Tenant Management</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-8AA87837-9271-43F2-8816-EBE541667E8F.htm#GUID-8AA87837-9271-43F2-8816-EBE541667E8F">Viewing Tenants</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-8AA87837-9271-43F2-8816-EBE541667E8F.htm#GUID-B2265594-9BD2-4800-ABE7-24F6E2693D3C">Discover Tenants</a></li>
+<li><a href="GUID-8AA87837-9271-43F2-8816-EBE541667E8F.htm#GUID-CB44A58B-7713-458F-ABCA-36D50E12814E">Get Tenant</a></li>
+<li><a href="GUID-8AA87837-9271-43F2-8816-EBE541667E8F.htm#GUID-820D9BFB-4B9A-488A-B6EC-D2044CCECCBE">List Tenants</a></li>
+</ul>
+</li>
+<li><a href="GUID-9BC3863B-E843-4D9E-AA66-0788AD200446.htm#GUID-9BC3863B-E843-4D9E-AA66-0788AD200446">Viewing Tenant Quotas</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-9BC3863B-E843-4D9E-AA66-0788AD200446.htm#GUID-A071467E-BA1A-4EDD-A62E-2281B58FEC25">Discover Quota</a></li>
+<li><a href="GUID-9BC3863B-E843-4D9E-AA66-0788AD200446.htm#GUID-F99D7275-0DAA-42FB-923E-F8DD598CD046">Get Quota</a></li>
+<li><a href="GUID-9BC3863B-E843-4D9E-AA66-0788AD200446.htm#GUID-A4A531FD-1F44-45FB-9E5A-6E1C8A42DC1B">List Quota</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="tocheader"><a href="GUID-ADDF21C4-2B79-4A5D-A3AA-1068218CFC15.htm"><span class="secnum">5</span> User Management</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE.htm#GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE">Managing Users</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE.htm#GUID-C8811EEF-B17B-4EC2-AF6C-F4E3A94A38CC">Add User</a></li>
+<li><a href="GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE.htm#GUID-A7373707-66C7-44A5-B0EA-1B02FE81C439">Delete User</a></li>
+<li><a href="GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE.htm#GUID-DC01DD44-753F-42E7-A0B9-E07AA66C55A5">Update User</a></li>
+<li><a href="GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE.htm#GUID-F09B4C03-7B44-4ADB-99A4-1527688E2492">Retrieve User Details</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE.htm#GUID-3C90ED44-BD17-4AE4-A001-19464F0B940E">Discover Users</a></li>
+<li><a href="GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE.htm#GUID-DC774431-C003-4579-984C-D602DE1EAA88">Get User</a></li>
+<li><a href="GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE.htm#GUID-29BFB645-3C27-4C95-BA0F-50A4D08C00A0">List Users</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="tocheader"><a href="GUID-137014B6-4301-418F-BB31-BA3097E1263A.htm"><span class="secnum">6</span> Instance and Snapshot Management</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F.htm#GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F">Managing Instances</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F.htm#GUID-63071B98-0A6A-47CE-89C0-B51FC4D16C54">Delete Instance</a></li>
+<li><a href="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F.htm#GUID-7821A655-2E87-43D0-915A-01CFF64E1EFC">Restart Instance</a></li>
+<li><a href="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F.htm#GUID-347B528A-9605-4DED-B010-C007A7E00682">Shutdown Instance</a></li>
+<li><a href="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F.htm#GUID-B23D4251-A59F-483D-B20E-73AA19059FA4">Update Instance</a></li>
+<li><a href="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F.htm#GUID-6C518741-900D-4F0A-86E6-C23749373F82">Retrieve Instance Details</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F.htm#GUID-AE6E8CCF-4C9C-4B1B-94B4-4E1473E544B0">Discover Instances</a></li>
+<li><a href="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F.htm#GUID-5C33CE18-2229-41BB-9F43-F1C9DC9728B2">Get Instance</a></li>
+<li><a href="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F.htm#GUID-030CBED5-18D3-45EF-831F-D7E80D43A2C5">List Instances</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="GUID-FF5BD712-A4BB-4095-8279-7C5914D61F98.htm#GUID-FF5BD712-A4BB-4095-8279-7C5914D61F98">Managing Snapshots</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-FF5BD712-A4BB-4095-8279-7C5914D61F98.htm#GUID-8F131F01-2994-403D-8C3A-6079997E46CD">Add Snapshot</a></li>
+<li><a href="GUID-FF5BD712-A4BB-4095-8279-7C5914D61F98.htm#GUID-9B016346-6502-4818-911A-DE558E71E690">Delete Snapshot Request</a></li>
+<li><a href="GUID-FF5BD712-A4BB-4095-8279-7C5914D61F98.htm#GUID-25EC4636-385D-4D47-B43F-5E0341554894">Retrieve Snapshot Details</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-FF5BD712-A4BB-4095-8279-7C5914D61F98.htm#GUID-D374D651-4256-4041-9A93-90E86B23E10C">Discover Snapshots</a></li>
+<li><a href="GUID-FF5BD712-A4BB-4095-8279-7C5914D61F98.htm#GUID-E023B221-6053-4457-BEBE-04EC99CE3A7F">Get Snapshot</a></li>
+<li><a href="GUID-FF5BD712-A4BB-4095-8279-7C5914D61F98.htm#GUID-6CD759D9-AE61-433B-8380-0FDC96DB4633">List Snapshots</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="GUID-26C605BD-B81A-43A2-AE12-5021CD755271.htm#GUID-26C605BD-B81A-43A2-AE12-5021CD755271">Managing SSH Keys</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-26C605BD-B81A-43A2-AE12-5021CD755271.htm#GUID-9D4368E3-E0D2-4F83-A137-1D3AF7232BBA">Add Public SSH Key</a></li>
+<li><a href="GUID-26C605BD-B81A-43A2-AE12-5021CD755271.htm#GUID-682F50D9-8658-43BA-ABCE-BB829C9A7426">Delete SSH Key</a></li>
+<li><a href="GUID-26C605BD-B81A-43A2-AE12-5021CD755271.htm#GUID-23446B2A-576D-4A2A-BB52-798C09ED4925">Update SSH Key</a></li>
+<li><a href="GUID-26C605BD-B81A-43A2-AE12-5021CD755271.htm#GUID-C1C9601A-598B-47CF-86F9-484FB933A534">Retrieve SSH Key Details</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-26C605BD-B81A-43A2-AE12-5021CD755271.htm#GUID-55EE4E3E-65E3-472C-89F5-F38CB74AC565">Discover SSH Keys</a></li>
+<li><a href="GUID-26C605BD-B81A-43A2-AE12-5021CD755271.htm#GUID-8175AEA3-63CB-46EF-85DD-828686D4E8B9">Get SSH Key</a></li>
+<li><a href="GUID-26C605BD-B81A-43A2-AE12-5021CD755271.htm#GUID-F4E05FA0-FC3E-4786-AD15-B19EF4C3AFEA">List SSH Keys</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2">Managing Orchestrations</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-30E44239-C118-47EB-804F-51BC05BD0C9C">Add Orchestration</a></li>
+<li><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-1E3C9A82-45F2-48CC-8D9C-A23DBCFE64B0">Delete Orchestration</a></li>
+<li><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-759F1FEC-D560-4B99-9BB5-63AB468720B9">Start Orchestration</a></li>
+<li><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-CEB31289-E78B-4C8D-BCE1-637286A3B002">Stop Orchestration</a></li>
+<li><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-E683B6EB-FDCB-4F03-A5CF-E1A996ED8D02">Shutdown Orchestration</a></li>
+<li><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-121678A9-B0CC-42DE-8FBB-35138DC53089">Restart Orchestration</a></li>
+<li><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-A34F8325-BEBF-4032-8382-41054556D15C">Update Orchestration</a></li>
+<li><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-DF823D62-9411-4BC3-A92B-69B91B2ED391">Retrieve Orchestration Details</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-E9220819-EEBF-487E-9AFF-A41A34CB2121">Discover Orchestrations</a></li>
+<li><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-F1B955EF-93C2-4857-946C-92148B6274FF">Get Orchestration</a></li>
+<li><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-46C26071-498E-489E-AECF-1CA04EC38AFB">List Orchestrations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="GUID-91DB5163-DF72-44F2-A08E-FD58BBF6BFAD.htm#GUID-91DB5163-DF72-44F2-A08E-FD58BBF6BFAD">Viewing Shapes</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-91DB5163-DF72-44F2-A08E-FD58BBF6BFAD.htm#GUID-7F406CF9-03B7-4E76-8BDE-6CA9085AEC05">Discover Shapes</a></li>
+<li><a href="GUID-91DB5163-DF72-44F2-A08E-FD58BBF6BFAD.htm#GUID-876299C4-AFD7-4B45-8881-5AF8E5F13448">Get Shape</a></li>
+<li><a href="GUID-91DB5163-DF72-44F2-A08E-FD58BBF6BFAD.htm#GUID-81860484-5A34-4E3C-8C9B-343D9BAA06A4">List Shapes</a></li>
+</ul>
+</li>
+<li><a href="GUID-7D04FD96-6C9F-49BC-A2FC-2C840A3C9BA0.htm">Connecting to an Instance VNC Console</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-82519A3B-9046-44B1-B06C-72F8333CB529.htm">Get Instance VNC Key</a></li>
+<li><a href="GUID-C75AB797-233B-4B29-9623-F2FA453B2632.htm">Get JNLP file to Access VNC</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="tocheader"><a href="GUID-25D36D45-7AD2-459D-97FC-DBAF99D23FC0.htm"><span class="secnum">7</span> Template Management</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1.htm#GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1">Managing Machine Images</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1.htm#GUID-34448BB4-CE6A-429C-9DFB-011E413D660E">Add Machine Image</a></li>
+<li><a href="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1.htm#GUID-79C52D99-AF57-4B51-BF56-DCC27C9A8DA0">Delete Machine Image</a></li>
+<li><a href="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1.htm#GUID-5242A2D5-730A-481E-9EFD-2AC957B71E74">Retrieve Machine Image Details</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1.htm#GUID-E64EC663-159C-4E8C-9DCD-0B3F38C1F7B9">Discover Machine Images</a></li>
+<li><a href="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1.htm#GUID-54D0A071-CC72-498C-90F8-1725D0341FE6">Get Machine Image</a></li>
+<li><a href="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1.htm#GUID-22E2257E-1246-4A21-B172-93AA1526C809">List Machine Images</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="GUID-3E374B99-1E54-4435-B541-52526F61E535.htm#GUID-3E374B99-1E54-4435-B541-52526F61E535">Managing Image Lists</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-3E374B99-1E54-4435-B541-52526F61E535.htm#GUID-A8983158-8FBF-45AF-981D-F23D6886712B">Add Image List</a></li>
+<li><a href="GUID-3E374B99-1E54-4435-B541-52526F61E535.htm#GUID-9D12E993-7C2F-464E-8AC2-D6B6BFC7354E">Delete Image List</a></li>
+<li><a href="GUID-3E374B99-1E54-4435-B541-52526F61E535.htm#GUID-186FE522-5C8F-4002-AE07-DA04547DADB8">Update Image List</a></li>
+<li><a href="GUID-3E374B99-1E54-4435-B541-52526F61E535.htm#GUID-62AFF150-9FF7-484A-8F38-60D6CF64D756">Retrieve Image List Details</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-3E374B99-1E54-4435-B541-52526F61E535.htm#GUID-A35F4FCD-DAEA-4331-AB9A-80D62EDB0E3E">Discover Image Lists</a></li>
+<li><a href="GUID-3E374B99-1E54-4435-B541-52526F61E535.htm#GUID-21BEB358-C36D-4CD1-B4B3-8F25E13B1D6E">Get Image List</a></li>
+<li><a href="GUID-3E374B99-1E54-4435-B541-52526F61E535.htm#GUID-CA5A6F7F-1368-4D64-8A1D-779CBCD3239F">List Image Lists</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="GUID-D946E8D4-12A6-4F7B-979D-BB7272196F48.htm#GUID-D946E8D4-12A6-4F7B-979D-BB7272196F48">Managing Image List Entries</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-D946E8D4-12A6-4F7B-979D-BB7272196F48.htm#GUID-A2865ECB-0936-448C-9AD5-38451ADB11D4">Add Image List Entry</a></li>
+<li><a href="GUID-D946E8D4-12A6-4F7B-979D-BB7272196F48.htm#GUID-5CD4E836-FF49-4982-A2F4-242E17BC14E3">Delete Image List Entry</a></li>
+<li><a href="GUID-D946E8D4-12A6-4F7B-979D-BB7272196F48.htm#GUID-E8EBDCC2-A761-4605-BBEA-4814CC72DCFA">Retrieve Image List Entry Details</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-D946E8D4-12A6-4F7B-979D-BB7272196F48.htm#GUID-8BBF4F3A-01C5-4BF1-A378-A493DD638165">Get Image List Entry</a></li>
+<li><a href="GUID-D946E8D4-12A6-4F7B-979D-BB7272196F48.htm#GUID-483DED3E-5C26-41BB-B9D5-26417D30CE50">List Image List Entries</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="tocheader"><a href="GUID-D8F7D6B8-1DEC-4CDE-A65E-5130348E8FD6.htm"><span class="secnum">8</span> Site Information</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-54832933-814B-4A04-AEB8-8DE4181331DE.htm#GUID-54832933-814B-4A04-AEB8-8DE4181331DE">Accessing Site Information</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-54832933-814B-4A04-AEB8-8DE4181331DE.htm#GUID-6D6C9669-325F-4EA3-BAD2-34CF623BEEB8">Get Site Information</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="tocheader"><a href="GUID-F02212F3-0770-4A2E-B205-C32570719E69.htm"><span class="secnum">9</span> Storage Management</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-70490BA2-D367-4ED5-8C91-3291DDE22133.htm#GUID-70490BA2-D367-4ED5-8C91-3291DDE22133">Managing Storage Volumes</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-70490BA2-D367-4ED5-8C91-3291DDE22133.htm#GUID-1F21207E-5467-4DBA-9AE1-1E28DD303E50">Add Storage Volume</a></li>
+<li><a href="GUID-70490BA2-D367-4ED5-8C91-3291DDE22133.htm#GUID-A1A86DB9-90A2-47E7-A645-0BA2D0D1BD1F">Delete Storage Volume</a></li>
+<li><a href="GUID-70490BA2-D367-4ED5-8C91-3291DDE22133.htm#GUID-7F23D4D3-788F-44E5-BB6D-A2726AD887FB">Update Storage Volume</a></li>
+<li><a href="GUID-70490BA2-D367-4ED5-8C91-3291DDE22133.htm#GUID-85843E15-8A46-41BF-952B-BDA80F9D653D">Retrieve Storage Volume Details</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-70490BA2-D367-4ED5-8C91-3291DDE22133.htm#GUID-D9C6804E-1529-4758-A823-818E7AD7F232">Discover Storage Volumes</a></li>
+<li><a href="GUID-70490BA2-D367-4ED5-8C91-3291DDE22133.htm#GUID-E4771C4C-E6AF-4E97-9AE6-3D2DCB30CF92">Get Storage Volume</a></li>
+<li><a href="GUID-70490BA2-D367-4ED5-8C91-3291DDE22133.htm#GUID-9E73EB06-7908-485F-AB7B-CB7204EB2E95">List Storage Volumes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="GUID-A3D9830B-2E39-4D88-8E69-4CC3E3ABF864.htm#GUID-A3D9830B-2E39-4D88-8E69-4CC3E3ABF864">Managing Storage Attachments</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-A3D9830B-2E39-4D88-8E69-4CC3E3ABF864.htm#GUID-24FD0302-D45C-4BF9-B0E3-C479618D3AFB">Add Storage Attachment</a></li>
+<li><a href="GUID-A3D9830B-2E39-4D88-8E69-4CC3E3ABF864.htm#GUID-3F22033D-75B1-4402-83BE-F1C39AB3B2CC">Delete Storage Attachment</a></li>
+<li><a href="GUID-A3D9830B-2E39-4D88-8E69-4CC3E3ABF864.htm#GUID-20698082-DE99-4BFF-A283-CD98A14D1014">Retrieve Storage Attachment Details</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-A3D9830B-2E39-4D88-8E69-4CC3E3ABF864.htm#GUID-F1089F91-EDAF-4CCB-970A-83FF1023B2B2">Discover Storage Attachments</a></li>
+<li><a href="GUID-A3D9830B-2E39-4D88-8E69-4CC3E3ABF864.htm#GUID-37126328-183C-48D1-9BE0-8AB214B7757E">Get Storage Attachment</a></li>
+<li><a href="GUID-A3D9830B-2E39-4D88-8E69-4CC3E3ABF864.htm#GUID-7533081C-0744-4AD3-9AD7-2A28D0505232">List Storage Attachments</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="GUID-D3BE68B7-BB65-4CCA-A4E6-06A80C9B9BD0.htm">Viewing Storage Properties</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-9A4683EB-9647-44B8-A01C-B4B85D1713B4.htm">Discover Property Storage</a></li>
+<li><a href="GUID-C90812E4-BDB4-4F9A-A3E8-89DCE75E8B25.htm">Get Property Storage</a></li>
+<li><a href="GUID-A16DDE28-6E7C-4908-9D16-6D8D54216D01.htm">List Property Storage</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="tocheader"><a href="GUID-8CBE0F4E-E376-4C93-BB56-884836273168.htm"><span class="secnum">10</span> Network Management</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-807812AE-1FAE-4F72-9CC3-34E59BF309F8.htm#GUID-807812AE-1FAE-4F72-9CC3-34E59BF309F8">Viewing Service Networks</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-807812AE-1FAE-4F72-9CC3-34E59BF309F8.htm#GUID-DCE0592B-16A8-4429-9BD7-B6ECEEE5AD3D">Discover Service Networks</a></li>
+<li><a href="GUID-807812AE-1FAE-4F72-9CC3-34E59BF309F8.htm#GUID-3AB57E13-86AC-43AF-921D-77C46CA3F677">Get Service Network</a></li>
+<li><a href="GUID-807812AE-1FAE-4F72-9CC3-34E59BF309F8.htm#GUID-D23F07E3-F057-4AE2-ADE4-0D0393E43E73">List Service Networks</a></li>
+</ul>
+</li>
+<li><a href="GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99.htm#GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99">Managing vEthernet</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99.htm#GUID-30AAA5FD-AE05-4346-8E26-3EA0D5513223">Add vEthernet</a></li>
+<li><a href="GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99.htm#GUID-D18F5763-8B43-4195-9055-64D8B352D932">Delete vEthernet</a></li>
+<li><a href="GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99.htm#GUID-AE2E83B4-4D0D-44AD-8494-36DA0F3CEFCE">Update vEthernet</a></li>
+<li><a href="GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99.htm#GUID-6F126509-5391-43B9-B921-1CDB8E8FD88D">Retrieve vEthernet Details</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99.htm#GUID-DE4B16D5-709B-4F65-A595-E87A24BA8238">Discover vEthernets</a></li>
+<li><a href="GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99.htm#GUID-278C2701-6F36-4637-8504-961715D129AB">List vEthernets</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="GUID-4B893928-826E-4227-B82D-00C928C0BD58.htm#GUID-4B893928-826E-4227-B82D-00C928C0BD58">Managing vNET</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-4B893928-826E-4227-B82D-00C928C0BD58.htm#GUID-34D07AF0-8BB1-4487-BC8A-C97E77CFD8ED">Add vNET</a></li>
+<li><a href="GUID-4B893928-826E-4227-B82D-00C928C0BD58.htm#GUID-1AEE160B-1C2E-419A-90A4-9F700DDF9275">Delete vNET</a></li>
+<li><a href="GUID-4B893928-826E-4227-B82D-00C928C0BD58.htm#GUID-522DC63E-3389-479B-8D62-BF5E194D766E">Update vNet</a></li>
+<li><a href="GUID-4B893928-826E-4227-B82D-00C928C0BD58.htm#GUID-7200FEF9-4E3C-468B-9105-A136A8B2472B">Retrieve vNET Details</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-4B893928-826E-4227-B82D-00C928C0BD58.htm#GUID-2B9676A5-DED1-4F19-ABB3-6B4771AA96F9">Discover vNET</a></li>
+<li><a href="GUID-4B893928-826E-4227-B82D-00C928C0BD58.htm#GUID-84671973-4ED7-43B6-869B-D97F29006B57">Get vNET</a></li>
+<li><a href="GUID-4B893928-826E-4227-B82D-00C928C0BD58.htm#GUID-661E3FDD-70AF-40E5-848B-0A4720CE9427">List vNET</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="GUID-FF435881-D472-44A0-84D9-B72692659D5B.htm#GUID-FF435881-D472-44A0-84D9-B72692659D5B">Viewing vNET Access</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-FF435881-D472-44A0-84D9-B72692659D5B.htm#GUID-521AC637-383E-4E49-9188-B1F17B635939">Discover vNET Access</a></li>
+<li><a href="GUID-FF435881-D472-44A0-84D9-B72692659D5B.htm#GUID-8C1A747A-6B4D-48A6-841E-DC54B8946C25">List vNET Access</a></li>
+<li><a href="GUID-FF435881-D472-44A0-84D9-B72692659D5B.htm#GUID-73665A1E-1C49-4788-BF12-6918C8F057AF">Get vNET Access</a></li>
+</ul>
+</li>
+<li><a href="GUID-759A67D1-F616-4825-B657-F8A14DDB86ED.htm#GUID-759A67D1-F616-4825-B657-F8A14DDB86ED">Managing vNET Reservations</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-759A67D1-F616-4825-B657-F8A14DDB86ED.htm#GUID-A5107AC3-6C26-4C56-9A39-CCD20B840999">Add vNET Reservation</a></li>
+<li><a href="GUID-759A67D1-F616-4825-B657-F8A14DDB86ED.htm#GUID-E4502BC4-CA59-410C-86C8-1E9C817C5B8C">Delete vNET Reservation</a></li>
+<li><a href="GUID-759A67D1-F616-4825-B657-F8A14DDB86ED.htm#GUID-4D853D4C-8056-400B-8820-97661CDA009B">Retrieve vNET Reservation Details</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-759A67D1-F616-4825-B657-F8A14DDB86ED.htm#GUID-1BC5DE11-82F8-43BA-9853-0A4AA0687B72">Discover vNET Reservation</a></li>
+<li><a href="GUID-759A67D1-F616-4825-B657-F8A14DDB86ED.htm#GUID-1AF291BE-1878-4903-99E4-D047CC9BF178">Get vNET Reservation</a></li>
+<li><a href="GUID-759A67D1-F616-4825-B657-F8A14DDB86ED.htm#GUID-42E2BE2F-6659-4468-9FFE-EB5BD7B2FE61">List vNET Reservations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="GUID-348A49EB-2431-46FD-9CB3-8C590E207E9D.htm#GUID-348A49EB-2431-46FD-9CB3-8C590E207E9D">Viewing vCables</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-348A49EB-2431-46FD-9CB3-8C590E207E9D.htm#GUID-D52A82B4-BB12-4ACD-83C5-7AA08ACF817A">Discover vCables</a></li>
+<li><a href="GUID-348A49EB-2431-46FD-9CB3-8C590E207E9D.htm#GUID-C6CDFDA1-7090-4DBD-B6F4-B9B2CAFFCB56">Get vCable</a></li>
+<li><a href="GUID-348A49EB-2431-46FD-9CB3-8C590E207E9D.htm#GUID-BCB69022-5730-425F-A680-C18FC459AB77">List vCables</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<!-- class="ind" -->
+<!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment49">
+<tr>
+<td class="cellalignment59">
+<table class="cellalignment82">
+<tr>
+<td class="cellalignment53"><a href="title.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment61">
+<table class="cellalignment81">
+<tr>
+<td class="cellalignment53"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Viewing vCables</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-07T05:55:01Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine CLI Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E69222-06" />
+<meta name="dcterms.isVersionOf" content="ELUCL" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-759A67D1-F616-4825-B657-F8A14DDB86ED.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-9850711D-F8FE-410F-9FF5-9852CFE8DD5C.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUCL.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-348A49EB-2431-46FD-9CB3-8C590E207E9D"></a> <span id="PAGE" style="display:none;">39/40</span> <!-- End Header -->
+<h1 id="ELUCL-GUID-348A49EB-2431-46FD-9CB3-8C590E207E9D" class="sect1">Viewing vCables</h1>
+<div>
+<div class="section">
+<p>A virtual cable (vCable) is an internal representation of the link between an instance's network interface and a specific network. A vCable is created automatically when an instance is launched and is deleted when the instance is deleted. When a vCable is deleted (on instance termination), entities that depend on them are also deleted.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-348A49EB-2431-46FD-9CB3-8C590E207E9D.htm#GUID-C48B7DB1-E36E-4ED0-91FD-53D1455D0534" title="This command enables you to discover a list of vCables configured in a specific container.">discover vcable</a></p>
+</li>
+<li>
+<p><a href="GUID-348A49EB-2431-46FD-9CB3-8C590E207E9D.htm#GUID-E37F8043-3337-4282-921E-A3D4F0B24F3C" title="This command enables you to retrieve information for a specific vCable.">get vcable</a></p>
+</li>
+<li>
+<p><a href="GUID-348A49EB-2431-46FD-9CB3-8C590E207E9D.htm#GUID-EF48D400-1042-45BE-89DC-96B42EDCB14F" title="This command enables you to retrieve information for vCables in a specific container.">list vcable</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-C48B7DB1-E36E-4ED0-91FD-53D1455D0534"></a>
+<h2 id="ELUCL-GUID-C48B7DB1-E36E-4ED0-91FD-53D1455D0534" class="sect2">discover vcable</h2>
+<div>
+<p>This command enables you to discover a list of vCables configured in a specific container.</p>
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute discover vcable <span class="variable">container</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-C48B7DB1-E36E-4ED0-91FD-53D1455D0534__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for listing all vCables in a container.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d23885e91">Parameter</th>
+<th class="cellalignment26" id="d23885e93">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d23885e97" headers="d23885e91">container</td>
+<td class="cellalignment27" headers="d23885e97 d23885e93">Hierarchical name-space for vCables. For example, <code class="codeph">/mytenant/public/myvcable</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute discover vcable /mytenant/public</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute discover vcable /mytenant/public
+entry
+/mytenant/public/01cb8de3-945f-41b3-8e76-206c0a17c770
+/mytenant/public/030e87f3-b7aa-423b-83ee-c30bbfd2e8a0
+/mytenant/public/06200aa6-3284-4320-a8dc-fbc001e8ace8
+/mytenant/public/0973a377-1542-440b-bf9b-8c8e14b93586
+/mytenant/public/1117e4b7-25b1-4796-b37d-119a623304b9
+/mytenant/public/15e1b187-d739-4d95-9a71-0235774e6779
+/mytenant/public/1d361020-f6a2-4deb-9e2b-d5fd0a5444aa
+/mytenant/public/1e917354-2858-425c-b92f-8a77ef7b8532
+/mytenant/public/2036c074-89f9-4880-a498-d23ba95c6d04
+/mytenant/public/265d1044-ca53-441d-bcf9-afb9a2070bcf
+/mytenant/public/2cbd35fb-05bc-45e7-b194-5b508d669258
+/mytenant/public/2e63136b-7989-426d-93a3-8c63cf5d9e54
+/mytenant/public/302b8248-0fd0-42c7-9776-6c248692854d
+/mytenant/public/32b4c1b1-85c0-4aa7-9766-431ea2fa40a9
+/mytenant/public/3f4647b2-d49d-458e-9a82-253fc22403d9
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-E37F8043-3337-4282-921E-A3D4F0B24F3C"></a>
+<h2 id="ELUCL-GUID-E37F8043-3337-4282-921E-A3D4F0B24F3C" class="sect2">get vcable</h2>
+<div>
+<p>This command enables you to retrieve information for a specific vCable.</p>
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute get vcable <span class="variable">id</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-E37F8043-3337-4282-921E-A3D4F0B24F3C__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for retrieving details of a vCable.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d23885e161">Parameter</th>
+<th class="cellalignment26" id="d23885e163">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d23885e167" headers="d23885e161">id</td>
+<td class="cellalignment27" headers="d23885e167 d23885e163">Unique Id of vCable</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute get vcable /mytenant/public/f818e9bb-251f-476a-aa36-08e8fc6f7707</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute get vcable /mytenant/public/f818e9bb-251f-476a-aa36-08e8fc6f7707 -F id,vethernet
+id                                                           vethernet
+/mytenant/public/f818e9bb-251f-476a-aa36-08e8fc6f7707        /cloud/public/IPoIB-instance-storage
+$
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-EF48D400-1042-45BE-89DC-96B42EDCB14F"></a>
+<h2 id="ELUCL-GUID-EF48D400-1042-45BE-89DC-96B42EDCB14F" class="sect2">list vcable</h2>
+<div>
+<p>This command enables you to retrieve information for vCables in a specific container.</p>
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute list vcable <span class="variable">container</span> [<span class="variable">--vnet</span>] [<span class="variable">--vethernet_id</span>] [<span class="variable">--vethernet_type</span>] [<span class="variable">--id</span>] [<span class="variable">--instance</span>] [<span class="variable">--vethernet</span>]</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-EF48D400-1042-45BE-89DC-96B42EDCB14F__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies parameters and descriptions for listing details of vCables.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d23885e250">Parameter</th>
+<th class="cellalignment26" id="d23885e252">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d23885e256" headers="d23885e250">container</td>
+<td class="cellalignment27" headers="d23885e256 d23885e252">Hierarchical name-space for vCables. For example, <code class="codeph">/mytenant/public/myvcable</code></td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d23885e263" headers="d23885e250">--vnet</td>
+<td class="cellalignment27" headers="d23885e263 d23885e252">(Optional) The path of the vNET used to create the vCable.
+<p>If specified, the vCable listing is scoped to only include vCables linked to the specified vNET.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d23885e270" headers="d23885e250">--vethernet_id</td>
+<td class="cellalignment27" headers="d23885e270 d23885e252">
+<p>(Optional) The vEthernet Id for the vCable. If specified, the vCable listing is scoped to only include vCables with the specified Id. The parameter is always set to -1 for infiniband networks.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d23885e276" headers="d23885e250">--vethernet_type</td>
+<td class="cellalignment27" headers="d23885e276 d23885e252">(Optional) The type of vEthernet for the vCable. Possible values are <code class="codeph">ipoib</code> or <code class="codeph">eoib</code>.
+<p>If specified, the vCable listing will be scoped to only include vCables linked to vEthernets of the specified type.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d23885e289" headers="d23885e250">--id</td>
+<td class="cellalignment27" headers="d23885e289 d23885e252">
+<p>(Optional) Unique identifier of the particular vCable for which you want to retrieve info.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d23885e295" headers="d23885e250">--instance</td>
+<td class="cellalignment27" headers="d23885e295 d23885e252">(Optional) &nbsp;A specific instance you want to list vCables for.
+<p>If specified, the listing will be scoped to only include vCables linked to this specific instance.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d23885e302" headers="d23885e250">--vethernet</td>
+<td class="cellalignment27" headers="d23885e302 d23885e252">(Optional) The path of the vEthernet used to create the vCable.&nbsp;
+<p>If specified, the listing will be scoped to only include vCables linked to this specific vEthernet.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute list vcable /mytenant/public/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+
+oracle-compute list vcable /mytenant/public -Fname,id,address -ftab --instance /mytenant/public/e6a987d4-2ca6-4edb-926a-89858ecc82a9
+id                                                     address
+/mytenant/public/2d4ac3e8-4f5f-4081-a5eb-67a7a5b0c3f8  00:21:f6:b5:19:52, 00:21:f6:75:c6:7d, 10.247.64.56
+/mytenant/public/b1658206-709a-4bcc-9adb-e173ec1d3634  None, 10.196.0.11
+/mytenant/public/fe0598d2-be48-4f0a-a9d0-5286df80300a  None, 192.168.128.25
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-759A67D1-F616-4825-B657-F8A14DDB86ED.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-9850711D-F8FE-410F-9FF5-9852CFE8DD5C.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

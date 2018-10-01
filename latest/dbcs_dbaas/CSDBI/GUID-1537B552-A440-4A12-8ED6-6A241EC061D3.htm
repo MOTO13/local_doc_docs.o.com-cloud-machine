@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Using Oracle DBaaS Monitor</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Oracle DBaaS Monitor provides monitoring and management of the Oracle database and listener on Oracle Database Cloud Service." />
+<meta name="dcterms.created" content="2017-06-19T15:22:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Database Cloud Service" />
+<meta name="dcterms.identifier" content="E72994-04" />
+<meta name="dcterms.isVersionOf" content="CSDBI" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-0C0EB480-DE4B-4BD8-A9D8-12E1EF36E9BF.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-D138FE7B-94A3-4C12-B921-32202E4C447F.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSDBI.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSDBI.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSDBI.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-1537B552-A440-4A12-8ED6-6A241EC061D3"></a> <span id="PAGE" style="display:none;">101/190</span> <!-- End Header -->
+<h1 id="CSDBI-GUID-1537B552-A440-4A12-8ED6-6A241EC061D3" class="sect1"><span class="enumeration_chapter">9</span> Using Oracle DBaaS Monitor</h1>
+<div>
+<p>Oracle DBaaS Monitor provides monitoring and management of the Oracle database and listener on <span>Oracle Database Cloud Service</span>.</p>
+<div class="infobox-note" id="GUID-1537B552-A440-4A12-8ED6-6A241EC061D3__GUID-B67B705B-D52B-4B44-904A-E9E17446DF0B">
+<p class="notep1">Note:</p>
+<p>This section does not apply to database deployments that use Oracle Real Application Clusters. Such deployments do not currently include Oracle DBaaS Monitor.</p>
+</div>
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-D138FE7B-94A3-4C12-B921-32202E4C447F.htm" title="Oracle DBaaS Monitor provides monitoring and management of the Oracle database and listener on Oracle Database Cloud Service.">About Oracle DBaaS Monitor</a></p>
+</li>
+<li>
+<p><a href="GUID-B3A91C63-713B-458B-ABA7-C0DB7B3362DE.htm">Accessing Oracle DBaaS Monitor</a></p>
+</li>
+<li>
+<p><a href="GUID-42C08877-F750-4EE1-A1CE-4407AD71460A.htm" title="On DBaaS Monitor pages, the PDB selector enables you to limit the display of information in Oracle 12c databases. You can also filter what items display in tabular lists.">Filtering the Display on DBaaS Monitor Pages</a></p>
+</li>
+<li>
+<p><a href="GUID-9279825C-5C53-443D-AC5D-74CDB5C7B30D.htm#GUID-9279825C-5C53-443D-AC5D-74CDB5C7B30D" title="You can use DBaaS Monitor to administer the listener, including troubleshooting unknown service name errors.">Administering the Listener</a></p>
+</li>
+<li>
+<p><a href="GUID-30665B4B-750E-43F4-8B0D-4BFA9FC5FD29.htm#GUID-30665B4B-750E-43F4-8B0D-4BFA9FC5FD29" title="You can use DBaaS Monitor to start up and shut down your database instance.">Starting and Stopping the Database Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-8AF785C2-296C-4385-B8E3-440ACF5462D9.htm" title="Initialization parameters configure the database instance, including memory structures, and define locations for database files.">Viewing and Modifying Initialization Parameters</a></p>
+</li>
+<li>
+<p><a href="GUID-A8C93FA5-EC81-48E4-A6B9-8A22C3A705A2.htm" title="You can use DBaaS Monitor to view tablespace and segment space usage.">Viewing Tablespace and Segment Space Usage</a></p>
+</li>
+<li>
+<p><a href="GUID-2282DFBF-4F14-4492-93A0-9ED0FA22C9D4.htm" title="You can use DBaaS Monitor to review the alert log periodically to verify that your database system is operating normally.">Viewing Alert Log Entries and Checking for Errors</a></p>
+</li>
+<li>
+<p><a href="GUID-DB119217-23DC-4B30-9153-98505C68660D.htm">Viewing Real Time SQL Monitor</a></p>
+</li>
+<li>
+<p><a href="GUID-A0A71EFB-FB8F-4466-AD1B-19C8812ACA87.htm" title="You can use DBaaS Monitor to create and drop a pluggable database, open and close a pluggable database, plug in and unplug a pluggable database, and clone a pluggable database.">Administering Pluggable Databases</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="GUID-0C0EB480-DE4B-4BD8-A9D8-12E1EF36E9BF.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="GUID-D138FE7B-94A3-4C12-B921-32202E4C447F.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

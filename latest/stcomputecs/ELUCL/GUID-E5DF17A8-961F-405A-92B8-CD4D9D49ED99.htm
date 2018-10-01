@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Managing vEthernet</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-07T05:55:01Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine CLI Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E69222-06" />
+<meta name="dcterms.isVersionOf" content="ELUCL" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-807812AE-1FAE-4F72-9CC3-34E59BF309F8.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-4B893928-826E-4227-B82D-00C928C0BD58.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUCL.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+                    <script>var w=window;if(w.performance||w.mozPerformance||w.msPerformance||w.webkitPerformance){var d=document;AKSB=w.AKSB||{},AKSB.q=AKSB.q||[],AKSB.mark=AKSB.mark||function(e,_){AKSB.q.push(["mark",e,_||(new Date).getTime()])},AKSB.measure=AKSB.measure||function(e,_,t){AKSB.q.push(["measure",e,_,t||(new Date).getTime()])},AKSB.done=AKSB.done||function(e){AKSB.q.push(["done",e])},AKSB.mark("firstbyte",(new Date).getTime()),AKSB.prof={custid:"322179",ustr:"",originlat:"0",clientrtt:"1",ghostip:"23.212.3.15",ipv6:false,pct:"10",clientip:"45.78.37.67",requestid:"2373ce6",region:"32996",protocol:"",blver:14,akM:"dsca",akN:"ae",akTT:"O",akTX:"1",akTI:"2373ce6",ai:"206465",ra:"false",pmgn:"",pmgi:"",pmp:"",qc:""},function(e){var _=d.createElement("script");_.async="async",_.src=e;var t=d.getElementsByTagName("script"),t=t[t.length-1];t.parentNode.insertBefore(_,t)}(("https:"===d.location.protocol?"https:":"http:")+"//ds-aksb-a.akamaihd.net/aksb.min.js")}</script>
+                    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99"></a> <span id="PAGE" style="display:none;">35/40</span> <!-- End Header -->
+<h1 id="ELUCL-GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99" class="sect1">Managing vEthernet</h1>
+<div>
+<div class="section">A virtual Ethernet (vEthernet) is an IaaS object representing an OSI Layer 2 network, defined by a VLAN ID, switch pair name and e-port. vEthernets serve the purpose to isolate networks for instances run by different departments or business units (tenants).</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99.htm#GUID-7706E76A-5267-4077-BD08-6B8358B7DDA1" title="This command enables you to add a virtual Ethernet to the network.">add vethernet</a></p>
+</li>
+<li>
+<p><a href="GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99.htm#GUID-2729EDE4-69C0-47F3-A1CF-BDC0E41FF8DB" title="This command enables you to delete a virtual Ethernet.">delete vethernet</a></p>
+</li>
+<li>
+<p><a href="GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99.htm#GUID-309BD6AB-7F01-4F8B-A2CC-9BC9C7E12EF0" title="This command enables you to update information for a specific virtual Ethernet.">update vethernet</a></p>
+</li>
+<li>
+<p><a href="GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99.htm#GUID-6F126509-5391-43B9-B921-1CDB8E8FD88D" title="This command enables you to discover virtual Ethernets configured in a specific container.This command enables you to retrieve information for a specific virtual Ethernet. This command enables you to retrieve information for the configured virtual Ethernet in a specific container or subcontainer.">Retrieve vEthernet Details</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-7706E76A-5267-4077-BD08-6B8358B7DDA1"></a>
+<h2 id="ELUCL-GUID-7706E76A-5267-4077-BD08-6B8358B7DDA1" class="sect2">add vethernet</h2>
+<div>
+<p>This command enables you to add a virtual Ethernet to the network.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-7706E76A-5267-4077-BD08-6B8358B7DDA1__GUID-D5C6FBEA-FBBC-4B1D-86DF-9C3D14A52326">
+<p class="notep1">Note:</p>
+You can only add IPoIB vEthernets. To add EoIB vEthernet, contact your Oracle Cloud Administrator.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute add vethernet <span class="variable">name</span> <span class="variable">description</span> <span class="variable">type</span> <span class="variable">id</span> [<span class="variable">--switchports</span>] [<span class="variable">--svcnet</span>]</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-7706E76A-5267-4077-BD08-6B8358B7DDA1__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table lists the parameters and descriptions for adding vEthernet .">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d20090e117">Parameter</th>
+<th class="cellalignment26" id="d20090e119">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d20090e123" headers="d20090e117">name</td>
+<td class="cellalignment27" headers="d20090e123 d20090e119">A unique hierarchical name for vEthernet. For example, <code class="codeph">/mytenant/public/EoIB</code>.
+<p>Object names can contain only alphanumeric characters, hyphens, and periods. Object names are case-sensitive.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d20090e133" headers="d20090e117">description</td>
+<td class="cellalignment27" headers="d20090e133 d20090e119">A description for a vEthernet.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d20090e138" headers="d20090e117">type</td>
+<td class="cellalignment27" headers="d20090e138 d20090e119">Type of vEthernet (supported types: <code class="codeph">vlan</code>, <code class="codeph">eoib</code>, <code class="codeph">ipoib</code>).
+<div class="infobox-note" id="GUID-7706E76A-5267-4077-BD08-6B8358B7DDA1__GUID-C09DDE10-DFAB-45D1-9305-2A1B2C336AAF">
+<p class="notep1">Note:</p>
+Tenant User can only add vEthernet type <code class="codeph">ipoib</code>.</div>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d20090e157" headers="d20090e117">id</td>
+<td class="cellalignment27" headers="d20090e157 d20090e119">Unique identifier for this vEthernet (VLAN ID for <code class="codeph">eoib</code>/<code class="codeph">vlan</code> type). Set this parameter to 0 for vEthernet type <code class="codeph">ipoib</code>.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d20090e171" headers="d20090e117">--switchports</td>
+<td class="cellalignment27" headers="d20090e171 d20090e119">(Optional) Dictionary containing two switch names as keys each mapped to a list containing a single eport (HA pairs). For example, {"switchname1":["eport1"],"switchname2":["eport1"]}.
+<p>This field is only applicable for type <code class="codeph">eoib</code>.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d20090e181" headers="d20090e117">--svcnet</td>
+<td class="cellalignment27" headers="d20090e181 d20090e119">(Optional) Service network to use for this vEthernet</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute -u /mytenant/user1 add vethernet /mytenant/public/testnet1 "My Tenant Private Net 1" ipoib 0 
+uri                                             name                     description              type  id  switchports svcnet  
+https://api/vethernet/mytenant/public/testnet1  /mytenant/public/testnet1 My Tenant Private Net 1  ipoib 0   None        None
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-2729EDE4-69C0-47F3-A1CF-BDC0E41FF8DB"></a>
+<h2 id="ELUCL-GUID-2729EDE4-69C0-47F3-A1CF-BDC0E41FF8DB" class="sect2">delete vethernet</h2>
+<div>
+<p>This command enables you to delete a virtual Ethernet.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-2729EDE4-69C0-47F3-A1CF-BDC0E41FF8DB__GUID-58D1E1A2-2E9C-4FEC-9C49-99A6C4C9DAE6">
+<p class="notep1">Note:</p>
+You can only delete IPoIB vEthernets.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute delete vethernet <span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-2729EDE4-69C0-47F3-A1CF-BDC0E41FF8DB__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for deleting vEthernet .">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d20090e240">Parameter</th>
+<th class="cellalignment26" id="d20090e242">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d20090e246" headers="d20090e240">name</td>
+<td class="cellalignment27" headers="d20090e246 d20090e242">A unique hierarchical name for the vEthernet. For example, <code class="codeph">/mytenant/public/myvethernet</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute delete vethernet /mytenant/public/myvethernet</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-309BD6AB-7F01-4F8B-A2CC-9BC9C7E12EF0"></a>
+<h2 id="ELUCL-GUID-309BD6AB-7F01-4F8B-A2CC-9BC9C7E12EF0" class="sect2">update vethernet</h2>
+<div>
+<p>This command enables you to update information for a specific virtual Ethernet.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-309BD6AB-7F01-4F8B-A2CC-9BC9C7E12EF0__GUID-27C87494-FCE2-45B7-A161-97040EA35685">
+<p class="notep1">Note:</p>
+You can only update IPoIB vEthernets.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute update vethernet <span class="variable">name</span> [<span class="variable">--description</span>]</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-309BD6AB-7F01-4F8B-A2CC-9BC9C7E12EF0__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="Parameter name for this command">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d20090e313">Parameter</th>
+<th class="cellalignment26" id="d20090e315">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d20090e319" headers="d20090e313">name</td>
+<td class="cellalignment27" headers="d20090e319 d20090e315">Unique hierarchical name for the vEthernet. For example, <code class="codeph">/mytenant/public/myvethernet</code>.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d20090e327" headers="d20090e313">--description</td>
+<td class="cellalignment27" headers="d20090e327 d20090e315">(Optional)A description for a vEthernet</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute update vethernet /mytenant/public/myvEthernet --description "Private Tenant Network"</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Sample Output</p>
+<pre dir="ltr">
+$ oracle-compute update vethernet /mytenant/public/myvEthernet --description "Private Tenant Network" -Fname,description
+name                                description
+/demo/public/Private-Tenant-Network Private Tenant Network
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-6F126509-5391-43B9-B921-1CDB8E8FD88D"></a>
+<h2 id="ELUCL-GUID-6F126509-5391-43B9-B921-1CDB8E8FD88D" class="sect2">Retrieve vEthernet Details</h2>
+<div>
+<div class="section">You can retrieve vEthernet details by using the CLI.</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99.htm#GUID-2211E7A0-3BF8-46FB-9A92-9D39997E795B" title="This command enables you to discover virtual Ethernets configured in a specific container.">discover vethernet</a></p>
+</li>
+<li>
+<p><a href="GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99.htm#GUID-2FD2561E-F978-4E1E-8CE4-E4B9EC242BEB" title="This command enables you to retrieve information for a specific virtual Ethernet.">get vethernet</a></p>
+</li>
+<li>
+<p><a href="GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99.htm#GUID-7017D0A6-FE10-4D27-99EF-434DA01C5639" title="This command enables you to retrieve information for the configured virtual Ethernet in a specific container or subcontainer.">list vethernet</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect3"><a id="GUID-2211E7A0-3BF8-46FB-9A92-9D39997E795B"></a>
+<h3 id="ELUCL-GUID-2211E7A0-3BF8-46FB-9A92-9D39997E795B" class="sect3">discover vethernet</h3>
+<div>
+<p>This command enables you to discover virtual Ethernets configured in a specific container.</p>
+<div class="section">
+<p class="subhead3">Syntax</p>
+<p><code class="codeph">oracle-compute discover vethernet <span class="variable">container</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-2211E7A0-3BF8-46FB-9A92-9D39997E795B__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for listing all vEthernets in a container.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d20090e434">Parameter</th>
+<th class="cellalignment26" id="d20090e436">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d20090e440" headers="d20090e434">container</td>
+<td class="cellalignment27" headers="d20090e440 d20090e436">Hierarchical name-space for vEthernets</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<p><code class="codeph">$ oracle-compute discover vethernet /oracle/public</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute discover vethernet /oracle/public
+entry
+/oracle/public/IPoIB-virt-admin-c2
+/oracle/public/default
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-2FD2561E-F978-4E1E-8CE4-E4B9EC242BEB"></a>
+<h3 id="ELUCL-GUID-2FD2561E-F978-4E1E-8CE4-E4B9EC242BEB" class="sect3">get vethernet</h3>
+<div>
+<p>This command enables you to retrieve information for a specific virtual Ethernet.</p>
+<div class="section">
+<p class="subhead3">Syntax</p>
+<p><code class="codeph">oracle-compute get vethernet <span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-2FD2561E-F978-4E1E-8CE4-E4B9EC242BEB__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameters and descriptions for retrieving details of a specific vEthernet .">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d20090e503">Parameter</th>
+<th class="cellalignment26" id="d20090e505">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d20090e509" headers="d20090e503">name</td>
+<td class="cellalignment27" headers="d20090e509 d20090e505">Name of the vEthernet</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<p><code class="codeph">$ oracle-compute get vethernet /mytenant/public/veth-ipoib</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+ $ oracle-compute get vethernet /mytenant/public/veth-ipoib -Fname,description,type,svcnet
+name                                description         type          svcnet
+/mytenant/public/veth-ipoib         description         ipoib         None
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-7017D0A6-FE10-4D27-99EF-434DA01C5639"></a>
+<h3 id="ELUCL-GUID-7017D0A6-FE10-4D27-99EF-434DA01C5639" class="sect3">list vethernet</h3>
+<div>
+<p>This command enables you to retrieve information for the configured virtual Ethernet in a specific container or subcontainer.</p>
+<div class="section">
+<p class="subhead3">Syntax</p>
+<p><code class="codeph">oracle-compute list vethernet <span class="variable">container</span> [<span class="variable">--type</span>]</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-7017D0A6-FE10-4D27-99EF-434DA01C5639__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="Parameter table for this command.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d20090e576">Parameter</th>
+<th class="cellalignment26" id="d20090e578">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d20090e582" headers="d20090e576">container</td>
+<td class="cellalignment27" headers="d20090e582 d20090e578">Hierarchical name-space for the virtual Ethernet.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d20090e587" headers="d20090e576">--type</td>
+<td class="cellalignment27" headers="d20090e587 d20090e578">(Optional) Type of vEthernet.
+<div class="infobox-note" id="GUID-7017D0A6-FE10-4D27-99EF-434DA01C5639__GUID-9FF1F89F-4CDD-4725-A345-5FA0EA7130E6">
+<p class="notep1">Note:</p>
+Output of this command is filtered based on the values provided for this parameter.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<p><code class="codeph">$ oracle-compute list vethernet /oracle/public</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+ $  oracle-compute list vethernet /oracle/public -F name,description,svcnet,type,id
+name                                type   id  svcnet
+/oracle/public/IPoIB-virt-admin-c2  ipoib  0   oracle/public/IPoIB-virt-admin-c2
+/oracle/public/default              vlan   0   None
+ 
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-807812AE-1FAE-4F72-9CC3-34E59BF309F8.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-4B893928-826E-4227-B82D-00C928C0BD58.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

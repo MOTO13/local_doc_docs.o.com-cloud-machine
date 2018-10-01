@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="Deleting%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html" title="Previous" type="text/html">
+        <link rel="next" href="api-Access%20Rules.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="Deleting%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="api-Access%20Rules.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">Deprecation Notices (Paths and Endpoints)</h2> 
+<div class="body conbody">
+ <p class="p">The URL structure to use for accessing a REST resource is <samp class="ph codeph">https://<em class="ph i">rest_server_url</em>/<em class="ph i">resource_path</em></samp>, where <samp class="ph codeph"><em class="ph i">rest_server_url</em></samp> is the Oracle Public Cloud or Oracle Cloud Machine REST server to contact for your identity domain or tenant name, and <samp class="ph codeph"><em class="ph i">resource_path</em></samp> is the relative path that defines the REST endpoint. The <samp class="ph codeph"><em class="ph i">resource_path</em></samp> part of the URL structure is undergoing modifications. Review the following information about resource path deprecations.</p> 
+ <p class="p"><strong class="ph b"> Note:</strong> <em class="ph i">Resource paths to be deprecated will continue to be supported for the near term</em>. However, it is recommended that you migrate your applications to use the new paths at your earliest convenience to minimize any disruption in the future when the deprecated URL structures are no longer supported.</p> 
+ <p class="p"></p> 
+ <div class="tablenoborder">
+  <span class="desc tabledesc">This table lists new resource paths, paths to be deprecated, and deprecated paths. Endpoints to be deprecated are also listed.</span>
+  <table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all">
+   <thead class="thead" align="left">
+    <tr class="row">
+     <th class="firstcol" valign="top" width="25%" id="d5390e48">Endpoints</th> 
+     <th class="entry" valign="top" width="75%" id="d5390e50">Resource Paths</th> 
+    </tr> 
+   </thead> 
+   <tbody class="tbody">
+    <tr class="row">
+     <th class="firstcol" valign="top" width="25%" id="d5390e54" headers="d5390e48 "><p class="p"><a class="xref" href="api-Backups%20and%20Restorations.html" target="_blank">Backups and Restorations</a></p> </th> 
+     <td class="entry" valign="top" width="75%" headers="d5390e54 d5390e50 "><p class="p">The following paths are new:</p> </td> 
+    </tr> 
+    <tr class="row">
+     <th class="firstcol" valign="top" width="25%" id="d5390e63" headers="d5390e48 "><p class="p"></p> </th> 
+     <td class="entry" valign="top" width="75%" headers="d5390e63 d5390e50 "><p class="p"><samp class="ph codeph">/<strong class="ph b">paas/api/v1.1/instancemgmt/<em class="ph i">identity_domain</em>/services/jaas/instances/<em class="ph i">service_id</em>/backupconfig</strong>/...</samp></p> </td> 
+    </tr> 
+    <tr class="row">
+     <th class="firstcol" valign="top" width="25%" id="d5390e79" headers="d5390e48 "><p class="p"></p> </th> 
+     <td class="entry" valign="top" width="75%" headers="d5390e79 d5390e50 "><p class="p"><samp class="ph codeph">/<strong class="ph b">paas/api/v1.1/instancemgmt/<em class="ph i">identity_domain</em>/services/jaas/instances/<em class="ph i">service_id</em>/backups</strong>/...</samp></p> </td> 
+    </tr> 
+    <tr class="row">
+     <th class="firstcol" valign="top" width="25%" id="d5390e95" headers="d5390e48 "><p class="p"></p> </th> 
+     <td class="entry" valign="top" width="75%" headers="d5390e95 d5390e50 "><p class="p"><samp class="ph codeph">/<strong class="ph b">paas/api/v1.1/instancemgmt/<em class="ph i">identity_domain</em>/services/jaas/instances/<em class="ph i">service_id</em>/deletedbackups</strong>/...</samp></p> </td> 
+    </tr> 
+    <tr class="row">
+     <th class="firstcol" valign="top" width="25%" id="d5390e111" headers="d5390e48 "><p class="p"></p> </th> 
+     <td class="entry" valign="top" width="75%" headers="d5390e111 d5390e50 "><p class="p"><samp class="ph codeph">/<strong class="ph b">paas/api/v1.1/instancemgmt/<em class="ph i">identity_domain</em>/services/jaas/instances/<em class="ph i">service_id</em>/restoredbackups</strong>/...</samp></p> </td> 
+    </tr> 
+    <tr class="row">
+     <th class="firstcol" valign="top" width="25%" id="d5390e127" headers="d5390e48 "><p class="p"></p> </th> 
+     <td class="entry" valign="top" width="75%" headers="d5390e127 d5390e50 "><p class="p">The following paths will be deprecated:</p> </td> 
+    </tr> 
+    <tr class="row">
+     <th class="firstcol" valign="top" width="25%" id="d5390e133" headers="d5390e48 "><p class="p"></p> </th> 
+     <td class="entry" valign="top" width="75%" headers="d5390e133 d5390e50 "><p class="p"><samp class="ph codeph">/paas/service/jcs/api/v1.1/instances/<em class="ph i">identity_domain</em>/<em class="ph i">service_id</em>/backupconfig/...</samp></p> </td> 
+    </tr> 
+    <tr class="row">
+     <th class="firstcol" valign="top" width="25%" id="d5390e146" headers="d5390e48 "><p class="p"></p> </th> 
+     <td class="entry" valign="top" width="75%" headers="d5390e146 d5390e50 "><p class="p"><samp class="ph codeph">/paas/service/jcs/api/v1.1/instances/<em class="ph i">identity_domain</em>/<em class="ph i">service_id</em>/backups/...</samp></p> </td> 
+    </tr> 
+    <tr class="row">
+     <th class="firstcol" valign="top" width="25%" id="d5390e159" headers="d5390e48 "><p class="p"></p> </th> 
+     <td class="entry" valign="top" width="75%" headers="d5390e159 d5390e50 "><p class="p"><samp class="ph codeph">/paas/service/jcs/api/v1.1/instances/<em class="ph i">identity_domain</em>/<em class="ph i">service_id</em>/deletedbackups/...</samp></p> </td> 
+    </tr> 
+    <tr class="row">
+     <th class="firstcol" valign="top" width="25%" id="d5390e172" headers="d5390e48 "><p class="p"></p> </th> 
+     <td class="entry" valign="top" width="75%" headers="d5390e172 d5390e50 "><p class="p"><samp class="ph codeph">/paas/service/jcs/api/v1.1/instances/<em class="ph i">identity_domain</em>/<em class="ph i">service_id</em>/restoredbackups/...</samp></p> </td> 
+    </tr> 
+    <tr class="row">
+     <th class="firstcol" valign="top" width="25%" id="d5390e185" headers="d5390e48 "><p class="p"><a class="xref" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-backups-%7BbackupId%7D-delete.html" target="_blank">Delete a Backup (Synchronous)</a></p> </th> 
+     <td class="entry" valign="top" width="75%" headers="d5390e185 d5390e50 "><p class="p">This DELETE endpoint will be deprecated:</p> <p class="p"><samp class="ph codeph">DELETE </samp><samp class="ph codeph">/paas/api/v1.1/instancemgmt/<em class="ph i">identity_domain</em>/services/jaas/instances/<em class="ph i">service_id</em>/backups/<em class="ph i">backup_id</em></samp></p> </td> 
+    </tr> 
+    <tr class="row">
+     <th class="firstcol" valign="top" width="25%" id="d5390e208" headers="d5390e48 "><p class="p"><a class="xref" href="api-Patches.html" target="_blank">Patches</a></p> </th> 
+     <td class="entry" valign="top" width="75%" headers="d5390e208 d5390e50 "><p class="p">Only the following paths can be used:</p> </td> 
+    </tr> 
+    <tr class="row">
+     <th class="firstcol" valign="top" width="25%" id="d5390e217" headers="d5390e48 "><p class="p"></p> </th> 
+     <td class="entry" valign="top" width="75%" headers="d5390e217 d5390e50 "><p class="p"><samp class="ph codeph">/<strong class="ph b">paas/api/v1.1/instancemgmt/<em class="ph i">identity_domain</em>/services/jaas/instances/<em class="ph i">service_id</em>/patches</strong>/...</samp></p> </td> 
+    </tr> 
+    <tr class="row">
+     <th class="firstcol" valign="top" width="25%" id="d5390e233" headers="d5390e48 "><p class="p"></p> </th> 
+     <td class="entry" valign="top" width="75%" headers="d5390e233 d5390e50 "><p class="p">The following path has been deprecated:</p> </td> 
+    </tr> 
+    <tr class="row">
+     <th class="firstcol" valign="top" width="25%" id="d5390e240" headers="d5390e48 "><p class="p"></p> </th> 
+     <td class="entry" valign="top" width="75%" headers="d5390e240 d5390e50 "><p class="p"><samp class="ph codeph">/paas/service/jcs/api/v1.1/instances/<em class="ph i">identity_domain</em>/<em class="ph i">service_id</em>/patches/...</samp></p> </td> 
+    </tr> 
+   </tbody> 
+  </table> 
+ </div> 
+</div></div>
+        </article>
+    </body>
+</html>

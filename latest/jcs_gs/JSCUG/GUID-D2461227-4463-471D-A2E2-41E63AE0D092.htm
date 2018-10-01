@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Accessing the Administrative Consoles</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can use various consoles to administer the software that an Oracle Java Cloud Service instance is running and to also administer related Oracle Cloud services." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-8C8402EF-D5A7-41E2-83B5-8E9CDA5085D0.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-B5656350-E387-4E43-91A6-8C20D78288A7.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-D2461227-4463-471D-A2E2-41E63AE0D092"></a> <span id="PAGE" style="display:none;">30/131</span> <!-- End Header -->
+<a id="JSCUG3153"></a>
+<h1 id="JSCUG-GUID-D2461227-4463-471D-A2E2-41E63AE0D092" class="sect1">Accessing the Administrative Consoles</h1>
+<div>
+<p>You can use various consoles to administer the software that an Oracle Java Cloud Service instance is running and to also administer related Oracle Cloud services.</p>
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-D2461227-4463-471D-A2E2-41E63AE0D092.htm#GUID-B97113D4-A6D2-4D38-8466-2EC07095B49D" title="From an Oracle Java Cloud Service instance, you can access the administration consoles for the software that the service instance is running.">Accessing an Administration Console for Oracle Java Cloud Service Software</a></p>
+</li>
+<li>
+<p><a href="GUID-D2461227-4463-471D-A2E2-41E63AE0D092.htm#GUID-E3BA19E3-9996-4A5E-ACDA-AB6D8439414E" title="You can access the administration consoles for related Oracle Cloud Services, such as Oracle Database Cloud Service, from the Oracle Java Cloud Service console.">Accessing the Administration Consoles of a Related Oracle Cloud Service</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<a id="JSCUG3402"></a>
+<div class="props_rev_3"><a id="GUID-B97113D4-A6D2-4D38-8466-2EC07095B49D"></a>
+<h2 id="JSCUG-GUID-B97113D4-A6D2-4D38-8466-2EC07095B49D" class="sect2">Accessing an Administration Console for Oracle Java Cloud Service Software</h2>
+<div>
+<p>From an Oracle Java Cloud Service instance, you can access the administration consoles for the software that the service instance is running.</p>
+<div class="section">
+<p>You can access these consoles:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>WebLogic Server Console</p>
+</li>
+<li>
+<p>Fusion Middleware Console</p>
+</li>
+<li>
+<p>Load Balancer Console</p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-B97113D4-A6D2-4D38-8466-2EC07095B49D__GUID-15306D7A-3746-49A9-88DC-01E274B7BF63">
+<p class="notep1">Note:</p>
+If you disable a console or modify the default port number used to access it, the shortcuts described here may not work.</div>
+</div>
+<!-- class="section" -->
+<div class="section">To access a console:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Navigate to the <span class="wintitle">Services</span> page of the Oracle Java Cloud Service Console.</span></li>
+<li class="stepexpand"><span>Click <img width="14" height="15" src="img/GUID-D0E9F26E-D981-4A6C-9C9C-E53E732DCDA2-default.gif" alt="menu icon" title="menu icon" /> for the desired service instance and choose the command to open the console that you want to access:</span>
+<div>
+<div class="tblformal" id="GUID-B97113D4-A6D2-4D38-8466-2EC07095B49D__GUID-39795F45-50B7-4C11-8F23-3F208BC5C37C">
+<table class="cellalignment25" summary="Two-column table. The right-hand column lists administration consoles while the left-hand column list the associated menu command that opens the console.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment71" id="d19727e86">To access this console</th>
+<th class="cellalignment72" id="d19727e88">Click this shortcut</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment73" id="d19727e92" headers="d19727e86">
+<p>WebLogic Server Console</p>
+</td>
+<td class="cellalignment74" headers="d19727e92 d19727e88">
+<p><span class="bold">Open WebLogic Server Console</span></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment73" id="d19727e100" headers="d19727e86">
+<p>Fusion Middleware Console</p>
+</td>
+<td class="cellalignment74" headers="d19727e100 d19727e88">
+<p><span class="bold">Open Fusion Middleware Control Console</span></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment73" id="d19727e108" headers="d19727e86">
+<p>Load Balancer Console</p>
+</td>
+<td class="cellalignment74" headers="d19727e108 d19727e88">
+<p><span class="bold">Open Load Balancer Console</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<div>
+<p>A new browser opens and you are redirected to the selected console&rsquo;s login page.</p>
+<p>If the server is protected with a self-signed certificate, you will be warned that this certificate is not trusted. To update the default SSL configuration of your service instance, see <a href="GUID-B862044D-A55B-48D3-A3E2-CC2D55A8279B.htm#GUID-B862044D-A55B-48D3-A3E2-CC2D55A8279B" title="Secure Socket Layer (SSL) is the most commonly-used method of securing data sent across the internet, and assures visitors that transactions with your application are secure. You can configure SSL between the client browser and the load balancer in your Oracle Java Cloud Service instance in order to ensure that applications are accessed securely.">Configuring SSL for an Oracle Java Cloud Service Instance</a>.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Accept the certificate if prompted. These steps are browser-dependent.</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>If you are using Firefox, click <span class="bold">Advanced</span> , click <span class="bold">Add Exception</span> and then click <span class="bold">Confirm Security Exception</span>.</p>
+</li>
+<li>
+<p>If you are using Chrome, click <span class="bold">Advanced</span> and then click <span class="bold">Proceed</span>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>When the console login page appears, enter the WebLogic username and password you provided when you created the service instance.</span></li>
+</ol>
+</div>
+</div>
+<a id="JSCUG3403"></a>
+<div class="props_rev_3"><a id="GUID-E3BA19E3-9996-4A5E-ACDA-AB6D8439414E"></a>
+<h2 id="JSCUG-GUID-E3BA19E3-9996-4A5E-ACDA-AB6D8439414E" class="sect2">Accessing the Administration Console of a Related Oracle Cloud Service</h2>
+<div>
+<p><span>You can access the administration consoles for related Oracle Cloud Services, such as <span>Oracle Database Cloud Service</span>, from the <span>Oracle Java Cloud Service</span> console.</span></p>
+<ol>
+<li class="stepexpand"><span>Navigate to the Oracle Java Cloud Service Console.</span></li>
+<li class="stepexpand"><span>From the <img width="47" height="46" src="img/GUID-0B293D49-C292-44DC-9CA8-C54D59F6E05E-default.png" alt="Consoles menu icon" title="Consoles menu icon" /> menu at the top left of page, choose the service you want to access.</span>
+<div>For example, choose <span class="bold">Oracle Database Cloud Service</span>.</div>
+<div>
+<p>The console for that service is displayed.</p>
+<p>Alternatively you can use the <img width="21" height="23" src="img/GUID-6FE3B404-11B7-4838-A3ED-10902FC1F716-default.png" alt="Service Type icon" title="Service Type icon" /> menu next to the text <span class="italic"><span>Oracle Java Cloud Service</span></span>.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-8C8402EF-D5A7-41E2-83B5-8E9CDA5085D0.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-B5656350-E387-4E43-91A6-8C20D78288A7.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Adding a Load Balancer to an Oracle Java Cloud Service Instance on OPCM</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can add a load balancer to an Oracle Java Cloud Service instance after its creation." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-5D722781-44AD-4BAA-B726-A285154F8534.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-7D16153E-6028-4FDD-9CFD-49F48D6F379E.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-6B2C2199-C004-4DA0-81FE-979FFB98B7C6"></a> <span id="PAGE" style="display:none;">95/131</span> <!-- End Header -->
+<h1 id="JSCUG-GUID-6B2C2199-C004-4DA0-81FE-979FFB98B7C6" class="sect1">Adding a Load Balancer to an Oracle Java Cloud Service Instance <span>on <span>OPCM</span></span></h1>
+<div>
+<p>You can add a load balancer to an <span>Oracle Java Cloud Service</span> instance after its creation.</p>
+<div class="section">
+<p>For any <span>Oracle Java Cloud Service</span> instance that contains more than one Managed Server node, a load balancer provides these benefits:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Manages the routing of requests across all Managed Servers.</p>
+</li>
+<li>
+<p>Enables you to configure the routing policy.</p>
+</li>
+<li>
+<p>Enables you to suspend a service instance temporarily to perform routine maintenance, as described in <a href="GUID-41A9CF0D-028D-4C62-B9C6-D369452D5937.htm#GUID-41A9CF0D-028D-4C62-B9C6-D369452D5937" title="You can disable the load balancer to suspend the Oracle Java Cloud Service instance temporarily, to block any new traffic from being delivered to the service instance. This is useful when you want to perform routine maintenance on an Oracle Java Cloud Service instance, but do not want to stop the service instance. Once the maintenance activities have been completed, you can re-enable the load balancer to allow traffic to be delivered.">Suspending an Oracle Java Cloud Service Instance</a>.</p>
+</li>
+</ul>
+<p>A service instance can include zero, one or two load balancer nodes (VMs). Each node is assigned a separate public IP address. A configuration with two active load balancer nodes provides these advantages:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>High availability if a load balancer becomes unavailable.</p>
+</li>
+<li>
+<p>Multiple load balancers for greater application throughput.</p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-6B2C2199-C004-4DA0-81FE-979FFB98B7C6__GUID-42460A20-3A5F-4F50-A956-06BC204A0BF7">
+<p class="notep1">Note:</p>
+<span>Oracle Java Cloud Service</span> does not automatically fail over application requests to the other load balancer node if one becomes unavailable.</div>
+<p>Oracle Traffic Director (OTD) is used as the load balancer for a service instance.</p>
+<p>To add a load balancer to a service instance:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>From the <span class="wintitle">Services</span> page of the <span>Oracle Java Cloud Service</span> Console, click an existing service instance.</span>
+<div>The <span class="wintitle">Overview</span> page is displayed.</div>
+</li>
+<li class="stepexpand"><span>Click <img width="14" height="15" src="img/GUID-D0E9F26E-D981-4A6C-9C9C-E53E732DCDA2-default.gif" alt="menu icon" title="menu icon" /> and select <span class="bold">Add Load Balancer</span>.</span>
+<div>The <span class="wintitle">Add Load Balancer</span> dialog box opens.</div>
+</li>
+<li class="stepexpand"><span>Define the routing policy and compute shape for the load balancer, and the user name and password for the Oracle Traffic Director administrator.</span>
+<div>
+<p>The user name and password are used to access the Load Balancer Console as described in <a href="GUID-D2461227-4463-471D-A2E2-41E63AE0D092.htm#GUID-D2461227-4463-471D-A2E2-41E63AE0D092" title="You can use various consoles to administer the software that an Oracle Java Cloud Service instance is running and to also administer related Oracle Cloud services.">Accessing the Administrative Consoles Used by Oracle Java Cloud Service</a>.</p>
+<div class="infobox-note" id="GUID-6B2C2199-C004-4DA0-81FE-979FFB98B7C6__GUID-6788D4B2-7EB9-4CBE-8957-2126A027CAD6">
+<p class="notep1">Note:</p>
+If you add a load balancer to an Oracle Java Cloud Service instance after the service instance was created, you must define the user name and password for the Oracle Traffic Director administrator explicitly. The user name and password are <span class="bold">not</span> set by default to the user name of the WebLogic Server administrator. This behavior differs from the behavior when a load balancer is added to a service instance while the service instance is being created.</div>
+<div class="tblformal" id="GUID-6B2C2199-C004-4DA0-81FE-979FFB98B7C6__GUID-AC07AE51-8EF5-4A89-9331-5DA61696EB58">
+<table class="cellalignment25" summary="This table describes the options for adding a load balancer to an Oracle Java Cloud Service instance.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d48006e110">Option</th>
+<th class="cellalignment27" id="d48006e113">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment28" id="d48006e118" headers="d48006e110">
+<p><span class="bold">Load Balancer Policy</span></p>
+</td>
+<td class="cellalignment29" headers="d48006e118 d48006e113">
+<p>Select the policy to use for routing requests to the load balancer.</p>
+<p>Valid policies include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Least Connection Count</span>&mdash;Passes each new request to the Managed Server with the least number of connections. This policy is useful for smoothing distribution when Managed Servers get bogged down. Managed Servers with greater processing power to handle requests will receive more connections over time.</p>
+</li>
+<li>
+<p><span class="bold">Least Response Time</span>&mdash;Passes each new request to the Managed Server with the fastest response time. This policy is useful when Managed Servers are distributed across networks.</p>
+</li>
+<li>
+<p><span class="bold">Round Robin</span>&mdash;Passes each new request to the next Managed Server in line, evenly distributing requests across all Managed Servers regardless of the number of connections or response time.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment28" id="d48006e144" headers="d48006e110">
+<p id="GUID-6B2C2199-C004-4DA0-81FE-979FFB98B7C6__d1013e387"><span class="bold">Compute Shape</span></p>
+</td>
+<td class="cellalignment29" headers="d48006e144 d48006e113">
+<p id="GUID-6B2C2199-C004-4DA0-81FE-979FFB98B7C6__d1013e391">Select the number of Oracle Compute Units (OCPUs) and amount of RAM memory that you want to allocate to the VM for the load balancer. The larger the compute shape, the greater the processing power.</p>
+<p>For more information about the defined compute shapes, contact your Oracle Cloud Administrator.</p>
+<p id="GUID-6B2C2199-C004-4DA0-81FE-979FFB98B7C6__d1013e395">Valid compute shapes include:</p>
+<ul style="list-style-type: disc;" id="GUID-6B2C2199-C004-4DA0-81FE-979FFB98B7C6__d1013e397">
+<li>
+<p>OC3: 1 OCPU and 7.5 GB memory</p>
+</li>
+<li>
+<p>OC4: 2 OCPUs and 15 GB memory</p>
+</li>
+<li>
+<p>OC5: 4 OCPUs and 30 GB memory</p>
+</li>
+<li>
+<p>OC6: 8 OCPUs and 60 GB memory</p>
+</li>
+<li>
+<p>OC7: 16 OCPUs and 120 GB memory</p>
+</li>
+</ul>
+<p>Additional shapes are available for more memory-intensive applications:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>OC1M: 1 OCPU and 15 GB memory</p>
+</li>
+<li>
+<p>OC2M: 2 OCPUs and 30 GB memory</p>
+</li>
+<li>
+<p>OC3M: 4 OCPUs and 60 GB memory</p>
+</li>
+<li>
+<p>OC4M: 8 OCPUs and 120 GB memory</p>
+</li>
+<li>
+<p>OC5M: 16 OCPUs and 240 GB memory</p>
+</li>
+</ul>
+<p id="GUID-6B2C2199-C004-4DA0-81FE-979FFB98B7C6__d1013e431">You can also change the compute shape after creating the Oracle Java Cloud Service instance. See <a href="GUID-8DD460BA-708C-4B90-822F-4E4D64C59F77.htm#GUID-8DD460BA-708C-4B90-822F-4E4D64C59F77" title="You can scale an Oracle Java Cloud Service node to change its compute shape in response to changes in workload or to add storage to a node that is running out of storage. However, you cannot remove block storage from a node.">Scaling an Oracle Java Cloud Service Node on OPCM</a></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment28" id="d48006e200" headers="d48006e110">
+<p><span class="bold">Add Another Active OTD Node</span></p>
+</td>
+<td class="cellalignment29" headers="d48006e200 d48006e113">
+<p>Choose whether or not to add a second load balancer node to this service instance.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment28" id="d48006e208" headers="d48006e110">
+<p><span class="bold">User Name</span></p>
+</td>
+<td class="cellalignment29" headers="d48006e208 d48006e113">
+<p>Enter your choice of user name for the Oracle Traffic Director administrator.</p>
+<p>The name must be between 8 and 128 characters long and <span class="bold">cannot</span> contain any of the following characters:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Tab</p>
+</li>
+<li>
+<p>Brackets</p>
+</li>
+<li>
+<p>Parentheses</p>
+</li>
+<li>
+<p>These special characters:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Left angle bracket (<kbd class="userinput">&lt;</kbd>)</p>
+</li>
+<li>
+<p>Right angle bracket (<kbd class="userinput">&gt;</kbd>)</p>
+</li>
+<li>
+<p>Ampersand (<kbd class="userinput">&amp;</kbd>)</p>
+</li>
+<li>
+<p>Pound sign (<kbd class="userinput">#</kbd>)</p>
+</li>
+<li>
+<p>Pipe symbol (<kbd class="userinput">|</kbd>)</p>
+</li>
+<li>
+<p>Question mark (<kbd class="userinput">?</kbd>)</p>
+</li>
+</ul>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-6B2C2199-C004-4DA0-81FE-979FFB98B7C6__GUID-DC0326C0-34FE-44CB-B038-8275718DC7CE">
+<p class="notep1">Note:</p>
+You can change the user name and password through the Load Balancer Console after you have added the load balancer.</div>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment28" id="d48006e273" headers="d48006e110">
+<p><span class="bold">Password</span></p>
+</td>
+<td class="cellalignment29" headers="d48006e273 d48006e113">
+<p>Define the password for the Oracle Traffic Director administrator.</p>
+<p>The password must meet these requirements:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Starts with a letter</p>
+</li>
+<li>
+<p>Is between 8 and 30 characters long</p>
+</li>
+<li>
+<p>Contains letters, at least one number, and, optionally, any number of these special characters:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Dollar sign (<kbd class="userinput">$</kbd>)</p>
+</li>
+<li>
+<p>Pound sign (<kbd class="userinput">#</kbd>)</p>
+</li>
+<li>
+<p>Underscore (<kbd class="userinput">_</kbd>)</p>
+<p>No other special characters are allowed.</p>
+</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment28" id="d48006e314" headers="d48006e110">
+<p><span class="bold">Confirm Password</span></p>
+</td>
+<td class="cellalignment29" headers="d48006e314 d48006e113">
+<p>Re-enter the password for the Oracle Traffic Director administrator.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Add Load Balancer</span>.</span></li>
+</ol>
+<div class="section">The Overview page is updated to show that the load balancer is being added.
+<p>While the load balancer is being added, the service instance is in maintenance status and you cannot start any other management operation on the service instance.</p>
+<p>After the load balancer is added, information about the load balancer is also available on the Load Balancer tab on the Administration page.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p>If you require the WebLogic Plug-in Enabled control to be set in Oracle WebLogic Server, you must set this control manually. If you add a load balancer to an <span>Oracle Java Cloud Service</span> instance after the service instance was created, Oracle Java Cloud Service does <span class="bold">not</span> set the WebLogic Plug-in Enabled control in Oracle WebLogic Server for you. This behavior differs from the behavior when a load balancer is added to a service instance while the service instance is being created.</p>
+<p>For details, see <a href="http://www.ateam-oracle.com/wls-plugin-enabled/" target="_blank"><span><cite>Understanding the use of &ldquo;WebLogic Plugin Enabled&rdquo;</cite></span></a>.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-5D722781-44AD-4BAA-B726-A285154F8534.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-7D16153E-6028-4FDD-9CFD-49F48D6F379E.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

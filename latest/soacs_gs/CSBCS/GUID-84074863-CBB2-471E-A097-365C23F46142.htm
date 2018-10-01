@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Accessing a VM Through a Secure Shell (SSH)</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can access the services and resources provided by a service instance's VM by logging into the machine through a secure shell (SSH). You can use any SSH utility you prefer. For example, if you are using Windows, you might use PuTTY; if you are using Linux, you might use OpenSSH." />
+<meta name="dcterms.created" content="2017-04-10T13:38:19Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle SOA Cloud Service" />
+<meta name="dcterms.identifier" content="E78502-02" />
+<meta name="dcterms.isVersionOf" content="CSBCS" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-6A22645D-1194-4BF0-98CD-0E272248DC06.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-8C6E975E-0F23-490F-A976-E099D84E1C10.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSBCS.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSBCS.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSBCS.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-84074863-CBB2-471E-A097-365C23F46142"></a> <span id="PAGE" style="display:none;">27/83</span> <!-- End Header -->
+<h1 id="CSBCS-GUID-84074863-CBB2-471E-A097-365C23F46142" class="sect1">Accessing a VM Through a Secure Shell (SSH)</h1>
+<div>
+<p>You can access the services and resources provided by a service instance's VM by logging into the machine through a secure shell (SSH). You can use any SSH utility you prefer. For example, if you are using Windows, you might use PuTTY; if you are using Linux, you might use OpenSSH.</p>
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-84074863-CBB2-471E-A097-365C23F46142.htm#GUID-96ECEF83-520F-4C2A-92E3-DD0ACA83E7E7" title="When accessing a VM through SSH, you need a public/private key pair you obtained here when you provision the service instance for the VM that contains the Oracle WebLogic Administration Server.">Creating an SSH Key Pair</a></p>
+</li>
+<li>
+<p><a href="GUID-84074863-CBB2-471E-A097-365C23F46142.htm#GUID-87338786-6D1A-41CD-BF14-06A4417DD4C7" title="To access an administration server's VM from a host that is not the VM running WebLogic in Oracle SOA Cloud Service, you must create an SSH tunnel between your local host and the Oracle SOA Cloud Service. With that tunnel in place, you can use the resources of that server, such as the WebLogic Scripting Tool (WLST), as if it were local.">Creating an SSH Tunnel</a></p>
+</li>
+<li>
+<p><a href="GUID-84074863-CBB2-471E-A097-365C23F46142.htm#GUID-F8637322-DDB6-4B0C-9683-31D50C38F4A1" title="You can access a VM or load balancer through a secure shell utility.">Accessing a VM or Load Balancer</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="props_rev_3"><a id="GUID-96ECEF83-520F-4C2A-92E3-DD0ACA83E7E7"></a>
+<h2 id="CSBCS-GUID-96ECEF83-520F-4C2A-92E3-DD0ACA83E7E7" class="sect2">Creating an SSH Key Pair</h2>
+<div>
+<p>When accessing a VM through SSH, you need a public/private key pair you obtained here when you provision the service instance for the VM that contains the Oracle WebLogic Administration Server.</p>
+<div class="section">
+<p>For example, to obtain the key pair by using the <code class="codeph">keygen</code> utility with the <code class="codeph">-t rsa</code> parameter; you would enter:</p>
+<pre dir="ltr">
+ssh-keygen -t rsa
+</pre>
+<p>You can also use PuTTY to create the key pair.</p>
+<p><img width="22" height="15" src="img/GUID-05E56E4F-C413-4223-80CC-29A5019D1D90-default.png" alt="Tutorial icon" title="Tutorial icon" /><a href="https://apexapps.oracle.com/pls/apex/f?p=44785:112:0::NO::P112_CONTENT_ID,P112_PREV_PAGE:10023,2" target="_blank">Tutorial</a></p>
+<p>You must supply the public key you obtained here when you provision the service instance and use its paired private key when you access it. This can be a key that you already created and saved to a file. This file can then be uploaded during VM provisioning.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-87338786-6D1A-41CD-BF14-06A4417DD4C7"></a>
+<h2 id="CSBCS-GUID-87338786-6D1A-41CD-BF14-06A4417DD4C7" class="sect2">Creating an SSH Tunnel</h2>
+<div>
+<p>To access an administration server's VM from a host that is not the VM running WebLogic in <span>Oracle SOA Cloud Service</span>, you must create an SSH tunnel between your local host and the <span>Oracle SOA Cloud Service</span>. With that tunnel in place, you can use the resources of that server, such as the WebLogic Scripting Tool (WLST), as if it were local.</p>
+<div class="section">
+<p>To create an SSH tunnel, use your preferred SSH client to provided the following tunneling information:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The path to the private key corresponding to the public key used at the time of provisioning.</p>
+</li>
+<li>
+<p>The administration server's IP address.</p>
+</li>
+</ul>
+<p>You can create the tunnel by using the SSH client of your choice. You can also use PuTTY to create the SSH tunnel.</p>
+<p><img width="22" height="15" src="img/GUID-05E56E4F-C413-4223-80CC-29A5019D1D90-default.png" alt="Tutorial icon" title="Tutorial icon" /><a href="https://apexapps.oracle.com/pls/apex/f?p=44785:112:0::::P112_CONTENT_ID:10477" target="_blank">Tutorial</a></p>
+<pre dir="ltr">
+$&gt; ssh -i <span class="variable">path to private key</span> opc@<span class="italic">ip address of administration server</span> -L 9001:<span class="variable">ip address of administration server</span>:9001 -N
+</pre>
+<p>For example:</p>
+<pre dir="ltr">
+$&gt; ssh -i id_rsa opc@111.111.111.111 -L 9001:111.111.111.111:9001 -N
+</pre>
+<div class="infobox-note" id="GUID-87338786-6D1A-41CD-BF14-06A4417DD4C7__GUID-07C30AE5-4EA8-45ED-A3D5-392F55BDD4FF">
+<p class="notep1">Note:</p>
+<p>Once activity is completed, press &lt;ctrl&gt; C to shut down the SSH tunnel.</p>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-F8637322-DDB6-4B0C-9683-31D50C38F4A1"></a>
+<h2 id="CSBCS-GUID-F8637322-DDB6-4B0C-9683-31D50C38F4A1" class="sect2">Accessing a VM or Load Balancer</h2>
+<div>
+<p>You can access a VM or load balancer through a secure shell utility.</p>
+<div class="section">
+<p>To access a VM or load balancer through SSH:</p>
+<div class="infobox-note" id="GUID-F8637322-DDB6-4B0C-9683-31D50C38F4A1__GUID-8CE5D9F2-F40F-45E6-A45F-D7AF50F2268A">
+<p class="notep1">Note:</p>
+The examples in this procedure apply to Linux users accessing the VM by using OpenSSH.</div>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>From the Oracle SOA Cloud Service Console, select the service instance associated with the VM or load balancer you want to access.</span></li>
+<li class="stepexpand"><span>From the Oracle SOA Cloud Service Instance page, click the service instance you want to access.</span>
+<div>The Oracle SOA Cloud Service Instance page is displayed with the Overview tile in focus, displaying detailed information about the service instance.</div>
+</li>
+<li class="stepexpand"><span>On the list of nodes, note either the IP address of the administration server or the load balancer, depending on which server you want to access.</span>
+<div>This address is specified in the typical octet format (111.111.111.111).
+<div class="infobox-note" id="GUID-F8637322-DDB6-4B0C-9683-31D50C38F4A1__GUID-F2729654-C31D-4D15-BD94-76B860302AFE">
+<p class="notep1">Note:</p>
+The console displays IP addresses only for the administration server and the load balancer, not the managed servers.</div>
+</div>
+</li>
+<li class="stepexpand"><span>Launch a secure shell (SSH) client of your choice and connect to the administration server's or load balancer's virtual machine.</span>
+<div>Provide the following:
+<ul style="list-style-type: disc;">
+<li>
+<p>The path to the private key corresponding to the public key used at the time of provisioning.</p>
+</li>
+<li>
+<p>The administration server's IP address.</p>
+</li>
+</ul>
+<p>in this format:</p>
+<pre dir="ltr">
+ssh -i <span class="italic">path to private key </span>opc@<span class="italic">IP address of the administration server/load balancer</span>
+</pre></div>
+<div>For example:
+<pre dir="ltr">
+ssh -i id_rsa opc@<span class="italic">111.111.111.111</span>
+</pre></div>
+</li>
+</ol>
+<div class="section">When the VM command line appears, you can use any resource accessible from the machine; for example, the WebLogic Scripting Tool.</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment69">
+<tr>
+<td class="cellalignment81">
+<table class="cellalignment74">
+<tr>
+<td class="cellalignment73"><a href="GUID-6A22645D-1194-4BF0-98CD-0E272248DC06.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment73"><a href="GUID-8C6E975E-0F23-490F-A976-E099D84E1C10.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment83">
+<table class="cellalignment72">
+<tr>
+<td class="cellalignment73"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment73"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment73"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

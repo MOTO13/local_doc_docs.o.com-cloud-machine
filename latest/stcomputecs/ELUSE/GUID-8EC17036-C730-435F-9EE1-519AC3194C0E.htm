@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Set Up the Patch Bundle</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="To set up the patch bundle on the repository server, do the following:" />
+<meta name="dcterms.created" content="2018-05-15T07:53:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E62130-11" />
+<meta name="dcterms.isVersionOf" content="ELUSE" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-28233B0D-6A9A-4D27-AF70-61F728DC4229.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-5E249555-F6EA-4A4C-B6D6-84AD93B745C6.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUSE.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-8EC17036-C730-435F-9EE1-519AC3194C0E"></a> <span id="PAGE" style="display:none;">64/81</span> <!-- End Header -->
+<h1 id="ELUSE-GUID-8EC17036-C730-435F-9EE1-519AC3194C0E" class="sect1">Set Up the Patch Bundle</h1>
+<div>
+<p>To set up the patch bundle on the repository server, do the following:</p>
+<ol>
+<li class="stepexpand"><span>Download the patch bundle from My Oracle Support.</span>
+<ol>
+<li class="substepexpand"><span>Navigate to My Oracle Support at:</span>
+<div><a href="https://support.oracle.com" target="_blank">https://support.oracle.com</a></div>
+</li>
+<li class="substepexpand"><span>Log in with your My Oracle Support account.</span></li>
+<li class="substepexpand"><span>Click the <span class="bold">Patches &amp; Updates</span> tab.</span></li>
+<li class="substepexpand"><span>Under the Patch Search section, click <span class="bold">Product or Family (Advanced)</span>.</span></li>
+<li class="substepexpand"><span>In the <span class="bold">Product</span> field, enter <code class="codeph">Oracle Public Cloud Machine</code>.</span></li>
+<li class="substepexpand"><span>In the <span class="bold">Release</span> field, select the release that you are currently running.</span>
+<div>For example, if you were upgraded from release <code class="codeph">16.3.1</code> to <code class="codeph">17.1.2</code>, select <code class="codeph">Oracle Public Cloud Machine 17.1.2.0.0</code>.</div>
+</li>
+<li class="substepexpand"><span>Click the <span class="bold">Search</span> button.</span>
+<div>The patch bundle is typically called <code class="codeph">Patchset For Oracle-Compute Instance OS Release - X.Y.Z</code>, where <code class="codeph">X.Y.Z</code> denotes the version number.</div>
+</li>
+<li class="substepexpand"><span>Click the patch bundle that is displayed.</span></li>
+<li class="substepexpand"><span>Click the <span class="bold">Download</span> button.</span></li>
+<li class="substepexpand"><span>To start the download, click the filename of the patch.</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>On your local repository server, switch to the <code class="codeph">root</code> user.</span></li>
+<li class="stepexpand"><span>Create a <code class="codeph">patchrepo</code> directory in the <code class="codeph">DocumentRoot</code> directory of the server. By default, the <code class="codeph">DocumentRoot</code> is <code class="codeph">/var/www/html</code>:</span>
+<div>
+<pre dir="ltr">
+mkdir /var/www/html/patchrepo
+</pre></div>
+</li>
+<li class="stepexpand"><span>Navigate to the <code class="codeph">patchrepo</code> directory</span>
+<div>
+<pre dir="ltr">
+cd /var/www/html/patchrepo
+</pre></div>
+</li>
+<li class="stepexpand"><span>Copy the patch bundle from the machine on which you downloaded the bundle to this location:</span>
+<div>
+<pre dir="ltr">
+scp <span class="variable">Address_Of_Machine</span>:<span class="variable">Full_Path_to_Bundle</span> /var/www/html/patchrepo 
+</pre></div>
+</li>
+<li class="stepexpand"><span>Unzip the downloaded bundle:</span>
+<div>
+<pre dir="ltr">
+unzip <span class="variable">FileNameofBundle</span>
+</pre>
+<p><span class="bold">Example:</span></p>
+<pre dir="ltr">
+unzip p25468544_1712_Linux-x86-64.zip
+</pre>
+<p>The <code class="codeph">.tgz</code>patch bundle and the readme file are extracted.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Extract the <code class="codeph">.tgz</code> bundle:</span>
+<div>
+<pre dir="ltr">
+tar --no-same-owner -xvf <span class="variable">FileNameofTgzBundle</span>
+</pre>
+<p><span class="bold">Example:</span></p>
+<pre dir="ltr">
+tar --no-same-owner -xvf <span class="variable">p25468544_1712-64-Linux-x64.tgz</span>
+</pre>
+<div class="p">The following directories are created:
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph">additional_packages</code> (17.1.2 bundle only)</p>
+</li>
+<li>
+<p><code class="codeph">scripts</code> (17.1.2 bundle only)</p>
+</li>
+<li>
+<p><code class="codeph">template</code></p>
+</li>
+<li>
+<p><code class="codeph">updates</code></p>
+</li>
+</ul>
+</div>
+</div>
+</li>
+<li class="stepexpand"><span>Edit the <code class="codeph">template/exalogic.repo</code></span>
+<div>
+<pre dir="ltr">
+vi template/exalogic.repo
+</pre></div>
+</li>
+<li class="stepexpand"><span>If the file has the following lines, delete them:</span>
+<div>
+<pre dir="ltr">
+[exalogic]
+name = exalogic
+baseurl = <a href="http://" target="_blank">http://</a>&lt;http-server&gt;:&lt;port&gt;&lt;DocumentRoot/SubDirectory&gt;/base/active/$releasever/$basearch
+gpgcheck = 0
+enabled = 1
+</pre></div>
+</li>
+<li class="stepexpand"><span>Under <code class="codeph">[exalogic-updates]</code>, replace the following:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>Replace <code class="codeph">&lt;http-server&gt;</code> with the address of the server.</p>
+</li>
+<li>
+<p>Replace <code class="codeph">&lt;port&gt;</code> to 80 if you are using the default port.</p>
+</li>
+<li>
+<p>Replace <code class="codeph">&lt;DocumentRoot/SubDirectory&gt;</code> with <code class="codeph">/patchrepo</code></p>
+</li>
+</ul>
+</div>
+<div><span class="bold">Example:</span>
+<pre dir="ltr">
+[exalogic-updates]
+name = exalogic-updates
+baseurl = http://myhost.mydomain:80/patchrepo/updates/active/$releasever/$basearch
+gpgcheck = 0
+enabled = 1
+[root@http-server template]#
+</pre></div>
+</li>
+<li class="stepexpand"><span>Start the <code class="codeph">httpd</code> server:</span>
+<div>
+<pre dir="ltr">
+service httpd start
+</pre></div>
+</li>
+<li class="stepexpand"><span>Verify that the <code class="codeph">httpd</code> server is running by accessing the <code class="codeph">patchrepo</code> location in a browser.</span></li>
+</ol>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment95">
+<tr>
+<td class="cellalignment102">
+<table class="cellalignment100">
+<tr>
+<td class="cellalignment99"><a href="GUID-28233B0D-6A9A-4D27-AF70-61F728DC4229.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment99"><a href="GUID-5E249555-F6EA-4A4C-B6D6-84AD93B745C6.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment104">
+<table class="cellalignment98">
+<tr>
+<td class="cellalignment99"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment99"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

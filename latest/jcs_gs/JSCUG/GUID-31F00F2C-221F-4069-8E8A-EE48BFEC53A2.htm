@@ -1,0 +1,967 @@
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Creating an Oracle Java Cloud Service Instance on OPCM</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="To create a new Oracle Java Cloud Service instance, use the Provision New Java Cloud Service wizard as described in the following sections." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-FCD2A1F3-A67B-43FF-A5EF-94413C63E511.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-A39D7462-D6E4-4B50-8613-1CDED90C70F9.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2"></a> <span id="PAGE" style="display:none;">16/131</span> <!-- End Header -->
+<a id="JSCUG3128"></a>
+<h1 id="JSCUG-GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2" class="sect1">Creating an Oracle Java Cloud Service Instance <span>on <span>OPCM</span></span></h1>
+<div>
+<p>To create a new Oracle Java Cloud Service instance, use the Provision New Java Cloud Service wizard as described in the following sections.</p>
+<div class="section">
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-C5ADA617-4ADF-497D-8C27-86B7E4FCA184" title="To create an Oracle Java Cloud Service instance from the Oracle Java Cloud Service Console, you use the Provision New Java Cloud Service wizard.">Invoking the Provision New Java Cloud Service Wizard</a></p>
+</li>
+<li>
+<p><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-694D29E1-EE3A-443D-A062-FA0E68CEB8A5" title="Enter basic information for your service instance: service name, service level, metering frequency, software release, and software edition.">Specifying Basic Service Information</a></p>
+</li>
+<li>
+<p><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-A1BE6257-4EED-4DC1-A4C6-9CBA440E378B" title="On the Service Details page of the Wizard, you start by configuring the size and shape of the Oracle Java Cloud Service instance.">Configuring Size and Shape</a></p>
+</li>
+<li>
+<p><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-314C818F-6E57-40BD-BEE2-1CBCF188295F" title="On the Service Details page of the Wizard, configure the administrator credentials for the WebLogic Servers.">Configuring WebLogic Server Access</a></p>
+</li>
+<li>
+<p><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-BB33CB1F-D0A1-4ED4-AF4A-752099623D9D" title="If you want to create a Coherence Data Tier, provide details on the Service Details page of the Wizard.">Configuring the Coherence Data Tier</a></p>
+</li>
+<li>
+<p><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-9F16FCD1-40C6-4FAA-96A1-9D07D333C2EF" title="You can specify domain partitions, console access, and sample application deployment.">Configuring Advanced Settings</a></p>
+</li>
+<li>
+<p><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-59CC2E40-9C38-4A70-A73F-5A0952854F00" title="On the Service Details page of the Wizard, provide details about the database(s) to use for the Oracle Java Cloud Service instance.">Configuring the Databases</a></p>
+</li>
+<li>
+<p><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-5F6150E8-A8D4-41A5-B7EA-C1B6DEECB0D9" title="On the Service Details page of the Wizard, specify details to configure the load balancer(s) for the Oracle Java Cloud Service instance.">Configuring the Load Balancer</a></p>
+</li>
+<li>
+<p><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-A0DAF743-F957-4EFA-9CF7-CCD282450D03" title="You must assign a public access network and a database network to your Oracle Java Cloud Service instance.">Configuring Networks for OPCM</a></p>
+</li>
+<li>
+<p><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-F655FFAF-1A8E-4639-9D55-4F2803574562" title="You must configure a remote backup destination for your Oracle Java Cloud Service instance.">Configuring Backups for OPCM</a></p>
+</li>
+<li>
+<p><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-7762F05B-20E4-46FF-B6DC-BDB985D3D2BB" title="On the Confirmation page of the Provision New Java Cloud Service wizard, review the service details.">Confirming Your Oracle Java Cloud Service Instance Creation</a></p>
+</li>
+</ul>
+<div class="video-box">
+<div xmlns="" id="13149" class="video-container"></div>
+</div>
+<p><img width="22" height="15" src="img/GUID-05E56E4F-C413-4223-80CC-29A5019D1D90-default.png" alt="Tutorial icon" title="Tutorial icon" /> <a href="https://apexapps.oracle.com/pls/apex/f?p=44785:24:13221106237851::NO:24:P24_CONTENT_ID,P24_PREV_PAGE:11910,1" target="_blank">Tutorial</a></p>
+<p>Before creating an Oracle Java Cloud Service instance:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Review the prerequisites described in <a href="GUID-D0ACADB5-2415-450C-AE6A-0600752BDBA0.htm#GUID-D0ACADB5-2415-450C-AE6A-0600752BDBA0" title="Before you begin using Oracle Java Cloud Service to create service instances, you must provision an Oracle database. You may also need to satisfy additional prerequisites depending on your requirements.">Before You Begin with Oracle Java Cloud Service</a></p>
+</li>
+<li>
+<p>Review the options described in <a href="GUID-FCD2A1F3-A67B-43FF-A5EF-94413C63E511.htm" title="Before creating an Oracle Java Cloud Service instance, there are details you should consider in order to create the service instance that best meets your requirements.">Design Considerations for an Oracle Java Cloud Service Instance</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="props_rev_3"><a id="GUID-C5ADA617-4ADF-497D-8C27-86B7E4FCA184"></a>
+<h2 id="JSCUG-GUID-C5ADA617-4ADF-497D-8C27-86B7E4FCA184" class="sect2">Invoking the Provision New Java Cloud Service Wizard</h2>
+<div>
+<p>To create an Oracle Java Cloud Service instance from the Oracle Java Cloud Service Console, you use the Provision New Java Cloud Service wizard.</p>
+<div class="section">To invoke the Provision New Java Cloud Service wizard:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Navigate to the Oracle Java Cloud Service Console.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Create Service</span> .</span>
+<div>
+<p>The <span class="wintitle">Provision New Oracle Java Cloud Service</span> wizard is invoked.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-694D29E1-EE3A-443D-A062-FA0E68CEB8A5"></a>
+<h2 id="JSCUG-GUID-694D29E1-EE3A-443D-A062-FA0E68CEB8A5" class="sect2">Specifying Basic Service Instance Information</h2>
+<div>
+<p>Enter basic information for your service instance: service name, service level, metering frequency, software release, and software edition.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-694D29E1-EE3A-443D-A062-FA0E68CEB8A5__GUID-A6CC64E3-9044-4C74-AEE5-02CDDA542AEF">
+<p class="notep1">Note:</p>
+You cannot change the following choices after you have created the service instance:
+<ul style="list-style-type: disc;">
+<li>
+<p>Service Name</p>
+</li>
+<li>
+<p>Description</p>
+</li>
+<li>
+<p>Service Level</p>
+</li>
+<li>
+<p>Metering Frequency</p>
+</li>
+<li>
+<p>Software Release</p>
+</li>
+<li>
+<p>Service Edition</p>
+</li>
+</ul>
+</div>
+<p>Complete the following fields:</p>
+<div class="tblformalwide" id="GUID-694D29E1-EE3A-443D-A062-FA0E68CEB8A5__THISTABLESHOWSTHEFIELDSTOCOMPLETEON-9507BA73">
+<table class="cellalignment30" summary="This table shows the fields to complete on the Services page">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment40" id="d9981e218">Field</th>
+<th class="cellalignment41" id="d9981e221">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e226" headers="d9981e218">
+<p>Service Name</p>
+</td>
+<td class="cellalignment43" headers="d9981e226 d9981e221">
+<p>Specify the name for the <span>Oracle Java Cloud Service</span> instance.</p>
+<p>The service instance name:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Must contain one or more characters.</p>
+</li>
+<li>
+<p>Must not exceed 50 characters.</p>
+</li>
+<li>
+<p>Must start with an ASCII letter: <code class="codeph">a</code> to <code class="codeph">z</code> , or <code class="codeph">A</code> to <code class="codeph">Z</code>.</p>
+</li>
+<li>
+<p>Must contain only ASCII letters or numbers, or hyphens.</p>
+</li>
+<li>
+<p>Must not contain any other special characters.</p>
+</li>
+<li>
+<p>Must be unique within the identity domain.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e269" headers="d9981e218">
+<p>Description</p>
+</td>
+<td class="cellalignment43" headers="d9981e269 d9981e221">
+<p>(Optional) Enter a short description of the <span>Oracle Java Cloud Service</span> instance.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e279" headers="d9981e218">
+<p>Service Level</p>
+</td>
+<td class="cellalignment43" headers="d9981e279 d9981e221">
+<p>Select a service level from the drop-down menu.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span>Oracle Java Cloud Service</span>&mdash;Virtual Image</p>
+<p>Developer-level service. Supports Oracle Java Cloud Service instance creation and monitoring.</p>
+<p>This service level does not support backup and restoration; patching; or scaling. You cannot provision a domain partition if you specify this service level.</p>
+</li>
+<li>
+<p><span>Oracle Java Cloud Service</span></p>
+<p>Production-level service. Supports Oracle Java Cloud Service instance creation and monitoring; domain partitions; backup and restoration; patching; and scaling.</p>
+</li>
+</ul>
+<p>The <span>Oracle Java Cloud Service</span> for Fusion Middleware service level is not supported.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e307" headers="d9981e218">
+<p>Metering Frequency</p>
+</td>
+<td class="cellalignment43" headers="d9981e307 d9981e221">
+<p>Select a metering frequency from the drop-down menu.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Hourly&mdash;Pay only for the number of hours used during your billing period.</p>
+</li>
+<li>
+<p>Monthly&mdash;Pay one price for the full month irrespective of the number of hours used.</p>
+<div class="infobox-note" id="GUID-694D29E1-EE3A-443D-A062-FA0E68CEB8A5__GUID-EC937DF2-F234-4B8D-A001-45A2A9CD7587">
+<p class="notep1">Note:</p>
+<p>For services that are started in the middle of a month, the price will be pro-rated; you pay only for the partial month from the day the service instance is created.</p>
+</div>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e324" headers="d9981e218">
+<p>Service Release</p>
+</td>
+<td class="cellalignment43" headers="d9981e324 d9981e221">
+<p>Select the software release from the drop-down menu.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Oracle WebLogic Server 11g (11.1.1.7)</span></p>
+<p>Includes Oracle WebLogic Server 11g (10.3.6) and Oracle Fusion Middleware 11g (11.1.1.7) .</p>
+</li>
+<li>
+<p><span class="bold">Oracle WebLogic Server 12c (12.1.3.0)</span></p>
+</li>
+<li>
+<p><span class="bold">Oracle WebLogic Server 12c (12.2.1.2.0)</span></p>
+</li>
+</ul>
+<p>You must select either version of Oracle WebLogic Server 12<span class="italic">c</span> if you want to use <span>Oracle Java Cloud Service</span> to create and manage an <span>Oracle Coherence</span> data tier in your service instance. If you select Oracle WebLogic Server 11<span class="italic">g</span> and want to use <span>Oracle Coherence</span> you must configure it manually after creating the service instance.</p>
+<p>The WebLogic Server software runs on the Oracle Linux 6.6 platform.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e365" headers="d9981e218">
+<p>Service Edition</p>
+</td>
+<td class="cellalignment43" headers="d9981e365 d9981e221">
+<p>Select the service edition you want to run on your service instance.</p>
+<p>You can select one of the following editions of WebLogic Server:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Standard Edition</span></p>
+</li>
+<li>
+<p><span class="bold">Enterprise Edition</span></p>
+</li>
+<li>
+<p><span class="bold">Enterprise Edition with Coherence</span></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-206B7780-8848-4A30-B903-825D0B743C82"></a>
+<h2 id="JSCUG-GUID-206B7780-8848-4A30-B903-825D0B743C82" class="sect2">Specifying the Service Instance Details</h2>
+<div>
+<p>You must configure the size, shape, and other important details for your <span>Oracle Java Cloud Service</span> instance.</p>
+<div class="section">
+<p class="subhead2">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-A1BE6257-4EED-4DC1-A4C6-9CBA440E378B" title="On the Service Details page of the Wizard, you start by configuring the size and shape of the Oracle Java Cloud Service instance.">Configuring Size and Shape</a></p>
+</li>
+<li>
+<p><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-314C818F-6E57-40BD-BEE2-1CBCF188295F" title="On the Service Details page of the Wizard, configure the administrator credentials for the WebLogic Servers.">Configuring WebLogic Server Access</a></p>
+</li>
+<li>
+<p><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-BB33CB1F-D0A1-4ED4-AF4A-752099623D9D" title="If you want to create a Coherence Data Tier, provide details on the Service Details page of the Wizard.">Configuring the Coherence Data Tier</a></p>
+</li>
+<li>
+<p><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-9F16FCD1-40C6-4FAA-96A1-9D07D333C2EF" title="You can specify domain partitions, console access, and sample application deployment.">Configuring Advanced Settings</a></p>
+</li>
+<li>
+<p><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-59CC2E40-9C38-4A70-A73F-5A0952854F00" title="On the Service Details page of the Wizard, provide details about the database(s) to use for the Oracle Java Cloud Service instance.">Configuring the Databases</a></p>
+</li>
+<li>
+<p><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-5F6150E8-A8D4-41A5-B7EA-C1B6DEECB0D9" title="On the Service Details page of the Wizard, specify details to configure the load balancer(s) for the Oracle Java Cloud Service instance.">Configuring the Load Balancer</a></p>
+</li>
+<li>
+<p><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-A0DAF743-F957-4EFA-9CF7-CCD282450D03" title="You must assign a public access network and a database network to your Oracle Java Cloud Service instance.">Configuring Networks for OPCM</a></p>
+</li>
+<li>
+<p><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-F655FFAF-1A8E-4639-9D55-4F2803574562" title="You must configure a remote backup destination for your Oracle Java Cloud Service instance.">Configuring Backups for OPCM</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect3"><a id="GUID-A1BE6257-4EED-4DC1-A4C6-9CBA440E378B"></a>
+<h3 id="JSCUG-GUID-A1BE6257-4EED-4DC1-A4C6-9CBA440E378B" class="sect3">Configuring Size and Shape</h3>
+<div>
+<p>On the Service Details page of the Wizard, you start by configuring the size and shape of the <span>Oracle Java Cloud Service</span> instance.</p>
+<p>Complete the following fields:</p>
+<div class="tblformalwide" id="GUID-A1BE6257-4EED-4DC1-A4C6-9CBA440E378B__THISTABLESHOWSTHEFIELDSYOUUSETOCONF-95219960">
+<table class="cellalignment30" summary="This table shows the fields you use to configure the shape and size of the service instance">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment40" id="d9981e503">Size and Shape Details</th>
+<th class="cellalignment41" id="d9981e506">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e511" headers="d9981e503">
+<p>Compute Shape</p>
+</td>
+<td class="cellalignment43" headers="d9981e511 d9981e506">
+<p>Select the compute shape.</p>
+<p>The compute shape is the number of Oracle Compute Units (OCPUs) and amount of memory (RAM) that you want to allocate to the VMs that will contain the WebLogic Server Administration Server and Managed Servers.</p>
+<p>All-purpose compute shapes include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>OC3: 1 OCPU and 7.5 GB memory</p>
+</li>
+<li>
+<p>OC4: 2 OCPUs and 15 GB memory</p>
+</li>
+<li>
+<p>OC5: 4 OCPUs and 30 GB memory</p>
+</li>
+<li>
+<p>OC6: 8 OCPUs and 60 GB memory</p>
+</li>
+<li>
+<p>OC7: 16 OCPUs and 120 GB memory</p>
+</li>
+</ul>
+<p>Memory-intensive compute shapes include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>OC1M: 1 OCPUs and 15 GB memory</p>
+</li>
+<li>
+<p>OC2M: 2 OCPU and 30 GB memory</p>
+</li>
+<li>
+<p>OC3M: 4 OCPUs and 60 GB memory</p>
+</li>
+<li>
+<p>OC4M: 8 OCPUs and 120 GB memory</p>
+</li>
+<li>
+<p>OC5M: 16 OCPUs and 240 GB memory</p>
+</li>
+</ul>
+<p>For more information about compute shapes, contact your Oracle Cloud Administrator.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e558" headers="d9981e503">
+<p>SSH Public Key</p>
+</td>
+<td class="cellalignment43" headers="d9981e558 d9981e506">
+<p>Specify the public key for the secure shell (SSH).</p>
+<p>This key will be used for authentication when connecting to the Oracle Java Cloud Service instance using an SSH client.</p>
+<p>Click <span class="bold">Edit</span> to display the Public key input for VM access dialog and specify the public key using one of the following methods:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Select <span class="bold">Key file name</span> and click <span class="bold">Browse</span> to select a file that contains the public key for the secure shell (SSH).</p>
+</li>
+<li>
+<p>Select <span class="bold">Key value</span> and paste in the value of the public key.</p>
+<p>If you paste in a value, make sure the value does not contain line breaks or end with a line break.</p>
+</li>
+<li>
+<p>Select <span class="bold">Create a New Key</span> to generate a public/private key pair immediately. Use this method if you did not create a key pair before you started provisioning the service instance.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e596" headers="d9981e503">
+<p>Cluster Size</p>
+</td>
+<td class="cellalignment43" headers="d9981e596 d9981e506">
+<p>Select the cluster size &mdash; the number of Managed Servers that you want to configure in a cluster. The valid values are: <code class="codeph">1</code>, <code class="codeph">2</code>, <code class="codeph">4</code>.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>This field is not valid if you selected WebLogic Server Standard Edition. In this case, one Managed Server is configured, by default.</p>
+</li>
+<li>
+<p>If you configure more than one Managed Server in the cluster, Oracle recommends that you enable the load balancer.</p>
+</li>
+</ul>
+<p id="GUID-A1BE6257-4EED-4DC1-A4C6-9CBA440E378B__GUID-B45AEADD-73FA-4BDD-8ED7-C8DCFC2FC7D8">You can also scale out the cluster after provisioning the service instance.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<div class="sect3"><a id="GUID-314C818F-6E57-40BD-BEE2-1CBCF188295F"></a>
+<h3 id="JSCUG-GUID-314C818F-6E57-40BD-BEE2-1CBCF188295F" class="sect3">Configuring WebLogic Server Access</h3>
+<div>
+<p>On the Service Details page of the Wizard, configure the administrator credentials for the WebLogic Servers.</p>
+<p>Complete the following fields:</p>
+<div class="tblformalwide" id="GUID-314C818F-6E57-40BD-BEE2-1CBCF188295F__THISTABLESHOWSTHEFIELDSYOUUSETOCONF-9521CFBD">
+<table class="cellalignment30" summary="This table shows the fields you use to configure the WebLogic Server administrator credentials.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment40" id="d9981e640">Access Details</th>
+<th class="cellalignment41" id="d9981e643">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e648" headers="d9981e640">
+<p>Local Administrative Username</p>
+</td>
+<td class="cellalignment43" headers="d9981e648 d9981e643">
+<p>Specify the username for the WebLogic Administrator.</p>
+<p>The name must be between 8 and 128 characters long and <span class="bold">cannot</span> contain any of the following characters:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Tab</p>
+</li>
+<li>
+<p>Brackets</p>
+</li>
+<li>
+<p>Parentheses</p>
+</li>
+<li>
+<p>These special characters:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Left angle bracket (<kbd class="userinput">&lt;</kbd>)</p>
+</li>
+<li>
+<p>Right angle bracket (<kbd class="userinput">&gt;</kbd>)</p>
+</li>
+<li>
+<p>Ampersand (<kbd class="userinput">&amp;</kbd>)</p>
+</li>
+<li>
+<p>Pound sign (<kbd class="userinput">#</kbd>)</p>
+</li>
+<li>
+<p>Pipe symbol (<kbd class="userinput">|</kbd>)</p>
+</li>
+<li>
+<p>Question mark (<kbd class="userinput">?</kbd>)</p>
+</li>
+</ul>
+</li>
+</ul>
+<p id="GUID-314C818F-6E57-40BD-BEE2-1CBCF188295F__GUID-A4E6A7E4-EA07-46F5-9BA9-32B65EF649C6">You can change the user name through the WebLogic Server Administration Console after the service instance is provisioned.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e712" headers="d9981e640">
+<p>Password</p>
+</td>
+<td class="cellalignment43" headers="d9981e712 d9981e643">
+<p>Specify a password for the WebLogic administrator and confirm the password.</p>
+<p>If you have specified an Oracle Database Exadata Cloud Service database deployment, you must specify a strong password conforming to the following requirements:</p>
+<p>The password must start with a letter, be of 8 to 30 characters in length, and contain at least:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>1 uppercase character</p>
+</li>
+<li>
+<p>1 lower case character</p>
+</li>
+<li>
+<p>1 digit (0 through 9)</p>
+</li>
+<li>
+<p>One of the following special characters: _ (underscore), - (hyphen), or # (pound sign or hash)</p>
+</li>
+</ul>
+<p>If you use the previous requirements and you do not specify an Oracle Database Exadata Cloud Service database deployment, provisioning will not fail. However, as a best practice, use the strong password requirements.</p>
+<p>Previous requirements are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Starts with a letter</p>
+</li>
+<li>
+<p>Is between 8 and 30 characters long</p>
+</li>
+<li>
+<p>Contains letters, at least one number, and, optionally, any number of these special characters:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Dollar sign (<kbd class="userinput">$</kbd>)</p>
+</li>
+<li>
+<p>Pound sign (<kbd class="userinput">#</kbd>)</p>
+</li>
+<li>
+<p>Underscore (<kbd class="userinput">_</kbd>)</p>
+<p>No other special characters are allowed.</p>
+</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<div class="sect3"><a id="GUID-BB33CB1F-D0A1-4ED4-AF4A-752099623D9D"></a>
+<h3 id="JSCUG-GUID-BB33CB1F-D0A1-4ED4-AF4A-752099623D9D" class="sect3">Configuring the Coherence Data Tier</h3>
+<div>
+<p>If you want to create a Coherence Data Tier, provide details on the Service Details page of the Wizard.</p>
+<p>Complete the following fields:</p>
+<div class="tblformal" id="GUID-BB33CB1F-D0A1-4ED4-AF4A-752099623D9D__THISTABLEDESCRIBESTHEFIELDSFORSPECI-9621BB54">
+<table class="cellalignment54" summary="This table describes the fields for specifying the Coherence data tier.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment40" id="d9981e790">Coherence Data Tier</th>
+<th class="cellalignment41" id="d9981e792">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e796" headers="d9981e790">
+<p>Capacity Unit</p>
+</td>
+<td class="cellalignment43" headers="d9981e796 d9981e792">
+<p>Select the default capacity unit that&rsquo;s right for your environment:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Basic</span>&mdash;Provides 1.5 GB of primary cache capacity. One VM with shape OC3 (1 OCPU total).</p>
+</li>
+<li>
+<p><span class="bold">Small</span>&mdash;Provides 4.5 GB of primary cache capacity. Three VMs with shape OC3 (3 OCPUs total).</p>
+</li>
+<li>
+<p><span class="bold">Medium</span>&mdash;Provides 10 GB of primary cache capacity. Three VMs with shape OC4 (6 OCPUs total).</p>
+</li>
+<li>
+<p><span class="bold">Large</span>&mdash;Provides 22 GB of primary cache capacity. Three VMs with shape OC5 (12 OCPUs total).</p>
+</li>
+</ul>
+<p>To create a service instance without enabling Coherence, select <span class="bold">None</span>.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e829" headers="d9981e790">
+<p>Cache Size</p>
+</td>
+<td class="cellalignment43" headers="d9981e829 d9981e792">
+<p>You can configure a default capacity unit or select <span class="bold">Advanced</span>. This selection displays the amount of primary cache storage to allocate for Coherence by one capacity unit, based on the default capacity unit configuration you select or the custom (Advanced) configuration you define, and the general rule of using 1/3 of Managed Server heap for primary cache storage.</p>
+<p>Only one capacity unit of VMs and Managed Servers is created and configured upon initial provisioning of a service instance. After a service instance is created, you can increase cache capacity by adding one capacity unit at a time.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e841" headers="d9981e790">
+<p>Shape</p>
+</td>
+<td class="cellalignment43" headers="d9981e841 d9981e792">
+<p>For Advanced configuration only:</p>
+<p>Select the number of Oracle Compute Units (OCPUs) and amount of memory (RAM) that you want for the VMs in your custom capacity unit.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e850" headers="d9981e790">
+<p>Nodes</p>
+</td>
+<td class="cellalignment43" headers="d9981e850 d9981e792">
+<p>For Advanced configuration only:</p>
+<p>Select the number of VMs you want to be configured by one custom capacity unit. Valid values are 1 to 3.</p>
+<p>Select 3 for Coherence high availability. This is because Coherence high availability is maintained when three or more VMs are configured.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e861" headers="d9981e790">
+<p>Managed Servers Per Node</p>
+</td>
+<td class="cellalignment43" headers="d9981e861 d9981e792">
+<p>For Advanced configuration only:</p>
+<p>Select the number of Managed Servers to be started on each VM by your custom capacity unit.</p>
+<p>Up to 4 Managed Servers are allowed if you use the OC3 shape.</p>
+<p>Using more servers can improve concurrency and memory management but can require more processors.</p>
+<p>The maximum heap size that will be configured is 16 GB.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<div class="sect3"><a id="GUID-9F16FCD1-40C6-4FAA-96A1-9D07D333C2EF"></a>
+<h3 id="JSCUG-GUID-9F16FCD1-40C6-4FAA-96A1-9D07D333C2EF" class="sect3">Configuring Advanced Settings</h3>
+<div>
+<p>You can specify domain partitions, console access, and sample application deployment.</p>
+<p>Complete the following table:</p>
+<div class="tblformalwide" id="GUID-9F16FCD1-40C6-4FAA-96A1-9D07D333C2EF__THISTABLESHOWSTHEFIELDSYOUUSETOCONF-A3798BEE">
+<table class="cellalignment30" summary="This table shows the fields you use to configure advanced settings.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment40" id="d9981e894">Size and Shape Details</th>
+<th class="cellalignment41" id="d9981e897">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e902" headers="d9981e894">
+<p>Domain Partitions</p>
+</td>
+<td class="cellalignment43" headers="d9981e902 d9981e897">
+<p>Select the number of partitions you want for your service.</p>
+<p>The choices are <code class="codeph">0</code>, <code class="codeph">1</code>, <code class="codeph">2</code>, or <code class="codeph">4</code>.</p>
+<p id="GUID-9F16FCD1-40C6-4FAA-96A1-9D07D333C2EF__GUID-973496E1-E2E2-497B-A0F4-99B1E590E13C">If you are configuring an Oracle Java Cloud Service &mdash; Virtual Image instance and you select WebLogic Server 12.2.1 as the version, this field will not appear. This field will also not appear if you select Standard Edition as the edition. You cannot create a domain partition in these cases.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e925" headers="d9981e894">
+<p>Deploy Sample Application</p>
+</td>
+<td class="cellalignment43" headers="d9981e925 d9981e897">
+<p>(Optional) Deploy the sample application.</p>
+<p>A sample application, <code class="codeph">sample-app.war</code>, is deployed automatically to the Managed Servers in your instance and started. If you do not want to automatically deploy the application, deselect the checkbox.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<div class="sect3"><a id="GUID-59CC2E40-9C38-4A70-A73F-5A0952854F00"></a>
+<h3 id="JSCUG-GUID-59CC2E40-9C38-4A70-A73F-5A0952854F00" class="sect3">Configuring the Databases</h3>
+<div>
+<p>On the Service Details page of the Wizard, provide details about the database(s) to use for the <span>Oracle Java Cloud Service</span> instance.</p>
+<p>Complete the following fields:</p>
+<div class="tblformal" id="GUID-59CC2E40-9C38-4A70-A73F-5A0952854F00__THISTABLEDESCRIBESTHEFIELDSFORCONFI-968B425C">
+<table class="cellalignment54" summary="This table describes the fields for configuring the databases for the service instance">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment40" id="d9981e958">Database Details</th>
+<th class="cellalignment41" id="d9981e960">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e964" headers="d9981e958">
+<p>For Oracle Required Schema &mdash; Name</p>
+</td>
+<td class="cellalignment43" headers="d9981e964 d9981e960">
+<p>Specify the name of the <span>Oracle Database Cloud Service</span> deployment you want to use for storing the required database schema for your service instance.</p>
+<p>Alternatively, specify a connection string to some other on-premises Oracle database. The connection string must be in one of the following formats:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph"><span class="variable">host</span>:<span class="variable">port</span>:<span class="variable">SID</span></code></p>
+</li>
+<li>
+<p><code class="codeph"><span class="variable">host</span>:<span class="variable">port</span>/<span class="variable">service_name</span></code></p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-59CC2E40-9C38-4A70-A73F-5A0952854F00__GUID-DAFE8694-3C63-4756-9B1F-EDC4188837AC">
+<p class="notep1">Note:</p>
+<span id="GUID-59CC2E40-9C38-4A70-A73F-5A0952854F00__d84e69">To ensure that you can restore the database for an <span>Oracle Java Cloud Service</span> instance without risking data loss for other service instances, do <span class="bold">not</span> use the same <span>Oracle Database Cloud Service</span> database deployment with multiple <span>Oracle Java Cloud Service</span> instances.</span> <span id="GUID-59CC2E40-9C38-4A70-A73F-5A0952854F00__d84e81">Backups of an <span>Oracle Database Cloud Service</span> database deployment that is used with multiple <span>Oracle Java Cloud Service</span> instances contain data for all the <span>Oracle Java Cloud Service</span> instances. If you restore the database while restoring an <span>Oracle Java Cloud Service</span> instance, data for all the <span>Oracle Java Cloud Service</span> instances is restored.</span></div>
+<p id="GUID-59CC2E40-9C38-4A70-A73F-5A0952854F00__GUID-E0FA0A9B-3B39-4BEF-A320-370918881AC9">Only <span>Oracle Database Cloud Service</span> database deployments that are up and running are available in the list. If your <span>Oracle Database Cloud Service</span> database deployment is In Progress, it will not appear in the list.</p>
+<p>The database deployment you choose must not be configured with a <span class="bold">Backup Destination</span> set to None. You must select one of the other available backup options in the database deployment prior to creating this service instance. <span class="bold">Backup Destination</span> is not applicable to <span>Oracle Database Cloud Service</span> &mdash; Virtual Image database deployments.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e1051" headers="d9981e958">
+<p>PDB Name</p>
+</td>
+<td class="cellalignment43" headers="d9981e1051 d9981e960">
+<p>Enter the name of the pluggable database for Oracle Database 12<span class="italic">c</span>.</p>
+<p>If not specified, the PDB name provided when the <span>Oracle Database Cloud Service</span> database deployment was created will be used.</p>
+<p id="GUID-59CC2E40-9C38-4A70-A73F-5A0952854F00__GUID-0AE803D3-8B0D-47B2-92E3-C8C491624A00">This value does not apply to <span>Oracle Database Cloud Service</span> database deployments running Oracle Database 11<span class="italic">g</span>.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e1074" headers="d9981e958">
+<p>Administrator Username</p>
+</td>
+<td class="cellalignment43" headers="d9981e1074 d9981e960">
+<p>Enter the name of the database administrator.</p>
+<p>For database deployments associated with <span>Oracle Java Cloud Service</span> instances based on Oracle WebLogic Server 11<span class="italic">g</span> , this value must be set to a database user with DBA role. You can use the default user <code class="codeph">SYSTEM</code> or any user that has been granted the <code class="codeph">DBA</code> role.</p>
+<p>For database deployments associated with <span>Oracle Java Cloud Service</span> instances based on Oracle WebLogic Server 12<span class="italic">c</span> (12.1.3 or 12.2.1), this value must be set to a database user with <code class="codeph">SYSDBA</code> system privileges. You can use the default user <code class="codeph">SYS</code> or any user that has been granted the <code class="codeph">SYSDBA</code> privilege.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e1112" headers="d9981e958">
+<p>Password</p>
+</td>
+<td class="cellalignment43" headers="d9981e1112 d9981e960">
+<p>Enter the database administrator user password.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<div class="sect3"><a id="GUID-5F6150E8-A8D4-41A5-B7EA-C1B6DEECB0D9"></a>
+<h3 id="JSCUG-GUID-5F6150E8-A8D4-41A5-B7EA-C1B6DEECB0D9" class="sect3">Configuring the Load Balancer</h3>
+<div>
+<p>On the Service Details page of the Wizard, specify details to configure the load balancer(s) for the <span>Oracle Java Cloud Service</span> instance.</p>
+<p>Complete the following fields:</p>
+<div class="tblformal" id="GUID-5F6150E8-A8D4-41A5-B7EA-C1B6DEECB0D9__THISTABLEDESCRIBESTHEFIELDSFORTHELO-968D7038">
+<table class="cellalignment54" summary="This table describes the fields for the load balancer used for the service instance">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment40" id="d9981e1141">Load Balancer Details</th>
+<th class="cellalignment41" id="d9981e1143">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e1147" headers="d9981e1141">
+<p>Provision Local Load Balancer</p>
+</td>
+<td class="cellalignment43" headers="d9981e1147 d9981e1143">
+<p>Select <span class="bold">Yes</span> or <span class="bold">No</span> to enable or disable the Oracle Traffic Director (OTD) load balancer. This choice defaults to <span class="bold">Yes</span> when you configure more than one Managed Server for <span>Oracle Java Cloud Service</span>.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e1166" headers="d9981e1141">
+<p>Compute Shape</p>
+</td>
+<td class="cellalignment43" headers="d9981e1166 d9981e1143">
+<p>Select the number of Oracle Compute Units (OCPUs) and amount of RAM memory that you want to allocate for the VM(s) that will run the load balancer.</p>
+<p>All-purpose compute shapes include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>OC3: 1 OCPU and 7.5 GB memory</p>
+</li>
+<li>
+<p>OC4: 2 OCPUs and 15 GB memory</p>
+</li>
+<li>
+<p>OC5: 4 OCPUs and 30 GB memory</p>
+</li>
+<li>
+<p>OC6: 8 OCPUs and 60 GB memory</p>
+</li>
+<li>
+<p>OC7: 16 OCPUs and 120 GB memory</p>
+</li>
+</ul>
+<p>Memory-intensive compute shapes include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>OC1M: 1 OCPU and 15 GB memory</p>
+</li>
+<li>
+<p>OC2M: 2 OCPUs and 30 GB memory</p>
+</li>
+<li>
+<p>OC3M: 4 OCPUs and 60 GB memory</p>
+</li>
+<li>
+<p>OC4M: 8 OCPUs and 120 GB memory</p>
+</li>
+<li>
+<p>OC5M: 16 OCPUs and 240 GB memory</p>
+</li>
+</ul>
+<p>For more information about compute shapes, contact your Oracle Cloud Administrator.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e1211" headers="d9981e1141">
+<p>Add Another Active OTD Node</p>
+</td>
+<td class="cellalignment43" headers="d9981e1211 d9981e1143">
+<p>(Optional) Add another OTD node during provisioning.</p>
+<p>The default is <span class="bold">No</span>.</p>
+<p>If you don&rsquo;t add an OTD node during provisioning, you can do so after provisioning.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e1225" headers="d9981e1141">
+<p>Load Balancer Policy</p>
+</td>
+<td class="cellalignment43" headers="d9981e1225 d9981e1143">
+<p>Select one of the following policies:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Least Connection Count</span>&mdash;Passes each new request to the Managed Server with the least number of connections. This policy is useful for smoothing distribution when Managed Servers get bogged down. Managed Servers with greater processing power to handle requests will receive more connections over time.</p>
+</li>
+<li>
+<p><span class="bold">Least Response Time</span>&mdash;Passes each new request to the Managed Server with the fastest response time. This policy is useful when Managed Servers are distributed across networks.</p>
+</li>
+<li>
+<p><span class="bold">Round Robin</span>&mdash;Passes each new request to the next Managed Server in line, evenly distributing requests across all Managed Servers regardless of the number of connections or response time.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<div class="sect3"><a id="GUID-A0DAF743-F957-4EFA-9CF7-CCD282450D03"></a>
+<h3 id="JSCUG-GUID-A0DAF743-F957-4EFA-9CF7-CCD282450D03" class="sect3">Configuring Networks for OPCM</h3>
+<div>
+<p>You must assign a public access network and a database network to your <span>Oracle Java Cloud Service</span> instance.</p>
+<p>Complete the following fields:</p>
+<div class="tblformal" id="GUID-A0DAF743-F957-4EFA-9CF7-CCD282450D03__THISTABLEDESCRIBESTHEFIELDSFORCONFI-968E8923">
+<table class="cellalignment54" summary="This table describes the fields for configuring networks">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment40" id="d9981e1269">Networks</th>
+<th class="cellalignment41" id="d9981e1271">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e1275" headers="d9981e1269">
+<p>Public Access Network</p>
+</td>
+<td class="cellalignment43" headers="d9981e1275 d9981e1271">
+<p>Select the name of an existing network from the drop-down list. The public access network will be used by clients to access applications running on the service instance.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e1282" headers="d9981e1269">
+<p>Database Network</p>
+</td>
+<td class="cellalignment43" headers="d9981e1282 d9981e1271">
+<p>Select the name of an existing network from the drop-down list. The database network will be used by your service instance to access the specified Oracle database.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<div class="sect3"><a id="GUID-F655FFAF-1A8E-4639-9D55-4F2803574562"></a>
+<h3 id="JSCUG-GUID-F655FFAF-1A8E-4639-9D55-4F2803574562" class="sect3">Configuring Backups for OPCM</h3>
+<div>
+<p>You must configure a remote backup destination for your <span>Oracle Java Cloud Service</span> instance.</p>
+<p><span>Oracle Java Cloud Service</span> uses a remote Network File System (NFS) to store <span>Oracle Java Cloud Service</span> instance backups. A remote backup destination is not required for service instances created at the <span>Oracle Java Cloud Service</span>&mdash;Virtual Image service level.</p>
+<p>Complete the following field:</p>
+<div class="tblformal" id="GUID-F655FFAF-1A8E-4639-9D55-4F2803574562__THISTABLEDESCRIBESTHEFIELDSFORNETWO-968F37A0">
+<table class="cellalignment54" summary="This table describes the fields for network backup">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment40" id="d9981e1320">Backup Location</th>
+<th class="cellalignment41" id="d9981e1322">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment42" id="d9981e1326" headers="d9981e1320">
+<p>NFS Remote Backup</p>
+</td>
+<td class="cellalignment43" headers="d9981e1326 d9981e1322">
+<div class="p">Specify the location of an existing NFS share in one of the following formats:
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph"><span class="codeinlineitalic">nfs_host_name</span>:<span class="codeinlineitalic">/share/path/to/backup/folder</span></code></p>
+</li>
+<li>
+<p><code class="codeph"><span class="codeinlineitalic">nfs_host_ip</span>:<span class="codeinlineitalic">/share/path/to/backup/folder</span></code></p>
+</li>
+</ul>
+</div>
+<p>For example: <code class="codeph">172.17.0.5:/export/jcs/backup</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+</div>
+<div class="props_rev_3"><a id="GUID-7762F05B-20E4-46FF-B6DC-BDB985D3D2BB"></a>
+<h2 id="JSCUG-GUID-7762F05B-20E4-46FF-B6DC-BDB985D3D2BB" class="sect2">Confirming Your Oracle Java Cloud Service Instance Creation</h2>
+<div>
+<p>On the Confirmation page of the Provision New Java Cloud Service wizard, review the service details.</p>
+<div class="section">
+<p>If you need to change the service details, use the navigation bar or <span class="bold">Back</span> button at the top of the wizard to step back through the pages in the wizard. Click <span class="bold">Cancel</span> to cancel out of the wizard without creating a new service instance. If you are satisfied with your choices on the Confirmation page, click <span class="bold">Create</span>.</p>
+<div class="infobox-note" id="GUID-7762F05B-20E4-46FF-B6DC-BDB985D3D2BB__GUID-B73F1FD8-E81F-4B65-A755-E14A3DD14D9B">
+<p class="notep1">Note:</p>
+When creating a service instance that has <span>Oracle Coherence</span> enabled: Upon creation of the service instance, the initial set of Managed Servers configured for the Coherence data tier is listed as a scale out operation in the Activity section on the Topology page. See <a href="GUID-BD8C7EA1-460C-48A7-B6C7-2E7665D2A73E.htm#GUID-BD8C7EA1-460C-48A7-B6C7-2E7665D2A73E" title="You can view scaling requests to check the status of ongoing scaling requests, and the success or failure of previous requests.">Viewing Scaling Requests</a> for information about how to access the Activity section and view details for a specific scaling operation.</div>
+<p>Optionally, you can click on the service instance name to view status messages. If provisioning of your service instance fails but there are no fatal errors, the software automatically retries provisioning, after a lag time of 60 minutes. Messages about the auto-retry process and failed compute resources are displayed.</p>
+<p>After the service instance has been created, you can view the system messages logged during the creation process, including error messages. Click <span class="bold">Instance create or delete history</span>, then click the service instance name or <span class="bold">Details</span>.</p>
+<p>If the provisioning process retried provisioning automatically, some failed resources might still exist. To clean up these failed resources, click the <span class="bold">Complete Cleanup</span> button. If you click the button once and not all failed resources are cleaned up, the <span class="bold">Complete Cleanup</span> button will remain. If this is the case, click the button again and wait. Repeat this process until the button is not longer displayed and all failed resources are cleaned up.</p>
+<p>You can view the sample application that was deployed automatically when the service instance was created (unless you elected not to deploy it). See <a href="GUID-35722F36-98FE-4685-98EC-606A4C5F7DCA.htm" title="When you create an Oracle Java Cloud Service instance, a sample application is deployed automatically to the instance&rsquo;s managed servers and started.">About the Sample Application Deployed to an Oracle Java Cloud Service Instance</a>.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-FCD2A1F3-A67B-43FF-A5EF-94413C63E511.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-A39D7462-D6E4-4B50-8613-1CDED90C70F9.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

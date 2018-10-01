@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Viewing Service Networks</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-07T05:55:01Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine CLI Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E69222-06" />
+<meta name="dcterms.isVersionOf" content="ELUCL" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-8CBE0F4E-E376-4C93-BB56-884836273168.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUCL.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-807812AE-1FAE-4F72-9CC3-34E59BF309F8"></a> <span id="PAGE" style="display:none;">34/40</span> <!-- End Header -->
+<h1 id="ELUCL-GUID-807812AE-1FAE-4F72-9CC3-34E59BF309F8" class="sect1">Viewing Service Networks</h1>
+<div>
+<div class="section">Service networks (servicenets) are created in the system to provide shared services across multiple tenants.&nbsp;The shared services include access to storage, networks, and other engineered systems.&nbsp;An example of an external service provider is an Oracle ZFS storage appliance that provides storage shared across tenants. A dedicated InfiniBand partition is allocated for a servicenet, and no two servicenets share the partition.</div>
+<!-- class="section" -->
+<div class="section">The networks can be of type EoIB or IPoIB.&nbsp;The Oracle Cloud Administrator creates and manages these servicenets. In order to view a service network, a tenant must be granted access to the servicenet's underlying vNet by the Oracle Cloud Administrator. This is done with the use of vNet access.</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">IPoIB Service Networks</span>: The IPoIB servicenet is used for communication between service consumers and service providers. The servicenet is constructed over InfiniBand inside the system, between engineered Systems, or external ZFS appliance interconnected using InfiniBand.</p>
+</li>
+<li>
+<p><span class="bold">EoIB Service Networks</span>: The EoIB servicenet is used for communication with a service provider or service consumer located outside the system over Ethernet through NM2 Gateways.</p>
+</li>
+</ul>
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-807812AE-1FAE-4F72-9CC3-34E59BF309F8.htm#GUID-1D75D6DB-3F59-4892-AD86-9EADB299CD40" title="This command enables you to discover a list of service networks defined within a container.">discover servicenet</a></p>
+</li>
+<li>
+<p><a href="GUID-807812AE-1FAE-4F72-9CC3-34E59BF309F8.htm#GUID-99B5B4B2-FBC3-481A-8744-3A5DD842860C" title="This command enables you to retrieve information for a specific service network.">get servicenet</a></p>
+</li>
+<li>
+<p><a href="GUID-807812AE-1FAE-4F72-9CC3-34E59BF309F8.htm#GUID-A3AB5CFD-6863-40FA-B25A-0F585E580051" title="This command enables you to retrieve information for all the service networks within a specific container.">list servicenet</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-1D75D6DB-3F59-4892-AD86-9EADB299CD40"></a>
+<h2 id="ELUCL-GUID-1D75D6DB-3F59-4892-AD86-9EADB299CD40" class="sect2">discover servicenet</h2>
+<div>
+<p>This command enables you to discover a list of service networks defined within a container.</p>
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute discover servicenet <span class="variable">container</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-1D75D6DB-3F59-4892-AD86-9EADB299CD40__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for listing all service networks in a container.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d19628e103">Parameter</th>
+<th class="cellalignment26" id="d19628e105">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d19628e109" headers="d19628e103">container</td>
+<td class="cellalignment27" headers="d19628e109 d19628e105">Hierarchical name-space for service networks</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute discover servicenet /oracle/public</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute discover servicenet /oracle/public
+entry
+/oracle/public/IPoIB-virt-admin
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-99B5B4B2-FBC3-481A-8744-3A5DD842860C"></a>
+<h2 id="ELUCL-GUID-99B5B4B2-FBC3-481A-8744-3A5DD842860C" class="sect2">get servicenet</h2>
+<div>
+<p>This command enables you to retrieve information for a specific service network.</p>
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute get servicenet <span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-99B5B4B2-FBC3-481A-8744-3A5DD842860C__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for retrieving details of a specific service network.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d19628e171">Parameter</th>
+<th class="cellalignment26" id="d19628e173">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d19628e177" headers="d19628e171">name</td>
+<td class="cellalignment27" headers="d19628e177 d19628e173">Name of the service network. For example, <code class="codeph">/oracle/public/mysvcnet</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute get servicenet /cloud/public/IPoIB-default</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute get servicenet /cloud/public/IPoIB-default -F name,pkey,type,description
+name                         pkey     type    description
+/cloud/public/IPoIB-default  0x7fff   ipoib   Infrastructure service network: cloud/public/IPoIB-default
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-A3AB5CFD-6863-40FA-B25A-0F585E580051"></a>
+<h2 id="ELUCL-GUID-A3AB5CFD-6863-40FA-B25A-0F585E580051" class="sect2">list servicenet</h2>
+<div>
+<p>This command enables you to retrieve information for all the service networks within a specific container.</p>
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute list servicenet <span class="variable">container</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-A3AB5CFD-6863-40FA-B25A-0F585E580051__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for retrieving details of all service networks in a container.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d19628e242">Parameter</th>
+<th class="cellalignment26" id="d19628e244">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d19628e248" headers="d19628e242">container</td>
+<td class="cellalignment27" headers="d19628e248 d19628e244">Hierarchical name-space for service networks</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute list servicenet /</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute list servicenet / -F name,pkey,type,description
+name                                         pkey        type       description
+/cloud/public/IPoIB-default                  0x7fff      ipoib      Infrastructure service network: cloud/public/IPoIB-default
+/oracle/public/IPoIB-virt-admin              0x1402      ipoib      Infrastructure service network: oracle/public/IPoIB-virt-admin
+/cloud/public/IPoIB-ldap-internal            0x1405      ipoib      IPoIB-ldap-internal
+/cloud/public/IPoIB-service-manager          0x1404      ipoib      IPoIB-service
+/cloud/public/IPoIB-management               0x1ffe      ipoib      Infrastructure service network: cloud/public/IPoIB-management
+/cloud/public/IPoIB-instance-storage         0x1401      ipoib      Infrastructure service network: cloud/public/IPoIB-instance-storage
+/cloud/public/IPoIB-load-balancer            0x140b      ipoib      IPoIB-load-balancer
+/cloud/public/EoIB-vlan3072                  0x1416      eoib
+/cloud/public/IPoIB-storage                  0x1400      ipoib      Infrastructure service network: cloud/public/IPoIB-storage
+/cloud/public/EoIB-management                0x1403      eoib       Infrastructure service network: cloud/public/EoIB-management
+/cloud/public/EoIB-OMS                       0x1406      eoib       EoIB-OMS
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-8CBE0F4E-E376-4C93-BB56-884836273168.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

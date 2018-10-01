@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Using Fusion Middleware Control to Deploy and Undeploy an Application</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can deploy and undeploy an application by using Oracle Enterprise Manager Fusion Middleware Control, just as you would in an on-premises environment." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-1EAF300B-B40D-4034-87BB-0396B85B45F2.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-FAAE57D6-BB54-43BA-A3FA-8EDAFCD3C04E.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-C7BD2C7D-D33C-41D8-BC7B-0F8EBC965EEE"></a> <span id="PAGE" style="display:none;">49/131</span> <!-- End Header -->
+<h1 id="JSCUG-GUID-C7BD2C7D-D33C-41D8-BC7B-0F8EBC965EEE" class="sect1">Using Fusion Middleware Control to Deploy and Undeploy an Application</h1>
+<div>
+<p>You can deploy and undeploy an application by using Oracle Enterprise Manager Fusion Middleware Control, just as you would in an on-premises environment.</p>
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-C7BD2C7D-D33C-41D8-BC7B-0F8EBC965EEE.htm#GUID-5EF4CBD6-D540-48B4-831B-579B51CEAB95" title="You can use Oracle Enterprise Manager Fusion Middleware Control to deploy an application to an Oracle Java Cloud Service instance, just as you would deploy the application to an on-premises service instance.">Using Fusion Middleware Control to Deploy an Application</a></p>
+</li>
+<li>
+<p><a href="GUID-C7BD2C7D-D33C-41D8-BC7B-0F8EBC965EEE.htm#GUID-AB3F796D-C28B-464A-B8EC-58E992B3F96D" title="You can use Oracle Enterprise Manager Fusion Middleware Control to deploy an application to an Oracle Java Cloud Service instance, just as you would undeploy the application on an on-premises service instance.">Using Fusion Middleware Control to Undeploy an Application</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<a id="JSCUG3373"></a>
+<div class="props_rev_3"><a id="GUID-5EF4CBD6-D540-48B4-831B-579B51CEAB95"></a>
+<h2 id="JSCUG-GUID-5EF4CBD6-D540-48B4-831B-579B51CEAB95" class="sect2">Using Fusion Middleware Control to Deploy an Application</h2>
+<div>
+<p>You can use Oracle Enterprise Manager Fusion Middleware Control to deploy an application to an Oracle Java Cloud Service instance, just as you would deploy the application to an on-premises service instance.</p>
+<div class="section">
+<p>The following documentation is available to help you learn more about using Fusion Middleware Control to deploy an application:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Oracle Fusion Middleware 12.2.1</p>
+<p><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=ASADM10267" target="_blank">Deploying, Undeploying, and Redeploying Java EE Applications</a> in <cite>Administering Oracle Fusion Middleware</cite></p>
+</li>
+<li>
+<p>Oracle Fusion Middleware 12.1.3</p>
+<p><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw121300&amp;id=ASADM10267" target="_blank">Deploying, Undeploying, and Redeploying Java EE Applications</a> in <cite>Administering Oracle Fusion Middleware</cite></p>
+</li>
+<li>
+<p>Oracle Fusion Middleware 11.1.1.7</p>
+<p><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudas111170&amp;id=ASADM10267" target="_blank">Deploying, Undeploying, and Redeploying Java EE Applications</a> in <cite>Oracle Fusion Middleware Administrator&rsquo;s Guide</cite></p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section">To deploy an application by using Fusion Middleware Control:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Navigate to the Oracle Java Cloud Service Console.</span></li>
+<li class="stepexpand"><span>Open the Fusion Middleware Control console.</span>
+<div>The Fusion Middleware Control Logic page is displayed.</div>
+</li>
+<li class="stepexpand"><span>Log in to the Fusion Middleware Control console by using the administrator log-in credentials you specified when you created the Oracle Java Cloud Service instance.</span>
+<div>The Fusion Middleware Control console is displayed.</div>
+</li>
+<li class="stepexpand"><span>From the navigation pane on the Fusion Middleware Control console, expand the domain in which you want to deploy the application.</span></li>
+<li class="stepexpand"><span>Select the cluster or server to which you want to deploy the application.</span>
+<div>The server home page is displayed.</div>
+</li>
+<li class="stepexpand"><span>From the WebLogic Cluster menu, choose <span class="bold">Control</span>, then <span class="bold">Deployments</span>.</span>
+<div>The Deployments page is displayed.</div>
+</li>
+<li class="stepexpand"><span>In the Change Center, select <span class="bold">Changes</span> &ndash; <span class="bold">Lock &amp; Edit</span>.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Deploy</span> to open the Deploy Java EE Application Assistant.</span>
+<div>The Select Archive page is displayed.</div>
+</li>
+<li class="stepexpand"><span>In the Archive or Exploded Directory section, select one of the following choices and browse to select the application or directory:</span>
+<ul>
+<li>Archive is on the machine where the browser is running.</li>
+<li>Archive or exploded directory is on the server where Enterprise Manager is running.</li>
+</ul>
+</li>
+<li class="stepexpand"><span>Depending on whether you have a deployment plan, and the location of the deployment plan, select one of the following choices:</span>
+<ul>
+<li>Create a new deployment plan when deployment configuration is done.</li>
+<li>Deployment plan is on the machine where the Web browser is running.</li>
+<li>Deployment plan is on the server where Enterprise Manager is running.</li>
+</ul>
+</li>
+<li class="stepexpand"><span>In the Deployment Type section, select one of the following choices and click <span class="bold">Next</span>:</span>
+<ul>
+<li>Deploy this archive or exploded directory.</li>
+<li>Deploy this archive or exploded directory as a library</li>
+</ul>
+<div>The Select Target page is displayed.</div>
+</li>
+<li class="stepexpand"><span>Depending on where you want to deploy the application, select the cluster an individual Managed Server and click <span class="bold">Next</span>.</span>
+<div>The Application Attributes page is displayed.</div>
+</li>
+<li class="stepexpand"><span>In the Deployment Type section, select one of the following choices and click <span class="bold">Next</span>:</span>
+<ul>
+<li>Deploy the archive or exploded directory as an application</li>
+<li>Deploy the archive or exploded directory as a library</li>
+</ul>
+<div>The Select Target page is displayed.</div>
+</li>
+<li class="stepexpand"><span>Select the Managed Server or <span class="bold">All managed servers in the cluster</span> and click <span class="bold">Next</span>.</span>
+<div>The Application Attributes page is displayed.</div>
+</li>
+<li class="stepexpand"><span>Under Application Attributes, in the Application Name field, enter the name of the application if the software has not provided the name already.</span></li>
+<li class="stepexpand"><span>In the Context Root of Web Modules section, enter the application context root.</span></li>
+<li class="stepexpand"><span>In the Distribution section, select one of the following choices:</span>
+<ul>
+<li>Install and start application (servicing all requests)</li>
+<li>Install and start application in administration mode (servicing only administration requests)</li>
+<li>Install only. Do not start.</li>
+</ul>
+</li>
+<li class="stepexpand"><span>Keep or change choices in the Other Options section and click <span class="bold">Next</span>.</span>
+<div>The Deployment Wizard, Deployment Settings page is displayed.</div>
+</li>
+<li class="stepexpand"><span>Keep or change default settings.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Deploy</span>.</span>
+<div>The Fusion Middleware Control console displays processing messages.</div>
+</li>
+<li class="stepexpand"><span>When the deployment is completed, click <span class="bold">Close</span>.</span></li>
+<li class="stepexpand"><span>In the Change Center, select <span class="bold">Changes</span> &ndash; <span class="bold">Activate Changes</span>.</span>
+<div>Note that the application appears on the Deployments table.</div>
+</li>
+</ol>
+<div class="section">The application has been deployed.</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-AB3F796D-C28B-464A-B8EC-58E992B3F96D"></a>
+<h2 id="JSCUG-GUID-AB3F796D-C28B-464A-B8EC-58E992B3F96D" class="sect2">Using Fusion Middleware Control to Undeploy an Application</h2>
+<div>
+<p>You can use Oracle Enterprise Manager Fusion Middleware Control to deploy an application to an Oracle Java Cloud Service instance, just as you would undeploy the application on an on-premises service instance.</p>
+<div class="section">
+<p>The following documentation is available to help you learn more about using Fusion Middleware Control to undeploy an application:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Oracle Fusion Middleware 12.2.1</p>
+<p><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=ASADM10267" target="_blank">Deploying, Undeploying, and Redeploying Java EE Applications</a> in <cite>Administering Oracle Fusion Middleware</cite></p>
+</li>
+<li>
+<p>Oracle Fusion Middleware 12.1.3</p>
+<p><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw121300&amp;id=ASADM10267" target="_blank">Deploying, Undeploying, and Redeploying Java EE Applications</a> in <cite>Administering Oracle Fusion Middleware</cite></p>
+</li>
+<li>
+<p>Oracle Fusion Middleware 11.1.1.7</p>
+<p><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudas111170&amp;id=ASADM10267" target="_blank">Deploying, Undeploying, and Redeploying Java EE Applications</a> in <cite>Oracle Fusion Middleware Administrator&rsquo;s Guide</cite></p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section">To undeploy an application by using Fusion Middleware Control:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Navigate to the Oracle Java Cloud Service Console.</span></li>
+<li class="stepexpand"><span>Open the Fusion Middleware Control console.</span>
+<div>The Fusion Middleware Control console is displayed.</div>
+</li>
+<li class="stepexpand"><span>From the navigation pane, expand <span class="bold">Application Deployments</span>.</span></li>
+<li class="stepexpand"><span>Select the application to undeploy.</span>
+<div>The application home page is displayed.
+<p>Note that the application is deployed in an <span class="bold">Active</span> state.</p>
+</div>
+</li>
+<li class="stepexpand"><span>From the Domain Application Deployment menu, choose <span class="bold">Deployments</span>.</span>
+<div>The Deployments page is displayed.</div>
+</li>
+<li class="stepexpand"><span>In the Change Center, click <span class="bold">Changes</span> &ndash; <span class="bold">Lock &amp; Edit</span>.</span></li>
+<li class="stepexpand"><span>Select the application and click <span class="bold">Undeploy.</span>.</span>
+<div>The Confirmation page is displayed.</div>
+</li>
+<li class="stepexpand"><span>In the Confirmation page, click <span class="bold">Undeploy</span>.</span>
+<div>Processing messages are displayed.</div>
+</li>
+<li class="stepexpand"><span>When the operation completes, click <span class="bold">Close</span>.</span></li>
+<li class="stepexpand"><span>In the Change Center, select <span class="bold">Changes</span> &ndash; <span class="bold">Activate Changes</span></span>
+<div>The application no longer appears on the Deployments table.</div>
+</li>
+</ol>
+<div class="section">The application is undeployed.</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-1EAF300B-B40D-4034-87BB-0396B85B45F2.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-FAAE57D6-BB54-43BA-A3FA-8EDAFCD3C04E.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service - View Default Capacity Units</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-clusters-%7BclusterName%7D-put.html" title="Previous" type="text/html">
+        <link rel="next" href="api-Health%20Monitoring.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-clusters-%7BclusterName%7D-put.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="api-Health%20Monitoring.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            
+            <header>
+
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li>Tasks</li>
+                    
+                    <li class="active">
+                        
+                        <a href="api-Coherence%20Data%20Tiers.html">Coherence Data Tiers</a>
+                        
+                    </li>
+                    
+                </ol>
+                
+                <p class="draftsubtitle"></p>
+                
+                <h2>View Default Capacity Units</h2>
+                <div>
+                    <div class="label label-get text-uppercase">get</div>
+                    <p style="word-break: break-word;"><strong>/paas/service/jcs/api/v1.1/datagrid/{identityDomainId}/config/scalingUnits/defaultScalingUnits</strong></p>
+                </div>
+            </header>
+            <section>
+
+                <div class="description">Returns a set of capacity units that can be used to provision Oracle Java Cloud Service-Coherence instances. The capacity units provide different default combinations of cache capacity and VM processing power configurations that fit most application and workflow requirements.<p>On Oracle Public Cloud, see <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=JSCUG-GUID-CB493A54-15A9-458C-B6C1-F8E40F10D433' target='_blank'>About Default Capacity Units for Oracle Java Cloud Service-Coherence Instances</a> in <i>Using Oracle Java Cloud Service</i> for information about the capacity unit configurations you can use. On Oracle Cloud Machine, see <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloudopcm&id=JSCUG-GUID-CB493A54-15A9-458C-B6C1-F8E40F10D433' target='_blank'>About Default Capacity Units for Oracle Java Cloud Service-Coherence Instances</a> in <i>Using Oracle Java Cloud Service on OPCM</i><p><b>Note:</b> The term <i>scaling unit</i> used in the REST API means the same as capacity unit.</div>
+
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                        <li role="presentation" class="active"><a href="#request" aria-controls="request" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-in" aria-hidden="true"></span> Request</a></li>
+                        <li role="presentation"><a href="#response" aria-controls="response" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-out" aria-hidden="true"></span> Response</a></li>
+                        
+                        <li role="presentation"><a href="#examples" aria-controls="examples" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-edit" aria-hidden="true"></span> Examples</a></li>
+                        
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="request">
+                            <h3 class="visible-print-block">Request</h3>
+                            
+
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Path Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>identityDomainId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account (on Oracle Public Cloud).<p>Tenant name for the Oracle Java Cloud Service instance (on Oracle Cloud Machine).</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+
+                            
+                            
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Header Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>X-ID-TENANT-NAME</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account (on Oracle Public Cloud).<p>Tenant name for the Oracle Java Cloud Service instance (on Oracle Cloud Machine).</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+
+
+                            
+
+
+
+                            
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="response">
+                            <h3 class="visible-print-block">Response</h3>
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">200 Response <span class="glyphicon glyphicon-ok-sign response-symbol" data-response-code="200" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    OK. See <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=jcs_rest_statuscodes'>Status Codes</a> for information about other possible HTTP status codes.
+                                </div>
+
+                                
+                                
+
+                                
+                                <div class="panel panel-default">
+
+                                    <div class="panel-heading">Body</div>
+                                    <div class="panel-body">
+                                        
+                                        <div>The response body shows the details of default capacity units.</div>
+                                        
+
+                                        <div class="schema-container">
+                                        
+                                        <div id="200-definitions-defaultcapacity-response" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : defaultcapacity-response</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The response body shows the details of default capacity units.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-defaultcapacity-response-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-defaultcapacity-response-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-defaultcapacity-response-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-defaultcapacity-response-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-defaultcapacity-response-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>scalingUnitDefs</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-defaultcapacity-response-properties-scalingUnitDefs" role="button" class="btn btn-default btn-sm">scalingUnitDefs</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about a site's default capacity units.</div>
+
+            
+        </dd>
+        
+        <dt>siteConfig</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-defaultcapacity-response-properties-siteConfig" role="button" class="btn btn-default btn-sm">siteConfig</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about a data center site.</div>
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-defaultcapacity-response-properties-scalingUnitDefs" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : scalingUnitDefs</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about a site's default capacity units.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-defaultcapacity-response-properties-scalingUnitDefs-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-defaultcapacity-response-properties-scalingUnitDefs-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-defaultcapacity-response-properties-scalingUnitDefs-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-defaultcapacity-response-properties-scalingUnitDefs-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-defaultcapacity-response-properties-scalingUnitDefs-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-scalingUnitDefs" role="button" class="btn btn-default btn-sm">scalingUnitDefs</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-defaultcapacity-response-properties-siteConfig" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : siteConfig</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about a data center site.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-defaultcapacity-response-properties-siteConfig-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-defaultcapacity-response-properties-siteConfig-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-defaultcapacity-response-properties-siteConfig-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-defaultcapacity-response-properties-siteConfig-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-defaultcapacity-response-properties-siteConfig-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>maxCluster</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Maximum number of storage-enabled JVMs or Managed Servers that can be supported in a cluster for the given data center site.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>maxVmsPerUnit</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Maximum number of VMs that can be configured for a capacity unit for the given data center site.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>siteSize</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Number of blades supported at the data center site.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>siteURL</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>URL of the data center site where the service instance is to be provisioned.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-scalingUnitDefs" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : scalingUnitDefs</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-scalingUnitDefs-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-scalingUnitDefs-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-scalingUnitDefs-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-scalingUnitDefs-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-scalingUnitDefs-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>scalingUnit</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-scalingUnitDefs-properties-scalingUnit" role="button" class="btn btn-default btn-sm">scalingUnit</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups the definition details for a default capacity unit.</div>
+
+            
+        </dd>
+        
+        <dt>scalingUnitName</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Valid names include:<ul><li><code>BASIC</code></li><li><code>SMALL</code></li><li><code>MEDIUM</code></li><li><code>LARGE</code></li></ul><p>Each default capacity unit comprises a group of VMs with a predefined compute shape (processing power and RAM), running a number of JVMs or Managed Coherence Servers to provide a preconfigured primary cache size. The amount of primary cache storage to allocate for Coherence is based on the general rule of splitting the JVM heap size into thirds using: 1/3 for primary cache storage, 1/3 for backup storage, and 1/3 for scratch space.<p>On Oracle Public Cloud, see <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=JSCUG-GUID-CB493A54-15A9-458C-B6C1-F8E40F10D433' target='_blank'>About Default Capacity Units for Oracle Java Cloud Service-Coherence Instances</a> in <i>Using Oracle Java Cloud Service</i> to help you decide which default configuration to use. On Oracle Cloud Machine, see <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloudopcm&id=JSCUG-GUID-CB493A54-15A9-458C-B6C1-F8E40F10D433' target='_blank'>About Default Capacity Units for Oracle Java Cloud Service-Coherence Instances</a> in <i>Using Oracle Java Cloud Service on OPCM</i>.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-scalingUnitDefs-properties-scalingUnit" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : scalingUnit</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups the definition details for a default capacity unit.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-scalingUnitDefs-properties-scalingUnit-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-scalingUnitDefs-properties-scalingUnit-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-scalingUnitDefs-properties-scalingUnit-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-scalingUnitDefs-properties-scalingUnit-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-scalingUnitDefs-properties-scalingUnit-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>heapSize</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Heap size to configure with each JVM.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>jvmCount</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Number of JVMs to start on each VM for the given shape.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>maxHeap</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Maximum heap that can be supported for the given capacity unit and data center site.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>maxPrimary</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Maximum primary cache storage that the service instance can be scaled out to for the given capacity unit and data center site.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>shape</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Compute shape for all VMs to be provisioned. For example, <code>oc3</code>. A shape defines the number of Oracle Compute Units (OCPUs) and the amount of RAM (system memory) available for a VM instance.<p>On Oracle Public Cloud, see <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=OCSUG-GUID-1DD0FA71-AC7B-461C-B8C1-14892725AA69' target='_blank'>About Machine Images and Shapes</a> in <i>Using Oracle Compute Cloud Service (for PaaS)</i> for more information about shapes.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>totalHeap</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Total amount of heap provided by a capacity unit.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>totalPrimary</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Total amount of primary cache provided by a capacity unit. This amount is 1/3 of total heap.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>vmCount</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Number of VMs to configure for a capacity unit.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+
+
+                        </div>
+                        
+                        <div role="tabpanel" class="tab-pane fade" id="examples">
+                            <h3>Examples</h3>
+                            <div class="body conbody">
+ <p class="p">The following example shows how to view information about all default capacity units for an Oracle Java Cloud Service account by submitting a GET request on the REST resource using cURL.</p> 
+ <p class="p"><strong class="ph b">Note:</strong> The command in this example uses the URL structure <samp class="ph codeph">https://rest_server_url/<em class="ph i">resource-path</em></samp>, where <samp class="ph codeph">rest_server_url</samp> is the Oracle Public Cloud or Oracle Cloud Machine REST server to contact for your identity domain or tenant name. See <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a> for the appropriate URL structure to use on Oracle Public Cloud or Oracle Cloud Machine.</p> 
+ <div class="section">
+  <h3 class="title sectiontitle">cURL Command</h3>
+  <pre class="pre">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/datagrid/ExampleIdentityDomain/config/scalingUnits/defaultScalingUnits
+</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Header</h3>
+  <p class="p">The following shows an example of the response header:</p> 
+  <pre class="pre">HTTP/1.1 200 OK
+Date: Tue, 06 Oct 2015 19:37:30 GMT
+Transfer-Encoding: chunked
+Content-Type: application/json
+</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Body</h3>
+  <p class="p">The following shows an example of the response body.</p> 
+  <pre class="pre">{
+  "siteConfig":{
+    "siteUrl":"https://value"
+    "siteSize":30,
+    "maxCluster":80,
+    "maxVmsPerUnit":10
+  },
+  "scalingUnitDefs":[
+    {
+      "scalingUnitName":"BASIC",
+      "scalingUnit":{
+        "shape":"oc3",
+        "vmCount":1,
+        "heapSize":"4608M",
+        "jvmCount":1,
+        "totalPrimary":"1536M",
+        "totalHeap":"4608M",
+        "maxPrimary":"46080M",
+        "maxHeap":"138240M"
+      }
+    },
+    {
+      "scalingUnitName":"SMALL",
+      "scalingUnit":{
+        "shape":"oc3",
+        "vmCount":3,
+        "heapSize":"4608M",
+        "jvmCount":1,
+        "totalPrimary":"4608M",
+        "totalHeap":"13824M",
+        "maxPrimary":"46080M",
+        "maxHeap":"138240M"
+      }
+    },
+    {
+      "scalingUnitName":"MEDIUM",
+      "scalingUnit":{
+        "shape":"oc4",
+        "vmCount":3,
+        "heapSize":"5120M",
+        "jvmCount":2,
+        "totalPrimary":"10240M",
+        "totalHeap":"30720M",
+        "maxPrimary":"102400M",
+        "maxHeap":"307200M"
+      }
+    },
+    {
+      "scalingUnitName":"LARGE",
+      "scalingUnit":{
+       "shape":"oc5",
+       "vmCount":3,
+       "heapSize":"5632M",
+       "jvmCount":4,
+       "totalPrimary":"22528M",
+       "totalHeap":"67584M",
+       "maxPrimary":"135168M",
+       "maxHeap":"405504M"
+      }
+    }
+  ]
+}</pre> 
+ </div> 
+</div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+        </article>
+    </body>
+</html>

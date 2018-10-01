@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Understanding Oracle Compute Cloud Service User Roles</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="User roles abstract low level permissions to make it easy for the Oracle Cloud Administrator to delegate management functions. Each user is assigned a role. An Oracle Cloud Administrator creates users and assigns them the role of tenant administrator or tenant user. A tenant administrator can only create users with tenant user role." />
+<meta name="dcterms.created" content="2018-05-15T07:53:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E62130-11" />
+<meta name="dcterms.isVersionOf" content="ELUSE" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-EC9E2529-043C-43A4-BF85-311E2F08FE0D.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-31E89478-1031-4510-B6C0-97A42776A737.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUSE.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-C43D18EF-9039-4992-97C7-C7CEAFBFBCFA"></a> <span id="PAGE" style="display:none;">14/81</span> <!-- End Header -->
+<h1 id="ELUSE-GUID-C43D18EF-9039-4992-97C7-C7CEAFBFBCFA" class="sect1">Understanding Oracle Compute Cloud Service User Roles</h1>
+<div>
+<p>User roles abstract low level permissions to make it easy for the Oracle Cloud Administrator to delegate management functions. Each user is assigned a role. An Oracle Cloud Administrator creates users and assigns them the role of tenant administrator or tenant user. A tenant administrator can only create users with tenant user role.</p>
+<div class="section">
+<p>The user roles required to use the Oracle Compute Cloud Service are tenant administrator and tenant user. The following table summarizes the permissions of these user roles.</p>
+<div class="tblformal" id="GUID-C43D18EF-9039-4992-97C7-C7CEAFBFBCFA__GUID-5800CE7B-ACDF-4CC2-8672-6136C7173ABD">
+<table class="cellalignment110" summary="This table has three columns: tasks, tenant administrator, and tenant user. This table maps the tasks to the ability of the specified user to perform the task.">
+<thead>
+<tr class="cellalignment96">
+<th class="cellalignment111" id="d3642e31">Tasks</th>
+<th class="cellalignment111" id="d3642e33">Tenant Administrator</th>
+<th class="cellalignment111" id="d3642e35">Tenant User</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d3642e39" headers="d3642e31">Create and manage tenant users</td>
+<td class="cellalignment112" headers="d3642e39 d3642e33">Yes</td>
+<td class="cellalignment112" headers="d3642e39 d3642e35">No</td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d3642e46" headers="d3642e31">
+<p>Create and manage orchestrations, instances, private networks, storage volumes, snapshots, SSH keys, and private templates</p>
+</td>
+<td class="cellalignment112" headers="d3642e46 d3642e33">Yes</td>
+<td class="cellalignment112" headers="d3642e46 d3642e35">Yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">About Tenant Users</p>
+<p>A tenant user consumes the network, compute, and storage resources allocated to a tenant by creating cloud service instances and deploying applications. A tenant user name is represented as <code class="codeph">/<span class="variable">tenant_name</span>/<span class="variable">user_name</span></code> and the role as <code class="codeph">/<span class="variable">tenant_name</span>/users</code>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">About Tenant Administrators</p>
+<p>A tenant administrator has permissions and functions similar to a tenant user. A tenant administrator can also create and manage the tenant users in Oracle Compute Cloud Service. A tenant administrator user name is represented as <code class="codeph">/<span class="variable">tenant_name</span>/<span class="variable">user_name</span></code> and the role as <code class="codeph">/<span class="variable">tenant_name</span>/admin</code>.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment95">
+<tr>
+<td class="cellalignment102">
+<table class="cellalignment100">
+<tr>
+<td class="cellalignment99"><a href="GUID-EC9E2529-043C-43A4-BF85-311E2F08FE0D.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment99"><a href="GUID-31E89478-1031-4510-B6C0-97A42776A737.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment104">
+<table class="cellalignment98">
+<tr>
+<td class="cellalignment99"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment99"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

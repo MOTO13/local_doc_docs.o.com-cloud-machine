@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>The dbaascli Utility</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="The dbaascli utility is provided on Oracle Database Cloud Service deployments to perform a variety of life-cycle and administration operations." />
+<meta name="dcterms.created" content="2017-06-19T15:22:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Database Cloud Service" />
+<meta name="dcterms.identifier" content="E72994-04" />
+<meta name="dcterms.isVersionOf" content="CSDBI" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-8F051153-0913-4ACA-850A-A3A6D46FFFF6.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-632A047B-197A-4991-80EE-68FC04EFE7DD.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSDBI.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSDBI.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSDBI.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-DBB08CC7-3180-4713-B1BD-2F9E2A4939A6"></a> <span id="PAGE" style="display:none;">147/190</span> <!-- End Header -->
+<h1 id="CSDBI-GUID-DBB08CC7-3180-4713-B1BD-2F9E2A4939A6" class="sect1"><span class="enumeration_appendix">C</span> The dbaascli Utility</h1>
+<div>
+<p>The <code class="codeph">dbaascli</code> utility is provided on <span>Oracle Database Cloud Service</span> deployments to perform a variety of life-cycle and administration operations.</p>
+<p>Using the <code class="codeph">dbaascli</code> utility, you can perform operations like:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Changing the password of the <code class="codeph">SYS</code> user</p>
+</li>
+<li>
+<p>Patching the database deployment</p>
+</li>
+<li>
+<p>Database recovery</p>
+</li>
+<li>
+<p>Rotating the master encryption key</p>
+</li>
+</ul>
+<p>To use the <code class="codeph">dbaascli</code> utility:</p>
+<ol>
+<li>
+<p>Connect to a compute node associated with the <span>Database Cloud Service</span> deployment. For most <code class="codeph">dbaascli</code> subcommands, connect as the <code class="codeph">oracle</code> user. For the <code class="codeph">dbpatchm</code> and <code class="codeph">orec</code> subcommands, connect as the <code class="codeph">opc</code> user.</p>
+<p>For instructions, see <a href="GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1.htm#GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1">Connecting to a Compute Node Through Secure Shell (SSH)</a>.</p>
+</li>
+<li>
+<p>If you connected as the <code class="codeph">opc</code> user, start a root-user command shell:</p>
+<pre dir="ltr">
+$ <span class="bold">sudo -s</span>
+#
+</pre></li>
+<li>
+<p>Run the <code class="codeph">dbaascli</code> utility using a command of the form:</p>
+<pre dir="ltr">
+# <span class="bold">dbaascli <span class="italic">subcommand</span> <span class="italic">subcommand-options</span></span>
+</pre></li>
+<li>
+<p>When you are finished using the <code class="codeph">dbaascli</code> utility, exit the root-user command shell if necessary and disconnect from the compute node:</p>
+<pre dir="ltr">
+# <span class="bold">exit</span>
+$ <span class="bold">exit</span>
+</pre></li>
+</ol>
+<p>The <code class="codeph">dbaascli</code> utility supports these subcommands:</p>
+<div class="tblformal" id="GUID-DBB08CC7-3180-4713-B1BD-2F9E2A4939A6__GUID-679A5325-4EED-4F88-816E-3DD24283235F">
+<table class="cellalignment11" summary="This is a two-column table that lists the dbaascli category of subcommands and each subcommand.">
+<thead>
+<tr class="cellalignment2">
+<th class="cellalignment21" id="d42902e119">Subcommand</th>
+<th class="cellalignment22" id="d42902e121">Subcommand Options</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment2">
+<td class="cellalignment23" id="d42902e125" headers="d42902e119">
+<p><code class="codeph">database</code></p>
+</td>
+<td class="cellalignment24" headers="d42902e125 d42902e121">
+<p><a href="GUID-632A047B-197A-4991-80EE-68FC04EFE7DD.htm" title="The database bounce subcommand of the dbaascli utility can be used to shut down and restart the database."><code class="codeph">bounce</code></a> &ndash; shuts down and then restarts the database instance.</p>
+<p><a href="GUID-F582037E-B729-438B-99C0-2CD492579B73.htm" title="The database changepassword subcommand of the dbaascli utility is used to change the password of a database user."><code class="codeph">changepassword</code></a> &ndash; changes the password of the specified user.</p>
+<p><a href="GUID-4AFF5188-0427-4B6C-BF6D-245CC289150C.htm" title="The database start subcommand of the dbaascli utility can be used to start the database instance and open the database."><code class="codeph">start</code></a>&ndash; starts the database instance and opens the database.</p>
+<p><a href="GUID-2EFE877E-920D-4BC3-85B6-0F67C5BC06C0.htm" title="The database status subcommand of the dbaascli utility can be used to check the status of the database in your database deployment."><code class="codeph">status</code></a> &ndash; displays the open mode of the database and additional information about the database deployment.</p>
+<p><a href="GUID-BE9F2BD9-2829-4151-AA6F-B5C531910060.htm" title="The database stop subcommand of the dbaascli utility can be used to shut down the database."><code class="codeph">stop</code></a> &ndash; shuts down the database instance.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment23" id="d42902e206" headers="d42902e119">
+<p><code class="codeph">dbpatchm</code></p>
+</td>
+<td class="cellalignment24" headers="d42902e206 d42902e121">
+<p><a href="GUID-E232B312-47EC-4BB4-B21E-060EE08E5FFC.htm" title="The dbpatchm apply subcommand of the dbaascli utility is used to apply a patch."><code class="codeph">apply</code></a> &ndash; applies the patch.</p>
+<p><a href="GUID-93748703-4013-4EB6-BF7D-74F63A8ACBAA.htm" title="The dbpatchm clonedb subcommand of the dbaascli utility is used to apply a patch to a test deployment before you apply it to a live, production database deployment."><code class="codeph">clonedb</code></a> &ndash; applies a patch to a test deployment.</p>
+<p><a href="GUID-348679A8-A4A6-428D-9CE8-0FAC98857B2A.htm" title="The dbpatchm list_patches subcommand of the dbaascli utility is used to check whether any patches are available."><code class="codeph">list_patches</code></a> &ndash; displays a list of available patches.</p>
+<p><a href="GUID-E3CFF989-9D28-49AC-A046-E2743F0D528D.htm" title="The dbpatchm prereq subcommand of the dbaascli utility is used to check the prerequisites of a patch."><code class="codeph">prereq</code></a> &ndash; checks the prerequisites of a patch.</p>
+<p><a href="GUID-21BAE1B0-9621-42DB-B095-DC729D94507E.htm" title="The dbpatchm rollback subcommand of the dbaascli utility is used to roll back the last patch applied to a database deployment."><code class="codeph">rollback</code></a> &ndash; rolls back the last deployment patch.</p>
+<p><a href="GUID-E2E89AAD-506B-4FBB-AC37-99F5E4926AC1.htm" title="The dbpatchm switchback subcommand of the dbaascli utility is used to revert back to the state of the database deployment before a patch was applied."><code class="codeph">switchback</code></a> &ndash; restores database software to a prior state.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment23" id="d42902e302" headers="d42902e119">
+<p><code class="codeph">dv</code></p>
+</td>
+<td class="cellalignment24" headers="d42902e302 d42902e121">
+<p><a href="GUID-C08FB7E3-F2A3-496D-8734-E395FF769B53.htm" title="The dv off subcommand of the dbaascli utility is used to disable Oracle Database Vault in a database deployment."><code class="codeph">off</code></a> &ndash; disables Oracle Database Vault.</p>
+<p><a href="GUID-821AC0F5-7CE1-428E-AE33-41A0F0768102.htm" title="The dv on subcommand of the dbaascli utility is used to configure and enable Oracle Database Vault in a database deployment."><code class="codeph">on</code></a>&ndash; enables Oracle Database Vault.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment23" id="d42902e338" headers="d42902e119">
+<p><code class="codeph">listener</code></p>
+</td>
+<td class="cellalignment24" headers="d42902e338 d42902e121">
+<p><a href="GUID-A816A2DE-8FE2-4E3E-BA26-467D2EBE3406.htm" title="The listener bounce subcommand of the dbaascli utility is used to stop and restart the listener."><code class="codeph">bounce</code></a> &ndash; stops and restarts the listener.</p>
+<p><a href="GUID-3F8874EC-A293-4D6F-A7A3-28A751E2FA75.htm" title="The listener start subcommand of the dbaascli utility is used to start the listener."><code class="codeph">start</code></a> &ndash; starts the listener.</p>
+<p><a href="GUID-913D5C44-794B-4AE8-AA5C-180EF30634C1.htm" title="The listener status subcommand of the dbaascli utility is used to obtain information about the status of the listener."><code class="codeph">status</code></a> &ndash; displays the status of the listener, including a summary of listener configuration settings, listening protocol addresses, and a summary of services registered with the listener.</p>
+<p><a href="GUID-DB17A8B8-692D-4960-ABE3-721C2B1F994B.htm" title="The listener stop subcommand of the dbaascli utility is used to stop the listener."><code class="codeph">stop</code></a> &ndash; stops the listener.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment23" id="d42902e404" headers="d42902e119">
+<p><code class="codeph">netsec</code></p>
+</td>
+<td class="cellalignment24" headers="d42902e404 d42902e121">
+<p><a href="GUID-69A5DB14-61F4-4FBA-9C3A-116D04CE8ABF.htm" title="The netsec config subcommand of the dbaascli utility is used to configure Oracle Net encryption and integrity settings."><code class="codeph">config</code></a> &ndash; configures network encryption and network integrity.</p>
+<p><a href="GUID-1BF11950-D597-48F0-99F1-B3241C46F791.htm" title="The netsec config encryption subcommand of the dbaascli utility is used to configure Oracle Net encryption settings."><code class="codeph">config encryption</code></a>&ndash; configures network encryption.</p>
+<p><a href="GUID-E8B9572D-AB84-4D95-BCF1-A7E94F3D019A.htm" title="The netsec config integrity subcommand of the dbaascli utility is used to configure Oracle Net integrity settings."><code class="codeph">config integrity</code></a> &ndash; configures network integrity.</p>
+<p><a href="GUID-5A23B0C4-055F-4AA1-BD5E-F96CEE7A7718.htm" title="The netsec status subcommand of the dbaascli utility is used to display information about network encryption and network integrity configuration."><code class="codeph">status</code></a> &ndash; displays network encryption and network integrity configuration information.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment23" id="d42902e470" headers="d42902e119">
+<p><code class="codeph">orec</code></p>
+</td>
+<td class="cellalignment24" headers="d42902e470 d42902e121">
+<p><a href="GUID-42D9C162-8DC3-4525-8A32-5BE78288DEE5.htm" title="The orec latest subcommand of the dbaascli utility is used to list the available long-term backups."><code class="codeph">keep list</code></a> &ndash; lists the available long-term backups.</p>
+<p><a href="GUID-F8668E2F-61FE-4452-953B-B95E0C330EE4.htm" title="The orec keep tag subcommand of the dbaascli utility is used to restore a specific long-term backup and perform recovery."><code class="codeph">keep tag</code></a> &ndash; restores a specific long-term backup and performs recovery.</p>
+<p><a href="GUID-1C82A943-C70B-4641-9081-3580BA19D9AC.htm" title="The orec latest subcommand of the dbaascli utility is used to restore the most recent backup and perform complete recovery."><code class="codeph">latest</code></a> &ndash; restores the most recent backup and performs complete recovery.</p>
+<p><a href="GUID-C53E04E5-2B13-440A-9520-ECE1D2B386AE.htm" title="The orec latest subcommand of the dbaascli utility is used to list the available normal backups."><code class="codeph">list</code></a> &ndash; lists the available normal backups.</p>
+<p><a href="GUID-4890C6CF-995C-4E92-8C1F-1938B83C7984.htm" title="The orec pitr subcommand of the dbaascli utility is used to restore a specific normal backup and perform recovery."><code class="codeph">pitr</code></a> &ndash; restores a specific normal backup and performs recovery.</p>
+<p><a href="GUID-AFAD2F2C-F67C-45F2-8118-B4C160E78E32.htm" title="The orec scn subcommand of the dbaascli utility is used to restore the most recent backup and perform recovery through the specified system change number (SCN)."><code class="codeph">scn</code></a> &ndash; restores the most recent backup and performs recovery through the specified SCN.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment23" id="d42902e566" headers="d42902e119">
+<p><code class="codeph">tde</code></p>
+</td>
+<td class="cellalignment24" headers="d42902e566 d42902e121">
+<p><a href="GUID-C7B92336-8468-478B-9530-665ADD1B2552.htm" title="The tde rotate masterkey subcommand of the dbaascli utility is used to change (rotate) the master encryption key."><code class="codeph">rotate masterkey</code></a> &ndash; changes (rotates) the master encryption key.</p>
+<p><a href="GUID-BDFB377E-5B86-4D23-B4C5-8B7BBFAAD1A6.htm" title="The tde status subcommand of the dbaascli utility is used to view information about the software keystore used in tablespace encryption."><code class="codeph">status</code></a> &ndash; displays information about the software keystore, including the type and status.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="GUID-8F051153-0913-4ACA-850A-A3A6D46FFFF6.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="GUID-632A047B-197A-4991-80EE-68FC04EFE7DD.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

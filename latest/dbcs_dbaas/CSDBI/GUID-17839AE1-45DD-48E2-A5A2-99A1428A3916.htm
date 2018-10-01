@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Characteristics of an Oracle Database Cloud Deployment</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="This section provides information about the content and configuration of a newly created database deployment on Oracle Database Cloud Service using the Oracle Database Cloud Service service level." />
+<meta name="dcterms.created" content="2017-06-19T15:22:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Database Cloud Service" />
+<meta name="dcterms.identifier" content="E72994-04" />
+<meta name="dcterms.isVersionOf" content="CSDBI" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-CC7CEB07-082B-4541-8959-19EEBA1834DA.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-53778B80-072D-4968-B5F8-81D3216F1D9A.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSDBI.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSDBI.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSDBI.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-17839AE1-45DD-48E2-A5A2-99A1428A3916"></a> <span id="PAGE" style="display:none;">127/190</span> <!-- End Header -->
+<a id="CSDBI3532"></a><a id="CSDBI3541"></a><a id="CSDBI3542"></a><a id="CSDBI3531"></a>
+<h1 id="CSDBI-GUID-17839AE1-45DD-48E2-A5A2-99A1428A3916" class="sect1">Characteristics of an Oracle Database Cloud Deployment</h1>
+<div>
+<p>This section provides information about the content and configuration of a newly created database deployment on <span>Oracle Database Cloud Service</span> using the Oracle Database Cloud Service service level.</p>
+<p>When you create a database deployment using the Oracle Database Cloud Service service level and choose the Single Instance database type, <span>Database Cloud Service</span> creates a single-instance Oracle database. The database is housed on a compute node that <span>Database Cloud Service</span> creates using Oracle Compute Cloud Service resources. In brief, <span>Database Cloud Service</span>:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Creates a compute node that has its own IP address with a name of this form:</p>
+<p><span class="italic"><code class="codeph">deployment-name</code></span> <code class="codeph">db 1</code></p>
+<p>This Compute Cloud Service instance uses the compute shape specified during the database deployment creation process.</p>
+</li>
+<li>
+<p>Installs Oracle Linux 6.6, Oracle Database 12.2.0.1, 12.1.0.2 or 11.2.0.4 (depending on which version was selected), and cloud tooling software on the compute node.</p>
+</li>
+<li>
+<p>Creates storage for database data, the fast recovery area, and the redo logs.</p>
+</li>
+<li>
+<p>Creates and starts an Oracle database on the compute node and starts the network listener for the node.</p>
+</li>
+</ul>
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-53778B80-072D-4968-B5F8-81D3216F1D9A.htm" title="This section provides information about Linux user accounts that are provisioned on Oracle Database Cloud Service.">Linux User Accounts</a></p>
+</li>
+<li>
+<p><a href="GUID-657C9E03-EA98-4011-BA08-129643C813DE.htm" title="This section provides information about the storage volumes and file system layout of a newly created database deployment on Oracle Database Cloud Service.">Storage Volumes and File System Layout</a></p>
+</li>
+<li>
+<p><a href="GUID-7807673B-F079-4E1A-8887-B28267AE6882.htm" title="This section provides information about the locations of installed software on a newly created Oracle Database Cloud Service database deployment.">Locations of Installed Software</a></p>
+</li>
+<li>
+<p><a href="GUID-221C2977-3B5A-4376-8DD9-76B1B6A07D6F.htm">Oracle Database Characteristics</a></p>
+</li>
+<li>
+<p><a href="GUID-70D37B4D-32AD-438C-8CCF-FD9F4355DA0E.htm#GUID-70D37B4D-32AD-438C-8CCF-FD9F4355DA0E" title="In Oracle Database Cloud Service databases, data security is provided for data in transit and data at rest. Security of data in transit is achieved through network encryption. Data at rest security is achieved through encryption of data stored in database data files and backups.">Data Security</a></p>
+</li>
+<li>
+<p><a href="GUID-A33A6627-EABE-4339-8711-EBEE890D2DFD.htm">Location of Diagnostic and Log Files</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="GUID-CC7CEB07-082B-4541-8959-19EEBA1834DA.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="GUID-53778B80-072D-4968-B5F8-81D3216F1D9A.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

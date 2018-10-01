@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Managing Instances</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-07T05:33:13Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine REST API Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E68443-07" />
+<meta name="dcterms.isVersionOf" content="ELUAP" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-137014B6-4301-418F-BB31-BA3097E1263A.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-FF5BD712-A4BB-4095-8279-7C5914D61F98.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUAP.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F"></a> <span id="PAGE" style="display:none;">13/40</span> <!-- End Header -->
+<h1 id="ELUAP-GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F" class="sect1">Managing Instances</h1>
+<div>
+<div class="section">An instance is a logical representation of a virtual machine (VM).&nbsp;An instance defines the properties of a virtual machine and has a life cycle that surrounds and extends beyond the life cycle of a single virtual machine.&nbsp;You create virtual machine instances by starting orchestrations, but you can manage them individually thereafter by using CLI commands or API requests.
+<div class="infobox-note" id="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F__GUID-FD9D27A0-E403-4AFA-BBF3-E27765B4D5B7">
+<p class="notep1">Note:</p>
+Life-cycle commands (such as <code class="codeph">start</code>, <code class="codeph">stop</code>, <code class="codeph">restart</code> etc.) that change the state of an instance, return immediately with the state change proceeding on the server side. Instance state can be monitored by retrieving the instance details.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F.htm#GUID-63071B98-0A6A-47CE-89C0-B51FC4D16C54" title="This API request enables you to delete a specific instance. You can delete an instance only when it is in any of the following states:running, shut_down,&nbsp;or&nbsp;error.">Delete Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F.htm#GUID-7821A655-2E87-43D0-915A-01CFF64E1EFC">Restart Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F.htm#GUID-347B528A-9605-4DED-B010-C007A7E00682">Shutdown Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F.htm#GUID-B23D4251-A59F-483D-B20E-73AA19059FA4">Update Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F.htm#GUID-6C518741-900D-4F0A-86E6-C23749373F82" title="This API request enables you to discover instances in the specific container and subcontainers.This API request enables you to retrieve information for a specific instance. This API request enables you to retrieve instance information in a specific container or subcontainer.">Retrieve Instance Details</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-63071B98-0A6A-47CE-89C0-B51FC4D16C54"></a>
+<h2 id="ELUAP-GUID-63071B98-0A6A-47CE-89C0-B51FC4D16C54" class="sect2">Delete Instance</h2>
+<div>
+<p>This API request enables you to delete a specific instance. You can delete an instance only when it is in any of the following states:<code class="codeph">running</code>, <code class="codeph">shut_down</code>,&nbsp;or&nbsp;<code class="codeph">error</code>.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-63071B98-0A6A-47CE-89C0-B51FC4D16C54__GUID-4EDFC55C-100D-410C-ACC1-5E687530D273">
+<p class="notep1">Note:</p>
+When an instance is deleted, the associated orchestration transitions to the <code class="codeph">warning</code> state. You need to <code class="codeph">stop</code> and <code class="codeph">start</code> this orchestration if you want to associate it with a new instance.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Method</p>
+<p><code class="codeph">DELETE</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/instance/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/instance/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI Parameter</p>
+<div class="tblformal" id="GUID-63071B98-0A6A-47CE-89C0-B51FC4D16C54__GUID-2EDCA2F6-DF68-4F9F-9961-76A0262F697D">
+<table class="cellalignment62" summary="This table specifies the URI parameter and description for deleting an instance.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d9251e147">Parameters</th>
+<th class="cellalignment64" id="d9251e149">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d9251e153" headers="d9251e147">name</td>
+<td class="cellalignment66" headers="d9251e153 d9251e149">A unique hierarchical name of an instance. For example,&nbsp;<code class="codeph">/mytenant/public/e6640ebc-6953-444f-848d-4a3bf6050ea5</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/instance/mytenant/admin/f653a677-b566-4f92-8e93-71d47b364119</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-7821A655-2E87-43D0-915A-01CFF64E1EFC"></a>
+<h2 id="ELUAP-GUID-7821A655-2E87-43D0-915A-01CFF64E1EFC" class="sect2">Restart Instance</h2>
+<div>
+<div class="section">
+<p>This API request enables you to restart a specific instance. You can restart an instance only when it is in one of the following states: <code class="codeph">shut_down</code>, <code class="codeph">warning</code>,&nbsp;or&nbsp;<code class="codeph">error</code>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Method</p>
+<p><code class="codeph">PUT</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/instance/<span class="variable">name</span>/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/instance/<span class="variable">name</span>?action=RESTART</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI Parameters</p>
+<div class="tblformal" id="GUID-7821A655-2E87-43D0-915A-01CFF64E1EFC__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment56" summary="This table specifies the URI parameter and description for restarting an instance.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment57" id="d9251e235">Parameter</th>
+<th class="cellalignment57" id="d9251e237">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d9251e241" headers="d9251e235">name</td>
+<td class="cellalignment58" headers="d9251e241 d9251e237">A unique hierarchical name for an instance. For example, <code class="codeph">/mytenant/public/e6640ebc-6953-444f-848d-4a3bf6050ea5e</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/instance/mytenant/public/test123/6fffcc31-5fc4-4d68-828e-5310229f8840?action=RESTART</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-347B528A-9605-4DED-B010-C007A7E00682"></a>
+<h2 id="ELUAP-GUID-347B528A-9605-4DED-B010-C007A7E00682" class="sect2">Shutdown Instance</h2>
+<div>
+<div class="section">
+<p>This API request enables you to shutdown an instance.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Method</p>
+<p><code class="codeph">PUT</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/instance/<code class="codeph">name</code>/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/instance/<span class="variable">name</span>?action=SHUTDOWN</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI Parameters</p>
+<div class="tblformal" id="GUID-347B528A-9605-4DED-B010-C007A7E00682__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment56" summary="This table specifies the URI parameter and description for the shutting down an instance.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment57" id="d9251e315">Parameter</th>
+<th class="cellalignment57" id="d9251e317">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d9251e321" headers="d9251e315">name</td>
+<td class="cellalignment58" headers="d9251e321 d9251e317">A unique hierarchical name for an instance. For example, <code class="codeph">/mytenant/public/e6640ebc-6953-444f-848d-4a3bf6050ea5e</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/instance/mytenant/public/test123/6fffcc31-5fc4-4d68-828e-5310229f8840?action=SHUTDOWN</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-B23D4251-A59F-483D-B20E-73AA19059FA4"></a>
+<h2 id="ELUAP-GUID-B23D4251-A59F-483D-B20E-73AA19059FA4" class="sect2">Update Instance</h2>
+<div>
+<div class="section">
+<p>This API request enables you to update parameters for a specific instance.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Method</p>
+<p>PUT</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/instance/<span class="variable">name</span>/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/instance/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI Parameters</p>
+<div class="tblformal" id="GUID-B23D4251-A59F-483D-B20E-73AA19059FA4__THISTABLELISTSTHEURIPARAMETERANDDES-626EE835">
+<table class="cellalignment56" summary="This table lists the URI parameter and description for updating an instance.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment57" id="d9251e392">Parameter</th>
+<th class="cellalignment57" id="d9251e394">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d9251e398" headers="d9251e392">name</td>
+<td class="cellalignment58" headers="d9251e398 d9251e394">A unique hierarchical name for an instance. For example, <code class="codeph">/mytenant/public/e6640ebc-6953-444f-848d-4a3bf6050ea5e</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Request Body Parameters</p>
+<p>To update an instance, use the <code class="codeph">GET /instance/<span class="variable">name</span></code> API to fetch the existing list of instance parameters. You can use this list of instance parameters to make desired changes, and re-send it as part of the <code class="codeph">PUT /instance/<span class="variable">name</span></code> API request body.</p>
+<div class="infobox-note" id="GUID-B23D4251-A59F-483D-B20E-73AA19059FA4__GUID-A36985F8-756A-4568-BDB6-95A246994101">
+<p class="notep1">Note:</p>
+You cannot modify all the parameters of the instance.</div>
+<p>The following table lists the instance parameters that can be modified.</p>
+<div class="tblformal" id="GUID-B23D4251-A59F-483D-B20E-73AA19059FA4__THISTABLELISTSTHEREQUESTBODYPARAMET-626EECFB">
+<table class="cellalignment56" summary="This table lists the request body parameters and descriptions for updating an instance.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment57" id="d9251e432">Parameter</th>
+<th class="cellalignment57" id="d9251e434">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d9251e438" headers="d9251e432">shape</td>
+<td class="cellalignment58" headers="d9251e438 d9251e434">(Optional) The name of the shape to be associated with the instance. You can update the shape only when the instance is in the <code class="codeph">shut_down</code> state.</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d9251e446" headers="d9251e432">networking</td>
+<td class="cellalignment58" headers="d9251e446 d9251e434">(Optional) Mapping of device name to network specifiers for virtual NICs to be attached to this instance. You can update the instance when it is either in the <code class="codeph">running</code> state or <code class="codeph">shut_down</code> state.</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d9251e457" headers="d9251e432">nis</td>
+<td class="cellalignment58" headers="d9251e457 d9251e434">(Optional) Network Information Service (NIS) configuration. You can update the NIS configuration only when the instance is in the <code class="codeph">running</code> state or <code class="codeph">shut_down</code> state.
+<div class="infobox-note" id="GUID-B23D4251-A59F-483D-B20E-73AA19059FA4__GUID-443168F5-5EE2-4172-8AC9-1654714605EB">
+<p class="notep1">Note:</p>
+The <code class="codeph">nis</code> parameter appears in two places in the instances definition. You must update the first occurrence.</div>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d9251e473" headers="d9251e432">tags</td>
+<td class="cellalignment58" headers="d9251e473 d9251e434">(Optional) Instances can be tagged with a list of user-friendly strings that identify a specific instance. You can add tags to the instance in any state.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>For more information on Instance optional parameters, see section <span class="italic"><a class="olink ELUSE-GUID-F7D91076-1736-4B54-89D5-73C23A45BF85" target="_blank" href="../ELUSE/GUID-F7D91076-1736-4B54-89D5-73C23A45BF85.htm#ELUSE-GUID-F7D91076-1736-4B54-89D5-73C23A45BF85">Orchestration Templates</a></span> in <span class="italic">Using Oracle Compute Cloud Service</span>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+<p><code class="codeph">http://api.oc.example.com/instance/mytenant/public/func_storage_12/2/c041981f-99a6-4af2-a31d-b3dce1fe719f</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Request Body</p>
+<pre dir="ltr">
+
+{
+   "domain": "mytenant.public.host1.example.com.",
+   "placement_requirements": ["/system/compute/placement/default",
+   "/system/compute/allow_instances", "/system/infiniband/ready"],
+   "ip": "192.168.120.4",
+   "fingerprint": "",
+   "site": "",
+   "shape": "oc1",
+   "nis": {"domain": "mytenant-domain", "servers": [{"ip": "111.11.11.111","name": "mytenant.nis.server1"}]},
+   "imagelist": "/oracle/public/linux5_12.2.1.0.0_64",
+   "networking": {"eth1": {"vnet": "/oracle/public/IPoIB-virt-admin",
+   "dns": ["e47fdb.mytenant.public.host1.example.com."]}},
+   "storage_attachments": [],
+   "hostname": "e47fdb.mytenant.public.host1.example.com.",
+   "quota_reservation": "/mytenant/cb4f9ecf-5ac7-4496-b8c9-26c10be8207c",
+   "disk_attach": "",
+   "label": "test2",
+   "priority": "/oracle/public/default",
+   "state": "shut_down",
+   "virtio": false,
+   "vnc": "10.0.0.49:5900",
+   "tags": ["/mytenant/public/func_storage_12","78992f1753f37e2a687f743c0df14d38", "new tag"],
+   "start_time": "2015-12-28T22:46:48Z",
+   "quota": "/mytenant",
+   "last_shutdown_time": null,
+   "attributes":
+    {
+    "nis": {},
+    "network": {"nimbula_vcable-eth1": {"net_config": {"owner": {"type": 
+    "svcnet", "name": "IPoIB-virt-admin-2"}, "ip": "192.168.120.4",
+    "netmask": "255.255.248.0", "type": "IPoIB", "membership": "limited"},
+    "vethernet_id": "-1", "options": {}, "vethernet": 
+    "/oracle/public/IPoIB-virt-admin", "address": [null, "192.168.120.4"],
+    "model": "", "vethernet_type": "ipoib", "id": 
+    "/mytenant/public/02855c15-c088-4f33-a120-dbe0c31388ae", "dhcp_options":[]}},
+    "nimbula_orchestration": "/mytenant/public/func_storage_12",
+    "dns": {"domain": "mytenant.public.host1.example.com.", "hostname": 
+    "e47fdb.mytenant.public.host1.example.com.", "nimbula_vcable-eth1": 
+    "e47fdb.mytenant.public.host1.example.com."},
+    "sshkeys": []
+    },
+   "error_reason": null,
+   "sshkeys": null,
+   "resolvers": null,
+   "account": "/mytenant/default",
+   "name": 
+   "/mytenant/public/func_storage_12/2/c041981f-99a6-4af2-a31d-b3dce1fe719f",
+   "vcable_id": "/mytenant/public/02855c15-c088-4f33-a120-dbe0c31388ae",
+   "uri": 
+   "http://api.oc.example.com/instance/mytenant/public/func_storage_12/2/c041981f-99a6-4af2-a31d-b3dce1fe719f", 
+
+   "reverse_dns": true,
+   "entry": 1,
+   "boot_order": []
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-6C518741-900D-4F0A-86E6-C23749373F82"></a>
+<h2 id="ELUAP-GUID-6C518741-900D-4F0A-86E6-C23749373F82" class="sect2">Retrieve Instance Details</h2>
+<div>
+<div class="section">You can retrieve instance details by using the REST API.</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F.htm#GUID-AE6E8CCF-4C9C-4B1B-94B4-4E1473E544B0" title="This API request enables you to discover instances in the specific container and subcontainers.">Discover Instances</a></p>
+</li>
+<li>
+<p><a href="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F.htm#GUID-5C33CE18-2229-41BB-9F43-F1C9DC9728B2" title="This API request enables you to retrieve information for a specific instance.">Get Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F.htm#GUID-030CBED5-18D3-45EF-831F-D7E80D43A2C5" title="This API request enables you to retrieve instance information in a specific container or subcontainer.">List Instances</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="props_rev_3"><a id="GUID-AE6E8CCF-4C9C-4B1B-94B4-4E1473E544B0"></a>
+<h3 id="ELUAP-GUID-AE6E8CCF-4C9C-4B1B-94B4-4E1473E544B0" class="sect3">Discover Instances</h3>
+<div>
+<p>This API request enables you to discover instances in the specific container and subcontainers.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-AE6E8CCF-4C9C-4B1B-94B4-4E1473E544B0__GUID-110590F7-4C42-48FA-906D-99233A608A04">
+<p class="notep1">Note:</p>
+The discover API calls display the names of the objects in the specified container, not the details about the objects. To list the names of the objects, you must set the <code class="codeph">Accept</code> header to <code class="codeph">application/oracle-compute-v3+directory+json</code>. For all other purposes, you must set the <code class="codeph">Accept</code> header to <code class="codeph">application/oracle-compute-v3+json</code>.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Method</p>
+<p><code class="codeph">GET</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">REST Resource</p>
+<p><code class="codeph">/instance/<span class="variable">container</span>/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/instance/<span class="variable">container</span>/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI Parameter</p>
+<div class="tblformal" id="GUID-AE6E8CCF-4C9C-4B1B-94B4-4E1473E544B0__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment56" summary="This table specifies the URI parameter and description for listing instances.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment57" id="d9251e621">Parameter</th>
+<th class="cellalignment57" id="d9251e623">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d9251e627" headers="d9251e621">container</td>
+<td class="cellalignment58" headers="d9251e627 d9251e623">Hierarchical namespace containing instances</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example URI</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p><code class="codeph">https://api.oc.example.com/instance/mytenant/public/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example Response Body</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<pre dir="ltr">
+{"result": 
+        [
+                "/mytenant/public/primary_webserver/", 
+                "/mytenant/public/secondary_webserver/"
+        ]
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-5C33CE18-2229-41BB-9F43-F1C9DC9728B2"></a>
+<h3 id="ELUAP-GUID-5C33CE18-2229-41BB-9F43-F1C9DC9728B2" class="sect3">Get Instance</h3>
+<div>
+<p>This API request enables you to retrieve information for a specific instance.</p>
+<div class="section">
+<p class="subhead3">Method</p>
+<p><code class="codeph">GET</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">REST Resource</p>
+<p><code class="codeph">/instance/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/instance/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI Parameter</p>
+<div class="tblformal" id="GUID-5C33CE18-2229-41BB-9F43-F1C9DC9728B2__GUID-7047F015-7CE4-4481-86F0-F427A9409F16">
+<table class="cellalignment62" summary="This table specifies the URI parameter and description for retrieving details of an instance.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d9251e701">Parameter</th>
+<th class="cellalignment64" id="d9251e703">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d9251e707" headers="d9251e701">name</td>
+<td class="cellalignment66" headers="d9251e707 d9251e703">A unique hierarchical name for an instance. For example, <code class="codeph">/mytenant/public/e6640ebc-6953-444f-848d-4a3bf6050ea5</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/instance/mytenant/public/dev1/f653a677-b566-4f92-8e93-71d47b364119</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example Response Body</p>
+<pre dir="ltr">
+{
+ "list": [
+  {
+   "domain": "mytenant...",
+   "placement_requirements": [
+    "/system/compute/placement/default",
+    "/system/compute/allow_instances"
+   ],
+   "ip": "10...",
+   "site": "",
+   "shape": "oc5",
+   "imagelist": "/oracle/public/oel_6.4_60GB",
+   "attributes": {
+    "network": {
+     "nimbula_vcable-eth0": {
+      "vethernet_id": "0",
+      "vethernet": "/oracle/public/default",
+      "address": [
+       "c6:b0:09:f4:bc:c0",
+       "0.0.0.0"
+      ],
+      "model": "",
+      "vethernet_type": "vlan",
+      "id": "/mytenant/public/016e75e7-e911-42d1-bfe1-6a7f1b3f7908",
+      "dhcp_options": []
+     }
+    },
+    "dns": {
+     "domain": "mytenant...",
+     "hostname": "d06886.mytenant...",
+     "nimbula_vcable-eth0": "d06886.mytenant..."
+    },
+    "sshkeys": [
+     "ssh-rsa AAAAB3NzaC1yc2EAAA..."
+    ]
+   },
+   "networking": {
+    "eth0": {
+     "model": "",
+     "dns": [
+      "d06886.mytenant..."
+     ],
+     "seclists": [
+      "/mytenant/default/default",
+      "/mytenant/public/prod-ng"
+     ],
+     "vethernet": "/oracle/public/default",
+     "nat": "ipreservation:/mytenant/public/prod-vm1"
+    }
+   },
+   "hostname": "d06886.mytenant...",
+   "quota_reservation": "/mytenant/ffc8e6d4-8f93-41f3-a062-bdbb042c3191",
+   "disk_attach": "",
+   "label": "Production instance 1",
+   "priority": "/oracle/public/default",
+   "state": "running",
+   "vnc": "10...",
+   "storage_attachments": [
+    {
+     "index": 1,
+     "storage_volume_name": "/mytenant/public/prod-vol1",
+     "name": "/mytenant/public/dev1/f653a677-b566-4f92-8e93-71d47b364119/f1a67244-9abc-45d5-af69-8..."
+    }
+   ],
+   "start_time": "2014-06-24T17:51:35Z",
+   "quota": "/mytenant",
+   "fingerprint": "19:c4:3f:2d:dc:76:b1:06:e8:88:bd:7f:a3:3b:3c:93",
+   "error_reason": "",
+   "sshkeys": [
+    "/mytenant/public/mytenant-prod-admin"
+   ],
+   "tags": [
+    "prod2"
+   ],
+   "resolvers": null,
+   "account": "mytenant/default",
+   "name": "/mytenant/public/dev1/f653a677-b566-4f92-8e93-71d47b364119",
+   "vcable_id": "/mytenant/public/016e75e7-e911-42d1-bfe1-6a7f1b3f7908",
+   "uri": "http://10....",
+   "reverse_dns": true,
+   "entry": 1,
+   "boot_order": []
+  }
+ ]
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-030CBED5-18D3-45EF-831F-D7E80D43A2C5"></a>
+<h3 id="ELUAP-GUID-030CBED5-18D3-45EF-831F-D7E80D43A2C5" class="sect3">List Instances</h3>
+<div>
+<p>This API request enables you to retrieve instance information in a specific container or subcontainer.</p>
+<div class="section">
+<p class="subhead3">Method</p>
+<p><code class="codeph">GET</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">REST Resource</p>
+<p><code class="codeph">/instance/<span class="variable">container</span>/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/instance/<span class="variable">container</span>/?tags=<span class="variable">tagValue</span>&amp;quota=<span class="variable">quotaValue</span>&amp;vcable_id=<span class="variable">vcable_idValue</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI Parameters</p>
+<div class="tblformal" id="GUID-030CBED5-18D3-45EF-831F-D7E80D43A2C5__GUID-5017E83B-799C-4F58-8A7A-C668C7612EE7">
+<table class="cellalignment62" summary="This table specifies the URI parameters and descriptions for listing details of instances.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment83" id="d9251e792">Parameters</th>
+<th class="cellalignment84" id="d9251e794">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment85" id="d9251e798" headers="d9251e792">container</td>
+<td class="cellalignment86" headers="d9251e798 d9251e794">Hierarchical name-space for instances</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment85" id="d9251e803" headers="d9251e792">tags=<span class="variable">tagValue</span></td>
+<td class="cellalignment86" headers="d9251e803 d9251e794">(Optional) Instances can be tagged with a list of user-friendly strings that identify a specific instance</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment85" id="d9251e810" headers="d9251e792">quota=<span class="variable">quotaValue</span></td>
+<td class="cellalignment86" headers="d9251e810 d9251e794">(Optional) The name of a quota associated with an instance</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment85" id="d9251e817" headers="d9251e792">vcable_id=<span class="variable">vcable_idValue</span></td>
+<td class="cellalignment86" headers="d9251e817 d9251e794">(Optional) The unique identifier of a virtual cable (vCable) associated with an instance</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example URI</p>
+<p><code class="codeph">https://api.oc.example..com/instance/mytenant/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example Response Body</p>
+<pre dir="ltr">
+{
+"result": 
+        [{
+                "domain": "mytenant.public.oc.example.com.",
+                "placement_requirements": ["/system/compute/placement/default", 
+                "/system/compute/allow_instances", 
+                "/system/infiniband/ready"], 
+                "ip": "10.128.206.94", 
+                "fingerprint": "08:8f:8f:f9:f4:3c:19:ee:11:3c:0a:1f:fd:ee:1d:e9", 
+                "site": "", 
+                "shape": "oc3", 
+                "nis": {}, 
+                "imagelist": null, 
+                "networking": {"eth0": {"seclists": [], 
+                "vnetreservation": "/mytenant/public/instance1-wls-vm-1-instance1-wls-1-svcnet-1", 
+                "options": 
+                {
+                        "hostname": "instance1-wls-1", 
+                        "network_route": [], 
+                        "dns": {"search_domains": "mytenant.public.oc.example.com", "servers": "192.168.126.1,192.168.126.2"}
+                }, 
+                "dns": [], 
+                "address": []}, "eth4": {"seclists": [], "vnet": "/cloud/public/EoIB-OMS-c2", "dns": [], "address": []
+............
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment49">
+<tr>
+<td class="cellalignment59">
+<table class="cellalignment54">
+<tr>
+<td class="cellalignment53"><a href="GUID-137014B6-4301-418F-BB31-BA3097E1263A.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment53"><a href="GUID-FF5BD712-A4BB-4095-8279-7C5914D61F98.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment61">
+<table class="cellalignment52">
+<tr>
+<td class="cellalignment53"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment53"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

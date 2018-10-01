@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="Monitoring%20the%20Health%20of%20Your%20Oracle%20Java%20Cloud%20Service%20Instances.html" title="Previous" type="text/html">
+        <link rel="next" href="Adding%20a%20Coherence%20Data%20Tier%20Cluster%20to%20an%20Oracle%20Java%20Cloud%20Service%20Using%20the%20REST%20API.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="Monitoring%20the%20Health%20of%20Your%20Oracle%20Java%20Cloud%20Service%20Instances.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="Adding%20a%20Coherence%20Data%20Tier%20Cluster%20to%20an%20Oracle%20Java%20Cloud%20Service%20Using%20the%20REST%20API.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">Scaling a Service Instance</h2> 
+<div class="body taskbody">
+ <p class="shortdesc">You can use the REST API to scale an Oracle Java Cloud Service instance on-demand, as described in the following procedures.</p> 
+ <div class="section">
+  <div class="p">
+   Specifically, you can scale the following Oracle Java Cloud Service resources:
+   <ul class="ul">
+    <li class="li"><p class="p">Cluster: Add or remove nodes, as described below in Scaling a Cluster</p> </li> 
+    <li class="li"><p class="p">Administration Server or Managed Server node: Change the compute shape or add additional storage (you cannot remove storage), as described below in Scaling a Node</p> </li> 
+    <li class="li"><p class="p">Coherence data tier: Add or remove capacity units, as described in <a class="xref" href="Scaling%20the%20Coherence%20Data%20Tier%20of%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html" target="_blank">Scaling the Coherence Data Tier of a Service Instance</a></p> </li> 
+   </ul> 
+  </div> 
+  <p class="p">You can monitor the health of your Oracle Java Cloud Service instance to determine when to scale it, as described in <a class="xref" href="Monitoring%20the%20Health%20of%20Your%20Oracle%20Java%20Cloud%20Service%20Instances.html" target="_blank">Monitoring a Service Instance</a>.</p> 
+  <p class="p">Consider the following before scaling:</p> 
+  <ul class="ul">
+   <li class="li"><p class="p">Scaling is not supported by Oracle Java Cloud Service - Virtual Image instances. For Oracle Java Cloud Service instances based on WebLogic Server Standard Edition, scaling a node is supported; however, scaling a cluster is not supported.</p> </li> 
+   <li class="li"><p class="p">Scaling down a node might be blocked when scaling down a service instance that has a large memory shape and a very high value set for the initial Java heap size for a Managed Server JVM. See the <samp class="ph codeph">ignoreManagedServerHeapError</samp> request parameter in <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-%7BserverName%7D-put.html" target="_blank">Scale a Node</a> before you scale down such a service instance.</p> </li> 
+   <li class="li"><p class="p"><strong class="ph b">On Oracle Public Cloud</strong>: If you are scaling out the cluster on a service instance that uses an Oracle Exadata database, you must obtain IP reservations for the Managed Servers you are going to add before initiating the scale out request. You will not be able to scale out the cluster without IP reservations. See the My Oracle Support document titled <cite class="cite">How to Request Authorized IPs for Provisioning a Java Cloud Service with Database Exadata Cloud Service</cite> (MOS Note 2163568.1) to submit a request for one or more IP reservations.</p> </li> 
+  </ul> 
+  <p class="p"><strong class="ph b">Note:</strong> The cURL command examples use the URL structure <samp class="ph codeph">https://rest_server_url/<em class="ph i">resource-path</em></samp>, where <samp class="ph codeph">rest_server_url</samp> is the Oracle Public Cloud or Oracle Cloud Machine REST server to contact for your identity domain or tenant name. See <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a> for the appropriate URL structure to use on Oracle Public Cloud or Oracle Cloud Machine.</p> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Scaling a Cluster</h3>
+  <div class="p">
+   To scale a cluster:
+   <ol class="ol">
+    <li class="li"><p class="p">Before scaling a cluster, review the Managed Servers that are currently defined.</p> <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance/servers</strong>
+</pre> <p class="p">Specify the following options on the cURL command line:</p> 
+     <ul class="ul">
+      <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant.</p> </li> 
+     </ul> <p class="p">For more information, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-servers-get.html" target="_blank">View All Managed Servers</a>.</p> <p class="p">The following shows an example of the response body, in JSON format. In this example, there is one Managed Server.</p> <pre class="pre codeblock">{
+    "servers":[
+    {
+        "clusterName":"ExampleI_cluster",
+        <strong class="ph b">"name":"ExampleI_server_1"</strong>,
+        "shape":"oc3",
+        "nodeType":"WLS",
+        "isAdmin":true,
+        "hostname":"123.456.789.123",
+        "status":"Ready",
+        "storageAllocated":74752,
+        "creationDate":"Jun 7, 2016 9:22:43 PM"
+    }
+    ],
+    "serverInProgress":[]
+}</pre> </li> 
+    <li class="li"><p class="p">Scale out the service instance to add another Managed Server to the existing cluster, <samp class="ph codeph">ExampleI_cluster</samp>.</p> <pre class="pre"><strong class="ph b">curl -i -X POST -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance/servers/ExampleI_cluster</strong>
+</pre> <p class="p">Specify the following options on the cURL command line:</p> 
+     <ul class="ul">
+      <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">POST</samp>).</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+     </ul> <p class="p">Optionally, you can specify a new cluster name and set the <samp class="ph codeph">createClusterIfMissing</samp> query parameter to <samp class="ph codeph">true</samp>. This will cause a new cluster to be created during the scale-out operation, and the new node to be added to the new cluster.</p> <p class="p"><strong class="ph b">On Oracle Public Cloud:</strong> If you are scaling out the cluster on a service instance that uses an Oracle Exadata database, you must use the query parameter <samp class="ph codeph">ipReservation=<em class="ph i">ip_reservation_name</em></samp> in the request to assign a reserved IP address to the new node. For example:</p> <pre class="pre">curl -i -X POST -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance/servers/ExampleI_cluster?ipReservation=ipres02</pre> <p class="p">For more information about scaling out, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-servers-%7Bname%7D-post.html" target="_blank">Scale Out a Cluster</a>.</p> <p class="p">The following shows an example of the response document returned in JSON format.</p> <pre class="pre codeblock">{
+    "status": "New",
+    "details": {
+        "message": "JAAS-SCALING-037: Scale out Job (ID: 866230) for service [ExampleInstance] in cluster [ExampleI_cluster] submitted",
+        "jobId": "866230"
+    }
+}</pre> </li> 
+    <li class="li"><p class="p">Check the status of the scaling operation using the job ID returned in the response in step 2. For more information, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-servers-history-job-%7BjobId%7D-get.html" target="_blank">View the Status of a Server Operation by Job ID</a>.</p> <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance/servers/history/job/866230</strong></pre> <p class="p">Specify the following options on the cURL command line:</p> 
+     <ul class="ul">
+      <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+     </ul> <p class="p">The following example shows the contents of the response body. The status is RUNNING, which means the scale out operation is still in progress:</p> <pre class="pre codeblock">{
+    "canonicalUri":null,
+    "actLog":
+    {
+        "activityLogId":484143,
+        "serviceId":25421,
+        "operation":
+        {
+            "operationId":25421,
+            "operationType":"SCALE_OUT"
+        },
+        "status":"RUNNING",
+        "startDate":"Jul 27, 2016 9:17:03 PM",
+        "endDate":null,
+        "identityDomain":"ExampleIdentityDomain",
+        "serviceName":"ExampleInstance",
+        "serviceType":"jaas",
+        "hostName":"exampleinstance-wls-2",
+        "serverName":null,
+        "serverType":"WLS",
+        "jobId":866230,
+        "summaryMessage":"ExampleI_server_2",
+        "authDomain":"ExampleIdentityDomain",
+        "authUser":"username",
+        "initiatedBy":"USER",
+        "messages":[
+        {
+            "activityMessageId":776201,
+            "activityDate":"Jul 27, 2016 9:17:03 PM",
+            "stepName":"NEW",
+            "message":"Activity Submitted"
+        },
+        {
+            "activityMessageId":776202,
+            "activityDate":"Jul 27, 2016 9:17:08 PM",
+            "stepName":"RUNNING",
+            "message":"Activity Started"
+        },
+        {
+            "activityMessageId":776203,
+            "activityDate":"Jul 27, 2016 9:17:12 PM",
+            "stepName":"RUNNING",
+            "message":"Scaling job for service [ExampleInstance] in cluster [ExampleI_cluster] with factor [1] is prepared."
+        },
+        ...
+        ...
+        {
+            "activityMessageId":776227,
+            "activityDate":"Jul 27, 2016 9:27:40 PM",
+            "stepName":"RUNNING",
+            "message":"Orchestration is in ready state, new VM is up for server [ExampleI_server_2]"
+        },
+        {
+            "activityMessageId":776226,
+            "activityDate":"Jul 27, 2016 9:27:40 PM",
+            "stepName":"RUNNING",
+            "message":"Started the required compute resources for WebLogic Server managed server [ExampleI_server_2]..."
+        },
+        {
+            "activityMessageId":776228,
+            "activityDate":"Jul 27, 2016 9:27:40 PM",
+            "stepName":"RUNNING",
+            "message":"Completed submitting child job for checking managed server configuration "
+        }
+        ],
+        "resourceType":"VM",
+        "resourceId":22719,
+        "resourceName":"exampleinstance-wls-2",
+        "payload":null
+    },
+    "messages":[{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}]
+}</pre> </li> 
+    <li class="li"><p class="p">The status will change to SUCCEED upon a successful scale out. After the scaling operation is completed, review the list of Managed Servers to confirm the new Managed Server has been added to the cluster.</p> <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance/servers</strong>
+</pre> <p class="p">The following shows an example of the response body, in JSON format, with <samp class="ph codeph">ExampleI_server_2</samp> added to the list.</p> <p class="p"><strong class="ph b">Note:</strong> By default, the name of the Managed Server is generated from the first eight characters of the domain name (<samp class="ph codeph">"domainName"</samp>), using the following format: <em class="ph i"><samp class="ph codeph">first8charsOfDomainName</samp></em><samp class="ph codeph">_server_</samp><em class="ph i"><samp class="ph codeph">n</samp></em>, where <em class="ph i"><samp class="ph codeph">n</samp></em> starts with 1 and is incremented by 1 for each additional Managed Server to ensure each name is unique.</p> <pre class="pre codeblock">{
+    "servers":[
+    {
+        "clusterName":"ExampleI_cluster",
+        "name":"ExampleI_server_1",
+        "shape":"oc3",
+        "nodeType":"WLS",
+        "isAdmin":true,
+        "hostname":"123.456.789.123",
+        "status":"Ready",
+        "storageAllocated":74752,
+        "creationDate":"Jun 7, 2016 9:22:43 PM"
+    },
+    {
+        "clusterName":"ExampleI_cluster",
+        <strong class="ph b">"name":"ExampleI_server_2"</strong>,
+        "shape":"oc3",
+        "nodeType":"WLS",
+        "isAdmin":false,
+        "hostname":"exampleinstance-wls-2",
+        "status":"Ready",
+        "reservedIp":"",
+        "jobId":"866230",
+        "storageAllocated":54272,
+        "creationDate":"Jul 27, 2016 9:19:21 PM"
+    }
+    ],
+    "serverInProgress":[]
+}</pre> <p class="p"><strong class="ph b">On Oracle Public Cloud:</strong> If you scaled out a service instance that uses an Oracle Exadata database, the IP reservation name and address are also returned for each Managed Server in the cluster. For example:</p> <pre class="pre codeblock">{
+   "servers":[
+   {
+      "clusterName":"ExampleI_cluster",
+      "name":"ExampleI_server_1",
+      "shape":"oc3",
+      "nodeType":"WLS",
+      "isAdmin":true,
+      "hostname":"123.45.6.78",
+      "status":"Ready",
+      <strong class="ph b">"reservedIpName":"ipres01"</strong>,
+      <strong class="ph b">"reservedIpAddress":"10.222.333.17"</strong>,
+      "storageAllocated":47000,
+      "creationDate":"May 11, 2016 3:58:40 PM"
+   },
+   {
+      "clusterName":"ExampleI_cluster"",
+      "name":"ExampleI_server_2",
+      "shape":"oc3",
+      "nodeType":"WLS",
+      "isAdmin":false,
+      "hostname":"exampleinstance-wls-2",
+      "status":"Ready",
+      <strong class="ph b">"reservedIpName":"ipres02"</strong>,
+      <strong class="ph b">"reservedIpAddress":"10.222.343.121"</strong>,
+      "storageAllocated":27000,
+      "creationDate":"May 11, 2016 3:58:43 PM"
+   }
+   ],
+   "serverInProgress:[]
+}</pre> </li> 
+    <li class="li"><p class="p">Scale in the service instance by removing the Managed Server that was added in Step 2, <samp class="ph codeph">ExampleI_server_2</samp>.</p> <pre class="pre"><strong class="ph b">curl -i -X DELETE -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance/servers/ExampleI_server_2</strong>
+</pre> <p class="p">Specify the following options on the cURL command line:</p> 
+     <ul class="ul">
+      <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">DELETE</samp>).</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+     </ul> <p class="p">See <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-servers-%7Bname%7D-delete.html" target="_blank">Scale In a Cluster</a> for more information about scaling in.</p> <p class="p"><strong class="ph b">On Oracle Public Cloud:</strong> If you are scaling in a service instance that uses an Oracle Exadata database, when the Managed Server node is removed, the IP reservation associated with the node is released but not deleted.</p> <p class="p">The following shows an example of the response document returned in JSON format.</p> <pre class="pre codeblock">{
+   "status": "New",
+   "details": {
+      "message": "JAAS-SCALING-044: Scaling in Job (ID: 20) server name [ExampleI_server_2] submitted for service [ExampleInstance]",
+      "jobId": "20"
+   }
+}
+</pre> </li> 
+    <li class="li"><p class="p">After the scaling operation is completed, review the list of Managed Servers to confirm the Managed Server has been removed.</p> <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance/servers</strong>
+</pre> <p class="p">The following shows an example of the response body, in JSON format. In this example, there is one Managed Server; <samp class="ph codeph">ExampleI_server_2</samp> has been removed.</p> <pre class="pre codeblock">{
+    "servers":[
+    {
+        "clusterName":"ExampleI_cluster",
+        "name":"ExampleI_server_1",
+        "shape":"oc3",
+        "nodeType":"WLS",
+        "isAdmin":true,
+        "hostname":"123.456.789.123",
+        "status":"Ready",
+        "storageAllocated":74752,
+        "creationDate":"Jun 7, 2016 9:22:43 PM"
+    }
+    ],
+    "serverInProgress":[]
+}</pre> </li> 
+   </ol> 
+  </div> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Scaling a Node</h3>
+  <div class="p">
+   To scale a node:
+   <ol class="ol">
+    <li class="li"><p class="p">Before scaling a node, review the Managed Servers that are currently defined.</p> <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance/servers</strong>
+</pre> <p class="p">Specify the following options on the cURL command line:</p> 
+     <ul class="ul">
+      <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+     </ul> <p class="p">For more information, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-servers-get.html" target="_blank">View All Managed Servers</a>.</p> <p class="p">The following shows an example of the response body, in JSON format. In this example, there are three Managed Servers currently defined.</p> <pre class="pre codeblock">{
+   "servers":[
+   {
+      "clusterName":"ExampleI_cluster",
+      "name":"<strong class="ph b">ExampleI_server_1</strong>",
+      "shape":"oc3",
+      "nodeType":"WLS",
+      "isAdmin":true,
+      "hostname":"123.45.6.78",
+      "status":"Ready",
+      "storageAllocated":47000,
+      "creationDate":"Jun 3, 2014 8:19:08 AM"
+   },
+   {
+      "clusterName":"ExampleI_cluster"",
+      "name":"<strong class="ph b">ExampleI_server_2</strong>",
+      "shape":"oc3",
+      "nodeType":"WLS",
+      "isAdmin":false,
+      "hostname":"exampleinstance-wls-2",
+      "status":"Ready",
+      "storageAllocated":27000,
+      "creationDate":"Jun 3, 2014 8:19:30 AM"
+   },
+   {
+      "clusterName":"ExampleI_cluster",
+      "name":"<strong class="ph b">ExampleI_server_3"</strong>,
+      "shape":"oc3",
+      "nodeType":"WLS",
+      "isAdmin":false,
+      "hostname":"exampleinstance-wls-3",
+      "status":"Ready",
+      "jobId":"17",
+      "storageAllocated":27000,
+      "creationDate":"Jun 3, 2014 8:19:30 AM"
+   }],
+   "serverInProgress":[]
+}
+</pre> </li> 
+    <li class="li"><p class="p">In the output returned from step 1, note that <samp class="ph codeph">ExampleI_server_1</samp> has the following compute shape and storage allocation:</p> 
+     <div class="p">
+      <ul class="ul">
+       <li class="li"><p class="p">Compute shape: OC3</p> </li> 
+       <li class="li"><p class="p">Storage: 47000 MBs</p> </li> 
+      </ul> You will scale up the Managed Server, 
+      <samp class="ph codeph">ExampleI_server_1</samp>, so that it can handle more load, as follows:
+     </div> 
+     <ul class="ul">
+      <li class="li"><p class="p">Compute shape: OC4</p> </li> 
+      <li class="li"><p class="p">Storage: Add 1 gigabyte (GB) of additional storage to the backup storage volume</p> <p class="p"> <strong class="ph b">Note</strong>: You can add additional storage to the <em class="ph i">backup</em> storage volume on the Administration Server node only. In this example, <samp class="ph codeph">ExampleI_server_1</samp> hosts the Administration Server.</p> </li> 
+     </ul> </li> 
+    <li class="li"><p class="p">First, you need to create a JSON document, <samp class="ph codeph">scale.json</samp>, that defines the details of a scale up operation.</p> <pre class="pre codeblock">{
+    "additionalStorage" : "1",
+    "scalingVolume" : "backup",
+    "shape" : "oc4"
+}</pre> <p class="p">For more information about the request attributes, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-%7BserverName%7D-put.html" target="_blank">Scale a Node</a>.</p> </li> 
+    <li class="li"><p class="p">Scale up the Managed Server, <samp class="ph codeph">ExampleI_server_1</samp>, passing the JSON document defined in step 3.</p> <pre class="pre"><strong class="ph b">curl -i -X PUT -u username:userPassword1! -d @scale.json -H "Content-Type:application/json" -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance/ExampleI_server_1</strong>
+</pre> <p class="p">Specify the following options on the cURL command line:</p> 
+     <ul class="ul">
+      <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">PUT</samp>).</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+      <li class="li"><samp class="ph codeph">-H</samp> to identify the content type as <samp class="ph codeph">application/json</samp> and define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</li> 
+     </ul> <p class="p">For more information, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-%7BserverName%7D-put.html" target="_blank">Scale a Node</a>.</p> <p class="p">The following shows an example of the response document returned in JSON format.</p> <pre class="pre codeblock">{
+   "status": "New",
+   "details": {
+      "message": "scaleup.job.submitted",
+      "jobId": "22"
+   }
+}
+</pre> </li> 
+    <li class="li"><p class="p">Check the status of the scaling operation using the job ID returned in the response in step 3. For more information, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-servers-history-job-%7BjobId%7D-get.html" target="_blank">View the Status of a Server Operation by Job ID</a>.</p> <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance/servers/history/job/22</strong></pre> <p class="p">Specify the following options on the cURL command line:</p> 
+     <ul class="ul">
+      <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+     </ul> <p class="p">The following shows an example of the response body, in JSON format.</p> <pre class="pre codeblock">{
+   "actLog":
+   {
+      "activityLogId":2021,
+      "serviceId":109,
+      "operation":{
+         "operationId":109,
+         "operationType":"SCALE_UP"
+      },
+      "status":"RUNNING",
+      "startDate":"Jul 30, 2015 8:48:04 PM",
+      "endDate":null,
+      "identityDomain":"ExampleIdentityDomain",
+      "serviceName":"ExampleInstance",
+      "hostName":null,
+      "serverName":null,
+      "serverType":null,
+      "jobId":12301,
+      "summaryMessage":"SCALE_UP",
+      "messages":[
+      {
+         "activityMessageId":2350,
+         "activityDate":"Jul 30, 2015 8:48:04 PM",
+         "stepName":"NEW",
+         "message":"Activity Submitted"
+      },
+      {
+         "activityMessageId":2351,
+         "activityDate":"Jul 30, 2015 8:48:13 PM",
+         "stepName":"RUNNING",
+         "message":"Activity Started"
+      },
+      {
+         "activityMessageId":2352,
+         "activityDate":"Jul 30, 2015 8:48:31 PM",
+         "stepName":"RUNNING",
+         "message":"Stopping service member [\ExampleI_server_1] of service [ExampleInstance]..."
+       }]
+   },
+   "messages":[{},{},{}]
+}</pre> </li> 
+    <li class="li"><p class="p">After the scale up operation is completed, review the list of Managed Severs to confirm <samp class="ph codeph">ExampleI_server_1</samp> has been scaled up.</p> <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance/servers</strong>
+</pre> <p class="p">Specify the following options on the cURL command line:</p> 
+     <ul class="ul">
+      <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+      <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+     </ul> <p class="p">The following shows an example of the response body, in JSON format. In this example, <samp class="ph codeph">ExampleI_server_1</samp> has been scaled up.</p> <pre class="pre codeblock">{
+   "servers":[
+   {
+      "clusterName":"ExampleI_cluster",
+      "name":"ExampleI_server_1",
+      "shape":"<strong class="ph b">oc4</strong>",
+      "nodeType":"WLS",
+      "isAdmin":true,
+      "hostname":"123.45.6.78",
+      "status":"Ready",
+      "storageAllocated":<strong class="ph b">48024</strong>,
+      "creationDate":"Jun 3, 2014 8:19:08 AM"
+   },
+   {
+      "clusterName":"ExampleI_cluster"",
+      "name":"ExampleI_server_2",
+      "shape":"oc3",
+      "nodeType":"WLS",
+      "isAdmin":false,
+      "hostname":"exampleinstance-wls-2",
+      "status":"Ready",
+      "storageAllocated":27000,
+      "creationDate":"Jun 3, 2014 8:19:30 AM"
+   },
+   {
+      "clusterName":"ExampleI_cluster"",
+      "name":"ExampleI_server_3",
+      "shape":"oc3",
+      "nodeType":"WLS",
+      "isAdmin":false,
+      "hostname":"exampleinstance-wls-3",
+      "status":"Ready",
+      "storageAllocated":27000,
+      "creationDate":"Jun 3, 2014 8:19:30 AM"
+   }],
+   "serverInProgress":[]
+}
+</pre> </li> 
+    <li class="li"><p class="p">Repeat steps 4 through 6 to scale up the other nodes in the cluster and ensure that they are all equivalent.</p> </li> 
+   </ol> 
+  </div> 
+ </div> 
+</div></div>
+        </article>
+    </body>
+</html>

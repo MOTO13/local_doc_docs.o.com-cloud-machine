@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Troubleshooting</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="When working with large applications, it is very common to encounter problems. You must be aware of the commonly faced problems and workarounds to overcome those issues." />
+<meta name="dcterms.created" content="2017-04-11T11:24:03Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle Real-Time Integration Business Insight" />
+<meta name="dcterms.identifier" content="E76087-06" />
+<meta name="dcterms.isVersionOf" content="IINUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-53735A6F-D62D-4E80-A179-2B862190038A.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-D1E993BD-FA65-4AB0-8EFA-80C01864D435.htm" title="Next" type="text/html" />
+<link rel="alternate" href="IINUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="IINUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="IINUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-E35F8E10-7577-4AFA-9C8E-205525193095"></a> <span id="PAGE" style="display:none;">13/17</span> <!-- End Header -->
+<h1 id="IINUG-GUID-E35F8E10-7577-4AFA-9C8E-205525193095" class="sect1"><span class="enumeration_chapter">8</span> Troubleshooting</h1>
+<div>
+<p>When working with large applications, it is very common to encounter problems. You must be aware of the commonly faced problems and workarounds to overcome those issues.</p>
+<p>Visit <a href="http://www.oracle.com/technetwork/middleware/insight/customers/index.html#FAQ" target="_blank">http://www.oracle.com/technetwork/middleware/insight/customers/index.html#FAQ</a> for a list of Frequently Asked Questions.</p>
+</div>
+<div class="sect2"><a id="GUID-69D007D7-8F58-487E-973E-0A6E7F7C2050"></a>
+<h2 id="IINUG-GUID-69D007D7-8F58-487E-973E-0A6E7F7C2050" class="sect2"><span class="enumeration_section">8.1</span> Why Can't I See A Model on My Home Page?</h2>
+<div>
+<p>Models that are created in Oracle Real-Time Integration Business Insight conform to the model lifecycle. When models are created or edited, they are in <span class="bold">Draft</span> state until they are <span class="bold">Activated</span>. Activation is the action that pushes a model definition (including milestones, indicators, mappings, etc.) out to the various runtime engines (i.e., SOA Suite and Service Bus). There are other model states as well, representing deactivation, error, and other conditions.</p>
+<p>Models are available to add to the <span class="bold">Home</span> page only when they are activated. If you are expecting to be able to add a model to your <span class="bold">Home</span> page, but it is not listed in the model selector, then the most likely cause is that the model has not been activated. Contact the appropriate architect or an administrator and request that the model be activated.</p>
+</div>
+</div>
+<div class="sect2"><a id="GUID-1004B23D-0AF0-413E-840C-50AE2A69F5E3"></a>
+<h2 id="IINUG-GUID-1004B23D-0AF0-413E-840C-50AE2A69F5E3" class="sect2"><span class="enumeration_section">8.2</span> Why Did My Model Deactivate?</h2>
+<div>
+<p>Models that are created in Oracle Real-time Integration Business Insight conform to the model lifecycle. After models are activated, they remain activated until a business user, architect, or an administrator explicitly deactivates them. Models may also be deactivated <span class="bold">automatically</span> by the system if certain error conditions are detected by the system.</p>
+<p>The system automatically deactivates a model when error conditions exist that could result in inaccurate collection of metrics for that model. Examples of such errors include an administrator deploying a new version of an application (a new revision of a composite) that is not compatible with the mappings defined in an activated mode, and network failure inhibiting recording of metrics from distributed components of an application.</p>
+</div>
+</div>
+<div class="sect2"><a id="GUID-517BF7C2-4819-4943-A9DE-CE8996C57053"></a>
+<h2 id="IINUG-GUID-517BF7C2-4819-4943-A9DE-CE8996C57053" class="sect2"><span class="enumeration_section">8.3</span> Why Can't I Map My Model?</h2>
+<div>
+<p>There are three reasons why you may not be able to create mappings for milestones and indicators in your model.</p>
+<ol>
+<li>
+<p>The most common reason is that a user may not be assigned to the appropriate persona, or role. A user must be assigned to the <span class="italic">InsightIntegrationArchitect</span>, <span class="italic">InsightAdmin</span>, or <span class="italic">InsightModelCreator</span> role in order to map milestones or indicators to implementation. If you are only assigned to the <span class="italic">InsightBusinessUser</span> role, you will be able to define the abstract elements of milestones and indicators (e.g., name, type), but you will not be able to do mappings.</p>
+</li>
+<li>
+<p>The second most common reason that a user may not be able to create mappings for a model is that it is not in draft mode. Only drafts of a model can be edited. If you are viewing an activated version of a model, you will not be able to modify it, including creating new mappings for a milestone or indicator.</p>
+</li>
+<li>
+<p>The third most common obstacle to creating mappings is that the connections used to browse application artifacts (e.g., composites or service bus project) and mapping may not have been properly set up. In this case, contact your administrator to create, configure, and test the necessary SOA Suite or Service Bus connections so that you can create mappings for your model elements.</p>
+</li>
+</ol>
+<p>See also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-7F727FA4-1163-499F-B222-F395F8A92041">InsightBusinessUser</a></p>
+</li>
+<li>
+<p><a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-B6924A86-3E6F-4286-B561-3D56442CD3B7">InsightIntegrationArchitect</a></p>
+</li>
+<li>
+<p><a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a></p>
+</li>
+<li>
+<p><a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2"><a id="GUID-8CD30895-ECB7-4BEE-90DB-1DB031640861"></a>
+<h2 id="IINUG-GUID-8CD30895-ECB7-4BEE-90DB-1DB031640861" class="sect2"><span class="enumeration_section">8.4</span> Why Is My Model Stuck?</h2>
+<div>
+<p>Instances of a model may stop progressing through milestones for a number of different reasons. Use this information as a starting point to work with your administrator to understand why your instances are not hitting the milestones that you think they should.</p>
+<p>The most likely reason instances for a model to stop progressing is that the model has been deactivated, either explicitly by a business user, architect or administrator, or automatically by the system. See <a href="GUID-E35F8E10-7577-4AFA-9C8E-205525193095.htm#GUID-1004B23D-0AF0-413E-840C-50AE2A69F5E3" title="Models that are created in Oracle Real-time Integration Business Insight conform to the model lifecycle. After models are activated, they remain activated until a business user, architect, or an administrator explicitly deactivates them. Models may also be deactivated automatically by the system if certain error conditions are detected by the system.">Why Did My Model Deactivate?</a>.</p>
+<p>The other likely reason that a model is not progressing is that milestones are improperly mapped to underlying implementation. For example if you are expecting a milestone representing &ldquo;Order Shipped&rdquo; to be passed frequently in your order processing application, but your orders seem to be &ldquo;stuck&rdquo; at the previous milestone, then it is possible that the Order Shipped milestone was associated with an incorrect service, BPEL activity, or Service Bus project artifact that does not really represent the order being shipped. Work with your business user and architect to verify the mappings.</p>
+</div>
+</div>
+<div class="sect2"><a id="GUID-41B31860-1D78-48F6-8186-95D6415FE6C9"></a>
+<h2 id="IINUG-GUID-41B31860-1D78-48F6-8186-95D6415FE6C9" class="sect2"><span class="enumeration_section">8.5</span> Why Can't I Find My Instance?</h2>
+<div>
+<p>In this release of Oracle Real-Time Integration Business Insight, you can only search for model instances by identifier values. For example, if you have modeled a Help Desk application, and used Incident ID as the identifier for the model, you would be able to search for a single Help Desk engagement by Incident ID.</p>
+<p>It is worth noting that you can also <span class="italic">filter</span> a list of instances by criteria beyond just the identifier, and this can be helpful in finding instances. Any indicator that is marked as <span class="bold">filterable</span> in the model is available to use as filter criteria when viewing an instance list. For more information, see <a href="GUID-FBDCC935-499D-4A8C-BFE4-2D4E3A6A3441.htm#GUID-BEB756FA-37BD-4661-93A2-76B7B5F73E6F">Filtering Instances</a>.</p>
+</div>
+</div>
+<div class="sect2"><a id="GUID-6E21F1B3-FFEB-454A-8A37-BB2E8D4F34A8"></a>
+<h2 id="IINUG-GUID-6E21F1B3-FFEB-454A-8A37-BB2E8D4F34A8" class="sect2"><span class="enumeration_section">8.6</span> Why Can't I Use My Connections to Map Milestones?</h2>
+<div>
+<p>When mapping your model to an underlying implementation, architects use connections to runtime engines such as SOA Suite and Service Bus. The connections are listed in the mapping user interface. These connections are created and configured by administrators. If a connection has not been completely configured or tested, it is possible that architects will not be able to browse the runtime engine associated with that connection. Work with your administrator to validate that connections are configured properly and have been tested.</p>
+<p>Another reason might be that the runtime engine associated with a connection is offline. For example, if a SOA Suite server has been taken offline for maintenance, an architect will not be able to browse that server and map milestones until the server is brought back online.</p>
+</div>
+</div>
+<div class="sect2"><a id="GUID-8247FDCF-4689-4F55-8CB9-C5228993F840"></a>
+<h2 id="IINUG-GUID-8247FDCF-4689-4F55-8CB9-C5228993F840" class="sect2"><span class="enumeration_section">8.7</span> Why Can't I See the Console Tab?</h2>
+<div>
+<p>If you expect to see the <span class="bold">Consoles</span> tab, but it is not listed at the top of your screen, then you have not been assigned to the appropriate application role.</p>
+<p>Users must be assigned to the <span class="italic">InsightExecutive</span>, <span class="italic">InsightAdmin</span>, or <span class="italic">InsightModelCreator</span> role in order to see the <span class="bold">Consoles</span> tab.</p>
+<p>See also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-FA03485F-ECF0-4288-925E-992AEFAF50A1">InsightExecutive</a></p>
+</li>
+<li>
+<p><a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a></p>
+</li>
+<li>
+<p><a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2"><a id="GUID-9DAA5950-9E06-40F4-AEC0-FA718E0901DF"></a>
+<h2 id="IINUG-GUID-9DAA5950-9E06-40F4-AEC0-FA718E0901DF" class="sect2"><span class="enumeration_section">8.8</span> Why Are My Dashboards Empty?</h2>
+<div>
+<p>After a model has been defined by a business user and mapped to implementation by an architect, the model must be activated to begin collecting metrics and observing the passage of milestones.</p>
+<p>Depending on the activity level of your application, it may take some time to begin to see instances and indicators populated in the console. For example, if your have created a model of an order processing system and your application typically processes several orders per minute, you should start to see your consoles populate within a few minutes. However, if your application typically receives an order every hour, it may take several hours for your console to begin to show meaningful data.</p>
+<p>There is very minimal delay between metrics being collected on runtime engines and information showing up in your consoles. The product has been optimized to minimize performance impact on runtime engines, so during times of heavy runtime load, you may see delay of a few minutes, but generally not more than this.</p>
+</div>
+</div>
+<div class="sect2"><a id="GUID-EED6FA1E-B935-403E-96F1-913371370475"></a>
+<h2 id="IINUG-GUID-EED6FA1E-B935-403E-96F1-913371370475" class="sect2"><span class="enumeration_section">8.9</span> How Are My Metrics Impacted When I Change My Model?</h2>
+<div>
+<p>The metrics being collected for a model are impacted when you either add/remove a milestone or an indicator to/from the model.</p>
+<p>The following is the impact in different scenarios:</p>
+<ol>
+<li>
+<p>If a milestone is added while metrics are being collected, new Insight instances created after activation, will start collecting data for the new milestone. The existing metrics are unaffected.</p>
+</li>
+<li>
+<p>If a milestone is deleted while metrics are being collected, the existing metrics collected for the deleted milestone are lost. The existing instance depict that the milestone was never reached. You will also get notified through a warning message about such changes upon re-activation of the model.</p>
+</li>
+<li>
+<p>If an indicator is added while metrics are being collected, there is no impact on the existing metrics. The new Insight instances will start collecting metrics for the new indicator upon re-activation of the model.</p>
+</li>
+<li>
+<p>If an indicator is removed while metrics are being collected, the existing metrics collected for the indicator will be lost. On activating the model with a deleted indicator, you will be presented with a list of consoles where the indicator is being used. You must remove such consoles or remove the usage of the indicator from those consoles to proceed with activation of model.</p>
+</li>
+</ol>
+<p>For more information, see <a class="olink INCON-GUID-72F42E2F-610C-4D33-8CD9-D6B9AD7BDCF5" target="_blank" href="../INCON/GUID-BB700A19-05C6-491E-B270-E787BCD8E476.htm#INCON-GUID-72F42E2F-610C-4D33-8CD9-D6B9AD7BDCF5">Impact of Reactivation of Model After Changes in Model Metadata</a> in <span id="GUID-EED6FA1E-B935-403E-96F1-913371370475__INCON"><cite>Understanding Oracle Real-Time Integration Business Insight</cite></span>.</p>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment128">
+<tr>
+<td class="cellalignment135">
+<table class="cellalignment138">
+<tr>
+<td class="cellalignment132"><a href="GUID-53735A6F-D62D-4E80-A179-2B862190038A.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment132"><a href="GUID-D1E993BD-FA65-4AB0-8EFA-80C01864D435.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment137">
+<table class="cellalignment131">
+<tr>
+<td class="cellalignment132"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment132"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment132"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

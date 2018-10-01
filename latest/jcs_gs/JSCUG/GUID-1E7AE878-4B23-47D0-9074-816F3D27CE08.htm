@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Typical Workflow for Using Oracle Java Cloud Service</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="To start using Oracle Java Cloud Service, refer to the following tasks as a guide." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-58D75F45-4424-42E5-AA24-4F7772FD3C03.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-F3EF20BD-06DA-4467-AF32-3B2CABBB2A59.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-1E7AE878-4B23-47D0-9074-816F3D27CE08"></a> <span id="PAGE" style="display:none;">11/131</span> <!-- End Header -->
+<a id="JSCUG3123"></a>
+<h1 id="JSCUG-GUID-1E7AE878-4B23-47D0-9074-816F3D27CE08" class="sect1">Typical Workflow for Using <span>Oracle Java Cloud Service</span></h1>
+<div>
+<p>To start using <span>Oracle Java Cloud Service</span>, refer to the following tasks as a guide.</p>
+<div class="tblformalwide" id="GUID-1E7AE878-4B23-47D0-9074-816F3D27CE08__GUID-CDD9A36C-9204-4650-8631-8F066F313CA8">
+<table class="cellalignment30" summary="This table describes the tasks that get you started using Oracle Java Cloud Service.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment34" id="d6597e26">Task</th>
+<th class="cellalignment35" id="d6597e29">Description</th>
+<th class="cellalignment36" id="d6597e32">More Information</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment37" id="d6597e37" headers="d6597e26">
+<p>Access the service console</p>
+</td>
+<td class="cellalignment38" headers="d6597e37 d6597e29">
+<p>Access the service console and other interfaces to your service.</p>
+</td>
+<td class="cellalignment39" headers="d6597e37 d6597e32">
+<p><a href="GUID-609D51B2-5D5C-4F75-A381-BB5B440585BB.htm" title="You access Oracle Java Cloud Service through a web console.">Accessing Oracle Java Cloud Service</a></p>
+<p><a href="GUID-8C8402EF-D5A7-41E2-83B5-8E9CDA5085D0.htm" title="From an Oracle Java Cloud Service instance, you can access the administration consoles and individual virtual machines through a secure shell to run Oracle WebLogic Server utilities, such as the WebLogic Scripting Tool (WLST).">Administering Oracle Java Cloud Service Software</a></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment37" id="d6597e62" headers="d6597e26">
+<p>Create a service instance</p>
+</td>
+<td class="cellalignment38" headers="d6597e62 d6597e29">
+<p>Use the wizard to create a service instance by selecting a level of service, and an Oracle WebLogic Server software release and edition to run on the service instance.</p>
+<p>See <a href="GUID-D0ACADB5-2415-450C-AE6A-0600752BDBA0.htm#GUID-D0ACADB5-2415-450C-AE6A-0600752BDBA0" title="Before you begin using Oracle Java Cloud Service to create service instances, you must provision an Oracle database. You may also need to satisfy additional prerequisites depending on your requirements.">Before You Begin with Oracle Java Cloud Service</a> for the Oracle Cloud services and service-specific information that you must have before you can create an <span>Oracle Java Cloud Service</span> instance.</p>
+</td>
+<td class="cellalignment39" headers="d6597e62 d6597e32">
+<p><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2" title="To create a new Oracle Java Cloud Service instance, use the Provision New Java Cloud Service wizard as described in the following sections.">Creating an Oracle Java Cloud Service Instance</a></p>
+<p><a href="GUID-7BEF123A-54F3-4E37-8CCC-518CFFFF817B.htm" title="You can enable Oracle Coherence when you create a service instance in Oracle Java Cloud Service using the Oracle Java Cloud Service Console or the REST API. For clarification purposes in this document and others, service instances provisioned to use Oracle Coherence in Oracle Java Cloud Service are referred to as Oracle Java Cloud Service&mdash;Coherence instances.">About Oracle Java Cloud Service&mdash;Coherence Instances</a></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment37" id="d6597e119" headers="d6597e26">
+<p>Deploy applications to the service instance</p>
+</td>
+<td class="cellalignment38" headers="d6597e119 d6597e29">
+<p>Use the WebLogic Server Administration Console, the Fusion Middleware Control, WebLogic Scripting Tool commands, or an IDE to deploy and undeploy applications.</p>
+</td>
+<td class="cellalignment39" headers="d6597e119 d6597e32">
+<p><a href="GUID-18128901-2017-4407-8DA9-0BCE933C8C07.htm" title="This section describes deploying and undeploying applications to an Oracle Java Cloud Service instance by using: Fusion Middleware Control, the WebLogic Server Administration Console, WLST commands, and an IDE. You cannot deploy and undeploy applications directly through the Oracle Java Cloud Service Console.">Deploying and Undeploying Applications for an Oracle Java Cloud Service Instance</a></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment37" id="d6597e134" headers="d6597e26">
+<p>Use a load balancer for the service instance</p>
+</td>
+<td class="cellalignment38" headers="d6597e134 d6597e29">
+<p>Configure the load balancer (for example, select the load balancing policy).</p>
+<p>Add a load balancer if one was not enabled during initial service instance creation.</p>
+<p>Not supported by <span>Oracle Java Cloud Service</span>&mdash;Virtual Image instances.</p>
+</td>
+<td class="cellalignment39" headers="d6597e134 d6597e32">
+<p><a href="GUID-A568C26C-D1EC-4B9A-AF09-556D31933BCE.htm" title="This section explains how to administer the load balancer for an Oracle Java Cloud Service instance.">Administering the Load Balancer for an Oracle Java Cloud Service Instance</a></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment37" id="d6597e156" headers="d6597e26">
+<p>Manage access to the service instance</p>
+</td>
+<td class="cellalignment38" headers="d6597e156 d6597e29">
+<p>Suspend a service instance (if load balancer is enabled).</p>
+<p>Stop and start a service instance, and virtual machines.</p>
+</td>
+<td class="cellalignment39" headers="d6597e156 d6597e32">
+<p><a href="GUID-41A9CF0D-028D-4C62-B9C6-D369452D5937.htm#GUID-41A9CF0D-028D-4C62-B9C6-D369452D5937" title="You can disable the load balancer to suspend the Oracle Java Cloud Service instance temporarily, to block any new traffic from being delivered to the service instance. This is useful when you want to perform routine maintenance on an Oracle Java Cloud Service instance, but do not want to stop the service instance. Once the maintenance activities have been completed, you can re-enable the load balancer to allow traffic to be delivered.">Suspending an Oracle Java Cloud Service Instance</a></p>
+<p><a href="GUID-A0491DD0-6E6C-405D-A00C-A213AABDF91C.htm#GUID-A0491DD0-6E6C-405D-A00C-A213AABDF91C" title="You can stop and start an Oracle Java Cloud Service instance and, when the service instance is running, start, stop, and restart individual server or Load Balancer VMs.">Stopping and Starting an Oracle Java Cloud Service Instance and Individual VMs</a></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment37" id="d6597e180" headers="d6597e26">
+<p>View heap usage metrics and response times for a service instance</p>
+</td>
+<td class="cellalignment38" headers="d6597e180 d6597e29">
+<p>Access the service metrics graph to display heap usage metrics or request response times (if a load balancer is present).</p>
+</td>
+<td class="cellalignment39" headers="d6597e180 d6597e32">
+<p><a href="GUID-B76602B2-156D-4EAE-91F4-08A0520844FD.htm#GUID-B76602B2-156D-4EAE-91F4-08A0520844FD" title="Oracle Java Cloud Service provides a graph view that enables you to view heap usage metrics and response times for service instances.">Viewing Service Metrics in Oracle Java Cloud Service</a></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment37" id="d6597e195" headers="d6597e26">
+<p>Patch the service instance</p>
+</td>
+<td class="cellalignment38" headers="d6597e195 d6597e29">
+<p>Apply a patch or roll back a patch.</p>
+<p>Not supported by <span>Oracle Java Cloud Service</span>&mdash;Virtual Image instances.</p>
+</td>
+<td class="cellalignment39" headers="d6597e195 d6597e32">
+<p><a href="GUID-54FEF023-EAB4-44FE-BF4F-ADAA476097B1.htm" title="This section describes how to apply a patch to an Oracle Java Cloud Service instance, and roll back the patch as necessary.">Patching an Oracle Java Cloud Service Instance</a></p>
+<p><a href="GUID-F2435DC0-0C54-42A1-B58F-50D3CE1930C7.htm#GUID-F2435DC0-0C54-42A1-B58F-50D3CE1930C7" title="You can use the Patching page to view the results of patching operations and to roll back patches.">Rolling Back a Patching Operation</a></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment37" id="d6597e222" headers="d6597e26">
+<p>Back up the service instance</p>
+</td>
+<td class="cellalignment38" headers="d6597e222 d6597e29">
+<p>Initiate on-demand backups, schedule automated backups, set up retention policies and storage for backups, download backups, and manage backups (restore, archive and delete).</p>
+<p>Not supported by <span>Oracle Java Cloud Service</span>&mdash;Virtual Image instances.</p>
+</td>
+<td class="cellalignment39" headers="d6597e222 d6597e32">
+<p><a href="GUID-EDAEEE74-17E4-43CF-9059-F777255DFBDC.htm" title="You can back up and restore your Oracle Java Cloud Service instances to return their software and data to a particular state.">Backing Up and Restoring an Oracle Java Cloud Service Instance</a></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment37" id="d6597e245" headers="d6597e26">
+<p>Scale the service instance</p>
+</td>
+<td class="cellalignment38" headers="d6597e245 d6597e29">
+<p>Add or remove nodes in preparation for increased or reduced load on a service instance (not supported by <span>Oracle Java Cloud Service</span>&mdash;Virtual Image instances).</p>
+<p>Change the shape of a node or add storage to a node (supported by <span>Oracle Java Cloud Service</span>&mdash;Virtual Image instances).</p>
+<p><span>When Oracle Coherence is enabled for a service instance:</span> The Coherence data tier is scaled independently of the application tier. You add or remove Coherence data tier nodes by adding or removing one capacity unit at a time.</p>
+</td>
+<td class="cellalignment39" headers="d6597e245 d6597e32">
+<p><a href="GUID-6BAA26CA-B304-4C0E-AC00-3E47512EED88.htm#GUID-6BAA26CA-B304-4C0E-AC00-3E47512EED88" title="You can scale out an Oracle Java Cloud Service cluster to add one node to the cluster. When you scale out, Oracle Java Cloud Service creates a new VM running a WebLogic Server Managed Server instance.">Scaling Out an Oracle Java Cloud Service Cluster</a></p>
+<p><a href="GUID-3054AC97-E2C6-45DE-818E-33671C0C8280.htm#GUID-3054AC97-E2C6-45DE-818E-33671C0C8280" title="You can scale in an Oracle Java Cloud Service cluster to remove a selected node from the cluster. When you scale in, Oracle Java Cloud Service removes the selected WebLogic Server Managed Server instance and the VM that it is running on.">Scaling In an Oracle Java Cloud Service Cluster on OPCM</a></p>
+<p><a href="GUID-8DD460BA-708C-4B90-822F-4E4D64C59F77.htm#GUID-8DD460BA-708C-4B90-822F-4E4D64C59F77" title="You can scale an Oracle Java Cloud Service node to change its compute shape in response to changes in workload or to add storage to a node that is running out of storage. However, you cannot remove block storage from a node.">Scaling an Oracle Java Cloud Service Node</a></p>
+<p><a href="GUID-506493C3-FEC4-48FE-87BB-7764DCA4612A.htm#GUID-506493C3-FEC4-48FE-87BB-7764DCA4612A" title="The Coherence data tier of an Oracle Java Cloud Service&mdash;Coherence instance is scaled independently of the application tier. You can use the Oracle Java Cloud Service Console or the REST API to scale the Coherence data tier.">Scaling the Coherence Data Tier of an Oracle Java Cloud Service Instance</a></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment37" id="d6597e301" headers="d6597e26">
+<p>Add a Coherence data tier</p>
+</td>
+<td class="cellalignment38" headers="d6597e301 d6597e29">Add a Coherence data tier cluster of storage-enabled Managed Servers to an existing service instance (REST API only).</td>
+<td class="cellalignment39" headers="d6597e301 d6597e32">
+<p><a href="../JSRMR/op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-clusters-post.html" target="_blank">Add a Coherence Data Tier Cluster</a> in <cite>REST API for Oracle Java Cloud Service</cite></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment37" id="d6597e315" headers="d6597e26">
+<p>Remove a Coherence data tier</p>
+</td>
+<td class="cellalignment38" headers="d6597e315 d6597e29">Delete a Coherence data tier cluster from a service instance (REST API only).</td>
+<td class="cellalignment39" headers="d6597e315 d6597e32">
+<p><a href="../JSRMR/op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-clusters-%7BclusterName%7D-delete.html" target="_blank">Delete a Coherence Data Tier Cluster</a> in <cite>REST API for Oracle Java Cloud Service</cite></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment37" id="d6597e330" headers="d6597e26">
+<p>Remove a service instance</p>
+</td>
+<td class="cellalignment38" headers="d6597e330 d6597e29">
+<p>Delete a service instance.</p>
+</td>
+<td class="cellalignment39" headers="d6597e330 d6597e32">
+<p><a href="GUID-A58DDD63-CD0F-49F4-AF78-AF4FA5C42C3A.htm#GUID-A58DDD63-CD0F-49F4-AF78-AF4FA5C42C3A" title="When you no longer require an Oracle Java Cloud Service instance, you can delete it. Your account is no longer charged for the instance.">Deleting an Oracle Java Cloud Service Instance</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-58D75F45-4424-42E5-AA24-4F7772FD3C03.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-F3EF20BD-06DA-4467-AF32-3B2CABBB2A59.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

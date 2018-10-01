@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Creating a Cluster</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can create a single cluster from the resources allocated in an Oracle Big Data Cloud Machine instance." />
+<meta name="dcterms.created" content="2017-05-03T11:44:48Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Big Data Cloud Machine" />
+<meta name="dcterms.identifier" content="E85986-01" />
+<meta name="dcterms.isVersionOf" content="CSBDM" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="http://docs.oracle.com/cloud-machine/latest/" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-6DB69BAE-433E-4F8C-A4F5-E79A99CDCE14.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-B6EDF7FB-A94A-4356-AF5E-C9307721F772.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSBDM.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSBDM.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSBDM.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-817CB14B-F5F3-44E7-A77A-518ABA354260"></a> <span id="PAGE" style="display:none;">17/51</span> <!-- End Header -->
+<h1 id="CSBDM-GUID-817CB14B-F5F3-44E7-A77A-518ABA354260" class="sect1">Creating a Cluster</h1>
+<div>
+<p>You can create a single cluster from the resources allocated in an <span>Oracle Big Data Cloud Machine</span> instance.</p>
+<div class="section">
+<p class="subhead1">Before You Begin</p>
+<p>Before you can create a cluster,</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>You must have an <span>Oracle Big Data Cloud Machine</span> instance that hasn&rsquo;t yet been used for a cluster. See <a href="GUID-E33F3A47-A8AE-4DDD-BF2C-D0D5C1715744.htm" title="For each Oracle Big Data Cloud Machine cluster you want to create, you must have a separate subscription.">Understanding the Workflow and Life Cycle of Service Instances and Clusters</a> and <a href="GUID-6DB69BAE-433E-4F8C-A4F5-E79A99CDCE14.htm" title="When you create an Oracle Big Data Cloud Machine instance, you initiate a process that allocates resources for a cluster. You have to create a service instance before you can create a cluster.">Creating a Oracle Big Data Cloud Machine Instance</a>.</p>
+</li>
+<li>
+<p>You must have a secure shell (SSH) key pair. See <a href="GUID-C13B13F7-454E-445A-99B8-CDDA410CA652.htm#GUID-C13B13F7-454E-445A-99B8-CDDA410CA652" title="Several tools exist to generate SSH public/private key pairs. The following sections show how to generate an SSH key pair on UNIX, UNIX-like and Windows platforms.">Generating a Secure Shell (SSH) Public/Private Key Pair</a>.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Procedure</p>
+<p>To create an <span>Oracle Big Data Cloud Machine</span> cluster:</p>
+<ol>
+<li id="GUID-817CB14B-F5F3-44E7-A77A-518ABA354260__GOTOTHESERVICECONSOLEFORYOURACCOUNT-9C2089D7">
+<p>Go to the service console for your account, in either of the following ways:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>In the &ldquo;Action Required&rdquo; e-mail you received when your service instance was ready, find the <span class="bold">Service Instance Details</span> section, and click the <span class="bold">Admin Console URL</span> link. If prompted, sign in.</p>
+<br />
+<img width="568" height="180" src="img/GUID-BB6A3B57-FD4F-4476-A7EE-1DA7B3899FB8-default.png" alt="Description of GUID-BB6A3B57-FD4F-4476-A7EE-1DA7B3899FB8-default.png follows" title="Description of GUID-BB6A3B57-FD4F-4476-A7EE-1DA7B3899FB8-default.png follows" /><br />
+<a href="img_text/GUID-BB6A3B57-FD4F-4476-A7EE-1DA7B3899FB8-default.htm">Description of the illustration GUID-BB6A3B57-FD4F-4476-A7EE-1DA7B3899FB8-default.png</a><br /></li>
+<li>
+<p>If you just created the service instance and are still on the <span class="wintitle">Service Details</span> page, click the <span class="bold">Open Service Console</span> link:</p>
+<br />
+<img width="605" height="124" src="img/GUID-49E62CE2-E3D9-4591-AE8A-1CC233A6BB89-default.png" alt="Description of GUID-49E62CE2-E3D9-4591-AE8A-1CC233A6BB89-default.png follows" title="Description of GUID-49E62CE2-E3D9-4591-AE8A-1CC233A6BB89-default.png follows" /><br />
+<a href="img_text/GUID-49E62CE2-E3D9-4591-AE8A-1CC233A6BB89-default.htm">Description of the illustration GUID-49E62CE2-E3D9-4591-AE8A-1CC233A6BB89-default.png</a><br /></li>
+</ul>
+</li>
+<li id="GUID-817CB14B-F5F3-44E7-A77A-518ABA354260__ONTHECLUSTERSPAGEOFTHESERVICECONSOL-9C208E23">
+<p>On the <span class="wintitle">Clusters</span> page of the service console, click the <span class="bold">Create Cluster</span> button.</p>
+<br />
+<img width="666" height="432" src="img/GUID-5F0EA8DA-2680-481D-BCC3-F7CBF61A7EAE-default.png" alt="Description of GUID-5F0EA8DA-2680-481D-BCC3-F7CBF61A7EAE-default.png follows" title="Description of GUID-5F0EA8DA-2680-481D-BCC3-F7CBF61A7EAE-default.png follows" /><br />
+<a href="img_text/GUID-5F0EA8DA-2680-481D-BCC3-F7CBF61A7EAE-default.htm">Description of the illustration GUID-5F0EA8DA-2680-481D-BCC3-F7CBF61A7EAE-default.png</a><br /></li>
+<li id="GUID-817CB14B-F5F3-44E7-A77A-518ABA354260__ONTHECLUSTERDETAILSPAGEOFTHECREATEC-9C2076BE">
+<p>On the <span class="wintitle">Cluster Details</span> page of the <span class="wintitle">Create Cluster</span> wizard, configure details for your cluster, as described below, and then click <span class="bold">Next</span>:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Name</span>&mdash;Enter a name for the cluster.</p>
+</li>
+<li>
+<p><span class="bold">Description</span>&mdash;Enter a description for the cluster.</p>
+</li>
+<li>
+<p><span class="bold">Big Data Appliance System</span>&mdash;Select the resource configuration to use for this cluster. The items on this list show the <span>Oracle Big Data Cloud Machine</span> instances that are available for creating clusters. Each item on the list shows the name of an instance and the number of nodes in it.</p>
+</li>
+</ul>
+<br />
+<img width="614" height="406" src="img/GUID-4297167E-C2EE-4997-B9AE-A3F5F0813C59-default.png" alt="Description of GUID-4297167E-C2EE-4997-B9AE-A3F5F0813C59-default.png follows" title="Description of GUID-4297167E-C2EE-4997-B9AE-A3F5F0813C59-default.png follows" /><br />
+<a href="img_text/GUID-4297167E-C2EE-4997-B9AE-A3F5F0813C59-default.htm">Description of the illustration GUID-4297167E-C2EE-4997-B9AE-A3F5F0813C59-default.png</a><br /></li>
+<li id="GUID-817CB14B-F5F3-44E7-A77A-518ABA354260__ONTHENODEROLESPAGEOFTHEWIZARDASSIGN-9C207D32">
+<p>On the <span class="wintitle">Node Roles</span> page of the wizard, assign the roles of the available nodes, as described below, and then click <span class="bold">Next</span>.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Permanent Hadoop Nodes</span> &mdash; Select the number of nodes to use as permanent Hadoop nodes. If you have only three or four nodes available, you must use them all as permanent Hadoop nodes. If you have any left after the first four are assigned, you can assign them to be either Hadoop permanent nodes or edge nodes.</p>
+</li>
+<li>
+<p><span class="bold">Edge Nodes</span> &mdash; If you have any remaining nodes after assigning your permanent Hadoop nodes, that number appears here.</p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-817CB14B-F5F3-44E7-A77A-518ABA354260__GUID-A56F045B-3AEC-4BA7-9690-93F46F2BA51A">
+<p class="notep1">Important:</p>
+You can&rsquo;t change the roles of nodes after the cluster is created.</div>
+<br />
+<img width="614" height="294" src="img/GUID-1367A6C0-5705-41D5-A338-F33974DFCC71-default.png" alt="Description of GUID-1367A6C0-5705-41D5-A338-F33974DFCC71-default.png follows" title="Description of GUID-1367A6C0-5705-41D5-A338-F33974DFCC71-default.png follows" /><br />
+<a href="img_text/GUID-1367A6C0-5705-41D5-A338-F33974DFCC71-default.htm">Description of the illustration GUID-1367A6C0-5705-41D5-A338-F33974DFCC71-default.png</a><br /></li>
+<li id="GUID-817CB14B-F5F3-44E7-A77A-518ABA354260__ONTHESECURITYPAGECONFIGURETHESECURI-9C208504">
+<p>On the <span class="wintitle">Security</span> page, configure the security details for your cluster, as described below, and then click <span class="bold">Next</span>:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">SSH Key</span>&mdash;The SSH public key is used for authenticating the <code class="codeph">opc</code> user when using an SSH client to connect to a node that is associated with this cluster.</p>
+<p>Use either of the following methods to specify the SSH public key:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Paste in the value of the SSH public key to be used by the <code class="codeph">opc</code> user. Make sure the value doesn&rsquo;t contain extra spaces or line breaks and doesn&rsquo;t have a line break at the end.</p>
+</li>
+<li>
+<p>Click <span class="bold">Select File</span>&nbsp;to select a file containing the new public key.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="bold">Cloudera Administrator Password</span> &mdash;Enter a string for the password for accessing Cloudera Manager and other Cloudera tools. Don&rsquo;t use a dollar sign ($) in your password. It may be accepted, but it can cause problems later on. <span class="italic">Be sure to record the password and store it securely.</span></p>
+</li>
+<li>
+<div class="p"><span class="bold">Secure Setup</span> &mdash; Select <span class="bold">Enabled</span> to enable the included security services. When you select this option, you enable:
+<ul style="list-style-type: disc;">
+<li>
+<p>MIT Kerberos</p>
+</li>
+<li>
+<p>Apache Sentry</p>
+</li>
+<li>
+<p>HDFS Encryption&mdash;Key Trustee Servers are installed on the master nodes</p>
+</li>
+<li>
+<p>Network Encryption</p>
+</li>
+<li>
+<p>Auditing</p>
+</li>
+</ul>
+</div>
+<p>When you create a cluster with security enabled, you can&rsquo;t disable any of these features for the lifetime of the cluster.</p>
+</li>
+</ul>
+<br />
+<img width="499" height="496" src="img/GUID-56842D73-101E-4B47-81FB-5C9C5FA4A84B-default.png" alt="Description of GUID-56842D73-101E-4B47-81FB-5C9C5FA4A84B-default.png follows" title="Description of GUID-56842D73-101E-4B47-81FB-5C9C5FA4A84B-default.png follows" /><br />
+<a href="img_text/GUID-56842D73-101E-4B47-81FB-5C9C5FA4A84B-default.htm">Description of the illustration GUID-56842D73-101E-4B47-81FB-5C9C5FA4A84B-default.png</a><br /></li>
+<li>
+<p>On the <span class="wintitle">Confirmation</span> page, review the information. If you&rsquo;re satisfied with the information, click <span class="bold">Provision</span>.</p>
+<br />
+<img width="497" height="199" src="img/GUID-94360579-BA99-4805-8101-C9BA74B09E16-default.png" alt="Description of GUID-94360579-BA99-4805-8101-C9BA74B09E16-default.png follows" title="Description of GUID-94360579-BA99-4805-8101-C9BA74B09E16-default.png follows" /><br />
+<a href="img_text/GUID-94360579-BA99-4805-8101-C9BA74B09E16-default.htm">Description of the illustration GUID-94360579-BA99-4805-8101-C9BA74B09E16-default.png</a><br />
+<p>When the cluster is ready, the new cluster is shown on your service console&rsquo;s <span class="wintitle">Clusters</span> page, with the message <span class="bold">Ready</span>.</p>
+<br />
+<img width="659" height="423" src="img/GUID-AABF5D08-55F6-4EF1-9432-D455A4D6B0EC-default.png" alt="Description of GUID-AABF5D08-55F6-4EF1-9432-D455A4D6B0EC-default.png follows" title="Description of GUID-AABF5D08-55F6-4EF1-9432-D455A4D6B0EC-default.png follows" /><br />
+<a href="img_text/GUID-AABF5D08-55F6-4EF1-9432-D455A4D6B0EC-default.htm">Description of the illustration GUID-AABF5D08-55F6-4EF1-9432-D455A4D6B0EC-default.png</a><br /></li>
+<li>To see details about your new cluster, click the menu and select <span class="bold">View Details</span><br />
+<img width="289" height="177" src="img/GUID-D246EEC5-EA61-4ED0-9C2C-A12DC64AAF72-default.png" alt="Description of GUID-D246EEC5-EA61-4ED0-9C2C-A12DC64AAF72-default.png follows" title="Description of GUID-D246EEC5-EA61-4ED0-9C2C-A12DC64AAF72-default.png follows" /><br />
+<a href="img_text/GUID-D246EEC5-EA61-4ED0-9C2C-A12DC64AAF72-default.htm">Description of the illustration GUID-D246EEC5-EA61-4ED0-9C2C-A12DC64AAF72-default.png</a><br /></li>
+<li>
+<p>Review the details on the <span class="wintitle">Cluster Details</span> pages.</p>
+<br />
+<img width="759" height="587" src="img/GUID-50EBE89C-D1AE-499C-B0B2-7D38E8271C30-default.png" alt="Description of GUID-50EBE89C-D1AE-499C-B0B2-7D38E8271C30-default.png follows" title="Description of GUID-50EBE89C-D1AE-499C-B0B2-7D38E8271C30-default.png follows" /><br />
+<a href="img_text/GUID-50EBE89C-D1AE-499C-B0B2-7D38E8271C30-default.htm">Description of the illustration GUID-50EBE89C-D1AE-499C-B0B2-7D38E8271C30-default.png</a><br /></li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment67">
+<tr>
+<td class="cellalignment74">
+<table class="cellalignment72">
+<tr>
+<td class="cellalignment71"><a href="GUID-6DB69BAE-433E-4F8C-A4F5-E79A99CDCE14.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment71"><a href="GUID-B6EDF7FB-A94A-4356-AF5E-C9307721F772.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment76">
+<table class="cellalignment70">
+<tr>
+<td class="cellalignment71"><a href="http://docs.oracle.com/cloud-machine/latest/"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment71"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment71"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment71"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

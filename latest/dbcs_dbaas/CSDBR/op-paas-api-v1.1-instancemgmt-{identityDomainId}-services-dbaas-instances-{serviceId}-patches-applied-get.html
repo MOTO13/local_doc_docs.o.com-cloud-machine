@@ -1,0 +1,4725 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>Public Cloud Machine REST API for Oracle Database Cloud Service - View a List of Applied and Rolled Back Patches</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Use the Oracle Database Cloud Service REST API to create and manage Database Cloud Service instances.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="Public Cloud Machine REST API for Oracle Database Cloud Service">
+        <meta property="og:description" content="Use the Oracle Database Cloud Service REST API to create and manage Database Cloud Service instances.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="Public Cloud Machine REST API for Oracle Database Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-dbaas-instances-%7BserviceId%7D-patches-%7BrollbackId%7D-rollback-put.html" title="Previous" type="text/html">
+        <link rel="next" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-dbaas-instances-%7BserviceId%7D-patches-available-get.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-dbaas-instances-%7BserviceId%7D-patches-%7BrollbackId%7D-rollback-put.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-dbaas-instances-%7BserviceId%7D-patches-available-get.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            
+            <header>
+
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Public Cloud Machine REST API for Oracle Database Cloud Service</a></li>
+                    <li>Tasks</li>
+                    
+                    <li class="active">
+                        
+                        <a href="api-Patches.html">Patches</a>
+                        
+                    </li>
+                    
+                </ol>
+                
+                <p class="draftsubtitle"></p>
+                
+                <h2>View a List of Applied and Rolled Back Patches</h2>
+                <div>
+                    <div class="label label-get text-uppercase">get</div>
+                    <p style="word-break: break-word;"><strong>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/dbaas/instances/{serviceId}/patches/applied</strong></p>
+                </div>
+            </header>
+            <section>
+
+                <div class="description">Returns an array detailing the patch application operations on a Database Cloud Service instance. Additionally, if an applied patch was rolled back, information about the rollback operation is included in the array element for that patch application operation.</div>
+
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                        <li role="presentation" class="active"><a href="#request" aria-controls="request" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-in" aria-hidden="true"></span> Request</a></li>
+                        <li role="presentation"><a href="#response" aria-controls="response" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-out" aria-hidden="true"></span> Response</a></li>
+                        
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="request">
+                            <h3 class="visible-print-block">Request</h3>
+                            
+
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Path Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>identityDomainId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the identity domain for the Database Cloud Service account.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                        <dt>serviceId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the Database Cloud Service instance.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+
+                            
+                            
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Header Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>Authorization</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Base64 encoding of the user name and password of the user making the request. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                        <dt>X-ID-TENANT-NAME</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the identity domain for the Database Cloud Service account. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+
+
+                            
+
+
+
+                            
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="response">
+                            <h3 class="visible-print-block">Response</h3>
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">200 Response <span class="glyphicon glyphicon-ok-sign response-symbol" data-response-code="200" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    OK. See <a href='status-codes.html'>Status Codes</a> for information about other possible HTTP status codes.
+                                </div>
+
+                                
+                                
+
+                                
+                                <div class="panel panel-default">
+
+                                    <div class="panel-heading">Body</div>
+                                    <div class="panel-body">
+                                        
+                                        <div>The response body includes details of all applied patches.</div>
+                                        
+
+                                        <div class="schema-container">
+                                        
+                                        <div id="200-definitions-applied-patches-response" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : applied-patches-response</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The response body includes details of all applied patches.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-applied-patches-response-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-applied-patches-response-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-applied-patches-response-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-applied-patches-response-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-applied-patches-response-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-applied-patch" role="button" class="btn btn-default btn-sm">applied-patch</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Information about an applied patch.</div>
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-applied-patch" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : applied-patch</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Information about an applied patch.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-applied-patch-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-applied-patch-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-applied-patch-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-applied-patch-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-applied-patch-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>additionalNote</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Free-form text to provide additional information about the patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>appliedBy</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the user that applied the patch. <code>system</code> displays if the patch was applied by an auto-update scheduled job.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>appliedDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time that the patch was applied.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>backupId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Backup ID. You can use the backup ID to manage the backup.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>backupStatus</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Whether a backup of the software was created before the patch was applied. Valid values include: <code>Available</code>, <code>SameVersion</code>, <code>Unavailable</code>, <code>Unknown</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>componentPatches</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-applied-patch-properties-componentPatches" role="button" class="btn btn-default btn-sm">componentPatches</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Group the details of each patches in the component.</div>
+
+            
+        </dd>
+        
+        <dt>currentPatchLevel</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Current patch level for the component.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>displayName</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Display name of the patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>id</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Unique ID of the patching operation. Use this ID to get details of a patching operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>inProgress</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether the patch is still in progress.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>jobId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Job ID for the patch operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>lastStatus</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Status of the patch operation. For example: <code>IN PROGRESS</code>, <code>COMPLETED</code>, and <code>FAILED</code>. <code>COMPLETED_ROLLBACK</code> is displayed when an applied patch has been rolled back.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>lastStatusMessage</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Last message logged for the patch operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>operationType</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Patch operating being performed. Valid values include: <code>Rollback</code>, <code>Patching</code>, and <code>None</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>patchCategory</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Category of the patch. For example: <code>General</code>, <code>Multiple</code>, <code>Security</code>, and so on.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>patchComponents</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-applied-patch-properties-patchComponents" role="button" class="btn btn-default btn-sm">patchComponents</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Group the details of the patch to be applied.</div>
+
+            
+        </dd>
+        
+        <dt>patchDescription</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Description of the patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>patchId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Patch ID.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>patchingResult</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-patching-result" role="button" class="btn btn-default btn-sm">patching-result</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about the results of the patch.</div>
+
+            
+        </dd>
+        
+        <dt>patchReleaseUrl</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>URL that provides more information about the patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>patchSeverity</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Severity of the patch. For example <code>Normal</code>, <code>Mandatory</code>, <code>Recommended</code>, and so on.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>patchType</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Patch type classification. For example, <code>Quarterly</Code>, <code>Security</Code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>progressMessages</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-applied-patch-properties-progressMessages" role="button" class="btn btn-default btn-sm">progressMessages</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>List of progress messages for the patch.</div>
+
+            
+        </dd>
+        
+        <dt>releaseDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time patch was released.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>resultMessage</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Patch results message.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>rollbackId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>ID of the rollback that is associated to the completed patching operation. The ID is used to rollback a patch operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>rollbackResult</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-rollback-result" role="button" class="btn btn-default btn-sm">rollback-result</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about the results of the rollback operation. This attribute displays only when a rollback of the patch had been performed.</div>
+
+            
+        </dd>
+        
+        <dt>rollbackVersion</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Version to which the patched component will be rolled back.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>totalTime</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Duration of the patch operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>toVersion</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Version of Oracle Database Cloud Service instance that was patched.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-applied-patch-properties-componentPatches" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : componentPatches</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Group the details of each patches in the component.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-applied-patch-properties-componentPatches-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-applied-patch-properties-componentPatches-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-applied-patch-properties-componentPatches-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-applied-patch-properties-componentPatches-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-applied-patch-properties-componentPatches-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-component-patch" role="button" class="btn btn-default btn-sm">component-patch</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Group the details of each patch in the component.</div>
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-applied-patch-properties-patchComponents" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : patchComponents</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Group the details of the patch to be applied.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-applied-patch-properties-patchComponents-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-applied-patch-properties-patchComponents-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-applied-patch-properties-patchComponents-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-applied-patch-properties-patchComponents-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-applied-patch-properties-patchComponents-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-patch-component" role="button" class="btn btn-default btn-sm">patch-component</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Group the details of the patch to be applied.</div>
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-patching-result" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : patching-result</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about the results of the patch.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-patching-result-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-patching-result-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-patching-result-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-patching-result-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-patching-result-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>additionalNote</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Free-form text to provide additional information about the rollback.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-applied-patch-properties-progressMessages" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : progressMessages</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>List of progress messages for the patch.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-applied-patch-properties-progressMessages-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-applied-patch-properties-progressMessages-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-applied-patch-properties-progressMessages-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-applied-patch-properties-progressMessages-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-applied-patch-properties-progressMessages-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-rollback-result" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : rollback-result</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about the results of the rollback operation. This attribute displays only when a rollback of the patch had been performed.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-rollback-result-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-rollback-result-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-rollback-result-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-rollback-result-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-rollback-result-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>additionalNote</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Free-form text to provide additional information about the rollback.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>appliedBy</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the user that performed the rollback.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>completeLog</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>System messages that track the rollback operations.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>endDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date the rollback operation ended.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>jobId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Job ID for the rollback operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>patchingStatus</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Status of the rollback operation. For example, <code>COMPLETED_ROLLBACK</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>progressMessages</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-rollback-result-properties-progressMessages" role="button" class="btn btn-default btn-sm">progressMessages</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>List of progress messages for the rollback.</div>
+
+            
+        </dd>
+        
+        <dt>resultMessage</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>System message that describes the rollback operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>rollbackId</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>ID of the rollback operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>startDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time that the rollback operation started.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-component-patch" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : component-patch</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Group the details of each patch in the component.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-component-patch-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-component-patch-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-component-patch-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-component-patch-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-component-patch-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>description</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Brief description of the patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>displayName</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Display name of the component in this patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>id</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>ID of a component patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>preserveFiles</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-component-patch-properties-preserveFiles" role="button" class="btn btn-default btn-sm">preserveFiles</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>List of files to be preserved during patching.</div>
+
+            
+        </dd>
+        
+        <dt>releaseVersion</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Release version of the component in this patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>version</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Version of the patch component.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>zipBundles</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-component-patch-properties-zipBundles" role="button" class="btn btn-default btn-sm">zipBundles</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Zips that contain the patched binaries or patches.</div>
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-component-patch-properties-preserveFiles" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : preserveFiles</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>List of files to be preserved during patching.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-component-patch-properties-preserveFiles-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-component-patch-properties-preserveFiles-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-component-patch-properties-preserveFiles-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-component-patch-properties-preserveFiles-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-component-patch-properties-preserveFiles-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-component-patch-properties-zipBundles" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : zipBundles</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Zips that contain the patched binaries or patches.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-component-patch-properties-zipBundles-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-component-patch-properties-zipBundles-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-component-patch-properties-zipBundles-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-component-patch-properties-zipBundles-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-component-patch-properties-zipBundles-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-view-zip-bundles" role="button" class="btn btn-default btn-sm">view-zip-bundles</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Group the details of zips for the patched binaries.</div>
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-view-zip-bundles" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : view-zip-bundles</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Group the details of zips for the patched binaries.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-view-zip-bundles-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-view-zip-bundles-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-view-zip-bundles-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-view-zip-bundles-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-view-zip-bundles-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>displayName</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Display name of this component.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>id</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>ID of a component patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>md5sum</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Checksum used to validate the patch binary.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>provisioningObjectRef</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Location of binary to use when creating a new service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>releaseDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Release date of this version.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>releaseUrl</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>URL for more information about this release.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>storageKey</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Location of the patch zip on the cloud.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>zipVersion</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Software version that is included in the zip.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-patch-component" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : patch-component</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Group the details of the patch to be applied.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-patch-component-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-patch-component-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-patch-component-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-patch-component-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-patch-component-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>component</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the component in this patch <code>db</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>id</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>ID of a component patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>md5sum</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Checksum used to validate the patch binary.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>patchingObjectRef</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Location of binary to use when patching a service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>preserveFiles</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-patch-component-properties-preserveFiles" role="button" class="btn btn-default btn-sm">preserveFiles</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>List of files to be preserved during patching.</div>
+
+            
+        </dd>
+        
+        <dt>provisioningObjectRef</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Location of binary to use when creating a new service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>version</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Version of the patch component.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-patch-component-properties-preserveFiles" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : preserveFiles</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>List of files to be preserved during patching.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-patch-component-properties-preserveFiles-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-patch-component-properties-preserveFiles-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-patch-component-properties-preserveFiles-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-patch-component-properties-preserveFiles-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-patch-component-properties-preserveFiles-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-patching-result-properties-additionalNote-properties-progressMessages" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : progressMessages</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>List of progress messages for the patch.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-patching-result-properties-additionalNote-properties-progressMessages-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-patching-result-properties-additionalNote-properties-progressMessages-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-patching-result-properties-additionalNote-properties-progressMessages-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-patching-result-properties-additionalNote-properties-progressMessages-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-patching-result-properties-additionalNote-properties-progressMessages-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-rollback-result-properties-progressMessages" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : progressMessages</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>List of progress messages for the rollback.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-rollback-result-properties-progressMessages-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-rollback-result-properties-progressMessages-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-rollback-result-properties-progressMessages-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-rollback-result-properties-progressMessages-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-rollback-result-properties-progressMessages-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+
+
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+        </article>
+    </body>
+</html>

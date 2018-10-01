@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="Restoring%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20From%20a%20Backup%20Using%20the%20REST%20API.html" title="Previous" type="text/html">
+        <link rel="next" href="Deleting%20the%20Coherence%20Data%20Tier%20Cluster%20of%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="Restoring%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20From%20a%20Backup%20Using%20the%20REST%20API.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="Deleting%20the%20Coherence%20Data%20Tier%20Cluster%20of%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">Patching a Service Instance</h2> 
+<div class="body taskbody">
+ <p class="shortdesc">You can patch an Oracle Java Cloud Service instance using the REST API, as described in the following procedure. </p> 
+ <div class="section context">
+  <p class="p">When patching an instance that has a Coherence data tier, review the default values of the request attributes needed to support patching a Managed Coherence Server before applying a patch. By default, the patching process performs a rolling restart of the Managed Coherence Servers. Maintaining data is achieved by checking that the <samp class="ph codeph">StatusHA</samp> state for a Coherence member is <samp class="ph codeph">NODE-SAFE</samp> before shutting down the node to apply the patch.</p> 
+  <p class="p">Note that you cannot apply a patch when the backup service for the specified service instance is in a DISABLED state.</p> 
+  <p class="p">See <a class="xref" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-patches-%7BpatchId%7D-put.html" target="_blank">Apply a Patch</a> if you need more information. </p> 
+ </div> 
+ <div class="section">
+  <p class="p"><strong class="ph b">Note:</strong> The cURL command examples use the URL structure <samp class="ph codeph">https://rest_server_url/<em class="ph i">resource-path</em></samp>, where <samp class="ph codeph">rest_server_url</samp> is the Oracle Public Cloud or Oracle Cloud Machine REST server to contact for your identity domain or tenant name. See <a class="xref" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=jcs_rest_sendrequest" target="_blank">Send Requests</a> for the appropriate URL structure to use on Oracle Public Cloud or Oracle Cloud Machine. </p> 
+  <p class="p">To patch an Oracle Java Cloud Service instance:</p> 
+ </div> 
+ <ol class="ol steps">
+  <li class="li step stepexpand"><span class="ph cmd">Review the list of available patches that are currently defined to retrieve the patch ID.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/api/v1.1/instancemgmt/ExampleIdentityDomain/services/jaas/instances/ExampleInstance/patches/available</strong>
+</pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">The following provides an example of the response, in JSON format. Find the patch ID of the patch you want to apply.</p> 
+    <pre class="pre codeblock">[{
+   "availablePatchGuiMetadata":{"supportsPreCheck":true},
+   "<strong class="ph b">patchId</strong>":"<strong class="ph b">Patch_jdk1.7.0_95</strong>",
+   "patchNumber":"1.7.0_95",
+   "patchCategory":"JDK",
+   "patchSeverity":"Normal",
+   "patchDescription":"Update to latest version of JDK, 1.7.0_95.",
+   "patchReleaseUrl":"http://www.oracle.com/technetwork/java/javase/7u95-relnotes-2775806.html",
+   "serviceType":"JaaS",
+   "serviceVersion":"11g,12c,12cR3",
+   "releaseDate":"Jan 15, 2016 8:00:00 AM",
+   "entryDate":"Apr 3, 2016 4:06:34 AM",
+   "entryUserId":"OCLOUD9_TAS_APPID",
+   "componentPatches":
+   {
+      "JDK":
+      {
+         "id":1167,
+         "version":"1.7.0_95",
+         "releaseVersion":"1.7.0_95",
+         "zipBundles":
+         {
+            "JDK":
+            {
+               "id":1134,
+               "md5sum":"4d26465bff5b0744ff7ccbeed11dd308",
+               "provisioningObjectRef":"JDK/7.0.95/151225/jdk.zip",
+               "storageKey":"PATCH/JDK/jdk1.7.0_95",
+               "zipVersion":"1.7.0_95"
+            }
+         }
+      }
+   },
+   "patchType":"JDK",
+   "requiresRestart":true,
+   "serviceTypeVersions":"ANY",
+   "isDeleted":false,
+   "minToolsVersion":"15.1.3-0-1501230343",
+   "displayName":"1.7.0_95",
+   "releaseVersion":"1.7.0_95"
+}]</pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">Before applying a patch, perform a patching precheck to identity potential issues that might prevent the patch from completing successfully, without actually patching. </span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X PUT -u username:userPassword1! -d @emptyfile.json -H "Content-Type:application/json" -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/api/v1.1/instancemgmt/ExampleIdentityDomain/services/jaas/instances/ExampleInstance/patches/checks/Patch_jdk1.7.0_95</strong></pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">PUT</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-d</samp> option to identify an empty request document. No parameters are supported in the payload at this time.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to identify the content type as <samp class="ph codeph">application/json</samp>, and define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">The following provides an example of the response body, in JSON format.</p> 
+    <pre class="pre codeblock">{
+   "details":
+   {
+      "jobId":"671344",
+      "message":"JCS-PATCHING-5227: Pre-Checking service for patch [Patch_jdk1.7.0_95] is submitted as an asynchronous job."
+   },
+   "status":"Completed"
+}</pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">Check the status of the patching precheck operation.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/api/v1.1/instancemgmt/ExampleIdentityDomain/services/jaas/instances/ExampleInstance/patches/checks/job/671344</strong>
+</pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">The following provides an example of the response body, in JSON format.</p> 
+    <pre class="pre codeblock">{
+   "id":602,
+   "jobId":"671344",
+   "patchId":"Patch_jdk1.7.0_95",
+   "jsonResult":"{\"resultMessage\":\"Completed\",\"messages\":[]}",
+   "startDate":"May 6, 2016 6:27:53 PM",
+   "endDate":"May 6, 2016 6:29:11 PM",
+   "performedBy":"username",
+   "inProgress":false,
+   "status":"<strong class="ph b">PASSED_PRECHECK</strong>",
+   "preCheckMessages":[]
+}</pre> 
+    <p class="p">In this example, the patching precheck operation passed indicating that no changes are required in the environment in order for the patch to complete successfully.</p> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">Create a JSON document, <samp class="ph codeph">patch.json</samp>, to add a note about the patch information.</span>
+   <div class="itemgroup info">
+    <p class="p">For example:</p> 
+    <pre class="pre codeblock">{
+    "additionalNote":"Applying JDK patch" 
+}</pre> 
+    <p class="p">The following shows a JSON file example when applying a patch to a service instance that has Oracle Coherence enabled:</p> 
+    <pre class="pre codeblock">{
+    "dgStatusHaState":"NODE-SAFE",
+    "dgStatusHaPolicy":"REQUIRE_STATUS_HA",
+    "dgStatusHaTimeoutSecs":100,
+    "additionalNote":"Applying JDK patch"
+}</pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">Patch the Oracle Java Cloud Service instance, passing in the JSON document created in the previous step.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X PUT -u username:userPassword1! -d @patch.json -H "Content-Type:application/json" -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/api/v1.1/instancemgmt/ExampleIdentityDomain/services/jaas/instances/ExampleInstance/patches/Patch_jdk1.7.0_95</strong></pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">PUT</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-d</samp> option to identify the request document, in JSON format, on the local machine (<samp class="ph codeph">patch.json</samp>) </p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to identify the content type as <samp class="ph codeph">application/json</samp>, and define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">The following shows an example of the response in JSON format.</p> 
+    <pre class="pre codeblock">{
+   "details":
+   {
+      "jobId":"670607",
+      "message":"JCS-PATCHING-5068: Patching service with patch [Patch_jdk1.7.0_95] is submitted as an asynchronous job."
+   },
+   "status":"Completed"
+}</pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">Check the status of the patching operation by viewing applied patches. </span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/api/v1.1/instancemgmt/ExampleIdentityDomain/services/jaas/instances/ExampleInstance/patches/applied</strong>
+</pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">The following provides an example of the response body, in JSON format. Locate the Job ID returned in the previous step, then find the ID value of the patch operation.</p> 
+    <pre class="pre codeblock">[{
+   "backupStatus":"Unknown",
+   "additionalNote":"Applying JDK patch",
+   "appliedBy":"username",
+   "appliedDate":"May 6, 2016 8:55:42 PM",
+   "totalTime":"0 min, 0 sec",
+   "patchId":"Patch_jdk1.7.0_95",
+   "patchDescription":"Update to latest version of JDK, 1.7.0_95.",
+   "patchReleaseUrl":"http://www.oracle.com/technetwork/java/javase/7u95-relnotes-2775806.html",
+   "releaseDate":"Jan 15, 2016 8:00:00 AM",
+   "resultMessage":"Patching in progress",
+   "lastStatus":"IN_PROGRESS",
+   "lastStatusMessage":"Patching in progress",
+   "componentPatches":
+   {
+      "JDK":
+      {
+         "id":1167,
+         "version":"1.7.0_95",
+         "releaseVersion":"1.7.0_95",
+         "zipBundles":
+         {
+            "JDK":
+            {
+               "id":1134,
+               "md5sum":"4d26465bff5b0744ff7ccbeed11dd308",
+               "provisioningObjectRef":"JDK/7.0.95/151225/jdk.zip",
+               "storageKey":"PATCH/JDK/jdk1.7.0_95",
+               "zipVersion":"1.7.0_95"
+            }
+         }
+      }
+   },
+   "patchType":"JDK",
+   "patchCategory":"JDK",
+   "patchSeverity":"Normal",
+   "<strong class="ph b">jobId</strong>":"<strong class="ph b">670607</strong>",
+   "displayName":"1.7.0_95",
+   "inProgress":true,
+   "operationType":"Patching",
+   "<strong class="ph b">id</strong>":<strong class="ph b">78991</strong>,
+   "patchingResult":
+   {
+      "patchingId":76841,
+      "versionBeforeThisPatch":"JDK 1.7.0_91",
+      "strategy":"Rolling",
+      "customRollbackId":"670607_1462568142007",
+      "startDate":"May 6, 2016 8:55:42 PM",
+      "endDate":"May 6, 2016 8:55:42 PM",
+      "patchingStatus":"IN_PROGRESS",
+      "resultMessage":"Patching in progress",
+      "additionalNote":"Applying JDK patch",
+      "appliedBy":"username",
+      "jobId":"670607",
+      "completeLog":"",
+      "progressMessages":
+      [
+         "8:55:41.996 PM Phase initialize started",
+         "8:55:42.045 PM Phase initialize completed",
+         "8:55:42.084 PM Phase pre-check started",
+         "8:55:42.143 PM Phase pre-check-rex started"
+      ]
+   },
+   "rollbackId":"78991",
+   "currentPatchLevel":"JDK 1.7.0_95"
+}]</pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">When the patch operation is completed, use the unique ID of the patch operation to view complete details of the patch operation.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/api/v1.1/instancemgmt/ExampleIdentityDomain/services/jaas/instances/ExampleInstance/patches/applied/78991</strong>
+</pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">The following provides an example of the response body, in JSON format.</p> 
+    <pre class="pre codeblock">[
+   {
+      "backupStatus":"Available",
+      "additionalNote":"Applying JDK patch",
+      "appliedBy":"username",
+      "appliedDate":"May 6, 2016 8:55:42 PM",
+      "totalTime":"39 min, 52 sec",
+      "patchId":"Patch_jdk1.7.0_95",
+      "patchDescription":"Update to latest version of JDK, 1.7.0_95.",
+      "patchReleaseUrl":"http://www.oracle.com/technetwork/java/javase/7u95-relnotes-2775806.html",
+      "releaseDate":"Jan 15, 2016 8:00:00 AM",
+      "resultMessage":"Completed",
+      "lastStatus":"COMPLETED",
+      "lastStatusMessage":"Completed",
+      "componentPatches":
+      {
+         "JDK":
+         {
+            "id":1167,
+            "version":"1.7.0_95",
+            "releaseVersion":"1.7.0_95",
+            "zipBundles":
+            {
+               "JDK":
+               {
+                  "id":1134,
+                  "md5sum":"4d26465bff5b0744ff7ccbeed11dd308",
+                  "provisioningObjectRef":"JDK/7.0.95/151225/jdk.zip",
+                  "storageKey":"PATCH/JDK/jdk1.7.0_95",
+                  "zipVersion":"1.7.0_95"
+               }
+            }
+         }
+      },
+      "patchType":"JDK",
+      "patchCategory":"JDK",
+      "patchSeverity":"Normal",
+      "jobId":"670607",
+      "displayName":"1.7.0_95",
+      "backupId":"1462569267815",
+      "inProgress":false,
+      "operationType":"None",
+      "id":78991,
+      "patchingResult":
+      {
+         "patchingId":76841,
+         "backupId":"1462569267815",
+         "versionBeforeThisPatch":"JDK 1.7.0_91",
+         "strategy":"Rolling",
+         "customRollbackId":"670607_1462568142007",
+         "startDate":"May 6, 2016 8:55:42 PM",
+         "endDate":"May 6, 2016 9:35:34 PM",
+         "patchingStatus":"COMPLETED",
+         "resultMessage":"Completed",
+         "additionalNote":"Applying JDK patch",
+         "appliedBy":"username",
+         "jobId":"670607",
+         "completeLog":"",
+         "progressMessages":
+         [
+            "8:55:41.996 PM Phase initialize started",
+            "8:55:42.045 PM Phase initialize completed",
+            "8:55:42.084 PM Phase pre-check started",
+            "8:55:42.143 PM Phase pre-check-rex started",
+            ...
+            "9:35:33.639 PM Phase patch-rex completed",
+            "9:35:33.954 PM Phase patch completed",
+            "9:35:34.016 PM Phase finalize started",
+            "9:35:34.057 PM Completed"
+         ]
+      },
+      "rollbackId":"78991",
+      "rollbackVersion":"JDK 1.7.0_91",
+      "currentPatchLevel":"JDK 1.7.0_95"
+   }
+]</pre> 
+   </div></li> 
+ </ol> 
+</div></div>
+        </article>
+    </body>
+</html>

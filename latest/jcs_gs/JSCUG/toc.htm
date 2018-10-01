@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Public Cloud Machine Using Oracle Java Cloud Service - Contents</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Documentation for account administrators and service administrators that explains how to provision Oracle Java Cloud Service instances, and ensure reliable functioning of provisioned service instances. This documentation explains how to perform these tasks by using the Oracle Java Cloud Service web interface." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"   src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"   src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Next" href="title.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript"  src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript"  src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript"  src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript"  src="../dcommon/js/foundation.min.js"></script>
+<script type="application/javascript"  src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript"  src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript"  src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="application/javascript"  src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="application/javascript"  src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="application/javascript"  src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="application/javascript"  src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<span id="PAGE" style="display:none;">1/131</span> <!-- End Header -->
+<h1 class="toc">Contents</h1>
+<h2 class="tocheader"><a href="title.htm">Title and Copyright Information</a></h2>
+<h2 class="tocheader"><a href="GUID-4730CE61-874A-43A3-8C8E-BE2EE4C3CB4D.htm#GUID-4730CE61-874A-43A3-8C8E-BE2EE4C3CB4D">Preface</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-4730CE61-874A-43A3-8C8E-BE2EE4C3CB4D.htm#GUID-CCCD787E-B74D-4930-92FA-2EC363C8D415">Audience</a></li>
+<li><a href="GUID-4730CE61-874A-43A3-8C8E-BE2EE4C3CB4D.htm#GUID-0D7ACBE9-7047-4DBE-97AA-703FD2FFBE5A">Documentation Accessibility</a></li>
+<li><a href="GUID-4730CE61-874A-43A3-8C8E-BE2EE4C3CB4D.htm#GUID-3F96FBB0-B428-4888-B125-2E4A1D257988">Related Resources</a></li>
+<li><a href="GUID-4730CE61-874A-43A3-8C8E-BE2EE4C3CB4D.htm#GUID-A5141C80-F685-4FB9-8780-D937554B4658">Conventions</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-C4FC620B-6123-4E72-9C11-E11AA11D3FB4.htm"><span class="secnum">1</span> Getting Started with <span>Oracle Java Cloud Service</span> <span>on <span>Oracle Public Cloud Machine</span></span></a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-35AC2310-F95C-46F7-AF22-C198C0DBF8A2.htm#GUID-35AC2310-F95C-46F7-AF22-C198C0DBF8A2">About <span>Oracle Java Cloud Service</span></a>
+<ul style="list-style-type: none">
+<li><a href="GUID-35AC2310-F95C-46F7-AF22-C198C0DBF8A2.htm#GUID-D0068D72-9546-4FE0-8972-ECE29D39122C">About <span>Oracle Java Cloud Service</span> Offerings and Oracle WebLogic Server Software Releases</a></li>
+<li><a href="GUID-35AC2310-F95C-46F7-AF22-C198C0DBF8A2.htm#GUID-5BEB5C7A-DAEE-40C6-BDE0-819E10D62848">About Oracle WebLogic Server Editions Available for <span>Oracle Java Cloud Service</span></a></li>
+<li><a href="GUID-35AC2310-F95C-46F7-AF22-C198C0DBF8A2.htm#GUID-2EC95FF1-8CE5-429A-B04B-D1FBE8CB29C0">About <span>Oracle Java Cloud Service</span> and Oracle Compute Cloud Service</a></li>
+<li><a href="GUID-35AC2310-F95C-46F7-AF22-C198C0DBF8A2.htm#GUID-1FF13102-6D35-49AC-9DC3-54003EC81DE0">About Authentication and Secure Application Environments in <span>Oracle Java Cloud Service</span></a></li>
+</ul>
+</li>
+<li><a href="GUID-4AA3AC21-EF21-4F95-9A67-964E94036DD4.htm">About the Components of <span>Oracle Java Cloud Service</span></a></li>
+<li><a href="GUID-8EBFCEEA-AF39-4C0C-B149-7C428DB5451B.htm">About the Interfaces to <span>Oracle Java Cloud Service</span></a></li>
+<li><a href="GUID-D0ACADB5-2415-450C-AE6A-0600752BDBA0.htm#GUID-D0ACADB5-2415-450C-AE6A-0600752BDBA0">Before You Begin with Oracle Java Cloud Service</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-D0ACADB5-2415-450C-AE6A-0600752BDBA0.htm#GUID-F89D1E7D-BBF4-413C-8511-0F079D73ED2E">Creating a Database</a></li>
+<li><a href="GUID-D0ACADB5-2415-450C-AE6A-0600752BDBA0.htm#GUID-0A0AFE33-307F-4993-B6E9-0B1137389DDE">Creating an <span>Oracle Database Cloud Service</span> <span>Database Deployment</span></a></li>
+<li><a href="GUID-D0ACADB5-2415-450C-AE6A-0600752BDBA0.htm#GUID-DC7D3B2A-EA54-46D1-9E79-734A844D3295">Creating an SSH Key Pair</a></li>
+<li><a href="GUID-D0ACADB5-2415-450C-AE6A-0600752BDBA0.htm#GUID-58835A55-4A7D-418D-B57E-CDA317F8F94D">Creating a Remote Backup Destination</a></li>
+<li><a href="GUID-D0ACADB5-2415-450C-AE6A-0600752BDBA0.htm#GUID-E4602538-1D3E-4900-A032-6453674A249E">Creating Networks</a></li>
+</ul>
+</li>
+<li><a href="GUID-609D51B2-5D5C-4F75-A381-BB5B440585BB.htm">Accessing <span>Oracle Java Cloud Service</span> <span>on <span>OPCM</span></span></a></li>
+<li><a href="GUID-58D75F45-4424-42E5-AA24-4F7772FD3C03.htm#GUID-58D75F45-4424-42E5-AA24-4F7772FD3C03">About <span>Oracle Java Cloud Service</span> Roles and User Accounts</a></li>
+<li><a href="GUID-1E7AE878-4B23-47D0-9074-816F3D27CE08.htm#GUID-1E7AE878-4B23-47D0-9074-816F3D27CE08">Typical Workflow for Using <span>Oracle Java Cloud Service</span></a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-F3EF20BD-06DA-4467-AF32-3B2CABBB2A59.htm"><span class="secnum">2</span> Managing the Life Cycle of Oracle Java Cloud Service Instances <span>on <span>Oracle Public Cloud Machine</span></span></a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-941D45FB-BE73-4338-9E0F-067E09AC53D8.htm#GUID-941D45FB-BE73-4338-9E0F-067E09AC53D8">About Life Cycle Management of Oracle Java Cloud Service Instances</a></li>
+<li><a href="GUID-DB265806-BD36-43F8-9B68-C725A875088E.htm#GUID-DB265806-BD36-43F8-9B68-C725A875088E">Typical Workflow for Managing the Life Cycle of Oracle Java Cloud Service Instances</a></li>
+<li><a href="GUID-FCD2A1F3-A67B-43FF-A5EF-94413C63E511.htm">Design Considerations for an Oracle Java Cloud Service Instance</a></li>
+<li><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2">Creating an Oracle Java Cloud Service Instance <span>on <span>OPCM</span></span></a>
+<ul style="list-style-type: none">
+<li><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-C5ADA617-4ADF-497D-8C27-86B7E4FCA184">Invoking the Provision New Java Cloud Service Wizard</a></li>
+<li><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-694D29E1-EE3A-443D-A062-FA0E68CEB8A5">Specifying Basic Service Instance Information</a></li>
+<li><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-206B7780-8848-4A30-B903-825D0B743C82">Specifying the Service Instance Details</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-A1BE6257-4EED-4DC1-A4C6-9CBA440E378B">Configuring Size and Shape</a></li>
+<li><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-314C818F-6E57-40BD-BEE2-1CBCF188295F">Configuring WebLogic Server Access</a></li>
+<li><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-BB33CB1F-D0A1-4ED4-AF4A-752099623D9D">Configuring the Coherence Data Tier</a></li>
+<li><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-9F16FCD1-40C6-4FAA-96A1-9D07D333C2EF">Configuring Advanced Settings</a></li>
+<li><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-59CC2E40-9C38-4A70-A73F-5A0952854F00">Configuring the Databases</a></li>
+<li><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-5F6150E8-A8D4-41A5-B7EA-C1B6DEECB0D9">Configuring the Load Balancer</a></li>
+<li><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-A0DAF743-F957-4EFA-9CF7-CCD282450D03">Configuring Networks for OPCM</a></li>
+<li><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-F655FFAF-1A8E-4639-9D55-4F2803574562">Configuring Backups for OPCM</a></li>
+</ul>
+</li>
+<li><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-7762F05B-20E4-46FF-B6DC-BDB985D3D2BB">Confirming Your Oracle Java Cloud Service Instance Creation</a></li>
+</ul>
+</li>
+<li><a href="GUID-A39D7462-D6E4-4B50-8613-1CDED90C70F9.htm">Discovering an Oracle Java Cloud Service Instance <span>on <span>OPCM</span></span></a></li>
+<li><a href="GUID-35722F36-98FE-4685-98EC-606A4C5F7DCA.htm">About the Sample Application Deployed to an Oracle Java Cloud Service Instance</a></li>
+<li><a href="GUID-8B518713-F8F0-475F-A7AE-2ABEDBD7BDC7.htm">Viewing All Oracle Java Cloud Service Instances <span>on <span>OPCM</span></span></a></li>
+<li><a href="GUID-45D5725E-A2D4-4228-B082-1ACD18A11ECE.htm">Viewing Activity for Service Instances in an Identity Domain</a></li>
+<li><a href="GUID-FA69844B-7BAF-4B67-AF29-15CAB3ED89FB.htm#GUID-FA69844B-7BAF-4B67-AF29-15CAB3ED89FB">Viewing Detailed Information About an Oracle Java Cloud Service Instance <span>on <span>OPCM</span></span></a></li>
+<li><a href="GUID-B76602B2-156D-4EAE-91F4-08A0520844FD.htm#GUID-B76602B2-156D-4EAE-91F4-08A0520844FD">Viewing Service Metrics in Oracle Java Cloud Service <span>on <span>OPCM</span></span></a>
+<ul style="list-style-type: none">
+<li><a href="GUID-B76602B2-156D-4EAE-91F4-08A0520844FD.htm#GUID-8819CE01-312D-44AC-8024-44A2324A0C3A">About Service Metrics for Oracle Java Cloud Service</a></li>
+<li><a href="GUID-B76602B2-156D-4EAE-91F4-08A0520844FD.htm#GUID-EE38ADC2-BD32-43CB-A36D-842CD3AB85A2">Viewing Heap Usage and Request Response Time for Oracle Java Cloud Service</a></li>
+</ul>
+</li>
+<li><a href="GUID-41A9CF0D-028D-4C62-B9C6-D369452D5937.htm#GUID-41A9CF0D-028D-4C62-B9C6-D369452D5937">Suspending an Oracle Java Cloud Service Instance <span>on <span>OPCM</span></span></a></li>
+<li><a href="GUID-A0491DD0-6E6C-405D-A00C-A213AABDF91C.htm#GUID-A0491DD0-6E6C-405D-A00C-A213AABDF91C">Stopping and Starting an Oracle Java Cloud Service Instance and Individual VMs</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-A0491DD0-6E6C-405D-A00C-A213AABDF91C.htm#GUID-B663B1CE-1B99-40FF-9CDA-9BC76E43134E">About Stopping and Starting an Oracle Java Cloud Service Instance and Individual VMs</a></li>
+<li><a href="GUID-A0491DD0-6E6C-405D-A00C-A213AABDF91C.htm#GUID-E77701F5-F6E9-4696-9A52-37FAAC26013A">Stopping and Starting an Oracle Java Cloud Service Instance</a></li>
+<li><a href="GUID-A0491DD0-6E6C-405D-A00C-A213AABDF91C.htm#GUID-1BCCC685-9CF7-4A46-A0A5-9B8359F1C99C">Restarting the Administration Server VM</a></li>
+<li><a href="GUID-A0491DD0-6E6C-405D-A00C-A213AABDF91C.htm#GUID-B35AE4EE-14DF-47D0-A5E9-1F40F6DB7C72">Stopping, Starting, and Restarting Managed Server and Load Balancer VMs</a></li>
+</ul>
+</li>
+<li><a href="GUID-A58DDD63-CD0F-49F4-AF78-AF4FA5C42C3A.htm#GUID-A58DDD63-CD0F-49F4-AF78-AF4FA5C42C3A">Deleting an Oracle Java Cloud Service Instance <span>on <span>OPCM</span></span></a></li>
+<li><a href="GUID-01F749C8-3463-4F6F-906B-2F6B27BA7C0E.htm">Exploring the Oracle Java Cloud Service Welcome Page</a></li>
+<li><a href="GUID-19357F9E-2790-48E0-81C0-0AD7FD4E33EE.htm#GUID-19357F9E-2790-48E0-81C0-0AD7FD4E33EE">Exploring the Oracle Java Cloud Service Console</a></li>
+<li><a href="GUID-6A53CD39-AFEB-4C1B-BDC0-6110897F635E.htm#GUID-6A53CD39-AFEB-4C1B-BDC0-6110897F635E">Exploring the Oracle Java Cloud Service Instance Overview Page</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-8C8402EF-D5A7-41E2-83B5-8E9CDA5085D0.htm"><span class="secnum">3</span> Administering Oracle Java Cloud Service Software <span>on <span>Oracle Public Cloud Machine</span></span></a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-D2461227-4463-471D-A2E2-41E63AE0D092.htm#GUID-D2461227-4463-471D-A2E2-41E63AE0D092">Accessing the Administrative Consoles</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-D2461227-4463-471D-A2E2-41E63AE0D092.htm#GUID-B97113D4-A6D2-4D38-8466-2EC07095B49D">Accessing an Administration Console for Oracle Java Cloud Service Software</a></li>
+<li><a href="GUID-D2461227-4463-471D-A2E2-41E63AE0D092.htm#GUID-E3BA19E3-9996-4A5E-ACDA-AB6D8439414E">Accessing the Administration Console of a Related Oracle Cloud Service</a></li>
+</ul>
+</li>
+<li><a href="GUID-B5656350-E387-4E43-91A6-8C20D78288A7.htm">Accessing a VM Through a Secure Shell (SSH)</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-B1C97FB6-6F10-4D57-828B-8786B96E43A8.htm">Understanding SSH Keys</a></li>
+<li><a href="GUID-4285B8CF-A228-4B89-9552-FE6446B5A673.htm#GUID-4285B8CF-A228-4B89-9552-FE6446B5A673">Generating a Secure Shell (SSH) Public/Private Key Pair</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-4285B8CF-A228-4B89-9552-FE6446B5A673.htm#GUID-2BD5B767-0659-4791-A170-279F469B2CC3">Generating an SSH Key Pair on UNIX and UNIX-Like Platforms Using the ssh-keygen Utility</a></li>
+<li><a href="GUID-4285B8CF-A228-4B89-9552-FE6446B5A673.htm#GUID-69EF7E8A-7CD5-482E-A878-882EA21DE2B8">Generating an SSH Key Pair on Windows Using the PuTTYgen Program</a></li>
+</ul>
+</li>
+<li><a href="GUID-D03CE18B-E2D2-4F6F-AF60-696AE8256B01.htm">Connecting to an Administration Server or Load Balancer VM</a></li>
+<li><a href="GUID-1749F47C-453B-4FFA-B55B-41A8B9549C89.htm">Connecting to a Managed Server VM</a></li>
+<li><a href="GUID-BB107CDA-CB78-4E3B-B17C-A607A4869715.htm">Creating an SSH Tunnel</a></li>
+<li><a href="GUID-91867C63-FE80-4FD2-8E93-3D0E28635EB9.htm">Switching VM Users</a></li>
+</ul>
+</li>
+<li><a href="GUID-8F5B7EC4-38C8-4C0E-B111-5AB5FE967989.htm">Accessing a VM Through Virtual Network Computing (VNC)</a></li>
+<li><a href="GUID-5C29EA98-DF21-4EEA-B3E3-517150021E4B.htm#GUID-5C29EA98-DF21-4EEA-B3E3-517150021E4B">Using WLST to Administer an Oracle Java Cloud Service Instance</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-5C29EA98-DF21-4EEA-B3E3-517150021E4B.htm#GUID-8371986D-852B-46F6-A889-B60A4B2E2DB3">Using WLST Online and Offline</a></li>
+<li><a href="GUID-5C29EA98-DF21-4EEA-B3E3-517150021E4B.htm#GUID-F30599B0-82E6-4266-B7B7-6E83E037952C">Running WLST Commands on a VM</a></li>
+<li><a href="GUID-5C29EA98-DF21-4EEA-B3E3-517150021E4B.htm#GUID-A369DB5E-A70E-4004-9FE5-A353B1CA4D3E">Running WLST Commands from a Different Host</a></li>
+</ul>
+</li>
+<li><a href="GUID-BD5190E0-5DE4-454E-BAD3-E889C575D432.htm#GUID-BD5190E0-5DE4-454E-BAD3-E889C575D432">Shutting Down and Starting Server Processes</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-BD5190E0-5DE4-454E-BAD3-E889C575D432.htm#GUID-446160EC-1A9E-4A8D-8608-064471EA6893">Using the WebLogic Server Administration Console to Shut Down Servers Without Stopping VMs</a></li>
+<li><a href="GUID-BD5190E0-5DE4-454E-BAD3-E889C575D432.htm#GUID-AD271E5C-D40C-4E8D-A8AB-D4C8E6FBB8C7">Using WLST Commands to Start the Administration Server</a></li>
+<li><a href="GUID-BD5190E0-5DE4-454E-BAD3-E889C575D432.htm#GUID-C65E74C2-1FB9-45DB-90CA-1295518E0D2C">Using the WebLogic Server Administration Console to Start Managed Servers</a></li>
+</ul>
+</li>
+<li><a href="GUID-A3190691-7808-4E14-8873-2FA205F58134.htm">Understanding JVM Heap Size Settings</a></li>
+<li><a href="GUID-75A0CF03-6FB1-4F70-B5C5-762480677EEC.htm">Understanding Data Sources</a></li>
+<li><a href="GUID-763D5BD4-AD7F-48E3-A714-1FF02F553288.htm">Monitoring Applications with Java Flight Recorder and Java Mission Control</a></li>
+<li><a href="GUID-0D852E2F-3E75-4425-8D96-EBCBF316FE9D.htm#GUID-0D852E2F-3E75-4425-8D96-EBCBF316FE9D">Defining a Custom Domain Name for an Oracle Java Cloud Service Instance</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-0D852E2F-3E75-4425-8D96-EBCBF316FE9D.htm#GUID-8A3AF3D6-CD2A-4416-830F-BD2B4CD598FA">Registering a Custom Domain Name with a Third-Party Registration Vendor</a></li>
+<li><a href="GUID-0D852E2F-3E75-4425-8D96-EBCBF316FE9D.htm#GUID-A31A9BE4-9589-4416-A78B-A82FC75AED9D">Updating the Load Balancer to Use the Custom Domain Name</a></li>
+</ul>
+</li>
+<li><a href="GUID-4CA04D5D-510D-4B7E-A6DB-70416871409D.htm#GUID-4CA04D5D-510D-4B7E-A6DB-70416871409D">Defining a Custom URL for an Application Deployed to an <span>Oracle Java Cloud Service</span> Instance</a></li>
+<li><a href="GUID-68749D52-DAC9-44E7-90AD-6C891300156E.htm#GUID-68749D52-DAC9-44E7-90AD-6C891300156E">Keeping Your Service Instances Manageable</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-18128901-2017-4407-8DA9-0BCE933C8C07.htm"><span class="secnum">4</span> Deploying and Undeploying Applications for an Oracle Java Cloud Service Instance <span>on <span>Oracle Public Cloud Machine</span></span></a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-1EAF300B-B40D-4034-87BB-0396B85B45F2.htm#GUID-1EAF300B-B40D-4034-87BB-0396B85B45F2">Overview of Deployment Tasks for an Oracle Java Cloud Service Instance</a></li>
+<li><a href="GUID-C7BD2C7D-D33C-41D8-BC7B-0F8EBC965EEE.htm#GUID-C7BD2C7D-D33C-41D8-BC7B-0F8EBC965EEE">Using Fusion Middleware Control to Deploy and Undeploy an Application</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-C7BD2C7D-D33C-41D8-BC7B-0F8EBC965EEE.htm#GUID-5EF4CBD6-D540-48B4-831B-579B51CEAB95">Using Fusion Middleware Control to Deploy an Application</a></li>
+<li><a href="GUID-C7BD2C7D-D33C-41D8-BC7B-0F8EBC965EEE.htm#GUID-AB3F796D-C28B-464A-B8EC-58E992B3F96D">Using Fusion Middleware Control to Undeploy an Application</a></li>
+</ul>
+</li>
+<li><a href="GUID-FAAE57D6-BB54-43BA-A3FA-8EDAFCD3C04E.htm#GUID-FAAE57D6-BB54-43BA-A3FA-8EDAFCD3C04E">Using the WebLogic Server Administration Console to Deploy and Undeploy an Application</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-FAAE57D6-BB54-43BA-A3FA-8EDAFCD3C04E.htm#GUID-026A6C4D-62E5-48EC-A330-1F9626568FB6">Using the WebLogic Server Administration Console to Deploy an Application</a></li>
+<li><a href="GUID-FAAE57D6-BB54-43BA-A3FA-8EDAFCD3C04E.htm#GUID-496A1C02-DC0D-45A2-85A0-42681346CBED">Using the WebLogic Server Administration Console to Start an Application</a></li>
+<li><a href="GUID-FAAE57D6-BB54-43BA-A3FA-8EDAFCD3C04E.htm#GUID-797051CC-443E-4272-AE93-FCF2D43EFA88">Using the WebLogic Server Administration Console to Undeploy an Application</a></li>
+</ul>
+</li>
+<li><a href="GUID-8A319690-27C6-4170-A5E1-D70E32C64B8F.htm#GUID-8A319690-27C6-4170-A5E1-D70E32C64B8F">Using WLST Commands to Deploy and Undeploy an Application</a></li>
+<li><a href="GUID-ABBC38E6-78B1-4097-95E1-19943773EFAF.htm#GUID-ABBC38E6-78B1-4097-95E1-19943773EFAF">Using an IDE to Deploy and Undeploy an Application</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-ABBC38E6-78B1-4097-95E1-19943773EFAF.htm#GUID-C8EAB628-EDFA-4E8F-8150-CA21246E2899">Prerequisites to Deployment with an IDE</a></li>
+<li><a href="GUID-ABBC38E6-78B1-4097-95E1-19943773EFAF.htm#GUID-C8C8271C-EAE6-4977-A569-EC3CA8CDC5AB">Connecting the IDE to a Remote WebLogic Server</a></li>
+<li><a href="GUID-ABBC38E6-78B1-4097-95E1-19943773EFAF.htm#GUID-A003FCD5-1B20-41FF-B6E7-322CC26ED15A">Using an IDE to Deploy an Application to a Cluster</a></li>
+<li><a href="GUID-ABBC38E6-78B1-4097-95E1-19943773EFAF.htm#GUID-7FE790C7-1CEA-4868-A8F7-D8AD94398B47">Using an IDE to Undeploy an Application</a></li>
+</ul>
+</li>
+<li><a href="GUID-A3B26681-17CD-4177-927F-CC441ABEBC04.htm#GUID-A3B26681-17CD-4177-927F-CC441ABEBC04">Accessing an Application Deployed to an Oracle Java Cloud Service Instance</a></li>
+<li><a href="GUID-C83E051D-3A28-4FE7-8333-20F40A06DAEA.htm#GUID-C83E051D-3A28-4FE7-8333-20F40A06DAEA">Enabling the JVM Debug Port</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-C83E051D-3A28-4FE7-8333-20F40A06DAEA.htm#GUID-4E828991-D399-468C-826F-730845B26824">Setting up the Debug Port in WebLogic Server</a></li>
+</ul>
+</li>
+<li><a href="GUID-890B10DD-19F1-4377-8338-8A285BB9AA0F.htm#GUID-890B10DD-19F1-4377-8338-8A285BB9AA0F">Using Third-Party Frameworks with Oracle Java Cloud Service <span>on <span>OPCM</span></span></a>
+<ul style="list-style-type: none">
+<li><a href="GUID-890B10DD-19F1-4377-8338-8A285BB9AA0F.htm#GUID-FA02ED5E-7A2A-45D2-AADF-A39DFA4DC5E1">Third-Party Frameworks Tested with Oracle Java Cloud Service</a></li>
+<li><a href="GUID-890B10DD-19F1-4377-8338-8A285BB9AA0F.htm#GUID-FB6F95CF-36DA-41B9-AD9B-E495680ACEB2">Information for Configuring Apache Axis/Java</a></li>
+<li><a href="GUID-890B10DD-19F1-4377-8338-8A285BB9AA0F.htm#GUID-3D79ABB1-0967-4E57-85A3-ADB90729FEAC">Omitting Checks for Updates to Quartz Job Scheduler <span>on <span>OPCM</span></span></a></li>
+</ul>
+</li>
+</ul>
+<h2 class="tocheader"><a href="GUID-2B7339B1-19CB-455E-8433-9530F6F56A0B.htm"><span class="secnum">5</span> Scaling an Oracle Java Cloud Service Instance <span>on <span>Oracle Public Cloud Machine</span></span></a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-02D79DE3-643B-44B9-A979-340BD472B529.htm#GUID-02D79DE3-643B-44B9-A979-340BD472B529">About Scaling an Oracle Java Cloud Service Instance</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-02D79DE3-643B-44B9-A979-340BD472B529.htm#GUID-7B6EBABE-A01C-4AC6-A339-16225DA4A69C">About Scaling an Oracle Java Cloud Service Cluster</a></li>
+<li><a href="GUID-02D79DE3-643B-44B9-A979-340BD472B529.htm#GUID-842BB0D4-BA9A-482E-8FFB-805E8D256CA6">About Scaling an Oracle Java Cloud Service Node</a></li>
+</ul>
+</li>
+<li><a href="GUID-0EA0FE0E-888C-426B-97C7-AF596438BA65.htm">Overview of Scaling Tasks for an Oracle Java Cloud Service Instance</a></li>
+<li><a href="GUID-6BAA26CA-B304-4C0E-AC00-3E47512EED88.htm#GUID-6BAA26CA-B304-4C0E-AC00-3E47512EED88">Scaling Out an Oracle Java Cloud Service Cluster <span>on <span>OPCM</span></span></a>
+<ul style="list-style-type: none">
+<li><a href="GUID-6BAA26CA-B304-4C0E-AC00-3E47512EED88.htm#GUID-C2B3AFED-B40D-4E52-A296-38FEA18C694D">Adding a New Cluster to an Instance</a></li>
+</ul>
+</li>
+<li><a href="GUID-3054AC97-E2C6-45DE-818E-33671C0C8280.htm#GUID-3054AC97-E2C6-45DE-818E-33671C0C8280">Scaling In an Oracle Java Cloud Service Cluster <span>on <span>OPCM</span></span></a></li>
+<li><a href="GUID-8DD460BA-708C-4B90-822F-4E4D64C59F77.htm#GUID-8DD460BA-708C-4B90-822F-4E4D64C59F77">Scaling an Oracle Java Cloud Service Node <span>on <span>OPCM</span></span></a>
+<ul style="list-style-type: none">
+<li><a href="GUID-8DD460BA-708C-4B90-822F-4E4D64C59F77.htm#GUID-8A195ECC-E28C-46B0-8038-72E09DE1978D">Adding Block Storage Only</a></li>
+</ul>
+</li>
+<li><a href="GUID-BD8C7EA1-460C-48A7-B6C7-2E7665D2A73E.htm#GUID-BD8C7EA1-460C-48A7-B6C7-2E7665D2A73E">Viewing Scaling Requests <span>on <span>OPCM</span></span></a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-EDAEEE74-17E4-43CF-9059-F777255DFBDC.htm"><span class="secnum">6</span> Backing Up and Restoring an <span>Oracle Java Cloud Service</span> Instance <span>on <span>Oracle Public Cloud Machine</span></span></a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300.htm#GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300">About Backup and Restoration of Oracle Java Cloud Service Instances</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300.htm#GUID-777806D0-C9C6-4D7E-86A1-6B4B7FA7667A">Contents of a Backup</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300.htm#GUID-56F011B5-4327-48C1-955B-9E735BC6EBD0">Contents of a Full Backup</a></li>
+<li><a href="GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300.htm#GUID-B39DDB08-A2DA-4145-AFA8-FBDD4194EF13">Contents of an Incremental Backup</a></li>
+<li><a href="GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300.htm#GUID-B244CD97-4D7C-4C9B-8DB4-CCDEDF8595A7">Contents of a Database Backup</a></li>
+<li><a href="GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300.htm#GUID-CC42BC9B-00E6-4D38-A0F1-213C97C72942">Links Between an Incremental Backup and Its Related Full Backup</a></li>
+<li><a href="GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300.htm#GUID-CE767D8D-28B4-4425-8B93-6074D777173D">Items that Are Not Backed Up</a></li>
+</ul>
+</li>
+<li><a href="GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300.htm#GUID-9CD83FFB-7304-40A9-A468-80D1E609D482">How Backups Are Initiated</a></li>
+<li><a href="GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300.htm#GUID-DAC654D7-1675-4615-8B6C-77587759ABAE">Where Backups Are Stored</a></li>
+<li><a href="GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300.htm#GUID-2B8D081E-8133-42DC-967A-DB6D5699BBC1">What Happens During a Backup</a></li>
+<li><a href="GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300.htm#GUID-016771AA-18EA-43D3-88BD-0AC7F33D8C0E">How Restorations Are Initiated</a></li>
+<li><a href="GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300.htm#GUID-74F51136-3203-4A95-929C-AE08C910926C">What Happens when a Service Instance Is Restored</a></li>
+</ul>
+</li>
+<li><a href="GUID-CF725B2D-DC34-4E1C-BAD7-2955ED03430C.htm#GUID-CF725B2D-DC34-4E1C-BAD7-2955ED03430C">Typical Workflow for Backing Up and Restoring an Oracle Java Cloud Service Instance</a></li>
+<li><a href="GUID-F9A3A1B3-2705-4265-AFC9-6398E3B3D494.htm#GUID-F9A3A1B3-2705-4265-AFC9-6398E3B3D494">Configuring Automated Backups for an <span>Oracle Java Cloud Service</span> Instance <span>on <span>OPCM</span></span></a></li>
+<li><a href="GUID-20AE6F0E-FF15-47F2-9CBF-7B9CC31BBFCA.htm#GUID-20AE6F0E-FF15-47F2-9CBF-7B9CC31BBFCA">Initiating an On-Demand Backup of an Oracle Java Cloud Service Instance <span>on <span>OPCM</span></span></a></li>
+<li><a href="GUID-61B5685C-2D85-48A8-82CA-4150069E7A08.htm#GUID-61B5685C-2D85-48A8-82CA-4150069E7A08">Deleting a Backup <span>on <span>OPCM</span></span></a></li>
+<li><a href="GUID-7472FA73-3CD6-4E2F-A78F-BB715A57CC5B.htm">Disabling or Enabling Backups for an Oracle Java Cloud Service Instance <span>on <span>OPCM</span></span></a></li>
+<li><a href="GUID-88CEA944-DFAB-45A1-9224-CB34C7112280.htm#GUID-88CEA944-DFAB-45A1-9224-CB34C7112280">Restoring an <span>Oracle Java Cloud Service</span> Instance from a Backup <span>on <span>OPCM</span></span></a></li>
+<li><a href="GUID-94744619-CB75-4BD8-8DCD-B2A4506F8908.htm#GUID-94744619-CB75-4BD8-8DCD-B2A4506F8908">Returning an Oracle Java Cloud Service Instance to Service After Restoration from a Backup <span>on <span>OPCM</span></span></a></li>
+<li><a href="GUID-B3C5430A-2D20-492B-96BF-0A2E6ECF1E04.htm#GUID-B3C5430A-2D20-492B-96BF-0A2E6ECF1E04">Exploring the Backup Page</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-54FEF023-EAB4-44FE-BF4F-ADAA476097B1.htm"><span class="secnum">7</span> Patching an Oracle Java Cloud Service Instance <span>on <span>Oracle Public Cloud Machine</span></span></a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-127512FF-D1AA-43CF-A4F9-7985B98C831E.htm#GUID-127512FF-D1AA-43CF-A4F9-7985B98C831E">Typical Workflow for Patching an Oracle Java Cloud Service Instance</a></li>
+<li><a href="GUID-0BF293EB-603D-4391-A14E-5738EE384C50.htm#GUID-0BF293EB-603D-4391-A14E-5738EE384C50">About Patching an Oracle Java Cloud Service Instance</a></li>
+<li><a href="GUID-38F49FD6-BC5A-4601-A91F-C35D44C9857F.htm#GUID-38F49FD6-BC5A-4601-A91F-C35D44C9857F">Viewing Details of Approved Patches <span>on <span>OPCM</span></span></a></li>
+<li><a href="GUID-F6218F23-FE53-41D8-A72C-8FF63CD0C94F.htm#GUID-F6218F23-FE53-41D8-A72C-8FF63CD0C94F">Performing Patching Prechecks and Addressing Patching Issues</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-F6218F23-FE53-41D8-A72C-8FF63CD0C94F.htm#GUID-6A3AB9CE-73C4-44A5-8BEF-DF08153DFBBB">Performing Patching Prechecks</a></li>
+<li><a href="GUID-F6218F23-FE53-41D8-A72C-8FF63CD0C94F.htm#GUID-C6E3CD81-2229-4655-854C-4BD4687AA9FF">Addressing Patching Precheck Issues</a></li>
+</ul>
+</li>
+<li><a href="GUID-AFED906A-1E68-4772-A46A-DEF45379CA13.htm#GUID-AFED906A-1E68-4772-A46A-DEF45379CA13">Applying a Patch to an Oracle Java Cloud Service Instance <span>on <span>OPCM</span></span></a></li>
+<li><a href="GUID-F2435DC0-0C54-42A1-B58F-50D3CE1930C7.htm#GUID-F2435DC0-0C54-42A1-B58F-50D3CE1930C7">Rolling Back a Patching Operation <span>on <span>OPCM</span></span></a></li>
+<li><a href="GUID-C6B38B48-B3D3-4EC1-BE6F-4407FBAD1A42.htm#GUID-C6B38B48-B3D3-4EC1-BE6F-4407FBAD1A42">Exploring the Patching Page</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-A8DF31CB-950C-4086-81DB-10868B7BE538.htm"><span class="secnum">8</span> Securing an Oracle Java Cloud Service Instance <span>on <span>Oracle Public Cloud Machine</span></span></a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-53AEA5C1-DCB4-437C-BFA2-504E9802BE7A.htm">About Security in Oracle Java Cloud Service</a></li>
+<li><a href="GUID-9644AC0E-2343-4907-82D3-7900B2FCF70D.htm">Configuring Network Security <span>on <span>OPCM</span></span></a>
+<ul style="list-style-type: none">
+<li><a href="GUID-EDC1BD9B-1C42-4220-8163-4B27AADDA98F.htm#GUID-EDC1BD9B-1C42-4220-8163-4B27AADDA98F">Understanding the Default Access Ports</a></li>
+<li><a href="GUID-E9AE5F41-2B59-40A8-90A2-02DBF783079B.htm#GUID-E9AE5F41-2B59-40A8-90A2-02DBF783079B">Enabling HTTP Access to an <span>Oracle Java Cloud Service</span> Instance</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-E9AE5F41-2B59-40A8-90A2-02DBF783079B.htm#GUID-57DA4638-AD9D-4AE3-9ECD-A135082A6296">Enabling the HTTP Port on the Load Balancer</a></li>
+</ul>
+</li>
+<li><a href="GUID-840351A6-E2E8-46A9-ABA7-E91B6BDECDF2.htm">Managing SSH Access for an <span>Oracle Java Cloud Service</span> Instance</a></li>
+<li><a href="GUID-B862044D-A55B-48D3-A3E2-CC2D55A8279B.htm#GUID-B862044D-A55B-48D3-A3E2-CC2D55A8279B">Configuring SSL for an Oracle Java Cloud Service Instance</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-B862044D-A55B-48D3-A3E2-CC2D55A8279B.htm#GUID-A05BEE1B-D1FF-451F-954E-11BDB67F608F">Creating a Self-Signed SSL Certificate in the Load Balancer</a></li>
+<li><a href="GUID-B862044D-A55B-48D3-A3E2-CC2D55A8279B.htm#GUID-C54E36ED-BFFF-4B05-A8DB-6EF586EB3AA4">Importing a CA-Issued SSL Certificate to the Load Balancer</a></li>
+<li><a href="GUID-B862044D-A55B-48D3-A3E2-CC2D55A8279B.htm#GUID-225C9659-BC61-484A-9C0D-42EEB00C94CF">Associating the SSL Certificate With the Load Balancer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="GUID-0C2F77F4-C080-4BDF-AD03-13B878353585.htm">Authenticating Users <span>on <span>OPCM</span></span></a>
+<ul style="list-style-type: none">
+<li><a href="GUID-5221CD3F-1C60-47E8-A62B-D4942B970DA5.htm">Understanding Users in <span>Oracle Java Cloud Service</span></a></li>
+<li><a href="GUID-A1EF3986-C1DF-4A4D-A291-2311E2AE75C8.htm">Understanding Authentication Options</a></li>
+<li><a href="GUID-3DE807DE-6526-47E3-A4D1-F408A63BC883.htm">Managing Passwords for <span>Oracle Java Cloud Service</span> <span>on <span>OPCM</span></span></a></li>
+</ul>
+</li>
+</ul>
+<h2 class="tocheader"><a href="GUID-A568C26C-D1EC-4B9A-AF09-556D31933BCE.htm"><span class="secnum">9</span> Administering the Load Balancer for an Oracle Java Cloud Service Instance <span>on <span>Oracle Public Cloud Machine</span></span></a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-190012B5-6CC3-4CF2-8EAA-BAD5FA2C06D4.htm#GUID-190012B5-6CC3-4CF2-8EAA-BAD5FA2C06D4">Overview of Load Balancer Administration Tasks for an Oracle Java Cloud Service Instance</a></li>
+<li><a href="GUID-5D722781-44AD-4BAA-B726-A285154F8534.htm#GUID-5D722781-44AD-4BAA-B726-A285154F8534">Disabling or Enabling the Load Balancer for an Oracle Java Cloud Service Instance <span>on <span>OPCM</span></span></a></li>
+<li><a href="GUID-6B2C2199-C004-4DA0-81FE-979FFB98B7C6.htm">Adding a Load Balancer to an Oracle Java Cloud Service Instance <span>on <span>OPCM</span></span></a></li>
+<li><a href="GUID-7D16153E-6028-4FDD-9CFD-49F48D6F379E.htm">Adding a Second Load Balancer to an Oracle Java Cloud Service Instance <span>on <span>OPCM</span></span></a></li>
+<li><a href="GUID-8D9D9EDC-38B4-4E23-A94C-CD4ACCACFD22.htm">Removing a Load Balancer from an Oracle Java Cloud Service Instance <span>on <span>OPCM</span></span></a></li>
+<li><a href="GUID-4D705FE3-4FB0-4EEE-B5C9-86F3A20C5869.htm#GUID-4D705FE3-4FB0-4EEE-B5C9-86F3A20C5869">Configuring a Load Balancer for an <span>Oracle Java Cloud Service</span> Instance <span>on <span>OPCM</span></span></a></li>
+<li><a href="GUID-FCBF92DB-5FED-48F8-BE6A-2036DEC361A2.htm">About Load Balancer Virtual Machines</a></li>
+<li><a href="GUID-A17D1877-4EFE-4831-A4ED-9BA60DDE633B.htm#GUID-A17D1877-4EFE-4831-A4ED-9BA60DDE633B">Exploring the Load Balancer Page</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-1315F452-E0C6-4A96-A0C6-B21E054C4F1C.htm"><span class="secnum">10</span> Managing Compute Virtual Machines in <span>Oracle Java Cloud Service</span> <span>on <span>Oracle Public Cloud Machine</span></span></a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-CD8653E2-142A-4186-8365-911433DB96E1.htm#GUID-CD8653E2-142A-4186-8365-911433DB96E1">About the Oracle Compute Cloud Service Environment in Oracle Java Cloud Service</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-CD8653E2-142A-4186-8365-911433DB96E1.htm#GUID-2008E65A-5F33-44D6-8010-C1B72EBBDF9A">About the Deployment Topology of Virtual Machines</a></li>
+<li><a href="GUID-CD8653E2-142A-4186-8365-911433DB96E1.htm#GUID-EB9A68A2-E924-450F-B78D-D3794E2AE37B">About the Virtual Machines</a></li>
+<li><a href="GUID-CD8653E2-142A-4186-8365-911433DB96E1.htm#GUID-AAE72531-41A4-4462-B90C-D2D812EEA68E">About the Disk Volumes</a></li>
+</ul>
+</li>
+<li><a href="GUID-455C1BD1-5361-460C-B1FA-7CA96A0B701C.htm#GUID-455C1BD1-5361-460C-B1FA-7CA96A0B701C">About Compute Virtual Machine Objects in <span>Oracle Java Cloud Service</span></a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-6A6F5F1D-8F76-41EF-B652-D338C3F07683.htm"><span class="secnum">11</span> Using <span>Oracle Coherence in Oracle Java Cloud Service</span> <span>on <span>Oracle Public Cloud Machine</span></span></a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-16418889-DD11-43BA-B0A8-0F2226F08A1A.htm">Workflow for Using <span>Oracle Coherence in Oracle Java Cloud Service</span></a></li>
+<li><a href="GUID-2BF3A152-1A20-44CD-A29D-B0949A73F2CA.htm#GUID-2BF3A152-1A20-44CD-A29D-B0949A73F2CA">About <span>Oracle Coherence in Oracle Java Cloud Service</span></a>
+<ul style="list-style-type: none">
+<li><a href="GUID-2BF3A152-1A20-44CD-A29D-B0949A73F2CA.htm#GUID-12974556-1FA3-4750-9294-3F5856EEE993">About <span>Oracle Coherence in Oracle Java Cloud Service</span> and Supported Software Releases</a></li>
+<li><a href="GUID-2BF3A152-1A20-44CD-A29D-B0949A73F2CA.htm#GUID-816F8060-AB15-45D9-90E6-746A66CEC6AF">About Using <span>Oracle Coherence in Oracle Java Cloud Service</span></a></li>
+<li><a href="GUID-2BF3A152-1A20-44CD-A29D-B0949A73F2CA.htm#GUID-39831180-625F-4E4F-957C-D8B2038759A6">About <span>Oracle Coherence</span> and the Compute Environment in <span>Oracle Java Cloud Service</span></a></li>
+</ul>
+</li>
+<li><a href="GUID-7BEF123A-54F3-4E37-8CCC-518CFFFF817B.htm">About <span>Oracle Java Cloud Service&mdash;Coherence</span> Instances</a></li>
+<li><a href="GUID-1AB37F9D-3A5F-47A7-A61B-A751B09215E1.htm#GUID-1AB37F9D-3A5F-47A7-A61B-A751B09215E1">About Capacity Units for <span>Oracle Java Cloud Service&mdash;Coherence</span> Instances</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-1AB37F9D-3A5F-47A7-A61B-A751B09215E1.htm#GUID-05E7385D-2E4E-4D5C-A66F-2352A484BDEA">About Properties of a Capacity Unit Definition</a></li>
+<li><a href="GUID-1AB37F9D-3A5F-47A7-A61B-A751B09215E1.htm#GUID-CB493A54-15A9-458C-B6C1-F8E40F10D433">About Default Capacity Units for <span>Oracle Java Cloud Service&mdash;Coherence</span> Instances</a></li>
+<li><a href="GUID-1AB37F9D-3A5F-47A7-A61B-A751B09215E1.htm#GUID-5B6FC827-31BF-42DA-90FA-CD7F45F979B1">About Custom Capacity Units and Advanced Configuration for <span>Oracle Java Cloud Service&mdash;Coherence</span> Instances</a></li>
+</ul>
+</li>
+<li><a href="GUID-8A746C30-70CF-4C73-9EAE-9ABA2E0093D8.htm#GUID-8A746C30-70CF-4C73-9EAE-9ABA2E0093D8">About Service Lifecycle Operations and <span>Oracle Java Cloud Service&mdash;Coherence</span> Instances</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-8A746C30-70CF-4C73-9EAE-9ABA2E0093D8.htm#GUID-D72F501A-5DD8-4F52-981B-A5E913AD3A22">About Creating an <span>Oracle Java Cloud Service&mdash;Coherence</span> Instance</a></li>
+<li><a href="GUID-8A746C30-70CF-4C73-9EAE-9ABA2E0093D8.htm#GUID-1F72823C-9C0A-420D-9370-13B13A3ACA40">About Deploying Applications to an <span>Oracle Java Cloud Service&mdash;Coherence</span> Instance</a></li>
+<li><a href="GUID-8A746C30-70CF-4C73-9EAE-9ABA2E0093D8.htm#GUID-8E39F8A6-FE52-4792-88D1-B530D69EC596">About Scaling an <span>Oracle Java Cloud Service&mdash;Coherence</span> Instance</a></li>
+<li><a href="GUID-8A746C30-70CF-4C73-9EAE-9ABA2E0093D8.htm#GUID-C9925CF6-EBB2-475E-95F5-1F62B02334E1">About Backing Up and Restoring an <span>Oracle Java Cloud Service&mdash;Coherence</span> Instance</a></li>
+<li><a href="GUID-8A746C30-70CF-4C73-9EAE-9ABA2E0093D8.htm#GUID-4A35E3B3-BF4C-4CB7-9B5F-3EC3E94A5293">About Patching an <span>Oracle Java Cloud Service&mdash;Coherence</span> Instance</a></li>
+<li><a href="GUID-8A746C30-70CF-4C73-9EAE-9ABA2E0093D8.htm#GUID-2C60D638-EA54-4579-A928-08DB216FE59B">About Stopping and Starting an <span>Oracle Java Cloud Service&mdash;Coherence</span> Instance</a></li>
+<li><a href="GUID-8A746C30-70CF-4C73-9EAE-9ABA2E0093D8.htm#GUID-CF83F6F9-3C43-4DCA-94E4-7314985D3707">About Deleting an <span>Oracle Java Cloud Service&mdash;Coherence</span> Instance</a></li>
+</ul>
+</li>
+<li><a href="GUID-92C5D8E0-308D-4833-82CC-41A5497E4728.htm">About Using the REST API to Create and Manage <span>Oracle Java Cloud Service&mdash;Coherence</span> Instances</a></li>
+<li><a href="GUID-13290CD2-48E2-4E71-B1C3-7860672503A6.htm">Creating an <span>Oracle Java Cloud Service&mdash;Coherence</span> Instance <span>on <span>OPCM</span></span></a></li>
+<li><a href="GUID-99880EDC-768B-455E-B7F4-22254FD01B42.htm#GUID-99880EDC-768B-455E-B7F4-22254FD01B42">Adding a Coherence Data Tier to an <span>Oracle Java Cloud Service</span> Instance <span>on <span>OPCM</span></span></a>
+<ul style="list-style-type: none">
+<li><a href="GUID-99880EDC-768B-455E-B7F4-22254FD01B42.htm#GUID-3B2AAD5E-2B28-46B1-90AE-ED0F7732FE58">Considerations When Adding a Coherence Data Tier to an Oracle Java Cloud Service Instance</a></li>
+</ul>
+</li>
+<li><a href="GUID-506493C3-FEC4-48FE-87BB-7764DCA4612A.htm#GUID-506493C3-FEC4-48FE-87BB-7764DCA4612A">Scaling the Coherence Data Tier of an <span>Oracle Java Cloud Service</span> Instance <span>on <span>OPCM</span></span></a>
+<ul style="list-style-type: none">
+<li><a href="GUID-506493C3-FEC4-48FE-87BB-7764DCA4612A.htm#GUID-43B12F2A-B2EA-4CBC-AB98-9160033F13C3">Considerations When Scaling the Coherence Data Tier of an Oracle Java Cloud Service Instance</a></li>
+<li><a href="GUID-506493C3-FEC4-48FE-87BB-7764DCA4612A.htm#GUID-FC95A5B6-DE4F-4713-809C-79E7C4215597">Scaling the Coherence Data Tier by Using the Oracle Java Cloud Service Console</a></li>
+</ul>
+</li>
+<li><a href="GUID-627556AD-A3A2-451D-95D7-9F6E1E8F0AEF.htm">Patching an Oracle Java Cloud Service&mdash;Coherence Instance <span>on <span>OPCM</span></span></a></li>
+<li><a href="GUID-FE484476-7B40-4217-A9DC-2D6F19AC3114.htm">Deleting the Coherence Data Tier of an <span>Oracle Java Cloud Service</span> Instance <span>on <span>OPCM</span></span></a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-8FA398E4-7DEF-45E2-ACCA-0620E9AD79D0.htm"><span class="secnum">12</span> Troubleshooting Oracle Java Cloud Service <span>on <span>Oracle Public Cloud Machine</span></span></a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-532426CF-56C0-4768-B2C7-93677630F798.htm#GUID-532426CF-56C0-4768-B2C7-93677630F798">Before You Begin Troubleshooting</a></li>
+<li><a href="GUID-6EBA48D9-F5FB-4AE1-9573-937ABE9EBD0C.htm#GUID-6EBA48D9-F5FB-4AE1-9573-937ABE9EBD0C">Finding Diagnostic Information to Help with Troubleshooting</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-6EBA48D9-F5FB-4AE1-9573-937ABE9EBD0C.htm#GUID-ECF628A9-0E0B-4E0E-984D-489EFFE0A913">Using the WebLogic Server Administration Console to Find Diagnostic Information</a></li>
+<li><a href="GUID-6EBA48D9-F5FB-4AE1-9573-937ABE9EBD0C.htm#GUID-A55D06FB-CC36-4AC9-9086-04A84585BEAE">Using the WebLogic Server Administration Console to Find Log Files</a></li>
+<li><a href="GUID-6EBA48D9-F5FB-4AE1-9573-937ABE9EBD0C.htm#GUID-FEF60571-5FBB-42CE-A7FD-4F498350AF06">Finding Status Messages for Oracle Java Cloud Service Instances</a></li>
+<li><a href="GUID-6EBA48D9-F5FB-4AE1-9573-937ABE9EBD0C.htm#GUID-7D558FED-53E9-42DF-A774-9C0B3E6AA14F">Finding VM Boot Log Messages</a></li>
+</ul>
+</li>
+<li><a href="GUID-DDAA8721-472D-4062-8379-AD0A0A883BC9.htm">Problems with Failure of a Running Service When the Schema User Password Expires</a></li>
+<li><a href="GUID-48386DD4-8E26-4979-8FD0-98FFE0DA5600.htm#GUID-48386DD4-8E26-4979-8FD0-98FFE0DA5600">Problems with Creating Service Instances</a></li>
+<li><a href="GUID-00B3BAA0-AE0C-4909-A777-38475EBD38FE.htm">Problems with Deploying and Accessing Applications</a></li>
+<li><a href="GUID-875E41A2-A30F-43F2-BE7E-597367E38FEA.htm#GUID-875E41A2-A30F-43F2-BE7E-597367E38FEA">Problems with Scaling</a></li>
+<li><a href="GUID-803431F3-331F-4A05-9FB1-A63B0E176EB4.htm#GUID-803431F3-331F-4A05-9FB1-A63B0E176EB4">Problems with Patching and Rollback</a></li>
+<li><a href="GUID-40C84ED1-D56C-4183-B88F-E271D5BAE5B9.htm#GUID-40C84ED1-D56C-4183-B88F-E271D5BAE5B9">Problems with Backup and Restoration</a></li>
+<li><a href="GUID-02C08728-3652-4BA0-8C5F-325720234DA4.htm">Problems With Performance of <span>Oracle Java Cloud Service</span>&mdash;Coherence Service Instances</a></li>
+<li><a href="GUID-48546683-5132-49E5-B4A6-0D96A3455B3E.htm">Problems with Restart</a></li>
+<li><a href="GUID-C8F398EC-A733-4017-BB11-4C8F87C1C97F.htm">Problems with Connectivity</a></li>
+<li><a href="GUID-051BFF82-6C83-45AE-ACD3-26FE4B1E77E6.htm">Problems with the Node Manager</a></li>
+<li><a href="GUID-E95DCA1B-B96E-4193-B2DC-05664E5FBD09.htm">Problems with a Database Deployment</a></li>
+<li><a href="GUID-B6BC055D-6D11-400E-A3C7-9C2F0A379BF7.htm">Problems Opening the WebLogic Server Administration Console from Fusion Middleware Control</a></li>
+<li><a href="GUID-829E7DB9-50D5-4819-96DE-28284A5056BD.htm#GUID-829E7DB9-50D5-4819-96DE-28284A5056BD">How can I Fine-Tune Performance?</a></li>
+</ul>
+</div>
+<!-- class="ind" -->
+<!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment56">
+<tr>
+<td class="cellalignment19"><a href="title.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment55">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Managing Image Lists</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-07T05:33:13Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine REST API Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E68443-07" />
+<meta name="dcterms.isVersionOf" content="ELUAP" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-D946E8D4-12A6-4F7B-979D-BB7272196F48.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUAP.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-3E374B99-1E54-4435-B541-52526F61E535"></a> <span id="PAGE" style="display:none;">23/40</span> <!-- End Header -->
+<h1 id="ELUAP-GUID-3E374B99-1E54-4435-B541-52526F61E535" class="sect1">Managing Image Lists</h1>
+<div>
+<div class="section">Machine images must be added to an image list to create a versioned instance template. When defining the launch plan for an orchestration to create an instance, an image list must be selected. You may also optionally select the version of the member machine image for launch. If no version is selected, then the default entry defined for the image list is launched. For example, you might want to set up an image list containing a selection of machine images of various Oracle Linux releases.</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-3E374B99-1E54-4435-B541-52526F61E535.htm#GUID-A8983158-8FBF-45AF-981D-F23D6886712B" title="This API enables you to add an image list.">Add Image List</a></p>
+</li>
+<li>
+<p><a href="GUID-3E374B99-1E54-4435-B541-52526F61E535.htm#GUID-9D12E993-7C2F-464E-8AC2-D6B6BFC7354E" title="This API enables you to delete a specific image list.">Delete Image List</a></p>
+</li>
+<li>
+<p><a href="GUID-3E374B99-1E54-4435-B541-52526F61E535.htm#GUID-186FE522-5C8F-4002-AE07-DA04547DADB8" title="This API enables you to update image list information.">Update Image List</a></p>
+</li>
+<li>
+<p><a href="GUID-3E374B99-1E54-4435-B541-52526F61E535.htm#GUID-62AFF150-9FF7-484A-8F38-60D6CF64D756" title="This API enables you to discover image list names in a specific container.This API enables you to retrieve details of a specific image list.This API enables you to retrieve information of all image lists present in a specific container.">Retrieve Image List Details</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="props_rev_3"><a id="GUID-A8983158-8FBF-45AF-981D-F23D6886712B"></a>
+<h2 id="ELUAP-GUID-A8983158-8FBF-45AF-981D-F23D6886712B" class="sect2">Add Image List</h2>
+<div>
+<p>This API enables you to add an image list.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-A8983158-8FBF-45AF-981D-F23D6886712B__GUID-6179D49F-A66B-41DF-82A3-19D64C38F481">
+<p class="notep1">Note:</p>
+You can add only private image lists to the system. To add public image lists, contact your Oracle Cloud Administrator.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Method</p>
+<p><code class="codeph">POST</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/imagelist/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<code class="codeph">api_endpoint</code>/imagelist/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Request Body Parameters</p>
+<div class="tblformal" id="GUID-A8983158-8FBF-45AF-981D-F23D6886712B__GUID-F89C1840-A878-40F0-9776-30C807481131">
+<table class="cellalignment62" summary="This table lists the request body parameters for adding an image list.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d17231e107">Parameter</th>
+<th class="cellalignment64" id="d17231e110">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d17231e115" headers="d17231e107">name</td>
+<td class="cellalignment66" headers="d17231e115 d17231e110">A unique hierarchical name for the image list. For example, <code class="codeph">/mytenant/public/myimagelist</code> .
+<p>Object names can contain only alphanumeric characters, hyphens, and periods. Object names are case-sensitive.</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d17231e125" headers="d17231e107">description</td>
+<td class="cellalignment66" headers="d17231e125 d17231e110">A description of this image list</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d17231e130" headers="d17231e107">default</td>
+<td class="cellalignment66" headers="d17231e130 d17231e110">(Optional) This is the version of the image in the list that should be considered the default. The default is used on instance launch if a specific version has not been given.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/imagelist</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Request Body</p>
+<pre dir="ltr">
+{
+ "default": 1, 
+ "description": "ol 6", 
+ "name": "/mytenant/public/ol6"
+}
+</pre></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Response Body</p>
+<pre dir="ltr">
+{
+ "default": 1, 
+ "description": "ol 6", 
+ "entries": [], 
+ "uri": "https://api.oc.example.com/imagelist/mytenant/public/ol6",
+ "name": "/mytenant/public/ol6"
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-9D12E993-7C2F-464E-8AC2-D6B6BFC7354E"></a>
+<h2 id="ELUAP-GUID-9D12E993-7C2F-464E-8AC2-D6B6BFC7354E" class="sect2">Delete Image List</h2>
+<div>
+<p>This API enables you to delete a specific image list.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-9D12E993-7C2F-464E-8AC2-D6B6BFC7354E__GUID-3D10DB89-C4A1-47E7-8510-7F27102B05C5">
+<p class="notep1">Note:</p>
+You can only delete private image lists in your tenancy.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Method</p>
+<p><code class="codeph">DELETE</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/imagelist/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/imagelist/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI Parameter</p>
+</div>
+<!-- class="section" -->
+<div class="tblformal" id="GUID-9D12E993-7C2F-464E-8AC2-D6B6BFC7354E__GUID-A15D27FE-1D4D-4079-BA16-B42DD7E14438">
+<table class="cellalignment62" summary="This table specifies the URI parameter and description for deleting an image list.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d17231e210">Parameter</th>
+<th class="cellalignment64" id="d17231e213">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d17231e218" headers="d17231e210">name</td>
+<td class="cellalignment66" headers="d17231e218 d17231e213">A unique hierarchical name for the image list. For example, <code class="codeph">/mytenant/public/myimagelist</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/imagelist/mytenant/public/oel59_20GB</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-186FE522-5C8F-4002-AE07-DA04547DADB8"></a>
+<h2 id="ELUAP-GUID-186FE522-5C8F-4002-AE07-DA04547DADB8" class="sect2">Update Image List</h2>
+<div>
+<p>This API enables you to update image list information.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-186FE522-5C8F-4002-AE07-DA04547DADB8__GUID-1DC8A03D-A1D3-4E8F-AEEF-C3F60A83EA7F">
+<p class="notep1">Note:</p>
+You can update only private image lists that you have created.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Method</p>
+<p><code class="codeph">PUT</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/imagelist/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/imagelist/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI Parameter</p>
+<div class="tblformal" id="GUID-186FE522-5C8F-4002-AE07-DA04547DADB8__THISTABLESPECIFIESURIPARAMETERANDDE-627D006C">
+<table class="cellalignment62" summary="This table specifies URI parameter and description for updating an image list.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d17231e292">Parameter</th>
+<th class="cellalignment64" id="d17231e295">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d17231e300" headers="d17231e292">name</td>
+<td class="cellalignment66" headers="d17231e300 d17231e295">A unique hierarchical name for the image list. For example, <code class="codeph">/mytenant/public/myimagelist</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Request Body Parameters</p>
+<div class="tblformal" id="GUID-186FE522-5C8F-4002-AE07-DA04547DADB8__THISTABLELISTSREQUESTBODYPARAMETERS-627CFC61">
+<table class="cellalignment62" summary="This table lists request body parameters and descriptions for updating an image list.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d17231e317">Parameter</th>
+<th class="cellalignment64" id="d17231e320">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d17231e325" headers="d17231e317">description</td>
+<td class="cellalignment66" headers="d17231e325 d17231e320">(Optional) A description of this image list.</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d17231e330" headers="d17231e317">default</td>
+<td class="cellalignment66" headers="d17231e330 d17231e320">(Optional) This is the version of the image in the list that should be considered the default. The default is used on instance launch if a specific version has not been given.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p><code class="codeph">https://api.oc.example.com/imagelist/mytenant/public/ol66_40GB</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Request Body</p>
+<pre dir="ltr">
+{
+  "default": 2,
+  "description": "OL 6.6 40 GB",
+  "uri": "imagelist/mytenant/public/ol66_40GB",
+  "name": "/mytenant/public/ol66_40GB"
+}
+</pre></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Response Body</p>
+<pre dir="ltr">
+{
+  "default": 2,
+  "description": "OL 6.6 40 GB",
+  "entries": [],
+  "uri": "https://api.oc.example.com/imagelist/mytenant/public/ol66_40GB",
+  "name": "/mytenant/public/ol66_40GB"
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-62AFF150-9FF7-484A-8F38-60D6CF64D756"></a>
+<h2 id="ELUAP-GUID-62AFF150-9FF7-484A-8F38-60D6CF64D756" class="sect2">Retrieve Image List Details</h2>
+<div>
+<div class="section">You can retrieve image list details by using the REST API.</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-3E374B99-1E54-4435-B541-52526F61E535.htm#GUID-A35F4FCD-DAEA-4331-AB9A-80D62EDB0E3E" title="This API enables you to discover image list names in a specific container.">Discover Image Lists</a></p>
+</li>
+<li>
+<p><a href="GUID-3E374B99-1E54-4435-B541-52526F61E535.htm#GUID-21BEB358-C36D-4CD1-B4B3-8F25E13B1D6E" title="This API enables you to retrieve details of a specific image list.">Get Image List</a></p>
+</li>
+<li>
+<p><a href="GUID-3E374B99-1E54-4435-B541-52526F61E535.htm#GUID-CA5A6F7F-1368-4D64-8A1D-779CBCD3239F" title="This API enables you to retrieve information of all image lists present in a specific container.">List Image Lists</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="props_rev_3"><a id="GUID-A35F4FCD-DAEA-4331-AB9A-80D62EDB0E3E"></a>
+<h3 id="ELUAP-GUID-A35F4FCD-DAEA-4331-AB9A-80D62EDB0E3E" class="sect3">Discover Image Lists</h3>
+<div>
+<p>This API enables you to discover image list names in a specific container.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-A35F4FCD-DAEA-4331-AB9A-80D62EDB0E3E__GUID-DAF80DDB-96A8-4660-9792-AD32EBFF2223">
+<p class="notep1">Note:</p>
+The discover API calls display the names of the objects in the specified container, not the details about the objects. To list the names of the objects, you must set the <code class="codeph">Accept</code> header to <code class="codeph">application/oracle-compute-v3+directory+json</code>. For all other purposes, you must set the <code class="codeph">Accept</code> header to <code class="codeph">application/oracle-compute-v3+json</code>.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Method</p>
+<p><code class="codeph">GET</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">REST Resource</p>
+<p><code class="codeph">/imagelist/<span class="variable">container</span>/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/imagelist/<span class="variable">container</span>/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI Parameter</p>
+<div class="tblformal" id="GUID-A35F4FCD-DAEA-4331-AB9A-80D62EDB0E3E__GUID-F624BE18-46D7-41DE-A529-763494BAFC34">
+<table class="cellalignment62" summary="This table specifies the URI parameter and description for discovering image lists.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d17231e471">Parameter</th>
+<th class="cellalignment64" id="d17231e474">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d17231e479" headers="d17231e471">container</td>
+<td class="cellalignment66" headers="d17231e479 d17231e474">Hierarchical name-space for image list.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/imagelist/mytenant/public/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example Response Body</p>
+<pre dir="ltr">
+{"result": ["/mytenant/public/oel59_20G", "/mytenant/public/ol66_40GB"]}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-21BEB358-C36D-4CD1-B4B3-8F25E13B1D6E"></a>
+<h3 id="ELUAP-GUID-21BEB358-C36D-4CD1-B4B3-8F25E13B1D6E" class="sect3">Get Image List</h3>
+<div>
+<p>This API enables you to retrieve details of a specific image list.</p>
+<div class="section">
+<p class="subhead3">Method</p>
+<p><code class="codeph">GET</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">REST Resource</p>
+<p><code class="codeph">/imagelist/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/imagelist/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI Parameter</p>
+<div class="tblformal" id="GUID-21BEB358-C36D-4CD1-B4B3-8F25E13B1D6E__GUID-86FF81F3-E835-4396-AA1A-2DA863B6AA79">
+<table class="cellalignment62" summary="This table lists the URI parameter and description for retrieving details of a specific image list.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d17231e551">Parameter</th>
+<th class="cellalignment64" id="d17231e554">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d17231e559" headers="d17231e551">name</td>
+<td class="cellalignment66" headers="d17231e559 d17231e554">A unique hierarchical name for the image list. For example, <code class="codeph">/mytenant/public/myimagelist</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example URI</p>
+<p><code class="codeph">http://api/imagelist/oracle/public/linux5_16.1.2_64</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example Response Body</p>
+<pre dir="ltr">
+{
+"default": 1, 
+"description": "A default public image.", 
+"entries": [{"attributes": {}, 
+"version": 1, "machineimages": ["/oracle/public/linux5_16.1.2_64"], 
+"uri": "https://api/imagelist/oracle/public/linux5_16.1.2_64/entry/1"}], 
+"uri": "https://api/imagelist/oracle/public/linux5_16.1.2_64", 
+"name": "/oracle/public/linux5_16.1.2_64"
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-CA5A6F7F-1368-4D64-8A1D-779CBCD3239F"></a>
+<h3 id="ELUAP-GUID-CA5A6F7F-1368-4D64-8A1D-779CBCD3239F" class="sect3">List Image Lists</h3>
+<div>
+<p>This API enables you to retrieve information of all image lists present in a specific container.</p>
+<div class="section">
+<p class="subhead3">Method</p>
+<p><code class="codeph">GET</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">REST Resource</p>
+<p><code class="codeph">/imagelist/<span class="variable">container</span>/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/imagelist/<span class="variable">container</span>/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI Parameter</p>
+<div class="tblformal" id="GUID-CA5A6F7F-1368-4D64-8A1D-779CBCD3239F__GUID-F624BE18-46D7-41DE-A529-763494BAFC34">
+<table class="cellalignment62" summary="This table specifies the URI parameter and description for listing image lists.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d17231e636">Parameter</th>
+<th class="cellalignment64" id="d17231e639">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d17231e644" headers="d17231e636">container</td>
+<td class="cellalignment66" headers="d17231e644 d17231e639">Hierarchical name-space for image list.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/imagelist/oracle/public/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example Response Body</p>
+<pre dir="ltr">
+
+{
+{
+        "default": 1, 
+        "description": "A default public image.", 
+        "entries": [{"attributes": {}, "version": 1, "machineimages": ["/oracle/public/linux6_16.1.2_64"], 
+       "uri": "https://api/imagelist/oracle/public/linux6_16.1.2_64/entry/1"}], 
+        "uri": "https://api/imagelist/oracle/public/linux6_16.1.2_64", 
+        "name": "/oracle/public/linux6_16.1.2_64"
+}, 
+{
+        "default": 1, 
+        "description": "A default public image.", 
+        "entries": [{"attributes": {}, "version": 1, "machineimages": ["/oracle/public/linux5_16.1.2_64"], 
+       "uri": "https://api/imagelist/oracle/public/linux5_16.1.2_64/entry/1"}], 
+        "uri": "https://api/imagelist/oracle/public/linux5_16.1.2_64", 
+        "name": "/oracle/public/linux5_16.1.2_64"
+}} 
+</pre></div>
+<!-- class="section" --></div>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment49">
+<tr>
+<td class="cellalignment59">
+<table class="cellalignment54">
+<tr>
+<td class="cellalignment53"><a href="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment53"><a href="GUID-D946E8D4-12A6-4F7B-979D-BB7272196F48.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment61">
+<table class="cellalignment52">
+<tr>
+<td class="cellalignment53"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment53"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

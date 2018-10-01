@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Managing vEthernet</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-07T05:33:13Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine REST API Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E68443-07" />
+<meta name="dcterms.isVersionOf" content="ELUAP" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-807812AE-1FAE-4F72-9CC3-34E59BF309F8.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-4B893928-826E-4227-B82D-00C928C0BD58.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUAP.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99"></a> <span id="PAGE" style="display:none;">36/40</span> <!-- End Header -->
+<h1 id="ELUAP-GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99" class="sect1">Managing vEthernet</h1>
+<div>
+<div class="section">A virtual Ethernet (vEthernet) is an IaaS object representing an OSI Layer 2 network, defined by a VLAN ID, switch pair name and e-port. vEthernets serve the purpose to isolate networks for instances run by different departments or business units (tenants).</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99.htm#GUID-30AAA5FD-AE05-4346-8E26-3EA0D5513223" title="This API enables you to add a virtual Ethernet to the network.">Add vEthernet</a></p>
+</li>
+<li>
+<p><a href="GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99.htm#GUID-D18F5763-8B43-4195-9055-64D8B352D932" title="This API enables you to delete virtual Ethernet">Delete vEthernet</a></p>
+</li>
+<li>
+<p><a href="GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99.htm#GUID-AE2E83B4-4D0D-44AD-8494-36DA0F3CEFCE" title="This API enables you to update information for a specific virtual Ethernet.">Update vEthernet</a></p>
+</li>
+<li>
+<p><a href="GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99.htm#GUID-6F126509-5391-43B9-B921-1CDB8E8FD88D" title="This API enables you to discover virtual Ethernets configured in a specific container.This API enables you to retrieve information for the configured virtual Ethernets in a specific container or subcontainer.">Retrieve vEthernet Details</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="props_rev_3"><a id="GUID-30AAA5FD-AE05-4346-8E26-3EA0D5513223"></a>
+<h2 id="ELUAP-GUID-30AAA5FD-AE05-4346-8E26-3EA0D5513223" class="sect2">Add vEthernet</h2>
+<div>
+<p>This API enables you to add a virtual Ethernet to the network.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-30AAA5FD-AE05-4346-8E26-3EA0D5513223__GUID-EAB740C0-6958-4C3D-8676-AEDCDCA77E47">
+<p class="notep1">Note:</p>
+You can only add IPoIB vEthernets.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Method</p>
+<p><code class="codeph">POST</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/vethernet/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/vethernet/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Request Body Parameters</p>
+<div class="tblformal" id="GUID-30AAA5FD-AE05-4346-8E26-3EA0D5513223__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment56" summary="This table lists the request body parameters and descriptions for adding vEthernet .">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment57" id="d23586e107">Parameter</th>
+<th class="cellalignment57" id="d23586e109">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d23586e113" headers="d23586e107">name</td>
+<td class="cellalignment58" headers="d23586e113 d23586e109">An unique hierarchical name for Ethernet. For example, <code class="codeph">/mytenant/public/EoIB</code></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d23586e120" headers="d23586e107">description</td>
+<td class="cellalignment58" headers="d23586e120 d23586e109">A description for a vEthernet</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d23586e125" headers="d23586e107">type</td>
+<td class="cellalignment58" headers="d23586e125 d23586e109">Type of vEthernet (supported types: <code class="codeph">ipoib</code>).</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d23586e133" headers="d23586e107">id</td>
+<td class="cellalignment58" headers="d23586e133 d23586e109">Unique identifier for this vEthernet (vLAN ID for <code class="codeph">eoib</code>/<code class="codeph">vlan</code> type). Set this parameter to 0 for vEthernet type <code class="codeph">ipoib</code>.</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d23586e147" headers="d23586e107">svcnet</td>
+<td class="cellalignment58" headers="d23586e147 d23586e109">(Optional) Service network to use for this vEthernet</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/vethernet/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Request Body</p>
+<pre dir="ltr">
+{        
+        "description": "mytenant public net", 
+        "name": "/mytenant/public/IPoIB", 
+        "type": "ipoib", 
+  "id": 0
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-D18F5763-8B43-4195-9055-64D8B352D932"></a>
+<h2 id="ELUAP-GUID-D18F5763-8B43-4195-9055-64D8B352D932" class="sect2">Delete vEthernet</h2>
+<div>
+<p>This API enables you to delete virtual Ethernet</p>
+<div class="section">
+<div class="infobox-note" id="GUID-D18F5763-8B43-4195-9055-64D8B352D932__GUID-E82DEB75-5DBB-44B2-94E6-09E788C24F41">
+<p class="notep1">Note:</p>
+You can only delete IPoIB vEthernets.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Method</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p><code class="codeph">DELETE</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p><code class="codeph">/vethernet/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/vethernet/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI Parameter</p>
+<div class="tblformal" id="GUID-D18F5763-8B43-4195-9055-64D8B352D932__GUID-A1C51A11-0667-4BF4-979E-02568602D025">
+<table class="cellalignment62" summary="This table specifies the URI parameter and description for deleting vEthernet .">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d23586e225">Parameter</th>
+<th class="cellalignment64" id="d23586e227">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d23586e231" headers="d23586e225">name</td>
+<td class="cellalignment66" headers="d23586e231 d23586e227">A unique hierarchical name for the vEthernet. For example, <code class="codeph">/mytenant/public/myvethernet</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p><code class="codeph">https://api.oc.example.com/vethernet/mytenant/public/myvethernet</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-AE2E83B4-4D0D-44AD-8494-36DA0F3CEFCE"></a>
+<h2 id="ELUAP-GUID-AE2E83B4-4D0D-44AD-8494-36DA0F3CEFCE" class="sect2">Update vEthernet</h2>
+<div>
+<p>This API enables you to update information for a specific virtual Ethernet.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-AE2E83B4-4D0D-44AD-8494-36DA0F3CEFCE__GUID-3429DDA0-512D-4BEF-AF3C-8B219FF86F7E">
+<p class="notep1">Note:</p>
+You can only update IPoIB vEthernets.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Method</p>
+<p><code class="codeph">PUT</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/vethernet/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/vethernet/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI Parameter</p>
+<div class="tblformal" id="GUID-AE2E83B4-4D0D-44AD-8494-36DA0F3CEFCE__THISTABLESPECIFIESTHEURIPARAMETERAN-626F7399">
+<table class="cellalignment62" summary="This table specifies the URI parameter and description for updating a vEthernet.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d23586e305">Parameter</th>
+<th class="cellalignment64" id="d23586e307">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d23586e311" headers="d23586e305">name</td>
+<td class="cellalignment66" headers="d23586e311 d23586e307">Unique hierarchical name for the vEthernet. For example, /cloud/public/myvEthernet.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Request Body Parameter</p>
+<div class="tblformal" id="GUID-AE2E83B4-4D0D-44AD-8494-36DA0F3CEFCE__THISTABLELISTSTHEREQUESTBODYPARAMET-626F77AC">
+<table class="cellalignment62" summary="This table lists the request body parameters and descriptions for updating vEthernet.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d23586e326">Parameter</th>
+<th class="cellalignment64" id="d23586e328">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d23586e332" headers="d23586e326">description</td>
+<td class="cellalignment66" headers="d23586e332 d23586e328">(Optional)A description for a vEthernet</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d23586e337" headers="d23586e326">type</td>
+<td class="cellalignment66" headers="d23586e337 d23586e328">Type of vEthernet (supported types: <code class="codeph">ipoib</code>).</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d23586e345" headers="d23586e326">id</td>
+<td class="cellalignment66" headers="d23586e345 d23586e328">(Optional)Unique identifier for this vEthernet (vLAN ID for <code class="codeph">eoib</code>/<code class="codeph">vlan</code> type). This field is ignored for type <code class="codeph">ipoib</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p><code class="codeph">https://api.oc.example.com/vethernet/mytenant/public/IPoIB2</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Request Body</p>
+<pre dir="ltr">
+{
+ "description": "Updated Desc for IPoIB vethernet for mytenant", 
+ "name": "/mytenant/public/IPoIB2", 
+ "type": "ipoib", 
+ "id": 0
+} 
+</pre></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Response Body</p>
+<pre dir="ltr">
+{
+ "account": "/mytenant/default", 
+ "infranet": false, 
+ "description": "Updated Desc for IPoIB vethernet for mytenant", 
+ "svcnet": null, 
+ "uri": "db://bnet/vethernet/mytenant/public/IPoIB2", 
+ "vDhcpd_name": null, 
+ "name": "/mytenant/public/IPoIB2", 
+ "vEthernet_uri": null, 
+ "type": "ipoib", 
+ "id": 0, 
+ "cluster_uri": null, 
+ "switchports": null
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-6F126509-5391-43B9-B921-1CDB8E8FD88D"></a>
+<h2 id="ELUAP-GUID-6F126509-5391-43B9-B921-1CDB8E8FD88D" class="sect2">Retrieve vEthernet Details</h2>
+<div>
+<div class="section">You can retrieve vEthernet details by using the REST API.</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99.htm#GUID-DE4B16D5-709B-4F65-A595-E87A24BA8238" title="This API enables you to discover virtual Ethernets configured in a specific container.">Discover vEthernets</a></p>
+</li>
+<li>
+<p><a href="GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99.htm#GUID-278C2701-6F36-4637-8504-961715D129AB" title="This API enables you to retrieve information for the configured virtual Ethernets in a specific container or subcontainer.">List vEthernets</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="props_rev_3"><a id="GUID-DE4B16D5-709B-4F65-A595-E87A24BA8238"></a>
+<h3 id="ELUAP-GUID-DE4B16D5-709B-4F65-A595-E87A24BA8238" class="sect3">Discover vEthernets</h3>
+<div>
+<p>This API enables you to discover virtual Ethernets configured in a specific container.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-DE4B16D5-709B-4F65-A595-E87A24BA8238__GUID-D3E8305C-8F14-4D08-87C2-9BBD50FDF5C5">
+<p class="notep1">Note:</p>
+The discover API calls display the names of the objects in the specified container, not the details about the objects. To list the names of the objects, you must set the <code class="codeph">Accept</code> header to <code class="codeph">application/oracle-compute-v3+directory+json</code>. For all other purposes, you must set the <code class="codeph">Accept</code> header to <code class="codeph">application/oracle-compute-v3+json</code>.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Method</p>
+<p>GET</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">REST Resource</p>
+<p><code class="codeph">/vethernet/<span class="variable">container</span>/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/vethernet/<span class="variable">container</span>/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI Parameter</p>
+<div class="tblformal" id="GUID-DE4B16D5-709B-4F65-A595-E87A24BA8238__GUID-A1C51A11-0667-4BF4-979E-02568602D025">
+<table class="cellalignment62" summary="This table specifies the URI parameter and description for listing all vEthernets in a container.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d23586e486">Parameter</th>
+<th class="cellalignment64" id="d23586e488">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d23586e492" headers="d23586e486">container</td>
+<td class="cellalignment66" headers="d23586e492 d23586e488">Hierarchical name-space for vEthernets</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example URI</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p><code class="codeph">https://api.oc.example.com/vethernet/oracle/public</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example Response Body</p>
+<pre dir="ltr">
+{"result": ["/oracle/public/IPoIB-virt-admin-c2", "/oracle/public/default"]}
+
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-278C2701-6F36-4637-8504-961715D129AB"></a>
+<h3 id="ELUAP-GUID-278C2701-6F36-4637-8504-961715D129AB" class="sect3">List vEthernets</h3>
+<div>
+<p>This API enables you to retrieve information for the configured virtual Ethernets in a specific container or subcontainer.</p>
+<div class="section">
+<p class="subhead3">Method</p>
+<p>GET</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">REST Resource</p>
+<p><code class="codeph">/vethernet/<span class="variable">container</span>/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section"></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/vethernet/<span class="variable">container</span>?type=<span class="variable">typeValue</span>&amp;id=<span class="variable">idValue</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI Parameters</p>
+<div class="infobox-note" id="GUID-278C2701-6F36-4637-8504-961715D129AB__GUID-CEC45C9C-E7B8-4F6D-960B-437C655F25B3">
+<p class="notep1">Note:</p>
+The output of this command is filtered based on the optional parameters (if specified).</div>
+<div class="tblformal" id="GUID-278C2701-6F36-4637-8504-961715D129AB__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment56" summary="This table specifies the URI parameters and descriptions for listing vEthernet .">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment57" id="d23586e574">Parameter</th>
+<th class="cellalignment57" id="d23586e576">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d23586e580" headers="d23586e574">container</td>
+<td class="cellalignment58" headers="d23586e580 d23586e576">Hierarchical name-space for virtual Ethernet</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d23586e585" headers="d23586e574">type=<span class="variable">typeValue</span></td>
+<td class="cellalignment58" headers="d23586e585 d23586e576">(Optional) Type of vEthernet (supported type: <code class="codeph">ipoib</code>)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/vethernet/oracle/public/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section"></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example Response Body</p>
+<pre dir="ltr">
+
+{
+        "account": null, 
+        "infranet": true, 
+        "description": 
+        "Infrastructure vEthernet: oracle/public/IPoIB-virt-admin-c2", 
+        "svcnet": "oracle/public/IPoIB-virt-admin-c2", 
+        "uri": "https://api.oc.example.com/vethernet/oracle/public/IPoIB-virt-admin-c2", 
+        "vDhcpd_name": null, 
+        "name": "/oracle/public/IPoIB-virt-admin-c2", 
+        "vEthernet_uri": null, 
+        "type": "ipoib", 
+        "id": 0, 
+        "cluster_uri": null, 
+        "switchports": {}
+}, 
+{
+        "account": null, 
+        "infranet": false, 
+        "description": "Default vethernet for flat IP space.", 
+        "svcnet": null, 
+        "uri": "https://api.oc.example.com/vethernet/oracle/public/default", 
+        "vDhcpd_name": "", 
+        "name": "/oracle/public/default", 
+        "vEthernet_uri": null, 
+        "type": "vlan", 
+        "id": 0, 
+        "cluster_uri": null, 
+        "switchports": {}
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment49">
+<tr>
+<td class="cellalignment59">
+<table class="cellalignment54">
+<tr>
+<td class="cellalignment53"><a href="GUID-807812AE-1FAE-4F72-9CC3-34E59BF309F8.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment53"><a href="GUID-4B893928-826E-4227-B82D-00C928C0BD58.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment61">
+<table class="cellalignment52">
+<tr>
+<td class="cellalignment53"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment53"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,133 @@
+
+{
+    "swagger":"2.0",
+    "info":{
+        "description":"Use the Real-Time Integration Business Insight REST Event API to collect metrics from integrations that are not implemented using compatible versions of SOA Suite or Service Bus. Every invocation of the Event API publishes a business event to Insight with milestone information and metrics that are correlated in the console. You can then gain insight into your business through preconfigured dashboards as well as create your own dashboards based on your requirements.",
+        "version":"2017.03.31",
+        "title":"REST API for Oracle Real-Time Integration Business Insight",
+        "x-summary":"Use the Real-Time Integration Business Insight REST Event API to collect metrics from integrations that are not implemented using compatible versions of SOA Suite or Service Bus."
+    },
+    "tags":[
+        {
+            "name":"Events",
+            "description":"Use this resource to publish raw business events to a Real-Time Integration Business Insight server."
+        }
+    ],
+    "basePath":"/insight-server/api/1.0",
+    "schemes":[
+        "http",
+        "https"
+    ],
+    "consumes":[
+        "application/json"
+    ],
+    "produces":[
+        "application/json"
+    ],
+    "paths":{
+        "/event":{
+            "post":{
+                "tags":[
+                    "Events"
+                ],
+                "summary":"Send business events to Real-Time Integration Business Insight",
+                "description":"Allows raw business events to be sent to a Real-Time Integration Business Insight server for processing. Insight accepts events via the REST API for all milestones where API invocations are enabled. Events are parsed and associated with the appropriate instances, based on correlated IDs. <br><br> When you send an event for an initial milestone, you include a <code>identifierValue</code> value in the payload, containing that instance's unique identifier, such as an order number or a service request ticket number. You send the same value as the <code>correlationValue</code>. Insight uses the <code>correlationValue</code> to correlate events that belong to the same instance, such as the same order. You can view events corresponding to each instance in the Insight console. Note that events sent with a <code>correlationValue</code> that does not match a received <code>identifierValue</code> are not processed and will not appear in the console. <br><br> Download the API manifest to view JSON payload templates for all the milestones added for your model. The template for each milestone contains the <code>milestoneId</code> and <code>modelId</code> required to be sent for business events for each milestone. See <a href=\"http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=IINUG-GUID-1E5B867F-45F4-45F9-B778-C390AE20265B\">Viewing API Invocation Details</a> in <i>Using Oracle Real-Time Integration Business Insight</i>.",
+                "parameters":[
+                    {
+                        "in":"body",
+                        "name":"event",
+                        "description":"Event to send for processing",
+                        "required":true,
+                        "schema":{
+                            "$ref":"#/definitions/Event"
+                        }
+                    }
+                ],
+                "responses":{
+                    "202":{
+                        "description":"Request accepted!",
+                        "schema":{
+                            "$ref":"#/definitions/Status"
+                        }
+                    }
+                },
+                "x-internal-id":"event-post"
+            }
+        }
+    },
+    "definitions":{
+        "Event":{
+            "type":"object",
+            "required":[
+                "modelId",
+                "correlationValue"
+            ],
+            "properties":{
+                "modelId":{
+                    "type":"string",
+                    "description":"The ID of the model this event is targeted to."
+                },
+                "milestoneId":{
+                    "type":"string",
+                    "description":"The ID of the milestone this event is targeted to."
+                },
+                "identifierValue":{
+                    "type":"string",
+                    "description":"The value of the unique instance identifier which is being reported, such as an order number or a service request ticket number. The identifierValue must be present in the payload for events corresponding to initial milestones. There can be additional identifier values reported outside the context of a milestone."
+                },
+                "correlationValue":{
+                    "type":"string",
+                    "description":"The correlationValue is used to correlate all events belonging to a single instance, such as an order number or a service request ticket number. For events corresponding to an initial milestone, the correlationValue must match the identifierValue. This is the only time a new instance is created. Events corresponding to subsequent milestones are considered part of the same instance if they are sent with the same correlationValue. If an event corresponding to a non-initial milestone arrives with a new correlationValue, it is not processed."
+                },
+                "eventTime":{
+                    "type":"string",
+                    "description":"<b>(Optional):</b> Time the event occurred, in valid Java time format. For example: 2016-07-07T03:46:40."
+                },
+                "measures":{
+                    "type":"array",
+                    "description":"Array containing measure name/value pairs. Measures are always in the context of the milestone. When measures are included in the payload, a milestoneId must also be included.",
+                    "items":{
+                        "$ref":"#/definitions/NameValuePair"
+                    }
+                },
+                "dimensions":{
+                    "type":"array",
+                    "description":"Array containing dimension name/value pairs. Dimensions are always in the context of the milestone. When dimensions are included in the payload, a milestoneId must also be included.",
+                    "items":{
+                        "$ref":"#/definitions/NameValuePair"
+                    }
+                }
+            }
+        },
+        "Status":{
+            "type":"object",
+            "properties":{
+                "type":{
+                    "type":"string",
+                    "description":"Status of the request. Potential values are: OK, info, too busy, warning, and error."
+                },
+                "message":{
+                    "type":"string",
+                    "description":"Message providing warning or error information, if applicable."
+                }
+            }
+        },
+        "NameValuePair":{
+            "type":"object",
+            "required":[
+                "name",
+                "value"
+            ],
+            "properties":{
+                "name":{
+                    "type":"string",
+                    "description":"Name of the dimension or measure."
+                },
+                "value":{
+                    "type":"string",
+                    "description":"Value of the dimension or measure."
+                }
+            }
+        }
+    }
+}

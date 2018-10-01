@@ -1,0 +1,4280 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service - View a Backup</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-backupconfig-post.html" title="Previous" type="text/html">
+        <link rel="next" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-deletedbackups-%7BjobId%7D-get.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-backupconfig-post.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-deletedbackups-%7BjobId%7D-get.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            
+            <header>
+
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li>Tasks</li>
+                    
+                    <li class="active">
+                        
+                        <a href="api-Backups%20and%20Restorations.html">Backups and Restorations</a>
+                        
+                    </li>
+                    
+                </ol>
+                
+                <p class="draftsubtitle"></p>
+                
+                <h2>View a Backup</h2>
+                <div>
+                    <div class="label label-get text-uppercase">get</div>
+                    <p style="word-break: break-word;"><strong>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/jaas/instances/{serviceId}/backups/{backupId}</strong></p>
+                </div>
+            </header>
+            <section>
+
+                <div class="description">Returns information about a backup of an Oracle Java Cloud Service instance. By default, information about related backups is excluded. Set the <code>?includeLinkedDetails</code> query parameter to <code>true</code> to include information about related backups.<p>On Oracle Public Cloud, see <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=JSCUG3312' target='_blank'>About Backup and Restoration of Oracle Java Cloud Service Instances</a> in <i>Using Oracle Java Cloud Service</i> for complete information about scheduled automated backups, contents of backups, and where backups are stored. On Oracle Cloud Machine, see <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloudopcm&id=JSCUG3312' target='_blank'>About Backup and Restoration of Oracle Java Cloud Service Instances</a> in <i>Using Oracle Java Cloud Service on OPCM</i>.<p><b>Note:</b> The legacy path <i>/paas/service/jcs/api/v1.1/instances/{identityDomainId}/{serviceId}/backups</i> is deprecated but it will continue to be supported for the near term. However, it is recommended that you migrate your applications to use the new path at your earliest convenience to minimize any disruption in the future when the deprecated URL structure is no longer supported.</div>
+
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                        <li role="presentation" class="active"><a href="#request" aria-controls="request" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-in" aria-hidden="true"></span> Request</a></li>
+                        <li role="presentation"><a href="#response" aria-controls="response" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-out" aria-hidden="true"></span> Response</a></li>
+                        
+                        <li role="presentation"><a href="#examples" aria-controls="examples" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-edit" aria-hidden="true"></span> Examples</a></li>
+                        
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="request">
+                            <h3 class="visible-print-block">Request</h3>
+                            
+
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Path Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>backupId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Backup ID. To retrieve the backup ID, see <a href='op-paas-api-v1.1-instancemgmt-{identityDomainId}-services-jaas-instances-{serviceId}-backups-get.html'>View All Backups</a>.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                        <dt>identityDomainId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account (on Oracle Public Cloud).<p>Tenant name for the Oracle Java Cloud Service instance (on Oracle Cloud Machine).</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                        <dt>serviceId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the Oracle Java Cloud Service instance.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Query Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>includeLinkedDetails</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether to include information (<code>true</code>) or exclude information about related backups (<code>false</code>). When set to <code>true</code>:<ul><li>For a full backup, includes information about all incremental backups performed since the last full backup.</li><li>For an incremental backup, includes information about the previous full backup.</li></ul>Defaults to <code>false</code>, excluding information about related backups.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Header Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>X-ID-TENANT-NAME</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account (on Oracle Public Cloud).<p>Tenant name for the Oracle Java Cloud Service instance (on Oracle Cloud Machine).</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+
+
+                            
+
+
+
+                            
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="response">
+                            <h3 class="visible-print-block">Response</h3>
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">200 Response <span class="glyphicon glyphicon-ok-sign response-symbol" data-response-code="200" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    OK. See <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=jcs_rest_statuscodes'>Status Codes</a> for information about other possible HTTP status codes.
+                                </div>
+
+                                
+                                
+
+                                
+                                <div class="panel panel-default">
+
+                                    <div class="panel-heading">Body</div>
+                                    <div class="panel-body">
+                                        
+                                        <div>The response body contains information about a backup.</div>
+                                        
+
+                                        <div class="schema-container">
+                                        
+                                        <div id="200-definitions-viewbackup-response" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : viewbackup-response</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The response body contains information about a backup.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-viewbackup-response-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-viewbackup-response-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-viewbackup-response-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-viewbackup-response-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-viewbackup-response-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>backupCompleteDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time that the backup completed.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>backupId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Backup ID. You can use the backup ID to manage the specific backup (for example, download or archive).</div>
+
+
+
+            
+        </dd>
+        
+        <dt>backupStartDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time that the backup started.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>databaseIncluded</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether a database backup was performed as part of the Oracle Java Cloud Service instance backup operation. This attribute is only applicable to Oracle Public Cloud. If <code>false</code>, a database backup was not performed. If <code>true</code>, a database backup was performed.<p>On Oracle Cloud Machine, the value is always <code>false</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>dbTag</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>An RMAN tag or a timestamp. This attribute is only applicable to Oracle Public Cloud.<p>The attribute is included only if a database backup was performed as part of the Oracle Java Cloud Service instance backup. When the associated Database Cloud Service database deployment is hosting a single-instance database, the attribute value is the RMAN tag that identifies the specific database files backed up. When the associated Database Cloud Service database deployment is hosting an Oracle Real Application Clusters (RAC) database, the attribute value is the timestamp of the database backup. In either case, you use the attribute value to restore the database, if necessary. For information about restoring the database files, see <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=CSDBI-GUID-C9A1467F-9AA4-433E-92A6-E46182D2B4C2' target='_blank'>Restoring from a Specific Backup</a> or <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=CSDBI-GUID-73B84014-88DA-40D1-A5F1-6EC4537F2778' target='_blank'>Restoring to a Specific Point in Time</a> in <i>Using Oracle Database Cloud Service</i>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>deletedOnDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time that the backup deletion completed. This attribute is not valid for backups that are in progress or still available.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>expirationDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time that the backup will be deleted automatically from storage. If the value is <code>null</code>, the backup is retained indefinitely or until you manually delete it. (Value is <code>null</code> when <code>keepForever</code> was set to <code>true</code> for an on-demand backup.)</div>
+
+
+
+            
+        </dd>
+        
+        <dt>forceScaleInRequiredForRestore</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Message that indicates the current Oracle Java Cloud Service instance has Managed Servers configured that are not included in this backup. This value is set to the following error message that provides more information:<p><code>JAAS-BR-105: Unable to restore configuration data for managed servers that are not part of the backup. The affected managedsServers are: [managedserver_x, managedserver_y]. Scale in the instance to remove these managed servers' nodes and then try to restore the instance again.</code><p>Before you restore the Oracle Java Cloud Service instance using this backup, perform one of the following steps:<ul><li>Scale in the instance to remove the Managed Servers noted in the error message above.</li><li>To automatically scale in the Oracle Java Cloud Service instance, set the <code>forceScaleIn</code> attribute to <code>true</code> when restoring using this backup, as described in <a href='op-paas-api-v1.1-instancemgmt-{identityDomainId}-services-jaas-instances-{serviceId}-restoredbackups-post.html'>Restore a Service Instance</a>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>full</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether this is a full (<code>true</code>) or incremental (<code>false</code>) backup. A full backup contains all the runtime artifacts required to restore the service instance configuration data. An incremental backup contains changes to configuration data on all virtual machines since the last scheduled full backup.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>fullBackup</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-viewbackup-response-properties-fullBackup" role="button" class="btn btn-default btn-sm">fullBackup</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Related full backup details. This attribute is returned when you set the <code>?includeLinkedDetails</code> query parameter to <code>true</code>.</div>
+
+            
+        </dd>
+        
+        <dt>href</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>URI of the backup resource.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>incrementalBackups</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-viewbackup-response-properties-incrementalBackups" role="button" class="btn btn-default btn-sm">incrementalBackups</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups related incremental backup details. This attribute is returned when you set the <code>?includeLinkedDetails</code> query parameter to <code>true</code>.</div>
+
+            
+        </dd>
+        
+        <dt>initiatedBy</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>User account that initiated this operation. If the operation is a scheduled automated backup, the value is <code>scheduled</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>jobHistory</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-viewbackup-response-properties-jobHistory" role="button" class="btn btn-default btn-sm">jobHistory</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups job history details.</div>
+
+            
+        </dd>
+        
+        <dt>jobId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Job ID for the backup.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>local</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether the backup is to be downloaded and stored locally in block storage on the Administration Server (<code>true</code>), or archived and stored remotely (<code>false</code>).<p>On Oracle Public Cloud, the remote storage is the specified Oracle Storage Cloud Service container.<p>On Oracle Cloud Machine, the remote storage is the specified NFS storage disk.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>localCopy</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether the local copy of a backup is maintained for a backup that has been uploaded to remote storage.<p>On Oracle Public Cloud, the remote storage is the specified Oracle Storage Cloud Service container.<p>On Oracle Cloud Machine, the remote storage is the specified NFS storage disk.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>notes</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Free-form text that provides additional information about the backup.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>serviceComponents</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-viewbackup-response-properties-serviceComponents" role="button" class="btn btn-default btn-sm">serviceComponents</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups service component details.</div>
+
+            
+        </dd>
+        
+        <dt>size</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Size of the backup, in MBs. For example: <code>1011.4MB</code> (backup complete) or <code>Unknown</code> (backup in-progress).</div>
+
+
+
+            
+        </dd>
+        
+        <dt>sizeInBytes</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Size of the backup, in Bytes.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>status</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Status of the backup. Valid values include: <code>Completed</code>, <code>Failed</code>, <code>Deleted</code>, <code>Backup In Progress</code>, <code>Upload In Progress</code>, <code>Download In Progress</code>, <code>Restore In Progress</code>, or <code>Delete In Progress</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>storageContainer</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>This atttribute is only available on Oracle Public Cloud.<p>Where service instance backups are stored.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-viewbackup-response-properties-fullBackup" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : fullBackup</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Related full backup details. This attribute is returned when you set the <code>?includeLinkedDetails</code> query parameter to <code>true</code>.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-viewbackup-response-properties-fullBackup-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-viewbackup-response-properties-fullBackup-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-viewbackup-response-properties-fullBackup-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-viewbackup-response-properties-fullBackup-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-viewbackup-response-properties-fullBackup-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>backupCompleteDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time that the backup completed.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>backupId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Backup ID. You can use the backup ID to manage the specific backup (for example, download or archive).</div>
+
+
+
+            
+        </dd>
+        
+        <dt>backupStartDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time that the backup started.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>databaseIncluded</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether a database backup was performed as part of the Oracle Java Cloud Service instance backup operation. This attribute is only applicable to Oracle Public Cloud. If <code>false</code>, a database backup was not performed. If <code>true</code>, a database backup was performed.<p>On Oracle Cloud Machine, the value is always <code>false</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>dbTag</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>An RMAN tag or a timestamp. This attribute is only applicable to Oracle Public Cloud.<p>The attribute is included only if a database backup was performed as part of the Oracle Java Cloud Service instance backup. When the associated Database Cloud Service database deployment is hosting a single-instance database, the attribute value is the RMAN tag that identifies the specific database files backed up. When the associated Database Cloud Service database deployment is hosting an Oracle Real Application Clusters (RAC) database, the attribute value is the timestamp of the database backup. In either case, you use the attribute value to restore the database, if necessary. For information about restoring the database files, see <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=CSDBI-GUID-C9A1467F-9AA4-433E-92A6-E46182D2B4C2' target='_blank'>Restoring from a Specific Backup</a> or <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=CSDBI-GUID-73B84014-88DA-40D1-A5F1-6EC4537F2778' target='_blank'>Restoring to a Specific Point in Time</a> in <i>Using Oracle Database Cloud Service</i>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>expirationDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time that the backup will be deleted automatically from storage. If the value is <code>null</code>, the backup is retained indefinitely or until you manually delete it. (Value is <code>null</code> when <code>keepForever</code> was set to <code>true</code> for an on-demand backup.)</div>
+
+
+
+            
+        </dd>
+        
+        <dt>full</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether this is a full (<code>true</code>) or incremental (<code>false</code>) backup. A full backup contains all the runtime artifacts required to restore the service instance configuration data. An incremental backup contains changes to configuration data on all virtual machines since the last scheduled full backup.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>href</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>URI of the backup resource.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>initiatedBy</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>User account that initiated this operation. If the operation is a scheduled automated backup, the value is <code>scheduled</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>jobId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Job ID for the backup.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>local</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether the backup is to be downloaded and stored locally in block storage on the Administration Server (<code>true</code>), or archived and stored remotely (<code>false</code>).<p>On Oracle Public Cloud, the remote storage is the specified Oracle Storage Cloud Service container.<p>On Oracle Cloud Machine, the remote storage is the specified NFS storage disk.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>localCopy</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether the local copy of a backup is maintained for a backup that has been uploaded to remote storage.<p>On Oracle Public Cloud, the remote storage is the specified Oracle Storage Cloud Service container.<p>On Oracle Cloud Machine, the remote storage is the specified NFS storage disk.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>notes</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Free-form text that provides additional information about the backup.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>size</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Size of the backup, in MBs. For example: <code>1011.4MB</code> (backup complete) or <code>Unknown</code> (backup in-progress).</div>
+
+
+
+            
+        </dd>
+        
+        <dt>sizeInBytes</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Size of the backup, in Bytes.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>status</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Status of the backup. Valid values include: <code>Completed</code>, <code>Failed</code>, <code>Deleted</code>, <code>Backup In Progress</code>, <code>Upload In Progress</code>, <code>Download In Progress</code>, <code>Restore In Progress</code>, or <code>Delete In Progress</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>storageContainer</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>This atttribute is only available on Oracle Public Cloud.<p>Where service instance backups are stored.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-viewbackup-response-properties-incrementalBackups" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : incrementalBackups</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups related incremental backup details. This attribute is returned when you set the <code>?includeLinkedDetails</code> query parameter to <code>true</code>.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-viewbackup-response-properties-incrementalBackups-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-viewbackup-response-properties-incrementalBackups-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-viewbackup-response-properties-incrementalBackups-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-viewbackup-response-properties-incrementalBackups-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-viewbackup-response-properties-incrementalBackups-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-linked-incremental" role="button" class="btn btn-default btn-sm">linked-incremental</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-viewbackup-response-properties-jobHistory" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : jobHistory</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups job history details.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-viewbackup-response-properties-jobHistory-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-viewbackup-response-properties-jobHistory-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-viewbackup-response-properties-jobHistory-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-viewbackup-response-properties-jobHistory-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-viewbackup-response-properties-jobHistory-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-jobhistory" role="button" class="btn btn-default btn-sm">jobhistory</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-viewbackup-response-properties-serviceComponents" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : serviceComponents</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups service component details.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-viewbackup-response-properties-serviceComponents-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-viewbackup-response-properties-serviceComponents-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-viewbackup-response-properties-serviceComponents-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-viewbackup-response-properties-serviceComponents-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-viewbackup-response-properties-serviceComponents-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-servicecomponents" role="button" class="btn btn-default btn-sm">servicecomponents</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-linked-incremental" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : linked-incremental</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-linked-incremental-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-linked-incremental-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-linked-incremental-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-linked-incremental-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-linked-incremental-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>backupCompleteDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time that the backup completed.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>backupId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Backup ID. You can use the backup ID to manage the specific backup (for example, download or archive).</div>
+
+
+
+            
+        </dd>
+        
+        <dt>backupStartDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time that the backup started.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>databaseIncluded</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether a database backup was performed as part of the Oracle Java Cloud Service instance backup operation. This attribute is only applicable to Oracle Public Cloud. If <code>false</code>, a database backup was not performed. If <code>true</code>, a database backup was performed.<p>On Oracle Cloud Machine, the value is always <code>false</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>dbTag</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>An RMAN tag or a timestamp. This attribute is only applicable to Oracle Public Cloud.<p>The attribute is included only if a database backup was performed as part of the Oracle Java Cloud Service instance backup. When the associated Database Cloud Service database deployment is hosting a single-instance database, the attribute value is the RMAN tag that identifies the specific database files backed up. When the associated Database Cloud Service database deployment is hosting an Oracle Real Application Clusters (RAC) database, the attribute value is the timestamp of the database backup. In either case, you use the attribute value to restore the database, if necessary. For information about restoring the database files, see <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=CSDBI-GUID-C9A1467F-9AA4-433E-92A6-E46182D2B4C2' target='_blank'>Restoring from a Specific Backup</a> or <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=CSDBI-GUID-73B84014-88DA-40D1-A5F1-6EC4537F2778' target='_blank'>Restoring to a Specific Point in Time</a> in <i>Using Oracle Database Cloud Service</i>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>expirationDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time that the backup will be deleted automatically from storage. If the value is <code>null</code>, the backup is retained indefinitely or until you manually delete it. (Value is <code>null</code> when <code>keepForever</code> was set to <code>true</code> for an on-demand backup.)</div>
+
+
+
+            
+        </dd>
+        
+        <dt>full</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether this is a full (<code>true</code>) or incremental (<code>false</code>) backup. A full backup contains all the runtime artifacts required to restore the service instance configuration data. An incremental backup contains changes to configuration data on all virtual machines since the last scheduled full backup.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>href</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>URI of the backup resource.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>initiatedBy</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>User account that initiated this operation. If the operation is a scheduled automated backup, the value is <code>scheduled</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>jobId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Job ID for the backup.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>local</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether the backup is to be downloaded and stored locally in block storage on the Administration Server (<code>true</code>), or archived and stored remotely (<code>false</code>).<p>On Oracle Public Cloud, the remote storage is the specified Oracle Storage Cloud Service container.<p>On Oracle Cloud Machine, the remote storage is the specified NFS storage disk.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>localCopy</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether the local copy of a backup is maintained for a backup that has been uploaded to remote storage.<p>On Oracle Public Cloud, the remote storage is the specified Oracle Storage Cloud Service container.<p>On Oracle Cloud Machine, the remote storage is the specified NFS storage disk.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>notes</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Free-form text that provides additional information about the backup.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>size</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Size of the backup, in MBs. For example: <code>1011.4MB</code> (backup complete) or <code>Unknown</code> (backup in-progress).</div>
+
+
+
+            
+        </dd>
+        
+        <dt>sizeInBytes</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Size of the backup, in Bytes.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>status</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Status of the backup. Valid values include: <code>Completed</code>, <code>Failed</code>, <code>Deleted</code>, <code>Backup In Progress</code>, <code>Upload In Progress</code>, <code>Download In Progress</code>, <code>Restore In Progress</code>, or <code>Delete In Progress</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>storageContainer</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>This atttribute is only available on Oracle Public Cloud.<p>Where service instance backups are stored.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-jobhistory" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : jobhistory</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-jobhistory-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-jobhistory-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-jobhistory-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-jobhistory-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-jobhistory-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>completeDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time that the operation completed.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>jobId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Job ID for the backup.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>operation</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Type of operation that was executed. For example, <code>backup</code>, <code>delete</code>, <code>upload</code>, <code>download</code>, and so on.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>startDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time the operation started.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>status</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Status of the backup. Valid values include: <code>Completed</code>, <code>Failed</code>, <code>Deleted</code>, <code>Backup In Progress</code>, <code>Upload In Progress</code>, <code>Download In Progress</code>, <code>Restore In Progress</code>, or <code>Delete In Progress</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>statusDetails</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>History of system messages. Each message is separated by an ellipses <code>{...}</code>.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-servicecomponents" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : servicecomponents</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-servicecomponents-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-servicecomponents-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-servicecomponents-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-servicecomponents-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-servicecomponents-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>type</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Service component type. Valid values are <code>JDK</code>, <code>OTD</code>, <code>OTD_JDK</code>, or <code>WLS</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>version</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Software version of the specified component. For example, 12.1.3.0.5 for WLS, 11.1.1.9.1 for OTD, 1.7.0_91 for OTD_JDK, 1.7.0_91 for JDK.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+
+
+                        </div>
+                        
+                        <div role="tabpanel" class="tab-pane fade" id="examples">
+                            <h3>Examples</h3>
+                            <div class="body conbody">
+ <p class="p">The following example shows how to view detailed information for a backup for an Oracle Java Cloud Service instance by submitting a GET request on the REST resource using cURL.</p> 
+ <p class="p"><strong class="ph b">Note: </strong>The command in this example uses the URL structure <samp class="ph codeph">https://rest_server_url/<em class="ph i">resource-path</em></samp>, where <samp class="ph codeph">rest_server_url</samp> is the Oracle Public Cloud or Oracle Cloud Machine REST server to contact for your identity domain or tenant name. See <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a> for the appropriate URL structure to use for Oracle Public Cloud or Oracle Cloud Machine.</p> 
+ <div class="section">
+  <h3 class="title sectiontitle">cURL Command</h3>
+  <pre class="pre">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/api/v1.1/instancemgmt/ExampleIdentityDomain/services/jaas/instances/ExampleInstance/backups/1449345407188
+</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Header</h3>
+  <p class="p">The following shows an example of the response header.</p> 
+  <pre class="pre">HTTP/1.1 200 OK
+Date: Mon, 27 Mar 2017 17:24:50 GMT
+Content-Type: application/json</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Body (Oracle Public Cloud)</h3>
+  <p class="p">The following shows the contents of the response body in JSON format for a backup.</p> 
+  <pre class="pre">{
+    "backupId":"1490596501439",
+    "jobId":"1498173",
+    "backupStartDate":"2017-03-27T06:35:02.150+0000",
+    "backupCompleteDate":"2017-03-27T06:39:48.848+0000",
+    "expirationDate":"2017-04-26T06:35:02.150+0000",
+    "initiatedBy":"scheduled",
+    "full":false,
+    "local":false,
+    "localCopy":true,
+    "databaseIncluded":true,
+    "size":"8.7MB",
+    "sizeInBytes":9104866,
+    "dbTag":"TAG20170327T063741",
+    "status":"Completed",
+    "storageContainer":"Storage-ExampleIdentityDomain\/JCSBackups",
+    "href":"https:\/\/rest_server_url\/paas\/api\/v1.1\/instancemgmt\/ExampleIdentityDomain\/services\/jaas\/instances\/ExampleInstance\/backups\/1490596501439",
+    "jobHistory":[
+    {
+        "operation":"backup",
+        "jobId":"1498173",
+        "status":"Completed",
+        "startDate":"2017-03-27T06:35:02.150+0000",
+        "completeDate":"2017-03-27T06:39:48.848+0000",
+        "statusDetails":"Backup health check passed...Locked the WebLogic Server domain configuration...Started the backup of configuration data for WebLogic administration server and managed servers...
+        Completed the backup of configuration data for WebLogic administration server and managed servers...Started the backup of database...Completed the backup of database...Unlocked the WebLogic Server domain configuration...
+        Uploading the backup archive to the Oracle Storage Cloud Service container...Uploaded the object to the Oracle Storage Cloud Service container..."
+    }],
+    "notes":"Automated backup",
+    "serviceComponents":[
+    {
+        "type":"OTD_JDK",
+        "version":"1.8.0_135"
+    },
+    {
+        "type":"OTD",
+        "version":"12.2.1.3.4"
+    },
+    {
+        "type":"JDK",
+        "version":"1.8.0_135"
+    },
+    {
+        "type":"WLS",
+        "version":"12.2.1.2.170317"
+    }]
+}</pre> 
+  <p class="p">The following shows the contents of the response body in JSON format for a full backup with related incremental backups.</p> 
+  <pre class="pre">{
+    "backupId":"1490337301358",
+    "jobId":"1465195",
+    "backupStartDate":"2017-03-24T06:35:01.980+0000",
+    "backupCompleteDate":"2017-03-24T06:39:16.262+0000",
+    "expirationDate":"2017-04-23T06:35:01.980+0000",
+    "initiatedBy":"scheduled",
+    "full":true,
+    "local":false,
+    "localCopy":true,
+    "databaseIncluded":true,
+    "size":"3.5MB",
+    "sizeInBytes":3675266,
+    "dbTag":"TAG20170324T063710",
+    "status":"Completed",
+    "storageContainer":"Storage-ExampleIdentityDomain\/JCSBackups",
+    "href":"https:\/\/rest_server_url\/paas\/api\/v1.1\/instancemgmt\/ExampleIdentityDomain\/services\/jaas\/instances\/ExampleInstance\/backups\/1490337301358?includeLinkedDetails=true",
+    "jobHistory":[
+    {
+        "operation":"backup",
+        "jobId":"1465195",
+        "status":"Completed",
+        "startDate":"2017-03-24T06:35:01.980+0000",
+        "completeDate":"2017-03-24T06:39:16.262+0000",
+        "statusDetails":"Backup health check passed...Locked the WebLogic Server domain configuration...Started the backup of configuration data for WebLogic administration server and managed servers...
+        Completed the backup of configuration data for WebLogic administration server and managed servers...Started the backup of database...Completed the backup of database...Unlocked the WebLogic Server domain configuration...
+        Uploading the backup archive to the Oracle Storage Cloud Service container...Uploaded the object to the Oracle Storage Cloud Service container..."
+    }],
+    "incrementalBackups":[
+    {
+        "backupId":"1490596501439",
+        "jobId":"1498173",
+        "backupStartDate":"2017-03-27T06:35:02.150+0000",
+        "backupCompleteDate":"2017-03-27T06:39:48.848+0000",
+        "expirationDate":"2017-04-26T06:35:02.150+0000",
+        "initiatedBy":"scheduled",
+        "full":false,
+        "local":false,
+        "localCopy":true,
+        "databaseIncluded":true,
+        "size":"8.7MB",
+        "sizeInBytes":9104866,
+        "dbTag":"TAG20170327T063741",
+        "status":"Completed",
+        "storageContainer":"Storage-ExampleIdentityDomain\/JCSBackups",
+        "href":"https:\/\/rest_server_url\/paas\/api\/v1.1\/instancemgmt\/ExampleIdentityDomain\/services
+\/jaas\/instances\/ExampleInstance\/backups\/1490596501439",
+        "notes":"Automated backup"
+    },
+    {
+        "backupId":"1490423700864",
+        "jobId":"1484961",
+        "backupStartDate":"2017-03-25T06:35:01.580+0000",
+        "backupCompleteDate":"2017-03-25T06:39:50.749+0000",
+        "expirationDate":"2017-04-24T06:35:01.580+0000",
+        "initiatedBy":"scheduled",
+        "full":false,
+        "local":false,
+        "localCopy":true,
+        "databaseIncluded":true,
+        "size":"4MB",
+        "sizeInBytes":4185730,
+        "dbTag":"TAG20170325T063708",
+        "status":"Completed",
+        "storageContainer":"Storage-ExampleIdentityDomain\/JaaSBackup",
+        "href":"https:\/\/rest_server_url\/paas\/api\/v1.1\/instancemgmt\/ExampleIdentityDomain\/services\/jaas\/instances\/ExampleInstance\/backups\/1490423700864",
+        "notes":"Automated backup"
+    },
+    {
+        "backupId":"1490510100509",
+        "jobId":"1496567",
+        "backupStartDate":"2017-03-26T06:35:01.204+0000",
+        "backupCompleteDate":"2017-03-26T06:42:55.134+0000",
+        "expirationDate":"2017-04-25T06:35:01.204+0000",
+        "initiatedBy":"scheduled",
+        "full":false,
+        "local":false,
+        "localCopy":true,
+        "databaseIncluded":true,
+        "size":"6.3MB",
+        "sizeInBytes":6653458,
+        "dbTag":"TAG20170326T063657",
+        "status":"Completed",
+        "storageContainer":"Storage-ExampleIdentityDomain\/JCSBackups",
+        "href":"https:\/\/rest_server_url\/paas\/api\/v1.1\/instancemgmt\/ExampleIdentityDomain\/services\/jaas\/instances\/ExampleInstance\/backups\/1490510100509",
+        "notes":"Automated backup"
+    }],
+    "notes":"Automated backup",
+    "serviceComponents":[
+    {
+        "type":"OTD_JDK",
+        "version":"1.8.0_135"
+    },
+    {
+        "type":"OTD",
+        "version":"12.2.1.3.4"},
+    {
+        "type":"JDK",
+        "version":"1.8.0_135"},
+    {
+        "type":"WLS",
+        "version":"12.2.1.2.170317"
+    }]
+}</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Body (Oracle Cloud Machine) </h3>
+  <p class="p">The following example shows the contents of the response body in JSON format.</p> 
+  <pre class="pre">{
+    "backupId":"1454001516641",
+    "jobId":"4113",
+    "backupStartDate":"Thu Jan 28 17:18:36 GMT 2016",
+    "backupCompleteDate":"Thu Jan 28 17:20:39 GMT 2016",
+    "expirationDate":"Sat Feb 27 17:18:36 GMT 2016",
+    "initiatedBy":"scheduled",
+    "full":true,
+    "local":false,
+    "localCopy":true,
+    "databaseIncluded":false,
+    "size":"149.7MB",
+    "sizeInBytes":156979772,
+    "status":"Completed",
+    "href":"https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/myTenantName\/ExampleInstance\/backups\/1454001516641",
+    "serviceComponents":[
+    {
+        "type":"OTD",
+        "version":"11.1.1.9.1"
+    },
+    {
+        "type":"JDK",
+        "version":"1.7.0_91"
+    },
+    {
+        "type":"WLS",
+        "version":"12.1.3.0.5"
+    },
+    {
+        "type":"OTD_JDK",
+        "version":"1.7.0_91"
+    }
+    ],
+    "jobHistory":[
+    {
+        "operation":"backup",
+        "jobId":"4113",
+        "status":"Completed",
+        "startDate":"Thu Jan 28 17:18:36 GMT 2016",
+        "completeDate":"Thu Jan 28 17:20:39 GMT 2016",
+        "statusDetails":"Backup health check passed...Locked the WebLogic Server domain configuration...
+          Started the backup of configuration data for WebLogic Server managed servers on these hosts:
+          exampleinstance-wls-1 ...Completed the backup of configuration data for WebLogic Server managed servers on these hosts: exampleinstance-wls-1 ...
+          Unlocked the WebLogic Server domain configuration...Uploading the backup archive to the remote filesystem...
+          Uploaded the backup archive to the remote filesystem"
+    }
+    ],
+    "notes":"Automated backup"
+}</pre> 
+ </div> 
+</div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+        </article>
+    </body>
+</html>

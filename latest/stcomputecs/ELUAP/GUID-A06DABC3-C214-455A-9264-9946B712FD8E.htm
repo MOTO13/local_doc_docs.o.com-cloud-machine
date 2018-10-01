@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Overview of Oracle Compute REST API</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="This section is an overview about using Oracle Compute Cloud Service REST API commands to manage Oracle Compute sites on Oracle Public Cloud Machine." />
+<meta name="dcterms.created" content="2017-04-07T05:33:13Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine REST API Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E68443-07" />
+<meta name="dcterms.isVersionOf" content="ELUAP" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-A5AFEE46-BD9C-4C99-BCAC-F38876F991DC.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-961D93C4-7CD7-4327-AF56-C3712328960C.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUAP.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-A06DABC3-C214-455A-9264-9946B712FD8E"></a> <span id="PAGE" style="display:none;">5/40</span> <!-- End Header -->
+<h1 id="ELUAP-GUID-A06DABC3-C214-455A-9264-9946B712FD8E" class="sect1"><span class="enumeration_chapter">2</span> Overview of Oracle Compute REST API</h1>
+<div>
+<div><span>This section is an overview about using Oracle Compute Cloud Service REST API commands to manage Oracle Compute sites on Oracle Public Cloud Machine.</span></div>
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-A06DABC3-C214-455A-9264-9946B712FD8E.htm#GUID-A5FB61AB-6355-4881-A3BB-BF00650320C6">About REST API Requests and Responses</a></p>
+</li>
+<li>
+<p><a href="GUID-A06DABC3-C214-455A-9264-9946B712FD8E.htm#GUID-186AB88E-CD46-489B-A7D1-1661BE85A12C">Supported HTTP Methods</a></p>
+</li>
+<li>
+<p><a href="GUID-A06DABC3-C214-455A-9264-9946B712FD8E.htm#GUID-76AC05DE-1F60-4F87-BE04-0CE7DE31453A">About Object Names</a></p>
+</li>
+<li>
+<p><a href="GUID-A06DABC3-C214-455A-9264-9946B712FD8E.htm#GUID-DE1A3B76-E57A-4E97-A9AF-E3FA157BBA47">REST API Request Headers</a></p>
+</li>
+<li>
+<p><a href="GUID-A06DABC3-C214-455A-9264-9946B712FD8E.htm#GUID-8DEE73A0-236B-4DF9-9781-E80F0C67ED95">HTTP Response Codes</a></p>
+</li>
+<li>
+<p><a href="GUID-A06DABC3-C214-455A-9264-9946B712FD8E.htm#GUID-1F5C6A8F-DF05-440B-8AFF-914628330700" title="You can interact with the REST API of Oracle Compute Cloud Service by sending HTTP requests to the appropriate resource URIs. Several tools are available for making REST API calls, including clients that are extensions or plug-ins for popular browsers. cURL is a command-line tool that you can use to construct and send HTTP requests. This topic illustrates how to use cURL to send REST API calls to Oracle Compute Cloud Service.">Invoking REST API Calls Using cURL</a></p>
+</li>
+<li>
+<p><a href="GUID-A06DABC3-C214-455A-9264-9946B712FD8E.htm#GUID-62EA9656-0C52-4B7A-9D5F-E57D2245C964" title="This table lists the REST resources alphabetically by resource path and lists the supported methods for each resource.">Summary of REST APIs, Alphabetical by Resource Path</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="props_rev_3"><a id="GUID-A5FB61AB-6355-4881-A3BB-BF00650320C6"></a>
+<h2 id="ELUAP-GUID-A5FB61AB-6355-4881-A3BB-BF00650320C6" class="sect2">About REST API Requests and Responses</h2>
+<div>
+<div class="section">
+<p>A REST API transaction consists of an API request and a corresponding API response.</p>
+<p>An API request consists of the following parts:</p>
+<div class="p">
+<ul style="list-style-type: disc;">
+<li>
+<p>API request method&mdash;Specifies the operation that you would like to perform on the Oracle Compute object. See <a href="GUID-A06DABC3-C214-455A-9264-9946B712FD8E.htm#GUID-186AB88E-CD46-489B-A7D1-1661BE85A12C">Supported REST API Methods</a>.</p>
+</li>
+<li>
+<p>Resource URL&mdash;Specifies the fully qualified URI of the target Oracle Compute object on Oracle Public Cloud Machine. See <a href="GUID-A06DABC3-C214-455A-9264-9946B712FD8E.htm#GUID-76AC05DE-1F60-4F87-BE04-0CE7DE31453A">About Object Names</a>.</p>
+</li>
+<li>
+<p>Request headers&mdash;Specifies the REST API request headers. See <a href="GUID-A06DABC3-C214-455A-9264-9946B712FD8E.htm#GUID-DE1A3B76-E57A-4E97-A9AF-E3FA157BBA47">REST API Request Headers</a>.</p>
+</li>
+<li>
+<p>Request body&mdash;Specifies a list of customized parameters that are required to perform an operation on the Oracle Compute object.</p>
+</li>
+</ul>
+</div>
+<p>An API response consists of the following parts:</p>
+<div class="p">
+<ul style="list-style-type: disc;">
+<li>
+<p>HTTP response code&mdash;Specifies if the REST API request was a success or a failure. See <a href="GUID-A06DABC3-C214-455A-9264-9946B712FD8E.htm#GUID-8DEE73A0-236B-4DF9-9781-E80F0C67ED95">HTTP Response Codes</a>.</p>
+</li>
+<li>
+<p>Response headers&mdash;Specifies the REST API response headers.</p>
+</li>
+<li>
+<p>Response body&mdash;Specifies the JavaScript Object Notation (JSON) encoded data returned in response to the REST API request.</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-186AB88E-CD46-489B-A7D1-1661BE85A12C"></a>
+<h2 id="ELUAP-GUID-186AB88E-CD46-489B-A7D1-1661BE85A12C" class="sect2">Supported HTTP Methods</h2>
+<div>
+<p>The following table describes the REST HTTP methods you can invoke for Oracle Public Cloud Machine objects.</p>
+<div class="p">
+<div class="infobox-note" id="GUID-186AB88E-CD46-489B-A7D1-1661BE85A12C__GUID-9DB588A5-1445-4986-BEE4-7906D14D395B">
+<p class="notep1">Note:</p>
+Some methods are not supported for certain objects.</div>
+</div>
+<div class="tblformal" id="GUID-186AB88E-CD46-489B-A7D1-1661BE85A12C__GUID-848E6263-A597-4520-A8EB-4E7FDAA810EA">
+<table class="cellalignment62" summary="Table of API actions and descriptions">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d2553e158">Method</th>
+<th class="cellalignment64" id="d2553e160">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d2553e164" headers="d2553e158">
+<p><code class="codeph">POST</code></p>
+</td>
+<td class="cellalignment66" headers="d2553e164 d2553e160">
+<p>Creates an object by using the JSON-formatted data in the request body</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d2553e172" headers="d2553e158">
+<p><code class="codeph">GET</code></p>
+</td>
+<td class="cellalignment66" headers="d2553e172 d2553e160">
+<p>Retrieves information about the object/s specified in the request URI</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d2553e180" headers="d2553e158">
+<p><code class="codeph">PUT</code></p>
+</td>
+<td class="cellalignment66" headers="d2553e180 d2553e160">
+<p>Updates the attributes of an object by using the JSON-formatted data in the request body</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d2553e188" headers="d2553e158">
+<p><code class="codeph">DELETE</code></p>
+</td>
+<td class="cellalignment66" headers="d2553e188 d2553e160">
+<p>Deletes the object specified in the request URI</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-76AC05DE-1F60-4F87-BE04-0CE7DE31453A"></a>
+<h2 id="ELUAP-GUID-76AC05DE-1F60-4F87-BE04-0CE7DE31453A" class="sect2">About Object Names</h2>
+<div>
+<div class="section">
+<p>Each Oracle Compute object for which you can perform REST API calls is identified uniquely by its URI. Objects such as an instance, a storage volume or an SSH key have a name based on its position in a hierarchy of containers.</p>
+<p>For example, the object name <code class="codeph">/mytenant/public/8e7c16ad-1bc4-4743-a9ce-781be4e26f24</code> indicates that this instance <code class="codeph">8e7c16ad-1bc4-4743-a9ce-781be4e26f24</code> is in the container <code class="codeph">public,</code> and <code class="codeph">public</code> is in the container <code class="codeph">mytenant</code>.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-DE1A3B76-E57A-4E97-A9AF-E3FA157BBA47"></a>
+<h2 id="ELUAP-GUID-DE1A3B76-E57A-4E97-A9AF-E3FA157BBA47" class="sect2">REST API Request Headers</h2>
+<div>
+<div class="section">
+<p>Ensure that the following headers are specified correctly in HTTP requests.</p>
+<div class="tblformal" id="GUID-DE1A3B76-E57A-4E97-A9AF-E3FA157BBA47__GUID-66C7B6D6-DCFF-42BB-A423-BC2E308797C1">
+<table class="cellalignment62" summary="Request headers and description for an HTTP request.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment57" id="d2553e264">Request Header</th>
+<th class="cellalignment67" id="d2553e266">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d2553e270" headers="d2553e264">
+<p><code class="codeph">Accept:</code></p>
+</td>
+<td class="cellalignment68" headers="d2553e270 d2553e266">
+<p>With a few exceptions, the REST API returns JavaScript Object Notation (JSON) encoded data in its responses. The <code class="codeph">Accept:</code> header must be set to indicate both JSON format and the API's version number. The supported API protocol version is v3.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>For <code class="codeph">GET</code> calls that retrieve just the names (not details) of objects in a container, set this header to <code class="codeph">application/oracle-compute-v3+directory+json</code></p>
+</li>
+<li>
+<p>For all other purposes, set the header to <code class="codeph">application/oracle-compute-v3+json</code></p>
+</li>
+</ul>
+<p><span class="bold">Example</span>:</p>
+<pre dir="ltr">
+     Accept: application/oracle-compute-v3+json
+</pre></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d2553e301" headers="d2553e264">
+<p><code class="codeph">Accept-Encoding:</code></p>
+</td>
+<td class="cellalignment68" headers="d2553e301 d2553e266">
+<p>Ensure that the HTTP client is set to supported encoding values.</p>
+<p><span class="bold">Example</span>:</p>
+<pre dir="ltr">
+     Accept-Encoding: gzip;q=1.0, identity; q=0.5
+</pre></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d2553e315" headers="d2553e264">
+<p><code class="codeph">Accept-Charset:</code></p>
+</td>
+<td class="cellalignment68" headers="d2553e315 d2553e266">
+<p>The API sends and receives only UTF-8 encoded data. Ensure that your HTTP client encodes and decodes character data, including JSON data.</p>
+<p><span class="bold">Example</span>:</p>
+<pre dir="ltr">
+     Accept-Charset: UTF-8
+</pre></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d2553e329" headers="d2553e264">
+<p><code class="codeph">Content-Type:</code></p>
+</td>
+<td class="cellalignment68" headers="d2553e329 d2553e266">
+<p>All the content in an HTTP request body must be encoded in JSON. The API protocol version is also specified in both request and response messages. The content types are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph">application/oracle-compute-v3+json</code></p>
+</li>
+<li>
+<p><code class="codeph">multipart/oracle-compute-v3+form-data</code></p>
+</li>
+<li>
+<p><code class="codeph">application/x-tar&nbsp;</code></p>
+</li>
+</ul>
+<p>The server specifies the expected version of the data in the response in the <code class="codeph">Content-Type:</code> header.</p>
+<p>If the server does not support the version specified by the client in the request, then it responds with HTTP status code 415 (Unsupported Media Type). If the server can't provide a response in any of the versions supported by the client, then it responds with status code 406 (Not Acceptable).</p>
+<p><span class="bold">Example</span>:</p>
+<pre dir="ltr">
+     Content-Type: application/oracle-compute-v3+json
+</pre></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d2553e363" headers="d2553e264">
+<p><code class="codeph">Cookie:</code></p>
+</td>
+<td class="cellalignment68" headers="d2553e363 d2553e266">
+<p>Include the <code class="codeph">Cookie:</code> header with every request to the service. Set the value of the <code class="codeph">Set-Cookie</code> header in the response received to the <code class="codeph">POST /authenticate/</code> call. See <a href="GUID-961D93C4-7CD7-4327-AF56-C3712328960C.htm#GUID-961D93C4-7CD7-4327-AF56-C3712328960C" title="This API enables you to obtain an authentication token.">Authentication</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-8DEE73A0-236B-4DF9-9781-E80F0C67ED95"></a>
+<h2 id="ELUAP-GUID-8DEE73A0-236B-4DF9-9781-E80F0C67ED95" class="sect2">HTTP Response Codes</h2>
+<div>
+<div class="section">
+<p>The following table lists the HTTP response codes and their meanings.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformal" id="GUID-8DEE73A0-236B-4DF9-9781-E80F0C67ED95__GUID-DC950FA5-1DC1-4008-B628-AC11BFB12AC7">
+<table class="cellalignment62" summary="Table of HTTP Response codes and their descriptions.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment69" id="d2553e417">HTTP Response Code</th>
+<th class="cellalignment70" id="d2553e421">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment71" id="d2553e427" headers="d2553e417">
+<p>2XX</p>
+</td>
+<td class="cellalignment72" headers="d2553e427 d2553e421">
+<p>API Successful</p>
+<p>Indicates that the request is successful.</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment71" id="d2553e436" headers="d2553e417">
+<p>201</p>
+</td>
+<td class="cellalignment72" headers="d2553e436 d2553e421">
+<p>Created</p>
+<p>An add/update request is successful.</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment71" id="d2553e445" headers="d2553e417">
+<p>204</p>
+</td>
+<td class="cellalignment72" headers="d2553e445 d2553e421">
+<p>No Content.</p>
+<p>Deletion request is successful with no response content.</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment71" id="d2553e454" headers="d2553e417">
+<p>4xx</p>
+</td>
+<td class="cellalignment72" headers="d2553e454 d2553e421">
+<p>APIClientError</p>
+<p>A client side error, in line with 4xx errors in HTTP.</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment71" id="d2553e463" headers="d2553e417">
+<p>401</p>
+</td>
+<td class="cellalignment72" headers="d2553e463 d2553e421">
+<p>APIUnauthorizedError</p>
+<p>The request requires user authentication or authorization.</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment71" id="d2553e472" headers="d2553e417">
+<p>403</p>
+</td>
+<td class="cellalignment72" headers="d2553e472 d2553e421">
+<p>APIForbiddenError</p>
+<p>The request is formed properly, but the server cannot fulfill it. The issue is not related to authorization. Do not repeat the request.</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment71" id="d2553e481" headers="d2553e417">
+<p>404</p>
+</td>
+<td class="cellalignment72" headers="d2553e481 d2553e421">
+<p>APINotFoundError</p>
+<p>The server has not found a match for the URI in the request. This state might be temporary so repeat the request.</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment71" id="d2553e490" headers="d2553e417">
+<p>405</p>
+</td>
+<td class="cellalignment72" headers="d2553e490 d2553e421">
+<p>APIMethodNotAllowedError</p>
+<p>The method specified in the Request-Line is not allowed for the resource identified by the Request-URI. This exception occurs when the request includes a method that is not supported for the object.</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment71" id="d2553e499" headers="d2553e417">
+<p>406</p>
+</td>
+<td class="cellalignment72" headers="d2553e499 d2553e421">
+<p>APINotAcceptableError</p>
+<p>The resource specified in the request generates response that has characteristics that are not allowed by the accept headers in the request.</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment71" id="d2553e508" headers="d2553e417">
+<p>409</p>
+</td>
+<td class="cellalignment72" headers="d2553e508 d2553e421">
+<p>APIConflictError</p>
+<p>The request could not be completed because of a conflict with the state of the resource or the resource already exists. You can either delete the existing object to allow the request to create it, or you can create a new object with a unique identifier.</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment71" id="d2553e517" headers="d2553e417">
+<p>410</p>
+</td>
+<td class="cellalignment72" headers="d2553e517 d2553e421">
+<p>APIGoneError</p>
+<p>The requested resource does not exist. This error occurs when an instance exists but is not running so a duplicate of this instance with the same identifier can not be created.</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment71" id="d2553e527" headers="d2553e417">
+<p>413</p>
+</td>
+<td class="cellalignment72" headers="d2553e527 d2553e421">
+<p>APIRequestTooLarge</p>
+<p>The request attempts to upload an image that exceeds the maximum upload size. The default maximum upload size is 10 GB. To change this limit, edit the <code class="codeph">site.conf</code> file to change the line:<code class="codeph">[services] [[api] [[[max_upload]]]</code>.</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment71" id="d2553e542" headers="d2553e417">
+<p>415</p>
+</td>
+<td class="cellalignment72" headers="d2553e542 d2553e421">
+<p>APIUnsupportedTypeError</p>
+<p>The server cannot complete the request because the request contains a format that is not supported by the method for the resource. This error indicates an error in JSON formatting.</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment71" id="d2553e551" headers="d2553e417">
+<p>5xx</p>
+</td>
+<td class="cellalignment72" headers="d2553e551 d2553e421">
+<p>APIServerError</p>
+<p>An internal error occurred, and the server cannot fulfill the request.</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment71" id="d2553e560" headers="d2553e417">
+<p>500</p>
+</td>
+<td class="cellalignment72" headers="d2553e560 d2553e421">
+<p>APIUncaughtExceptionError</p>
+<p>The server encountered an unexpected condition that prevented it from fulfilling the request. The error includes a code. Use this code when you report the problem to My Oracle Support.</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment71" id="d2553e569" headers="d2553e417">
+<p>501</p>
+</td>
+<td class="cellalignment72" headers="d2553e569 d2553e421">
+<p>APINotImplementedError</p>
+<p>The server does not support the functionality required to fulfill the request.</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment71" id="d2553e578" headers="d2553e417">
+<p>503</p>
+</td>
+<td class="cellalignment72" headers="d2553e578 d2553e421">
+<p>APIServiceUnavailable</p>
+<p>The server is unable to handle the request due to temporary overloading or maintenance. This error is usually related to the load on the server and is temporary. Repeat the request.</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment71" id="d2553e587" headers="d2553e417">
+<p>502/504</p>
+</td>
+<td class="cellalignment72" headers="d2553e587 d2553e421">
+<p>APIGatewayError</p>
+<p>The Oracle Compute service layer is not able to respond. This is usually related to a failover of the service and is temporary. Repeat the request.</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment71" id="d2553e596" headers="d2553e417">
+<p>507</p>
+</td>
+<td class="cellalignment72" headers="d2553e596 d2553e421">
+<p>APIInsufficientStorage</p>
+<p>The server is unable to store the data needed to complete the request. This condition is temporary. Repeat the request.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<div class="sect2"><a id="GUID-1F5C6A8F-DF05-440B-8AFF-914628330700"></a>
+<h2 id="ELUAP-GUID-1F5C6A8F-DF05-440B-8AFF-914628330700" class="sect2">Invoking REST API Calls Using cURL</h2>
+<div>
+<p>You can interact with the REST API of Oracle Compute Cloud Service by sending HTTP requests to the appropriate resource URIs. Several tools are available for making REST API calls, including clients that are extensions or plug-ins for popular browsers. cURL is a command-line tool that you can use to construct and send HTTP requests. This topic illustrates how to use cURL to send REST API calls to Oracle Compute Cloud Service.</p>
+<div class="section">
+<p class="subhead2">Prerequisites</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>SSL-enabled version of cURL, or any other REST API client.</p>
+<p>Most Linux installations include cURL. To download and install cURL, go to <a href="http://curl.haxx.se/download.html" target="_blank">http://curl.haxx.se/download.html</a>.</p>
+</li>
+<li>
+<p>The REST endpoint URL for your Oracle Compute Cloud Service . See <a href="GUID-A5AFEE46-BD9C-4C99-BCAC-F38876F991DC.htm#GUID-BDE7703A-33BC-4000-8694-DEB9938D84A9">Oracle Compute Resource URIs</a></p>
+</li>
+<li>
+<p>The resource URI to which you want to send the request and the parameters that you want to include in the request.</p>
+<p>See <a href="GUID-A06DABC3-C214-455A-9264-9946B712FD8E.htm#GUID-62EA9656-0C52-4B7A-9D5F-E57D2245C964" title="This table lists the REST resources alphabetically by resource path and lists the supported methods for each resource.">Summary of REST APIs, Alphabetical by Resource Path</a>. It lists all the available resources. For each resource, it also provides a link to the reference documentation for the supported parameters.</p>
+</li>
+<li>
+<p>The user name and password, for your Oracle Compute Cloud Service instance. See <span class="italic"><a class="olink ELUSE-GUID-658D476C-72AC-4595-BE02-95B7EE673EC7" target="_blank" href="../ELUSE/GUID-658D476C-72AC-4595-BE02-95B7EE673EC7.htm#ELUSE-GUID-658D476C-72AC-4595-BE02-95B7EE673EC7">Getting Started with Using Oracle Compute Cloud Services</a></span> in <span class="italic">Using Oracle Compute Cloud Service</span>.</p>
+<p>If you don&rsquo;t have this information, contact your Oracle Cloud Administrator, or Tenant Administrator.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Procedure</p>
+<ol>
+<li>
+<p>Get an authentication token from Oracle compute Cloud Service, as shown in the following cURL command example:</p>
+<p>Enter the command on a single line. Line breaks are used in this example for readability.</p>
+<pre dir="ltr">
+curl -i -X POST
+     -H "Content-Type: application/oracle-compute-v3+json"
+     -d '{"user":"/mytenant/myuser","password":"ft7)Dvjo"}'
+        https://api.oc.example.com/authenticate/
+</pre></li>
+<li>
+<p>In the response to the <code class="codeph">POST</code> request, look for the <code class="codeph">Set-Cookie</code> header, as shown in the following example.</p>
+<pre dir="ltr">
+<span class="bold">Set-Cookie</span>: nimbula={"identity": "{\"realm\": \"mytenant\", \"value\": \"{\\
+\"customer\\\": \\\"acme\\\", ....Bb2U5uoJ2nwU7g1fDBcII/US6e7yLYqWSdb/U
+ItvUiLo7/SARyfG+RmqnuFcJDoczaNssUmLLBikq8IPNAxaSIvGZmzK7K4anTwXcAhVg==\"}
+"}; Path=/; Max-Age=300
+</pre>
+<div class="infobox-note" id="GUID-1F5C6A8F-DF05-440B-8AFF-914628330700__GUID-8AF08EF3-E402-4888-84F0-80340A3DB556">
+<p class="notep1">Note:</p>
+<p>Note that the <code class="codeph">Set-Cookie</code> header and value are in a single line. Line breaks are used in this example for readability.</p>
+</div>
+</li>
+<li>
+<p>Store the authentication cookie in an environment variable, as shown in the following example for a Linux host. The example shown here was shortened for readability. Your command must include the entire cookie value embedded between the single quotes.</p>
+<pre dir="ltr">
+export ORACLE_COMPUTE_COOKIE='nimbula={"identity": "{\"realm\": \"mytenant\", \"value\": ...cAhVg==\"}"}; Path=/; Max-Age=300'
+</pre></li>
+<li>
+<p>Send the required HTTP request to Oracle Compute Cloud Service, as shown in the following examples:</p>
+<p><span class="bold">EXAMPLE 1: Getting a list of the available shapes</span></p>
+<div class="p">Send the following <code class="codeph">GET</code> request:
+<pre dir="ltr">
+curl -X GET -H "Cookie: $ORACLE_COMPUTE_COOKIE" https://api.oc.example.com/shape/
+</pre></div>
+<p><code class="codeph">ORACLE_COMPUTE_COOKIE</code> is the name of the variable in which you stored the authentication cookie earlier.</p>
+<div class="p">This command returns details of all the available shapes, in JSON format, as shown in the following example:
+<div class="infobox-note" id="GUID-1F5C6A8F-DF05-440B-8AFF-914628330700__GUID-31A39FDB-766D-4D08-BD0B-DB15BA01B630">
+<p class="notep1">Note:</p>
+This sample response is formatted for readability and truncated for brevity.</div>
+<pre dir="ltr">
+{
+  "result": [
+    {
+      "ram": 7680,
+      "cpus": 2.0,
+      "uri": "https://api.oc.example.com/shape/oc3",
+      "name": "oc3"
+    },
+    {
+      "ram": 15360,
+      "cpus": 4.0,
+      "uri": "https://api.oc.example.com/shape/oc4",
+      "name": "oc4"
+    },
+    {
+      "ram": 30720,
+      "cpus": 8.0,
+      "uri": "https://api.oc.example.com/shape/oc5",
+      "name": "oc5"
+    }
+  ]
+}
+</pre></div>
+</li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-62EA9656-0C52-4B7A-9D5F-E57D2245C964"></a>
+<h2 id="ELUAP-GUID-62EA9656-0C52-4B7A-9D5F-E57D2245C964" class="sect2">Summary of REST APIs, Alphabetical by Resource Path</h2>
+<div>
+<p>This table lists the REST resources alphabetically by resource path and lists the supported methods for each resource.</p>
+<div class="tblformal" id="GUID-62EA9656-0C52-4B7A-9D5F-E57D2245C964__GUID-FAC49914-AF32-4F5F-B725-5C0ABC5B042F">
+<table class="cellalignment62" summary="This table lists the REST resources alphabetically by resource path and lists the supported methods for each resource.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment73" id="d2553e755">REST Resource</th>
+<th class="cellalignment74" id="d2553e757">Supported Methods</th>
+<th class="cellalignment75" id="d2553e759">More Information</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment76" id="d2553e763" headers="d2553e755"><code class="codeph">/authenticate/</code></td>
+<td class="cellalignment77" headers="d2553e763 d2553e757"><code class="codeph">POST</code></td>
+<td class="cellalignment78" headers="d2553e763 d2553e759"><a href="GUID-961D93C4-7CD7-4327-AF56-C3712328960C.htm#GUID-0DC990C5-C441-46C8-A635-F3725CDBCDB6" title="This API enables you to obtain an authentication token.">Authenticate User</a></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment76" id="d2553e776" headers="d2553e755"><code class="codeph">/info/</code></td>
+<td class="cellalignment77" headers="d2553e776 d2553e757"><code class="codeph">GET</code></td>
+<td class="cellalignment78" headers="d2553e776 d2553e759"><a href="GUID-54832933-814B-4A04-AEB8-8DE4181331DE.htm#GUID-6D6C9669-325F-4EA3-BAD2-34CF623BEEB8" title="This API enables you to retrieve information for an installed site.">Get Site Information</a></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment76" id="d2553e789" headers="d2553e755"><code class="codeph">/imagelist/</code></td>
+<td class="cellalignment77" headers="d2553e789 d2553e757"><code class="codeph">DELETE</code>, <code class="codeph">GET</code>, <code class="codeph">POST</code>, <code class="codeph">PUT</code></td>
+<td class="cellalignment78" headers="d2553e789 d2553e759"><a href="GUID-3E374B99-1E54-4435-B541-52526F61E535.htm#GUID-3E374B99-1E54-4435-B541-52526F61E535" title="This API enables you to add an image list.This API enables you to delete a specific image list.This API enables you to update image list information.This API enables you to discover image list names in a specific container.This API enables you to retrieve details of a specific image list.This API enables you to retrieve information of all image lists present in a specific container.">Managing Image Lists</a></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment76" id="d2553e811" headers="d2553e755"><code class="codeph">/imagelist/<span class="variable">name</span>/entry/</code></td>
+<td class="cellalignment77" headers="d2553e811 d2553e757"><code class="codeph">DELETE</code>, <code class="codeph">GET</code>, <code class="codeph">POST</code>, <code class="codeph">PUT</code></td>
+<td class="cellalignment78" headers="d2553e811 d2553e759"><a href="GUID-D946E8D4-12A6-4F7B-979D-BB7272196F48.htm#GUID-D946E8D4-12A6-4F7B-979D-BB7272196F48" title="This API enables you to add an image list entry.This API enables you to delete an image list entry.This API enables you to retrieve information for a specific image list entry.This API enables you to list details of image list entries.">Managing Image List Entries</a></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment76" id="d2553e836" headers="d2553e755"><code class="codeph">/instance/</code></td>
+<td class="cellalignment77" headers="d2553e836 d2553e757"><code class="codeph">DELETE</code>, <code class="codeph">GET</code>, <code class="codeph">POST</code>, <code class="codeph">PUT</code></td>
+<td class="cellalignment78" headers="d2553e836 d2553e759"><a href="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F.htm#GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F" title="This API request enables you to delete a specific instance. You can delete an instance only when it is in any of the following states:running, shut_down,&nbsp;or&nbsp;error.This API request enables you to discover instances in the specific container and subcontainers.This API request enables you to retrieve information for a specific instance. This API request enables you to retrieve instance information in a specific container or subcontainer.">Managing Instances</a></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment76" id="d2553e867" headers="d2553e755"><code class="codeph">/machineimage/</code></td>
+<td class="cellalignment77" headers="d2553e867 d2553e757"><code class="codeph">DELETE</code>, <code class="codeph">GET</code>, <code class="codeph">POST</code>, <code class="codeph">PUT</code></td>
+<td class="cellalignment78" headers="d2553e867 d2553e759"><a href="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1.htm#GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1" title="This API enables you to add a private machine image to the system. This API enables you to delete a machine image.This API enables you to discover a list of machine images present in a specific container.This API enables you to retrieve details of a specified machine image.This API enables you to retrieve details of all machine images in a container.">Managing Machine Images</a></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment76" id="d2553e889" headers="d2553e755"><code class="codeph">/orchestration/</code></td>
+<td class="cellalignment77" headers="d2553e889 d2553e757"><code class="codeph">DELETE</code>, <code class="codeph">GET</code>, <code class="codeph">POST</code>, <code class="codeph">PUT</code></td>
+<td class="cellalignment78" headers="d2553e889 d2553e759"><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2" title="This API enables you to create a new orchestration from a JSON definition. This API enables you to delete an orchestration from the system. Only orchestrations with stopped status can be deleted.This API enables you to start a specific orchestration. Only orchestrations with stopped status can be started.This API enables you to stop a specific orchestration.&nbsp;Stopping an orchestration deletes all instances, releasing all resources allocated by the orchestration. This includes boot (root) disks and unreserved IP addresses. You can stop orchestrations in any one of the following statuses:ready, shutdown, warning, and error. The orchestration can be started again, thereby creating new instances and allocating new resources.This API enables you to shut down a VM instance while preserving the resources used by the instance, such as IP addresses and boot disk contents. When the orchestration is restarted, it gets back the same boot disks and IP addresses. If you do not need to preserve these resources use stop orchestration. Orchestrations with a ready or warning state can be shut down.This API enables you to restart an orchestration that was previously in the shut_down status. You can restart an orchestration with status warning, shut_down or error.This API enables you to update information for a specific orchestration.This API enables you to discover orchestrations within a specific container or subcontainer. This API enables you to retrieve details of a specific orchestration. This API enables you to retrieve details about orchestrations in a specific container. The GET method can be used to validate the results of the POST, PUT, and DELETE operations.">Managing Orchestrations</a></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment76" id="d2553e964" headers="d2553e755"><code class="codeph">/property/storage/</code></td>
+<td class="cellalignment77" headers="d2553e964 d2553e757"><code class="codeph">GET</code></td>
+<td class="cellalignment78" headers="d2553e964 d2553e759"><a href="GUID-D3BE68B7-BB65-4CCA-A4E6-06A80C9B9BD0.htm">Viewing Storage Properties</a></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment76" id="d2553e974" headers="d2553e755"><code class="codeph">/quota/</code></td>
+<td class="cellalignment77" headers="d2553e974 d2553e757"><code class="codeph">GET</code></td>
+<td class="cellalignment78" headers="d2553e974 d2553e759"><a href="GUID-9BC3863B-E843-4D9E-AA66-0788AD200446.htm#GUID-9BC3863B-E843-4D9E-AA66-0788AD200446" title="This API enables you retrieve tenant quotas in the specified container and sub containers. This API enables you to retrieve the quota information for a specific tenant.This API enables you to list details about the tenant quotas for a specific container.">Viewing Tenant Quotas</a></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment76" id="d2553e987" headers="d2553e755"><code class="codeph">/svcnet/</code></td>
+<td class="cellalignment77" headers="d2553e987 d2553e757"><code class="codeph">GET</code></td>
+<td class="cellalignment78" headers="d2553e987 d2553e759"><a href="GUID-807812AE-1FAE-4F72-9CC3-34E59BF309F8.htm#GUID-807812AE-1FAE-4F72-9CC3-34E59BF309F8" title="This API enables you to discover a list of service networks defined within a container. This API enables you to retrieve information for a specific service network.This API enables you to retrieve information for all the service networks within a specific container.">Viewing Service Networks</a></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment76" id="d2553e1000" headers="d2553e755"><code class="codeph">/shape/</code></td>
+<td class="cellalignment77" headers="d2553e1000 d2553e757"><code class="codeph">GET</code></td>
+<td class="cellalignment78" headers="d2553e1000 d2553e759"><a href="GUID-91DB5163-DF72-44F2-A08E-FD58BBF6BFAD.htm#GUID-91DB5163-DF72-44F2-A08E-FD58BBF6BFAD" title="This API enables you to determine what shapes you have access to in a specific container.This API enables you to retrieve information for a specific shape.This API enables you to list information about shapes.">Viewing Shapes</a></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment76" id="d2553e1014" headers="d2553e755"><code class="codeph">/snapshot/</code></td>
+<td class="cellalignment77" headers="d2553e1014 d2553e757"><code class="codeph">DELETE</code>, <code class="codeph">GET</code>, <code class="codeph">POST</code>, <code class="codeph">PUT</code></td>
+<td class="cellalignment78" headers="d2553e1014 d2553e759"><a href="GUID-FF5BD712-A4BB-4095-8279-7C5914D61F98.htm#GUID-FF5BD712-A4BB-4095-8279-7C5914D61F98" title="This API enables you to add a snapshot.This API enables you to delete a snapshot creation request. This deletes only the request; the machine image that was the result of the request is not removed.This API enables you to discover snapshots in a specific container. This API enables you to retrieve details for a specific snapshot.This API enables you to list information about snapshots in a specific container.">Managing Snapshots</a></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment76" id="d2553e1036" headers="d2553e755"><code class="codeph">/sshkey/</code></td>
+<td class="cellalignment77" headers="d2553e1036 d2553e757"><code class="codeph">DELETE</code>, <code class="codeph">GET</code>, <code class="codeph">POST</code>, <code class="codeph">PUT</code></td>
+<td class="cellalignment78" headers="d2553e1036 d2553e759"><a href="GUID-26C605BD-B81A-43A2-AE12-5021CD755271.htm#GUID-26C605BD-B81A-43A2-AE12-5021CD755271" title="This API enables you to import a new public SSH key and associate it to a user. This API enables you to delete a specific SSH key.This API enables you to update/overwrite the key, the enabled field, and the osuser field for a specific SSH key. This API enables you to discover SSH keys in a specific container and subcontainer.This API enables you to retrieve information for a specific SSH key..This API enables you to list SSH key information in a specific container and subcontainer.">Managing SSH Keys</a></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment76" id="d2553e1058" headers="d2553e755"><code class="codeph">/storage/attachment/</code></td>
+<td class="cellalignment77" headers="d2553e1058 d2553e757"><code class="codeph">DELETE</code>, <code class="codeph">GET</code>, <code class="codeph">POST</code>, <code class="codeph">PUT</code></td>
+<td class="cellalignment78" headers="d2553e1058 d2553e759"><a href="GUID-A3D9830B-2E39-4D88-8E69-4CC3E3ABF864.htm#GUID-A3D9830B-2E39-4D88-8E69-4CC3E3ABF864" title="This API enables you to add a storage attachment.This API enables you to delete a specific storage attachment.This API enables you to discover storage attachments in a specific container.This API enables you to retrieve information for a specific storage attachment.This API enables you to retrieve details of storage attachments in a specific container.">Managing Storage Attachments</a></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment76" id="d2553e1080" headers="d2553e755"><code class="codeph">/storage/volume/</code></td>
+<td class="cellalignment77" headers="d2553e1080 d2553e757"><code class="codeph">DELETE</code>, <code class="codeph">GET</code>, <code class="codeph">POST</code>, <code class="codeph">PUT</code></td>
+<td class="cellalignment78" headers="d2553e1080 d2553e759"><a href="GUID-70490BA2-D367-4ED5-8C91-3291DDE22133.htm#GUID-70490BA2-D367-4ED5-8C91-3291DDE22133" title="This API enables you to add a storage volume.This API enables you to delete a specific storage volume.This API enables you to update a specific storage volume.This API enables you to discover storage volumes in a specific container.This API enables you to retrieve information for a specific storage volume.This API enables you to list storage volumes.">Managing Storage Volumes</a></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment76" id="d2553e1102" headers="d2553e755"><code class="codeph">/tenant/</code></td>
+<td class="cellalignment77" headers="d2553e1102 d2553e757"><code class="codeph">GET</code></td>
+<td class="cellalignment78" headers="d2553e1102 d2553e759"><a href="GUID-8AA87837-9271-43F2-8816-EBE541667E8F.htm#GUID-8AA87837-9271-43F2-8816-EBE541667E8F" title="This API enables you to discover existing tenants in a specific container. This API enables you to retrieve information for a specific tenant. This API enables you to list details about tenants in a specific container.">Viewing Tenants</a></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment76" id="d2553e1115" headers="d2553e755"><code class="codeph">/user/</code></td>
+<td class="cellalignment77" headers="d2553e1115 d2553e757"><code class="codeph">DELETE</code>, <code class="codeph">GET</code>, <code class="codeph">POST</code>, <code class="codeph">PUT</code></td>
+<td class="cellalignment78" headers="d2553e1115 d2553e759"><a href="GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE.htm#GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE" title="This API enables you to add new users. This API enables you to delete an existing user. This API enables you to update user information.This API enables you to discover a list of users in a specific container.This API enables you to retrieve information for a specific user.This API enables you to list users in a specific container.">Managing Users</a></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment76" id="d2553e1137" headers="d2553e755"><code class="codeph">/vcable/</code></td>
+<td class="cellalignment77" headers="d2553e1137 d2553e757"><code class="codeph">GET</code></td>
+<td class="cellalignment78" headers="d2553e1137 d2553e759"><a href="GUID-348A49EB-2431-46FD-9CB3-8C590E207E9D.htm#GUID-348A49EB-2431-46FD-9CB3-8C590E207E9D" title="This API enables you to discover vCable objects in a specific container.This API enables you to retrieve information for a specific vCable.This API enables you to retrieve information for vCables in a specific container.">Viewing vCables</a></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment76" id="d2553e1150" headers="d2553e755"><code class="codeph">/vethernet/</code></td>
+<td class="cellalignment77" headers="d2553e1150 d2553e757"><code class="codeph">DELETE</code>, <code class="codeph">GET</code>, <code class="codeph">POST</code>, <code class="codeph">PUT</code></td>
+<td class="cellalignment78" headers="d2553e1150 d2553e759"><a href="GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99.htm#GUID-E5DF17A8-961F-405A-92B8-CD4D9D49ED99" title="This API enables you to add a virtual Ethernet to the network.This API enables you to delete virtual EthernetThis API enables you to update information for a specific virtual Ethernet.This API enables you to discover virtual Ethernets configured in a specific container.This API enables you to retrieve information for the configured virtual Ethernets in a specific container or subcontainer.">Managing vEthernet</a></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment76" id="d2553e1172" headers="d2553e755"><code class="codeph">/vnet/</code></td>
+<td class="cellalignment77" headers="d2553e1172 d2553e757"><code class="codeph">DELETE</code>, <code class="codeph">GET</code>, <code class="codeph">POST</code>, <code class="codeph">PUT</code></td>
+<td class="cellalignment78" headers="d2553e1172 d2553e759"><a href="GUID-4B893928-826E-4227-B82D-00C928C0BD58.htm#GUID-4B893928-826E-4227-B82D-00C928C0BD58" title="This API enables you to add a new virtual network for a tenant.This API enables you to delete an existing vNET entity. You cannot delete a vNET if it is used by any instance, or if there is an existing vNET Reservation associated with the vNET.This API enables you to update information for a specific tenant vNET. This API enables you to discover a list of configured vNETs in a specific container or subcontainer.This API enables you to retrieve information for a specific vNET.This API enables you to retrieve information for all the vNETs in a specific container.">Managing vNET</a></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment76" id="d2553e1194" headers="d2553e755"><code class="codeph">/vnetaccess/</code></td>
+<td class="cellalignment77" headers="d2553e1194 d2553e757"><code class="codeph">GET</code></td>
+<td class="cellalignment78" headers="d2553e1194 d2553e759"><a href="GUID-FF435881-D472-44A0-84D9-B72692659D5B.htm#GUID-FF435881-D472-44A0-84D9-B72692659D5B" title="This API enables you to discover a list of vNet Access entities configured in a specific container.This API enables you list information for all the vNet Access entities in a container.This API enables you to retrieve information for a specific vNET access entity in a specific container.">Viewing vNET Access</a></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment76" id="d2553e1207" headers="d2553e755"><code class="codeph">/vnetreservation/</code></td>
+<td class="cellalignment77" headers="d2553e1207 d2553e757"><code class="codeph">DELETE</code>, <code class="codeph">GET</code>, <code class="codeph">POST</code>, <code class="codeph">PUT</code></td>
+<td class="cellalignment78" headers="d2553e1207 d2553e759"><a href="GUID-759A67D1-F616-4825-B657-F8A14DDB86ED.htm#GUID-759A67D1-F616-4825-B657-F8A14DDB86ED" title="This API enables you to add new vNET Reservation.This API enables you to delete a specific vNET Reservation.This API enables you to discover all the vNET Reservations listed in a specific container or subcontainer.This API enables you to retrieve information for a specific vNET Reservation.This API enables you to retrieve information for all the vNET Reservations in a specific container.">Managing vNET Reservations</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment49">
+<tr>
+<td class="cellalignment59">
+<table class="cellalignment54">
+<tr>
+<td class="cellalignment53"><a href="GUID-A5AFEE46-BD9C-4C99-BCAC-F38876F991DC.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment53"><a href="GUID-961D93C4-7CD7-4327-AF56-C3712328960C.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment61">
+<table class="cellalignment52">
+<tr>
+<td class="cellalignment53"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment53"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

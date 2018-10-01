@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Debugging Common Error Messages</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-07T05:55:01Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine CLI Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E69222-06" />
+<meta name="dcterms.isVersionOf" content="ELUCL" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-348A49EB-2431-46FD-9CB3-8C590E207E9D.htm" title="Previous" type="text/html" />
+<link rel="alternate" href="ELUCL.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-9850711D-F8FE-410F-9FF5-9852CFE8DD5C"></a> <span id="PAGE" style="display:none;">40/40</span> <!-- End Header -->
+<h1 id="ELUCL-GUID-9850711D-F8FE-410F-9FF5-9852CFE8DD5C" class="sect1"><span class="enumeration_appendix">A</span> Debugging Common Error Messages</h1>
+<div>
+<div class="section">
+<p>When an <code class="codeph">oracle-compute</code> command executes successfully, it either terminates silently or prints a table of values about the object on which the operation was performed.</p>
+<p>If an error occurs, the command returns an exit status code and an exception. The exit status code is stored in the exit status environment variable, the name of which depends on the UNIX shell that you use.</p>
+<p>The following table describes exit status codes.</p>
+<div class="tblformal" id="GUID-9850711D-F8FE-410F-9FF5-9852CFE8DD5C__GUID-DE212A40-1E92-4D02-A15A-14ADFBB733C1">
+<table class="cellalignment29" summary="Table of exceptions and exit status codes definitions">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment30" id="d24581e35">Exit status</th>
+<th class="cellalignment31" id="d24581e39">Exception and description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d24581e45" headers="d24581e35">
+<p>0</p>
+</td>
+<td class="cellalignment33" headers="d24581e45 d24581e39">
+<p>Success</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d24581e52" headers="d24581e35">
+<p>1</p>
+</td>
+<td class="cellalignment33" headers="d24581e52 d24581e39">
+<p>General error, including operations that are not allowed.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d24581e59" headers="d24581e35">
+<p>2</p>
+</td>
+<td class="cellalignment33" headers="d24581e59 d24581e39">
+<p>Shell builtins have been misused as a result of a missing keyword or component, or an underlying permission problem not related to Oracle Compute Cloud Service permissions.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d24581e66" headers="d24581e35">
+<p>3</p>
+</td>
+<td class="cellalignment33" headers="d24581e66 d24581e39">
+<p>APIException</p>
+<p>Indicates an error during the operation of the client or server.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d24581e75" headers="d24581e35">
+<p>4</p>
+</td>
+<td class="cellalignment33" headers="d24581e75 d24581e39">
+<p>ValidationError</p>
+<p>The input data is not valid. For example, missing values, wrong types or references to non-existent objects. This exception always contains detailed information on the input data.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d24581e84" headers="d24581e35">
+<p>5</p>
+</td>
+<td class="cellalignment33" headers="d24581e84 d24581e39">
+<p>APIInternalError</p>
+<p>Indicates that communications might have succeeded, but something went wrong inside the client. This is the base class for the APICodec error.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d24581e93" headers="d24581e35">
+<p>6</p>
+</td>
+<td class="cellalignment33" headers="d24581e93 d24581e39">
+<p>APICodecError</p>
+<p>Indicates a problem with JSON format encoding an object or decoding the response. This is the base class for the APIDecoding and APIEncoding errors.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d24581e102" headers="d24581e35">
+<p>7</p>
+</td>
+<td class="cellalignment33" headers="d24581e102 d24581e39">
+<p>APIDecodingError</p>
+<p>Indicates a problem with decoding a response to an object, usually because of an invalid JSON format.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d24581e111" headers="d24581e35">
+<p>8</p>
+</td>
+<td class="cellalignment33" headers="d24581e111 d24581e39">
+<p>APIEncodingError</p>
+<p>Indicates a problem with encoding an object usually caused by data in an unrecognizable format.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d24581e120" headers="d24581e35">
+<p>9</p>
+</td>
+<td class="cellalignment33" headers="d24581e120 d24581e39">
+<p>APIClientError</p>
+<p>A client side error, in line with 4xx errors in HTTP.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d24581e129" headers="d24581e35">
+<p>10</p>
+</td>
+<td class="cellalignment33" headers="d24581e129 d24581e39">
+<p>APIUnauthorizedError</p>
+<p>The request requires user authentication or authorization.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d24581e139" headers="d24581e35">
+<p>11</p>
+</td>
+<td class="cellalignment33" headers="d24581e139 d24581e39">
+<p>APIForbiddenError</p>
+<p>The request is formed properly, but the server cannot fulfill it. The issue is not related to authorization. Do not repeat the request.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d24581e148" headers="d24581e35">
+<p>12</p>
+</td>
+<td class="cellalignment33" headers="d24581e148 d24581e39">
+<p>APINotFoundError</p>
+<p>The server has not found a match for the URI in the request. This state might be temporary so repeat the request.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d24581e157" headers="d24581e35">
+<p>13</p>
+</td>
+<td class="cellalignment33" headers="d24581e157 d24581e39">
+<p>APIMethodNotAllowedError</p>
+<p>The method specified in the Request-Line is not allowed for the resource identified by the Request-URI. This exception occurs when the request includes a method that is not supported for the object.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d24581e166" headers="d24581e35">
+<p>14</p>
+</td>
+<td class="cellalignment33" headers="d24581e166 d24581e39">
+<p>APINotAcceptableError</p>
+<p>The resource specified in the request generates response that has characteristics that are not allowed by the accept headers in the request.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d24581e175" headers="d24581e35">
+<p>15</p>
+</td>
+<td class="cellalignment33" headers="d24581e175 d24581e39">
+<p>APIConflictError</p>
+<p>The request could not be completed because of a conflict with the state of the resource or the resource already exists. You can either delete the existing object to allow the request to create it or you can create a new object with a unique identifier.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d24581e184" headers="d24581e35">
+<p>16</p>
+</td>
+<td class="cellalignment33" headers="d24581e184 d24581e39">
+<p>APIGoneError</p>
+<p>The requested resource does not exist. This error occurs when an instance exists but is not running, so a duplicate of this instance with the same identifier can not be created.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d24581e193" headers="d24581e35">
+<p>17</p>
+</td>
+<td class="cellalignment33" headers="d24581e193 d24581e39">
+<p>APIUnsupportedTypeError</p>
+<p>The server cannot complete the request because the request contains a format that is not supported by the method for the resource. This error indicates an error in JSON formatting.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d24581e202" headers="d24581e35">
+<p>18</p>
+</td>
+<td class="cellalignment33" headers="d24581e202 d24581e39">
+<p>APIServerError</p>
+<p>An internal error has occurred and the server cannot fulfill the request.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d24581e211" headers="d24581e35">
+<p>21</p>
+</td>
+<td class="cellalignment33" headers="d24581e211 d24581e39">
+<p>APIUncaughtExceptionError</p>
+<p>The server encountered an unexpected condition that prevented it from fulfilling the request. The error includes a code. Use this code when you report the problem to My Oracle Support.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d24581e220" headers="d24581e35">
+<p>22</p>
+</td>
+<td class="cellalignment33" headers="d24581e220 d24581e39">
+<p>APINotImplementedError</p>
+<p>The server does not support the functionality required to fulfill the request.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d24581e229" headers="d24581e35">
+<p>23</p>
+</td>
+<td class="cellalignment33" headers="d24581e229 d24581e39">
+<p>APIServiceUnavailable</p>
+<p>The server is unable to handle the request due to temporary overloading or maintenance. This error is usually related to the load on the server and is temporary. Repeat the request.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d24581e239" headers="d24581e35">
+<p>30</p>
+</td>
+<td class="cellalignment33" headers="d24581e239 d24581e39">
+<p>IOError</p>
+<p>A file to be uploaded to the server cannot be found or is unavailable.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d24581e248" headers="d24581e35">
+<p>24</p>
+</td>
+<td class="cellalignment33" headers="d24581e248 d24581e39">
+<p>APIGatewayError</p>
+<p>The Oracle Compute service layer is not able to respond. This is usually related to a failover of the service and is temporary. Repeat the request.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d24581e257" headers="d24581e35">
+<p>31</p>
+</td>
+<td class="cellalignment33" headers="d24581e257 d24581e39">
+<p>APINetworkError</p>
+<p>There was a network error while trying to communicate with the server. This can result from a DNS lookup failure or TCP connection failure.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d24581e266" headers="d24581e35">
+<p>33</p>
+</td>
+<td class="cellalignment33" headers="d24581e266 d24581e39">
+<p>APIRequestTooLarge</p>
+<p>The request attempts to upload an image that exceeds the maximum upload size.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>For debugging, use the <code class="codeph">-d</code> option while running the <code class="codeph">oracle-compute</code> command. The -d option prints out all the HTTP traffic, which facilitates the user in debugging error messages.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment28">
+<tr>
+<td class="cellalignment19"><a href="GUID-348A49EB-2431-46FD-9CB3-8C590E207E9D.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

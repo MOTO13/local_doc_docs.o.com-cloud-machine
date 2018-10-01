@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Where Do Services Run On a Cluster?</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Services are installed on all nodes of an Oracle Big Data Cloud Machine cluster, but individual services run only on designated nodes. An Oracle Big Data Cloud Machine cluster can have from three to 60 nodes, and the services are distributed differently, depending on the number of nodes:" />
+<meta name="dcterms.created" content="2017-05-03T11:44:48Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Big Data Cloud Machine" />
+<meta name="dcterms.identifier" content="E85986-01" />
+<meta name="dcterms.isVersionOf" content="CSBDM" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="http://docs.oracle.com/cloud-machine/latest/" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-0E9A125F-4739-47B4-957C-7D8CA5867B63.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-2C2C12F8-869D-45B9-974E-6C6064B53641.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSBDM.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSBDM.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSBDM.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-AA15F82C-941B-4FF0-BE49-A5EFCAFC6D6B"></a> <span id="PAGE" style="display:none;">11/51</span> <!-- End Header -->
+<h1 id="CSBDM-GUID-AA15F82C-941B-4FF0-BE49-A5EFCAFC6D6B" class="sect1">Where Do Services Run On a Cluster?</h1>
+<div>
+<p>Services are installed on all nodes of an <span>Oracle Big Data Cloud Machine</span> cluster, but individual services run only on designated nodes. An <span>Oracle Big Data Cloud Machine</span> cluster can have from three to 60 nodes, and the services are distributed differently, depending on the number of nodes:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Services on a three-node cluster are distributed as shown in <a href="GUID-AA15F82C-941B-4FF0-BE49-A5EFCAFC6D6B.htm#GUID-D07D14A8-7913-48C2-93B8-B078B3B90115">Where Do the Services Run on a Three-Node, Development-Only Cluster?</a>.</p>
+</li>
+<li>
+<p>Services on a cluster of four or more nodes are distributed as shown in <a href="GUID-AA15F82C-941B-4FF0-BE49-A5EFCAFC6D6B.htm#GUID-814BD059-56E8-494E-9B33-E0BC2B677686">Where Do the Services Run on a Cluster of Four or More Nodes?</a>.</p>
+</li>
+</ul>
+<p>Consider the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>If you have a three-node cluster and then expand it to four or more nodes, the services are automatically redistributed, as shown in <a href="GUID-AA15F82C-941B-4FF0-BE49-A5EFCAFC6D6B.htm#GUID-814BD059-56E8-494E-9B33-E0BC2B677686">Where Do the Services Run on a Cluster of Four or More Nodes?</a>.</p>
+</li>
+<li>
+<p>Three- and four-node clusters are recommended for development purposes only.</p>
+</li>
+<li>
+<p>The minimum recommended size for a production cluster is five nodes.</p>
+</li>
+<li>
+<p>If you plan to install Oracle Big Data Discovery on <span>Oracle Big Data Cloud Machine</span>, a minimum of five nodes is required.</p>
+</li>
+</ul>
+</div>
+<div class="sect2"><a id="GUID-D07D14A8-7913-48C2-93B8-B078B3B90115"></a>
+<h2 id="CSBDM-GUID-D07D14A8-7913-48C2-93B8-B078B3B90115" class="sect2">Where Do the Services Run on a Three-Node, Development-Only Cluster?</h2>
+<div>
+<div class="section">
+<p>The following table shows how services are distributed on the nodes of <span>Oracle Big Data Cloud Machine</span> three-node clusters.</p>
+<div class="tblformal" id="GUID-D07D14A8-7913-48C2-93B8-B078B3B90115__THISTABLEDESCRIBESTHESERVICESLAYOUT-31147963">
+<table class="cellalignment77" summary="This table describes the services layout in a three-node cluster for development purposes. All the services are described in the first column. The second, third, and fourth columns show which services run on Node1, Node2, and Node3. &ldquo;Yes&rdquo; indicates the service listed in the left column runs on the node, and &ldquo;No&rdquo; indicates it doesn&rsquo;t.">
+<thead>
+<tr class="cellalignment68">
+<th class="cellalignment81" id="d2622e86">Service</th>
+<th class="cellalignment81" id="d2622e88">Node1</th>
+<th class="cellalignment81" id="d2622e90">Node2</th>
+<th class="cellalignment81" id="d2622e92">Node3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e96" headers="d2622e86">Active Navigator Key Trustee Server (if secure cluster is enabled)</td>
+<td class="cellalignment68" headers="d2622e96 d2622e88"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e96 d2622e90">No</td>
+<td class="cellalignment68" headers="d2622e96 d2622e92">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e106" headers="d2622e86">Cloudera Manager and Cloudera Manager roles</td>
+<td class="cellalignment68" headers="d2622e106 d2622e88">No</td>
+<td class="cellalignment68" headers="d2622e106 d2622e90">No</td>
+<td class="cellalignment68" headers="d2622e106 d2622e92"><span class="bold">Yes</span></td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e116" headers="d2622e86">DataNode</td>
+<td class="cellalignment68" headers="d2622e116 d2622e88"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e116 d2622e90"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e116 d2622e92"><span class="bold">Yes</span></td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e128" headers="d2622e86">Failover Controller</td>
+<td class="cellalignment68" headers="d2622e128 d2622e88"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e128 d2622e90"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e128 d2622e92">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e139" headers="d2622e86">Hive</td>
+<td class="cellalignment68" headers="d2622e139 d2622e88">No</td>
+<td class="cellalignment68" headers="d2622e139 d2622e90"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e139 d2622e92">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e149" headers="d2622e86">Hive Metastore</td>
+<td class="cellalignment68" headers="d2622e149 d2622e88">No</td>
+<td class="cellalignment68" headers="d2622e149 d2622e90"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e149 d2622e92">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e159" headers="d2622e86">HttpFS</td>
+<td class="cellalignment68" headers="d2622e159 d2622e88">No</td>
+<td class="cellalignment68" headers="d2622e159 d2622e90"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e159 d2622e92">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e169" headers="d2622e86">Hue</td>
+<td class="cellalignment68" headers="d2622e169 d2622e88">No</td>
+<td class="cellalignment68" headers="d2622e169 d2622e90"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e169 d2622e92">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e179" headers="d2622e86">JobHistory</td>
+<td class="cellalignment68" headers="d2622e179 d2622e88">No</td>
+<td class="cellalignment68" headers="d2622e179 d2622e90">No</td>
+<td class="cellalignment68" headers="d2622e179 d2622e92"><span class="bold">Yes</span></td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e189" headers="d2622e86">JournalNode</td>
+<td class="cellalignment68" headers="d2622e189 d2622e88"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e189 d2622e90"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e189 d2622e92"><span class="bold">Yes</span></td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e201" headers="d2622e86">Kerberos Master KDC (if secure cluster is enabled.)</td>
+<td class="cellalignment68" headers="d2622e201 d2622e88"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e201 d2622e90">No</td>
+<td class="cellalignment68" headers="d2622e201 d2622e92">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e212" headers="d2622e86">Kerberos Slave KDC (if secure cluster is enabled)</td>
+<td class="cellalignment68" headers="d2622e212 d2622e88">No</td>
+<td class="cellalignment68" headers="d2622e212 d2622e90"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e212 d2622e92">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e222" headers="d2622e86">MySQL Backup</td>
+<td class="cellalignment68" headers="d2622e222 d2622e88">No</td>
+<td class="cellalignment68" headers="d2622e222 d2622e90"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e222 d2622e92">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e232" headers="d2622e86">MySQL Primary</td>
+<td class="cellalignment68" headers="d2622e232 d2622e88">No</td>
+<td class="cellalignment68" headers="d2622e232 d2622e90">No</td>
+<td class="cellalignment68" headers="d2622e232 d2622e92"><span class="bold">Yes</span></td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e242" headers="d2622e86">NameNode</td>
+<td class="cellalignment68" headers="d2622e242 d2622e88"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e242 d2622e90"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e242 d2622e92">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e253" headers="d2622e86">NodeManager</td>
+<td class="cellalignment68" headers="d2622e253 d2622e88"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e253 d2622e90"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e253 d2622e92"><span class="bold">Yes</span></td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e265" headers="d2622e86">ODI</td>
+<td class="cellalignment68" headers="d2622e265 d2622e88">No</td>
+<td class="cellalignment68" headers="d2622e265 d2622e90"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e265 d2622e92">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e275" headers="d2622e86">Oozie</td>
+<td class="cellalignment68" headers="d2622e275 d2622e88">No</td>
+<td class="cellalignment68" headers="d2622e275 d2622e90"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e275 d2622e92">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e285" headers="d2622e86">Passive Navigator Key Trustee Server (if secure cluster is enabled)</td>
+<td class="cellalignment68" headers="d2622e285 d2622e88">No</td>
+<td class="cellalignment68" headers="d2622e285 d2622e90"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e285 d2622e92">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e295" headers="d2622e86">ResourceManager</td>
+<td class="cellalignment68" headers="d2622e295 d2622e88"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e295 d2622e90">No</td>
+<td class="cellalignment68" headers="d2622e295 d2622e92"><span class="bold">Yes</span></td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e306" headers="d2622e86">Sentry</td>
+<td class="cellalignment68" headers="d2622e306 d2622e88"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e306 d2622e90">No</td>
+<td class="cellalignment68" headers="d2622e306 d2622e92">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e316" headers="d2622e86">Spark History</td>
+<td class="cellalignment68" headers="d2622e316 d2622e88">No</td>
+<td class="cellalignment68" headers="d2622e316 d2622e90">No</td>
+<td class="cellalignment68" headers="d2622e316 d2622e92"><span class="bold">Yes</span></td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e327" headers="d2622e86">WebHCat</td>
+<td class="cellalignment68" headers="d2622e327 d2622e88">No</td>
+<td class="cellalignment68" headers="d2622e327 d2622e90"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e327 d2622e92">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e337" headers="d2622e86">ZooKeeper</td>
+<td class="cellalignment68" headers="d2622e337 d2622e88"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e337 d2622e90"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e337 d2622e92"><span class="bold">Yes</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-814BD059-56E8-494E-9B33-E0BC2B677686"></a>
+<h2 id="CSBDM-GUID-814BD059-56E8-494E-9B33-E0BC2B677686" class="sect2">Where Do the Services Run on a Cluster of Four or More Nodes?</h2>
+<div>
+<div class="section">
+<p>The following table shows how services are distributed on the nodes of <span>Oracle Big Data Cloud Machine</span> clusters with four, five, or more nodes.</p>
+<div class="infobox-note" id="GUID-814BD059-56E8-494E-9B33-E0BC2B677686__GUID-43409362-30CF-4280-B23B-B62A144B16FE">
+<p class="notep1">Note:</p>
+The minimum recommended size for a production cluster is five nodes.</div>
+</div>
+<!-- class="section" -->
+<div class="tblformal" id="GUID-814BD059-56E8-494E-9B33-E0BC2B677686__THISTABLEDESCRIBESTHESERVICESLAYOUT-311A3357">
+<table class="cellalignment77" summary="This table describes the services layout in a three-node cluster for development purposes. All the services are described in the first column. The second, third, and fourth columns show which services run on Node1, Node2, and Node3. &ldquo;Yes&rdquo; indicates the service listed in the left column runs on the node, and &ldquo;No&rdquo; indicates it doesn&rsquo;t.">
+<thead>
+<tr class="cellalignment68">
+<th class="cellalignment81" id="d2622e384">Service</th>
+<th class="cellalignment81" id="d2622e386">Node1</th>
+<th class="cellalignment81" id="d2622e388">Node2</th>
+<th class="cellalignment81" id="d2622e390">Node3</th>
+<th class="cellalignment81" id="d2622e392">Node4</th>
+<th class="cellalignment81" id="d2622e394">Node5 to Node<span class="italic">nn</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e400" headers="d2622e384">Active Navigator Key Trustee Server (if secure cluster is enabled)</td>
+<td class="cellalignment68" headers="d2622e400 d2622e386"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e400 d2622e388">No</td>
+<td class="cellalignment68" headers="d2622e400 d2622e390">No</td>
+<td class="cellalignment68" headers="d2622e400 d2622e392">No</td>
+<td class="cellalignment68" headers="d2622e400 d2622e394">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e414" headers="d2622e384">Balancer</td>
+<td class="cellalignment68" headers="d2622e414 d2622e386"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e414 d2622e388">No</td>
+<td class="cellalignment68" headers="d2622e414 d2622e390">No</td>
+<td class="cellalignment68" headers="d2622e414 d2622e392">No</td>
+<td class="cellalignment68" headers="d2622e414 d2622e394">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e428" headers="d2622e384">Cloudera Manager Agent</td>
+<td class="cellalignment68" headers="d2622e428 d2622e386"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e428 d2622e388"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e428 d2622e390"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e428 d2622e392"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e428 d2622e394"><span class="bold">Yes</span></td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e446" headers="d2622e384">Cloudera Manager Server</td>
+<td class="cellalignment68" headers="d2622e446 d2622e386">No</td>
+<td class="cellalignment68" headers="d2622e446 d2622e388">No</td>
+<td class="cellalignment68" headers="d2622e446 d2622e390"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e446 d2622e392">No</td>
+<td class="cellalignment68" headers="d2622e446 d2622e394">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e460" headers="d2622e384">Cloudera Manager and Cloudera Manager roles</td>
+<td class="cellalignment68" headers="d2622e460 d2622e386">No</td>
+<td class="cellalignment68" headers="d2622e460 d2622e388">No</td>
+<td class="cellalignment68" headers="d2622e460 d2622e390"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e460 d2622e392">No</td>
+<td class="cellalignment68" headers="d2622e460 d2622e394">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e474" headers="d2622e384">DataNode</td>
+<td class="cellalignment68" headers="d2622e474 d2622e386"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e474 d2622e388"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e474 d2622e390"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e474 d2622e392"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e474 d2622e394"><span class="bold">Yes</span></td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e492" headers="d2622e384">Failover Controller</td>
+<td class="cellalignment68" headers="d2622e492 d2622e386"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e492 d2622e388"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e492 d2622e390">No</td>
+<td class="cellalignment68" headers="d2622e492 d2622e392">No</td>
+<td class="cellalignment68" headers="d2622e492 d2622e394">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e507" headers="d2622e384">Hive</td>
+<td class="cellalignment68" headers="d2622e507 d2622e386">No</td>
+<td class="cellalignment68" headers="d2622e507 d2622e388">No</td>
+<td class="cellalignment68" headers="d2622e507 d2622e390">No</td>
+<td class="cellalignment68" headers="d2622e507 d2622e392"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e507 d2622e394">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e521" headers="d2622e384">Hive Metastore</td>
+<td class="cellalignment68" headers="d2622e521 d2622e386">No</td>
+<td class="cellalignment68" headers="d2622e521 d2622e388"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e521 d2622e390">No</td>
+<td class="cellalignment68" headers="d2622e521 d2622e392">No</td>
+<td class="cellalignment68" headers="d2622e521 d2622e394">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e535" headers="d2622e384">HttpFS</td>
+<td class="cellalignment68" headers="d2622e535 d2622e386">No</td>
+<td class="cellalignment68" headers="d2622e535 d2622e388"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e535 d2622e390">No</td>
+<td class="cellalignment68" headers="d2622e535 d2622e392">No</td>
+<td class="cellalignment68" headers="d2622e535 d2622e394">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e549" headers="d2622e384">Hue</td>
+<td class="cellalignment68" headers="d2622e549 d2622e386">No</td>
+<td class="cellalignment68" headers="d2622e549 d2622e388">No</td>
+<td class="cellalignment68" headers="d2622e549 d2622e390">No</td>
+<td class="cellalignment68" headers="d2622e549 d2622e392"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e549 d2622e394">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e564" headers="d2622e384">JobHistory</td>
+<td class="cellalignment68" headers="d2622e564 d2622e386">No</td>
+<td class="cellalignment68" headers="d2622e564 d2622e388">No</td>
+<td class="cellalignment68" headers="d2622e564 d2622e390"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e564 d2622e392">No</td>
+<td class="cellalignment68" headers="d2622e564 d2622e394">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e578" headers="d2622e384">JournalNode</td>
+<td class="cellalignment68" headers="d2622e578 d2622e386"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e578 d2622e388"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e578 d2622e390"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e578 d2622e392">No</td>
+<td class="cellalignment68" headers="d2622e578 d2622e394">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e594" headers="d2622e384">Kerberos KDC (if secure cluster is enabled.)</td>
+<td class="cellalignment68" headers="d2622e594 d2622e386"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e594 d2622e388"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e594 d2622e390">No</td>
+<td class="cellalignment68" headers="d2622e594 d2622e392">No</td>
+<td class="cellalignment68" headers="d2622e594 d2622e394">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e609" headers="d2622e384">MySQL Backup</td>
+<td class="cellalignment68" headers="d2622e609 d2622e386">No</td>
+<td class="cellalignment68" headers="d2622e609 d2622e388"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e609 d2622e390">No</td>
+<td class="cellalignment68" headers="d2622e609 d2622e392">No</td>
+<td class="cellalignment68" headers="d2622e609 d2622e394">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e623" headers="d2622e384">MySQL Primary</td>
+<td class="cellalignment68" headers="d2622e623 d2622e386">No</td>
+<td class="cellalignment68" headers="d2622e623 d2622e388">No</td>
+<td class="cellalignment68" headers="d2622e623 d2622e390"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e623 d2622e392">No</td>
+<td class="cellalignment68" headers="d2622e623 d2622e394">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e637" headers="d2622e384">NameNode</td>
+<td class="cellalignment68" headers="d2622e637 d2622e386"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e637 d2622e388"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e637 d2622e390">No</td>
+<td class="cellalignment68" headers="d2622e637 d2622e392">No</td>
+<td class="cellalignment68" headers="d2622e637 d2622e394">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e652" headers="d2622e384">Navigator Audit Server and Navigator Metadata Server</td>
+<td class="cellalignment68" headers="d2622e652 d2622e386">No</td>
+<td class="cellalignment68" headers="d2622e652 d2622e388">No</td>
+<td class="cellalignment68" headers="d2622e652 d2622e390"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e652 d2622e392">No</td>
+<td class="cellalignment68" headers="d2622e652 d2622e394">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e666" headers="d2622e384">NodeManager</td>
+<td class="cellalignment68" headers="d2622e666 d2622e386"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e666 d2622e388"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e666 d2622e390"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e666 d2622e392"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e666 d2622e394"><span class="bold">Yes</span></td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e684" headers="d2622e384">Oozie</td>
+<td class="cellalignment68" headers="d2622e684 d2622e386">No</td>
+<td class="cellalignment68" headers="d2622e684 d2622e388">No</td>
+<td class="cellalignment68" headers="d2622e684 d2622e390">No</td>
+<td class="cellalignment68" headers="d2622e684 d2622e392"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e684 d2622e394">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e698" headers="d2622e384">Oracle Data Integrator Agent</td>
+<td class="cellalignment68" headers="d2622e698 d2622e386">No</td>
+<td class="cellalignment68" headers="d2622e698 d2622e388">No</td>
+<td class="cellalignment68" headers="d2622e698 d2622e390">No</td>
+<td class="cellalignment68" headers="d2622e698 d2622e392"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e698 d2622e394">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e712" headers="d2622e384">Passive Navigator Key Trustee Server (if secure cluster is enabled)</td>
+<td class="cellalignment68" headers="d2622e712 d2622e386">No</td>
+<td class="cellalignment68" headers="d2622e712 d2622e388"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e712 d2622e390">No</td>
+<td class="cellalignment68" headers="d2622e712 d2622e392">No</td>
+<td class="cellalignment68" headers="d2622e712 d2622e394">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e727" headers="d2622e384">ResourceManager</td>
+<td class="cellalignment68" headers="d2622e727 d2622e386">No</td>
+<td class="cellalignment68" headers="d2622e727 d2622e388">No</td>
+<td class="cellalignment68" headers="d2622e727 d2622e390"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e727 d2622e392"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e727 d2622e394">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e742" headers="d2622e384">Sentry Server (if enabled)</td>
+<td class="cellalignment68" headers="d2622e742 d2622e386"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e742 d2622e388">No</td>
+<td class="cellalignment68" headers="d2622e742 d2622e390">No</td>
+<td class="cellalignment68" headers="d2622e742 d2622e392">No</td>
+<td class="cellalignment68" headers="d2622e742 d2622e394">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e756" headers="d2622e384">Solr</td>
+<td class="cellalignment68" headers="d2622e756 d2622e386">No</td>
+<td class="cellalignment68" headers="d2622e756 d2622e388">No</td>
+<td class="cellalignment68" headers="d2622e756 d2622e390">No</td>
+<td class="cellalignment68" headers="d2622e756 d2622e392"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e756 d2622e394">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e770" headers="d2622e384">Spark History</td>
+<td class="cellalignment68" headers="d2622e770 d2622e386">No</td>
+<td class="cellalignment68" headers="d2622e770 d2622e388">No</td>
+<td class="cellalignment68" headers="d2622e770 d2622e390"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e770 d2622e392">No</td>
+<td class="cellalignment68" headers="d2622e770 d2622e394">No</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d2622e784" headers="d2622e384">ZooKeeper</td>
+<td class="cellalignment68" headers="d2622e784 d2622e386"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e784 d2622e388"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e784 d2622e390"><span class="bold">Yes</span></td>
+<td class="cellalignment68" headers="d2622e784 d2622e392">No</td>
+<td class="cellalignment68" headers="d2622e784 d2622e394">No</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<p class="subhead2"></p>
+<div class="infobox-note" id="GUID-814BD059-56E8-494E-9B33-E0BC2B677686__GUID-2FC3D62F-E534-40A4-AE3F-C51B3CA55EB6">
+<p class="notep1">Note:</p>
+If Oracle Big Data Discovery is installed, the NodeManager and DataNode on Node05 of the cluster are decomissioned.</div>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment67">
+<tr>
+<td class="cellalignment74">
+<table class="cellalignment72">
+<tr>
+<td class="cellalignment71"><a href="GUID-0E9A125F-4739-47B4-957C-7D8CA5867B63.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment71"><a href="GUID-2C2C12F8-869D-45B9-974E-6C6064B53641.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment76">
+<table class="cellalignment70">
+<tr>
+<td class="cellalignment71"><a href="http://docs.oracle.com/cloud-machine/latest/"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment71"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment71"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment71"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

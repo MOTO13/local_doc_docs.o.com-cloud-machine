@@ -1,0 +1,3254 @@
+
+{
+    "swagger":"2.0",
+    "schemes":[
+        "https"
+    ],
+    "paths":{
+        "/paas/service/dbcs/api/v1.1/instances/{identityDomainId}/{serviceId}/backups":{
+            "get":{
+                "summary":"View All Backup Operations",
+                "description":"Returns a list of all available backup operations for a Database Cloud Service instance, including both scheduled and on-demand backups.",
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "name":"identityDomainId",
+                        "in":"path",
+                        "description":"Name of the identity domain for the Database Cloud Service account.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"serviceId",
+                        "in":"path",
+                        "description":"Name of the Database Cloud Service instance.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"Authorization",
+                        "in":"header",
+                        "description":"Base64 encoding of the user name and password of the user making the request. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"X-ID-TENANT-NAME",
+                        "in":"header",
+                        "description":"Name of the identity domain for the Database Cloud Service account. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"OK. See <a href='status-codes.html'>Status Codes</a> for information about other possible HTTP status codes.",
+                        "schema":{
+                            "$ref":"#/definitions/view-all-backups"
+                        }
+                    }
+                },
+                "tags":[
+                    "Backup and Recovery"
+                ],
+                "x-internal-id":"paas-service-dbcs-api-v1.1-instances-{identityDomainId}-{serviceId}-backups-get"
+            },
+            "post":{
+                "summary":"Start a Backup Operation",
+                "description":"Starts an on-demand backup operation on a Database Cloud Service instance.",
+                "consumes":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "name":"identityDomainId",
+                        "in":"path",
+                        "description":"Name of the identity domain for the Database Cloud Service account.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"serviceId",
+                        "in":"path",
+                        "description":"Name of the Database Cloud Service instance.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"Authorization",
+                        "in":"header",
+                        "description":"Base64 encoding of the user name and password of the user making the request. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"X-ID-TENANT-NAME",
+                        "in":"header",
+                        "description":"Name of the identity domain for the Database Cloud Service account. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"body",
+                        "in":"body",
+                        "description":"",
+                        "required":true,
+                        "schema":{
+                            "title":"Request Body",
+                            "type":"object",
+                            "description":"The request body is a required but empty JSON object."
+                        }
+                    }
+                ],
+                "responses":{
+                    "202":{
+                        "headers":{
+                            "Location":{
+                                "description":"A REST URI you can use to check the progress and completion of the backup operation, as described in <a href='op-paas-service-dbcs-api-v1.1-instances-{identityDomainId}-status-{requestName}-job-{jobId}-get.html'>View the Job Status of an Operation</a>.",
+                                "type":"string"
+                            }
+                        },
+                        "description":"Accepted. See <a href='status-codes.html'>Status Codes</a> for information about other possible HTTP status codes."
+                    }
+                },
+                "tags":[
+                    "Backup and Recovery"
+                ],
+                "x-internal-id":"paas-service-dbcs-api-v1.1-instances-{identityDomainId}-{serviceId}-backups-post"
+            }
+        },
+        "/paas/service/dbcs/api/v1.1/instances/{identityDomainId}/{serviceId}/backups/recovery":{
+            "post":{
+                "summary":"Start a Recovery Operation",
+                "description":"Starts a recovery operation on a Database Cloud Service Instance using the latest backup or to a point in time specified by backup tag, timestamp, or SCN (System Change Number).",
+                "consumes":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "name":"identityDomainId",
+                        "in":"path",
+                        "description":"Name of the identity domain for the Database Cloud Service account.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"serviceId",
+                        "in":"path",
+                        "description":"Name of the Database Cloud Service instance.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"Authorization",
+                        "in":"header",
+                        "description":"Base64 encoding of the user name and password of the user making the request. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"X-ID-TENANT-NAME",
+                        "in":"header",
+                        "description":"Name of the identity domain for the Database Cloud Service account. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"body",
+                        "in":"body",
+                        "description":"",
+                        "required":true,
+                        "schema":{
+                            "$ref":"#/definitions/start-recovery"
+                        }
+                    }
+                ],
+                "responses":{
+                    "202":{
+                        "headers":{
+                            "Location":{
+                                "description":"A REST URI you can use to check the progress and completion of the recovery operation, as described in <a href='op-paas-service-dbcs-api-v1.1-instances-{identityDomainId}-status-{requestName}-job-{jobId}-get.html'>View the Job Status of an Operation</a>.",
+                                "type":"string"
+                            }
+                        },
+                        "description":"Accepted. See <a href='status-codes.html'>Status Codes</a> for information about other possible HTTP status codes."
+                    }
+                },
+                "tags":[
+                    "Backup and Recovery"
+                ],
+                "x-internal-id":"paas-service-dbcs-api-v1.1-instances-{identityDomainId}-{serviceId}-backups-recovery-post"
+            }
+        },
+        "/paas/service/dbcs/api/v1.1/instances/{identityDomainId}/{serviceId}/backups/recovery/history":{
+            "get":{
+                "summary":"View All Recovery Operations",
+                "description":"Returns a list of recovery operations performed on a Database Cloud Service instance.",
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "name":"identityDomainId",
+                        "in":"path",
+                        "description":"Name of the identity domain for the Database Cloud Service account.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"serviceId",
+                        "in":"path",
+                        "description":"Name of the Database Cloud Service instance.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"Authorization",
+                        "in":"header",
+                        "description":"Base64 encoding of the user name and password of the user making the request. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"X-ID-TENANT-NAME",
+                        "in":"header",
+                        "description":"Name of the identity domain for the Database Cloud Service account. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"OK. See <a href='status-codes.html'>Status Codes</a> for information about other possible HTTP status codes.",
+                        "schema":{
+                            "$ref":"#/definitions/view-all-recoveries"
+                        }
+                    }
+                },
+                "tags":[
+                    "Backup and Recovery"
+                ],
+                "x-internal-id":"paas-service-dbcs-api-v1.1-instances-{identityDomainId}-{serviceId}-backups-recovery-history-get"
+            }
+        },
+        "/paas/api/v1.1/activitylog/{identityDomainId}/job/{jobId}":{
+            "get":{
+                "summary":"View Status of an Add SSH Key Job",
+                "description":"Returns information about the job to add an SSH Key.",
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "name":"identityDomainId",
+                        "in":"path",
+                        "description":"Name of the identity domain for the Database Cloud Service account.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"jobId",
+                        "in":"path",
+                        "description":"Job ID of the operation.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"Authorization",
+                        "in":"header",
+                        "description":"Base64 encoding of the user name and password of the user making the request. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"X-ID-TENANT-NAME",
+                        "in":"header",
+                        "description":"Name of the identity domain for the Database Cloud Service account. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"OK. See <a href='status-codes.html'>Status Codes</a> for information about other possible HTTP status codes.",
+                        "schema":{
+                            "$ref":"#/definitions/view-job-status"
+                        }
+                    }
+                },
+                "tags":[
+                    "SSH Keys"
+                ],
+                "x-internal-id":"paas-api-v1.1-activitylog-{identityDomainId}-job-{jobId}-get"
+            }
+        },
+        "/paas/api/v1.1/instancemgmt/{identityDomainId}/services/dbaas/credentials":{
+            "get":{
+                "summary":"View Selected SSH Keys' Details",
+                "description":"Returns detailed information about SSH keys for one or more Database Cloud Service instances as determined by query parameters you provide.<p>By default, a single request returns a maximum of 50 keys. Use the <code>limitRowCount</code> query parameter to control maximum number returned, and use the <code>offset</code> query parameter to fetch additional results, if available.",
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "name":"identityDomainId",
+                        "in":"path",
+                        "description":"Name of the identity domain for the Database Cloud Service account.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"serviceName",
+                        "in":"query",
+                        "description":"Name of a Database Cloud Service instance. The response is limited to SSH keys for this service instance. If omitted, SSH keys for all Database Cloud Service instances in the identity domain are returned.",
+                        "required":false,
+                        "type":"string"
+                    },
+                    {
+                        "name":"limitRowCount",
+                        "in":"query",
+                        "description":"The maximum number of keys to include in the response. If omitted, a maximum of 50 keys are included in the response.",
+                        "required":false,
+                        "type":"string"
+                    },
+                    {
+                        "name":"offset",
+                        "in":"query",
+                        "description":"The number of keys to skip before starting to collect keys for the response. If omitted, zero keys are skipped so that the response begins with the first key.",
+                        "required":false,
+                        "type":"string"
+                    },
+                    {
+                        "name":"Authorization",
+                        "in":"header",
+                        "description":"Base64 encoding of the user name and password of the user making the request. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"X-ID-TENANT-NAME",
+                        "in":"header",
+                        "description":"Name of the identity domain for the Database Cloud Service account. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"OK. See <a href='status-codes.html'>Status Codes</a> for information about other possible HTTP status codes.",
+                        "schema":{
+                            "$ref":"#/definitions/view-details-selected"
+                        }
+                    }
+                },
+                "tags":[
+                    "SSH Keys"
+                ],
+                "x-internal-id":"paas-api-v1.1-instancemgmt-{identityDomainId}-services-dbaas-credentials-get"
+            }
+        },
+        "/paas/api/v1.1/instancemgmt/{identityDomainId}/services/dbaas/credentials/crednames":{
+            "get":{
+                "summary":"View Selected SSH Keys' Summaries",
+                "description":"Returns summary information about SSH keys for one or more Database Cloud Service instances as determined by query parameters you provide.<p>By default, a single request returns a maximum of 50 keys. Use the <code>limitRowCount</code> query parameter to control maximum number returned, and use the <code>offset</code> query parameter to fetch additional results, if available.",
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "name":"identityDomainId",
+                        "in":"path",
+                        "description":"Name of the identity domain for the Database Cloud Service account.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"serviceName",
+                        "in":"query",
+                        "description":"Name of a Database Cloud Service instance. The response is limited to SSH keys for this service instance. If omitted, SSH keys for all Database Cloud Service instances in the identity domain are returned.",
+                        "required":false,
+                        "type":"string"
+                    },
+                    {
+                        "name":"limitRowCount",
+                        "in":"query",
+                        "description":"The maximum number of keys to include in the response. If omitted, a maximum of 50 keys are included in the response.",
+                        "required":false,
+                        "type":"string"
+                    },
+                    {
+                        "name":"offset",
+                        "in":"query",
+                        "description":"The number of keys to skip before starting to collect keys for the response. If omitted, zero keys are skipped so that the response begins with the first key.",
+                        "required":false,
+                        "type":"string"
+                    },
+                    {
+                        "name":"Authorization",
+                        "in":"header",
+                        "description":"Base64 encoding of the user name and password of the user making the request. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"X-ID-TENANT-NAME",
+                        "in":"header",
+                        "description":"Name of the identity domain for the Database Cloud Service account. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"OK. See <a href='status-codes.html'>Status Codes</a> for information about other possible HTTP status codes.",
+                        "schema":{
+                            "$ref":"#/definitions/view-summaries-selected"
+                        }
+                    }
+                },
+                "tags":[
+                    "SSH Keys"
+                ],
+                "x-internal-id":"paas-api-v1.1-instancemgmt-{identityDomainId}-services-dbaas-credentials-crednames-get"
+            }
+        },
+        "/paas/api/v1.1/instancemgmt/{identityDomainId}/services/dbaas/instances/{serviceId}/credentials/crednames/{credentialName}":{
+            "get":{
+                "summary":"View an SSH Key's Summary",
+                "description":"Returns summary information about the SSH key for a Database Cloud Service instance.",
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "name":"identityDomainId",
+                        "in":"path",
+                        "description":"Name of the identity domain for the Database Cloud Service account.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"serviceId",
+                        "in":"path",
+                        "description":"Name of the Database Cloud Service instance.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"credentialName",
+                        "in":"path",
+                        "description":"The value <code>vmspublickey</code>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"Authorization",
+                        "in":"header",
+                        "description":"Base64 encoding of the user name and password of the user making the request. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"X-ID-TENANT-NAME",
+                        "in":"header",
+                        "description":"Name of the identity domain for the Database Cloud Service account. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"OK. See <a href='status-codes.html'>Status Codes</a> for information about other possible HTTP status codes.",
+                        "schema":{
+                            "$ref":"#/definitions/view-summary"
+                        }
+                    }
+                },
+                "tags":[
+                    "SSH Keys"
+                ],
+                "x-internal-id":"paas-api-v1.1-instancemgmt-{identityDomainId}-services-dbaas-instances-{serviceId}-credentials-crednames-{credentialName}-get"
+            },
+            "post":{
+                "summary":"Add an SSH Public Key",
+                "description":"Adds an SSH public key to a Database Cloud Service instance.",
+                "consumes":[
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "name":"identityDomainId",
+                        "in":"path",
+                        "description":"Identity domain ID for the Database Cloud Service account.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"serviceId",
+                        "in":"path",
+                        "description":"Name of the Database Cloud Service instance.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"credentialName",
+                        "in":"path",
+                        "description":"The value <code>vmspublickey</code>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"body",
+                        "in":"body",
+                        "description":"",
+                        "required":true,
+                        "schema":{
+                            "$ref":"#/definitions/add-key-request"
+                        }
+                    }
+                ],
+                "responses":{
+                    "202":{
+                        "headers":{
+                            "Location":{
+                                "description":"A REST URI you can use to check the progress and completion of the operation, as described in <a href='op-paas-api-v1.1-activitylog-{identityDomainId}-job-{jobId}-get.html'>View Status of an Add SSH Key Job</a>.",
+                                "type":"string"
+                            }
+                        },
+                        "description":"Accepted. See <a href='status-codes.html'>Status Codes</a> for information about other possible HTTP status codes.",
+                        "schema":{
+                            "$ref":"#/definitions/add-key-response"
+                        }
+                    }
+                },
+                "tags":[
+                    "SSH Keys"
+                ],
+                "x-internal-id":"paas-api-v1.1-instancemgmt-{identityDomainId}-services-dbaas-instances-{serviceId}-credentials-crednames-{credentialName}-post"
+            }
+        },
+        "/paas/api/v1.1/instancemgmt/{identityDomainId}/services/dbaas/instances/{serviceId}/credentials/{credentialName}":{
+            "get":{
+                "summary":"View an SSH Key's Details",
+                "description":"Returns detailed information about the SSH key for a Database Cloud Service instance.",
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "name":"identityDomainId",
+                        "in":"path",
+                        "description":"Name of the identity domain for the Database Cloud Service account.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"serviceId",
+                        "in":"path",
+                        "description":"Name of the Database Cloud Service instance.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"credentialName",
+                        "in":"path",
+                        "description":"The value <code>vmspublickey</code>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"Authorization",
+                        "in":"header",
+                        "description":"Base64 encoding of the user name and password of the user making the request. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"X-ID-TENANT-NAME",
+                        "in":"header",
+                        "description":"Name of the identity domain for the Database Cloud Service account. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"OK. See <a href='status-codes.html'>Status Codes</a> for information about other possible HTTP status codes.",
+                        "schema":{
+                            "$ref":"#/definitions/view-details"
+                        }
+                    }
+                },
+                "tags":[
+                    "SSH Keys"
+                ],
+                "x-internal-id":"paas-api-v1.1-instancemgmt-{identityDomainId}-services-dbaas-instances-{serviceId}-credentials-{credentialName}-get"
+            }
+        },
+        "/paas/api/v1.1/instancemgmt/{identityDomainId}/services/dbaas/instances/{serviceId}/patches/available":{
+            "get":{
+                "summary":"View a List of Available Patches",
+                "description":"Returns an array detailing the patches available to apply to a Database Cloud Service instance.",
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "name":"identityDomainId",
+                        "in":"path",
+                        "description":"Name of the identity domain for the Database Cloud Service account.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"serviceId",
+                        "in":"path",
+                        "description":"Name of the Database Cloud Service instance.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"Authorization",
+                        "in":"header",
+                        "description":"Base64 encoding of the user name and password of the user making the request. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"X-ID-TENANT-NAME",
+                        "in":"header",
+                        "description":"Name of the identity domain for the Database Cloud Service account. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"OK. See <a href='status-codes.html'>Status Codes</a> for information about other possible HTTP status codes.",
+                        "schema":{
+                            "$ref":"#/definitions/available-patches-response"
+                        }
+                    }
+                },
+                "tags":[
+                    "Patches"
+                ],
+                "x-internal-id":"paas-api-v1.1-instancemgmt-{identityDomainId}-services-dbaas-instances-{serviceId}-patches-available-get"
+            }
+        },
+        "/paas/api/v1.1/instancemgmt/{identityDomainId}/services/dbaas/instances/{serviceId}/patches/{patchId}":{
+            "put":{
+                "summary":"Apply a Patch",
+                "description":"Applies a patch to a Database Cloud Service instance.",
+                "consumes":[
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "name":"identityDomainId",
+                        "in":"path",
+                        "description":"Name of the identity domain for the Database Cloud Service account.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"serviceId",
+                        "in":"path",
+                        "description":"Name of the Database Cloud Service instance.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"patchId",
+                        "in":"path",
+                        "description":"Patch ID of the patch to apply.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"Authorization",
+                        "in":"header",
+                        "description":"Base64 encoding of the user name and password of the user making the request. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"X-ID-TENANT-NAME",
+                        "in":"header",
+                        "description":"Name of the identity domain for the Database Cloud Service account. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"body",
+                        "in":"body",
+                        "description":"",
+                        "required":true,
+                        "schema":{
+                            "$ref":"#/definitions/apply-request"
+                        }
+                    }
+                ],
+                "responses":{
+                    "202":{
+                        "description":"Accepted. See <a href='status-codes.html'>Status Codes</a> for information about other possible HTTP status codes.",
+                        "schema":{
+                            "$ref":"#/definitions/put-response"
+                        }
+                    }
+                },
+                "tags":[
+                    "Patches"
+                ],
+                "x-internal-id":"paas-api-v1.1-instancemgmt-{identityDomainId}-services-dbaas-instances-{serviceId}-patches-{patchId}-put"
+            }
+        },
+        "/paas/api/v1.1/instancemgmt/{identityDomainId}/services/dbaas/instances/{serviceId}/patches/applied":{
+            "get":{
+                "summary":"View a List of Applied and Rolled Back Patches",
+                "description":"Returns an array detailing the patch application operations on a Database Cloud Service instance. Additionally, if an applied patch was rolled back, information about the rollback operation is included in the array element for that patch application operation.",
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "name":"identityDomainId",
+                        "in":"path",
+                        "description":"Name of the identity domain for the Database Cloud Service account.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"serviceId",
+                        "in":"path",
+                        "description":"Name of the Database Cloud Service instance.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"Authorization",
+                        "in":"header",
+                        "description":"Base64 encoding of the user name and password of the user making the request. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"X-ID-TENANT-NAME",
+                        "in":"header",
+                        "description":"Name of the identity domain for the Database Cloud Service account. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"OK. See <a href='status-codes.html'>Status Codes</a> for information about other possible HTTP status codes.",
+                        "schema":{
+                            "$ref":"#/definitions/applied-patches-response"
+                        }
+                    }
+                },
+                "tags":[
+                    "Patches"
+                ],
+                "x-internal-id":"paas-api-v1.1-instancemgmt-{identityDomainId}-services-dbaas-instances-{serviceId}-patches-applied-get"
+            }
+        },
+        "/paas/api/v1.1/instancemgmt/{identityDomainId}/services/dbaas/instances/{serviceId}/patches/applied/job/{jobId}":{
+            "get":{
+                "summary":"View Job Status of a Patch Application or Rollback Operation",
+                "description":"Returns information about the long-running job to apply or roll back a patch.",
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "name":"identityDomainId",
+                        "in":"path",
+                        "description":"Name of the identity domain for the Database Cloud Service account.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"serviceId",
+                        "in":"path",
+                        "description":"Name of the Database Cloud Service instance.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"jobId",
+                        "in":"path",
+                        "description":"Unique ID of a patching or rollback operation.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"Authorization",
+                        "in":"header",
+                        "description":"Base64 encoding of the user name and password of the user making the request. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"X-ID-TENANT-NAME",
+                        "in":"header",
+                        "description":"Name of the identity domain for the Database Cloud Service account. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"OK. See <a href='status-codes.html'>Status Codes</a> for information about other possible HTTP status codes.",
+                        "schema":{
+                            "$ref":"#/definitions/applied-patch"
+                        }
+                    }
+                },
+                "tags":[
+                    "Patches"
+                ],
+                "x-internal-id":"paas-api-v1.1-instancemgmt-{identityDomainId}-services-dbaas-instances-{serviceId}-patches-applied-job-{jobId}-get"
+            }
+        },
+        "/paas/api/v1.1/instancemgmt/{identityDomainId}/services/dbaas/instances/{serviceId}/patches/checks/{patchId}":{
+            "put":{
+                "summary":"Precheck Application of a Patch",
+                "description":"Performs a precheck to identity potential issues that might prevent the specified patch from being successfully applied to the service instance; it does not actually apply the patch. Specifically, the patching precheck reports on the following conditions: <ul><li>Disk space shortage</li><li>Database connectivity failure</li><li>Compute-node access failure</li><li>Storage access failure</li><li>Conflicts with other applied patches</li></ul><p>Prechecks do not check whether another administration task that would prevent patching is in progress; for example: backup, recovery, or scaling.",
+                "consumes":[
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "name":"identityDomainId",
+                        "in":"path",
+                        "description":"Name of the identity domain for the Database Cloud Service account.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"serviceId",
+                        "in":"path",
+                        "description":"Name of the Database Cloud Service instance.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"patchId",
+                        "in":"path",
+                        "description":"ID of the patch to precheck.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"Authorization",
+                        "in":"header",
+                        "description":"Base64 encoding of the user name and password of the user making the request. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"X-ID-TENANT-NAME",
+                        "in":"header",
+                        "description":"Name of the identity domain for the Database Cloud Service account. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"body",
+                        "in":"body",
+                        "description":"",
+                        "required":true,
+                        "schema":{
+                            "$ref":"#/definitions/precheck-request"
+                        }
+                    }
+                ],
+                "responses":{
+                    "202":{
+                        "description":"Accepted. See <a href='status-codes.html'>Status Codes</a> for information about other possible HTTP status codes.<p>The <code>Location</code> header returns a REST URI that can be used to access the status of the patching precheck operation.",
+                        "schema":{
+                            "$ref":"#/definitions/put-response"
+                        }
+                    }
+                },
+                "tags":[
+                    "Patches"
+                ],
+                "x-internal-id":"paas-api-v1.1-instancemgmt-{identityDomainId}-services-dbaas-instances-{serviceId}-patches-checks-{patchId}-put"
+            }
+        },
+        "/paas/api/v1.1/instancemgmt/{identityDomainId}/services/dbaas/instances/{serviceId}/patches/checks":{
+            "get":{
+                "summary":"View a List of Patch Precheck Operations",
+                "description":"Returns an array detailing the patch precheck operations performed on a Database Cloud Service instance.",
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "name":"identityDomainId",
+                        "in":"path",
+                        "description":"Name of the identity domain for the Database Cloud Service account.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"serviceId",
+                        "in":"path",
+                        "description":"Name of the Database Cloud Service instance.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"Authorization",
+                        "in":"header",
+                        "description":"Base64 encoding of the user name and password of the user making the request. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"X-ID-TENANT-NAME",
+                        "in":"header",
+                        "description":"Name of the identity domain for the Database Cloud Service account. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"OK. See <a href='status-codes.html'>Status Codes</a> for information about other possible HTTP status codes.",
+                        "schema":{
+                            "$ref":"#/definitions/view-precheck-response"
+                        }
+                    }
+                },
+                "tags":[
+                    "Patches"
+                ],
+                "x-internal-id":"paas-api-v1.1-instancemgmt-{identityDomainId}-services-dbaas-instances-{serviceId}-patches-checks-get"
+            }
+        },
+        "/paas/api/v1.1/instancemgmt/{identityDomainId}/services/dbaas/instances/{serviceId}/patches/checks/job/{jobId}":{
+            "get":{
+                "summary":"View Job Status of a Patch Precheck Operation",
+                "description":"Returns information about the long-running job to precheck application of a patch.",
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "name":"identityDomainId",
+                        "in":"path",
+                        "description":"Name of the identity domain for the Database Cloud Service account.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"serviceId",
+                        "in":"path",
+                        "description":"Name of the Database Cloud Service instance.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"jobId",
+                        "in":"path",
+                        "description":"Job ID of the operation that was returned when the patching precheck was initiated.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"Authorization",
+                        "in":"header",
+                        "description":"Base64 encoding of the user name and password of the user making the request. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"X-ID-TENANT-NAME",
+                        "in":"header",
+                        "description":"Name of the identity domain for the Database Cloud Service account. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "202":{
+                        "description":"Accepted. See <a href='status-codes.html'>Status Codes</a> for information about other possible HTTP status codes.",
+                        "schema":{
+                            "$ref":"#/definitions/view-precheck-response"
+                        }
+                    }
+                },
+                "tags":[
+                    "Patches"
+                ],
+                "x-internal-id":"paas-api-v1.1-instancemgmt-{identityDomainId}-services-dbaas-instances-{serviceId}-patches-checks-job-{jobId}-get"
+            }
+        },
+        "/paas/api/v1.1/instancemgmt/{identityDomainId}/services/dbaas/instances/{serviceId}/patches/{rollbackId}/rollback":{
+            "put":{
+                "summary":"Roll Back an Applied Patch",
+                "description":"Rolls back a patch that was applied to a Database Cloud Service instance.",
+                "consumes":[
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "name":"identityDomainId",
+                        "in":"path",
+                        "description":"Name of the identity domain for the Database Cloud Service account.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"serviceId",
+                        "in":"path",
+                        "description":"Name of the Database Cloud Service instance.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"rollbackId",
+                        "in":"path",
+                        "description":"ID of the rollback that is associated to the completed patching operation.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"Authorization",
+                        "in":"header",
+                        "description":"Base64 encoding of the user name and password of the user making the request. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"X-ID-TENANT-NAME",
+                        "in":"header",
+                        "description":"Name of the identity domain for the Database Cloud Service account. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"body",
+                        "in":"body",
+                        "description":"",
+                        "required":true,
+                        "schema":{
+                            "$ref":"#/definitions/rollback-request"
+                        }
+                    }
+                ],
+                "responses":{
+                    "202":{
+                        "description":"Accepted. See <a href='status-codes.html'>Status Codes</a> for information about other possible HTTP status codes.",
+                        "schema":{
+                            "$ref":"#/definitions/put-response"
+                        }
+                    }
+                },
+                "tags":[
+                    "Patches"
+                ],
+                "x-internal-id":"paas-api-v1.1-instancemgmt-{identityDomainId}-services-dbaas-instances-{serviceId}-patches-{rollbackId}-rollback-put"
+            }
+        },
+        "/paas/service/dbcs/api/v1.1/instances/{identityDomainId}":{
+            "post":{
+                "summary":"Create a Service Instance",
+                "description":"Creates a Database Cloud Service instance.",
+                "consumes":[
+                    "application/vnd.com.oracle.oracloud.provisioning.Service+json"
+                ],
+                "parameters":[
+                    {
+                        "name":"identityDomainId",
+                        "in":"path",
+                        "description":"Name of the identity domain for the Database Cloud Service account.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"Authorization",
+                        "in":"header",
+                        "description":"Base64 encoding of the user name and password of the user making the request. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"X-ID-TENANT-NAME",
+                        "in":"header",
+                        "description":"Name of the identity domain for the Database Cloud Service account. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"body",
+                        "in":"body",
+                        "description":"",
+                        "required":true,
+                        "schema":{
+                            "$ref":"#/definitions/create-instance"
+                        }
+                    }
+                ],
+                "responses":{
+                    "202":{
+                        "headers":{
+                            "Location":{
+                                "description":"A REST URI you can use to check the progress and completion of the instance creation operation, as described in <a href='op-paas-service-dbcs-api-v1.1-instances-{identityDomainId}-status-{requestName}-job-{jobId}-get.html'>View the Job Status of an Operation</a>.",
+                                "type":"string"
+                            }
+                        },
+                        "description":"Accepted. See <a href='status-codes.html'>Status Codes</a> for information about other possible HTTP status codes."
+                    }
+                },
+                "tags":[
+                    "Service Instances"
+                ],
+                "x-internal-id":"paas-service-dbcs-api-v1.1-instances-{identityDomainId}-post"
+            },
+            "get":{
+                "summary":"View All Service Instances",
+                "description":"Returns information about all Database Cloud Service instances. You can view the full set of details by specifying the <code>?outputLevel=verbose</code> query parameter.",
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "name":"identityDomainId",
+                        "in":"path",
+                        "description":"Name of the identity domain for the Database Cloud Service account.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"outputLevel",
+                        "in":"query",
+                        "description":"Flag that when set to <code>verbose</code> specifies that the response should include the full set of details for all service instances.",
+                        "required":false,
+                        "type":"boolean"
+                    },
+                    {
+                        "name":"Authorization",
+                        "in":"header",
+                        "description":"Base64 encoding of the user name and password of the user making the request. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"X-ID-TENANT-NAME",
+                        "in":"header",
+                        "description":"Name of the identity domain for the Database Cloud Service account. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "202":{
+                        "description":"Accepted. See <a href='status-codes.html'>Status Codes</a> for information about other possible HTTP status codes.",
+                        "schema":{
+                            "$ref":"#/definitions/view-all-instances"
+                        }
+                    }
+                },
+                "tags":[
+                    "Service Instances"
+                ],
+                "x-internal-id":"paas-service-dbcs-api-v1.1-instances-{identityDomainId}-get"
+            }
+        },
+        "/paas/service/dbcs/api/v1.1/instances/{identityDomainId}/{serviceId}":{
+            "get":{
+                "summary":"View a Service Instance",
+                "description":"Returns information about a Database Cloud Service instance.",
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "name":"identityDomainId",
+                        "in":"path",
+                        "description":"Name of the identity domain for the Database Cloud Service account.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"serviceId",
+                        "in":"path",
+                        "description":"Name of the Database Cloud Service instance.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"Authorization",
+                        "in":"header",
+                        "description":"Base64 encoding of the user name and password of the user making the request. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"X-ID-TENANT-NAME",
+                        "in":"header",
+                        "description":"Name of the identity domain for the Database Cloud Service account. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "202":{
+                        "description":"Accepted. See <a href='status-codes.html'>Status Codes</a> for information about other possible HTTP status codes.",
+                        "schema":{
+                            "$ref":"#/definitions/view-instance"
+                        }
+                    }
+                },
+                "tags":[
+                    "Service Instances"
+                ],
+                "x-internal-id":"paas-service-dbcs-api-v1.1-instances-{identityDomainId}-{serviceId}-get"
+            },
+            "post":{
+                "summary":"Stop, Start or Restart a Service Instance or Compute Node",
+                "description":"Stops, starts or restarts a service instance or one of its compute nodes.",
+                "consumes":[
+                    "application/vnd.com.oracle.oracloud.provisioning.Service+json"
+                ],
+                "parameters":[
+                    {
+                        "name":"identityDomainId",
+                        "in":"path",
+                        "description":"Name of the identity domain for the Database Cloud Service account.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"serviceId",
+                        "in":"path",
+                        "description":"Name of the Database Cloud Service instance.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"Authorization",
+                        "in":"header",
+                        "description":"Base64 encoding of the user name and password of the user making the request. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"X-ID-TENANT-NAME",
+                        "in":"header",
+                        "description":"Name of the identity domain for the Database Cloud Service account. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"payload",
+                        "in":"body",
+                        "description":"The request body defines the details of the stop, start or restart request.",
+                        "required":true,
+                        "schema":{
+                            "$ref":"#/definitions/stop-start-restart-instance"
+                        }
+                    }
+                ],
+                "responses":{
+                    "202":{
+                        "headers":{
+                            "Location":{
+                                "description":"A REST URI you can use to check the progress and completion of the stop, start, or restart operation, as described in <a href='op-paas-service-dbcs-api-v1.1-instances-{identityDomainId}-status-{requestName}-job-{jobId}-get.html'>View the Job Status of an Operation</a>.",
+                                "type":"string"
+                            }
+                        },
+                        "description":"Accepted. See <a href='status-codes.html'>Status Codes</a> for information about other possible HTTP status codes."
+                    }
+                },
+                "tags":[
+                    "Service Instances"
+                ],
+                "x-internal-id":"paas-service-dbcs-api-v1.1-instances-{identityDomainId}-{serviceId}-post"
+            },
+            "put":{
+                "summary":"Scale a Service Instance",
+                "description":"Scales a service instance up or down. Specifically, you can:<ul><li><p>Scale the shape of the service instance's compute nodes up or down.</p></li><li><p>Add to the service instance's data or backup storage or add a new storage volume to the compute node of a service instance hosting a single-instance database.</p></li></ul>",
+                "consumes":[
+                    "application/vnd.com.oracle.oracloud.provisioning.Service+json"
+                ],
+                "parameters":[
+                    {
+                        "name":"identityDomainId",
+                        "in":"path",
+                        "description":"Name of the identity domain for the Database Cloud Service account.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"serviceId",
+                        "in":"path",
+                        "description":"Name of the Database Cloud Service instance.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"Authorization",
+                        "in":"header",
+                        "description":"Base64 encoding of the user name and password of the user making the request. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"X-ID-TENANT-NAME",
+                        "in":"header",
+                        "description":"Name of the identity domain for the Database Cloud Service account. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"payload",
+                        "in":"body",
+                        "description":"The request body defines the details of the scaling request.",
+                        "required":true,
+                        "schema":{
+                            "$ref":"#/definitions/scale-putrequest"
+                        }
+                    }
+                ],
+                "responses":{
+                    "202":{
+                        "headers":{
+                            "Location":{
+                                "description":"A REST URI you can use to check the progress and completion of the scaling operation, as described in <a href='op-paas-service-dbcs-api-v1.1-instances-{identityDomainId}-status-{requestName}-job-{jobId}-get.html'>View the Job Status of an Operation</a>.",
+                                "type":"string"
+                            }
+                        },
+                        "description":"Accepted. See <a href='status-codes.html'>Status Codes</a> for information about other possible HTTP status codes."
+                    }
+                },
+                "tags":[
+                    "Service Instances"
+                ],
+                "x-internal-id":"paas-service-dbcs-api-v1.1-instances-{identityDomainId}-{serviceId}-put"
+            },
+            "delete":{
+                "summary":"Delete a Service Instance",
+                "description":"Deletes a Database Cloud Service instance. ",
+                "consumes":[
+                    "application/vnd.com.oracle.oracloud.provisioning.Service+json"
+                ],
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "name":"identityDomainId",
+                        "in":"path",
+                        "description":"Name of the identity domain for the Database Cloud Service account.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"serviceId",
+                        "in":"path",
+                        "description":"Name of the Database Cloud Service instance.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"Authorization",
+                        "in":"header",
+                        "description":"Base64 encoding of the user name and password of the user making the request. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"X-ID-TENANT-NAME",
+                        "in":"header",
+                        "description":"Name of the identity domain for the Database Cloud Service account. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "202":{
+                        "headers":{
+                            "Location":{
+                                "description":"A REST URI you can use to check the progress and completion of the instance deletion operation, as described in <a href='op-paas-service-dbcs-api-v1.1-instances-{identityDomainId}-status-{requestName}-job-{jobId}-get.html'>View the Job Status of an Operation</a>.",
+                                "type":"string"
+                            }
+                        },
+                        "description":"Accepted. See <a href='status-codes.html'>Status Codes</a> for information about other possible HTTP status codes."
+                    }
+                },
+                "tags":[
+                    "Service Instances"
+                ],
+                "x-internal-id":"paas-service-dbcs-api-v1.1-instances-{identityDomainId}-{serviceId}-delete"
+            }
+        },
+        "/paas/service/dbcs/api/v1.1/instances/{identityDomainId}/{serviceId}/servers":{
+            "get":{
+                "summary":"View a Service Instance's Compute Nodes",
+                "description":"Returns information about the compute nodes in a Database Cloud Service instance.",
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "name":"identityDomainId",
+                        "in":"path",
+                        "description":"Name of the identity domain for the Database Cloud Service account.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"serviceId",
+                        "in":"path",
+                        "description":"Name of the Database Cloud Service instance.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"Authorization",
+                        "in":"header",
+                        "description":"Base64 encoding of the user name and password of the user making the request. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"X-ID-TENANT-NAME",
+                        "in":"header",
+                        "description":"Name of the identity domain for the Database Cloud Service account. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "202":{
+                        "description":"Accepted. See <a href='status-codes.html'>Status Codes</a> for information about other possible HTTP status codes.",
+                        "schema":{
+                            "$ref":"#/definitions/view-instance-nodes"
+                        }
+                    }
+                },
+                "tags":[
+                    "Service Instances"
+                ],
+                "x-internal-id":"paas-service-dbcs-api-v1.1-instances-{identityDomainId}-{serviceId}-servers-get"
+            }
+        },
+        "/paas/service/dbcs/api/v1.1/instances/{identityDomainId}/status/{requestName}/job/{jobId}":{
+            "get":{
+                "summary":"View the Job Status of an Operation",
+                "description":"Returns the status of a Database Cloud Service instance operation.",
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "name":"identityDomainId",
+                        "in":"path",
+                        "description":"Name of the identity domain for the Database Cloud Service account.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"requestName",
+                        "in":"path",
+                        "description":"Name of the request for which you want to view status. Valid values are:<ul><li><code>create</code>: View the status for a create service instance operation, as described in <a href='op-paas-service-dbcs-api-v1.1-instances-{identityDomainId}-post.html'>Create a Service Instance</a>.</li><li><code>delete</code>: View the status of a delete instance operation, as described in <a href='op-paas-service-dbcs-api-v1.1-instances-{identityDomainId}-{serviceId}-put.html'>Delete a Service Instance</a>.</li><li><code>control</code>: View the status of a stop, start or restart operation, as described in <a href='op-paas-service-dbcs-api-v1.1-instances-{identityDomainId}-{serviceId}-post.html'>Stop, Start or Restart a Service Instance or Compute Node</a>.</li></ul>",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"jobId",
+                        "in":"path",
+                        "description":"Job ID.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"Authorization",
+                        "in":"header",
+                        "description":"Base64 encoding of the user name and password of the user making the request. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"X-ID-TENANT-NAME",
+                        "in":"header",
+                        "description":"Name of the identity domain for the Database Cloud Service account. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"OK. See <a href='status-codes.html'>Status Codes</a> for information about other possible HTTP status codes.",
+                        "schema":{
+                            "$ref":"#/definitions/jobstatus-response"
+                        }
+                    }
+                },
+                "tags":[
+                    "Service Instances"
+                ],
+                "x-internal-id":"paas-service-dbcs-api-v1.1-instances-{identityDomainId}-status-{requestName}-job-{jobId}-get"
+            }
+        }
+    },
+    "definitions":{
+        "view-all-backups":{
+            "title":"Response Body",
+            "type":"object",
+            "description":"",
+            "properties":{
+                "backupList":{
+                    "title":"backupList Array",
+                    "type":"array",
+                    "description":"Array of JSON object elements, with one element for each backup operation.",
+                    "items":{
+                        "$ref":"#/definitions/view-all-backups-backupList-array-item"
+                    }
+                }
+            }
+        },
+        "view-all-backups-backupList-array-item":{
+            "title":"backupList Array Item",
+            "type":"object",
+            "properties":{
+                "backupCompletedDate":{
+                    "type":"string",
+                    "description":"The date-and-time stamp when the backup operation completed. Applies to completed backups only."
+                },
+                "backupStartDate":{
+                    "type":"string",
+                    "description":"The date-and-time stamp when the backup operation started. Applies to in-progress and failed backups only."
+                },
+                "dbTag":{
+                    "type":"string",
+                    "description":"Tag that uniquely identifies the backup. Applies to completed backups only."
+                },
+                "status":{
+                    "type":"string",
+                    "description":"Status of the backup; one of <code>IN PROGRESS</code>, <code>FAILED</code>, or <code>COMPLETED</code>. Note that there is only one in-progress backup at any given time, and that only the last failed backup is listed."
+                }
+            }
+        },
+        "view-all-recoveries":{
+            "title":"Response Body",
+            "type":"object",
+            "description":"",
+            "properties":{
+                "recoveryList":{
+                    "title":"recoveryList Array",
+                    "type":"array",
+                    "description":"Array of JSON object elements, with one element for each recovery operation.",
+                    "items":{
+                        "$ref":"#/definitions/view-all-recoveries-recoveryList-array-item"
+                    }
+                }
+            }
+        },
+        "view-all-recoveries-recoveryList-array-item":{
+            "title":"recoveryList Array Item",
+            "type":"object",
+            "properties":{
+                "dbTag":{
+                    "type":"string",
+                    "description":"Database Tag used if the recovery was performed using a tag."
+                },
+                "latest":{
+                    "type":"string",
+                    "description":"True if the recovery was performed to the latest available backup."
+                },
+                "recoveryCompleteDate":{
+                    "type":"string",
+                    "description":"The date-and-time stamp when the recovery operation completed. Applies to completed recovery operations only."
+                },
+                "recoveryStartDate":{
+                    "type":"string",
+                    "description":"The date-and-time stamp when the recovery operation started. Applies to in-progress and failed recovery operations only."
+                },
+                "scn":{
+                    "type":"string",
+                    "description":"SCN (System Change Number) used if the recovery was performed using an SCN."
+                },
+                "status":{
+                    "type":"string",
+                    "description":"Status of the recovery operation; one of <code>IN PROGRESS</code>, <code>FAILED</code>, or <code>COMPLETED</code>."
+                },
+                "timestamp":{
+                    "type":"string",
+                    "description":"Timestamp used if the recovery was performed using a timestamp."
+                }
+            }
+        },
+        "start-recovery":{
+            "title":"Request Body",
+            "type":"object",
+            "description":"",
+            "properties":{
+                "latest":{
+                    "type":"string",
+                    "description":"Recover Database Cloud Service instance using the latest available backup."
+                },
+                "scn":{
+                    "type":"string",
+                    "description":"Recover Database Cloud Service instance using System Change Number."
+                },
+                "tag":{
+                    "type":"string",
+                    "description":"Recover Database Cloud Service instance using a database tag."
+                },
+                "timestamp":{
+                    "type":"string",
+                    "description":"Recover Database Cloud Service instance using a timestamp. The timestamp must be of the format <code>dd-MMM-yyyy HH:mm:ss</code>."
+                }
+            }
+        },
+        "view-details-selected":{
+            "title":"Response Body",
+            "type":"object",
+            "description":"",
+            "properties":{
+                "hasMore":{
+                    "type":"boolean",
+                    "description":"Indicates whether more keys are available to be requested, with the value <code>true</code> indicating that more are available."
+                },
+                "items":{
+                    "title":"items Array",
+                    "type":"array",
+                    "description":"Array of JSON objects, with one element for each key returned.",
+                    "items":{
+                        "$ref":"#/definitions/view-details-selected-items-array-item"
+                    }
+                },
+                "totalResults":{
+                    "type":"integer",
+                    "description":"Number of keys returned by this request."
+                }
+            }
+        },
+        "view-details-selected-items-array-item":{
+            "title":"items Array Item",
+            "type":"object",
+            "properties":{
+                "componentType":{
+                    "type":"string",
+                    "description":"The value <code>DB</code>."
+                },
+                "computeKeyName":{
+                    "type":"string",
+                    "description":"The fully qualified name of the SSH Key object in Oracle Compute Cloud Service where the SSH public key value is stored."
+                },
+                "credName":{
+                    "type":"string",
+                    "description":"The value <code>vmspublickey</code>."
+                },
+                "credType":{
+                    "type":"string",
+                    "description":"The value <code>SSH</code>."
+                },
+                "description":{
+                    "type":"string",
+                    "description":"A description of the key."
+                },
+                "identityDomain":{
+                    "type":"string",
+                    "description":"The name of the identity domain for the Database Cloud Service account."
+                },
+                "lastUpdateMessage":{
+                    "type":"string",
+                    "description":"The message returned from the last update of the SSH key. For example: <code>newly created</code>, <code>updated by <em>username</em></code>."
+                },
+                "lastUpdateStatus":{
+                    "type":"string",
+                    "description":"Status of the last update of the SSH key."
+                },
+                "lastUpdateTime":{
+                    "type":"string",
+                    "description":"Date and time of the last update of the SSH key."
+                },
+                "osUserName":{
+                    "type":"string",
+                    "description":"The value <code>opc</code>."
+                },
+                "parentType":{
+                    "type":"string",
+                    "description":"The value <code>SERVICE</code>."
+                },
+                "publicKey":{
+                    "type":"string",
+                    "description":"The value of the SSH public key, with any slashes (<code>/</code>) it contains preceded by backslashes, as in <code>\\/</code>."
+                },
+                "serviceName":{
+                    "type":"string",
+                    "description":"The name of the Database Cloud Service instance."
+                },
+                "serviceState":{
+                    "type":"string",
+                    "description":"The status of the service instance. For example, <code>RUNNING</code>."
+                },
+                "serviceType":{
+                    "type":"string",
+                    "description":"The value <code>DBaaS</code>."
+                }
+            }
+        },
+        "view-summaries-selected":{
+            "title":"Response Body",
+            "type":"object",
+            "description":"",
+            "properties":{
+                "hasMore":{
+                    "type":"boolean",
+                    "description":"Indicates whether more keys are available to be requested, with the value <code>true</code> indicating that more are available."
+                },
+                "items":{
+                    "title":"items Array",
+                    "type":"array",
+                    "description":"Array of JSON objects, with one element for each key returned.",
+                    "items":{
+                        "$ref":"#/definitions/view-summaries-selected-items-array-item"
+                    }
+                },
+                "totalResults":{
+                    "type":"integer",
+                    "description":"Number of keys returned by this request."
+                }
+            }
+        },
+        "view-summaries-selected-items-array-item":{
+            "title":"items Array Item",
+            "type":"object",
+            "properties":{
+                "canonicalUrl":{
+                    "type":"string",
+                    "description":"URL to query the credential key value."
+                },
+                "credName":{
+                    "type":"string",
+                    "description":"The value <code>vmspublickey</code>."
+                },
+                "credType":{
+                    "type":"string",
+                    "description":"The value <code>SSH</code>."
+                },
+                "description":{
+                    "type":"string",
+                    "description":"A description of the key."
+                },
+                "identityDomain":{
+                    "type":"string",
+                    "description":"The name of the identity domain for the Database Cloud Service account."
+                },
+                "serviceName":{
+                    "type":"string",
+                    "description":"The name of the Database Cloud Service instance."
+                },
+                "serviceType":{
+                    "type":"string",
+                    "description":"The value <code>DBaaS</code>."
+                }
+            }
+        },
+        "view-summary":{
+            "title":"Response Body",
+            "type":"object",
+            "description":"",
+            "properties":{
+                "canonicalUrl":{
+                    "type":"string",
+                    "description":"URL to query the credential key value."
+                },
+                "credName":{
+                    "type":"string",
+                    "description":"The value <code>vmspublickey</code>."
+                },
+                "credType":{
+                    "type":"string",
+                    "description":"The value <code>SSH</code>."
+                },
+                "description":{
+                    "type":"string",
+                    "description":"A description of the key."
+                },
+                "identityDomain":{
+                    "type":"string",
+                    "description":"The name of the identity domain for the Database Cloud Service account."
+                },
+                "serviceName":{
+                    "type":"string",
+                    "description":"The name of the Database Cloud Service instance."
+                },
+                "serviceType":{
+                    "type":"string",
+                    "description":"The value <code>DBaaS</code>."
+                }
+            }
+        },
+        "view-details":{
+            "title":"Response Body",
+            "type":"object",
+            "description":"",
+            "properties":{
+                "componentType":{
+                    "type":"string",
+                    "description":"The value <code>DB</code>."
+                },
+                "computeKeyName":{
+                    "type":"string",
+                    "description":"The fully qualified name of the SSH Key object in Oracle Compute Cloud Service where the SSH public key value is stored."
+                },
+                "credName":{
+                    "type":"string",
+                    "description":"The value <code>vmspublickey</code>."
+                },
+                "credType":{
+                    "type":"string",
+                    "description":"The value <code>SSH</code>."
+                },
+                "description":{
+                    "type":"string",
+                    "description":"A description of the key."
+                },
+                "identityDomain":{
+                    "type":"string",
+                    "description":"The name of the identity domain for the Database Cloud Service account."
+                },
+                "lastUpdateMessage":{
+                    "type":"string",
+                    "description":"The message returned from the last update of the SSH key. For example: <code>newly created</code>, <code>updated by <em>username</em></code>."
+                },
+                "lastUpdateStatus":{
+                    "type":"string",
+                    "description":"Status of the last update of the SSH key."
+                },
+                "lastUpdateTime":{
+                    "type":"string",
+                    "description":"Date and time of the last update of the SSH key."
+                },
+                "osUserName":{
+                    "type":"string",
+                    "description":"The value <code>opc</code>."
+                },
+                "parentType":{
+                    "type":"string",
+                    "description":"The value <code>SERVICE</code>."
+                },
+                "publicKey":{
+                    "type":"string",
+                    "description":"The value of the SSH public key, with any slashes (<code>/</code>) it contains preceded by backslashes, as in <code>\\/</code>."
+                },
+                "serviceName":{
+                    "type":"string",
+                    "description":"The name of the Database Cloud Service instance."
+                },
+                "serviceType":{
+                    "type":"string",
+                    "description":"The value <code>DBaaS</code>."
+                }
+            }
+        },
+        "add-key-request":{
+            "title":"Request Body",
+            "type":"object",
+            "description":"",
+            "required":[
+                "public-key"
+            ],
+            "properties":{
+                "public-key":{
+                    "type":"string",
+                    "description":"The value of the SSH public key, with any slashes (<code>/</code>) it contains preceded by backslashes, as in <code>\\/</code>."
+                }
+            }
+        },
+        "add-key-response":{
+            "title":"Response Body",
+            "type":"object",
+            "description":"",
+            "properties":{
+                "status":{
+                    "type":"string",
+                    "description":"Status description. For example: <code>submitted job</code>."
+                }
+            }
+        },
+        "view-job-status":{
+            "title":"Response Body",
+            "type":"object",
+            "description":"",
+            "properties":{
+                "activityLogId":{
+                    "type":"integer",
+                    "description":"ID of the activity log."
+                },
+                "authDomain":{
+                    "type":"string",
+                    "description":"Name of the identity domain for the Database Cloud Service account."
+                },
+                "authUser":{
+                    "type":"string",
+                    "description":"Name of the Oracle Cloud user that initiated the add operation."
+                },
+                "endDate":{
+                    "type":"string",
+                    "description":"Date and time the job ended."
+                },
+                "identityDomain":{
+                    "type":"string",
+                    "description":"Name of the identity domain for the Database Cloud Service account."
+                },
+                "initiatedBy":{
+                    "type":"string",
+                    "description":"The value <code>USER</code>."
+                },
+                "jobId":{
+                    "type":"integer",
+                    "description":"Job ID returned in the <code>Location</code> header when the Add SSH Key request was made."
+                },
+                "messages":{
+                    "title":"messages Array",
+                    "type":"array",
+                    "description":"Array of JSON objects, with one element for each message reported during the job.",
+                    "items":{
+                        "$ref":"#/definitions/view-job-status-messages-item"
+                    }
+                },
+                "operationId":{
+                    "type":"integer",
+                    "description":"ID of the operation."
+                },
+                "operationType":{
+                    "type":"string",
+                    "description":"The value <code>SSH_PUBLIC_KEY_RESET</code>."
+                },
+                "serviceId":{
+                    "type":"integer",
+                    "description":"ID of the Database Cloud Service instance."
+                },
+                "serviceName":{
+                    "type":"string",
+                    "description":"Name of the Database Cloud Service instance."
+                },
+                "serviceType":{
+                    "type":"string",
+                    "description":"The value <code>dbaas</code>."
+                },
+                "startDate":{
+                    "type":"string",
+                    "description":"Date and time the job started."
+                },
+                "status":{
+                    "type":"string",
+                    "description":"Status of the job. Valid statuses include <code>RUNNING</code>, <code>SUCCEED</code> and <code>FAILED</code>."
+                },
+                "summaryMessage":{
+                    "type":"string",
+                    "description":"The value <code>SSH_PUBLIC_KEY_RESET</code>."
+                }
+            }
+        },
+        "view-job-status-messages-item":{
+            "title":"messages Array Item",
+            "type":"object",
+            "properties":{
+                "activityDate":{
+                    "type":"string",
+                    "description":"Date and time the activity was logged."
+                },
+                "message":{
+                    "type":"string",
+                    "description":"Details of the activity."
+                }
+            }
+        },
+        "available-patches-response":{
+            "description":"The response body contains information about the available patches.",
+            "properties":{
+                "availablePatchGuiMetadata":{
+                    "type":"object",
+                    "description":"Instruction to the metadata UI about the patch.",
+                    "properties":{
+                        "supportsPreCheck":{
+                            "type":"boolean",
+                            "description":"Flag that indicates whether the patch supports precheck via UI."
+                        }
+                    }
+                },
+                "patchId":{
+                    "type":"string",
+                    "description":"Patch ID."
+                },
+                "patchNumber":{
+                    "type":"string",
+                    "description":"Patch number."
+                },
+                "patchCategory":{
+                    "type":"string",
+                    "description":"Category of the patch. For example: <code>General</code>, <code>Upgrade</code>, <code>Multiple</code>, <code>Security</code>, and so on."
+                },
+                "patchSeverity":{
+                    "type":"string",
+                    "description":"Severity of the patch. For example <code>Normal</code>, <code>Mandatory</code>, <code>Recommended</code>, and so on."
+                },
+                "includesConfigUpgrade":{
+                    "type":"boolean",
+                    "description":"Flag that indicates whether the patch includes a configuration upgrade."
+                },
+                "patchDescription":{
+                    "type":"string",
+                    "description":"Description of the patch."
+                },
+                "patchReleaseUrl":{
+                    "type":"string",
+                    "description":"URL that provides more information about the patch."
+                },
+                "serviceType":{
+                    "type":"string",
+                    "description":"Service type <code>dbaas</code>."
+                },
+                "serviceVersion":{
+                    "type":"string",
+                    "description":"Oracle Database Cloud Service instance version to which the patch can be applied. For example: <code>11.2.0.4</code>, <code>Any</code>, where <code>Any</code> indicates that the patch can be applied to any version."
+                },
+                "releaseDate":{
+                    "type":"string",
+                    "description":"Date and time the patch is released."
+                },
+                "entryDate":{
+                    "type":"string",
+                    "description":"Date and time the patch is created."
+                },
+                "entryUserId":{
+                    "type":"string",
+                    "description":"Name of the user that created the patch."
+                },
+                "componentPatches":{
+                    "type":"array",
+                    "description":"Group the details of each patches in the component.",
+                    "items":{
+                        "$ref":"#/definitions/component-patch"
+                    }
+                },
+                "patchComponents":{
+                    "type":"array",
+                    "description":"Group the details of the patch to be applied.",
+                    "items":{
+                        "$ref":"#/definitions/patch-component"
+                    }
+                },
+                "patchType":{
+                    "type":"string",
+                    "description":"Patch type classification. For example, <code>PSU</Code>, <code>Security</Code>."
+                },
+                "requiresRestart":{
+                    "type":"boolean",
+                    "description":"Flag that indicates whether the patch requires a restart of the service instance."
+                },
+                "serviceTypeVersions":{
+                    "type":"string",
+                    "description":"Oracle Database Cloud Service instance version to which the patch can be applied. For example: <code>11.2.0.7</code>, <code>Any</code>, where <code>Any</code> indicates that the patch can be applied to any version."
+                },
+                "isDeleted":{
+                    "type":"boolean",
+                    "description":"Flag that indicates whether the patch has been deleted and is no longer available. The information about the patch is not removed from the list of available patches in order to maintain an historical record of all patches."
+                },
+                "isCustomerVisible":{
+                    "type":"boolean",
+                    "description":"Flag that indicates whether the patch is visible to customer."
+                },
+                "isAutoApply":{
+                    "type":"boolean",
+                    "description":"Flag that indicates whether the patch can be applied automatically."
+                },
+                "induceDownTime":{
+                    "type":"boolean",
+                    "description":"Flag that indicates whether the patching induces a downtime of the service."
+                },
+                "displayName":{
+                    "type":"string",
+                    "description":"Display name of the patch."
+                },
+                "metaVersion":{
+                    "type":"string",
+                    "description":"The release version of metadata service manager."
+                },
+                "supportedStrategy":{
+                    "type":"string",
+                    "description":"Supported patching strategy. For example: <code>In Place</code>."
+                },
+                "releaseVersion":{
+                    "type":"string",
+                    "description":"Release version of the component in this patch."
+                },
+                "patchCustomActions":{
+                    "type":"array",
+                    "description":"List of customer actions during patching.",
+                    "items":{
+                        "type":"string"
+                    }
+                }
+            }
+        },
+        "component-patch":{
+            "description":"Group the details of each patch in the component.",
+            "properties":{
+                "id":{
+                    "type":"integer",
+                    "description":"ID of a component patch."
+                },
+                "version":{
+                    "type":"string",
+                    "description":"Version of the patch component."
+                },
+                "releaseVersion":{
+                    "type":"string",
+                    "description":"Release version of the component in this patch."
+                },
+                "displayName":{
+                    "type":"string",
+                    "description":"Display name of the component in this patch."
+                },
+                "description":{
+                    "type":"string",
+                    "description":"Brief description of the patch."
+                },
+                "zipBundles":{
+                    "type":"array",
+                    "description":"Zips that contain the patched binaries or patches.",
+                    "items":{
+                        "$ref":"#/definitions/view-zip-bundles"
+                    }
+                },
+                "preserveFiles":{
+                    "type":"array",
+                    "description":"List of files to be preserved during patching.",
+                    "items":{
+                        "type":"string"
+                    }
+                }
+            }
+        },
+        "patch-component":{
+            "description":"Group the details of the patch to be applied.",
+            "properties":{
+                "id":{
+                    "type":"integer",
+                    "description":"ID of a component patch."
+                },
+                "component":{
+                    "type":"string",
+                    "description":"Name of the component in this patch <code>db</code>."
+                },
+                "version":{
+                    "type":"string",
+                    "description":"Version of the patch component."
+                },
+                "md5sum":{
+                    "type":"string",
+                    "description":"Checksum used to validate the patch binary."
+                },
+                "provisioningObjectRef":{
+                    "type":"string",
+                    "description":"Location of binary to use when creating a new service instance."
+                },
+                "patchingObjectRef":{
+                    "type":"string",
+                    "description":"Location of binary to use when patching a service instance."
+                },
+                "preserveFiles":{
+                    "type":"array",
+                    "description":"List of files to be preserved during patching.",
+                    "items":{
+                        "type":"string"
+                    }
+                }
+            }
+        },
+        "view-zip-bundles":{
+            "description":"Group the details of zips for the patched binaries.",
+            "properties":{
+                "id":{
+                    "type":"integer",
+                    "description":"ID of a component patch."
+                },
+                "md5sum":{
+                    "type":"string",
+                    "description":"Checksum used to validate the patch binary."
+                },
+                "provisioningObjectRef":{
+                    "type":"string",
+                    "description":"Location of binary to use when creating a new service instance."
+                },
+                "storageKey":{
+                    "type":"string",
+                    "description":"Location of the patch zip on the cloud."
+                },
+                "zipVersion":{
+                    "type":"string",
+                    "description":"Software version that is included in the zip."
+                },
+                "releaseDate":{
+                    "type":"string",
+                    "description":"Release date of this version."
+                },
+                "releaseUrl":{
+                    "type":"string",
+                    "description":"URL for more information about this release."
+                },
+                "displayName":{
+                    "type":"string",
+                    "description":"Display name of this component."
+                }
+            }
+        },
+        "apply-request":{
+            "title":"Request Body",
+            "type":"object",
+            "description":"",
+            "properties":{
+                "additionalNote":{
+                    "type":"string",
+                    "description":"Free-form text to provide additional information about the patching operation."
+                },
+                "forceApply":{
+                    "type":"boolean",
+                    "description":"Specifies whether the patch should be applied even if precheck finds conflicts. When <code>true</code>, patch conflicts or errors discovered during the precheck stage of the patching operation are ignored and the patch will be applied (space permitting). Otherwise, if conflicts or errors are discovered, the patch will not be applied.<p>Default value is <code>false</code>.</p>"
+                },
+                "switchOver":{
+                    "type":"boolean",
+                    "description":"(Applicable only to service instances hosting a Data Guard configuration.)<p>Specifies whether a switchover operation is performed on the primary database before applying a patch. Valid values are <code>true</code> and <code>false</code>.</p><p>Default value is <code>false</code>.</p>"
+                }
+            }
+        },
+        "precheck-request":{
+            "title":"Request Body",
+            "type":"object",
+            "description":"",
+            "properties":{
+                "additionalNote":{
+                    "type":"string",
+                    "description":"Free-form text to provide additional information about the precheck operation."
+                }
+            }
+        },
+        "rollback-request":{
+            "title":"Request Body",
+            "type":"object",
+            "description":"",
+            "properties":{
+                "additionalNote":{
+                    "type":"string",
+                    "description":"Free-form text to provide additional information about the rollback operation."
+                },
+                "switchOver":{
+                    "type":"boolean",
+                    "description":"(Applicable only to service instances hosting a Data Guard configuration.)<p>Specifies whether a switchover operation is performed on the primary database before rolling back the patch. Valid values are <code>true</code> and <code>false</code>.</p><p>Default value is <code>false</code>.</p>"
+                }
+            }
+        },
+        "put-response":{
+            "title":"Response Body",
+            "type":"object",
+            "description":"",
+            "properties":{
+                "status":{
+                    "type":"string",
+                    "description":"Status of the request to start a job for the operation. Usually the value <code>Completed</code>."
+                },
+                "details":{
+                    "$ref":"#/definitions/put-response-details-object"
+                }
+            }
+        },
+        "put-response-details-object":{
+            "title":"details Object",
+            "type":"object",
+            "description":"",
+            "properties":{
+                "message":{
+                    "type":"string",
+                    "description":"Message describing the operation."
+                },
+                "jobId":{
+                    "type":"string",
+                    "description":"Job ID of the job that was started to perform the operation."
+                }
+            }
+        },
+        "applied-patches-response":{
+            "description":"The response body includes details of all applied patches.",
+            "type":"array",
+            "items":{
+                "$ref":"#/definitions/applied-patch"
+            }
+        },
+        "applied-patch":{
+            "description":"Information about an applied patch.",
+            "properties":{
+                "backupStatus":{
+                    "type":"string",
+                    "description":"Whether a backup of the software was created before the patch was applied. Valid values include: <code>Available</code>, <code>SameVersion</code>, <code>Unavailable</code>, <code>Unknown</code>."
+                },
+                "additionalNote":{
+                    "type":"string",
+                    "description":"Free-form text to provide additional information about the patch."
+                },
+                "appliedBy":{
+                    "type":"string",
+                    "description":"Name of the user that applied the patch. <code>system</code> displays if the patch was applied by an auto-update scheduled job."
+                },
+                "appliedDate":{
+                    "type":"string",
+                    "description":"Date and time that the patch was applied."
+                },
+                "totalTime":{
+                    "type":"string",
+                    "description":"Duration of the patch operation."
+                },
+                "patchId":{
+                    "type":"string",
+                    "description":"Patch ID."
+                },
+                "patchDescription":{
+                    "type":"string",
+                    "description":"Description of the patch."
+                },
+                "patchReleaseUrl":{
+                    "type":"string",
+                    "description":"URL that provides more information about the patch."
+                },
+                "releaseDate":{
+                    "type":"string",
+                    "description":"Date and time patch was released."
+                },
+                "resultMessage":{
+                    "type":"string",
+                    "description":"Patch results message."
+                },
+                "lastStatus":{
+                    "type":"string",
+                    "description":"Status of the patch operation. For example: <code>IN PROGRESS</code>, <code>COMPLETED</code>, and <code>FAILED</code>. <code>COMPLETED_ROLLBACK</code> is displayed when an applied patch has been rolled back."
+                },
+                "lastStatusMessage":{
+                    "type":"string",
+                    "description":"Last message logged for the patch operation."
+                },
+                "componentPatches":{
+                    "type":"array",
+                    "description":"Group the details of each patches in the component.",
+                    "items":{
+                        "$ref":"#/definitions/component-patch"
+                    }
+                },
+                "patchComponents":{
+                    "type":"array",
+                    "description":"Group the details of the patch to be applied.",
+                    "items":{
+                        "$ref":"#/definitions/patch-component"
+                    }
+                },
+                "patchType":{
+                    "type":"string",
+                    "description":"Patch type classification. For example, <code>Quarterly</Code>, <code>Security</Code>."
+                },
+                "patchCategory":{
+                    "type":"string",
+                    "description":"Category of the patch. For example: <code>General</code>, <code>Multiple</code>, <code>Security</code>, and so on."
+                },
+                "patchSeverity":{
+                    "type":"string",
+                    "description":"Severity of the patch. For example <code>Normal</code>, <code>Mandatory</code>, <code>Recommended</code>, and so on."
+                },
+                "jobId":{
+                    "type":"string",
+                    "description":"Job ID for the patch operation."
+                },
+                "displayName":{
+                    "type":"string",
+                    "description":"Display name of the patch."
+                },
+                "toVersion":{
+                    "type":"string",
+                    "description":"Version of Oracle Database Cloud Service instance that was patched."
+                },
+                "backupId":{
+                    "type":"string",
+                    "description":"Backup ID. You can use the backup ID to manage the backup."
+                },
+                "inProgress":{
+                    "type":"boolean",
+                    "description":"Flag that specifies whether the patch is still in progress."
+                },
+                "operationType":{
+                    "type":"string",
+                    "description":"Patch operating being performed. Valid values include: <code>Rollback</code>, <code>Patching</code>, and <code>None</code>."
+                },
+                "id":{
+                    "type":"integer",
+                    "description":"Unique ID of the patching operation. Use this ID to get details of a patching operation."
+                },
+                "patchingResult":{
+                    "$ref":"#/definitions/patching-result"
+                },
+                "rollbackResult":{
+                    "$ref":"#/definitions/rollback-result"
+                },
+                "rollbackId":{
+                    "type":"string",
+                    "description":"ID of the rollback that is associated to the completed patching operation. The ID is used to rollback a patch operation."
+                },
+                "rollbackVersion":{
+                    "type":"string",
+                    "description":"Version to which the patched component will be rolled back."
+                },
+                "currentPatchLevel":{
+                    "type":"string",
+                    "description":"Current patch level for the component."
+                },
+                "progressMessages":{
+                    "type":"array",
+                    "description":"List of progress messages for the patch.",
+                    "items":{
+                        "type":"string"
+                    }
+                }
+            }
+        },
+        "patching-result":{
+            "type":"object",
+            "description":"Groups information about the results of the patch.",
+            "properties":{
+                "additionalNote":{
+                    "type":"string",
+                    "description":"Free-form text to provide additional information about the rollback.",
+                    "properties":{
+                        "patchingId":{
+                            "type":"integer",
+                            "description":"ID of the applied patch operation."
+                        },
+                        "backupId":{
+                            "type":"string",
+                            "description":"Backup ID. You can use the backup ID to manage the backup."
+                        },
+                        "versionBeforeThisPatch":{
+                            "type":"string",
+                            "description":"Version of the component before the patch was applied."
+                        },
+                        "strategy":{
+                            "type":"string",
+                            "description":"Patching strategy. For example, <code>Rolling</code>. To minimize service disruption, the patch is applied in a rolling pattern, patching a single node at a time."
+                        },
+                        "metaVersionBeforeThisPatch":{
+                            "type":"string",
+                            "description":"Version of the metadata service manager before the patch was applied."
+                        },
+                        "customRollbackId":{
+                            "type":"string",
+                            "description":"ID to be used in a rollback operation."
+                        },
+                        "startDate":{
+                            "type":"string",
+                            "description":"Date and time that the patch operation started."
+                        },
+                        "endDate":{
+                            "type":"string",
+                            "description":"Date the patch operation ended."
+                        },
+                        "patchingStatus":{
+                            "type":"string",
+                            "description":"Status of the patching operation. For example, <code>COMPLETED</code>. <code>COMPLETED_ROLLBACK</code> is displayed when an applied patch has been rolled back."
+                        },
+                        "resultMessage":{
+                            "type":"string",
+                            "description":"System message that describes the patching operation."
+                        },
+                        "additionalNote":{
+                            "type":"string",
+                            "description":"Free-form text to provide additional information about the patch."
+                        },
+                        "appliedBy":{
+                            "type":"string",
+                            "description":"Name of the user that applied the patch. <code>system</code> displays if the patch was applied by an auto-update scheduled job."
+                        },
+                        "jobId":{
+                            "type":"string",
+                            "description":"Job ID for the patch operation."
+                        },
+                        "completeLog":{
+                            "type":"string",
+                            "description":"System messages that track the patch operations."
+                        },
+                        "progressMessages":{
+                            "type":"array",
+                            "description":"List of progress messages for the patch.",
+                            "items":{
+                                "type":"string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "rollback-result":{
+            "type":"object",
+            "description":"Groups information about the results of the rollback operation. This attribute displays only when a rollback of the patch had been performed.",
+            "properties":{
+                "rollbackId":{
+                    "type":"integer",
+                    "description":"ID of the rollback operation."
+                },
+                "startDate":{
+                    "type":"string",
+                    "description":"Date and time that the rollback operation started."
+                },
+                "endDate":{
+                    "type":"string",
+                    "description":"Date the rollback operation ended."
+                },
+                "patchingStatus":{
+                    "type":"string",
+                    "description":"Status of the rollback operation. For example, <code>COMPLETED_ROLLBACK</code>."
+                },
+                "resultMessage":{
+                    "type":"string",
+                    "description":"System message that describes the rollback operation."
+                },
+                "additionalNote":{
+                    "type":"string",
+                    "description":"Free-form text to provide additional information about the rollback."
+                },
+                "appliedBy":{
+                    "type":"string",
+                    "description":"Name of the user that performed the rollback."
+                },
+                "jobId":{
+                    "type":"string",
+                    "description":"Job ID for the rollback operation."
+                },
+                "completeLog":{
+                    "type":"string",
+                    "description":"System messages that track the rollback operations."
+                },
+                "progressMessages":{
+                    "type":"array",
+                    "description":"List of progress messages for the rollback.",
+                    "items":{
+                        "type":"string"
+                    }
+                }
+            }
+        },
+        "view-precheck-response":{
+            "description":"The response body includes information about the patch precheck. When viewing all patching prechecks, the response body includes information about all patch prechecks executed on this service instance.",
+            "properties":{
+                "id":{
+                    "type":"integer",
+                    "description":"ID of the operation."
+                },
+                "jobId":{
+                    "type":"string",
+                    "description":"Job ID for the patching precheck operation."
+                },
+                "patchId":{
+                    "type":"string",
+                    "description":"Patch ID."
+                },
+                "startDate":{
+                    "type":"string",
+                    "description":"Date and time that the patching precheck operation started."
+                },
+                "endDate":{
+                    "type":"string",
+                    "description":"Date and time that the patching precheck operation stopped."
+                },
+                "performedBy":{
+                    "type":"string",
+                    "description":"Name of the user account used to perform the patch precheck."
+                },
+                "inProgress":{
+                    "type":"boolean",
+                    "description":"Flag that specifies whether the patch precheck is still in progress."
+                },
+                "status":{
+                    "type":"string",
+                    "description":"Status of the patching precheck operation. Valid values include: <ul><li><code>PASSED_PRECHECK</code> - Patching precheck passed.</li><li><code>DIDNT_PASS_PRECHECK</code> - Patching precheck did not pass. Check the <code>preCheckMessages</code> attribute for more information.</li><li><code>DIDNT_FINISHED_PRECHECK</code> - An internal error was encountered and the patching precheck could not be performed."
+                },
+                "href":{
+                    "type":"string",
+                    "description":"URL for checking the status of the patching precheck job. This attribute displays only when viewing all patching precheck operations."
+                },
+                "preCheckMessages":{
+                    "type":"array",
+                    "description":"List of patching precheck messages. No patching precheck messages are returned when the precheck completes successfully.",
+                    "items":{
+                        "type":"string"
+                    }
+                },
+                "resultMessage":{
+                    "type":"string",
+                    "description":"System messages. This attribute displays only when viewing the status of one patching precheck operation."
+                }
+            }
+        },
+        "create-instance":{
+            "title":"Request Body",
+            "type":"object",
+            "required":[
+                "edition",
+                "level",
+                "parameters",
+                "serviceName",
+                "shape",
+                "subscriptionType",
+                "version",
+                "vmPublicKeyText"
+            ],
+            "properties":{
+                "serviceName":{
+                    "type":"string",
+                    "description":"Name of Database Cloud Service instance. The service name:<ul><li>Must not exceed 50 characters (15 characters for a service instance that uses Oracle RAC).</li><li>Must start with a letter.</li><li>Must contain only letters, numbers, or hyphens.</li><li>Must not contain any other special characters.</li><li>Must be unique within the identity domain.</li></ul>"
+                },
+                "description":{
+                    "type":"string",
+                    "description":"Free-form text that provides additional information about the service instance."
+                },
+                "shape":{
+                    "type":"string",
+                    "description":"Desired compute shape. A shape defines the number of Oracle Compute Units (OCPUs) and amount of memory (RAM). Valid shapes include: <ul><li>oc3: 1 OCPU, 7.5 GB memory</li><li>oc4: 2 OCPUs, 15 GB memory</li><li>oc5: 4 OCPUs, 30 GB memory</li><li>oc6: 8 OCPUs, 15 GB memory</li><li>oc1m: 1 OCPU, 15 GB memory</li><li>oc2m: 2 OCPUs, 30 GB memory</li><li>oc3m: 4 OCPUs, 60 GB memory</li><li>oc4m: 8 OCPUs, 120 GB memory</li></ul>.<p>See <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=OCSUG210' target='_blank'>About Shapes</a> in <i>Using Oracle Compute Cloud Service</i> for more information about shapes."
+                },
+                "vmPublicKeyText":{
+                    "type":"string",
+                    "description":"Public key for the secure shell (SSH). This key will be used for authentication when connecting to the Database Cloud Service instance using an SSH client. You generate an SSH public-private key pair using a standard SSH key generation tool. See <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=CSDBI3443' target='_blank'>Connecting to a Compute Node Through Secure Shell (SSH)</a> in <i>Using Oracle Database Cloud Service</i>."
+                },
+                "subscriptionType":{
+                    "type":"string",
+                    "description":"Billing unit. Valid values are:<ul><li><code>HOURLY</code>: Pay only for the number of hours used during your billing period. This is the default.</li><li><code>MONTHLY</code>: Pay one price for the full month irrespective of the number of hours used.</li></ul>"
+                },
+                "level":{
+                    "type":"string",
+                    "description":"Service level for the service instance; use the value <code>PAAS</code>."
+                },
+                "version":{
+                    "type":"string",
+                    "description":"Oracle Database software version; one of: <code>12.2.0.1</code>, <code>12.1.0.2</code> or <code>11.2.0.4</code>."
+                },
+                "edition":{
+                    "type":"string",
+                    "description":"<p>Database edition for the service instance:</p><ul><li><p><code>SE</code>: Standard Edition</p></li><li><p><code>EE</code>: Enterprise Edition</p></li><li><p><code>EE_HP</code>: Enterprise Edition - High Performance</p></li><li><p><code>EE_EP</code>: Enterprise Edition - Extreme Performance</p></li></ul><p>If you specify <code>SE</code>, a Standard Edition Two database is created if you specify <code>12.1.0.2</code> for <code>version</code> and a Standard Edition One database is created if you specify <code>11.2.0.4</code> for <code>version</code>.</p><p>Edition must be <code>Enterprise Edition - Extreme Performance</code> to configure the Database Cloud Service instance as Cluster Database."
+                },
+                "parameters":{
+                    "title":"parameters Array",
+                    "type":"array",
+                    "description":"Array of one JSON object that specifies configuration details of the services instance. This array is not required if the <code>level</code> value is <code>BASIC</code>.",
+                    "items":{
+                        "$ref":"#/definitions/create-instance-parameters-item"
+                    }
+                },
+                "customParameters":{
+                    "$ref":"#/definitions/create-instance-customparameters-object"
+                }
+            }
+        },
+        "create-instance-parameters-item":{
+            "title":"parameters Array Item",
+            "type":"object",
+            "required":[
+                "type",
+                "usableStorage",
+                "adminPassword",
+                "sid",
+                "backupDestination"
+            ],
+            "properties":{
+                "type":{
+                    "type":"string",
+                    "description":"Component type to which the set of parameters applies. Valid values are: <ul><li><code>db</code> - Oracle Database </li>."
+                },
+                "usableStorage":{
+                    "type":"string",
+                    "description":"Storage volume size for data. Default value is 25GB. Minimum allowed size is 15GB. Maximum allowed size is 500GB if backup destination is specified and 1000GB if no backup destination is specified. Backup volume size is calculated based on data size."
+                },
+                "adminPassword":{
+                    "type":"string",
+                    "description":"Password for Oracle Database administrator users <code>sys</code> and <code>system</code>. The password must meet the following requirements:<ul><li>Starts with a letter</li><li>Is between 8 and 30 characters long</li><li>Contains letters, at least one number, and optionally, any number of these special characters: dollar sign ($), pound sign (#), and underscore (_).</li></ul>"
+                },
+                "sid":{
+                    "type":"string",
+                    "description":"Database Name (sid) for the Database Cloud Service instance. Default value is <code>ORCL</code>."
+                },
+                "pdbName":{
+                    "type":"string",
+                    "description":"<b>Note:</b> This attribute is valid when Database Cloud Service instance is configured with version <code>12c</code>.<p>Pluggable Database Name for the Database Cloud Service instance. Default value is <code>pdb1</code>."
+                },
+                "timezone":{
+                    "type":"string",
+                    "description":"Time Zone for the Database Cloud Service instance. Default value is <code>UTC</code>. <p>Valid values are <code>Africa/Cairo</code>, <code>Africa/Casablanca</code>, <code>Africa/Harare</code>, <code>Africa/Monrovia</code>, <code>Africa/Nairobi</code>, <code>Africa/Tripoli</code>, <code>Africa/Windhoek</code>, <code>America/Araguaina</code>, <code>America/Asuncion</code>, <code>America/Bogota</code>, <code>America/Caracas</code>, <code>America/Chihuahua</code>, <code>America/Cuiaba</code>, <code>America/Denver</code>, <code>America/Fortaleza</code>, <code>America/Guatemala</code>, <code>America/Halifax</code>, <code>America/Manaus</code>, <code>America/Matamoros</code>, <code>America/Monterrey</code>, <code>America/Montevideo</code>, <code>America/Phoenix</code>, <code>America/Santiago</code>, <code>America/Tijuana</code>, <code>Asia/Amman</code>, <code>Asia/Ashgabat</code>, <code>Asia/Baghdad</code>, <code>Asia/Baku</code>, <code>Asia/Bangkok</code>, <code>Asia/Beirut</code>, <code>Asia/Calcutta</code>, <code>Asia/Damascus</code>, <code>Asia/Dhaka</code>, <code>Asia/Irkutsk</code>, <code>Asia/Jerusalem</code>, <code>Asia/Kabul</code>, <code>Asia/Karachi</code>, <code>Asia/Kathmandu</code>, <code>Asia/Krasnoyarsk</code>, <code>Asia/Magadan</code>, <code>Asia/Muscat</code>, <code>Asia/Novosibirsk</code>, <code>Asia/Riyadh</code>, <code>Asia/Seoul</code>, <code>Asia/Shanghai</code>, <code>Asia/Singapore</code>, <code>Asia/Taipei</code>, <code>Asia/Tehran</code>, <code>Asia/Tokyo</code>, <code>Asia/Ulaanbaatar</code>, <code>Asia/Vladivostok</code>, <code>Asia/Yakutsk</code>, <code>Asia/Yerevan</code>, <code>Atlantic/Azores</code>, <code>Australia/Adelaide</code>, <code>Australia/Brisbane</code>, <code>Australia/Darwin</code>, <code>Australia/Hobart</code>, <code>Australia/Perth</code>, <code>Australia/Sydney</code>, <code>Brazil/East</code>, <code>Canada/Newfoundland</code>, <code>Canada/Saskatchewan</code>, <code>Europe/Amsterdam</code>, <code>Europe/Athens</code>, <code>Europe/Dublin</code>, <code>Europe/Helsinki</code>, <code>Europe/Istanbul</code>, <code>Europe/Kaliningrad</code>, <code>Europe/Moscow</code>, <code>Europe/Paris</code>, <code>Europe/Prague</code>, <code>Europe/Sarajevo</code>, <code>Pacific/Auckland</code>, <code>Pacific/Fiji</code>, <code>Pacific/Guam</code>, <code>Pacific/Honolulu</code>, <code>Pacific/Samoa</code>, <code>US/Alaska</code>, <code>US/Central</code>, <code>US/Eastern</code>, <code>US/East-Indiana</code>, <code>US/Pacific</code>, <code>UTC</code>."
+                },
+                "ncharset":{
+                    "type":"string",
+                    "description":"National Character Set for the Database Cloud Service instance. Default value is <code>AL16UTF16</code>. <p>Valid values are <code>AL16UTF16</code> and <code>UTF8</code>."
+                },
+                "charset":{
+                    "type":"string",
+                    "description":"Character Set for the Database Cloud Service Instance. Default value is <code>AL32UTF8</code>. <p>Valid values are <code>AL32UTF8</code>, <code>AR8ADOS710</code>, <code>AR8ADOS720</code>, <code>AR8APTEC715</code>, <code>AR8ARABICMACS</code>, <code>AR8ASMO8X</code>, <code>AR8ISO8859P6</code>, <code>AR8MSWIN1256</code>, <code>AR8MUSSAD768</code>, <code>AR8NAFITHA711</code>, <code>AR8NAFITHA721</code>, <code>AR8SAKHR706</code>, <code>AR8SAKHR707</code>, <code>AZ8ISO8859P9E</code>, <code>BG8MSWIN</code>, <code>BG8PC437S</code>, <code>BLT8CP921</code>, <code>BLT8ISO8859P13</code>, <code>BLT8MSWIN1257</code>, <code>BLT8PC775</code>, <code>BN8BSCII</code>, <code>CDN8PC863</code>, <code>CEL8ISO8859P14</code>, <code>CL8ISO8859P5</code>, <code>CL8ISOIR111</code>, <code>CL8KOI8R</code>, <code>CL8KOI8U</code>, <code>CL8MACCYRILLICS</code>, <code>CL8MSWIN1251</code>, <code>EE8ISO8859P2</code>, <code>EE8MACCES</code>, <code>EE8MACCROATIANS</code>, <code>EE8MSWIN1250</code>, <code>EE8PC852</code>, <code>EL8DEC</code>, <code>EL8ISO8859P7</code>, <code>EL8MACGREEKS</code>, <code>EL8MSWIN1253</code>, <code>EL8PC437S</code>, <code>EL8PC851</code>, <code>EL8PC869</code>, <code>ET8MSWIN923</code>, <code>HU8ABMOD</code>, <code>HU8CWI2</code>, <code>IN8ISCII</code>, <code>IS8PC861</code>, <code>IW8ISO8859P8</code>, <code>IW8MACHEBREWS</code>, <code>IW8MSWIN1255</code>, <code>IW8PC1507</code>, <code>JA16EUC</code>, <code>JA16EUCTILDE</code>, <code>JA16SJIS</code>, <code>JA16SJISTILDE</code>, <code>JA16VMS</code>, <code>KO16KSC5601</code>, <code>KO16KSCCS</code>, <code>KO16MSWIN949</code>, <code>LA8ISO6937</code>, <code>LA8PASSPORT</code>, <code>LT8MSWIN921</code>, <code>LT8PC772</code>, <code>LT8PC774</code>, <code>LV8PC1117</code>, <code>LV8PC8LR</code>, <code>LV8RST104090</code>, <code>N8PC865</code>, <code>NE8ISO8859P10</code>, <code>NEE8ISO8859P4</code>, <code>RU8BESTA</code>, <code>RU8PC855</code>, <code>RU8PC866</code>, <code>SE8ISO8859P3</code>, <code>TH8MACTHAIS</code>, <code>TH8TISASCII</code>, <code>TR8DEC</code>, <code>TR8MACTURKISHS</code>, <code>TR8MSWIN1254</code>, <code>TR8PC857</code>, <code>US7ASCII</code>, <code>US8PC437</code>, <code>UTF8</code>, <code>VN8MSWIN1258</code>, <code>VN8VN3</code>, <code>WE8DEC</code>, <code>WE8DG</code>, <code>WE8ISO8859P1</code>, <code>WE8ISO8859P15</code>, <code>WE8ISO8859P9</code>, <code>WE8MACROMAN8S</code>, <code>WE8MSWIN1252</code>, <code>WE8NCR4970</code>, <code>WE8NEXTSTEP</code>, <code>WE8PC850</code>, <code>WE8PC858</code>, <code>WE8PC860</code>, <code>WE8ROMAN8</code>, <code>ZHS16CGB231280</code>, <code>ZHS16GBK</code>, <code>ZHT16BIG5</code>, <code>ZHT16CCDC</code>, <code>ZHT16DBT</code>, <code>ZHT16HKSCS</code>, <code>ZHT16MSWIN950</code>, <code>ZHT32EUC</code>, <code>ZHT32SOPS</code>, <code>ZHT32TRIS</code>."
+                },
+                "isRac":{
+                    "type":"string",
+                    "description":"Specify if a cluster database using Oracle Real Application Clusters should be configured. Valid values are <code>yes</code> and <code>no</code>. Default value is <code>no</code>.</p>"
+                },
+                "backupDestination":{
+                    "type":"string",
+                    "description":"Backup destination. Valid values are: <ul><li><code>NFS</code> - Backups are configured to be created automatically and stored on an NFS remote backup location.</li><li><code>NONE</code> - Backups are not configured.</li></ul>"
+                },
+                "cloudStorageContainer":{
+                    "type":"string",
+                    "description":"The path of the NFS remote backup location where backups of the service instance are to be stored. This path must be of the format <code><i>host-name</i>:<i>absolute-path</i></code> or <code><i>ip-address</i>:<i>absolute-path</i></code>"
+                },
+                "publicNetwork":{
+                    "type":"string",
+                    "description":"Public network to draw IP addresses from for the Database Cloud Service Instance."
+                }
+            }
+        },
+        "create-instance-customparameters-object":{
+            "title":"customParameters Object",
+            "type":"object",
+            "properties":{
+                "db_demo":{
+                    "type":"string",
+                    "description":"Indicates whether to include the Demos PDB: <code>\"yes\"</code> or <code>\"no\"</code>."
+                }
+            }
+        },
+        "view-all-instances":{
+            "title":"Response Body",
+            "type":"object",
+            "description":"",
+            "properties":{
+                "uri":{
+                    "type":"string",
+                    "description":"REST endpoint URI for Database Cloud Service in the identity domain."
+                },
+                "service_type":{
+                    "type":"string",
+                    "description":"The value <code>dbaas</code> to denote Database Cloud Service."
+                },
+                "implementation_version":{
+                    "type":"string",
+                    "description":"The value <code>1.0</code>."
+                },
+                "services":{
+                    "title":"services Array",
+                    "type":"array",
+                    "description":"Array of JSON object elements, with one element for each service instance in the identity domain.",
+                    "items":{
+                        "$ref":"#/definitions/view-all-instances-services-array-item"
+                    }
+                }
+            }
+        },
+        "view-all-instances-services-array-item":{
+            "title":"services Array Item",
+            "type":"object",
+            "properties":{
+                "backup_supported_version":{
+                    "type":"string",
+                    "description":"The version of cloud tooling for backup and recovery supported by the service instance."
+                },
+                "created_by":{
+                    "type":"string",
+                    "description":"The user name of the Oracle Cloud user who created the service instance."
+                },
+                "creation_time":{
+                    "type":"string",
+                    "description":"The date-and-time stamp when the service instance was created."
+                },
+                "description":{
+                    "type":"string",
+                    "description":"The description of the service instance, if one was provided when the instance was created."
+                },
+                "identity_domain":{
+                    "type":"string",
+                    "description":"The identity domain housing the service instance."
+                },
+                "last_modified_time":{
+                    "type":"string",
+                    "description":"The date-and-time stamp when the service instance was last modified."
+                },
+                "service_name":{
+                    "type":"string",
+                    "description":"The name of the service instance."
+                },
+                "service_uri":{
+                    "type":"string",
+                    "description":"The REST endpoint URI of the service instance."
+                },
+                "sm_plugin_version":{
+                    "type":"string",
+                    "description":"The version of the cloud tooling service manager plugin supported by the service instance."
+                },
+                "status":{
+                    "type":"string",
+                    "description":"The status of the service instance:<ul><li><code>In Progress</code>: the service instance is being created.</li><li><code>Maintenance</code>: the service instance is being stopped, started, restarted or scaled.</li><li><code>Running</code>: the service instance is running.</li><li><code>Stopped</code>: the service instance is stopped.</li><li><code>Terminating</code>: the service instance is being deleted.</li></ul>"
+                },
+                "version":{
+                    "type":"string",
+                    "description":"The Oracle Database version on the service instance."
+                }
+            }
+        },
+        "view-instance":{
+            "title":"Response Body",
+            "type":"object",
+            "description":"",
+            "properties":{
+                "apex_url":{
+                    "type":"string",
+                    "description":"The URL to use to connect to Oracle Application Express on the service instance."
+                },
+                "backup_destination":{
+                    "type":"string",
+                    "description":"The backup configuration of the service instance."
+                },
+                "backup_supported_version":{
+                    "type":"string",
+                    "description":"The version of cloud tooling for backup and recovery supported by the service instance."
+                },
+                "charset":{
+                    "type":"string",
+                    "description":"The database character set of the database."
+                },
+                "cloud_storage_container":{
+                    "type":"string",
+                    "description":"The path of the NFS remote backup location where backups of the service instance are stored."
+                },
+                "compute_site_name":{
+                    "type":"string",
+                    "description":"The Oracle Cloud zone housing the service instance."
+                },
+                "connect_descriptor":{
+                    "type":"string",
+                    "description":"The connection descriptor for Oracle Net Services (SQL*Net)."
+                },
+                "connect_descriptor_with_public_ip":{
+                    "type":"string",
+                    "description":"The connection descriptor for Oracle Net Services (SQL*Net) with IP addresses instead of host names."
+                },
+                "created_by":{
+                    "type":"string",
+                    "description":"The user name of the Oracle Cloud user who created the service instance."
+                },
+                "creation_job_id":{
+                    "type":"string",
+                    "description":"The job id of the job that created the service instance."
+                },
+                "creation_time":{
+                    "type":"string",
+                    "description":"The date-and-time stamp when the service instance was created."
+                },
+                "current_version":{
+                    "type":"string",
+                    "description":"The Oracle Database version on the service instance, including the patch level."
+                },
+                "dbaasmonitor_url":{
+                    "type":"string",
+                    "description":"The URL to use to connect to Oracle DBaaS Monitor on the service instance."
+                },
+                "description":{
+                    "type":"string",
+                    "description":"The description of the service instance, if one was provided when the instance was created."
+                },
+                "edition":{
+                    "type":"string",
+                    "description":"The software edition of the service instance."
+                },
+                "em_url":{
+                    "type":"string",
+                    "description":"The URL to use to connect to Enterprise Manager on the service instance."
+                },
+                "glassfish_url":{
+                    "type":"string",
+                    "description":"The URL to use to connect to the Oracle GlassFish Server Administration Console on the service instance."
+                },
+                "identity_domain":{
+                    "type":"string",
+                    "description":"The identity domain housing the service instance."
+                },
+                "jaas_instances_using_service":{
+                    "type":"string",
+                    "description":"The Oracle Java Cloud Service instances using this Database Cloud Service instance."
+                },
+                "last_modified_time":{
+                    "type":"string",
+                    "description":"The date-and-time stamp when the service instance was last modified."
+                },
+                "level":{
+                    "type":"string",
+                    "description":"The service level of the service instance:<ul><li><code>BASIC</code>: The Oracle Database Cloud Service - Virtual Image service level</li><li><code>PAAS</code>:The Oracle Database Cloud Service service level</li></ul>"
+                },
+                "listenerPort":{
+                    "type":"integer",
+                    "description":"The listener port for Oracle Net Services (SQL*Net) connections."
+                },
+                "ncharset":{
+                    "type":"string",
+                    "description":"The national character set of the database."
+                },
+                "num_ip_reservations":{
+                    "type":"integer",
+                    "description":"The number of Oracle Compute Service IP reservations assigned to the service instance."
+                },
+                "num_nodes":{
+                    "type":"string",
+                    "description":"The number of compute nodes in the service instance."
+                },
+                "pdbName":{
+                    "type":"string",
+                    "description":"The name of the default PDB (pluggable database) created when the service instance was created."
+                },
+                "publicNetwork":{
+                    "type":"string",
+                    "description":"Public network where the Database Cloud Service Instance is available."
+                },
+                "rac_database":{
+                    "type":"boolean",
+                    "description":"Indicates whether the service instance hosts an Oracle RAC database."
+                },
+                "service_name":{
+                    "type":"string",
+                    "description":"The name of the service instance."
+                },
+                "service_uri":{
+                    "type":"string",
+                    "description":"The REST endpoint URI of the service instance."
+                },
+                "shape":{
+                    "type":"string",
+                    "description":"The Oracle Compute Cloud shape of the service instance."
+                },
+                "sid":{
+                    "type":"string",
+                    "description":"The SID of the database."
+                },
+                "sm_plugin_version":{
+                    "type":"string",
+                    "description":"The version of the cloud tooling service manager plugin supported by the service instance."
+                },
+                "status":{
+                    "type":"string",
+                    "description":"The status of the service instance:<ul><li><code>In Progress</code>: the service instance is being created.</li><li><code>Maintenance</code>: the service instance is being stopped, started, restarted or scaled.</li><li><code>Running</code>: the service instance is running.</li><li><code>Stopped</code>: the service instance is stopped.</li><li><code>Terminating</code>: the service instance is being deleted.</li></ul>"
+                },
+                "subscriptionType":{
+                    "type":"string",
+                    "description":"The billing frequency of the service instance; either <code>MONTHLY</code> or <code>HOURLY</code>."
+                },
+                "timezone":{
+                    "type":"string",
+                    "description":"The time zone of the operating system."
+                },
+                "total_shared_storage":{
+                    "type":"integer",
+                    "description":"For service instances hosting an Oracle RAC database, the size in GB of the storage shared and accessed by the nodes of the RAC database."
+                },
+                "version":{
+                    "type":"string",
+                    "description":"The Oracle Database version on the service instance."
+                }
+            }
+        },
+        "view-instance-nodes":{
+            "title":"Response Body",
+            "type":"array",
+            "description":"Array of JSON object elements, with one element for each of the service instance's compute nodes.",
+            "items":{
+                "$ref":"#/definitions/view-instance-nodes-array-item"
+            }
+        },
+        "view-instance-nodes-array-item":{
+            "title":"Response Body Array Item",
+            "type":"object",
+            "properties":{
+                "connect_descriptor":{
+                    "type":"string",
+                    "description":"The connection descriptor for Oracle Net Services (SQL*Net)."
+                },
+                "connect_descriptor_with_public_ip":{
+                    "type":"string",
+                    "description":"The connection descriptor for Oracle Net Services (SQL*Net) with IP addresses instead of host names."
+                },
+                "created_by":{
+                    "type":"string",
+                    "description":"The user name of the Oracle Cloud user who created the service instance."
+                },
+                "creation_job_id":{
+                    "type":"string",
+                    "description":"The job id of the job that created the service instance."
+                },
+                "creation_time":{
+                    "type":"string",
+                    "description":"The date-and-time stamp when the service instance was created."
+                },
+                "hostname":{
+                    "type":"string",
+                    "description":"The host name of the compute node."
+                },
+                "initialPrimary":{
+                    "type":"boolean",
+                    "description":"Indicates whether the compute node hosted the primary database of an Oracle Data Guard configuration when the service instance was created."
+                },
+                "listenerPort":{
+                    "type":"integer",
+                    "description":"The listener port for Oracle Net Services (SQL*Net) connections."
+                },
+                "pdbName":{
+                    "type":"string",
+                    "description":"The name of the default PDB (pluggable database) created when the service instance was created."
+                },
+                "reservedIP":{
+                    "type":"string",
+                    "description":"The IP address of the compute node."
+                },
+                "shape":{
+                    "type":"string",
+                    "description":"The Oracle Compute Cloud shape of the compute node."
+                },
+                "sid":{
+                    "type":"string",
+                    "description":"The SID of the database on the compute node."
+                },
+                "status":{
+                    "type":"string",
+                    "description":"The status of the compute node:<ul><li><code>In Progress</code>: the compute node is being created.</li><li><code>Maintenance</code>: the compute node is being stopped, started, restarted or scaled.</li><li><code>Running</code>: the compute node is running.</li><li><code>Stopped</code>: the compute node is stopped.</li><li><code>Terminating</code>: the compute node is being deleted.</li></ul>"
+                },
+                "storageAllocated":{
+                    "type":"integer",
+                    "description":"The size in GB of the storage allocated to the compute node. For compute nodes of a service instance hosting an Oracle RAC database, this number does not include the storage shared by the nodes."
+                }
+            }
+        },
+        "stop-start-restart-instance":{
+            "title":"Request Body",
+            "type":"object",
+            "description":"",
+            "properties":{
+                "lifecycleState":{
+                    "type":"string",
+                    "description":"Type of the request. Valid values are:<ul><li><code>stop</code>: Stops the Database Cloud Service instance or compute node.</li><li><code>start</code>: Starts the Database Cloud Service instance or compute node.</li><li><code>restart</code>: Restarts the Database Cloud Service instance or compute node."
+                },
+                "lifecycleTimeout":{
+                    "type":"string",
+                    "description":"Timeout (minutes) for each request. The range of valid values are <code>1</code> to <code>300</code> minutes (inclusive). This value defaults to <code>60</code> minutes."
+                },
+                "vmName":{
+                    "type":"string",
+                    "description":"Name of compute node to stop, start, or restart."
+                }
+            }
+        },
+        "scale-putrequest":{
+            "title":"Request Body",
+            "type":"object",
+            "description":"",
+            "properties":{
+                "shape":{
+                    "type":"string",
+                    "description":"Specify new shape for the Database Cloud Service instance. User can specify a higher shape (Scale Up) or a lower shape (Scale Down). Shape is optional. User can add storage only without changing shape."
+                },
+                "additionalStorage":{
+                    "type":"string",
+                    "description":"Specify size of additional storage in Giga Bytes. This parameter is optional. User can change shape only without adding storage. If additionalStorage is specified, minimum value is 1GB and maximum value is 1TB. "
+                },
+                "usage":{
+                    "type":"string",
+                    "description":"This parameter specifies usage of additional storage and is applicable only when additionalStorage is specified. Specify usage to extend Data or Backup storage volumes of Database Cloud Service instance. Valid values are <code>data</code> to extend Data Storage Volume and <code>fra</code> to extend Backup Storage Volume. If usage is not specified, new storage volume will be created."
+                }
+            }
+        },
+        "delete-response":{
+            "title":"Response Body",
+            "type":"object",
+            "description":"",
+            "properties":{
+                "Service-URI":{
+                    "type":"string",
+                    "description":"Resource URL for the Database Cloud Service instance."
+                },
+                "Location":{
+                    "type":"string",
+                    "description":"Delete Service Job poll location. Poll the job uri to track status of the delete service operation."
+                }
+            }
+        },
+        "lifecyclestatus-response":{
+            "title":"Response Body",
+            "type":"object",
+            "description":"",
+            "properties":{
+                "Service-URI":{
+                    "type":"string",
+                    "description":"Resource URL for the Database Cloud Service instance."
+                },
+                "Location":{
+                    "type":"string",
+                    "description":"Lifecycle Job poll location. Poll the job uri to track status of the lifecycle operation."
+                }
+            }
+        },
+        "jobstatus-response":{
+            "title":"Response Body",
+            "type":"object",
+            "description":"",
+            "properties":{
+                "service_name":{
+                    "type":"string",
+                    "description":"The name of the service instance."
+                },
+                "version":{
+                    "type":"string",
+                    "description":"The Oracle Database software version in use."
+                },
+                "status":{
+                    "type":"string",
+                    "description":"<p>The instance status; one of: <code>Running</code>, <code>In Progress</code>, <code>Maintenance</code>, <code>Stopped</code>, <code>Terminating</code>, <code>Failed</code>.</p>"
+                },
+                "description":{
+                    "type":"string",
+                    "description":"The instance description."
+                },
+                "identity_domain":{
+                    "type":"string",
+                    "description":"The identity domain hosting the instance."
+                },
+                "creation_time":{
+                    "type":"string",
+                    "description":"The instance creation date and time."
+                },
+                "last_modified_time":{
+                    "type":"string",
+                    "description":"The date and time of last modification."
+                },
+                "created_by":{
+                    "type":"string",
+                    "description":"The name of the Oracle Cloud user who created the instance."
+                },
+                "service-uri":{
+                    "type":"string",
+                    "description":"The resource URL for the instance."
+                },
+                "message":{
+                    "type":"array",
+                    "description":"Array of strings that contain details of operation progress.",
+                    "items":{
+                        "$ref":"#/definitions/jobstatus-response-message-array-item"
+                    }
+                },
+                "job_start_date":{
+                    "type":"string",
+                    "description":"The date and time when the job started."
+                },
+                "job_status":{
+                    "type":"string",
+                    "description":"<p>Current status of the job; one of: <code>In Progress</code>, <code>Succeded</code>, <code>Failed</code>.</p>"
+                },
+                "job_operation":{
+                    "type":"string",
+                    "description":"Current operation name in the job."
+                },
+                "job_request_parameters":{
+                    "$ref":"#/definitions/jobstatus-response-job-request-parameters-object"
+                }
+            }
+        },
+        "jobstatus-response-message-array-item":{
+            "title":"message Array Item",
+            "type":"string",
+            "description":"String containing one operation progress message."
+        },
+        "jobstatus-response-job-request-parameters-object":{
+            "title":"job_request_parameters Object",
+            "type":"object",
+            "description":"",
+            "properties":{
+                "operationName":{
+                    "type":"string",
+                    "description":"The name of the operation."
+                },
+                "tenant":{
+                    "type":"string",
+                    "description":"The identity domain hosting the service instance."
+                },
+                "serviceInstance":{
+                    "type":"string",
+                    "description":"The name of the service instance."
+                },
+                "serviceVersion":{
+                    "type":"string",
+                    "description":"The Oracle Database software version in use."
+                },
+                "service-vm-name":{
+                    "type":"string",
+                    "description":"The name of the service instance's compute node."
+                },
+                "computeResourceTimeout":{
+                    "type":"string",
+                    "description":"The value <code>60</code>."
+                },
+                "serviceType":{
+                    "type":"string",
+                    "description":"The value <code>dbaas</code>."
+                },
+                "lifecycleState":{
+                    "type":"string",
+                    "description":"The name of the life-cycle state change for operations that change the life-cycle state."
+                },
+                "namespace":{
+                    "type":"string",
+                    "description":"The value <code>dbaas</code>."
+                }
+            }
+        }
+    },
+    "info":{
+        "description":"Use the Oracle Database Cloud Service REST API to create and manage Database Cloud Service instances.",
+        "title":"Public Cloud Machine REST API for Oracle Database Cloud Service",
+        "version":"2017.04.10",
+        "x-summary":"Use the Oracle Database Cloud Service REST API to create and manage Database Cloud Service instances."
+    },
+    "tags":[
+        {
+            "name":"Backup and Recovery",
+            "description":"REST endpoints to manage backup and recovery operations on Database Cloud Service instances."
+        },
+        {
+            "name":"Patches",
+            "description":"REST endpoints to precheck, apply and roll back patches on Database Cloud Service instances."
+        },
+        {
+            "name":"SSH Keys",
+            "description":"REST endpoints to view and manage secure shell (SSH) public keys for Database Cloud Service instances."
+        },
+        {
+            "name":"Service Instances",
+            "description":"REST endpoints to create and manage Database Cloud Service instances."
+        }
+    ]
+}

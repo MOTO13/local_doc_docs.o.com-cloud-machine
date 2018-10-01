@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Public Cloud Machine Using Oracle Database Cloud Service - Contents</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="" />
+<meta name="dcterms.created" content="2017-06-19T15:22:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Database Cloud Service" />
+<meta name="dcterms.identifier" content="E72994-04" />
+<meta name="dcterms.isVersionOf" content="CSDBI" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"   src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"   src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Next" href="title.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSDBI.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSDBI.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSDBI.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript"  src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript"  src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript"  src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript"  src="../dcommon/js/foundation.min.js"></script>
+<script type="application/javascript"  src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript"  src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript"  src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="application/javascript"  src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="application/javascript"  src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="application/javascript"  src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="application/javascript"  src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<span id="PAGE" style="display:none;">1/190</span> <!-- End Header -->
+<h1 class="toc">Contents</h1>
+<h2 class="tocheader"><a href="title.htm">Title and Copyright Information</a></h2>
+<h2 class="tocheader"><a href="GUID-F0F7F338-8E83-4D52-A350-4F4B07B0A3C2.htm#GUID-F0F7F338-8E83-4D52-A350-4F4B07B0A3C2">Preface</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-F0F7F338-8E83-4D52-A350-4F4B07B0A3C2.htm#GUID-03E19AF7-9136-4AEE-8D6D-356CE51FDC0A">Audience</a></li>
+<li><a href="GUID-F0F7F338-8E83-4D52-A350-4F4B07B0A3C2.htm#GUID-E409CC44-9A8F-4043-82C8-6B95CD939296">Documentation Accessibility</a></li>
+<li><a href="GUID-F0F7F338-8E83-4D52-A350-4F4B07B0A3C2.htm#GUID-0C814370-FB5B-4AED-B3DA-84ABC416B735">Related Documents</a></li>
+<li><a href="GUID-F0F7F338-8E83-4D52-A350-4F4B07B0A3C2.htm#GUID-5F16BE7A-CBCB-4258-8CE5-CF0AB4A07762">Conventions</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-1A380E9C-6DE2-4042-8A31-B43A0081B194.htm"><span class="secnum">1</span> Getting Started with <span>Database Cloud Service</span></a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-4AD7C69E-20FF-4C47-BB71-429A08D061B4.htm">About <span>Oracle Database Cloud Service</span></a></li>
+<li><a href="GUID-660363B8-0E2F-4A4F-A9BD-70A43F332A16.htm#GUID-660363B8-0E2F-4A4F-A9BD-70A43F332A16">About <span>Database Cloud Service</span> Database Deployments</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-660363B8-0E2F-4A4F-A9BD-70A43F332A16.htm#GUID-5717CBF9-1D7A-4DDE-B250-7AD5C528C3B3">Service Level</a></li>
+<li><a href="GUID-660363B8-0E2F-4A4F-A9BD-70A43F332A16.htm#GUID-E1E78D34-4B7B-4FE9-9DC4-49C7E5DF241A">Metering Frequency</a></li>
+<li><a href="GUID-660363B8-0E2F-4A4F-A9BD-70A43F332A16.htm#GUID-634027B5-B318-41FC-8685-25BC892078B4">Oracle Database Software Release</a></li>
+<li><a href="GUID-660363B8-0E2F-4A4F-A9BD-70A43F332A16.htm#GUID-6C0B1E17-98A5-4522-A3B9-36EFA05E64F9">Oracle Database Software Edition</a></li>
+<li><a href="GUID-660363B8-0E2F-4A4F-A9BD-70A43F332A16.htm#GUID-61C0A3F6-1760-47EC-8B3E-8B50AE1276D9">Oracle Database Type</a></li>
+<li><a href="GUID-660363B8-0E2F-4A4F-A9BD-70A43F332A16.htm#GUID-ABDB48B9-01F5-4F32-AD35-08251F67B641">Computing Power</a></li>
+<li><a href="GUID-660363B8-0E2F-4A4F-A9BD-70A43F332A16.htm#GUID-0F42D983-9941-4702-B570-7E308AE50190">Database Storage</a></li>
+<li><a href="GUID-660363B8-0E2F-4A4F-A9BD-70A43F332A16.htm#GUID-323A034B-D335-40A9-853C-ADB67E30EE9F">Automatic Backup Configuration</a></li>
+</ul>
+</li>
+<li><a href="GUID-EB9DC20F-C296-41E1-A3A1-3291AABCABE2.htm">Before You Begin with <span>Database Cloud Service</span></a></li>
+<li><a href="GUID-8A0FDB3E-4B54-48E6-98D8-440DC057682E.htm">About <span>Database Cloud Service</span> Roles and Users</a></li>
+<li><a href="GUID-8F431574-D82A-45A0-8637-7605E2333381.htm">Accessing the <span>Oracle Database Cloud Service</span> Console</a></li>
+<li><a href="GUID-DE4D5447-8607-4667-8E81-97B48918F97E.htm">Typical Workflow for Using <span>Database Cloud Service</span></a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-210506A3-08AF-40F2-8377-16EFA709B5A9.htm"><span class="secnum">2</span> Managing the <span>Database Cloud Service</span> Life Cycle</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-5A4C1A90-E71E-4CDD-BB0B-80D18621109E.htm">Creating a Database Deployment</a></li>
+<li><a href="GUID-ED74C8C7-8D57-4265-A79F-7D88816A0A3B.htm">Viewing All Database Deployments</a></li>
+<li><a href="GUID-60A126AF-2D7D-4EA2-B261-B038AD89114A.htm">Viewing Detailed Information for a Database Deployment</a></li>
+<li><a href="GUID-C5C04C67-08EC-40A2-8FF9-9E10C27F0CC8.htm">Viewing Activities for Database Deployments in an Identity Domain</a></li>
+<li><a href="GUID-20D20D45-D1D3-4789-AA70-22241168D78F.htm">Stopping, Starting and Restarting <span>a Database Deployment</span></a></li>
+<li><a href="GUID-407918B4-6EC9-4979-BBD3-1731BD375BA0.htm">Rebooting a Compute Node</a></li>
+<li><a href="GUID-457D283C-D890-4B4F-B65C-26D05B4C80CC.htm">Scaling <span>a Database Deployment</span></a></li>
+<li><a href="GUID-CABE689F-4346-4626-B64F-1E272AE87B5E.htm">Deleting a Database Deployment</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-12A94B2E-2F7A-441F-995E-D45CC24910C4.htm"><span class="secnum">3</span> Administering <span>Database Cloud Service</span></a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-90E792E1-EC2D-42B4-976E-375485C2A44A.htm">Adding Temporary Storage to a Database Deployment</a></li>
+<li><a href="GUID-2CC67761-AAD2-4432-A992-6B509FCC9BB7.htm">Adding an SSH Public Key</a></li>
+<li><a href="GUID-CD12878B-3F62-4E14-B12A-9F286B470294.htm">Updating the Cloud Tooling on <span>Database Cloud Service</span></a>
+<ul style="list-style-type: none">
+<li><a href="GUID-852CF27F-3312-428A-979E-142D1945E62E.htm">Updating the Cloud Tooling <span>on Deployments Hosting Single-Instance Databases</span></a></li>
+<li><a href="GUID-DF1E6376-90ED-49A8-B5F1-A390A26110F4.htm">Updating the Cloud Tooling <span>on Deployments Hosting Oracle RAC Databases</span></a></li>
+</ul>
+</li>
+<li><a href="GUID-00974CDD-E9A6-44D1-8F5A-6FCAA481A345.htm">Maintaining the Manageability of <span>Database Cloud Service</span></a></li>
+<li><a href="GUID-A9852DA6-B16C-4369-A186-9482B31C9786.htm#GUID-A9852DA6-B16C-4369-A186-9482B31C9786">Administering Oracle REST Data Services (ORDS)</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-A9852DA6-B16C-4369-A186-9482B31C9786.htm#GUID-CFF2853B-1375-4F71-9600-69347A47A291">Adding a Signed SSL Certificate to Oracle REST Data Services</a></li>
+<li><a href="GUID-A9852DA6-B16C-4369-A186-9482B31C9786.htm#GUID-D87EE48E-E10D-4B9A-94D6-FD8F55CB3516">Stopping Oracle REST Data Services</a></li>
+<li><a href="GUID-A9852DA6-B16C-4369-A186-9482B31C9786.htm#GUID-0BE44A88-D2BD-43A3-BBFD-8F1DE527CCC2">Starting Oracle REST Data Services</a></li>
+</ul>
+</li>
+<li><a href="GUID-25627EA3-19EC-40E6-A6D1-B57E5793C9E8.htm">Loading Data into the Oracle Database on <span>Database Cloud Service</span></a></li>
+<li><a href="GUID-6810CBFD-73EB-45A2-A3A6-07A67698A054.htm">Tuning Oracle Database Performance on <span>Database Cloud Service</span></a></li>
+<li><a href="GUID-34F400EC-1F45-4DF7-AB2B-420FE34EBD84.htm">Monitoring and Managing Oracle Database on <span>Database Cloud Service</span></a></li>
+<li><a href="GUID-AED2A8A5-EE13-4D04-8121-EA0E379AA1BD.htm">Managing the Log and Diagnostic Files on <span>Database Cloud Service</span></a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-50F54B8F-C36B-43D0-8655-9C787559BE7F.htm"><span class="secnum">4</span> Accessing <span>Database Cloud Service</span></a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1.htm#GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1">Connecting to a Compute Node Through Secure Shell (SSH)</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1.htm#GUID-A459860F-A1FA-4262-87EB-4FD5BD581A85">Connecting to a Compute Node Using the ssh Utility on UNIX and UNIX-Like Platforms</a></li>
+<li><a href="GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1.htm#GUID-3001BACA-680C-4B4D-B9A2-9AA91F35A6F3">Connecting to a Compute Node Using the PuTTY Program on Windows</a></li>
+</ul>
+</li>
+<li><a href="GUID-EAB971AC-3BF3-4370-B8DF-B72F777A5575.htm">Accessing Enterprise Manager Database Express 12c</a></li>
+<li><a href="GUID-0A67F8E8-E1A9-4D0E-8381-FEC4B9316841.htm">Accessing Enterprise Manager 11g Database Control</a></li>
+<li><a href="GUID-79DBA0A3-482C-4CD0-8ABA-FA3C41CE00E6.htm">Accessing the Oracle Application Express Administration Console</a></li>
+<li><a href="GUID-61727FB9-01EB-45CA-AAB2-ED0A7CD57DAD.htm">Accessing the Oracle Application Express Home Page</a></li>
+<li><a href="GUID-EB66641A-1D55-4914-B5A7-4314941A7BFB.htm">Connecting Remotely to the Database by Using Oracle SQL Developer</a></li>
+<li><a href="GUID-372D4233-9793-47EC-8DFC-AFD6CF32866C.htm">Connecting Remotely to the Database by Using Oracle Net Services</a></li>
+<li><a href="GUID-794E1FB2-7018-4115-ABBD-7F22563490B9.htm">Copying Files to or from <span>a Database Cloud Service</span> Database Deployment</a></li>
+<li><a href="GUID-4285B8CF-A228-4B89-9552-FE6446B5A673.htm#GUID-4285B8CF-A228-4B89-9552-FE6446B5A673">Generating a Secure Shell (SSH) Public/Private Key Pair</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-4285B8CF-A228-4B89-9552-FE6446B5A673.htm#GUID-2BD5B767-0659-4791-A170-279F469B2CC3">Generating an SSH Key Pair on UNIX and UNIX-Like Platforms Using the ssh-keygen Utility</a></li>
+<li><a href="GUID-4285B8CF-A228-4B89-9552-FE6446B5A673.htm#GUID-69EF7E8A-7CD5-482E-A878-882EA21DE2B8">Generating an SSH Key Pair on Windows Using the PuTTYgen Program</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="tocheader"><a href="GUID-0864AA36-8FE4-4D62-9F18-A0550D4BC89B.htm"><span class="secnum">5</span> Backing Up and Restoring Databases on <span>Database Cloud Service</span></a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-21980FCF-FA0C-4FD8-94DC-7C373CFB4C52.htm">About Backing Up Database Deployments on <span>Database Cloud Service</span></a></li>
+<li><a href="GUID-2370EA04-3141-4D02-B328-5EE9A10F66F2.htm">Creating an On-Demand Backup</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-B7E71D0A-AA8F-4E7B-8BB9-1C7DE40EC6E6.htm">Creating an On-Demand Backup by Using the bkup_api Utility</a></li>
+<li><a href="GUID-08464BDB-67C4-4F43-9EDA-EBB4630D429C.htm">Creating an On-Demand Backup by Using the raccli Utility</a></li>
+</ul>
+</li>
+<li><a href="GUID-36CA96BF-2D23-48AD-B8F9-4414CDCA0767.htm">Deleting a Backup</a></li>
+<li><a href="GUID-78848793-B095-47F1-B87E-C4F8DC697824.htm#GUID-78848793-B095-47F1-B87E-C4F8DC697824">Customizing the Current Backup Configuration</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-78848793-B095-47F1-B87E-C4F8DC697824.htm#GUID-ADF73049-B959-4753-9877-EE011FBF0A18">Customizing the Current Backup Configuration <span>on Database Deployments Hosting Single-Instance Databases</span></a></li>
+<li><a href="GUID-78848793-B095-47F1-B87E-C4F8DC697824.htm#GUID-11B5783B-F3DC-4823-B603-E16D2F81CC57">Customizing the Current Backup Configuration on Database Deployments Hosting Oracle RAC Databases</a></li>
+</ul>
+</li>
+<li><a href="GUID-4C4D7BB4-0C69-41E9-9A7E-2E7334D0EE4E.htm">Disabling and Re-enabling Scheduled Backups</a></li>
+<li><a href="GUID-12C9D458-AB55-4E38-949D-F649E2D6A26C.htm">Restoring from the Most Recent Backup</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-FDEEF873-93D6-4CE6-9AAC-7DD380C8B7C0.htm">Restoring from the Most Recent Backup by Using the dbaascli Utility</a></li>
+<li><a href="GUID-B6ACBD3A-5F40-474C-8ABF-A40B12F41A10.htm">Restoring from the Most Recent Backup by Using the raccli Utility</a></li>
+</ul>
+</li>
+<li><a href="GUID-C9A1467F-9AA4-433E-92A6-E46182D2B4C2.htm">Restoring from a Specific Backup</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-196BC5E7-A22F-4FDA-BDDE-6FBB9AA37543.htm">Restoring from a Specific Backup by Using the dbaascli Utility</a></li>
+</ul>
+</li>
+<li><a href="GUID-73B84014-88DA-40D1-A5F1-6EC4537F2778.htm">Restoring to a Specific Point in Time</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-ABCEADEC-F229-46F5-BDBC-E4108CDCC6F6.htm">Restoring to a Specific Point in Time by Using the dbaascli Utility</a></li>
+<li><a href="GUID-714B7CF2-237C-40B5-9E15-06816D1AE710.htm">Restoring to a Specific Point in Time by Using the raccli Utility</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="tocheader"><a href="GUID-59CE35D2-4948-4274-8707-F8F447721DF2.htm"><span class="secnum">6</span> Patching <span>Database Cloud Service</span></a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-048AFFC8-52FF-48B5-AB0B-41407BE14303.htm"><span>Viewing</span> Available Patches</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-1D55DCA4-5743-4125-99A3-951E68C11334.htm">Viewing Available Patches by Using the dbpatchm Subcommand</a></li>
+</ul>
+</li>
+<li><a href="GUID-34608C02-9F7C-455A-BBC1-1F2AD90E33EE.htm">Checking Prerequisites Before Applying a Patch</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-571F919A-2312-4BF3-AC17-CF530F3944CF.htm">Checking Patch Prerequisites by Using the dbpatchm Subcommand</a></li>
+</ul>
+</li>
+<li><a href="GUID-50BDEF7D-A30E-4B32-BAE7-486538413E2D.htm">Applying a Patch</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-AFBAB8B1-0468-4634-AA6E-6EBA9D86037C.htm">Applying a Patch by Using the dbpatchm Subcommand</a></li>
+<li><a href="GUID-2E4712E6-DF6C-4D8C-B863-B2468E6E3525.htm">Applying a Patch by Using the raccli Utility</a></li>
+</ul>
+</li>
+<li><a href="GUID-0D1B9B1E-62E4-4A66-8D5D-6D1AC2B69A3F.htm">Rolling Back a Patch or Failed Patch</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-B36215AD-6909-49B0-A4FA-1E1F2BBAFBAA.htm">Rolling Back a Patch or Failed Patch by Using the dbpatchm Subcommand</a></li>
+</ul>
+</li>
+<li><a href="GUID-0121BD62-6A89-4FCD-8E2A-7A8CC2243B26.htm">Applying a Patch to a Test Deployment</a></li>
+<li><a href="GUID-1D78C4F8-582B-4EA1-8043-F3A5AC49AEBD.htm">The <span>dbpatchm.cfg</span> Configuration File</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-83C34A10-D2CD-4323-ADF1-D3C63D204DE1.htm"><span class="secnum">7</span> Configuring Database Features, Database Options, and Companion Products</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-EB0BB703-B7D0-4C3C-B40B-B77D3F08127A.htm">Using Oracle Real Application Clusters (RAC) in <span>Database Cloud Service</span></a></li>
+<li><a href="GUID-D7DB2194-A3A6-4151-818D-AC86BAC10832.htm">Using Oracle Database Vault in <span>Database Cloud Service</span></a>
+<ul style="list-style-type: none">
+<li><a href="GUID-BCC87BBB-6B66-4566-9301-C54D981AB240.htm">Configuring and Enabling Oracle Database Vault</a></li>
+<li><a href="GUID-EB2F77CF-D6F7-4F06-88C9-D0F5464AC968.htm">Disabling Oracle Database Vault</a></li>
+</ul>
+</li>
+<li><a href="GUID-6C18CC56-223B-4373-B5F6-2F70CBA72975.htm#GUID-6C18CC56-223B-4373-B5F6-2F70CBA72975">Using Tablespace Encryption in <span>Database Cloud Service</span></a>
+<ul style="list-style-type: none">
+<li><a href="GUID-6C18CC56-223B-4373-B5F6-2F70CBA72975.htm#GUID-37928A72-9F54-4794-AAC2-006C642B3C12">Creating Encrypted Tablespaces</a></li>
+<li><a href="GUID-6C18CC56-223B-4373-B5F6-2F70CBA72975.htm#GUID-26B5DB17-E631-4C2D-A172-C02C0D8C1D14">Managing Tablespace Encryption</a></li>
+</ul>
+</li>
+<li><a href="GUID-4C4276E6-BCD4-47BE-93DF-0EAD71EA315F.htm">Creating and Activating a Master Encryption Key for a PDB</a></li>
+<li><a href="GUID-62485FBC-6230-43B0-9996-E0852D25E953.htm">Using Hybrid Columnar Compression (HCC) in <span>Database Cloud Service</span></a></li>
+<li><a href="GUID-71CB7FA2-5809-441E-971F-C1FDE4A4E02B.htm">Using the Demos PDB</a></li>
+<li><a href="GUID-F90BABF1-F0D9-49E4-A649-A94A6A587310.htm">Using Oracle Enterprise Manager Cloud Control with <span>Database Cloud Service</span></a></li>
+<li><a href="GUID-93DB710A-1A55-4068-A20A-996E0C44605F.htm">Using Network Encryption and Integrity</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-8155C755-953A-4409-9549-7137CA7591A5.htm"><span class="secnum">8</span> Migrating Oracle Databases to <span>Database Cloud Service</span></a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-D1398B68-D9DD-4BEE-8A52-5BE108374E80.htm">Choosing a Migration Method</a></li>
+<li><a href="GUID-24C35B32-0AB1-4602-A2B1-E298516835C6.htm">Migrating from Oracle Database 11g to Oracle Database 11g in the Cloud</a></li>
+<li><a href="GUID-811C8688-EBA5-454A-A35B-8F06DCC4D271.htm">Migrating from Oracle Database 11g to Oracle Database 12c in the Cloud</a></li>
+<li><a href="GUID-EE77DD02-C036-469E-BB41-BDFF166D450B.htm">Migrating from Oracle Database 12c CDB to Oracle Database 12c in the Cloud</a></li>
+<li><a href="GUID-FC3576DD-5DA8-4204-9B2C-6F1399B55DB2.htm">Migrating from Oracle Database 12c Non-CDB to Oracle Database 12c in the Cloud</a></li>
+<li><a href="GUID-B31E714B-270E-4DF9-8352-7927D1A28178.htm">Migration Methods</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-4B5A41CF-A129-4281-BD8A-12A42968C600.htm#GUID-4B5A41CF-A129-4281-BD8A-12A42968C600">Data Pump Conventional Export/Import</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-4B5A41CF-A129-4281-BD8A-12A42968C600.htm#GUID-96DBC823-E990-4CB7-B842-5BF8BB78946C">Data Pump Conventional Export/Import: Example</a></li>
+</ul>
+</li>
+<li><a href="GUID-B553F50F-C5A7-43EC-913F-E9C5278EB684.htm#GUID-B553F50F-C5A7-43EC-913F-E9C5278EB684">Data Pump Full Transportable</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-B553F50F-C5A7-43EC-913F-E9C5278EB684.htm#GUID-FD0A0C1A-6697-4DAF-99A6-8DFA6EDDC31C">Data Pump Full Transportable: Example</a></li>
+</ul>
+</li>
+<li><a href="GUID-0DE88C28-08D7-4DB2-A996-4878B926E14A.htm#GUID-0DE88C28-08D7-4DB2-A996-4878B926E14A">Data Pump Transportable Tablespace</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-0DE88C28-08D7-4DB2-A996-4878B926E14A.htm#GUID-C3EBB753-6BB4-4C68-8C5E-9169E13C3180">Data Pump Transportable Tablespace: Example</a></li>
+</ul>
+</li>
+<li><a href="GUID-01F75B4A-B57F-4C41-9FE9-0710E8DBBC90.htm">Remote Cloning a PDB</a></li>
+<li><a href="GUID-8CEA1066-463F-45F7-BFC0-CC25917DB9C4.htm">Remote Cloning Non-CDB</a></li>
+<li><a href="GUID-B72BB3F3-4815-4745-B58F-45DE88A0460E.htm">RMAN Cross-Platform Transportable PDB</a></li>
+<li><a href="GUID-A48A5429-CC29-43E2-83A5-8676302C91D8.htm#GUID-A48A5429-CC29-43E2-83A5-8676302C91D8">RMAN Cross-Platform Transportable Tablespace Backup Sets</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-A48A5429-CC29-43E2-83A5-8676302C91D8.htm#GUID-AEF9F356-554E-478D-8036-6F0348002331">RMAN Cross-Platform Transportable Tablespace Backup Sets: Example</a></li>
+</ul>
+</li>
+<li><a href="GUID-3EB5D26C-F992-4E37-91FD-A47F027C265A.htm#GUID-3EB5D26C-F992-4E37-91FD-A47F027C265A">RMAN Transportable Tablespace with Data Pump</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-3EB5D26C-F992-4E37-91FD-A47F027C265A.htm#GUID-EF2C50EB-191F-4A93-A623-749025B41642">RMAN Transportable Tablespace with Data Pump: Example</a></li>
+</ul>
+</li>
+<li><a href="GUID-AB361ED1-47DD-4078-A9E6-5089624D7C7B.htm#GUID-AB361ED1-47DD-4078-A9E6-5089624D7C7B">RMAN CONVERT Transportable Tablespace with Data Pump</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-AB361ED1-47DD-4078-A9E6-5089624D7C7B.htm#GUID-73A01628-6FF0-4880-8DD2-F661A8CAB9A4">RMAN CONVERT Transportable Tablespace with Data Pump: Example</a></li>
+</ul>
+</li>
+<li><a href="GUID-4B26453A-73D8-44C4-AD44-A2F86626E64F.htm">SQL Developer and INSERT Statements to Migrate Selected Objects</a></li>
+<li><a href="GUID-5B30EC77-26FB-4252-8D95-CE923E0553C8.htm">SQL Developer and SQL*Loader to Migrate Selected Objects</a></li>
+<li><a href="GUID-A10B0819-0EC0-4B1D-B4BA-7A570CCF9A9F.htm">Unplugging/Plugging a PDB</a></li>
+<li><a href="GUID-0C0EB480-DE4B-4BD8-A9D8-12E1EF36E9BF.htm">Unplugging/Plugging Non-CDB</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="tocheader"><a href="GUID-1537B552-A440-4A12-8ED6-6A241EC061D3.htm"><span class="secnum">9</span> Using Oracle DBaaS Monitor</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-D138FE7B-94A3-4C12-B921-32202E4C447F.htm">About Oracle DBaaS Monitor</a></li>
+<li><a href="GUID-B3A91C63-713B-458B-ABA7-C0DB7B3362DE.htm">Accessing Oracle DBaaS Monitor</a></li>
+<li><a href="GUID-42C08877-F750-4EE1-A1CE-4407AD71460A.htm">Filtering the Display on DBaaS Monitor Pages</a></li>
+<li><a href="GUID-9279825C-5C53-443D-AC5D-74CDB5C7B30D.htm#GUID-9279825C-5C53-443D-AC5D-74CDB5C7B30D">Administering the Listener</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-9279825C-5C53-443D-AC5D-74CDB5C7B30D.htm#GUID-F2CCC918-8929-4C47-8DEB-D720AC70F50D">Viewing Listener Status Information</a></li>
+<li><a href="GUID-9279825C-5C53-443D-AC5D-74CDB5C7B30D.htm#GUID-22460241-77D2-4153-9C4F-FC8DC47D48A9">Starting the Listener</a></li>
+<li><a href="GUID-9279825C-5C53-443D-AC5D-74CDB5C7B30D.htm#GUID-AE6F8F4A-0D88-43E8-AEDA-C46564E8C049">Stopping the Listener</a></li>
+<li><a href="GUID-9279825C-5C53-443D-AC5D-74CDB5C7B30D.htm#GUID-C1469FE9-ADE9-4D09-A1F1-771F5C59BE9A">Verifying that the Listener Knows of a Service</a></li>
+</ul>
+</li>
+<li><a href="GUID-30665B4B-750E-43F4-8B0D-4BFA9FC5FD29.htm#GUID-30665B4B-750E-43F4-8B0D-4BFA9FC5FD29">Starting and Stopping the Database Instance</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-30665B4B-750E-43F4-8B0D-4BFA9FC5FD29.htm#GUID-C349BB9B-0ED0-4AB7-8351-CC1C3D799BCB">Starting the Database Instance</a></li>
+<li><a href="GUID-30665B4B-750E-43F4-8B0D-4BFA9FC5FD29.htm#GUID-27AF625F-B314-480F-B76B-17B9E7FC4FC0">Stopping the Database Instance</a></li>
+</ul>
+</li>
+<li><a href="GUID-8AF785C2-296C-4385-B8E3-440ACF5462D9.htm">Viewing and Modifying Initialization Parameters</a></li>
+<li><a href="GUID-A8C93FA5-EC81-48E4-A6B9-8A22C3A705A2.htm">Viewing Tablespace and Segment Space Usage</a></li>
+<li><a href="GUID-2282DFBF-4F14-4492-93A0-9ED0FA22C9D4.htm">Viewing Alert Log Entries and Checking for Errors</a></li>
+<li><a href="GUID-DB119217-23DC-4B30-9153-98505C68660D.htm">Viewing Real Time SQL Monitor</a></li>
+<li><a href="GUID-A0A71EFB-FB8F-4466-AD1B-19C8812ACA87.htm">Administering Pluggable Databases</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-2D37CFE0-C9AC-45D2-9F40-877B752158F0.htm">Cloning a Pluggable Database</a></li>
+<li><a href="GUID-E4C2331A-2121-488C-83F7-450735B35EDD.htm">Closing a Pluggable Database</a></li>
+<li><a href="GUID-194EA66D-E54D-4FE5-B72F-62F89D9F681F.htm">Creating a Pluggable Database</a></li>
+<li><a href="GUID-B3C4C22C-4358-45D1-A11A-575519702076.htm">Dropping a Pluggable Database</a></li>
+<li><a href="GUID-0DBC3E04-2B97-473F-86E5-C3B3F574C439.htm">Opening a Pluggable Database</a></li>
+<li><a href="GUID-8086089E-68F7-4DFC-89AE-2886798932DF.htm">Plugging In a Pluggable Database</a></li>
+<li><a href="GUID-3322B031-4259-4D20-A519-A8E55F6A72D8.htm">Unplugging a Pluggable Database</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="tocheader"><a href="GUID-5DCC41F5-0243-4F05-81D0-D5A8BE13F766.htm"><span class="secnum">10</span> Frequently Asked Questions for <span>Database Cloud Service</span></a></h2>
+<h2 class="tocheader"><a href="GUID-67199C4C-0DCB-43F1-BC21-D4CFA9062BF1.htm"><span class="secnum">11</span> Troubleshooting <span>Database Cloud Service</span></a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-D1E45E0D-B9E4-443A-8F88-B78555CB9B6B.htm#GUID-D1E45E0D-B9E4-443A-8F88-B78555CB9B6B">Problems Creating Deployments</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-D1E45E0D-B9E4-443A-8F88-B78555CB9B6B.htm#GUID-540E7E1C-C737-4658-AF0B-A8AE1884B843">I cannot create a deployment when I have many database deployments</a></li>
+<li><a href="GUID-D1E45E0D-B9E4-443A-8F88-B78555CB9B6B.htm#GUID-C40F5026-2140-457F-8795-BCEED6AB67A0">I cannot create a deployment, even after waiting for an hour</a></li>
+</ul>
+</li>
+<li><a href="GUID-63AE9E92-9B3A-4623-BA9B-09DF1C34FDCF.htm#GUID-63AE9E92-9B3A-4623-BA9B-09DF1C34FDCF">Problems Administering Deployments</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-63AE9E92-9B3A-4623-BA9B-09DF1C34FDCF.htm#GUID-677429C6-2002-4054-876F-C40DAA7804BC">I am required to change the password for the oracle user when I try to connect to a compute node</a></li>
+<li><a href="GUID-63AE9E92-9B3A-4623-BA9B-09DF1C34FDCF.htm#GUID-01CE3C4F-EA53-4372-8F94-2057C42F132C">I get a Linux error 30, Read-only file system, when trying to connect to or work in my environment</a></li>
+</ul>
+</li>
+<li><a href="GUID-FD166862-E46D-497B-AE25-8220D01B56DB.htm#GUID-FD166862-E46D-497B-AE25-8220D01B56DB">Problems with Scaling</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-FD166862-E46D-497B-AE25-8220D01B56DB.htm#GUID-C2A17C40-E1FC-4E91-BE71-CF71AA599CB0">My scaling operation does not start</a></li>
+<li><a href="GUID-FD166862-E46D-497B-AE25-8220D01B56DB.htm#GUID-D636B7C0-23F3-4B2E-B085-9540F314B8E2">My deployment is too busy to allow scaling</a></li>
+</ul>
+</li>
+<li><a href="GUID-E4222495-90CB-4DE4-863A-5DA5D7CF83EF.htm#GUID-E4222495-90CB-4DE4-863A-5DA5D7CF83EF">Problems with Patching and Rollback</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-E4222495-90CB-4DE4-863A-5DA5D7CF83EF.htm#GUID-16269127-ECEE-4085-B56D-783B1743B54F">I receive a message stating that the virtual machines are unhealthy</a></li>
+<li><a href="GUID-E4222495-90CB-4DE4-863A-5DA5D7CF83EF.htm#GUID-96902B26-7DE3-4405-8760-F6235948023C">I receive a message stating that the instance is busy with another operation</a></li>
+<li><a href="GUID-E4222495-90CB-4DE4-863A-5DA5D7CF83EF.htm#GUID-316F42CB-E2E0-4731-B35E-76CB179805B1">I cannot apply a patch due to a lack of storage space</a></li>
+<li><a href="GUID-E4222495-90CB-4DE4-863A-5DA5D7CF83EF.htm#GUID-DF3CC8EF-968B-4D81-8060-B006698ABB69">My attempt to roll back the January 2015 Patch Set Update (Jan 2015 PSU) fails</a></li>
+<li><a href="GUID-E4222495-90CB-4DE4-863A-5DA5D7CF83EF.htm#GUID-13DB9821-7FE5-451F-B1E2-EDFDF538B240">My attempt to roll back the April 2015 Patch Set Update (Apr 2015 PSU) fails</a></li>
+</ul>
+</li>
+<li><a href="GUID-83C76930-5141-49EA-8A45-BB107FBC955D.htm#GUID-83C76930-5141-49EA-8A45-BB107FBC955D">Problems with Backing Up and Restoring</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-83C76930-5141-49EA-8A45-BB107FBC955D.htm#GUID-58A0A387-915E-47D9-8F53-5DDB5023F54B">There is not enough space for my backup</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="tocheader"><a href="GUID-CC7CEB07-082B-4541-8959-19EEBA1834DA.htm"><span class="secnum">A</span> Characteristics of a Newly Created Deployment</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-17839AE1-45DD-48E2-A5A2-99A1428A3916.htm">Characteristics of an Oracle Database Cloud Deployment</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-53778B80-072D-4968-B5F8-81D3216F1D9A.htm">Linux User Accounts</a></li>
+<li><a href="GUID-657C9E03-EA98-4011-BA08-129643C813DE.htm">Storage Volumes and File System Layout</a></li>
+<li><a href="GUID-7807673B-F079-4E1A-8887-B28267AE6882.htm">Locations of Installed Software</a></li>
+<li><a href="GUID-221C2977-3B5A-4376-8DD9-76B1B6A07D6F.htm">Oracle Database Characteristics</a></li>
+<li><a href="GUID-70D37B4D-32AD-438C-8CCF-FD9F4355DA0E.htm#GUID-70D37B4D-32AD-438C-8CCF-FD9F4355DA0E">Data Security</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-70D37B4D-32AD-438C-8CCF-FD9F4355DA0E.htm#GUID-AD8C853F-A30C-4E50-85ED-B161058D6A93">Security of Data at Rest</a></li>
+<li><a href="GUID-70D37B4D-32AD-438C-8CCF-FD9F4355DA0E.htm#GUID-7BDCEED4-E0A4-48D5-972C-7D65E7D1536D">Security of Data in Transit</a></li>
+</ul>
+</li>
+<li><a href="GUID-A33A6627-EABE-4339-8711-EBEE890D2DFD.htm">Location of Diagnostic and Log Files</a></li>
+</ul>
+</li>
+<li><a href="GUID-4D8BB260-2672-46BE-BF57-ABB9612D97D2.htm">Characteristics of an Oracle Database Cloud Service Deployment Using Oracle RAC</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-70A912B7-9EAD-482B-A484-18F94A35356C.htm">Linux User Accounts</a></li>
+<li><a href="GUID-AC403422-1FB8-4F65-9000-4F3B73611DB1.htm">Storage Volumes and File System Layout</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="tocheader"><a href="GUID-10D73D2E-AAD7-46BF-8DC1-1033282AFB14.htm"><span class="secnum">B</span> Oracle Cloud Pages for Administering <span>Database Cloud Service</span></a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-8517EEC7-AE58-4E82-B779-0B516D5B00EB.htm">Services Page</a></li>
+<li><a href="GUID-735EBB25-7000-43E1-8110-B2207A5E4672.htm">Activity Page</a></li>
+<li><a href="GUID-6559B3E6-3BAA-4128-A76E-28577908228E.htm">SSH Access Page</a></li>
+<li><a href="GUID-F25E7DEE-3C2C-4983-97BB-425D43E2DDD0.htm">Overview Page</a></li>
+<li><a href="GUID-C3C0B91D-1268-4CB9-B3F5-4B88E8AA6E31.htm">Backup Page</a></li>
+<li><a href="GUID-BFB5B7E2-5F90-49CF-AC54-B67AF29EA452.htm">Patching Page</a></li>
+<li><a href="GUID-F1E6807A-D283-4170-AB2B-9D43CD8DCD92.htm"><span>Provision New Oracle Database Cloud Service</span>: Service Page</a></li>
+<li><a href="GUID-D4A35763-53ED-4FBB-97BF-0366F21B05E0.htm"><span>Provision New Oracle Database Cloud Service</span>: Service Details Page</a></li>
+<li><a href="GUID-8F051153-0913-4ACA-850A-A3A6D46FFFF6.htm"><span>Provision New Oracle Database Cloud Service</span>: Confirmation Page</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-DBB08CC7-3180-4713-B1BD-2F9E2A4939A6.htm"><span class="secnum">C</span> The dbaascli Utility</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-632A047B-197A-4991-80EE-68FC04EFE7DD.htm">dbaascli database bounce</a></li>
+<li><a href="GUID-F582037E-B729-438B-99C0-2CD492579B73.htm">dbaascli database changepassword</a></li>
+<li><a href="GUID-4AFF5188-0427-4B6C-BF6D-245CC289150C.htm">dbaascli database start</a></li>
+<li><a href="GUID-2EFE877E-920D-4BC3-85B6-0F67C5BC06C0.htm">dbaascli database status</a></li>
+<li><a href="GUID-BE9F2BD9-2829-4151-AA6F-B5C531910060.htm">dbaascli database stop</a></li>
+<li><a href="GUID-E232B312-47EC-4BB4-B21E-060EE08E5FFC.htm">dbaascli dbpatchm apply</a></li>
+<li><a href="GUID-93748703-4013-4EB6-BF7D-74F63A8ACBAA.htm">dbaascli dbpatchm clonedb</a></li>
+<li><a href="GUID-348679A8-A4A6-428D-9CE8-0FAC98857B2A.htm">dbaascli dbpatchm list_patches</a></li>
+<li><a href="GUID-E3CFF989-9D28-49AC-A046-E2743F0D528D.htm">dbaascli dbpatchm prereq</a></li>
+<li><a href="GUID-21BAE1B0-9621-42DB-B095-DC729D94507E.htm">dbaascli dbpatchm rollback</a></li>
+<li><a href="GUID-E2E89AAD-506B-4FBB-AC37-99F5E4926AC1.htm">dbaascli dbpatchm switchback</a></li>
+<li><a href="GUID-C08FB7E3-F2A3-496D-8734-E395FF769B53.htm">dbaascli dv off</a></li>
+<li><a href="GUID-821AC0F5-7CE1-428E-AE33-41A0F0768102.htm">dbaascli dv on</a></li>
+<li><a href="GUID-A816A2DE-8FE2-4E3E-BA26-467D2EBE3406.htm">dbaascli listener bounce</a></li>
+<li><a href="GUID-3F8874EC-A293-4D6F-A7A3-28A751E2FA75.htm">dbaascli listener start</a></li>
+<li><a href="GUID-913D5C44-794B-4AE8-AA5C-180EF30634C1.htm">dbaascli listener status</a></li>
+<li><a href="GUID-DB17A8B8-692D-4960-ABE3-721C2B1F994B.htm">dbaascli listener stop</a></li>
+<li><a href="GUID-69A5DB14-61F4-4FBA-9C3A-116D04CE8ABF.htm">dbaascli netsec config</a></li>
+<li><a href="GUID-1BF11950-D597-48F0-99F1-B3241C46F791.htm">dbaascli netsec config encryption</a></li>
+<li><a href="GUID-E8B9572D-AB84-4D95-BCF1-A7E94F3D019A.htm">dbaascli netsec config integrity</a></li>
+<li><a href="GUID-5A23B0C4-055F-4AA1-BD5E-F96CEE7A7718.htm">dbaascli netsec status</a></li>
+<li><a href="GUID-42D9C162-8DC3-4525-8A32-5BE78288DEE5.htm">dbaascli orec keep list</a></li>
+<li><a href="GUID-F8668E2F-61FE-4452-953B-B95E0C330EE4.htm">dbaascli orec keep tag</a></li>
+<li><a href="GUID-1C82A943-C70B-4641-9081-3580BA19D9AC.htm">dbaascli orec latest</a></li>
+<li><a href="GUID-C53E04E5-2B13-440A-9520-ECE1D2B386AE.htm">dbaascli orec list</a></li>
+<li><a href="GUID-4890C6CF-995C-4E92-8C1F-1938B83C7984.htm">dbaascli orec pitr</a></li>
+<li><a href="GUID-AFAD2F2C-F67C-45F2-8118-B4C160E78E32.htm">dbaascli orec scn</a></li>
+<li><a href="GUID-C7B92336-8468-478B-9530-665ADD1B2552.htm">dbaascli tde rotate masterkey</a></li>
+<li><a href="GUID-BDFB377E-5B86-4D23-B4C5-8B7BBFAAD1A6.htm">dbaascli tde status</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-51FEB715-4757-407B-939D-917C775DF969.htm"><span class="secnum">D</span> The raccli Utility</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-27B4EF3C-E25D-48B8-852B-41412BE56C40.htm">raccli apply patch</a></li>
+<li><a href="GUID-CBB9DE8A-AC84-477F-822D-8D60758E4BE6.htm">raccli create backup</a></li>
+<li><a href="GUID-A68AFAAB-4D6D-408F-9AF7-CF01653E7989.htm">raccli create recovery</a></li>
+<li><a href="GUID-FF715683-6804-4555-AE8C-B556EB0DF437.htm">raccli describe job</a></li>
+<li><a href="GUID-527042A4-797F-422C-B825-A304E05C02F2.htm">raccli describe system</a></li>
+<li><a href="GUID-8C3CACE1-2079-452C-92C7-6723CFFDCE95.htm">raccli list backup</a></li>
+<li><a href="GUID-65F602E8-C268-46D8-AD37-231C36D63756.htm">raccli list backupconfig</a></li>
+<li><a href="GUID-7B7B9B00-1FC7-4A30-B686-586B71358697.htm">raccli list jobs</a></li>
+<li><a href="GUID-F7CF0C7B-DA47-4A23-8122-D1CB3BC13CE0.htm">raccli list recovery</a></li>
+<li><a href="GUID-1BA0990B-E8F9-475E-BF25-9DC5C3AAFFF7.htm">raccli update backupconfig</a></li>
+<li><a href="GUID-7A95C3B6-EC6C-4C07-80CF-2713358E8932.htm">raccli update netsec</a></li>
+<li><a href="GUID-00E096C2-C35B-4A25-8A38-7DB03EED5C07.htm">raccli update rdk</a></li>
+<li><a href="GUID-503B702E-9F1E-4945-947B-D1179CAE1074.htm">raccli update tde</a></li>
+</ul>
+</div>
+<!-- class="ind" -->
+<!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment26">
+<tr>
+<td class="cellalignment5"><a href="title.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment25">
+<tr>
+<td class="cellalignment5"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

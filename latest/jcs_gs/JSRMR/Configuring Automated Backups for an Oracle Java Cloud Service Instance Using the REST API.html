@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="Scaling%20the%20Coherence%20Data%20Tier%20of%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html" title="Previous" type="text/html">
+        <link rel="next" href="Initiating%20an%20On-demand%20Backup%20for%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="Scaling%20the%20Coherence%20Data%20Tier%20of%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="Initiating%20an%20On-demand%20Backup%20for%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">Configuring Automated Backups for a Service Instance</h2> 
+<div class="body taskbody">
+ <p class="shortdesc">You can configure automated backups for an Oracle Java Cloud Service instance using the REST API. Specifically, you can customize the default retention time for backups, and when the service instance is automatically backed up as described in the following procedure.</p> 
+ <div class="section">
+  <p class="p">You can also update: </p> 
+  <ul class="ul">
+   <li class="li"><p class="p">The Oracle Storage Cloud Service container details for a service instance on Oracle Public Cloud</p> </li> 
+   <li class="li"><p class="p">The NFS URI of the remote storage for a service instance on Oracle Cloud Machine</p> </li> 
+  </ul> 
+  <p class="p"><strong class="ph b">Note:</strong> The cURL command examples use the URL structure <samp class="ph codeph">https://rest_server_url/<em class="ph i">resource-path</em></samp>, where <samp class="ph codeph">rest_server_url</samp> is the Oracle Public Cloud or Oracle Cloud Machine REST server to contact for your identity domain or tenant name. See <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a> for the appropriate URL structure to use on Oracle Public Cloud or Oracle Cloud Machine.</p> 
+  <p class="p">To configure automated backups for an Oracle Java Cloud Service instance:</p> 
+ </div> 
+ <ol class="ol steps">
+  <li class="li step stepexpand"><span class="ph cmd">Before configuring automated backups, view the current configuration.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/api/v1.1/instancemgmt/ExampleIdentityDomain/services/jaas/instances/ExampleInstance/backupconfig</strong>
+</pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">For more information, see <a class="xref" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-backupconfig-get.html" target="_blank">View the Backup Configuration</a>.</p> 
+    <p class="p">In the example, the following backup schedules are in effect:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p">Full backups are performed at 11:50:00 PM UTC on Tuesday</p> </li> 
+     <li class="li"><p class="p">Incremental backups are performed at 11:50:00 PM UTC daily, excluding Tuesday</p> </li> 
+     <li class="li"><p class="p">Retention time for incremental and on-demand backups is set to 30 days; full scheduled backups are retained until their last related incremental backup is no longer available, if any</p> </li> 
+    </ul> 
+    <p class="p">The following example shows the response body in JSON format on Oracle Public Cloud.</p> 
+    <pre class="pre codeblock">{
+    "state":"ENABLED",
+    "defaultRetention":"30 days",
+    "fullBackupSchedule":
+    {
+        "second":"0",
+        "minute":"50",
+        "hour":"23",
+        "dayOfMonth":"*",
+        "month":"*",
+        "dayOfWeek":"Tue",
+        "year":"*"
+    },
+    "incrementalBackupSchedule":
+    {
+        "second":"0",
+        "minute":"50",
+        "hour":"23",
+        "dayOfMonth":"*",
+        "month":"*",
+        "dayOfWeek":"Sun,Mon,Wed,Thu,Fri,Sat",
+        "year":"*"
+    },
+    "scheduledBackups":"ALL",
+    "extendedRestoreTypes":"NONE",
+    "lastBackupDate":"Thu Dec 03 23:50:00 GMT 2015",
+    "lastSuccessfulCleanupDate":"Fri Dec 04 01:01:59 GMT 2015",
+    "nextFullBackupDate":"Tue Dec 08 23:50:00 GMT 2015",
+    "nextIncrementalBackupDate":"Fri Dec 04 23:50:00 GMT 2015",
+    "backupDestination":"BOTH",
+    "cloudStorageContainer":"Storage-ExampleIdentityDomain\/mybackupcontainer",
+    "cloudStorageUser":"username",
+    "totalCloudStorageContainerUsed":"1.8GB",
+    "totalCloudStorageContainerUsedInBytes":1934445222,
+    "totalBackupVolumeUsed":"1.8GB",
+    "totalBackupVolumeUsedInBytes":1934445222,
+    "percentBackupVolumeUsed":0.9007961750030518
+}</pre> 
+    <p class="p">On Oracle Cloud Machine, you would see similar output, except you would not see <samp class="ph codeph">cloudStorageUser</samp>, and for <samp class="ph codeph">cloudStorageContainer</samp> you would see the following instead:</p> 
+    <pre class="pre codeblock">    "cloudStorageContainer":"123.34.0.1:\/export\/XYZ\/abcd05\/mybackup",</pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">Create a JSON document, <samp class="ph codeph">backup.json</samp>, that defines the details of the backup configuration. Include only those parameters that you want changed.</span>
+   <div class="itemgroup info">
+    <p class="p">Note that you cannot change the backup configuration when the backup service for the specified service instance is in a DISABLED state.</p> 
+    <p class="p">The following shows an example of the request document in JSON format. In this example, the full backup schedule is set to 5AM UTC on Sunday. The incremental backup schedule is set to 3AM UTC.</p> 
+    <p class="p">For more information about the request attributes, see <a class="xref" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-backupconfig-post.html" target="_blank">Update the Backup Configuration</a>.</p> 
+    <pre class="pre codeblock">{
+   "fullBackupSchedule":
+   {
+      "hour":"5",
+      "dayOfWeek":"Sun"
+   },
+   "incrementalBackupSchedule":
+   {
+      "hour":"3"
+   }
+}
+</pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">Configure automated backups for an Oracle Java Cloud Service instance, passing the JSON document defined in step 2.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X POST -u username:userPassword1! -d @backup.json -H "Content-type:application/json" -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/api/v1.1/instancemgmt/ExampleIdentityDomain/services/jaas/instances/ExampleInstance/backupconfig</strong>
+</pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">POST</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-d</samp> option to identify the request document, in JSON format, on the local machine (<samp class="ph codeph">backup.json</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to identify the content type as <samp class="ph codeph">application/json</samp> and define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">The following example shows the response body in JSON format on Oracle Public Cloud The new values are in effect. Because <samp class="ph codeph">dayOfWeek</samp> was not specified for <samp class="ph codeph">incrementalBackupSchedule</samp> in the update request, the value defaults to all days excluding the day of the full backup (in this example, every day excluding Sunday). The default retention time is not changed.</p> 
+    <pre class="pre codeblock">{
+    "state":"ENABLED",
+    "defaultRetention":"30 days",
+    "fullBackupSchedule":
+    {
+        "second":"0",
+        "minute":"0",
+        <strong class="ph b">"hour":"5"</strong>,
+        "dayOfMonth":"*",
+        "month":"*",
+        <strong class="ph b">"dayOfWeek":"Sun"</strong>,
+        "year":"*"
+    },
+    "incrementalBackupSchedule":
+    {
+        "second":"0",
+        "minute":"0",
+        <strong class="ph b">"hour":"3"</strong>,
+        "dayOfMonth":"*",
+        "month":"*",
+        <strong class="ph b">"dayOfWeek":"Mon,Tue,Wed,Thu,Fri,Sat"</strong>,
+        "year":"*"
+    },
+    "scheduledBackups":"ALL",
+    "extendedRestoreTypes":"NONE", 
+    "lastBackupDate":"Thu Dec 03 23:50:00 GMT 2015",
+    "lastSuccessfulCleanupDate":"Fri Dec 04 01:01:59 GMT 2015",
+    <strong class="ph b">"nextFullBackupDate":"Sun Dec 06 05:00:00 GMT 2015"</strong>,
+    <strong class="ph b">"nextIncrementalBackupDate":"Fri Dec 04 03:00:00 GMT 2015"</strong>,
+    "backupDestination":"BOTH",
+    "cloudStorageContainer":"Storage-ExampleIdentityDomain\/mybackupcontainer",
+    "cloudStorageUser":"username",
+    "totalCloudStorageContainerUsed":"1.8GB",
+    "totalCloudStorageContainerUsedInBytes":1934445222,
+    "totalBackupVolumeUsed":"1.8GB",
+    "totalBackupVolumeUsedInBytes":1934445222,
+    "percentBackupVolumeUsed":0.9007961750030518
+}</pre> 
+    <p class="p">On Oracle Cloud Machine, you would see similar output, except you would not see <samp class="ph codeph">cloudStorageUser</samp>, and for <samp class="ph codeph">cloudStorageContainer</samp> you would see the following instead:</p> 
+    <pre class="pre codeblock">    "cloudStorageContainer":"123.34.0.1:\/export\/XYZ\/abcd05\/mybackup",</pre> 
+   </div></li> 
+ </ol> 
+</div></div>
+        </article>
+    </body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Problems With Performance of Oracle Java Cloud Service&mdash;Coherence Service Instances</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Depending on access patterns and memory usage, an Oracle Java Cloud Service &mdash; Coherence instance might show performance problems under a heavy load. You might see long, multi-second garbage collection times on Managed Servers of the Coherence data tier. To address this issue, you can change the garbage collection scheme to CMS." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-40C84ED1-D56C-4183-B88F-E271D5BAE5B9.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-48546683-5132-49E5-B4A6-0D96A3455B3E.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-02C08728-3652-4BA0-8C5F-325720234DA4"></a> <span id="PAGE" style="display:none;">125/131</span> <!-- End Header -->
+<h1 id="JSCUG-GUID-02C08728-3652-4BA0-8C5F-325720234DA4" class="sect1">Problems With Performance of <span>Oracle Java Cloud Service</span>&mdash;Coherence Service Instances</h1>
+<div>
+<p>Depending on access patterns and memory usage, an Oracle Java Cloud Service &mdash; Coherence instance might show performance problems under a heavy load. You might see long, multi-second garbage collection times on Managed Servers of the Coherence data tier. To address this issue, you can change the garbage collection scheme to CMS.</p>
+<div class="section">To change the garbage collection scheme on a Managed Server on the Coherence data tier:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Navigate to the Oracle Java Cloud Service Console.</span></li>
+<li class="stepexpand"><span>Open the Administration Console for your service.</span>
+<div>For more information, see <a href="GUID-D2461227-4463-471D-A2E2-41E63AE0D092.htm#GUID-D2461227-4463-471D-A2E2-41E63AE0D092" title="You can use various consoles to administer the software that an Oracle Java Cloud Service instance is running and to also administer related Oracle Cloud services.">Accessing the Administrative Consoles Used by Oracle Java Cloud Service</a>.</div>
+</li>
+<li class="stepexpand"><span>On the Administration Console, under Domain Structure, expand Environment and select Servers.</span>
+<div>The Summary of Servers page is displayed.</div>
+</li>
+<li class="stepexpand"><span>On the Configuration page, in the Servers table, click the name of a Managed Server of the Coherence data tier.</span>
+<div>The Settings page is displayed.</div>
+</li>
+<li class="stepexpand"><span>Click the Configuration tab, then the Server Start tab.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Lock &amp; Edit</span>.</span></li>
+<li class="stepexpand"><span>In the Arguments pane, add the <code class="codeph">&mdash;XX:+UseConcMarkSweepGC</code> flag to the end of the list.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Activate Changes</span>.</span></li>
+<li class="stepexpand"><span>Restart the Managed Server.</span>
+<div>
+<p>For more information, see <a href="GUID-BD5190E0-5DE4-454E-BAD3-E889C575D432.htm#GUID-446160EC-1A9E-4A8D-8608-064471EA6893" title="Use the WebLogic Server Administration Console to shut down servers employed by your Oracle Java Cloud Service instance: the Administration server and one or more managed servers. Do not attempt to shut down servers through the Oracle Traffic Director.">Using the WebLogic Server Administration Console to Shut Down Servers Without Stopping VMs</a> and <a href="GUID-BD5190E0-5DE4-454E-BAD3-E889C575D432.htm#GUID-C65E74C2-1FB9-45DB-90CA-1295518E0D2C" title="After you have started the Administration Server through the Node Manager by using WLST commands, you can start the Managed Servers through theWebLogic Server Administration Console.">Using the WebLogic Server Administration Console to Start Managed Servers</a>.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Repeat this process for all Managed Servers of the Coherence data tier.</span></li>
+</ol>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-40C84ED1-D56C-4183-B88F-E271D5BAE5B9.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-48546683-5132-49E5-B4A6-0D96A3455B3E.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

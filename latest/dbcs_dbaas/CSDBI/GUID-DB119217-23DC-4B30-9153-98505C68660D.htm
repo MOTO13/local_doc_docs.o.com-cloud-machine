@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Viewing Real Time SQL Monitor</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-06-19T15:22:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Database Cloud Service" />
+<meta name="dcterms.identifier" content="E72994-04" />
+<meta name="dcterms.isVersionOf" content="CSDBI" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-2282DFBF-4F14-4492-93A0-9ED0FA22C9D4.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-A0A71EFB-FB8F-4466-AD1B-19C8812ACA87.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSDBI.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSDBI.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSDBI.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-DB119217-23DC-4B30-9153-98505C68660D"></a> <span id="PAGE" style="display:none;">110/190</span> <!-- End Header -->
+<h1 id="CSDBI-GUID-DB119217-23DC-4B30-9153-98505C68660D" class="sect1">Viewing Real Time SQL Monitor</h1>
+<div>
+<div class="section">
+<p>This page shows, in real time, the SQL statements that are being monitored in the database.</p>
+<p>To review the SQL statements being monitored:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>On the DBaaS Monitor home page, in the Database drop-down menu, click <span class="bold">Real Time SQL Monitor</span>.</p>
+<p>The Real Time SQL Monitor page displays.</p>
+</li>
+</ul>
+<p>This tool helps identify run-time issues for SQL statements and monitor their behavior, by providing two major functions:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>General view of monitored statements</p>
+</li>
+<li>
+<p>View of SQL execution details</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">General View of Monitored Statements</p>
+<p>The page contains a table of SQL statements currently running. This table shows the following information:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Status</span> &mdash; Current state of the SQL statement execution. For example, a SQL statement that has already finished its execution will show a status of&nbsp;"DONE".</p>
+</li>
+<li>
+<p><span class="bold">Duration</span> &mdash; This is the amount of time a SQL statement is taking, or has taken, to execute.</p>
+</li>
+<li>
+<p><span class="bold">SQL ID</span> &mdash; SQL identifier of the statement being monitored.</p>
+</li>
+<li>
+<p><span class="bold">Session ID</span> &mdash; Session identifier that is executing, or has executed, the SQL statement.</p>
+</li>
+<li>
+<p><span class="bold">Session Serial Number</span> &mdash; Used to uniquely identify a session's objects.&nbsp;</p>
+</li>
+<li>
+<p><span class="bold">Instance Degree of Parallelism</span> &mdash; This Degree of Parallelism (DOP) column shows how many instances and&nbsp;parallel execution servers are allocated.&nbsp;It is shown in the form of &ldquo;number of instances&rdquo; | &ldquo;number of parallel servers&rdquo;</p>
+</li>
+<li>
+<p><span class="bold">CPU Time</span> &mdash; This is the CPU time consumed by the execution of the query.</p>
+</li>
+<li>
+<p><span class="bold">I/O Time</span> &mdash; This is the I/O time consumed by the execution of the query.</p>
+</li>
+<li>
+<p><span class="bold">Start Time</span> &mdash; This is the time in which the execution of the SQL statement started.</p>
+</li>
+<li>
+<p><span class="bold">SQL Statement</span> &mdash; This is the SQL statement being monitored.</p>
+</li>
+</ul>
+<p>For more information, see <span class="q">"Monitoring the Database"</span> in <cite>Oracle Database Administrator's Guide</cite> for Release <a href="http://www.oracle.com/pls/topic/lookup?ctx=db122&amp;id=ADMIN005" target="_blank">12.2</a>, <a href="http://www.oracle.com/pls/topic/lookup?ctx=db121&amp;id=ADMIN005" target="_blank">12.1</a> or <a href="http://www.oracle.com/pls/topic/lookup?ctx=db112&amp;id=ADMIN005" target="_blank">11.2</a>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">View of SQL Execution Details</p>
+<p>When a SQL statement is drilled down from the main monitor table, a detailed view is shown. The SQL ID, Start Time and the SQL Execution ID represent the execution key that uniquely identify this SQL statement. A detail view consists of the general characteristics that integrate the execution of a SQL statement.</p>
+<p>General information about the query execution is provided:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Execution Plan</span> &mdash; Degree of Parallelism of the SQL statement</p>
+</li>
+<li>
+<p><span class="bold">Execution Started</span> &mdash; Time that the SQL statement execution started</p>
+</li>
+<li>
+<p><span class="bold">Last Refresh Time:</span> &mdash;&nbsp;Last update time of the SQL monitor registry for the SQL statement</p>
+</li>
+<li>
+<p><span class="bold">Execution ID</span> &mdash; Execution identifier</p>
+</li>
+<li>
+<p><span class="bold">User</span> &mdash; User in the format USER@CONTAINER</p>
+</li>
+<li>
+<p><span class="bold">Fetch Calls</span> &mdash; Number of fetch calls done by the SQL statement</p>
+</li>
+</ul>
+<p>General statistics of the SQL statement are provided: total duration of execution, the number of buffered gets, number of Input/Output requests and bytes.</p>
+<p>A duration breakdown shows the percentage of the total duration of the execution of the SQL statement, divided into two types of times:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Database Time</span> &mdash; Any time of execution related to the database needs; for example, CPU Time</p>
+</li>
+<li>
+<p><span class="bold">Wait Time</span> &mdash; The waiting time that the statement goes through to complete an execution</p>
+</li>
+</ul>
+<p>Each duration time can be drilled down by clicking on the "Show Detail" element, where a gauge graph shows the percentage of time that integrates each type of duration time.</p>
+<p>PLSQL and Java Time are provided. These time measurements are outside of the duration of the SQL statement.</p>
+<p><span class="bold">Detailed information of the statement</span> &mdash; This space holds the information corresponding to the explain plan, parallel behaviour and CPU activity involved in the execution of the statement:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">SQL Text</span> &mdash; SQL statement that was or is being executed.</p>
+</li>
+<li>
+<p><span class="bold">Plan Statistics</span> &mdash; Explain plan of the execution of the SQL statement in the form of a table. Each row is a different operation involved in the execution of the SQL statement and it shows hierarchy dependency by adding a space at the beginning of the text in the Operation column.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Operation, Name, Estimated Rows, Cost, Actual Rows, Memory, Temp(Max), IO Requests, IO Bytes</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="bold">Graphic view of the Plan Statistics</span> &mdash; The plan statistics table in a graphic representation; the hierarchy is presented as a collapsible tree map in which each node represent an operation.</p>
+</li>
+<li>
+<p><span class="bold">Parallelism Details for the SQL statement</span> &mdash; Each execution consists of a parallel coordinator and one or more parallel sets. Each set can have one or more processes. When a row has dependents, each of its columns will be the sum of the values of its dependants. When this happens, a sigma symbol will appear to show that a value consists of the sum of others. The columns shown are the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Process Name, Buffer Gets, CPU Time, Elapsed Time, Other Wait Time, Server Set, Read Requests, Read Bytes</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="bold">Activity Line Chart for the CPU Usage</span> &mdash; Line chart showing the number of different types of CPU activities registered in the execution of the SQL statement. The Y axis represents the number of CPU activities and the X axis represents the time registered for that activity. Each activity is represented by a custom set of colors depending on the activity.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="GUID-2282DFBF-4F14-4492-93A0-9ED0FA22C9D4.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="GUID-A0A71EFB-FB8F-4466-AD1B-19C8812ACA87.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

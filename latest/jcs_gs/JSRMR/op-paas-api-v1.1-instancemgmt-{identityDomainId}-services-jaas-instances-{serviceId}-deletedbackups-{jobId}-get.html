@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service - View a Deleted Backup</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-backups-%7BbackupId%7D-get.html" title="Previous" type="text/html">
+        <link rel="next" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-backups-get.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-backups-%7BbackupId%7D-get.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-backups-get.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            
+            <header>
+
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li>Tasks</li>
+                    
+                    <li class="active">
+                        
+                        <a href="api-Backups%20and%20Restorations.html">Backups and Restorations</a>
+                        
+                    </li>
+                    
+                </ol>
+                
+                <p class="draftsubtitle"></p>
+                
+                <h2>View a Deleted Backup</h2>
+                <div>
+                    <div class="label label-get text-uppercase">get</div>
+                    <p style="word-break: break-word;"><strong>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/jaas/instances/{serviceId}/deletedbackups/{jobId}</strong></p>
+                </div>
+            </header>
+            <section>
+
+                <div class="description">Returns information about a deleted backup for an Oracle Java Cloud Service instance based on the job ID provided.<p>On Oracle Public Cloud, see <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=JSCUG3312' target='_blank'>About Backup and Restoration of Oracle Java Cloud Service Instances</a> in <i>Using Oracle Java Cloud Service</i> for complete information about contents of backups, where backups are stored, and how backups and local copies of backups are deleted automatically. On Oracle Cloud Machine, see <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloudopcm&id=JSCUG3312' target='_blank'>About Backup and Restoration of Oracle Java Cloud Service Instances</a> in <i>Using Oracle Java Cloud Service on OPCM</i>.<p><b>Note:</b> The legacy path <i>/paas/service/jcs/api/v1.1/instances/{identityDomainId}/{serviceId}/deletedbackups</i> is deprecated but it will continue to be supported for the near term. However, it is recommended that you migrate your applications to use the new path at your earliest convenience to minimize any disruption in the future when the deprecated URL structure is no longer supported.</div>
+
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                        <li role="presentation" class="active"><a href="#request" aria-controls="request" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-in" aria-hidden="true"></span> Request</a></li>
+                        <li role="presentation"><a href="#response" aria-controls="response" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-out" aria-hidden="true"></span> Response</a></li>
+                        
+                        <li role="presentation"><a href="#examples" aria-controls="examples" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-edit" aria-hidden="true"></span> Examples</a></li>
+                        
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="request">
+                            <h3 class="visible-print-block">Request</h3>
+                            
+
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Path Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>identityDomainId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account (on Oracle Public Cloud).<p>Tenant name for the Oracle Java Cloud Service instance (on Oracle Cloud Machine).</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                        <dt>jobId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Job ID for the backup deletion. To retrieve the backup deletion job ID, see <a href='op-paas-api-v1.1-instancemgmt-{identityDomainId}-services-jaas-instances-{serviceId}-deletedbackups-get.html'>View All Deleted Backups</a>. This can also be the job ID for the backup deletion (asynchronous) as described in <a href='op-paas-api-v1.1-instancemgmt-{identityDomainId}-services-jaas-instances-{serviceId}-deletedbackups-post.html'>Delete a Backup (Asynchronous)</a>.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                        <dt>serviceId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the Oracle Java Cloud Service instance.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+
+                            
+                            
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Header Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>X-ID-TENANT-NAME</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account (on Oracle Public Cloud).<p>Tenant name for the Oracle Java Cloud Service instance (on Oracle Cloud Machine).</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+
+
+                            
+
+
+
+                            
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="response">
+                            <h3 class="visible-print-block">Response</h3>
+
+                            
+
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">200 Response <span class="glyphicon glyphicon-ok-sign response-symbol" data-response-code="200" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    OK. See <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=jcs_rest_statuscodes'>Status Codes</a> for information about other possible HTTP status codes.
+                                </div>
+
+                                
+                                
+
+                                
+                                <div class="panel panel-default">
+
+                                    <div class="panel-heading">Body</div>
+                                    <div class="panel-body">
+                                        
+                                        <div>The response body contains information about a backup deleted synchronously or asynchronously, or a list of backups deleted asynchronously.</div>
+                                        
+
+                                        <div class="schema-container">
+                                        
+                                        <div id="200-definitions-viewdeleted-response" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : viewdeleted-response</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The response body contains information about a backup deleted synchronously or asynchronously, or a list of backups deleted asynchronously.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-viewdeleted-response-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-viewdeleted-response-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-viewdeleted-response-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-viewdeleted-response-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-viewdeleted-response-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>delete-backup</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-viewdeleted-response-properties-delete-backup" role="button" class="btn btn-default btn-sm">delete-backup</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about a deleted backup.</div>
+
+            
+        </dd>
+        
+        <dt>delete-backups</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-viewdeleted-response-properties-delete-backups" role="button" class="btn btn-default btn-sm">delete-backups</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about a list of backups deleted asynchronously.</div>
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-viewdeleted-response-properties-delete-backup" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : delete-backup</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about a deleted backup.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-viewdeleted-response-properties-delete-backup-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-viewdeleted-response-properties-delete-backup-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-viewdeleted-response-properties-delete-backup-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-viewdeleted-response-properties-delete-backup-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-viewdeleted-response-properties-delete-backup-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-delete-backup" role="button" class="btn btn-default btn-sm">delete-backup</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-viewdeleted-response-properties-delete-backups" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : delete-backups</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about a list of backups deleted asynchronously.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-viewdeleted-response-properties-delete-backups-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-viewdeleted-response-properties-delete-backups-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-viewdeleted-response-properties-delete-backups-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-viewdeleted-response-properties-delete-backups-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-viewdeleted-response-properties-delete-backups-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-delete-backup" role="button" class="btn btn-default btn-sm">delete-backup</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-delete-backup" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : delete-backup</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-delete-backup-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-delete-backup-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-delete-backup-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-delete-backup-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-delete-backup-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>completeDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time the delete backup operation completed.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>jobId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Job ID for the delete backup operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>operation</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Type of operation that was executed. Set to <code>delete</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>startDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time the delete backup operation started.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>status</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Status of the delete backup operation. Valid values include: <code>Completed</code>, <code>Failed</code>, <code>Deleted</code>, or <code>Delete In Progress</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>statusDetails</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>History of system messages. Each message is separated by an ellipses <code>{...}</code>.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">400 Response <span class="glyphicon glyphicon-alert response-symbol" data-response-code="400" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    Bad Request. Returned if the job ID does not exist.
+                                </div>
+
+                                
+                                
+
+                                
+
+                            </div>
+                            
+
+
+                        </div>
+                        
+                        <div role="tabpanel" class="tab-pane fade" id="examples">
+                            <h3>Examples</h3>
+                            <div class="body conbody">
+ <p class="p">The following example shows how to view information about a deleted backup for an Oracle Java Cloud Service instance by submitting a GET request on the REST resource using cURL.</p> 
+ <p class="p"><strong class="ph b">Note: </strong>The command in this example uses the URL structure <samp class="ph codeph">https://rest_server_url/<em class="ph i">resource-path</em></samp>, where <samp class="ph codeph">rest_server_url</samp> is the Oracle Public Cloud or Oracle Cloud Machine REST server to contact for your identity domain or tenant name. See <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a> for the appropriate URL structure to use for Oracle Public Cloud or Oracle Cloud Machine.</p> 
+ <div class="section">
+  <h3 class="title sectiontitle">cURL Command</h3>
+  <pre class="pre">curl -i -X GET -u username:userPassword1! -H "Content-Type:application/json" -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/api/v1.1/instancemgmt/ExampleIdentityDomain/services/jaas/instances/ExampleInstance/deletedbackups/4779</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Header</h3>
+  <p class="p">The following shows an example of the response header:</p> 
+  <pre class="pre">HTTP/1.1 200 OK
+Date: Wed, 23 Mar 2016 20:01:38 GMT
+Transfer-Encoding: chunked
+Content-Type: application/json</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Body (Oracle Public Cloud)</h3>
+  <p class="p">The following example shows a response returned in JSON format, for a single backup that was deleted asynchronously.</p> 
+  <pre class="pre">{
+    "delete-backup":[
+    {
+        "operation":"delete",
+        "jobId":"8376",
+        "status":"Completed",
+        "startDate":"Tue Dec 08 18:19:53 GMT 2015",
+        "completeDate":"Tue Dec 08 18:20:25 GMT 2015",
+        "statusDetails":"Deleting the backup archive in the Oracle Storage Cloud Service container...
+           Deleted the backup archive in the Oracle Storage Cloud Service container...
+           Deleted the local backup..."
+    }]
+}</pre> 
+  <p class="p">The following example shows a response returned in JSON format, for a list of backups deleted asynchronously.</p> 
+  <pre class="pre">{
+    "delete-backups":[
+    {
+        "operation":"delete",
+        "jobId":"4211",
+        "status":"In Progress",
+        "startDate":"Fri Mar 18 14:57:53 GMT 2016"
+    },
+    {
+        "operation":"delete",
+        "jobId":"4208",
+        "status":"Completed",
+        "startDate":"Fri Mar 18 14:57:21 GMT 2016",
+        "completeDate":"Fri Mar 18 14:57:53 GMT 2016",
+        "statusDetails":"Deleting the backup archive from the Oracle Storage Cloud Service container...
+           Deleted the backup archive in the Oracle Storage Cloud Service container...
+           Deleted the local copy of the backup with the ID 1458254176358..."
+    }]
+}</pre> 
+  <p class="p">The following example shows a response returned in JSON format, for a backup that was deleted synchronously.</p> 
+  <pre class="pre">{
+    "delete-backup":[
+    {
+        "operation":"delete",
+        "jobId":"4779",
+        "status":"Completed",
+        "startDate":"Wed Mar 23 19:58:21 GMT 2016",
+        "completeDate":"Wed Mar 23 19:58:54 GMT 2016",
+        "statusDetails":"Deleting the backup archive from the Oracle Storage Cloud Service container...
+           Deleted the backup archive in the Oracle Storage Cloud Service container...
+           Deleted the local copy of the backup with the ID 1458365400062..."
+    }]
+}</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Body (Oracle Cloud Machine) </h3>
+  <p class="p">The following example shows the response returned in JSON format, for a single backup that was deleted asynchronously.</p> 
+  <pre class="pre">{
+    "delete-backup":[
+    {
+        "operation":"delete",
+        "jobId":"10040",
+        "status":"Completed",
+        "startDate":"Wed Dec 30 19:50:24 GMT 2015",
+        "completeDate":"Wed Dec 30 19:50:55 GMT 2015",
+        "statusDetails":"Deleting the backup archive from the remote filesystem...
+          Deleted \/tmp\/far_storage_root\/JaaSBackup_ExampleInstance\/2015-12-23\/P_1450865100029.zip from the remote filesystem"
+    }]
+}</pre> 
+  <p class="p">The following example shows the response returned in JSON format, for a backup that was deleted synchronously.</p> 
+  <pre class="pre">{
+    "delete-backup":[
+    {
+        "operation":"backup",
+        "jobId":"10029",
+        "status":"Completed",
+        "startDate":"Thu Dec 24 22:39:12 GMT 2015",
+        "completeDate":"Thu Dec 24 22:41:46 GMT 2015",
+        "statusDetails":"Backup health check passed...Locked the WebLogic Server domain configuration...
+          Started the backup of configuration data for WebLogic Server managed servers on these hosts: exampleinstance-wls-1 ...
+          Completed the backup of configuration data for WebLogic Server managed servers on these hosts: 
+          exampleinstance-wls-1 ...
+          Unlocked the WebLogic Server domain configuration...Uploading the backup archive to the remote filesystem...
+          Uploaded the backup archive to the remote filesystem"
+    }]
+}</pre> 
+ </div> 
+</div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+        </article>
+    </body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Public Cloud Machine Using Oracle Compute Cloud Service - Contents</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="This document describes how to use the Oracle Compute Cloud Service on Oracle Public Cloud Machine." />
+<meta name="dcterms.created" content="2018-05-15T07:53:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E62130-11" />
+<meta name="dcterms.isVersionOf" content="ELUSE" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"   src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"   src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Next" href="title.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUSE.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript"  src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript"  src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript"  src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript"  src="../dcommon/js/foundation.min.js"></script>
+<script type="application/javascript"  src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript"  src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript"  src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="application/javascript"  src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="application/javascript"  src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="application/javascript"  src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="application/javascript"  src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<span id="PAGE" style="display:none;">1/81</span> <!-- End Header -->
+<h1 class="toc">Contents</h1>
+<h2 class="tocheader"><a href="title.htm">Title and Copyright Information</a></h2>
+<h2 class="tocheader"><a href="GUID-331D222E-4579-4BC1-B894-68B77BD6E95A.htm#GUID-331D222E-4579-4BC1-B894-68B77BD6E95A">Preface</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-331D222E-4579-4BC1-B894-68B77BD6E95A.htm#GUID-7196A18E-8782-4ADD-8AB8-1CD975D08988">Audience</a></li>
+<li><a href="GUID-331D222E-4579-4BC1-B894-68B77BD6E95A.htm#GUID-0987B7C2-312F-48EC-B20E-10660FADE25B">Documentation Accessibility</a></li>
+<li><a href="GUID-331D222E-4579-4BC1-B894-68B77BD6E95A.htm#GUID-E40E2B57-0BE4-404D-92A2-BB6C5F84CD35">Related Documents</a></li>
+<li><a href="GUID-331D222E-4579-4BC1-B894-68B77BD6E95A.htm#GUID-683338B5-5B0B-4B87-AA36-5D7F671202D6">Conventions</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-0912C100-2A92-4E06-B35E-846D27FE6747.htm"><span class="secnum">1</span> Getting Started</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-7DDB3DE2-76F5-46D2-A5B7-44BAEFBB36CA.htm#GUID-7DDB3DE2-76F5-46D2-A5B7-44BAEFBB36CA">About Oracle Compute Cloud Service</a></li>
+<li><a href="GUID-582C6D5F-646E-4026-94F6-2804543DFDAB.htm">Before You Begin with Oracle Compute Cloud Service</a></li>
+<li><a href="GUID-203AB1EE-45F5-4701-BF15-8C8D6190E66B.htm#GUID-203AB1EE-45F5-4701-BF15-8C8D6190E66B">Oracle Compute Cloud Service Terminology</a></li>
+<li><a href="GUID-E543C849-480F-40BB-AC1B-E1F7F348CE63.htm">About the Interfaces to Oracle Compute Cloud Service</a></li>
+<li><a href="GUID-AD0CAC64-74CC-4D74-BB18-9061A07A4B50.htm">Accessing the Self Service Portal in the UI</a></li>
+<li><a href="GUID-74EA020D-9951-45B7-AC15-9AED2915F662.htm">Accessing Oracle Compute Cloud Service Using the Command-Line Interface</a></li>
+<li><a href="GUID-638F9C00-D164-4F0B-8FED-A0522597C75D.htm">Accessing Oracle Compute Cloud Service Using the REST API</a></li>
+<li><a href="GUID-D6E60C83-08A4-42ED-930D-C20F1B315B3A.htm">Exploring the User Interface</a></li>
+<li><a href="GUID-EC9E2529-043C-43A4-BF85-311E2F08FE0D.htm">Workflow for Using Oracle Compute Cloud Service</a></li>
+<li><a href="GUID-C43D18EF-9039-4992-97C7-C7CEAFBFBCFA.htm">Understanding Oracle Compute Cloud Service User Roles</a></li>
+<li><a href="GUID-31E89478-1031-4510-B6C0-97A42776A737.htm">Getting Started with Tenant Administration on <span id="ACRONYM-AF466053">OPCM</span></a></li>
+<li><a href="GUID-658D476C-72AC-4595-BE02-95B7EE673EC7.htm">Getting Started with Using Oracle Compute Cloud Service on <span>OPCM</span></a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-81FD06EA-F60C-4910-A1EC-4162123F5751.htm"><span class="secnum">2</span> Creating and Managing Tenant Users</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-E679641B-907A-4D80-B3AC-0ED46A0EFB5B.htm#GUID-E679641B-907A-4D80-B3AC-0ED46A0EFB5B">Creating a Tenant User</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-E679641B-907A-4D80-B3AC-0ED46A0EFB5B.htm#GUID-522225E3-B258-4B18-BE73-9E0D51DC2537">Creating a User Using the CLI or API</a></li>
+</ul>
+</li>
+<li><a href="GUID-F6B409C4-EB9E-4B24-B339-5552266EC2D5.htm#GUID-F6B409C4-EB9E-4B24-B339-5552266EC2D5">Updating a User Details</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-F6B409C4-EB9E-4B24-B339-5552266EC2D5.htm#GUID-036D05C3-4038-4234-AE82-13104AD5BF8B">Updating a User Using the CLI or API</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="tocheader"><a href="GUID-34F3BBE6-BEC1-45F6-9405-01D77079060B.htm"><span class="secnum">3</span> Enabling Secure Access to Instances Using SSH</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-4C513297-CD33-4F13-8672-4271E4A3CF53.htm">About SSH Keys</a></li>
+<li><a href="GUID-27253116-1FFF-4E1C-A7A7-BB2A03B5BAA5.htm">Generating an SSH Key Pair</a></li>
+<li><a href="GUID-1496E27C-DDAF-4D49-B8AA-162C8C018856.htm#GUID-1496E27C-DDAF-4D49-B8AA-162C8C018856">Adding an SSH Key</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-1496E27C-DDAF-4D49-B8AA-162C8C018856.htm#GUID-12197D31-32F9-4BF3-955B-1103195C03A8">Adding an SSH Key Using the CLI or API</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="tocheader"><a href="GUID-28246879-BEE7-4820-8230-55EF0FAA5B7C.htm"><span class="secnum">4</span> Managing Networks</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-74D3FC54-AD2F-4EA9-A40D-4DA203297F66.htm">About Networking in Oracle Compute Cloud Service</a></li>
+<li><a href="GUID-135FABF1-8709-4F80-B091-3E42A198D12D.htm#GUID-135FABF1-8709-4F80-B091-3E42A198D12D">Creating an IPoIB Tenant vNet</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-135FABF1-8709-4F80-B091-3E42A198D12D.htm#GUID-D923C7FE-1B96-47ED-9656-D1AFE53652FF">Creating an IPoIB Tenant vNet Using the CLI or API</a></li>
+</ul>
+</li>
+<li><a href="GUID-CE47FA43-7CC5-40B8-9193-9D6633133F0B.htm#GUID-CE47FA43-7CC5-40B8-9193-9D6633133F0B">Updating an IPoIB Tenant vNet</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-CE47FA43-7CC5-40B8-9193-9D6633133F0B.htm#GUID-B56A5AA2-6EAC-42E4-8B21-FF3D5AD3826A">Updating an IPoIB Tenant vNet Using the CLI or API</a></li>
+</ul>
+</li>
+<li><a href="GUID-020160BE-A260-4DB8-93A0-8556B68E8CA2.htm#GUID-020160BE-A260-4DB8-93A0-8556B68E8CA2">Reserving an IP Address</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-020160BE-A260-4DB8-93A0-8556B68E8CA2.htm#GUID-FE868A4B-3886-4F1A-99A1-20C0BA18EC37">Reserving an IP Address Using the CLI or API</a></li>
+</ul>
+</li>
+<li><a href="GUID-21FE0A09-9EE8-42A3-B590-3AE29085CA54.htm#GUID-21FE0A09-9EE8-42A3-B590-3AE29085CA54">Deleting an IP Reservation</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-21FE0A09-9EE8-42A3-B590-3AE29085CA54.htm#GUID-F094314E-4394-4E1A-838D-17C3B4EBD067">Deleting an IP Reservation Using the CLI or API</a></li>
+</ul>
+</li>
+<li><a href="GUID-99EEAA7C-E15B-4807-B87C-FA25BE9EE890.htm#GUID-99EEAA7C-E15B-4807-B87C-FA25BE9EE890">Deleting an IPoIB Tenant vNet</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-99EEAA7C-E15B-4807-B87C-FA25BE9EE890.htm#GUID-338B2318-7889-4A13-A65B-A564236D9CFC">Deleting an IPoIB Tenant vNet Using the CLI or API</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="tocheader"><a href="GUID-87D95036-C62A-48CF-8F85-691972D9B4EA.htm"><span class="secnum">5</span> Working with Orchestrations</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-FA870840-5077-4D1E-9AA2-09E4FEBB4D9D.htm#GUID-FA870840-5077-4D1E-9AA2-09E4FEBB4D9D">About Orchestrations</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-FA870840-5077-4D1E-9AA2-09E4FEBB4D9D.htm#GUID-868BDFFE-A503-45F5-BFA1-0D1F58B379E8">Orchestration Life Cycle</a></li>
+</ul>
+</li>
+<li><a href="GUID-8523F896-2EEB-415D-929B-8FF6A66CBAEC.htm">Workflow for Creating Instances Using Orchestrations</a></li>
+<li><a href="GUID-E2F33BA3-65CA-46F6-86A0-2B137B828C1E.htm">High Availability Policies</a></li>
+<li><a href="GUID-684EB6F0-9B7F-4B38-8AEE-AB815BB73717.htm#GUID-684EB6F0-9B7F-4B38-8AEE-AB815BB73717">Discovering Orchestrations</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-684EB6F0-9B7F-4B38-8AEE-AB815BB73717.htm#GUID-A65ADE01-A375-4C38-8A84-F016659939BF">Discovering Orchestrations Using the CLI or API</a></li>
+</ul>
+</li>
+<li><a href="GUID-AECAAE6D-F6FA-4995-B4A0-264E55D27AEE.htm#GUID-AECAAE6D-F6FA-4995-B4A0-264E55D27AEE">Starting an Orchestration</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-AECAAE6D-F6FA-4995-B4A0-264E55D27AEE.htm#GUID-EA7ABC2D-CFC5-458F-AFF0-1183F88761E3">Starting an Orchestration Using the CLI or API</a></li>
+</ul>
+</li>
+<li><a href="GUID-E44EB604-5E8C-4F90-86FC-A0AF39217C4B.htm#GUID-E44EB604-5E8C-4F90-86FC-A0AF39217C4B">Shutting Down an Orchestration</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-E44EB604-5E8C-4F90-86FC-A0AF39217C4B.htm#GUID-7F49FAA5-4C0F-4157-BAB6-194200AE0BC6">Shutting Down an Orchestration Using the CLI or API</a></li>
+</ul>
+</li>
+<li><a href="GUID-0447455E-CAE9-4C3B-936C-5D86543BF470.htm#GUID-0447455E-CAE9-4C3B-936C-5D86543BF470">Restarting an Orchestration</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-0447455E-CAE9-4C3B-936C-5D86543BF470.htm#GUID-A9AC79E2-2A4A-4FED-BBBF-50EE2E090596">Restarting an Orchestration Using the CLI or API</a></li>
+</ul>
+</li>
+<li><a href="GUID-58076227-DE03-49A0-A6A1-CF6AD40E276D.htm#GUID-58076227-DE03-49A0-A6A1-CF6AD40E276D">Stopping an Orchestration</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-58076227-DE03-49A0-A6A1-CF6AD40E276D.htm#GUID-C1081D73-9308-433C-B06A-BF4AA5A6249F">Stopping an Orchestration Using the CLI or API</a></li>
+</ul>
+</li>
+<li><a href="GUID-AA4984D7-A6D9-4DC2-BC07-DA4ED39DDB6C.htm#GUID-AA4984D7-A6D9-4DC2-BC07-DA4ED39DDB6C">Updating an Orchestration</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-AA4984D7-A6D9-4DC2-BC07-DA4ED39DDB6C.htm#GUID-C062A063-A937-4A15-8D18-EEE8C723E6B5">Updating an Orchestration Using the CLI or API</a></li>
+</ul>
+</li>
+<li><a href="GUID-C9B759BA-DEE9-45F1-8BD9-1249AF60C82C.htm#GUID-C9B759BA-DEE9-45F1-8BD9-1249AF60C82C">Deleting an Orchestration</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-C9B759BA-DEE9-45F1-8BD9-1249AF60C82C.htm#GUID-7FF5D4D8-28C6-4D01-9A95-176E8AF0CADA">Deleting an Orchestration Using the CLI or API</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="tocheader"><a href="GUID-618A1CE4-8DBC-4795-A7E5-3B5F49D80FFB.htm"><span class="secnum">6</span> Managing Instances</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-B96DF4EA-6EAC-4C97-A95D-DCCC9193032D.htm">About Instances</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-E9CF1073-8DDC-4262-91D7-9DDF3F856942.htm">Instance Life Cycle</a></li>
+</ul>
+</li>
+<li><a href="GUID-505E61C9-7FF5-4011-A87E-FF700D5689C7.htm">Creating Instances Using Orchestrations</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-B4DECE8C-6E30-4538-9047-70E05AC6720D.htm">Creating Instances Using a Simple Orchestration</a></li>
+<li><a href="GUID-D686EFFB-B862-452A-A4C1-9C9291C58518.htm">Creating Instances Using Orchestrations with Custom Configurations</a></li>
+<li><a href="GUID-232E5BCE-42F5-412E-AD6D-543A2A8024EA.htm">Creating Instances Using the CLI</a></li>
+</ul>
+</li>
+<li><a href="GUID-AF6765AD-E707-4D0B-A39A-E083F79BC959.htm#GUID-AF6765AD-E707-4D0B-A39A-E083F79BC959">Attaching a Storage Volume to an Instance</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-AF6765AD-E707-4D0B-A39A-E083F79BC959.htm#GUID-A09CE95E-48DB-4743-9DB0-E1719DE936B5">Attaching a Storage Volume to an Instance Using the CLI or API</a></li>
+</ul>
+</li>
+<li><a href="GUID-6D6D5DD7-6454-4BD8-95B4-A94B2593221A.htm#GUID-6D6D5DD7-6454-4BD8-95B4-A94B2593221A">Detaching a Storage Volume from an Instance</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-6D6D5DD7-6454-4BD8-95B4-A94B2593221A.htm#GUID-406A35CA-E288-4801-A188-75B4DC1FB608">Detaching a Storage Volume from an Instance Using the CLI or API</a></li>
+</ul>
+</li>
+<li><a href="GUID-DFF9F15E-D389-400F-B363-F2BB2F790F1A.htm#GUID-DFF9F15E-D389-400F-B363-F2BB2F790F1A">Creating a Snapshot of an Instance</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-DFF9F15E-D389-400F-B363-F2BB2F790F1A.htm#GUID-AFDDAE83-B2F6-44F6-954B-A100990E74E4">Creating a Snapshot of an Instance Using the CLI or API</a></li>
+</ul>
+</li>
+<li><a href="GUID-DDA83168-BFFF-47B4-91FC-ACEF3C28CA50.htm#GUID-DDA83168-BFFF-47B4-91FC-ACEF3C28CA50">Shutting Down an Instance</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-DDA83168-BFFF-47B4-91FC-ACEF3C28CA50.htm#GUID-FFAD5BB7-70F2-4F9F-9C36-D9F1C38878BB">Shutting Down an Instance Using the CLI or API</a></li>
+</ul>
+</li>
+<li><a href="GUID-703822A2-46BE-4656-8EBE-8F7FB615AFF2.htm#GUID-703822A2-46BE-4656-8EBE-8F7FB615AFF2">Restarting an Instance</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-703822A2-46BE-4656-8EBE-8F7FB615AFF2.htm#GUID-E54FC5D1-8351-47EB-ACB2-A2995C660516">Restarting an Instance Using the CLI or API</a></li>
+</ul>
+</li>
+<li><a href="GUID-563D93C6-7340-48E0-8657-75FDBD579BE3.htm#GUID-563D93C6-7340-48E0-8657-75FDBD579BE3">Updating Instances</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-1E07F7B1-F930-481E-A177-EF051FA08FED.htm#GUID-1E07F7B1-F930-481E-A177-EF051FA08FED">Changing an Instance Shape</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-1E07F7B1-F930-481E-A177-EF051FA08FED.htm#GUID-0B5409C2-0351-4E8E-803D-7113F3DAE6A7">Changing an Instance Shape Using the CLI or API</a></li>
+</ul>
+</li>
+<li><a href="GUID-9E61F5CA-45F9-4E34-8A21-0E5411122EF9.htm#GUID-9E61F5CA-45F9-4E34-8A21-0E5411122EF9">Updating the Network Configuration of an Instance</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-9E61F5CA-45F9-4E34-8A21-0E5411122EF9.htm#GUID-EACAFCF4-1737-4E44-BCE3-E9D3A92E37B3">Updating the Network Configuration of an Instance Using the CLI or API</a></li>
+</ul>
+</li>
+<li><a href="GUID-75DDA9D1-8366-4AEC-BA33-6F3E1503D6AB.htm#GUID-75DDA9D1-8366-4AEC-BA33-6F3E1503D6AB">Attaching a Network to an Instance</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-75DDA9D1-8366-4AEC-BA33-6F3E1503D6AB.htm#GUID-A7DCC668-197B-4AD2-A5BD-04C89318EDBB">Attaching a Network to an Instance Using the CLI or API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="GUID-FA97F2F1-6DAC-4E82-BE02-0C3CADC35E4C.htm">Deleting an Instance</a></li>
+<li><a href="GUID-2EE72D99-92A6-4050-962B-84523A479E7C.htm">Accessing an Instance Using SSH</a></li>
+<li><a href="GUID-845CA42F-98BA-4217-A07D-B75C7549DB76.htm">Accessing an Instance Using VNC</a></li>
+<li><a href="GUID-D0905B84-1B6D-4058-BA3D-4F7385B062C1.htm">Accessing the Metadata of Instances</a></li>
+<li><a href="GUID-2F4B9D3D-CBEF-4E75-A337-E1E6F414B219.htm">Upgrading Oracle Compute Cloud Service Instances</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-28233B0D-6A9A-4D27-AF70-61F728DC4229.htm">Configure the Yum Repository Server</a></li>
+<li><a href="GUID-8EC17036-C730-435F-9EE1-519AC3194C0E.htm">Set Up the Patch Bundle</a></li>
+<li><a href="GUID-5E249555-F6EA-4A4C-B6D6-84AD93B745C6.htm">Patch Your Instances</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="tocheader"><a href="GUID-8F2A30B0-E7F9-4EAC-988C-BA531E202A1F.htm"><span class="secnum">7</span> Managing Storage Volumes</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-6ACE7B13-442B-459C-8868-566F1CB65E3F.htm#GUID-6ACE7B13-442B-459C-8868-566F1CB65E3F">About Storage Volumes</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-6ACE7B13-442B-459C-8868-566F1CB65E3F.htm#GUID-6BE53E4E-14C8-4943-9A14-5DE79DC4FAD6">About Snapshot of Storage Volumes</a></li>
+</ul>
+</li>
+<li><a href="GUID-F7F6918E-FD9D-453F-BCEC-EB3876195519.htm#GUID-F7F6918E-FD9D-453F-BCEC-EB3876195519">Creating a Storage Volume</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-F7F6918E-FD9D-453F-BCEC-EB3876195519.htm#GUID-82AA2ADE-ED68-4A15-AEEF-5C750C926488">Creating a Storage Volume Using the CLI or API</a></li>
+</ul>
+</li>
+<li><a href="GUID-2FD8DA3A-CDE5-40F7-A4A9-791CADCE1FFD.htm#GUID-2FD8DA3A-CDE5-40F7-A4A9-791CADCE1FFD">Creating a Storage Volume on the External Storage Appliance</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-2FD8DA3A-CDE5-40F7-A4A9-791CADCE1FFD.htm#GUID-CCB599D2-4AD9-4AD6-8DA4-252F02303A5A">Mapping Database Storage Volumes to Storage Properties</a></li>
+<li><a href="GUID-2FD8DA3A-CDE5-40F7-A4A9-791CADCE1FFD.htm#GUID-36F97048-BDFB-46EB-B9CF-C144C27BA5B5">Creating a Storage Volume on the External Storage Appliance Using the CLI or API</a></li>
+</ul>
+</li>
+<li><a href="GUID-62F264D7-E350-4E83-B242-8EA163BE6E51.htm#GUID-62F264D7-E350-4E83-B242-8EA163BE6E51">Creating a Snapshot of a Storage Volume</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-62F264D7-E350-4E83-B242-8EA163BE6E51.htm#GUID-90A43649-C2A7-4C7B-BF29-CA3D68AE778F">Creating a Snapshot of a Storage Volume Using the CLI or API</a></li>
+</ul>
+</li>
+<li><a href="GUID-295CA674-7467-48CD-B9EC-8FB0C032AB48.htm#GUID-295CA674-7467-48CD-B9EC-8FB0C032AB48">Deleting a Storage Volume</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-295CA674-7467-48CD-B9EC-8FB0C032AB48.htm#GUID-05B3E4CC-0199-463F-A96A-99DC3B530029">Deleting a Storage Volume Using the CLI or API</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="tocheader"><a href="GUID-1EEBB962-685E-4141-A3C1-F4779E978B39.htm"><span class="secnum">8</span> Managing Templates</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-D84B2543-E529-4871-8879-7DF3057246E4.htm">About Templates</a></li>
+<li><a href="GUID-14D73E49-E2BE-482E-BABF-8DC65CB69DD9.htm#GUID-14D73E49-E2BE-482E-BABF-8DC65CB69DD9">Uploading a Private Template</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-14D73E49-E2BE-482E-BABF-8DC65CB69DD9.htm#GUID-A39912B5-06C6-4B75-97D6-7073282684E2">Uploading a Private Template Using the CLI or API</a></li>
+</ul>
+</li>
+<li><a href="GUID-0B7F9B8C-48B1-47BE-82A5-99FE7323CABD.htm">Customizing an Image</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-BD111BF0-9F60-4554-A32F-8D41C0595D70.htm">Deploy and Customize an Instance</a></li>
+<li><a href="GUID-FAD05E6E-7BAB-4E1C-84C9-CB8014952179.htm">Create Your Custom Machine Image</a></li>
+<li><a href="GUID-DC93E19A-87C1-45B1-AA66-0939D8A37238.htm">Deploy Instances Using the Customized Machine Image</a></li>
+</ul>
+</li>
+<li><a href="GUID-9F8B9F08-81DF-4B6C-82A3-3A062F20BE66.htm#GUID-9F8B9F08-81DF-4B6C-82A3-3A062F20BE66">Deleting a Private Template</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-9F8B9F08-81DF-4B6C-82A3-3A062F20BE66.htm#GUID-32E55EE5-0A95-41DA-B97D-E57845D39814">Deleting a Private Template Using the CLI or API</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="tocheader"><a href="GUID-F7D91076-1736-4B54-89D5-73C23A45BF85.htm"><span class="secnum">A</span> Orchestration Templates</a></h2>
+<h2 class="tocheader"><a href="GUID-58BBCE21-E8CE-4607-AFE5-C534DF286682.htm"><span class="secnum">B</span> Sample Orchestrations</a></h2>
+</div>
+<!-- class="ind" -->
+<!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment95">
+<tr>
+<td class="cellalignment102">
+<table class="cellalignment119">
+<tr>
+<td class="cellalignment99"><a href="title.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment104">
+<table class="cellalignment118">
+<tr>
+<td class="cellalignment99"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

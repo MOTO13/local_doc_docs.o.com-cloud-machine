@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Working with Models</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="A model provides a grammar for describing the aspects of an application that are key for tracking business performance and mapping those concepts to existing software application implementation." />
+<meta name="dcterms.created" content="2017-04-11T11:24:03Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle Real-Time Integration Business Insight" />
+<meta name="dcterms.identifier" content="E76087-06" />
+<meta name="dcterms.isVersionOf" content="IINUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-ABD1135E-25C7-4078-BF81-903A41BC5090.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-FBDCC935-499D-4A8C-BFE4-2D4E3A6A3441.htm" title="Next" type="text/html" />
+<link rel="alternate" href="IINUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="IINUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="IINUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-795CC3E9-C1E9-43A5-BCF7-7EB54979159D"></a> <span id="PAGE" style="display:none;">8/17</span> <!-- End Header -->
+<h1 id="IINUG-GUID-795CC3E9-C1E9-43A5-BCF7-7EB54979159D" class="sect1"><span class="enumeration_chapter">3</span> Working with Models</h1>
+<div>
+<p>A model provides a grammar for describing the aspects of an application that are key for tracking business performance and mapping those concepts to existing software application implementation.</p>
+<div class="section">
+<p>In general, models of a high-level application are defined through an iterative collaboration between a business user and an architect. The business user generally describes the high-level concepts associated with an integration application, whereas the architect refines those concepts and maps them to an application implementation. Once the model is defined and mapped, the system starts collecting metrics associated with instances of the business model. The metrics are used to render dashboards and reports.</p>
+<p>Creating a model involves collaboration between users that have different personas: business users and architects. Business users define the abstract model, including milestones and indicators, while architects map those abstractions to underlying artifacts such as services and components.</p>
+<p>A model includes:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Basic metadata</p>
+</li>
+<li>
+<p>Identifier &mdash; this is the unique identifier which identifies an instance of the model and it is mandatory to define it</p>
+</li>
+<li>
+<p>Set of ordered milestones and their associated indicators.</p>
+</li>
+</ul>
+<p>For detailed description about milestones, indicators, and identifiers, see <span id="GUID-795CC3E9-C1E9-43A5-BCF7-7EB54979159D__INCON"><cite>Understanding Oracle Real-Time Integration Business Insight</cite></span>.</p>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-82AC30B9-AE04-477C-9D73-89611ECD9D2D"></a>
+<h2 id="IINUG-GUID-82AC30B9-AE04-477C-9D73-89611ECD9D2D" class="sect2"><span class="enumeration_section">3.1</span> Model Lifecycle and Activation</h2>
+<div>
+<p>A newly created model is in <span class="bold">Draft</span> state until the model is <span class="bold">activated</span>. Only activated models collect metrics. While a model is being activated, it is temporarily in the state of <span class="bold">Activation in Progress</span>. If activation is unsuccessful, the state is updated to <span class="bold">Activation Failed</span>. If the activation is successful, the state changes to <span class="bold">Activated</span>. A model can be deactivated as a result of a change to the underlying implementation, or a user can deactivate it &ndash; in either case the model is in <span class="bold">Deactivated</span> state with additional information available on hover.</p>
+<p>To make changes to an active model, a new <span class="bold">Draft</span> is created, which can be activated after the changes have been completed.</p>
+<div class="figure" id="GUID-82AC30B9-AE04-477C-9D73-89611ECD9D2D__GUID-C1EF0C58-EC42-4ECF-A492-3C053FE57A48">
+<p class="titleinfigure">Figure 3-1 Model Lifecycle State Transition</p>
+<img width="813" height="530" src="img/GUID-FD50837F-44E7-4F90-82A3-0DDEA704562D-default.png" alt="Model Lifecycle State Transition" title="Model Lifecycle State Transition" /></div>
+<!-- class="figure" -->
+<p>Sometimes, a model moves into an <span class="bold">Unknown</span> state. This happens when the runtime cannot determine the state of the model as <span class="bold">Activated</span> or <span class="bold">Deactivated</span>. You can perform all the lifecycle actions on a model in such state.</p>
+<p>For more information, see <a href="GUID-795CC3E9-C1E9-43A5-BCF7-7EB54979159D.htm#GUID-5D3C190E-998C-4AF8-9E33-E9372395C239">Model Lifecycle States</a>.</p>
+</div>
+<div class="sect3"><a id="GUID-5D3C190E-998C-4AF8-9E33-E9372395C239"></a>
+<h3 id="IINUG-GUID-5D3C190E-998C-4AF8-9E33-E9372395C239" class="sect3"><span class="enumeration_section">3.1.1</span> Model Lifecycle States</h3>
+<div>
+<p>Any model passes through the following lifecycle states:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold"><span class="italic">Draft</span></span>: In this state, changes can be made to the model and no metrics are collected. A draft model supports an <span class="bold">Export</span> option which allows you to export the model and use the exported model to import into the application.</p>
+</li>
+<li>
+<p><span class="bold"><span class="italic">In Progress</span></span>: A model is this state when activation has been initiated</p>
+</li>
+<li>
+<p><span class="bold"><span class="italic">Activated</span></span>: When a model is in this state, metrics are now being collected, changes are not possible. An activated model supports an <span class="bold">Export</span> option which allows you to export the model and use the exported model to import into the application.</p>
+</li>
+<li>
+<p><span class="bold"><span class="italic">Failed</span></span>: A model falls into this state when it encounters issues during activation</p>
+</li>
+<li>
+<p><span class="bold">Deactivated</span>: A model moves into this state when a change occurs in the underlying implementation or you deactivate it specifically.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">System Deactivated</span>: when the integration application is altered due to either deactivation/undeployment/systemic errors like loss of connectivity/retries exceeding threshold/application redeployment to a different path/application changes. Insight agent automatically deactivates the model and the user has no control on it.</p>
+</li>
+<li>
+<p><span class="bold">User Deactivated</span>&nbsp;if you specifically deactivate the model.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3"><a id="GUID-810F0E68-FD75-4F3D-B734-E633BA7B8AE6"></a>
+<h3 id="IINUG-GUID-810F0E68-FD75-4F3D-B734-E633BA7B8AE6" class="sect3"><span class="enumeration_section">3.1.2</span> Model Lifecycle Actions</h3>
+<div>
+<p>You can execute the following actions on a model, depending on the current state of the model:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold"><span class="italic">Activate</span></span>: Activates a model. The model definition must be 100% complete to activate it. A draft can be activated to replace the existing active model.</p>
+<div class="infobox-note" id="GUID-810F0E68-FD75-4F3D-B734-E633BA7B8AE6__GUID-A0993E7F-042A-4855-A2D9-1717659B61CA">
+<p class="notep1">Note:</p>
+Only users with the role <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-B6924A86-3E6F-4286-B561-3D56442CD3B7">InsightIntegrationArchitect</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can activate a model.</div>
+</li>
+<li>
+<p><span class="bold"><span class="italic">Deactivate</span></span>: Deactivates an activated model.</p>
+<div class="infobox-note" id="GUID-810F0E68-FD75-4F3D-B734-E633BA7B8AE6__GUID-1FE802FE-5AC4-4C7E-A392-0EF4FD0CDC43">
+<p class="notep1">Note:</p>
+Only users with the role <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-B6924A86-3E6F-4286-B561-3D56442CD3B7">InsightIntegrationArchitect</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can deactivate a model.</div>
+</li>
+<li>
+<p><span class="bold"><span class="italic">Delete</span></span>: Deletes an activated model. This action is permanent and cannot be reversed.</p>
+<div class="infobox-note" id="GUID-810F0E68-FD75-4F3D-B734-E633BA7B8AE6__GUID-01DF7B2E-1014-4CC1-A920-86258409593C">
+<p class="notep1">Note:</p>
+Only users with the role <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-B6924A86-3E6F-4286-B561-3D56442CD3B7">InsightIntegrationArchitect</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can delete a model.</div>
+</li>
+</ul>
+<p>Apart from the lifecycle actions, you can also perform some other actions on the models. See <a href="GUID-795CC3E9-C1E9-43A5-BCF7-7EB54979159D.htm#GUID-7080D030-B19C-46B5-8421-D8DC42743436" title="Apart from the lifecycle actions, there are other actions that you can perform on a model.">Other Model Actions</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2"><a id="GUID-257135A0-ACE0-4760-BFDA-4792E938932B"></a>
+<h2 id="IINUG-GUID-257135A0-ACE0-4760-BFDA-4792E938932B" class="sect2"><span class="enumeration_section">3.2</span> Creating a Model</h2>
+<div>
+<div class="section">Only users with the role <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a> or <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can create models.
+<p>To create a model:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Click the <span class="bold">Designer</span> tab or the navigational shortcut on the <span class="bold">Home</span> page.</span>
+<div>The <span class="bold">Insight Models</span> page opens. This page lists all the Models, irrespective of the state they are in. You can perform various actions on the models listed on this page. For more information, see <a href="GUID-795CC3E9-C1E9-43A5-BCF7-7EB54979159D.htm#GUID-7080D030-B19C-46B5-8421-D8DC42743436" title="Apart from the lifecycle actions, there are other actions that you can perform on a model.">Other Model Actions</a>.</div>
+</li>
+<li class="stepexpand"><span>Perform step 3 or 4.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Create Model</span>.</span></li>
+<li class="stepexpand"><span>Click the <span class="bold">Draft</span> version of the model if you already have a draft model.</span></li>
+<li class="stepexpand"><span>Enter the following details:</span>
+<ol>
+<li><span><span class="bold">Name</span>: a suitable name for the model</span></li>
+<li><span><span class="bold">Description</span>: an appropriate description for the model</span></li>
+<li><span><span class="bold">Icon</span>: select any icon of your choice. The icon you choose here appears next to the model on the <span class="bold">Insight Models</span> page.</span></li>
+<li><span><span class="bold">Single Instance Description</span>: an appropriate description to be used for the single instance of the model. For example, order.</span></li>
+<li><span><span class="bold">Multiple Instance Description</span>: an appropriate description to be used for multiple instances of the model. For example, orders.</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Save</span> to save the model.</span>
+<div>A confirmation message appears.</div>
+</li>
+</ol>
+<div class="section">The model is created and is in <span class="bold">Draft</span> state.
+<p>For more information about the various states of the models, see <a href="GUID-795CC3E9-C1E9-43A5-BCF7-7EB54979159D.htm#GUID-5D3C190E-998C-4AF8-9E33-E9372395C239">Model Lifecycle States</a>.</p>
+</div>
+<!-- class="section" -->
+<div class="example" id="GUID-257135A0-ACE0-4760-BFDA-4792E938932B__GUID-F3523F0A-460B-4E89-8114-C2EDB2ADE78E">
+<div class="figure" id="GUID-257135A0-ACE0-4760-BFDA-4792E938932B__GUID-EEAF1D06-C20E-44FE-90C2-2AD6CCD8A30B">
+<p class="titleinfigure">Figure 3-2 Draft Model</p>
+<img width="1240" height="230" src="img/GUID-1B45ABED-F82F-4110-8C7D-EC2D23D7CA5F-default.png" alt="Draft Model" title="Draft Model" /></div>
+<!-- class="figure" -->
+<div class="infobox-note" id="GUID-257135A0-ACE0-4760-BFDA-4792E938932B__GUID-10234A03-9C2E-49FB-9DCB-4085105D18AA">
+<p class="notep1">Note:</p>
+The model displays the number of <span class="bold">Tasks to Complete</span> at the top. You must complete all these tasks before you can activate a model.</div>
+<p>Click the <span class="bold">Models</span> button on the top-left corner of the page to back to the <span class="bold">Designer</span> page.</p>
+</div>
+<!-- class="example" --></div>
+</div>
+<div class="sect2"><a id="GUID-4C047A00-A0AE-4918-816A-1A031CE250A8"></a>
+<h2 id="IINUG-GUID-4C047A00-A0AE-4918-816A-1A031CE250A8" class="sect2"><span class="enumeration_section">3.3</span> Creating Milestones</h2>
+<div>
+<div class="section">
+<p>After you create a model, the next important step is to create milestones for the model. The milestones are points in the business process that help you in monitoring the business progress. Generally, milestones are created iteratively. For more information, see <span class="italic">Types of Milestones</span> in <span id="GUID-4C047A00-A0AE-4918-816A-1A031CE250A8__INCON"><cite>Understanding Oracle Real-Time Integration Business Insight</cite></span>.</p>
+<p>Only users with the role <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-7F727FA4-1163-499F-B222-F395F8A92041">InsightBusinessUser</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-B6924A86-3E6F-4286-B561-3D56442CD3B7">InsightIntegrationArchitect</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can create milestones.</p>
+To create a milestone:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Click the draft version of the model for which you want to create milestones on the <span class="bold">Designer</span> page, generally known as the <span class="bold">Models</span> page.</span>
+<div>
+<div class="figure" id="GUID-4C047A00-A0AE-4918-816A-1A031CE250A8__GUID-9474AA5B-FE17-4056-A9B6-A6DFF1F05D41">
+<p class="titleinfigure">Figure 3-3 Designer Page</p>
+<img width="1256" height="518" src="img/GUID-5A3035ED-AB7B-44A5-97AF-638DE586078A-default.png" alt="Designer Page" title="Designer Page" /></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Create Milestone</span>.</span>
+<div>
+<div class="infobox-note" id="GUID-4C047A00-A0AE-4918-816A-1A031CE250A8__GUID-0ADF2CFF-B0A1-4EF3-9253-FD6EAAF66DAC">
+<p class="notep1">Note:</p>
+Only users with the role <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-7F727FA4-1163-499F-B222-F395F8A92041">InsightBusinessUser</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-B6924A86-3E6F-4286-B561-3D56442CD3B7">InsightIntegrationArchitect</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can create milestones.</div>
+</div>
+</li>
+<li class="stepexpand"><span>Provide a suitable name for the milestone.</span>
+<div>The milestone expands.</div>
+</li>
+<li class="stepexpand"><span>Enter an appropriate description for the milestone.</span></li>
+<li class="stepexpand"><span>Select the appropriate <span class="bold">Milestone Type</span>. The available types are: <span class="italic">Initial Milestone</span>, <span class="italic">Standard Milestone</span>, <span class="italic">Error Milestone</span>, <span class="italic">Terminal Milestone</span>, and <span class="italic">Terminal/Error Milestone</span>.</span>
+<div>
+<p>The bar which lists the type of milestones is known as <span class="bold">Milestone Toolbar</span>. If you accidentally close this toolbar, you must log in again to the application to see the <span class="bold">Milestone Toolbar</span>.</p>
+For more information about the types of milestones, see the <span><cite>Understanding Oracle Real-Time Integration Business Insight</cite></span>.</div>
+</li>
+<li class="stepexpand"><span>Either map the milestone to an implementation, described in <a href="GUID-795CC3E9-C1E9-43A5-BCF7-7EB54979159D.htm#GUID-E2A48B8C-831D-4125-AE5D-411A9F242FEA" title="When you define a milestone for a model, it is essential to map the milestone to an existing implementation. If the mapping is not done, a warning message appears next to the milestone stating that Milestone Mapping is Missing.">Mapping Milestone to an Implementation</a>, or select the <span class="bold">Enable API Invocation</span> option to enable this milestone to receive events from the REST API.</span>
+<div>
+<div class="infobox-note" id="GUID-4C047A00-A0AE-4918-816A-1A031CE250A8__d32e77">
+<p class="notep1">Note:</p>
+Only users with the role <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-B6924A86-3E6F-4286-B561-3D56442CD3B7">InsightIntegrationArchitect</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can create the implementation mapping.</div>
+<div class="infobox-note" id="GUID-4C047A00-A0AE-4918-816A-1A031CE250A8__d32e85">
+<p class="notep1">Note:</p>
+Milestone mapping is not available for pipelines/Business services with a service type of Messaging Request/Response XML which do not have a schema.</div>
+</div>
+</li>
+<li class="stepexpand"><span>(Optional) Define indicators for the milestone. See <a href="GUID-795CC3E9-C1E9-43A5-BCF7-7EB54979159D.htm#GUID-F77D5419-2963-4122-AA21-832A91DE98AD" title="Indicators represent metrics that are unique to your application. These indicators quantify the performance of your business, and are used to create dashboards and reports used for tracking your business. There are two types of indicators: dimensions and measures.">Defining Indicators</a>.</span>
+<div>
+<div class="infobox-note" id="GUID-4C047A00-A0AE-4918-816A-1A031CE250A8__GUID-386C5C98-6F50-411B-ACC0-EA255CC8E497">
+<p class="notep1">Note:</p>
+Only users with the role <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-7F727FA4-1163-499F-B222-F395F8A92041">InsightBusinessUser</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-B6924A86-3E6F-4286-B561-3D56442CD3B7">InsightIntegrationArchitect</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can create/define indicators.</div>
+</div>
+</li>
+<li class="stepexpand"><span>Repeat steps 2 to 7 to create all the required milestones for the model.</span></li>
+<li class="stepexpand"><span>Click the <span class="bold">Delete</span> icon if you want to delete any milestone.</span>
+<div>
+<div class="infobox-note" id="GUID-4C047A00-A0AE-4918-816A-1A031CE250A8__GUID-711A6A43-46B7-4E83-AADE-4C2FAECA00D0">
+<p class="notep1">Note:</p>
+Only users with the role <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-7F727FA4-1163-499F-B222-F395F8A92041">InsightBusinessUser</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-B6924A86-3E6F-4286-B561-3D56442CD3B7">InsightIntegrationArchitect</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can delete a milestone.</div>
+</div>
+</li>
+</ol>
+<div class="section">Milestones are created for the model.</div>
+<!-- class="section" -->
+<div class="example" id="GUID-4C047A00-A0AE-4918-816A-1A031CE250A8__GUID-9626C1F0-81B8-42BA-B74B-38117FBF0BAD">
+<div class="figure" id="GUID-4C047A00-A0AE-4918-816A-1A031CE250A8__GUID-3156D76A-0616-4151-AB80-22833A658840">
+<p class="titleinfigure">Figure 3-4 Milestone Details</p>
+<img width="1224" height="262" src="img/GUID-FC3E72E5-2C72-4291-B499-8BA7A095107F-default.png" alt="Milestone Details" title="Milestone Details" /></div>
+<!-- class="figure" --></div>
+<!-- class="example" --></div>
+</div>
+<div class="sect2"><a id="GUID-E2A48B8C-831D-4125-AE5D-411A9F242FEA"></a>
+<h2 id="IINUG-GUID-E2A48B8C-831D-4125-AE5D-411A9F242FEA" class="sect2"><span class="enumeration_section">3.4</span> Mapping Milestone to an Implementation</h2>
+<div>
+<div>
+<div class="infobox-note" id="GUID-E63BF7C3-13E8-4DD0-BEC8-775881B74315">
+<p class="notep1">Note:</p>
+<p>This is not required if you have selected the <span class="bold">Enable API Invocation</span> option when creating your milestone.</p>
+</div>
+<div>When you define a milestone for a model, it is essential to map the milestone to an existing implementation. If the mapping is not done, a warning message appears next to the milestone stating that <code class="codeph">Milestone Mapping is Missing</code>.</div>
+</div>
+<div class="section">
+<p>Only users with the role <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-B6924A86-3E6F-4286-B561-3D56442CD3B7">InsightIntegrationArchitect</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can create implementation mapping.</p>
+<p>There are different types of implementation mapping supported by the product, including SOA and Service Bus:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-795CC3E9-C1E9-43A5-BCF7-7EB54979159D.htm#GUID-577E0403-F275-4024-AB55-A7006B520897">Mapping to a SOA BPEL Component</a></p>
+</li>
+<li>
+<p><a href="GUID-795CC3E9-C1E9-43A5-BCF7-7EB54979159D.htm#GUID-AB95267D-5AE2-4C6A-8F57-066E16491CB0">Mapping to SOA Services/References/Components</a></p>
+</li>
+<li>
+<p><a href="GUID-795CC3E9-C1E9-43A5-BCF7-7EB54979159D.htm#GUID-ABD3DEF3-BB76-4090-9159-412A9C3597C9">Mapping to Service Bus Pipelines</a></p>
+</li>
+<li>
+<p><a href="GUID-795CC3E9-C1E9-43A5-BCF7-7EB54979159D.htm#GUID-8D9C8339-3A0D-4D82-AD37-A4D3D3F7D67A">Mapping to Service Bus Business Services</a></p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-E2A48B8C-831D-4125-AE5D-411A9F242FEA__GUID-0507CA66-6F42-4051-903A-FBDEEC45AB41">
+<p class="notep1">Note:</p>
+Milestone mapping is not available for pipelines/Business Services with a service type of Messaging: Request/Response XML, which do not have a schema. See <a href="GUID-795CC3E9-C1E9-43A5-BCF7-7EB54979159D.htm#GUID-ABD3DEF3-BB76-4090-9159-412A9C3597C9">Mapping to Service Bus Pipelines</a> and <a href="GUID-795CC3E9-C1E9-43A5-BCF7-7EB54979159D.htm#GUID-8D9C8339-3A0D-4D82-AD37-A4D3D3F7D67A">Mapping to Service Bus Business Services</a>.</div>
+</div>
+<!-- class="section" --></div>
+<div class="sect3"><a id="GUID-577E0403-F275-4024-AB55-A7006B520897"></a>
+<h3 id="IINUG-GUID-577E0403-F275-4024-AB55-A7006B520897" class="sect3"><span class="enumeration_section">3.4.1</span> Mapping to a SOA BPEL Component</h3>
+<div>
+<div class="section">Only users with the role <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-B6924A86-3E6F-4286-B561-3D56442CD3B7">InsightIntegrationArchitect</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can create implementation mapping.
+<p>To create an implementation mapping to a SOA BPEL Component:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Click <span class="bold">Create Mapping</span> within the milestone for which you are creating the implementation mapping.</span>
+<div>The <span class="bold">Implementation Mappings</span> page opens.</div>
+</li>
+<li class="stepexpand"><span>Select a SOA connection from the <span class="bold">Data Connection</span> drop-down list. If you do not see any connections in the drop-down list, you must create a data connection. See <a href="GUID-C465B2B6-4E54-4429-A083-32A1F0AAFCAC.htm#GUID-8E8FECB8-47F1-409A-BE72-A793FE877E4D">Creating a Data Connection</a>.</span>
+<div>This selection loads information about all the composites deployed in that domain.</div>
+</li>
+<li class="stepexpand"><span>Expand the required component and drill down to the required level.</span></li>
+<li class="stepexpand"><span>Select the required entry and click the <span class="bold">BPEL Structure</span> icon to drill down further.</span>
+<div>
+<div class="figure" id="GUID-577E0403-F275-4024-AB55-A7006B520897__GUID-D153CB97-71B8-4B13-8D93-B90D468910ED">
+<p class="titleinfigure">Figure 3-5 Mapping Icons</p>
+<img width="100" height="30" src="img/GUID-5D13FD9B-E5A6-48E9-AC1D-103CC9AF1425-default.png" alt="Mapping Icons" title="Mapping Icons" /></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>Navigate to the required BPEL activity in the BPEL structure tree and click the <span class="bold">Edit Mapping</span> icon.</span>
+<div>
+<div class="figure" id="GUID-577E0403-F275-4024-AB55-A7006B520897__GUID-E9A2382D-DEFF-4999-9256-338957544449">
+<p class="titleinfigure">Figure 3-6 Edit Mapping Icon</p>
+<img width="97" height="27" src="img/GUID-59A500F6-9664-47CA-943A-491DA96D5DFE-default.png" alt="Edit Mapping Icon" title="Edit Mapping Icon" /></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>Select a suitable entry from the <span class="bold">Milestone Passed</span> popup.</span>
+<div>
+<div class="figure" id="GUID-577E0403-F275-4024-AB55-A7006B520897__GUID-7BAE4642-8C22-45B9-AFB6-FBFAF1523281">
+<p class="titleinfigure">Figure 3-7 Milestone Passed Popup</p>
+<img width="133" height="134" src="img/GUID-4E2081E1-DA5C-474A-B68F-CE551C59C1C1-default.png" alt="Milestone Passed Group" title="Milestone Passed Group" /></div>
+<!-- class="figure" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">On Entry</span> indicates activation</p>
+</li>
+<li>
+<p><span class="bold">On Exit</span> indicates completion</p>
+</li>
+<li>
+<p><span class="bold">On Error</span> indicates fault.</p>
+</li>
+</ul>
+<div class="p">The mapping is done and the first mapping on the <span class="bold">Implementation Mappings</span> page opens in an expanded form.
+<div class="figure" id="GUID-577E0403-F275-4024-AB55-A7006B520897__GUID-C44B463D-79FE-4148-9F79-8B1E49C91488"><img width="168" height="25" src="img/GUID-1FAB36E1-8707-4EC3-B047-4E7CC1875722-default.png" alt="Mapped to Activation" title="Mapped to Activation" /></div>
+<!-- class="figure" --></div>
+<div class="infobox-note" id="GUID-577E0403-F275-4024-AB55-A7006B520897__GUID-BEB13E8C-95A3-4C07-8164-252344A74B98">
+<p class="notep1">Note:</p>
+Insight does <span class="bold">not</span> support mapping to the <span class="italic">OnMessage</span> and <span class="italic">OnAlarm</span> BPEL constructs. These elements are branches of the <code class="codeph">Pick</code> and <code class="codeph">EventHandlers</code> activities and can only be mapped as such, and <span class="bold">not</span> as independent activities themselves.</div>
+</div>
+</li>
+<li class="stepexpand"><span>Select <span class="bold">Delete</span> or <span class="bold">Reset</span> from the <span class="bold">Mapping Actions</span> menu if you want to either delete or reset the defined mapping.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Add Mapping</span> (at the top-right corner of the page) and repeat steps 2 to 6 to define additional mappings for the milestone.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Return to Editor</span> to go back to the Model Editor.</span></li>
+</ol>
+<div class="section">The milestone is mapped to an implementation.
+<div class="figure" id="GUID-577E0403-F275-4024-AB55-A7006B520897__GUID-E7E23966-11CE-441F-83F8-C15852194B46">
+<p class="titleinfigure">Figure 3-8 Milestone Mapped to Implementation</p>
+<img width="1226" height="322" src="img/GUID-058BB116-632C-4AB0-B620-21BC5916D762-default.png" alt="Milestone Mapped to Implementation" title="Milestone Mapped to Implementation" /></div>
+<!-- class="figure" --></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-AB95267D-5AE2-4C6A-8F57-066E16491CB0"></a>
+<h3 id="IINUG-GUID-AB95267D-5AE2-4C6A-8F57-066E16491CB0" class="sect3"><span class="enumeration_section">3.4.2</span> Mapping to SOA Services/References/Components</h3>
+<div>
+<div class="section">Only users with the role <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-B6924A86-3E6F-4286-B561-3D56442CD3B7">InsightIntegrationArchitect</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can create implementation mapping.
+<p>To create an implementation mapping to a SOA Composite services/references:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Click <span class="bold">Create Mapping</span> within the milestone for which you are creating the implementation mapping.</span>
+<div>The <span class="bold">Implementation Mappings</span> page opens.</div>
+</li>
+<li class="stepexpand"><span>Select a SOA connection from the <span class="bold">Data Connection</span> drop-down list. If you do not see any connections in the drop-down list, you must create a data connection. See <a href="GUID-C465B2B6-4E54-4429-A083-32A1F0AAFCAC.htm#GUID-8E8FECB8-47F1-409A-BE72-A793FE877E4D">Creating a Data Connection</a>.</span>
+<div>This selection loads information about all the composites deployed in that domain.</div>
+</li>
+<li class="stepexpand"><span>Expand the required artifact and drill down to the required <span class="bold">Services</span>/<span class="bold">References</span>/<span class="bold">Components</span>.</span></li>
+<li class="stepexpand"><span>Select the required entry and click the <span class="bold">Edit Mapping</span> icon to define the mapping.</span></li>
+<li class="stepexpand"><span>Select an appropriate value from the <span class="bold">Operation</span> drop-down list.</span></li>
+<li class="stepexpand"><span>Select an appropriate value from the <span class="bold">Interaction</span> drop-down list.</span>
+<div>
+<div class="infobox-note" id="GUID-AB95267D-5AE2-4C6A-8F57-066E16491CB0__GUID-58C741CF-8AD7-40BF-BFDC-00CD7D2B10E8">
+<p class="notep1">Note:</p>
+This field does not appear unless you select a value in the <span class="bold">Operation</span> drop-down list.</div>
+</div>
+<div>The visual representation will not be available for composites built in 11g version of SOA. In that case, only the popup containing the <span class="bold">Operation</span> and <span class="bold">Interaction</span> drop-down will be visible.
+<div class="figure" id="GUID-AB95267D-5AE2-4C6A-8F57-066E16491CB0__GUID-6E545A6B-FC3C-4CD8-B041-4769D1E71D56">
+<p class="titleinfigure">Figure 3-9 Mapping to SOA Services/References</p>
+<img width="1256" height="628" src="img/GUID-921BB3E4-E020-44BB-ADED-8EEE66E6B79D-default.png" alt="Mapping to SOA Services/References" title="Mapping to SOA Services/References" /></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Remove Mapping</span> to remove the existing mapping and create a new mapping.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Done</span> to complete the process of mapping.</span></li>
+</ol>
+<div class="section">The mapping is done and the first mapping on the <span class="bold">Implementation Mappings</span> page opens in an expanded form.</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-ABD3DEF3-BB76-4090-9159-412A9C3597C9"></a>
+<h3 id="IINUG-GUID-ABD3DEF3-BB76-4090-9159-412A9C3597C9" class="sect3"><span class="enumeration_section">3.4.3</span> Mapping to Service Bus Pipelines</h3>
+<div>
+<div class="section">Only users with the role <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-B6924A86-3E6F-4286-B561-3D56442CD3B7">InsightIntegrationArchitect</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can create implementation mapping.
+<div class="infobox-note" id="GUID-ABD3DEF3-BB76-4090-9159-412A9C3597C9__GUID-AB00ADA4-00F8-4F1C-886E-BC245F74F7F9">
+<p class="notep1">Note:</p>
+The mapping page will only show service bus pipelines and business services that are WSDL based or Messaging Service with a request or response type of XML. For a complete list of Service Bus constructs supported for mapping, see <a href="GUID-852BAE26-7F00-4FB1-94CA-082715AA6CCB.htm#GUID-852BAE26-7F00-4FB1-94CA-082715AA6CCB" title="Oracle Real-Time Integration Business Insight integrates with Oracle Service Bus. It is important to know the features that Insight supports for Oracle Service Bus for a smooth use of the application.">Supported and Unsupported Features in Oracle Service Bus</a>.</div>
+<p>To create an implementation mapping to Pipelines:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Click <span class="bold">Create Mapping</span> within the milestone for which you are creating the implementation mapping.</span>
+<div>The <span class="bold">Implementation Mappings</span> page opens.</div>
+</li>
+<li class="stepexpand"><span>Select a Service Bus connection from the <span class="bold">Data Connection</span> drop-down list. If you do not see any connections in the drop-down list, you must create a data connection. See <a href="GUID-C465B2B6-4E54-4429-A083-32A1F0AAFCAC.htm#GUID-8E8FECB8-47F1-409A-BE72-A793FE877E4D">Creating a Data Connection</a>.</span>
+<div>This selection loads all the service bus projects deployed in that domain.
+<div class="infobox-note" id="GUID-ABD3DEF3-BB76-4090-9159-412A9C3597C9__GUID-C374B737-8A98-4501-AEAE-66DCD4740B73">
+<p class="notep1">Note:</p>
+You will see that only the projects that conform to the supported Service Bus feature set (for example, WSDL services) are loaded and available. For a complete list of Service Bus constructs supported for mapping, see <a href="GUID-852BAE26-7F00-4FB1-94CA-082715AA6CCB.htm#GUID-852BAE26-7F00-4FB1-94CA-082715AA6CCB" title="Oracle Real-Time Integration Business Insight integrates with Oracle Service Bus. It is important to know the features that Insight supports for Oracle Service Bus for a smooth use of the application.">Supported and Unsupported Features in Oracle Service Bus</a>.</div>
+</div>
+</li>
+<li class="stepexpand"><span>Expand the desired project and drill down to the required <span class="bold">Pipeline</span>.</span></li>
+<li class="stepexpand"><span>Click the <span class="bold">Edit Mapping</span> icon for the pipeline to map.</span>
+<div>
+<p>The service type can be:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="italic">WSDL</span>: both <span class="bold">Operation</span> and <span class="bold">Interaction</span> appear in the pop-up window. Possible values for <span class="bold">Interaction</span> are <span class="bold">REQUEST</span>, <span class="bold">RESPONSE</span>, and <span class="bold">FAULT</span>.</p>
+</li>
+<li>
+<p><span class="italic">Message Service</span>: only <span class="bold">Interaction</span> appears in the pop-up window as a drop-down list with the values <span class="bold">REQUEST</span> and <span class="bold">RESPONSE</span>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Select the <span class="bold">Operation</span> in the drop-down list that opens in a pop-up window.</span></li>
+<li class="stepexpand"><span>Select the <span class="bold">Interaction</span> in the drop-down list that opens in a pop-up window. The possible values for <span class="bold">Interaction</span> are:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">REQUEST</span></p>
+</li>
+<li>
+<p><span class="bold">RESPONSE</span></p>
+</li>
+<li>
+<p><span class="bold">FAULT</span>.</p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-ABD3DEF3-BB76-4090-9159-412A9C3597C9__GUID-27AAC4C3-95DA-4F33-A207-A1074D594E00">
+<p class="notep1">Important:</p>
+Any business service referencing artifacts (like WSDL, XSD, etc) that has a circular dependency or any cyclic references, then such a business service will not be available for mapping within Mapping Editor. The only way to map to such a business service is to remove the cyclic references from the artifacts.</div>
+</div>
+<div>When you select a value for <span class="bold">Interaction</span>, the window disappears and you can see an indication of mapping created. A green icon appears while editing a mapping.
+<div class="figure" id="GUID-ABD3DEF3-BB76-4090-9159-412A9C3597C9__GUID-D5E8085C-2C4D-42C3-BD55-041861D49698">
+<p class="titleinfigure">Figure 3-10 Mapping to Service Bus Pipelines</p>
+<img width="1217" height="578" src="img/GUID-34DA88FB-9244-4034-8FE0-0FCD5AA8ECDF-default.png" alt="Mapping to Service Bus Pipelines" title="Mapping to Service Bus Pipelines" /></div>
+<!-- class="figure" --></div>
+</li>
+</ol>
+<div class="section">The mapping is done and the first mapping on the <span class="bold">Implementation Mappings</span> page opens in an expanded form.</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-8D9C8339-3A0D-4D82-AD37-A4D3D3F7D67A"></a>
+<h3 id="IINUG-GUID-8D9C8339-3A0D-4D82-AD37-A4D3D3F7D67A" class="sect3"><span class="enumeration_section">3.4.4</span> Mapping to Service Bus Business Services</h3>
+<div>
+<div class="section">Only users with the role <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-B6924A86-3E6F-4286-B561-3D56442CD3B7">InsightIntegrationArchitect</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can create implementation mapping.
+<p>To create an implementation mapping to Business Services:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Click <span class="bold">Create Mapping</span> within the milestone for which you are creating the implementation mapping.</span>
+<div>The <span class="bold">Implementation Mappings</span> page opens.</div>
+</li>
+<li class="stepexpand"><span>Select a Service Bus connection from the <span class="bold">Data Connection</span> drop-down list. If you do not see any connections in the drop-down list, you must create a data connection. See <a href="GUID-C465B2B6-4E54-4429-A083-32A1F0AAFCAC.htm#GUID-8E8FECB8-47F1-409A-BE72-A793FE877E4D">Creating a Data Connection</a>.</span>
+<div>This selection loads information about all the projects deployed in that domain.
+<div class="infobox-note" id="GUID-8D9C8339-3A0D-4D82-AD37-A4D3D3F7D67A__GUID-35A91F22-3415-4872-9CBE-AE4958CF5FFF">
+<p class="notep1">Note:</p>
+You will see that only the projects that conform to the supported Service Bus feature set (for example, WSDL services) are loaded and available. For a complete list of Service Bus constructs supported for mapping, see <a href="GUID-852BAE26-7F00-4FB1-94CA-082715AA6CCB.htm#GUID-852BAE26-7F00-4FB1-94CA-082715AA6CCB" title="Oracle Real-Time Integration Business Insight integrates with Oracle Service Bus. It is important to know the features that Insight supports for Oracle Service Bus for a smooth use of the application.">Supported and Unsupported Features in Oracle Service Bus</a>.</div>
+</div>
+</li>
+<li class="stepexpand"><span>Expand the desired project and drill down to the required <span class="bold">Business Service</span>.</span>
+<div>
+<p>The service type can be:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="italic">WSDL</span>: both <span class="bold">Operation</span> and <span class="bold">Interaction</span> appear in the pop-up window. Possible values for <span class="bold">Interaction</span> are <span class="bold">REQUEST</span>, <span class="bold">RESPONSE</span>, and <span class="bold">FAULT</span>.</p>
+</li>
+<li>
+<p><span class="italic">Message Service</span>: only <span class="bold">Interaction</span> appears in the pop-up window as a drop-down list with the values <span class="bold">REQUEST</span> and <span class="bold">RESPONSE</span>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Click the <span class="bold">Edit Mapping</span> icon for the business service to map.</span></li>
+<li class="stepexpand"><span>Select the <span class="bold">Operation</span> in the drop-down list that opens in a pop-up window.</span></li>
+<li class="stepexpand"><span>Select the <span class="bold">Interaction</span> in the drop-down list that opens in a pop-up window.</span>
+<div>
+<div class="infobox-note" id="GUID-8D9C8339-3A0D-4D82-AD37-A4D3D3F7D67A__GUID-72E4830B-2EB3-4053-B003-CD676CA0D452">
+<p class="notep1">Note:</p>
+This drop-down list appears only if you select a value for <span class="bold">Operation</span>.</div>
+<div class="infobox-note" id="GUID-8D9C8339-3A0D-4D82-AD37-A4D3D3F7D67A__GUID-27AAC4C3-95DA-4F33-A207-A1074D594E00">
+<p class="notep1">Important:</p>
+Any business service referencing artifacts (like WSDL, XSD, etc) that has a circular dependency or any cyclic references, then such a business service will not be available for mapping within Mapping Editor. The only way to map to such a business service is to remove the cyclic references from the artifacts.</div>
+</div>
+<div>When you select a value for <span class="bold">Interaction</span>, the window disappears and you can see an indication of mapping created. A green icon appears while editing a mapping.
+<div class="figure" id="GUID-8D9C8339-3A0D-4D82-AD37-A4D3D3F7D67A__GUID-E85C7405-B5B2-4E15-8652-D853CA83B493">
+<p class="titleinfigure">Figure 3-11 Mapping to Service Bus Business Service</p>
+<img width="1207" height="405" src="img/GUID-D2E4820B-4D3D-49B7-BD44-0759EA0A37F2-default.png" alt="Mapping to Service Bus Business Service" title="Mapping to Service Bus Business Service" /></div>
+<!-- class="figure" --></div>
+</li>
+</ol>
+<div class="section">The mapping is done and the first mapping on the <span class="bold">Implementation Mappings</span> page opens in an expanded form.</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<div class="sect2"><a id="GUID-7563796F-9731-463B-839B-6680F3E748B9"></a>
+<h2 id="IINUG-GUID-7563796F-9731-463B-839B-6680F3E748B9" class="sect2"><span class="enumeration_section">3.5</span> Editing the Milestone Mapping</h2>
+<div>
+<p>Only users with the role <span class="italic">InsightModelCreator</span>/<span class="italic">InsightIntegrationArchitect</span>/<span class="italic">InsightAdmin</span> can edit the implementation mapping.</p>
+<div class="section">
+<p>To edit mapping of a milestone:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Expand the required milestone in <span class="bold">Model Editor</span>.</span></li>
+<li class="stepexpand"><span>Click the defined mapping to open the <span class="bold">Implementation Mappings</span> page.</span></li>
+<li class="stepexpand"><span>Click the <span class="bold">Edit Mapping</span> icon for Service Bus based mappings (pipelines and business services), and drill down to the BPEL structure for SOA BPEL based mappings.</span>
+<div>The existing mapping opens.</div>
+</li>
+<li class="stepexpand"><span>Make the required changes.</span>
+<div>The mapping is updated.</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Return to Editor</span> to go to the <span class="bold">Model Editor</span>. In the <span class="bold">Model Editor</span>, you can see the changes you have made to the mapping.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-B4435455-00E1-4003-B8FD-D6373CD8588C"></a>
+<h2 id="IINUG-GUID-B4435455-00E1-4003-B8FD-D6373CD8588C" class="sect2"><span class="enumeration_section">3.6</span> Selecting the API Data Type for Indicators</h2>
+<div>
+<p>You can choose the data type for indicators associated with milestones that allow API invocations.</p>
+<div class="section">To select the API data type:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Expand the indicator you want to edit (the unique instance identifier, dimension, or measure).</span></li>
+<li class="stepexpand"><span>In the <span class="bold">API Data Type</span> field, click the <span class="bold">Click to set the API data type</span> icon, and then select the data type of the indicator.</span>
+<div>
+<p>The data types available differ depending on the indicator type:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Unique Identifier</span>: String, Integer, Float, Decimal, and Date</p>
+</li>
+<li>
+<p><span class="bold">Dimensions</span>: String, Integer, Float, Decimal, and Date</p>
+</li>
+<li>
+<p><span class="bold">Measures</span>: String, Integer, Float, and Decimal</p>
+</li>
+</ul>
+<br />
+<img width="584" height="356" src="img/GUID-4FAB1027-1A9F-4E10-AB10-D9D4D0503890-default.png" alt="Description of GUID-4FAB1027-1A9F-4E10-AB10-D9D4D0503890-default.png follows" title="Description of GUID-4FAB1027-1A9F-4E10-AB10-D9D4D0503890-default.png follows" /><br />
+<a href="img_text/GUID-4FAB1027-1A9F-4E10-AB10-D9D4D0503890-default.htm">Description of the illustration GUID-4FAB1027-1A9F-4E10-AB10-D9D4D0503890-default.png</a><br /></div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-5642C8EA-D2C4-49A0-B7F2-44578002CF13"></a>
+<h2 id="IINUG-GUID-5642C8EA-D2C4-49A0-B7F2-44578002CF13" class="sect2"><span class="enumeration_section">3.7</span> Defining Unique Identifier</h2>
+<div>
+<p>Defining a unique instance identifier for a model is mandatory. The identifier must be unique from all other instances.</p>
+<div class="section">Only users with the role <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-7F727FA4-1163-499F-B222-F395F8A92041">InsightBusinessUser</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-B6924A86-3E6F-4286-B561-3D56442CD3B7">InsightIntegrationArchitect</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can create/define a unique instance identifier.
+<p>To define a unique instance identifier for a model:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Expand the milestone to which you want to associate the unique instance identifier.</span></li>
+<li class="stepexpand"><span>Perform step 3 or 4.</span></li>
+<li class="stepexpand"><span>Click the <span class="bold">Unique Instance Identifier</span> tile.</span>
+<div>
+<div class="figure" id="GUID-5642C8EA-D2C4-49A0-B7F2-44578002CF13__GUID-28081FBB-D018-4E03-B534-6B9DF6B4F17F">
+<p class="titleinfigure">Figure 3-12 Unique Instance Identifier Tile</p>
+<img width="1240" height="300" src="img/GUID-76642A32-9FF6-401D-A977-47D43B8B0533-default.png" alt="Unique Instance Identifier" title="Unique Instance Identifier" /></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Create Indicator</span> and select <span class="bold">Identifier</span>.</span>
+<div><img width="116" height="93" src="img/GUID-AF4DE010-10AF-4B54-B74D-A72EEEBAFE07-default.png" alt="Indicators" title="Indicators" />
+<div class="infobox-note" id="GUID-5642C8EA-D2C4-49A0-B7F2-44578002CF13__GUID-C9077637-6FF0-4F41-BFD0-444816FD44B4">
+<p class="notep1">Note:</p>
+If you perform step 3 first, then <span class="bold">Identifier</span> option in this step will be disabled, as you can define only one unique instance identifier.</div>
+</div>
+</li>
+<li class="stepexpand"><span>Enter the following in the <span class="bold">Unique Instance Identifier</span> area:</span>
+<ol>
+<li><span>Name</span></li>
+<li><span>Description</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>Associate the identifier with a milestone. For more information, see <a href="GUID-795CC3E9-C1E9-43A5-BCF7-7EB54979159D.htm#GUID-E2A48B8C-831D-4125-AE5D-411A9F242FEA" title="When you define a milestone for a model, it is essential to map the milestone to an existing implementation. If the mapping is not done, a warning message appears next to the milestone stating that Milestone Mapping is Missing.">Mapping Milestone to an Implementation</a>.</span></li>
+<li class="stepexpand"><span>Define extraction criteria for the implementation mapping. For more information, see <a href="GUID-795CC3E9-C1E9-43A5-BCF7-7EB54979159D.htm#GUID-9FFD9E2E-A979-4BAD-ADF6-E8A10F1742EC" title="Only users with the role InsightModelCreator/InsightIntegrationArchitect/InsightAdmin can define extraction criteria for the indicators.">Defining Extraction Criteria</a>. <span class="bold">This is required if you have not selected the <span class="bold">Enable API Invocation</span> option</span>. Set the data type for the indicator instead. See <a href="GUID-795CC3E9-C1E9-43A5-BCF7-7EB54979159D.htm#GUID-B4435455-00E1-4003-B8FD-D6373CD8588C" title="You can choose the data type for indicators associated with milestones that allow API invocations.">Selecting the API Data Type for Indicators</a>.</span></li>
+</ol>
+<div class="section">A unique identifier is defined for the model. You can only create one unique identifier. Once you create the unique identifier, the <span class="bold">Identifier</span> option shown in step 2 will be disabled. You can add additional mappings for the identifier.
+<div class="figure" id="GUID-5642C8EA-D2C4-49A0-B7F2-44578002CF13__GUID-27DB4E12-F3F0-44F8-987D-58738F5D285F">
+<p class="titleinfigure">Figure 3-13 Unique Instance Identifier Defined</p>
+<img width="1223" height="340" src="img/GUID-2E35ED5B-FA38-4149-8C1A-13D72D31041E-default.png" alt="Unique Instance Identifier Defined" title="Unique Instance Identifier Defined" /></div>
+<!-- class="figure" --></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-F77D5419-2963-4122-AA21-832A91DE98AD"></a>
+<h2 id="IINUG-GUID-F77D5419-2963-4122-AA21-832A91DE98AD" class="sect2"><span class="enumeration_section">3.8</span> Defining Indicators</h2>
+<div>
+<p>Indicators represent metrics that are unique to your application. These indicators quantify the performance of your business, and are used to create dashboards and reports used for tracking your business. There are two types of indicators: dimensions and measures.</p>
+<div class="section">
+<p><span class="italic">Dimensions</span> are used to categorize your instances. For example, in the case of a help desk system, you might want to be able to group your help tickets by geographic region (e.g., state or province), or by customer type (e.g., gold, silver, or bronze support). Dimensions allow you to slice and dice your business data.</p>
+<p><span class="italic">Measures</span>, on the other hand, represent values associated with each specific instance. For example, you might use a numerical measure to represent the cost associated with each help ticket, or a date measure to represent the date that the ticket was submitted.</p>
+<div class="infobox-note" id="GUID-F77D5419-2963-4122-AA21-832A91DE98AD__GUID-8F52B73B-D952-4DA5-BB93-4B230A346414">
+<p class="notep1">Note:</p>
+Only users with the roles <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-B6924A86-3E6F-4286-B561-3D56442CD3B7">InsightIntegrationArchitect</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-7F727FA4-1163-499F-B222-F395F8A92041">InsightBusinessUser</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can create/define indicators.</div>
+<div class="infobox-note" id="GUID-F77D5419-2963-4122-AA21-832A91DE98AD__GUID-58F0D54A-B3D3-43B4-BE9A-33554821B871">
+<p class="notep1">Important:</p>
+<span>Oracle Real-Time Integration Business Insight</span> does not support duplicate indicators.</div>
+<p>To define indicators:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Expand the milestone for which you want to create indicator.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Create Indicator</span>.</span></li>
+<li class="stepexpand"><span>Select the type of indicator, either a <span class="bold">Dimension</span> or a <span class="bold">Measure</span>.</span>
+<div>A dimension is indicated by <img width="22" height="21" src="img/GUID-0C68D824-3495-4B34-9A9C-248D60E2CBBB-default.png" alt="Dimension" title="Dimension" /> and a measure is indicated by <img width="22" height="22" src="img/GUID-BA5C376F-3094-4F65-A7E6-F3A60835F714-default.png" alt="Measure" title="Measure" />.</div>
+</li>
+<li class="stepexpand"><span>Enter the following:</span>
+<ol>
+<li><span>Name</span></li>
+<li><span>Description</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>Indicate if you want the indicator to be filterable or not by selecting an appropriate value from the <span class="bold">Filterable</span> drop-down list. If you make the indicator filterable it appears in the graph. But, be careful with the number of indicators you mark as <span class="bold">Filterable</span>, as too many filterable indicators slows down the performance.</span></li>
+<li class="stepexpand"><span><a href="GUID-795CC3E9-C1E9-43A5-BCF7-7EB54979159D.htm#GUID-9FFD9E2E-A979-4BAD-ADF6-E8A10F1742EC" title="Only users with the role InsightModelCreator/InsightIntegrationArchitect/InsightAdmin can define extraction criteria for the indicators.">Defining Extraction Criteria</a> for the Implementation Mapping or <a href="GUID-795CC3E9-C1E9-43A5-BCF7-7EB54979159D.htm#GUID-B4435455-00E1-4003-B8FD-D6373CD8588C" title="You can choose the data type for indicators associated with milestones that allow API invocations.">Selecting the API Data Type for Indicators</a> if <span class="bold">Enable API Invocation</span> is selected for the indicator&rsquo;s associated milestone. Only the users with the roles <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-B6924A86-3E6F-4286-B561-3D56442CD3B7">InsightIntegrationArchitect</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can define the extraction criteria.</span>
+<div>Till you define the extraction criteria, a warning message appears next to the indicator&rsquo;s name.
+<div class="figure" id="GUID-F77D5419-2963-4122-AA21-832A91DE98AD__d32e117">
+<p class="titleinfigure">Figure 3-14 Extraction Criteria Warning</p>
+<img width="1223" height="310" src="img/GUID-1FCB5CF6-D20D-4ADB-9A74-C29BB7E6B853-default.png" alt="Extraction Criteria Warning" title="Extraction Criteria Warning" /></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>Repeat the steps 2 to 6 to create as many indicators as you want.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-9FFD9E2E-A979-4BAD-ADF6-E8A10F1742EC"></a>
+<h2 id="IINUG-GUID-9FFD9E2E-A979-4BAD-ADF6-E8A10F1742EC" class="sect2"><span class="enumeration_section">3.9</span> Defining Extraction Criteria</h2>
+<div>
+<div>
+<div class="infobox-note" id="GUID-6219610B-681A-42F7-9352-3E585C64A92B">
+<p class="notep1">Note:</p>
+<p>Skip this section if you have selected the <span class="bold">Enable API Invocation</span> option when creating your milestone. See <a href="GUID-795CC3E9-C1E9-43A5-BCF7-7EB54979159D.htm#GUID-B4435455-00E1-4003-B8FD-D6373CD8588C" title="You can choose the data type for indicators associated with milestones that allow API invocations.">Selecting the API Data Type for Indicators</a> instead.</p>
+</div>
+<div>Only users with the role <span class="italic">InsightModelCreator</span>/<span class="italic">InsightIntegrationArchitect</span>/<span class="italic">InsightAdmin</span> can define extraction criteria for the indicators.</div>
+</div>
+<div class="section">
+<p>To define extraction criteria for an indicator:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Expand the indicator for which you want to define the extraction criteria.</span></li>
+<li class="stepexpand"><span>Ensure that you have defined the implementation mapping for the milestone. If the mapping is not yet done, complete the mapping first.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Define</span> next to the <span class="bold">Extraction Criteria</span> field.</span>
+<div>The <span class="bold">Implementation Mappings (s)</span> page opens.</div>
+</li>
+<li class="stepexpand"><span>Click the <span class="bold">Edit Extraction Criterion</span> (the pencil icon) for each of the implementation mapping.</span>
+<div>The <span class="bold">Expression Builder</span> dialog opens.</div>
+</li>
+<li class="stepexpand"><span>Insert fragments from the fragment editor using the <span class="bold">Insert into Expression</span> button.</span>
+<div>
+<div class="infobox-note" id="GUID-9FFD9E2E-A979-4BAD-ADF6-E8A10F1742EC__GUID-13203770-2161-4305-946C-A38F91FB6C2F">
+<p class="notep1">Note:</p>
+If you use a complex data type in the expression for defining the extraction criteria, the identifier value does not appear in the runtime metrics data. Use simple data types to overcome this issue.</div>
+</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">OK</span> to complete defining the expression.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Cancel</span> to abort the operation.</span>
+<div>
+<div class="figure" id="GUID-9FFD9E2E-A979-4BAD-ADF6-E8A10F1742EC__GUID-D93A005E-DC25-4060-B3C5-3B65424FF677">
+<p class="titleinfigure">Figure 3-15 Expression Builder</p>
+<img width="866" height="699" src="img/GUID-A7618DDB-F98D-4E2F-A1F2-984D22FF6922-default.png" alt="Expression Builder" title="Expression Builder" /></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>Repeat steps 3 to 7 for each implementation mapping.</span></li>
+</ol>
+<div class="section">Extraction criteria is defined for all the implementation mappings. The information icon next to the XPath string displays the data type when you hover your mouse.
+<div class="figure" id="GUID-9FFD9E2E-A979-4BAD-ADF6-E8A10F1742EC__GUID-5352C8B9-423E-41A6-9671-FA8FE2112844">
+<p class="titleinfigure">Figure 3-16 Extraction Criteria Defined</p>
+<img width="1309" height="382" src="img/GUID-CDAB413D-7F1A-4352-98E1-37C2B2925991-default.png" alt="Extraction Criteria Defined" title="Extraction Criteria Defined" /></div>
+<!-- class="figure" --></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-1E5B867F-45F4-45F9-B778-C390AE20265B"></a>
+<h2 id="IINUG-GUID-1E5B867F-45F4-45F9-B778-C390AE20265B" class="sect2"><span class="enumeration_section">3.10</span> Viewing API Invocation Details</h2>
+<div>
+<div><span>You can view a manifest with API invocation details for all of a model&rsquo;s milestones that allow API invocations.. You can also view API invocation details for an individual milestone.</span> This provides you with templates you can use to create the request payloads sent to the Real-Time Integration Business Insight REST API for events corresponding to each milestone.</div>
+<div class="section">
+<p class="subhead2">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a class="olink IINUG-GUID-AEEE795B-D15F-4F04-A1B7-2F5D0D76E730" target="_blank" href="../IINUG/GUID-795CC3E9-C1E9-43A5-BCF7-7EB54979159D.htm#IINUG-GUID-AEEE795B-D15F-4F04-A1B7-2F5D0D76E730">Download a Model's API Invocation Manifest</a></p>
+</li>
+<li>
+<p><a class="olink IINUG-GUID-18C1EDF5-9BC6-4F22-8B2C-F4571715A9A6" target="_blank" href="../IINUG/GUID-795CC3E9-C1E9-43A5-BCF7-7EB54979159D.htm#IINUG-GUID-18C1EDF5-9BC6-4F22-8B2C-F4571715A9A6">Viewing a Milestone's API Invocation Details</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect3"><a id="GUID-AEEE795B-D15F-4F04-A1B7-2F5D0D76E730"></a>
+<h3 id="IINUG-GUID-AEEE795B-D15F-4F04-A1B7-2F5D0D76E730" class="sect3"><span class="enumeration_section">3.10.1</span> Download a Model&rsquo;s API Invocation Manifest</h3>
+<div>
+<div><span>You can download a manifest with API invocation details for all of a model&rsquo;s milestones that allow API invocations.</span> The manifest is a text file that lists all milestones where the Enable API Invocation option is selected. A sample JSON payload is provided for each milestone. Use this manifest as a template to create REST calls for each business event from your application to Real-Time Integration Business Insight.</div>
+<div class="section">To view a model&rsquo;s API invocation manifest:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Ensure that you&rsquo;re viewing the model containing the milestone you want to view details for. If you&rsquo;re not, click the <span class="bold">Designer</span> tab, and then click the model.</span></li>
+<li class="stepexpand"><span>Click the <span class="bold">Model Actions</span> menu, and then click <span class="bold">API Invocation Manifest</span>.</span>
+<div><br />
+<img width="467" height="227" src="img/GUID-77FD8CB1-25E6-4A20-A4A2-8EB40A4E238F-default.png" alt="Description of GUID-77FD8CB1-25E6-4A20-A4A2-8EB40A4E238F-default.png follows" title="Description of GUID-77FD8CB1-25E6-4A20-A4A2-8EB40A4E238F-default.png follows" /><br />
+<a href="img_text/GUID-77FD8CB1-25E6-4A20-A4A2-8EB40A4E238F-default.htm">Description of the illustration GUID-77FD8CB1-25E6-4A20-A4A2-8EB40A4E238F-default.png</a><br /></div>
+<div>The manifest is downloaded to your local disk.</div>
+</li>
+<li class="stepexpand"><span>Open the manifest text file you downloaded in the previous step. Use the templates provided to generate JSON payloads to send with Insight REST API invocations for each business event.</span></li>
+</ol>
+<div class="section">When generating the JSON payload for each milestone, ensure you replace the <code class="codeph">eventTime</code>, <code class="codeph">identifierValue</code>, and <code class="codeph">correlationValue</code> values. Also add dimension and measure values if the milestone requires them.</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-18C1EDF5-9BC6-4F22-8B2C-F4571715A9A6"></a>
+<h3 id="IINUG-GUID-18C1EDF5-9BC6-4F22-8B2C-F4571715A9A6" class="sect3"><span class="enumeration_section">3.10.2</span> Viewing a Milestone's API Invocation Details</h3>
+<div>
+<div><span>View a milestone&rsquo;s API invocation details to view the Real-Time Integration Business Insight&rsquo;s REST API endpoint URL and a sample JSON request payload.</span> Use the template to generate the request payload for each event of this milestone you want to send from an external application to Real-Time Integration Business insight for processing.</div>
+<div class="section">To view a a milestone&rsquo;s API invocation details:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Ensure that you&rsquo;re viewing the model containing the milestone you want to view details for. If you&rsquo;re not, click the <span class="bold">Designer</span> tab, and then click the model.</span></li>
+<li class="stepexpand"><span>Expand the milestone you want to view details for. In the <span class="bold">Enable API Invocation</span> section, click the <span class="bold">Click to see the details of API integration</span> (<span class="bold">?</span>) icon.</span>
+<div><br />
+<img width="558" height="79" src="img/GUID-7CB08CB2-6E85-48AB-A317-8CE47BCF1FE1-default.png" alt="Description of GUID-7CB08CB2-6E85-48AB-A317-8CE47BCF1FE1-default.png follows" title="Description of GUID-7CB08CB2-6E85-48AB-A317-8CE47BCF1FE1-default.png follows" /><br />
+<a href="img_text/GUID-7CB08CB2-6E85-48AB-A317-8CE47BCF1FE1-default.htm">Description of the illustration GUID-7CB08CB2-6E85-48AB-A317-8CE47BCF1FE1-default.png</a><br /></div>
+</li>
+</ol>
+<div class="section">The <span class="wintitle">API Invocation Details</span> dialog appears.<br />
+<img width="722" height="551" src="img/GUID-0847463D-2B41-4FB8-A565-E4AAEE35B2DB-default.png" alt="Description of GUID-0847463D-2B41-4FB8-A565-E4AAEE35B2DB-default.png follows" title="Description of GUID-0847463D-2B41-4FB8-A565-E4AAEE35B2DB-default.png follows" /><br />
+<a href="img_text/GUID-0847463D-2B41-4FB8-A565-E4AAEE35B2DB-default.htm">Description of the illustration GUID-0847463D-2B41-4FB8-A565-E4AAEE35B2DB-default.png</a><br /></div>
+<!-- class="section" -->
+<div class="section">When generating the JSON payload, ensure you replace the <code class="codeph">identifierValue</code>and <code class="codeph">correlationValue</code> values. If you do not include an <code class="codeph">eventTime</code> Insight automatically populates it. Also add dimension and measure values if the milestone requires them.</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<div class="sect2"><a id="GUID-429B7F13-D753-4249-AF9C-FE8A32A55F04"></a>
+<h2 id="IINUG-GUID-429B7F13-D753-4249-AF9C-FE8A32A55F04" class="sect2"><span class="enumeration_section">3.11</span> Activating a Model</h2>
+<div>
+<p>After you have defined milestones, unique identifier, indicators, mappings, and extraction criteria, it is now time to activate the model. Activating a model will push the model definitions out to the appropriate runtime engines, where monitoring will be initiated.</p>
+<div class="section">After activation has completed, you will immediately have access to dashboards that allow you to monitor your application. See <a href="GUID-FBDCC935-499D-4A8C-BFE4-2D4E3A6A3441.htm#GUID-FBDCC935-499D-4A8C-BFE4-2D4E3A6A3441" title="A console associated with a model gives a business owner visibility into details on how a business is performing. As soon as a model is activated, a console is created for the model. The console contains useful tables, visualizations, and dashboards that can be used immediately to understand business performance. Business owners may also quickly create custom dashboards based on their model's indicators that give aggregated business insight on key metrics.">Working with Dashboards (Consoles)</a>. Only users with the role /<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-B6924A86-3E6F-4286-B561-3D56442CD3B7">InsightIntegrationArchitect</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can activate a model.
+<p>To activate a model:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Click the <span class="bold">Designer</span> tab or the <span class="bold">Designer Tile</span> on the Home page.</span>
+<div>The <span class="bold">Insight Models</span> page opens.</div>
+</li>
+<li class="stepexpand"><span>Ensure that the model you want to activate is 100% complete and has no tasks to complete.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Activate</span> from the <span class="bold">Model Actions</span> menu.</span>
+<div><img width="98" height="123" src="img/GUID-00C0E13E-86FC-4CF6-B071-5011F55E66C9-default.png" alt="Model Actions" title="Model Actions" /></div>
+<div>A confirmation dialog appears. Click <span class="bold">Continue</span>.
+<div class="figure" id="GUID-429B7F13-D753-4249-AF9C-FE8A32A55F04__GUID-38A52B0E-D24D-40CE-BFA6-99200A9F5EBE">
+<p class="titleinfigure">Figure 3-17 Activation Confirmation Dialog</p>
+<img width="757" height="160" src="img/GUID-7E78D8C5-F2F0-4E3A-A113-E4B2ED14F008-default.png" alt="Activation Confirmation Dialog" title="Activation Confirmation Dialog" /></div>
+<!-- class="figure" -->
+<p>A message appears that the activation is in process and the progress is indicated by a progress bar.</p>
+<p><img width="134" height="98" src="img/GUID-A04BFAE2-AB90-43D3-81D6-D1DEC3B9BA38-default.png" alt="Activation Progress Indicator" title="Activation Progress Indicator" /></p>
+</div>
+</li>
+</ol>
+<div class="section">The model is activated.</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-1CE0A3A8-7E11-4979-87FE-52099CAB84E7"></a>
+<h2 id="IINUG-GUID-1CE0A3A8-7E11-4979-87FE-52099CAB84E7" class="sect2"><span class="enumeration_section">3.12</span> Importing a Model</h2>
+<div>
+<p>Only users with the role <span class="italic">InsightModelCreator</span>/<span class="italic">InsightAdmin</span> can import a model.</p>
+<div class="section">
+<p>To import a model into the Oracle Real-Time Integration Business Insight application:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Navigate to <span class="bold">Insight Models</span> page.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Import Model</span>.</span>
+<div>The <span class="bold">Import Model</span> dialog opens.
+<div class="figure" id="GUID-1CE0A3A8-7E11-4979-87FE-52099CAB84E7__GUID-FF825A4A-5984-4DDE-AFF0-206E250BCC43">
+<p class="titleinfigure">Figure 3-18 Import Model Dialog</p>
+<img width="333" height="313" src="img/GUID-96DC6F85-0ECE-4AEA-9BFE-59D1D7AEC5A6-default.png" alt="Import Model Dialog" title="Import Model Dialog" /></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Browse</span> to select an archive of a previously exported model to import.</span>
+<div>The name of the model in the archived model is populated on the screen under the <span class="bold">Model Name</span> field.</div>
+</li>
+<li class="stepexpand"><span>Select <span class="bold">Overwrite Any Existing Drafts</span> if you want to overwrite the existing drafts with the model being imported.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Import Model</span>.</span>
+<div>The model gets imported as a Draft.</div>
+</li>
+<li class="stepexpand"><span>Configure the connections before you activate the imported model. Click <span class="bold">Connections</span> within the confirmation message that appears at the top of the screen.</span>
+<div>
+<div class="infobox-note" id="GUID-1CE0A3A8-7E11-4979-87FE-52099CAB84E7__GUID-B4A735C0-C1D9-4FE7-BCA9-05AA0B5F4B6D">
+<p class="notep1">Note:</p>
+When you import a model from one system to another, the connections will need to be re-configured by a user with an <span class="italic">InsightAdmin</span> role. Generally, connections from one environment may be invalid in another environment (e.g., firewall issues, different network segments, development vs. production environments). Thus, importing a model only creates <span class="italic">stubs</span> (name only) of the connections used in the imported model, if connections with the same ID do not exist already. The user with the <span class="italic">InsightAdmin</span> role will subsequently need to fill in the details for these stubbed connections before the imported model can be activated.</div>
+</div>
+<div>You can see the imported and skipped connections. You must configure the connections that appear under the <span class="bold">Imported</span> cell. Click the connection under the Imported cell to navigate to the <span class="bold">Administration</span> page.
+<div class="figure" id="GUID-1CE0A3A8-7E11-4979-87FE-52099CAB84E7__GUID-F707D3FF-D000-4C92-BEE8-88C0B25AD9B7">
+<p class="titleinfigure">Figure 3-19 Imported Connections</p>
+<img width="909" height="337" src="img/GUID-7555F007-FCD4-40AB-9263-B0AE03FD2202-default.png" alt="Imported Connections" title="Imported Connections" /></div>
+<!-- class="figure" -->
+<p>If a connection of the same internal name has already been defined, the following message appears.</p>
+<div class="figure" id="GUID-1CE0A3A8-7E11-4979-87FE-52099CAB84E7__GUID-4C4BC4E9-B66A-4931-9A2A-58C7468018E3">
+<p class="titleinfigure">Figure 3-20 Skipped Connections</p>
+<img width="249" height="82" src="img/GUID-969FEEDB-28C4-4B12-89C6-4F59BF24D818-default.png" alt="Skipped Connections" title="Skipped Connections" /></div>
+<!-- class="figure" --></div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-7080D030-B19C-46B5-8421-D8DC42743436"></a>
+<h2 id="IINUG-GUID-7080D030-B19C-46B5-8421-D8DC42743436" class="sect2"><span class="enumeration_section">3.13</span> Other Model Actions</h2>
+<div>
+<p>Apart from the lifecycle actions, there are other actions that you can perform on a model.</p>
+<p>You can perform the following actions from the <span class="bold">Model Actions</span> menu:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Create Draft</span> &mdash; creates a draft version of an activated model and enables you to continue editing a model without interrupting metrics collection. Only users with the role <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-7F727FA4-1163-499F-B222-F395F8A92041">InsightBusinessUser</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-B6924A86-3E6F-4286-B561-3D56442CD3B7">InsightIntegrationArchitect</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can create a draft version of a model.</p>
+</li>
+<li>
+<p><span class="bold">Edit</span> &mdash; edits a model that is not activated yet. Only users with the role <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-7F727FA4-1163-499F-B222-F395F8A92041">InsightBusinessUser</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-B6924A86-3E6F-4286-B561-3D56442CD3B7">InsightIntegrationArchitect</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can create edit/update a model.</p>
+</li>
+<li>
+<p><span class="bold">Discard</span> &mdash; discards any changes made to the model. Only users with the role <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-7F727FA4-1163-499F-B222-F395F8A92041">InsightBusinessUser</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-B6924A86-3E6F-4286-B561-3D56442CD3B7">InsightIntegrationArchitect</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can discard the changes made to the draft version of a model.</p>
+</li>
+<li>
+<p><span class="bold">Export</span> &mdash; exports the model to a zip file. Only users with the role <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-7F727FA4-1163-499F-B222-F395F8A92041">InsightBusinessUser</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-B6924A86-3E6F-4286-B561-3D56442CD3B7">InsightIntegrationArchitect</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can export an activated model.</p>
+</li>
+</ul>
+<p>You cam mark any model as a favorite by clicking the <span class="bold">Favorite</span> icon next to the model. This icon is a toggle icon. The models marked as favorites appear under the <span class="bold">Favorites</span> tab of the <span class="bold">Insight Models</span> page.</p>
+<p>You can sort the models by <span class="bold">Date</span> or <span class="bold">Name</span> using the options in the <span class="bold">Sort By</span> drop-down list on the <span class="bold">Designer</span> page.</p>
+<div class="figure" id="GUID-7080D030-B19C-46B5-8421-D8DC42743436__GUID-346BA9F6-0FA8-4EDF-98D0-262B7DD58125">
+<p class="titleinfigure">Figure 3-21 Sorting Options for Models</p>
+<img width="101" height="62" src="img/GUID-7A88D8D3-953C-4359-B9CC-96938DCB2D3D-default.png" alt="Sorting Options for Models" title="Sorting Options for Models" /></div>
+<!-- class="figure" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment128">
+<tr>
+<td class="cellalignment135">
+<table class="cellalignment138">
+<tr>
+<td class="cellalignment132"><a href="GUID-ABD1135E-25C7-4078-BF81-903A41BC5090.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment132"><a href="GUID-FBDCC935-499D-4A8C-BFE4-2D4E3A6A3441.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment137">
+<table class="cellalignment131">
+<tr>
+<td class="cellalignment132"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment132"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment132"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Problems with the Node Manager</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Problems may occur if you are trying to restart the Administration Server through the Node Manager." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-C8F398EC-A733-4017-BB11-4C8F87C1C97F.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-E95DCA1B-B96E-4193-B2DC-05664E5FBD09.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-051BFF82-6C83-45AE-ACD3-26FE4B1E77E6"></a> <span id="PAGE" style="display:none;">128/131</span> <!-- End Header -->
+<h1 id="JSCUG-GUID-051BFF82-6C83-45AE-ACD3-26FE4B1E77E6" class="sect1">Problems with the Node Manager</h1>
+<div>
+<p>Problems may occur if you are trying to restart the Administration Server through the Node Manager.</p>
+<p>When you check to see whether the Node Manager is running, you could find that it is not running.</p>
+<div class="section">
+<p class="subhead1">When I try to restart the Administration Server, I discover that the Node Manager is not running</p>
+</div>
+<!-- class="section" -->
+<p>For information about restarting the Administration Server through the Node Manager, see <a href="GUID-BD5190E0-5DE4-454E-BAD3-E889C575D432.htm#GUID-AD271E5C-D40C-4E8D-A8AB-D4C8E6FBB8C7" title="You start the Administration Server through the Node Manager by using WLST commands.">Using WLST Commands to Restart the Admininistration Server</a>.</p>
+<p>To restart the Node Manager:</p>
+<ol>
+<li>Use an SSH client of your choice to access the VM of the Administration Server.
+<p>If you do not have an SSH client on Windows, you can use PuTTY to access the VM by establishing an SSH tunnel.</p>
+<p>If you are not automatically logged in as user <code class="codeph">opc</code>, log in accordingly.</p>
+</li>
+<li>
+<p>In the command window, change to user <code class="codeph">oracle</code>.</p>
+<pre dir="ltr">
+sudo su - oracle
+</pre></li>
+<li>
+<p>Change directories to where <code class="codeph">startNodeManager.sh</code> exists.</p>
+<p>If you are using Oracle Fusion Middleware 11.1.1.7, the location is:</p>
+<pre dir="ltr">
+/u01/app/oracle/middleware/wlserver_10.3/server/bin 
+</pre>
+<p>If you are using Oracle Fusion Middleware 12.1.3, the location is:</p>
+<pre dir="ltr">
+/u01/data/domains/&lt;domain_name&gt;/bin
+</pre>
+<p>For example:</p>
+<pre dir="ltr">
+cd /u01/data/domains/OurServi_domain/bin
+</pre></li>
+<li>
+<p>Start the Node Manager:</p>
+<pre dir="ltr">
+nohup startNodeManager.sh
+</pre></li>
+<li>
+<p>Check to see that the Node Manager is running:</p>
+<pre dir="ltr">
+ps -ef | grep NodeManager
+</pre>
+<p>You should receive messages showing that the Node Manager is running.</p>
+</li>
+<li>
+<p>(Optional) If you have more than one host in your Oracle Java Cloud Service instance, you must restart the Node Manager on each host.</p>
+<ol>
+<li>
+<div class="p">SSH to the second host:
+<pre dir="ltr">
+ssh &lt;hostname&gt;
+</pre></div>
+<p>For example:</p>
+<pre dir="ltr">
+ssh ourserviceinstance-wls-2
+</pre>
+<p>You can find the hostname on the Oracle Java Cloud Service Instance page in the Oracle Java Cloud Service user interface.</p>
+</li>
+<li>
+<p>Change directories to where <code class="codeph">startNodeManager.sh</code> exists.</p>
+<p>If you are using Oracle Fusion Middleware 11.1.1.7, the location is:</p>
+<pre dir="ltr">
+/u01/app/oracle/middleware/wlserver_10.3/server/bin 
+</pre>
+<p>If you are using Oracle Fusion Middleware 12.1.3, the location is:</p>
+<pre dir="ltr">
+/u01/data/domains/&lt;domain_name&gt;/bin
+</pre>
+<p>For example:</p>
+<pre dir="ltr">
+cd /u01/data/domains/OurServi_domain/bin
+</pre></li>
+<li>
+<p>Start Node Manager:</p>
+<pre dir="ltr">
+nohup startNodeManager.sh
+</pre></li>
+<li>
+<p>Check to see whether the Node Manager is running:</p>
+<pre dir="ltr">
+ps -ef | grep NodeManager
+</pre>
+<p>You should receive messages showing that the Node Manager is running.</p>
+</li>
+<li>
+<p>Exit the second host:</p>
+<pre dir="ltr">
+exit
+</pre></li>
+</ol>
+</li>
+<li>
+<p>Exit the <code class="codeph">oracle</code> session:</p>
+<pre dir="ltr">
+exit
+</pre></li>
+<li>
+<p>Exit out of the command window:</p>
+<pre dir="ltr">
+exit
+</pre></li>
+</ol>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-C8F398EC-A733-4017-BB11-4C8F87C1C97F.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-E95DCA1B-B96E-4193-B2DC-05664E5FBD09.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

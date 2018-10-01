@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Deleting an Oracle Java Cloud Service Instance on OPCM</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="When you no longer require an Oracle Java Cloud Service instance, you can delete it. Your account is no longer charged for the instance." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-A0491DD0-6E6C-405D-A00C-A213AABDF91C.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-01F749C8-3463-4F6F-906B-2F6B27BA7C0E.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-A58DDD63-CD0F-49F4-AF78-AF4FA5C42C3A"></a> <span id="PAGE" style="display:none;">25/131</span> <!-- End Header -->
+<a id="JSCUG3134"></a>
+<h1 id="JSCUG-GUID-A58DDD63-CD0F-49F4-AF78-AF4FA5C42C3A" class="sect1">Deleting an Oracle Java Cloud Service Instance <span>on <span>OPCM</span></span></h1>
+<div>
+<p>When you no longer require an Oracle Java Cloud Service instance, you can delete it. Your account is no longer charged for the instance.</p>
+<div class="section">
+<p>The service must be running before you attempt to delete it. See <a href="GUID-A0491DD0-6E6C-405D-A00C-A213AABDF91C.htm#GUID-E77701F5-F6E9-4696-9A52-37FAAC26013A" title="You can stop and start an Oracle Java Cloud Service instance through the Oracle Java Cloud Service Instance Overview page or the Topology page.">Stopping and Starting an Oracle Java Cloud Service Instance</a>.</p>
+<div class="p">When you delete an Oracle Java Cloud Service instance:
+<ul style="list-style-type: disc;">
+<li>
+<p>Resources such as IP addresses are removed.</p>
+</li>
+<li>
+<p>If you specified an <span>Oracle Database Cloud Service</span> instance when you created the <span>Oracle Java Cloud Service</span> instance, the database instance is not deleted. Only the database repository and schemas are deleted. Your account continues to be charged for the database instance. You might want to retain this database instance for use with other service instances; otherwise, you must delete the database instance manually to avoid being charged for it. See <a class="olink CSDBI3305" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=E70959-01&amp;id=CSDBI3305">Deleting a Database Deployment</a> in <span><cite>Using Oracle Database Cloud Service</cite></span>.</p>
+</li>
+<li>
+<p>If you specified the location of an on-premises database when you created the <span>Oracle Java Cloud Service</span> instance, no modifications are made to this database.</p>
+</li>
+<li>
+<p>The NFS share where backups are stored is not modified or deleted.</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p>To delete an Oracle Java Cloud Service instance:</p>
+<div class="infobox-note" id="GUID-A58DDD63-CD0F-49F4-AF78-AF4FA5C42C3A__GUID-2654C77B-3666-4B0F-93DD-C9F06A1863A8">
+<p class="notep1">Note:</p>
+<p>This option is also available from the <img width="14" height="15" src="img/GUID-D0E9F26E-D981-4A6C-9C9C-E53E732DCDA2-default.gif" alt="menu icon" title="menu icon" /> menu on the Oracle Java Cloud Service Instance page.</p>
+</div>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Navigate to the Oracle Java Cloud Service Console.</span></li>
+<li class="stepexpand"><span>From the <img width="14" height="15" src="img/GUID-D0E9F26E-D981-4A6C-9C9C-E53E732DCDA2-default.gif" alt="menu icon" title="menu icon" /> menu for the service instance, select <span class="bold">Delete</span>.</span>
+<div>The Delete Service dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>In the Delete Service dialog box that opens, set the following options and click <span class="bold">Delete</span>:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>Database Administrator User Name&mdash;Enter the name of the database administrator user that was specified when the <span>Oracle Database Cloud Service</span> deployment was created. This user owns the Oracle Required Schema in the database. If your service instance is using multiple database deployments, specify the name of the administrator for the database deployment that hosts the Oracle Required Schema.</p>
+</li>
+<li>
+<p>Database Administrator User Password&mdash;Enter the Database Administrator user password.</p>
+</li>
+<li>
+<p>Force Delete&mdash;(Optional) Select this checkbox if you want the Oracle Java Cloud Service instance to be deleted even if the database deployment cannot be reached to delete the database schemas. If enabled, you may need to delete the associated database schemas manually on the database deployment if they are not deleted as part of the service instance delete operation.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+<div class="section">
+<p>Once deleted, the Oracle Java Cloud Service is removed from the list of service instances displayed on the Oracle Java Cloud Service Console.</p>
+<p>If there is a problem deleting the service instance, the <span class="bold">Retry Delete</span> displays. Click <span class="bold">Retry Delete</span> to attempt to clean up any remaining resources and delete the service instance completely. The <span class="bold">Retry Delete</span> button is displayed for as long as the failed resources exist. Repeat this process, as necessary, until the <span class="bold">Retry Delete</span> button is no longer displayed.</p>
+<p>If the deletion process times out before all cleanup is complete, billing for the service instance stops. Oracle Java Cloud Service periodically retries cleanup until the service instance is successfully deleted. You can try deletion cleanup manually:</p>
+<ol>
+<li>
+<p>Click on <span class="bold">Service creation and deletion history</span> on the Oracle Java Cloud Service Console.</p>
+</li>
+<li>
+<p>Select the service instance. The status of the service instance will be Deletion Failed.</p>
+</li>
+<li>
+<p>Click <span class="bold">Retry Delete</span> to initiate cleanup again.</p>
+</li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-A0491DD0-6E6C-405D-A00C-A213AABDF91C.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-01F749C8-3463-4F6F-906B-2F6B27BA7C0E.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

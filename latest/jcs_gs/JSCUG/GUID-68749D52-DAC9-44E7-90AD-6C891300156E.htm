@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Keeping Your Service Instances Manageable</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Following best practices will ensure that your Oracle Java Cloud Service instances stay manageable." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-4CA04D5D-510D-4B7E-A6DB-70416871409D.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-18128901-2017-4407-8DA9-0BCE933C8C07.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-68749D52-DAC9-44E7-90AD-6C891300156E"></a> <span id="PAGE" style="display:none;">46/131</span> <!-- End Header -->
+<a id="JSCUG3281"></a>
+<h1 id="JSCUG-GUID-68749D52-DAC9-44E7-90AD-6C891300156E" class="sect1">Keeping Your Service Instances Manageable</h1>
+<div>
+<p>Following best practices will ensure that your Oracle Java Cloud Service instances stay manageable.</p>
+<div class="section">
+<p>To keep your service instances manageable by Oracle Java Cloud Service, follow these guidelines:</p>
+</div>
+<!-- class="section" -->
+<ul>
+<li class="stepexpand"><span><span>To ensure that you can restore the database for an <span>Oracle Java Cloud Service</span> instance without risking data loss for other service instances, do <span class="bold">not</span> use the same <span>Oracle Database Cloud Service</span> database deployment with multiple <span>Oracle Java Cloud Service</span> instances.</span></span>
+<div><span>Backups of an <span>Oracle Database Cloud Service</span> database deployment that is used with multiple <span>Oracle Java Cloud Service</span> instances contain data for all the <span>Oracle Java Cloud Service</span> instances. If you restore the database while restoring an <span>Oracle Java Cloud Service</span> instance, data for all the <span>Oracle Java Cloud Service</span> instances is restored.</span></div>
+</li>
+<li class="stepexpand"><span>Apply <span class="bold">only</span> patches that are available through Oracle Java Cloud Service. Do <span class="bold">not</span> apply patches from any other source.</span>
+<div>You can get the list of available patches for a service instance from the service instance's Patching page or through the Oracle Java Cloud Service REST API.
+<p>For more information, see:</p>
+<ul style="list-style-type: disc;">
+<li><a href="GUID-38F49FD6-BC5A-4601-A91F-C35D44C9857F.htm#GUID-38F49FD6-BC5A-4601-A91F-C35D44C9857F" title="You can use the Patching page to view the information about the available patches and service patch history.">Viewing Details of Approved Patches</a></li>
+<li><a href="../JSRMR/op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-patches-available-get.html" target="_blank">View Available Patches</a> in <cite>REST API for Oracle Java Cloud Service</cite></li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Use only the default domain that was provisioned when a service instance was created. Do not add any Oracle WebLogic Server domains to the service instance.</span></li>
+<li class="stepexpand"><span>If you plan to integrate multi-domain environments, ensure that the first eight characters of your Oracle Java Cloud Service instance name are unique so that all domains and associated resources have unique names.</span>
+<div>By default, the names of the domain and cluster in the Oracle Java Cloud Service instance will be generated from the first eight characters of the Oracle Java Cloud Service instance name, and will use the following formats, respectively:
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph"><span class="variable">first8charsOfServiceInstanceName</span>_domain</code></p>
+</li>
+<li>
+<p><code class="codeph"><span class="variable">first8charsOfServiceInstanceName</span>_cluster</code></p>
+</li>
+<li>
+<p><code class="codeph"><span class="variable">first8charsOfServiceInstanceName</span>_DGCluster</code> (when <span>Oracle Coherence</span> is enabled for a service instance)</p>
+</li>
+</ul>
+<p>For more information, see one of the following topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=JMSAD635" target="_blank">Integration and Multi-Domain Best Practices</a> in <cite>Administering JMS Resources for Oracle WebLogic Server (12.2.1.0)</cite>.</p>
+</li>
+<li>
+<p><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw121300&amp;id=JMSAD635" target="_blank">Integration and Multi-Domain Best Practices</a> in <cite>Administering JMS Resources for Oracle WebLogic Server (12.1.3.0)</cite>.</p>
+</li>
+<li>
+<p><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudas111170&amp;id=JMSAD635" target="_blank">Integration and Multi-Domain Best Practices</a> in <cite>Configuring and Managing JMS for Oracle WebLogic Server (11.1.1.7)</cite>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Add managed servers to a service instance only by scaling out the Oracle WebLogic Server cluster in the service instance. Do not use Oracle WebLogic Server administrative interfaces for this purpose.</span>
+<div>For information about how to scale out the cluster in a service instance, see <a href="GUID-6BAA26CA-B304-4C0E-AC00-3E47512EED88.htm#GUID-6BAA26CA-B304-4C0E-AC00-3E47512EED88" title="You can scale out an Oracle Java Cloud Service cluster to add one node to the cluster. When you scale out, Oracle Java Cloud Service creates a new VM running a WebLogic Server Managed Server instance.">Scaling Out an Oracle Java Cloud Service Cluster on OPCM</a>.
+<p><span>When Oracle Coherence is enabled for a service instance:</span> The Coherence data tier is scaled independently of the application tier. See <a href="GUID-506493C3-FEC4-48FE-87BB-7764DCA4612A.htm#GUID-506493C3-FEC4-48FE-87BB-7764DCA4612A" title="The Coherence data tier of an Oracle Java Cloud Service&mdash;Coherence instance is scaled independently of the application tier. You can use the Oracle Java Cloud Service Console or the REST API to scale the Coherence data tier.">Scaling the Coherence Data Tier of an Oracle Java Cloud Service Instance</a> for information about scaling out the Coherence data tier by adding a capacity unit.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Add Oracle WebLogic Server clusters to a service instance only by using the Oracle Java Cloud Service REST API for scaling out a service instance. Do not use Oracle WebLogic Server administrative interfaces for this purpose.</span>
+<div><span>For information about the REST API for scaling out a service instance, see <a href="../JSRMR/op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-servers-%7Bname%7D-post.html" target="_blank">Scale Out</a> in <cite>REST API for Oracle Java Cloud Service</cite>.</span>
+<p><span>When Oracle Coherence is enabled for a service instance:</span> Note that you can scale out the Coherence data tier but you cannot add a second data tier WebLogic Server (storage-enabled) cluster in the domain. See <a href="GUID-506493C3-FEC4-48FE-87BB-7764DCA4612A.htm#GUID-506493C3-FEC4-48FE-87BB-7764DCA4612A" title="The Coherence data tier of an Oracle Java Cloud Service&mdash;Coherence instance is scaled independently of the application tier. You can use the Oracle Java Cloud Service Console or the REST API to scale the Coherence data tier.">Scaling the Coherence Data Tier of an Oracle Java Cloud Service Instance</a> for information about scaling out the Coherence data tier.</p>
+</div>
+</li>
+<li class="stepexpand"><span><span>When Oracle Coherence is enabled for a service instance:</span> Use only the <code class="codeph">DataGridConfig</code> Coherence cluster that was created when the service instance was initially provisioned. Do not use <code class="codeph">defaultCoherenceCluster</code>.</span></li>
+<li class="stepexpand"><span>Do not attach custom storage volumes to a service instance's VMs.</span>
+<div>Any custom storage volumes that you attach are detached if the service instance is restarted.
+<p>If a service instance requires additional storage, add storage by scaling the service instance&rsquo;s nodes as explained in <a href="GUID-8DD460BA-708C-4B90-822F-4E4D64C59F77.htm#GUID-8DD460BA-708C-4B90-822F-4E4D64C59F77" title="You can scale an Oracle Java Cloud Service node to change its compute shape in response to changes in workload or to add storage to a node that is running out of storage. However, you cannot remove block storage from a node.">Scaling an Oracle Java Cloud Service Node on OPCM</a>.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Do not detach, change file access permissions for, or change the mount point of any disk volume that Oracle Java Cloud Service attaches to a service instance's VMs during creation of the service instance.</span>
+<div>For details of these volumes, see <a href="GUID-CD8653E2-142A-4186-8365-911433DB96E1.htm#GUID-AAE72531-41A4-4462-B90C-D2D812EEA68E" title="You have access to all Oracle Compute Cloud Service virtual machine instances created for Oracle Java Cloud Service, including the virtual machine on which the WebLogic Administration Server is running.">About the Disk Volumes</a>.</div>
+</li>
+<li class="stepexpand"><span>Except for the <code class="codeph">DOMAIN_HOME</code> volume, do not change the content of any disk volume that Oracle Java Cloud Service attaches to a service instance's VMs during creation of the service instance.</span>
+<div>For details of these volumes, see <a href="GUID-CD8653E2-142A-4186-8365-911433DB96E1.htm#GUID-AAE72531-41A4-4462-B90C-D2D812EEA68E" title="You have access to all Oracle Compute Cloud Service virtual machine instances created for Oracle Java Cloud Service, including the virtual machine on which the WebLogic Administration Server is running.">About the Disk Volumes</a>.</div>
+</li>
+<li class="stepexpand"><span>Do <span class="bold">not</span> change the content of the Boot/OS volume of any service instance provisioned before the mid-August 2015 update to Oracle Java Cloud Service.</span>
+<div><span>The Boot/OS volume of any service instance provisioned before the mid-August 2015 update to Oracle Java Cloud Service is an ephemeral disk volume.</span> <span>Content added to an ephemeral Boot/OS volume does not persist if the service instance is restarted.</span>
+<p>This restriction does not apply to more recent service instances. <span>The Boot/OS volume of any service instance provisioned after the mid-August 2015 update to Oracle Java Cloud Service is persistent.</span> <span>Content added to a persistent Boot/OS volume is retained if the service instance is restarted.</span></p>
+<p>For details of this volume, see <a href="GUID-CD8653E2-142A-4186-8365-911433DB96E1.htm#GUID-AAE72531-41A4-4462-B90C-D2D812EEA68E" title="You have access to all Oracle Compute Cloud Service virtual machine instances created for Oracle Java Cloud Service, including the virtual machine on which the WebLogic Administration Server is running.">About the Disk Volumes</a>.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Do not change the egress and ingress network and security settings of any infrastructure resources that the service instance uses.</span></li>
+<li class="stepexpand"><span>Do not close any ports that Oracle Java Cloud Service opened during creation of a service instance.</span>
+<div>You can open new ports, but closing existing ports may impair the functioning of a service instance.
+<p>For more information about the ports that Oracle Java Cloud Service opens during creation of a service instance, see <a href="GUID-EDC1BD9B-1C42-4220-8163-4B27AADDA98F.htm#GUID-EDC1BD9B-1C42-4220-8163-4B27AADDA98F" title="To use the resources available within your Oracle Java Cloud Service instances, access them through the default ports.">Understanding the Default Access Ports</a>.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Do not detach NAT IP addresses from any of a service instance's VMs.</span></li>
+<li class="stepexpand"><span>Do not change the Oracle Fusion Middleware component schemas with which a service instance was provisioned.</span></li>
+<li class="stepexpand"><span>Do not change the ports for the Oracle WebLogic Server administration server and the Oracle Traffic Director administration server.</span></li>
+<li class="stepexpand"><span>Do not change OS users and SSH key settings that Oracle Java Cloud Service configured during creation of a service instance.</span></li>
+</ul>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-4CA04D5D-510D-4B7E-A6DB-70416871409D.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-18128901-2017-4407-8DA9-0BCE933C8C07.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Rolling Back a Patch or Failed Patch</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-06-19T15:22:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Database Cloud Service" />
+<meta name="dcterms.identifier" content="E72994-04" />
+<meta name="dcterms.isVersionOf" content="CSDBI" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-2E4712E6-DF6C-4D8C-B863-B2468E6E3525.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-B36215AD-6909-49B0-A4FA-1E1F2BBAFBAA.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSDBI.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSDBI.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSDBI.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-0D1B9B1E-62E4-4A66-8D5D-6D1AC2B69A3F"></a> <span id="PAGE" style="display:none;">66/190</span> <!-- End Header -->
+<a id="CSDBI3423"></a>
+<h1 id="CSDBI-GUID-0D1B9B1E-62E4-4A66-8D5D-6D1AC2B69A3F" class="sect1">Rolling Back a Patch or Failed Patch</h1>
+<div>
+<div class="section">
+<div class="infobox-note" id="GUID-0D1B9B1E-62E4-4A66-8D5D-6D1AC2B69A3F__GUID-AA1E023E-80F1-4DDB-B05B-3AA05BF9F274">
+<p class="notep1">Note:</p>
+<p>Currently, rolling back a patch is not supported for database deployments hosting an Oracle Real Application Clusters (RAC) database.</p>
+</div>
+<p>You can roll back a patch or failed patch attempt on a database deployment by using the <span>Oracle Database Cloud Service</span> console or, if desired, by using one of the ways listed in <a href="GUID-0D1B9B1E-62E4-4A66-8D5D-6D1AC2B69A3F.htm#GUID-0D1B9B1E-62E4-4A66-8D5D-6D1AC2B69A3F__OTHER_WAYS">Other Ways to Roll Back a Patch or Failed Patch</a> at the end of this topic.</p>
+<div class="infobox-note" id="GUID-0D1B9B1E-62E4-4A66-8D5D-6D1AC2B69A3F__GUID-17C4075F-F839-4EE1-9484-70DB681037C7">
+<p class="notep1">Note:</p>
+<p>Oracle strongly recommends against performing the rollback operation on a database deployment that has never had patches applied to it. You should only use the rollback operation on patches that you have applied to a database deployment.</p>
+</div>
+<div class="infobox-note" id="GUID-0D1B9B1E-62E4-4A66-8D5D-6D1AC2B69A3F__GUID-B6F7D014-5C3F-4A2F-BC17-4052F68293E3">
+<p class="notep1">Note:</p>
+<p>Beginning with the April 2015 Patch Set Update (Apr 2015 PSU), Oracle adopted a &ldquo;composite&rdquo; approach to patch set updates. With this composite approach, a rollback operation restores the software release level to the previous patch set level instead of to the base software release level. For example, if you roll back the April 2015 Patch Set Update, the software is restored to the January 2015 Patch Set Update release level, not the base release level.</p>
+</div>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-0D1B9B1E-62E4-4A66-8D5D-6D1AC2B69A3F__USING_CONSOLE">
+<p class="subhead1">Rolling Back a Patch or Failed Patch by Using the <span>Oracle Database Cloud Service</span> Console</p>
+<div class="infobox-note" id="GUID-0D1B9B1E-62E4-4A66-8D5D-6D1AC2B69A3F__GUID-EDED74AC-A40B-4B51-8F5A-3CB5DD411F92">
+<p class="notep1">Note:</p>
+<p>If you are rolling back the April 2015 Patch Set Update (Apr 2015 PSU) or the January 2015 Patch Set Update (Jan 2015 PSU), you need to include the update&rsquo;s overlay patch numbers in the rollback operation. To do so, you must add the overlay patch numbers to the <code class="codeph">rollbackpatches.txt</code> file before rolling back the patch:</p>
+<ol>
+<li>
+<p>Connect as the <code class="codeph"><span class="bold">oracle</span></code> user to the compute node.</p>
+<p>For detailed instructions, see <a href="GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1.htm#GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1">Connecting to a Compute Node Through Secure Shell (SSH)</a>.</p>
+</li>
+<li>
+<p>Navigate to the <code class="codeph">/var/opt/oracle/patch</code> directory:</p>
+<pre dir="ltr">
+$ <span class="bold">cd /var/opt/oracle/patch</span>
+</pre></li>
+<li>
+<p>Change permissions on the <code class="codeph">rollbackpatches.txt</code> file to make it editable:</p>
+<pre dir="ltr">
+$ <span class="bold">chmod +w rollbackpatches.txt</span>
+</pre></li>
+<li>
+<p>Use an editor such as <code class="codeph">vim</code> to add the following lines to the end of the <code class="codeph">rollbackpatches.txt</code> file, making sure to include the colon at the end of each line:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>For the Apr 2015 PSU on Oracle Database 12.1.0.2:</p>
+<pre dir="ltr">
+20281121:
+20415564:datapatch
+</pre></li>
+<li>
+<p>For the Apr 2015 PSU on Oracle Database 11.2.0.4, Standard Edition:</p>
+<pre dir="ltr">
+19665921:
+20406239:../../sqlpatch/20406239/postdeinstall.sql
+</pre></li>
+<li>
+<p>For the Apr 2015 PSU on Oracle Database 11.2.0.4, all Enterprise Editions:</p>
+<pre dir="ltr">
+19665921:
+20406239:../../sqlpatch/20406239/postdeinstall.sql
+19770063:../../sqlpatch/19770063/postdeinstall.sql
+</pre></li>
+<li>
+<p>For the Jan 2015 PSU on Oracle Database 12.1.0.2:</p>
+<pre dir="ltr">
+20281121:
+19877336:datapatch
+</pre></li>
+<li>
+<p>For the Jan 2015 PSU on Oracle Database 11.2.0.4:</p>
+<pre dir="ltr">
+19770063:
+19877440:../../sqlpatch/19877440/postdeinstall.sql
+</pre></li>
+</ul>
+</li>
+</ol>
+</div>
+<p>To roll back the last patch or failed patch attempt by using the <span>Oracle Database Cloud Service</span> console:</p>
+<ol>
+<li>
+<p>Open the <span>Oracle Database Cloud Service</span> console.</p>
+<p>For detailed instructions, see <a href="GUID-8F431574-D82A-45A0-8637-7605E2333381.htm">Accessing the Oracle Database Cloud Service Console</a>.</p>
+</li>
+<li>
+<p>Click the database deployment on which you want to roll back a patch.</p>
+<p>The <span>Oracle Database Cloud Service</span> Overview page is displayed.</p>
+</li>
+<li>
+<p>Click the Administration tile and then click the Patching tab.</p>
+<p>The <span>Oracle Database Cloud Service</span> Patching page is displayed.</p>
+</li>
+<li>
+<p>Click <span class="bold">Rollback</span>.</p>
+<p>The Patching page redisplays, showing a status message that your request has been submitted, the Administration tile shows the starting time of the rollback operation, and a <span class="bold">Rolling back...</span> message replaces the <span class="bold">Rollback</span> button.</p>
+<div class="infobox-note" id="GUID-0D1B9B1E-62E4-4A66-8D5D-6D1AC2B69A3F__GUID-924D5E63-76CF-46E1-B993-9AA397053613">
+<p class="notep1">Note:</p>
+<p>Rollback operations are performed with a minimum of impact on the functioning of the database. However, during a patch rollback operation the database may be shut down for a short period of time, thus making it inaccessible.</p>
+</div>
+</li>
+</ol>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-0D1B9B1E-62E4-4A66-8D5D-6D1AC2B69A3F__OTHER_WAYS">
+<p class="subhead1">Other Ways to Roll Back a Patch or Failed Patch</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>You can use the <code class="codeph">dbpatchm</code> subcommand of the <code class="codeph">dbaascli</code> utility on database deployments hosting a single-instance database. See <a href="GUID-B36215AD-6909-49B0-A4FA-1E1F2BBAFBAA.htm" title="You can use the dbpatchm subcommand of the dbaascli utility to roll back the last patch or failed patch attempt to a database deployment hosting a single-instance database.">Rolling Back a Patch or Failed Patch by Using the dbpatchm Subcommand</a>.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="GUID-2E4712E6-DF6C-4D8C-B863-B2468E6E3525.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="GUID-B36215AD-6909-49B0-A4FA-1E1F2BBAFBAA.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

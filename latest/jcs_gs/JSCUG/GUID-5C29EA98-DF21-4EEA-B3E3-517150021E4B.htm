@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Using WLST to Administer an Oracle Java Cloud Service Instance</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can use the WebLogic Scripting Tool (WLST) to administer the Oracle WebLogic Server domain in your Oracle Java Cloud Service instance from a command line or script." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-8F5B7EC4-38C8-4C0E-B111-5AB5FE967989.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-BD5190E0-5DE4-454E-BAD3-E889C575D432.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-5C29EA98-DF21-4EEA-B3E3-517150021E4B"></a> <span id="PAGE" style="display:none;">39/131</span> <!-- End Header -->
+<a id="JSCUG3155"></a>
+<h1 id="JSCUG-GUID-5C29EA98-DF21-4EEA-B3E3-517150021E4B" class="sect1">Using WLST to Administer an Oracle Java Cloud Service Instance</h1>
+<div>
+<p>You can use the WebLogic Scripting Tool (WLST) to administer the Oracle WebLogic Server domain in your Oracle Java Cloud Service instance from a command line or script.</p>
+<div class="section">
+<p>To administer a service instance through WLST, use one of these methods:</p>
+</div>
+<!-- class="section" -->
+<ul>
+<li class="stepexpand"><span>You can use a secure shell (SSH) to connect to the virtual machine (VM) that hosts the Administration Server and run WLST commands local to the VM. When running WLST commands local to the VM, you can use both WLST online and offline.</span>
+<div>
+<p>For more information, see <a href="GUID-5C29EA98-DF21-4EEA-B3E3-517150021E4B.htm#GUID-F30599B0-82E6-4266-B7B7-6E83E037952C" title="You can run WLST commands from within a VM that includes an Oracle WebLogic Server installation.">Running WLST Commands on a VM</a></p>
+</div>
+</li>
+<li class="stepexpand"><span>You can connect to the Administration Server by using WLST online and run WLST commands remotely, for example, from a command shell in your local environment. When running WLST commands remotely, you can use WLST online only.</span>
+<div>
+<p>For more information, see <a href="GUID-5C29EA98-DF21-4EEA-B3E3-517150021E4B.htm#GUID-A369DB5E-A70E-4004-9FE5-A353B1CA4D3E" title="You can run WLST commands from a host that is not the VM running Oracle WebLogic Server in Oracle Java Cloud Service (for example, from your laptop or a separate machine running in the Cloud). Use the WLST installation on this remote machine to connect to your Oracle Java Cloud Service Administration Server.">Running WLST Commands from a Different Host</a></p>
+</div>
+</li>
+</ul>
+</div>
+<a id="JSCUG3301"></a>
+<div class="props_rev_3"><a id="GUID-8371986D-852B-46F6-A889-B60A4B2E2DB3"></a>
+<h2 id="JSCUG-GUID-8371986D-852B-46F6-A889-B60A4B2E2DB3" class="sect2">Using WLST Online and Offline</h2>
+<div>
+<p>You can use WLST as the command-line equivalent to the WebLogic Server Administration Console (WLST online) or as the command-line equivalent to the Configuration Wizard (WLST offline).</p>
+<div class="section">
+<p>Online WLST commands allow you to connect to a running Administration Server and manage the configuration of an active WebLogic domain, view performance data about resources in the domain, or manage security data. The commands also allow you to connect to Managed Servers (although you cannot modify configuration data from Managed Servers).</p>
+<p>Offline&mdash;that is, without connecting to a running WebLogic Server instance&mdash;WLST allows you to create domain templates, create a new domain based on existing templates, or extend an existing, inactive domain. You cannot use WLST offline to view performance data about resources in a WebLogic domain or modify security data. You cannot run offline commands from a remotely-attached Oracle Java Cloud Service because the domain configuration files are not local to your system, so you cannot manipulate them.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="JSCUG3302"></a>
+<div class="props_rev_3"><a id="GUID-F30599B0-82E6-4266-B7B7-6E83E037952C"></a>
+<h2 id="JSCUG-GUID-F30599B0-82E6-4266-B7B7-6E83E037952C" class="sect2">Running WLST Commands on a VM</h2>
+<div>
+<p>You can run WLST commands from within a VM that includes an Oracle WebLogic Server installation.</p>
+<div class="p">
+<p>Prior to running WLST, identify the public IP address of the VM and connect to it with SSH, as described in <a href="GUID-B5656350-E387-4E43-91A6-8C20D78288A7.htm" title="You can access the services and resources that an Oracle Java Cloud Service instance's VM provides by logging into the VM as the opc user through SSH. You can use any SSH utility you want. For example, if you are using Windows, you might use PuTTY; if you are using Linux, you might use OpenSSH.">Accessing a VM Through a Secure Shell (SSH)</a>.</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>After connecting to the VM, switch to the <code class="codeph">oracle</code> user:</span>
+<div>
+<pre dir="ltr">
+$&gt; sudo su - oracle
+</pre>
+<p>The <code class="codeph">oracle</code> user is used to run Oracle applications and utilities on VMs, including WLST.</p>
+</div>
+</li>
+<li class="stepexpand"><span>At the VM prompt, set the domain environment by using the <code class="codeph">setDomainEnv.sh</code> command, which resides in <code class="codeph">/u01/data/domains/</code><span class="italic"><code class="codeph">domain-name</code></span><code class="codeph">/bin</code>:</span>
+<div>
+<pre dir="ltr">
+$&gt; . ./setDomainEnv.sh
+</pre>
+<p>You must use the <code class="codeph">.</code> to ensure that the environment variables are set in the current shell.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Launch WLST:</span>
+<div>
+<pre dir="ltr">
+$&gt;java weblogic.WLST
+</pre></div>
+</li>
+<li class="stepexpand"><span>Connect to the Administration Server:</span>
+<div>
+<pre dir="ltr">
+&gt; connect('<span class="italic">loginID</span>', '<span class="italic">password</span>', '<span class="italic">admin-server-host</span>:<span class="italic">admin-server-port</span>')
+</pre></div>
+<div>For example:
+<pre dir="ltr">
+&gt; connect('weblogic', 'welcome1', 'service-wls-1:7001')
+</pre></div>
+</li>
+</ol>
+<div class="section">You can now use WLST. Refer to the <cite>WLST Command and Variable Reference</cite> in one of the following publications:
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=WLSTC119" target="_blank">WLST Command Reference for WebLogic Server (12.2.1)</a></p>
+</li>
+<li>
+<p><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw121300&amp;id=WLSTC119" target="_blank">WLST Command Reference for WebLogic Server (12.1.3)</a></p>
+</li>
+<li>
+<p><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudas111170&amp;id=WLSTC119" target="_blank">WebLogic Scripting Tool Command Reference (10.3.6)</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="JSCUG3303"></a>
+<div class="props_rev_3"><a id="GUID-A369DB5E-A70E-4004-9FE5-A353B1CA4D3E"></a>
+<h2 id="JSCUG-GUID-A369DB5E-A70E-4004-9FE5-A353B1CA4D3E" class="sect2">Running WLST Commands from a Different Host</h2>
+<div>
+<p>You can run WLST commands from a host that is not the VM running Oracle WebLogic Server in Oracle Java Cloud Service (for example, from your laptop or a separate machine running in the Cloud). Use the WLST installation on this remote machine to connect to your <span>Oracle Java Cloud Service</span> Administration Server.</p>
+<div class="p">
+<p>By default, remote access to the administration console and WLST over port <code class="codeph">7002</code> is disabled for security purposes.</p>
+<p>Alternatively, you can create an SSH tunnel to port <code class="codeph">9001</code> on the Administration Server VM, as described in <a href="GUID-BB107CDA-CB78-4E3B-B17C-A607A4869715.htm" title="An SSH tunnel to an Oracle Java Cloud Service VM enables you to connect to other non-public ports on the VM though a port your local machine.">Creating an SSH Tunnel</a>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">To run WLST commands remotely:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Use the <span>Oracle Java Cloud Service</span> console to identify the public IP address of your Administration Server.</span></li>
+<li class="stepexpand"><span>Launch a command shell on a machine with an Oracle WebLogic Server installation.</span></li>
+<li class="stepexpand"><span>If you have not updated the default SSL configuration of your Administration Server, set the following environment variable to accept the default SSL certificate:</span>
+<div>
+<pre dir="ltr">
+export WLST_PROPERTIES="-Dweblogic.security.SSL.ignoreHostnameVerification=true -Dweblogic.security.TrustKeyStore=DemoTrust"
+</pre></div>
+</li>
+<li class="stepexpand"><span>Navigate to your Oracle WebLogic Server installation and launch WLST using the <code class="codeph">wlst.sh</code> script.</span>
+<div>
+<pre dir="ltr">
+/<span class="italic">Middleware_Home</span>/oracle_common/common/bin/wlst.sh
+</pre></div>
+</li>
+<li class="stepexpand"><span>From the WLST prompt, connect to the Administration Server at port <code class="codeph">7002</code>. Specify the WebLogic Server administrative credentials that you specified when you created the service instance.</span>
+<div>
+<pre dir="ltr">
+&gt; connect('<span class="italic">username</span>', '<span class="italic">password</span>', 't3s://<span class="italic">adminServerPublicIP</span>:7002')
+</pre>
+<p>For example:</p>
+<pre dir="ltr">
+&gt; connect('weblogic', 'welcome1', '10.11.12.13:7002')
+</pre>
+<p>If you are accessing the Administration Server VM via an SSH tunnel, connect to <code class="codeph">localhost:9001</code> instead.</p>
+</div>
+</li>
+</ol>
+<div class="section">You can now use WLST to execute additional commands. Refer to the <cite>WLST Command and Variable Reference</cite> in one of the following publications:
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=WLSTC119" target="_blank">WLST Command Reference for WebLogic Server (12.2.1)</a></p>
+</li>
+<li>
+<p><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw121300&amp;id=WLSTC119" target="_blank">WLST Command Reference for WebLogic Server (12.1.3)</a></p>
+</li>
+<li>
+<p><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudas111170&amp;id=WLSTC119" target="_blank">WebLogic Scripting Tool Command Reference (10.3.6)</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-8F5B7EC4-38C8-4C0E-B111-5AB5FE967989.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-BD5190E0-5DE4-454E-BAD3-E889C575D432.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

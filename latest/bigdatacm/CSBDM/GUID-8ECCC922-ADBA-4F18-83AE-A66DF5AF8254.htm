@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>bdacli</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="The Oracle Big Data Cloud Machine command-line interface (bdacli) queries various configuration files to return information about the rack, cluster, server, InfiniBand network, and software patches." />
+<meta name="dcterms.created" content="2017-05-03T11:44:48Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Big Data Cloud Machine" />
+<meta name="dcterms.identifier" content="E85986-01" />
+<meta name="dcterms.isVersionOf" content="CSBDM" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="http://docs.oracle.com/cloud-machine/latest/" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-18540940-7342-40CF-8738-22B5119A57B0.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-FDC447CB-05D8-457F-8CD3-97D0A189EACE.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSBDM.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSBDM.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSBDM.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254"></a> <span id="PAGE" style="display:none;">40/51</span> <!-- End Header -->
+<h1 id="CSBDM-GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254" class="sect1">bdacli</h1>
+<div>
+<p>The <span>Oracle Big Data Cloud Machine</span> command-line interface (bdacli) queries various configuration files to return information about the rack, cluster, server, InfiniBand network, and software patches.</p>
+<div class="section">
+<p class="subhead1">Syntax</p>
+<pre dir="ltr">
+bdacli <span class="variable">action</span> [<span class="variable">parameters</span>]
+</pre></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Actions</p>
+<dl>
+<dt class="dlterm"><a id="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__GUID-417B038B-ED89-4962-AE24-ABCEB2978489"><!-- --></a><code class="codeph">help</code></dt>
+<dd>Displays general usage information for <code class="codeph">bdacli</code>, a list of actions, and a list of supported parameters for the <code class="codeph">getinfo</code> action.</dd>
+<dt class="dlterm"><a id="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__GUID-97A79315-209C-4C07-AF85-7CFAB0F9A476"><!-- --></a><code class="codeph">{add | remove} patch <span class="codeinlineitalic">patch_number</span></code></dt>
+<dd>Adds or removes a software patch on <span>Oracle Big Data Cloud Machine</span> that matches <span class="italic">patch_number</span>. You must log in as <code class="codeph">root</code> to use <code class="codeph">add</code> or <code class="codeph">remove</code>.</dd>
+<dt class="dlterm"><a id="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__GUID-8AEDE99A-E68E-40E4-8EB3-0DA4A54081C4"><!-- --></a><code class="codeph">admin_cluster <span class="codeinlineitalic">parameter</span> <span class="codeinlineitalic">node_name</span></code></dt>
+<dd>
+<p>Enables you to administer the nodes in a cluster in response to a failing server. The following table describes the parameters.</p>
+<div class="tblformalwide" id="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__GUID-20FEB489-AF5A-4B72-9B9C-BC034D74E4F6">
+<table class="cellalignment94" summary="The following table lists the parameters for this command in the left column, &ldquo;Parameter,&rdquo; and describes each on in the right column, &ldquo;Description.&rdquo;">
+<thead>
+<tr class="cellalignment68">
+<th class="cellalignment81" id="d15202e88">Parameter</th>
+<th class="cellalignment81" id="d15202e90">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e94" headers="d15202e88"><code class="codeph">decommission</code></td>
+<td class="cellalignment68" headers="d15202e94 d15202e90">
+<p>Removes the specified node from the cluster and decommissions the server in Cloudera Manager. It also updates the Mammoth files.</p>
+<p>You can decommission a failing, noncritical node. Note that critical services on the node must be moved first.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e103" headers="d15202e88"><code class="codeph">recommission</code></td>
+<td class="cellalignment68" headers="d15202e103 d15202e90">
+<p>Removes the node from the list of decommissioned nodes, and recommissions the server in Cloudera Manager. Use this command after decommissioning and repairing a failing server.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e110" headers="d15202e88"><code class="codeph">migrate</code></td>
+<td class="cellalignment68" headers="d15202e110 d15202e90">
+<p>Moves the services from a critical node to a noncritical node, and decommissions the failing server in Cloudera Manager. You specify the name of the failing critical node, and the utility selects the noncritical node for the migration. When migration is complete, the new node has all of the functionality of the original critical node.</p>
+<p>You can only migrate a critical node, and should do so only when it is failing.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e119" headers="d15202e88"><code class="codeph">reprovision</code></td>
+<td class="cellalignment68" headers="d15202e119 d15202e90">
+<p>Restores a server to the cluster as a noncritical node, and recommissions the server in Cloudera Manager. Use this command after migrating the services of a critical node and repairing the failing server.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></dd>
+<dt class="dlterm"><a id="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__GUID-8E0076D7-CD3A-425C-B862-8C4333C2C89A"><!-- --></a><code class="codeph">{enable | disable} service</code></dt>
+<dd>
+<p>Enables or disables an optional software component on <span>Oracle Big Data Cloud Machine</span>. You must log in as <code class="codeph">root</code> to use <code class="codeph">enable</code> or <code class="codeph">disable</code>.</p>
+<p>The following describes the component parameters.</p>
+<div class="tblformalwide" id="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__GUID-FA45A104-701B-4C79-B0F0-32321573CCF7">
+<table class="cellalignment94" summary="The following table lists the parameters for this command in the left column, &ldquo;Parameter,&rdquo; and describes each on in the right column, &ldquo;Description.&rdquo;">
+<thead>
+<tr class="cellalignment68">
+<th class="cellalignment81" id="d15202e154">Parameter</th>
+<th class="cellalignment81" id="d15202e156">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e160" headers="d15202e154"><code class="codeph">asr</code></td>
+<td class="cellalignment68" headers="d15202e160 d15202e156">Auto Service Request</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e166" headers="d15202e154"><code class="codeph">auditvault</code></td>
+<td class="cellalignment68" headers="d15202e166 d15202e156">Oracle Audit Vault and Database Firewall plugin</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e172" headers="d15202e154"><code class="codeph">bdc</code></td>
+<td class="cellalignment68" headers="d15202e172 d15202e156">Oracle Big Data Connectors</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e178" headers="d15202e154"><code class="codeph">https_cm_hue_oozie</code></td>
+<td class="cellalignment68" headers="d15202e178 d15202e156">
+<p>HTTPS for Cloudera Manager, Hue, and Oozie. There is no <code class="codeph">disable</code> option. Kerberos must be enabled.</p>
+<p><span class="bold">Note:</span> You can&rsquo;t enable Kerberos on a cluster after it&rsquo;s been created. You must specify that Kerberos is to be enabled when creating the cluster.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e192" headers="d15202e154"><code class="codeph">hdfs_encrypted_data_transport</code></td>
+<td class="cellalignment68" headers="d15202e192 d15202e156">
+<p>Encryption of data transfer between DataNodes and clients, and among DataNodes. Kerberos must be enabled.</p>
+<p><span class="bold">Note:</span> You can&rsquo;t enable Kerberos on a cluster after it&rsquo;s been created. You must specify that Kerberos is to be enabled when creating the cluster.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e203" headers="d15202e154"><code class="codeph">hadoop_network_encryption</code></td>
+<td class="cellalignment68" headers="d15202e203 d15202e156">
+<p>HTTPS encryption and Kerberos authentication for HDFS and YARN, also enables web shuffling for YARN. Kerberos must be enabled.</p>
+<p><span class="bold">Note:</span> You can&rsquo;t enable Kerberos on a cluster after it&rsquo;s been created. You must specify that Kerberos is to be enabled when creating the cluster.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e214" headers="d15202e154"><code class="codeph">sentry</code></td>
+<td class="cellalignment68" headers="d15202e214 d15202e156">
+<p>Apache Sentry authorization</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></dd>
+<dt class="dlterm"><a id="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__GUID-9E09D9E3-83E4-422E-99C1-86BACC8A6842"><!-- --></a><code class="codeph">{start | stop | restart | status} service</code></dt>
+<dd>
+<p>Starts, stops, restarts, or returns the current status of a service on a cluster or a specific node.</p>
+<p>The following table describes the service parameters:</p>
+<div class="tblformal" id="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__GUID-4D0321E5-249A-40AC-B9BB-43281FF7C6AD">
+<table class="cellalignment95" summary="The following table lists the parameters for this command in the left column, &ldquo;Parameter,&rdquo; and describes each on in the right column, &ldquo;Description.&rdquo;">
+<thead>
+<tr class="cellalignment68">
+<th class="cellalignment81" id="d15202e237">Parameter</th>
+<th class="cellalignment81" id="d15202e239">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e243" headers="d15202e237"><code class="codeph">big_data_sql_cluster</code></td>
+<td class="cellalignment68" headers="d15202e243 d15202e239">Oracle Big Data SQL on all nodes of the cluster</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e249" headers="d15202e237"><code class="codeph">big_data_sql_server <span class="codeinlineitalic">node_name</span></code></td>
+<td class="cellalignment68" headers="d15202e249 d15202e239">
+<p>Oracle Big Data SQL on a specified node of the cluster.</p>
+<p>Use <code class="codeph">bdacli</code> with this parameter only from the first node of the cluster, where the current <code>config.json</code> file is stored.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></dd>
+<dt class="dlterm"><a id="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__GUID-DCBCF89D-4ED1-4BA0-9864-B8EAAF7BAF7F"><!-- --></a><code class="codeph">getinfo [parameter]</code></dt>
+<dd>
+<p>Returns a list of <code class="codeph">getinfo</code> parameters. If you include a parameter name in the command, then <code class="codeph">getinfo</code> returns information about that system component:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">InfiniBand parameters</span>: The <code class="codeph">bdacli</code> command queries the InfiniBand fabric. See <a href="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254.htm#GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__INFINIBANDPARAMETERS-43A5DE36">InfiniBand Parameters</a>.</p>
+</li>
+<li>
+<p><span class="bold">Cluster parameters</span>: Describes a logical <span>Oracle Big Data Cloud Machine</span> cluster. The bdacli command queries the current config.json file for the Hadoop cluster where the command executes. See <a href="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254.htm#GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__CLUSTERPARAMETERS-43A5E3CF">Cluster Parameters</a>.</p>
+</li>
+<li>
+<p><span class="bold">Server parameters</span>: Describes a server. The bdacli command queries the operating system of the server where the bdacli command executes. See <a href="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254.htm#GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__SERVERPARAMETERS-43A5E5EE">Server Parameters</a>.</p>
+</li>
+<li>
+<p><span class="bold">One-off patch parameters</span>: Provides information about one-off patches. See <a href="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254.htm#GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__ONE-OFFPATCHPARAMETERS-43A5E9AA">One-Off Patch Parameters</a>.</p>
+</li>
+</ul>
+<p>Parameter names that end with an "s" return lists. Boolean parameters return a string of either <code class="codeph">true</code> or <code class="codeph">false</code>.</p>
+</dd>
+</dl>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__INFINIBANDPARAMETERS-43A5DE36">
+<p class="subhead1">InfiniBand Parameters</p>
+<p>The following table describes the InfiniBand parameters for <code class="codeph">bdacli getinfo</code>.</p>
+<div class="tblformal" id="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__GUID-DC8BB769-8A0F-44F5-82B6-C805A8E603D7">
+<table class="cellalignment77" summary="The following table lists the parameters for this command in the left column, &ldquo;Parameter,&rdquo; and describes the return values for each on in the right column, &ldquo;Returns.&rdquo;">
+<thead>
+<tr class="cellalignment68">
+<th class="cellalignment78" id="d15202e346">Parameter</th>
+<th class="cellalignment78" id="d15202e348">Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d15202e352" headers="d15202e346"><code class="codeph">ib_bda_servers</code></td>
+<td class="cellalignment79" headers="d15202e352 d15202e348">
+<p>A list of all <span>Oracle Big Data Cloud Machine</span> servers on the InfiniBand fabric. The list contains the unqualified client host names, which are sorted alphabetically. The list can include servers in multiple racks that are cabled together. See <a href="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254.htm#GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__EXAMPLES-4407E785">Examples</a>.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d15202e366" headers="d15202e346"><code class="codeph">ib_switches</code></td>
+<td class="cellalignment79" headers="d15202e366 d15202e348">
+<p>Lists the switches on the InfiniBand fabric, including the switch name, Globally Unique Identifier (GUID), and type (<code class="codeph">GTW</code> for a gateway switch, or <code class="codeph">36P</code> for a spine switch). The list contains the unqualified administration names, which are sorted alphabetically by switch name. See See <a href="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254.htm#GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__EXAMPLES-4407E785">Examples</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section" id="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__CLUSTERPARAMETERS-43A5E3CF">
+<p class="subhead1">Cluster Parameters</p>
+<p>The following tables describe the cluster parameters.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254.htm#GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__GENERALCLUSTERPARAMETERS-45313005">General Cluster Parameters</a></p>
+</li>
+<li>
+<p><a href="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254.htm#GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__ORACLEBIGDATACONNECTORSSTATUSPARAME-4531605E">Oracle Big Data Connectors Status Parameters</a></p>
+</li>
+<li>
+<p><a href="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254.htm#GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__CLUSTERNETWORKPARAMETERS-4531646E">Cluster Network Parameters</a></p>
+</li>
+<li>
+<p><a href="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254.htm#GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__CLUSTERSECURITYPARAMETERS-45316789">Cluster Security Parameters</a></p>
+</li>
+</ul>
+<p>The following table describes the general cluster parameters for <code class="codeph">bdacli getinfo</code>.</p>
+<p id="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__GENERALCLUSTERPARAMETERS-45313005"><span class="bold">General Cluster Parameters</span></p>
+<div class="tblformal" id="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__GUID-F15C03A2-ABC6-4F70-87C3-E1EE9FA90DC0">
+<table class="cellalignment77" summary="The following table lists the parameters for this command in the left column, &ldquo;Parameter,&rdquo; and describes the return values for each on in the right column, &ldquo;Returns.&rdquo;">
+<thead>
+<tr class="cellalignment68">
+<th class="cellalignment78" id="d15202e424">Parameter</th>
+<th class="cellalignment78" id="d15202e426">Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d15202e430" headers="d15202e424"><code class="codeph">cluster_asr_installed</code></td>
+<td class="cellalignment79" headers="d15202e430 d15202e426"><code class="codeph">true</code> if Auto Service Request is configured for this cluster; <code class="codeph">false</code> otherwise</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d15202e441" headers="d15202e424"><code class="codeph">cluster_big_data_sql_enabled</code></td>
+<td class="cellalignment79" headers="d15202e441 d15202e426"><code class="codeph">true</code> if Oracle Big Data SQL is enabled for this cluster; <code class="codeph">false</code> otherwise.</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d15202e452" headers="d15202e424"><code class="codeph">cluster_cdh_version</code></td>
+<td class="cellalignment79" headers="d15202e452 d15202e426">The version of Cloudera's Distribution including Apache Hadoop installed on this cluster, such as <code class="codeph">4.5.0-ol6</code>.</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d15202e461" headers="d15202e424"><code class="codeph">cluster_cm_server</code></td>
+<td class="cellalignment79" headers="d15202e461 d15202e426">The Cloudera Manager address, including the server name and port number, such as <code class="codeph">bda1node03.example.com:7180</code>.</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d15202e470" headers="d15202e424"><code class="codeph">cluster_cm_version</code></td>
+<td class="cellalignment79" headers="d15202e470 d15202e426">The version of Cloudera Manager running on this cluster, such as <code class="codeph">4.8.0-ol6</code>.</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d15202e479" headers="d15202e424"><code class="codeph">cluster_name</code></td>
+<td class="cellalignment79" headers="d15202e479 d15202e426">The name of the cluster, such as <code class="codeph">cluster-c</code>.</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d15202e488" headers="d15202e424"><code class="codeph">cluster_primary_host</code></td>
+<td class="cellalignment79" headers="d15202e488 d15202e426">The unqualified host name of the server that hosts the puppet master. The Mammoth utility was deployed from this host, and any reconfiguration of the cluster must be done while logged in to that server.</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d15202e494" headers="d15202e424"><code class="codeph">cluster_type</code></td>
+<td class="cellalignment79" headers="d15202e494 d15202e426">The type of cluster (default: <code class="codeph">Hadoop</code>).</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d15202e503" headers="d15202e424"><code class="codeph">cluster_version</code></td>
+<td class="cellalignment79" headers="d15202e503 d15202e426">The software version installed on this cluster by the Mammoth utility, such as 3.1.0.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>The following table describes describes the cluster parameters related to Oracle Big Data Connectors for <code class="codeph">bdacli getinfo</code>.</p>
+<p id="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__ORACLEBIGDATACONNECTORSSTATUSPARAME-4531605E"><span class="bold">Oracle Big Data Connectors Status Parameters</span></p>
+<div class="tblformal" id="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__GUID-EDB0713B-98F4-4C8A-B5BF-CD7E702E5861">
+<table class="cellalignment77" summary="The following table lists the parameters for this command in the left column, &ldquo;Parameter,&rdquo; and describes the return values for each on in the right column, &ldquo;Returns.&rdquo;">
+<thead>
+<tr class="cellalignment68">
+<th class="cellalignment81" id="d15202e524">Parameter</th>
+<th class="cellalignment81" id="d15202e526">Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e530" headers="d15202e524"><code class="codeph">cluster_bdc_installed</code></td>
+<td class="cellalignment68" headers="d15202e530 d15202e526">true if Oracle Big Data Connectors is installed; false otherwise</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e536" headers="d15202e524"><code class="codeph">cluster_odi_enabled</code></td>
+<td class="cellalignment68" headers="d15202e536 d15202e526">true if the Oracle Data Integrator agent is enabled; false otherwise.</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e542" headers="d15202e524"><code class="codeph">cluster_odi_version</code></td>
+<td class="cellalignment68" headers="d15202e542 d15202e526">The version of Oracle Data Integrator agent installed on the cluster.</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e548" headers="d15202e524"><code class="codeph">cluster_oraah_version</code></td>
+<td class="cellalignment68" headers="d15202e548 d15202e526">The version of Oracle R Advanced Analytics for Hadoop installed on the cluster</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e554" headers="d15202e524"><code class="codeph">cluster_oraloader_version</code></td>
+<td class="cellalignment68" headers="d15202e554 d15202e526">The version of Oracle Loader for Hadoop installed on the cluster</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e560" headers="d15202e524"><code class="codeph">cluster_osch_version</code></td>
+<td class="cellalignment68" headers="d15202e560 d15202e526">The version of Oracle SQL Connector for HDFS installed on the cluster</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e566" headers="d15202e524"><code class="codeph">cluster_oxh_version</code></td>
+<td class="cellalignment68" headers="d15202e566 d15202e526">The version of Oracle XQuery for Hadoop installed on the cluster</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>The following table describes the cluster network parameters for <code class="codeph">bdacli getinfo</code>.</p>
+<p id="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__CLUSTERNETWORKPARAMETERS-4531646E"><span class="bold">Cluster Network Parameters</span></p>
+<div class="tblformal" id="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__GUID-39FAAC29-0A8B-416F-BBE0-08922D1733D1">
+<table class="cellalignment77" summary="The following table lists the parameters for this command in the left column, &ldquo;Parameter,&rdquo; and describes the return values for each on in the right column, &ldquo;Returns.&rdquo;">
+<thead>
+<tr class="cellalignment68">
+<th class="cellalignment81" id="d15202e588">Parameter</th>
+<th class="cellalignment81" id="d15202e590">Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e594" headers="d15202e588"><code class="codeph">cluster_hosts_entries</code></td>
+<td class="cellalignment68" headers="d15202e594 d15202e590">
+<p>A list of <code>/etc/hosts</code> entries that you can append to the <code>/etc/hosts</code> file on any device on the same InfiniBand fabric as the <span>Oracle Big Data Cloud Machine</span> cluster, to ensure that Hadoop traffic uses the InfiniBand network. Do not add these entries to a device on a different fabric.</p>
+<p>Each entry is on a separate line with three parts: the InfiniBand IP address, the full client host name, and the short client host name.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e612" headers="d15202e588"><code class="codeph">cluster_ilom_ips</code></td>
+<td class="cellalignment68" headers="d15202e612 d15202e590">An ordered list of IP addresses for the Oracle ILOMs in the servers, starting with the first node in the cluster</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e618" headers="d15202e588"><code class="codeph">cluster_ilom_names</code></td>
+<td class="cellalignment68" headers="d15202e618 d15202e590">A list of unqualified host names on the administrative network for the Oracle ILOMs in the servers, in order starting with the first server in the cluster</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e624" headers="d15202e588"><code class="codeph">cluster_node_ips</code></td>
+<td class="cellalignment68" headers="d15202e624 d15202e590">The IP addresses on the client network of all nodes in this cluster</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e630" headers="d15202e588"><code class="codeph">cluster_node_names</code></td>
+<td class="cellalignment68" headers="d15202e630 d15202e590">The host names on the client network of all nodes in the cluster, such as <code class="codeph">bda1node01</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>The following table describes the cluster security parameters for <code class="codeph">bdacli getinfo</code>.</p>
+<p id="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__CLUSTERSECURITYPARAMETERS-45316789"><span class="bold">Cluster Security Parameters</span></p>
+<div class="tblformal" id="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__GUID-54BBB90E-AB10-40E4-B760-236284C663E3">
+<table class="cellalignment77" summary="The following table lists the parameters for this command in the left column, &ldquo;Parameter,&rdquo; and describes the return values for each on in the right column, &ldquo;Returns.&rdquo;">
+<thead>
+<tr class="cellalignment68">
+<th class="cellalignment81" id="d15202e653">Parameter</th>
+<th class="cellalignment81" id="d15202e655">Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e659" headers="d15202e653"><code class="codeph">cluster_av_admin</code></td>
+<td class="cellalignment68" headers="d15202e659 d15202e655">The name of the Oracle Audit Vault and Database Firewall administration user. Returns an error if Audit Vault is not configured for this cluster.</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e665" headers="d15202e653"><code class="codeph">cluster_av_enabled</code></td>
+<td class="cellalignment68" headers="d15202e665 d15202e655"><code class="codeph">true</code> if Oracle Audit Vault and Database Firewall auditing is enabled; <code class="codeph">false</code> otherwise</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e676" headers="d15202e653"><code class="codeph">cluster_av_port</code></td>
+<td class="cellalignment68" headers="d15202e676 d15202e655">The port number that the Audit Vault server listens on. Returns an error if Oracle Audit Vault and Database Firewall is not configured on this cluster.</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e682" headers="d15202e653"><code class="codeph">cluster_av_server</code></td>
+<td class="cellalignment68" headers="d15202e682 d15202e655">The IP address of the Audit Vault server. Returns an error if Oracle Audit Vault and Database Firewall is not configured on this cluster.</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e688" headers="d15202e653"><code class="codeph">cluster_av_service</code></td>
+<td class="cellalignment68" headers="d15202e688 d15202e655">The database service name for the Audit Vault server. Returns an error if Oracle Audit Vault and Database Firewall is not configured on this cluster.</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e694" headers="d15202e653"><code class="codeph">cluster_hdfs_encryption_enabled</code></td>
+<td class="cellalignment68" headers="d15202e694 d15202e655"><code class="codeph">true</code> if network encryption of Hadoop data is enabled for this cluster; false otherwise</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e702" headers="d15202e653"><code class="codeph">cluster_hdfs_transparent_encryption_enabled</code></td>
+<td class="cellalignment68" headers="d15202e702 d15202e655"><code class="codeph">true</code> if HDFS Transparent Encryption of Hadoop data at rest is enabled for this cluster; <code class="codeph">false</code> otherwise</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e713" headers="d15202e653"><code class="codeph">cluster_kerberos_enabled</code></td>
+<td class="cellalignment68" headers="d15202e713 d15202e655"><code class="codeph">true</code> if Kerberos security is enabled; <code class="codeph">false</code> otherwise.</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e724" headers="d15202e653"><code class="codeph">cluster_kerberos_kdc_hosts</code></td>
+<td class="cellalignment68" headers="d15202e724 d15202e655">A list of key distribution center (KDC) hosts external to Oracle Big Data Appliance. Returns an error if Kerberos is not enabled.</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e730" headers="d15202e653"><code class="codeph">cluster_kerberos_kdc_on_bda</code></td>
+<td class="cellalignment68" headers="d15202e730 d15202e655"><code class="codeph">true</code> if the Kerberos KDC is on Oracle Big Data Appliance; <code class="codeph">false</code> otherwise. Returns an error if Kerberos is not enabled.</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e741" headers="d15202e653"><code class="codeph">cluster_kerberos_realm</code></td>
+<td class="cellalignment68" headers="d15202e741 d15202e655">The Kerberos realm for the cluster. Returns an error if Kerberos is not enabled.</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e748" headers="d15202e653"><code class="codeph">cluster_sentry_enabled</code></td>
+<td class="cellalignment68" headers="d15202e748 d15202e655"><code class="codeph">true</code> if Sentry is configured on the cluster; <code class="codeph">false</code> otherwise.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section" id="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__SERVERPARAMETERS-43A5E5EE">
+<p class="subhead1">Server Parameters</p>
+<p>The following table describes the server parameters for <code class="codeph">bdacli getinfo</code>.</p>
+<div class="tblformal" id="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__GUID-F76190AA-460A-447F-8AB4-28F6F0CBCC72">
+<table class="cellalignment77" summary="The following table lists the parameters for this command in the left column, &ldquo;Parameter,&rdquo; and describes the return values for each on in the right column, &ldquo;Returns.&rdquo;">
+<thead>
+<tr class="cellalignment68">
+<th class="cellalignment81" id="d15202e774">Parameter</th>
+<th class="cellalignment81" id="d15202e776">Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e780" headers="d15202e774"><code class="codeph">server_mammoth_installed</code></td>
+<td class="cellalignment68" headers="d15202e780 d15202e776"><code class="codeph">true</code> if the Mammoth utility has deployed the Oracle Big Data Appliance software on this server; <code class="codeph">false</code> otherwise.</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e791" headers="d15202e774"><code class="codeph">server_name</code></td>
+<td class="cellalignment68" headers="d15202e791 d15202e776">The name of this server on the client network, such as bda1node01.</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e797" headers="d15202e774"><code class="codeph">server_os_version</code></td>
+<td class="cellalignment68" headers="d15202e797 d15202e776">The version of Oracle Linux on this server, such as 6.4.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section" id="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__ONE-OFFPATCHPARAMETERS-43A5E9AA">
+<p class="subhead1">One-Off Patch Parameters</p>
+<p>The following table describes the one-off patch parameters for <code class="codeph">bdacli getinfo</code>.</p>
+<div class="tblformal" id="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__GUID-1237456F-6EFD-40A6-8C1E-A72F4EC7AD6F">
+<table class="cellalignment77" summary="The following table lists the parameters for this command in the left column, &ldquo;Parameter,&rdquo; and describes the return values for each on in the right column, &ldquo;Returns.&rdquo;">
+<thead>
+<tr class="cellalignment68">
+<th class="cellalignment81" id="d15202e818">Parameter</th>
+<th class="cellalignment81" id="d15202e820">Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e824" headers="d15202e818"><code class="codeph">available_patches</code></td>
+<td class="cellalignment68" headers="d15202e824 d15202e820">A list of valid patches available for installation. A valid patch has a directory under <code>/opt/oracle/bda/patches</code> or <code>/opt/oracle/BDAMammoth/patches</code> that contains a file named <code>inventory</code>.</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d15202e839" headers="d15202e818"><code class="codeph">installed_patches</code></td>
+<td class="cellalignment68" headers="d15202e839 d15202e820">A list of patches already installed. An installed patch has a directory in both <code>/opt/oracle/bda/patches</code> and <code>/opt/oracle/BDAMammoth/patches</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section"></div>
+<!-- class="section" -->
+<div class="section" id="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254__EXAMPLES-4407E785">
+<p class="subhead1">Examples</p>
+<p>The following commands provide information about the optional software on the cluster:</p>
+<pre dir="ltr">
+# <span class="bold">bdacli getinfo cluster_bdc_installed</span>
+true
+# <span class="bold">bdacli getinfo cluster_odi_version</span>
+11.1.1.7.0
+
+# bdacli getinfo cluster_hdfs_transparent_encryption_enabled
+true
+</pre>
+<p>The following command lists all switches on the current InfiniBand fabric. In this example, three <span>Oracle Big Data Cloud Machine</span> racks are on the fabric with the standard hardware configuration of one spine switch and two gateway switches each.</p>
+<pre dir="ltr">
+$ <span class="bold">bdacli getinfo ib_switches</span>
+bda1sw-iba0 00:21:28:6c:c8:af:a0:a0 36P
+bda1sw-ibb0 00:21:28:46:9e:3b:a0:a0 36P
+bda1sw-ibs0 00:21:28:6c:c8:ae:a0:a0 36P
+bda2sw-ib1 00:21:28:46:98:d3:a0:a0 36P
+bda2sw-ib2 00:21:28:de:ae:4a:c0:a0 GTW
+bda2sw-ib3 00:21:28:c3:70:9a:c0:a0 GTW
+bda3sw-ib1 00:21:28:46:90:ee:a0:a0 36P
+bda3sw-ib2 00:21:28:df:34:8a:c0:a0 GTW
+bda3sw-ib3 00:21:28:df:0f:0a:c0:a0 GTW
+bda4sw-ib1 00:21:28:e8:af:23:a0:a0 36P
+bda4sw-ib2 00:10:e0:0c:48:a0:c0:a0 GTW
+bda4sw-ib3 00:21:28:f4:82:ce:c0:a0 GTW
+</pre>
+<p>This example installs patch 1234:</p>
+<pre dir="ltr">
+$ <span class="bold">bdacli add patch 1234</span>
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment67">
+<tr>
+<td class="cellalignment74">
+<table class="cellalignment72">
+<tr>
+<td class="cellalignment71"><a href="GUID-18540940-7342-40CF-8738-22B5119A57B0.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment71"><a href="GUID-FDC447CB-05D8-457F-8CD3-97D0A189EACE.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment76">
+<table class="cellalignment70">
+<tr>
+<td class="cellalignment71"><a href="http://docs.oracle.com/cloud-machine/latest/"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment71"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment71"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment71"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

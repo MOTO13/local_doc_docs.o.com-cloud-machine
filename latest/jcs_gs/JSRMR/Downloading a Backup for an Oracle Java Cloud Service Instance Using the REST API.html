@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="Initiating%20an%20On-demand%20Backup%20for%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html" title="Previous" type="text/html">
+        <link rel="next" href="Restoring%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20From%20a%20Backup%20Using%20the%20REST%20API.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="Initiating%20an%20On-demand%20Backup%20for%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="Restoring%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20From%20a%20Backup%20Using%20the%20REST%20API.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">Downloading or Archiving a Backup for a Service Instance</h2> 
+<div class="body taskbody">
+ <p class="shortdesc">When you download a backup for an Oracle Java Cloud Service instance, you move the backup from the cloud storage container (on Oracle Public Cloud) or the NFS remote storage disk (on Oracle Cloud Machine) to block storage that is on the Administration Server. When you archive a backup for a service instance, you move the backup from block storage on the Administration Server VM to the cloud storage container (on Oracle Public Cloud) or the NFS remote storage disk (on Oracle Cloud Machine).</p> 
+ <div class="section">
+  <p class="p"><strong class="ph b">Note:</strong> The cURL command examples use the URL structure <samp class="ph codeph">https://rest_server_url/<em class="ph i">resource-path</em></samp>, where <samp class="ph codeph">rest_server_url</samp> is the Oracle Public Cloud or Oracle Cloud Machine REST server to contact for your identity domain or tenant name. See <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a> for the appropriate URL structure to use on Oracle Public Cloud or Oracle Cloud Machine.</p> 
+  <p class="p">To download a backup for an Oracle Java Cloud Service instance:</p> 
+ </div> 
+ <ol class="ol steps">
+  <li class="li step stepexpand"><span class="ph cmd">Review all the backups that are currently defined to retrieve the ID of the backup you want to download.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/api/v1.1/instancemgmt/ExampleIdentityDomain/services/jaas/instances/ExampleInstance/backups</strong>
+</pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">For more information, see <a class="xref" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-backups-get.html" target="_blank">View All Backups</a>.</p> 
+    <p class="p">The following example shows the contents of the response in JSON format. There is one completed backup.</p> 
+    <pre class="pre codeblock">{
+    "backups":[
+    {
+        "backupId":"1449345407188",
+        "jobId":"8218",
+        "backupStartDate":"Sat Dec 05 19:56:47 GMT 2015",
+        "backupCompleteDate":"Sat Dec 05 19:59:21 GMT 2015",
+        "expirationDate":null,
+        "initiatedBy":"username",
+        "full":true,
+        "local":false,
+        "localCopy":true,
+        "databaseIncluded":false,
+        "size":"23MB",
+        "sizeInBytes":24165234,
+        "status":"Completed",
+        "href":"https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/ExampleInstance\/backups\/1449345407188",
+        "serviceComponents":[
+        {
+            "type":"OTD",
+            "version":"11.1.1.9.x"
+        },
+        {
+            "type":"WLS",
+            "version":"12.1.3.0.x"
+        },
+        {
+            "type":"JDK",
+            "version":"1.7.0_xx"
+        },
+        {
+            "type":"OTD_JDK",
+            "version":"1.7.0_xx"
+        }],
+        "notes":"On-demand full backup request."
+    }]
+}</pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">Create a JSON document, <samp class="ph codeph">download.json</samp>, that defines the details of the download operation.</span>
+   <div class="itemgroup info">
+    <p class="p">The following shows an example of the request document in JSON format. In this example, the <samp class="ph codeph">"local"</samp> attribute is set to <samp class="ph codeph">true</samp>.</p> 
+    <p class="p">For more information about the request attribute, see <a class="xref" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-backups-%7BbackupId%7D-post.html" target="_blank">Move a Backup (Download or Archive)</a>.</p> 
+    <pre class="pre codeblock">{
+    "local": true
+}</pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">Download the backup, passing the JSON document created in step 2.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X POST -u username:userPassword1! -d @download.json -H "Content-Type:application/json" -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/api/v1.1/instancemgmt/ExampleIdentityDomain/services/jaas/instances/ExampleInstance/backups/1449345407188</strong>
+</pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">POST</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-d</samp> option to identify the request document, in JSON format, on the local machine (<samp class="ph codeph">download.json</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to identify the content type as <samp class="ph codeph">application/json</samp> and define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">For more information about the REST resource, see <a class="xref" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-backups-%7BbackupId%7D-post.html" target="_blank">Move a Backup (Download or Archive)</a>.</p> 
+    <p class="p">The following shows an example of the response body in JSON format, including the backup URI that you can use to view the backup.</p> 
+    <pre class="pre codeblock">{
+    "operationName":"move-backup",
+    "target_uri":"https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/ExampleInstance\/backups\/1449345407188",
+    "job_id":"8326"
+}</pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">View detailed information about the backup using the backup URI (<samp class="ph codeph">target_uri</samp>) returned in the response body.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "-ID-TENANT-NAME:ExampleIdentityDomain"https://rest_server_url/paas/api/v1.1/instancemgmt/ExampleIdentityDomain/services/jaas/instances/ExampleInstance/backups/1449345407188</strong>
+</pre> 
+    <p class="p">Optionally, you can include information about related backups by specifying the <samp class="ph codeph">?includeLinkedDetails</samp> query parameter.</p> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">For more information, see <a class="xref" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-backups-%7BbackupId%7D-get.html" target="_blank">View a Backup</a></p> 
+    <p class="p">The following example shows the response body in JSON format on Oracle Public Cloud. Note the <samp class="ph codeph">download</samp> operation in <samp class="ph codeph">jobHistory</samp>.</p> 
+    <pre class="pre codeblock">{
+    "backupId":"1449345407188",
+    "jobId":"8218",
+    "backupStartDate":"Sat Dec 05 19:56:47 GMT 2015",
+    "backupCompleteDate":"Sat Dec 05 19:59:21 GMT 2015",
+    "expirationDate":null,
+    "initiatedBy":"username",
+    "full":true,
+    "local":true,
+    "localCopy":false,
+    "databaseIncluded":false,
+    "size":"23MB",
+    "sizeInBytes":24165234,
+    "status":"Completed",
+    "href":"https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/ExampleInstance\/backups\/1449345407188",
+    "serviceComponents":[
+    {
+        "type":"OTD",
+        "version":"11.1.1.9.x"
+    },
+    {
+        "type":"OTD_JDK",
+        "version":"1.7.0_xx"
+    },
+    {
+        "type":"JDK",
+        "version":"1.7.0_xx"
+    },
+    {
+        "type":"WLS",
+        "version":"12.1.3.0.x"
+    }],
+    "jobHistory":[
+    {
+        "operation":"backup",
+        "jobId":"8218",
+        "status":"Completed",
+        "startDate":"Sat Dec 05 19:56:47 GMT 2015",
+        "completeDate":"Sat Dec 05 19:59:21 GMT 2015",
+        "statusDetails":"Backup health check passed...Locked the WebLogic Server domain configuration...
+           Started the backup of configuration data for WebLogic Server managed servers on these hosts: exampleinstance-wls-1 ...
+           Completed the backup of configuration data for WebLogic Server managed servers on these hosts: exampleinstance-wls-1 ...
+           Unlocked the WebLogic Server domain configuration...Uploading the backup archive to the Oracle Storage Cloud Service container...
+           Uploaded the backup archive to the Oracle Storage Cloud Service container..."
+    },
+    {
+        "operation":"<strong class="ph b">download</strong>",
+        "jobId":"8326",
+        "status":"Completed",
+        "startDate":"Mon Dec 07 23:33:53 GMT 2015",
+        "completeDate":"Mon Dec 07 23:34:24 GMT 2015",
+        "statusDetails":"The backup archive already exists in the block storage and does not need to be downloaded from the Oracle Storage Cloud Service container...
+           Deleting the backup archive in the Oracle Storage Cloud Service container...
+           Deleted the backup archive in the Oracle Storage Cloud Service container..."
+    }],
+    "notes":"On-demand full backup request."
+}</pre> 
+    <p class="p">On Oracle Cloud Machine, you would see similar output but the status messages would be different. For the <samp class="ph codeph"><strong class="ph b">download</strong></samp> operation, you would see the following <samp class="ph codeph">statusDetails</samp> instead:</p> 
+    <pre class="pre codeblock">        "statusDetails":"The backup archive already exists in the block storage and does not need to be downloaded from the Oracle Storage Cloud Service container...
+          Deleting the backup archive from the remote filesystem...
+          Deleted \/tmp\/far_storage_root\/JCSBackup_ExampleInstance\/2015-12-30\/P_1449345407188.zip from the remote filesystem"</pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">To archive the backup, create a JSON document, <samp class="ph codeph">archive.json</samp>, that defines the details of the archive operation.</span>
+   <div class="itemgroup info">
+    <p class="p">The following shows an example of the request document in JSON format. In this example, the <samp class="ph codeph">"local"</samp> attribute is set to <samp class="ph codeph">false</samp>.</p> 
+    <pre class="pre codeblock">{
+    "local": false
+}
+</pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">Archive the backup, passing the JSON document created in step 5.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X POST -u username:userPassword1! -d @archive.json -H "Content-Type:application/json" -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/api/v1.1/instancemgmt/ExampleIdentityDomain/services/jaas/instances/ExampleInstance/backups/1443035291288</strong>
+</pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">POST</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-d</samp> option to identify the request document, in JSON format, on the local machine (<samp class="ph codeph">archive.json</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to identify the content type as <samp class="ph codeph">application/json</samp> and define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">The following shows an example of the response body in JSON format, including the backup URI that you can use to view the backup.</p> 
+    <pre class="pre codeblock">{
+    "operationName":"move-backup",
+    "target_uri":"https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/ExampleInstance\/backups\/1449345407188",
+    "job_id":"8327"
+}</pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">View detailed information about the backup using the backup URI (<samp class="ph codeph">target_uri</samp>) returned in the response body.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/api/v1.1/instancemgmt/ExampleIdentityDomain/services/jaas/instances/ExampleInstance/backups/1443035291288</strong>
+</pre> 
+    <p class="p">Optionally, you can include information about related backups by specifying the <samp class="ph codeph">?includeLinkedDetails</samp> query parameter.</p> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">The following example shows the response body in JSON format on Oracle Public Cloud. Note the <samp class="ph codeph">upload</samp> operation within <samp class="ph codeph">jobHistory</samp>.</p> 
+    <pre class="pre codeblock">{
+    "backupId":"1449345407188",
+    "jobId":"8218",
+    "backupStartDate":"Sat Dec 05 19:56:47 GMT 2015",
+    "backupCompleteDate":"Sat Dec 05 19:59:21 GMT 2015",
+    "expirationDate":null,
+    "initiatedBy":"username",
+    "full":true,
+    "local":false,
+    "localCopy":false,
+    "databaseIncluded":false,
+    "size":"23MB",
+    "sizeInBytes":24165234,
+    "status":"Completed",
+    "href":"https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/ExampleInstance\/backups\/1449345407188",
+    "serviceComponents":[
+    {
+        "type":"WLS",
+        "version":"12.1.3.0.x"
+    },
+    {
+        "type":"OTD_JDK",
+        "version":"1.7.0_xx"
+    },
+    {
+        "type":"OTD",
+        "version":"11.1.1.9.x"
+    },
+    {
+        "type":"JDK",
+        "version":"1.7.0_xxx"
+    }],
+    "jobHistory":[
+    {
+        "operation":"backup",
+        "jobId":"8218",
+        "status":"Completed",
+        "startDate":"Sat Dec 05 19:56:47 GMT 2015",
+        "completeDate":"Sat Dec 05 19:59:21 GMT 2015",
+        "statusDetails":"Backup health check passed...Locked the WebLogic Server domain configuration...
+           Started the backup of configuration data for WebLogic Server managed servers on these hosts: exampleinstance-wls-1 ...
+           Completed the backup of configuration data for WebLogic Server managed servers on these hosts: exampleinstance-wls-1 ...
+           Unlocked the WebLogic Server domain configuration...Uploading the backup archive to the Oracle Storage Cloud Service container...
+           Uploaded the backup archive to the Oracle Storage Cloud Service container..."
+    },
+    {
+        "operation":"<strong class="ph b">upload</strong>",
+        "jobId":"8327",
+        "status":"Completed",
+        "startDate":"Mon Dec 07 23:44:36 GMT 2015",
+        "completeDate":"Mon Dec 07 23:45:37 GMT 2015",
+        "statusDetails":"Uploading the backup archive to the Oracle Storage Cloud Service container...
+           Uploaded the backup archive to the Oracle Storage Cloud Service container...
+           Deleted the local backup..."
+    },
+    {
+        "operation":"download",
+        "jobId":"8326",
+        "status":"Completed",
+        "startDate":"Mon Dec 07 23:33:53 GMT 2015",
+        "completeDate":"Mon Dec 07 23:34:24 GMT 2015",
+        "statusDetails":"The backup archive already exists in the block storage and does not need to be downloaded from the Oracle Storage Cloud Service container...
+           Deleting the backup archive in the Oracle Storage Cloud Service container...
+           Deleted the backup archive in the Oracle Storage Cloud Service container..."
+    }],
+    "notes":"On-demand full backup request."
+}</pre> 
+    <p class="p">On Oracle Cloud Machine, you would see similar output but the status messages would be different. For the <samp class="ph codeph"><strong class="ph b">upload</strong></samp> operation, you would see the following <samp class="ph codeph">statusDetails</samp> instead:</p> 
+    <pre class="pre codeblock">        "statusDetails":"Uploading the backup archive to the remote filesystem...
+          Uploaded the backup archive to the remote filesystem
+          Deleted the local backup..."</pre> 
+   </div></li> 
+ </ol> 
+</div></div>
+        </article>
+    </body>
+</html>

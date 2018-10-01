@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Exploring the Oracle Java Cloud Service Console</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can use the Oracle Java Cloud Service Console to view all Oracle Java Cloud Service instances." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-01F749C8-3463-4F6F-906B-2F6B27BA7C0E.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-6A53CD39-AFEB-4C1B-BDC0-6110897F635E.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-19357F9E-2790-48E0-81C0-0AD7FD4E33EE"></a> <span id="PAGE" style="display:none;">27/131</span> <!-- End Header -->
+<a id="JSCUG3273"></a><a id="JSCUG3274"></a><a id="JSCUG3275"></a><a id="JSCUG3276"></a><a id="JSCUG3135"></a>
+<h1 id="JSCUG-GUID-19357F9E-2790-48E0-81C0-0AD7FD4E33EE" class="sect1">Exploring the Oracle Java Cloud Service Console</h1>
+<div>
+<p>You can use the Oracle Java Cloud Service Console to view all Oracle Java Cloud Service instances.</p>
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-19357F9E-2790-48E0-81C0-0AD7FD4E33EE.htm#GUID-19357F9E-2790-48E0-81C0-0AD7FD4E33EE__CHDJAAII">What You Can Do from the Oracle Java Cloud Service Console</a></p>
+</li>
+<li>
+<p><a href="GUID-19357F9E-2790-48E0-81C0-0AD7FD4E33EE.htm#GUID-19357F9E-2790-48E0-81C0-0AD7FD4E33EE__CHDEIGED">What You See on the Oracle Java Cloud Service Console</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-19357F9E-2790-48E0-81C0-0AD7FD4E33EE__CHDJAAII">
+<p class="subhead1">What You Can Do from the Oracle Java Cloud Service Console</p>
+<p>Use Oracle Java Cloud Service Console to perform the tasks described in the following topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2" title="To create a new Oracle Java Cloud Service instance, use the Provision New Java Cloud Service wizard as described in the following sections.">Creating an Oracle Java Cloud Service Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-8B518713-F8F0-475F-A7AE-2ABEDBD7BDC7.htm" title="From the Oracle Java Cloud Service Console, you can:">Viewing All Oracle Java Cloud Service Instances</a></p>
+</li>
+<li>
+<p><a href="GUID-FA69844B-7BAF-4B67-AF29-15CAB3ED89FB.htm#GUID-FA69844B-7BAF-4B67-AF29-15CAB3ED89FB" title="From the Oracle Java Cloud Service Instance page, you can:">Viewing Detailed Information About an Oracle Java Cloud Service Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-B76602B2-156D-4EAE-91F4-08A0520844FD.htm#GUID-B76602B2-156D-4EAE-91F4-08A0520844FD" title="Oracle Java Cloud Service provides a graph view that enables you to view heap usage metrics and response times for service instances.">Viewing Service Metrics in Oracle Java Cloud Service</a></p>
+</li>
+<li>
+<p><a href="GUID-45D5725E-A2D4-4228-B082-1ACD18A11ECE.htm" title="Use the Activity page to view activities for Oracle Java Cloud Service instances in your identity domain. You can restrict the list of activities displayed by using search filters.">Viewing Activity for Service Instances in an Identity Domain</a></p>
+</li>
+<li>
+<p><a href="GUID-840351A6-E2E8-46A9-ABA7-E91B6BDECDF2.htm" title="Use the SSH Access page to view and manage SSH keys for Oracle Java Cloud Service instances in your identity domain.">Managing SSH Access for an Oracle Java Cloud Service Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-A58DDD63-CD0F-49F4-AF78-AF4FA5C42C3A.htm#GUID-A58DDD63-CD0F-49F4-AF78-AF4FA5C42C3A" title="When you no longer require an Oracle Java Cloud Service instance, you can delete it. Your account is no longer charged for the instance.">Deleting an Oracle Java Cloud Service Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-D2461227-4463-471D-A2E2-41E63AE0D092.htm#GUID-D2461227-4463-471D-A2E2-41E63AE0D092" title="You can use various consoles to administer the software that an Oracle Java Cloud Service instance is running and to also administer related Oracle Cloud services.">Accessing the Administrative Consoles Used by Oracle Java Cloud Service</a></p>
+</li>
+<li>
+<p><a href="GUID-4D705FE3-4FB0-4EEE-B5C9-86F3A20C5869.htm#GUID-4D705FE3-4FB0-4EEE-B5C9-86F3A20C5869" title="Oracle Traffic Director is used as the load balancer for an Oracle Java Cloud Service instance.">Configuring a Load Balancer for an Oracle Java Cloud Service Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-A0491DD0-6E6C-405D-A00C-A213AABDF91C.htm#GUID-E77701F5-F6E9-4696-9A52-37FAAC26013A" title="You can stop and start an Oracle Java Cloud Service instance through the Oracle Java Cloud Service Instance Overview page or the Topology page.">Stopping and Starting an Oracle Java Cloud Service Instance</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-19357F9E-2790-48E0-81C0-0AD7FD4E33EE__CHDEIGED">
+<p class="subhead1">What You See on the Oracle Java Cloud Service Console</p>
+<p>When you access Oracle Java Cloud Service the first time for an account, you will see the Welcome page. Click <span class="bold">Services</span> to view the Oracle Cloud Service Console home page.</p>
+<p>There are additional tabs on the Oracle Java Cloud Service Console: <span class="bold">Activity</span> and <span class="bold">SSH Access</span>. Refer to these topics in <cite>Using the Platform Services Console</cite> for more information about these tabs:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a class="olink PSMON-GUID-2BDD836D-FC21-4FA1-9063-9596A54E7075" target="_blank" href="../PSMON/GUID-2BDD836D-FC21-4FA1-9063-9596A54E7075.htm#PSMON-GUID-2BDD836D-FC21-4FA1-9063-9596A54E7075">Exploring the Platform Services Activity Page</a></p>
+</li>
+<li>
+<p><a class="olink PSMON-GUID-91A7AA41-E1CE-4C86-BAD9-CC1CBF307D43" target="_blank" href="../PSMON/GUID-91A7AA41-E1CE-4C86-BAD9-CC1CBF307D43.htm#PSMON-GUID-91A7AA41-E1CE-4C86-BAD9-CC1CBF307D43">Exploring the Platform Services SSH Access Page</a></p>
+</li>
+</ul>
+<p>The following table describes the key information shown on the Oracle Java Cloud Service Console. The information displayed in the Oracle Java Cloud Service Console will vary based on whether or not you have created Oracle Java Cloud Service instances. When you access the Oracle Java Cloud Service Console for your account for the first time and there are no Oracle Java Cloud Service instances created, any service instance details will not be displayed. In this case, you can create a service instance by clicking <span class="bold">Create Service</span> and access information about the prerequisites and steps for creating an instance.</p>
+<div class="tblformalwide" id="GUID-19357F9E-2790-48E0-81C0-0AD7FD4E33EE__GUID-ACB42585-FAE9-4F62-8713-023D185D2F8A">
+<table class="cellalignment30" summary="Description of each element on the Oracle Java as a Service Console page after you have created service instances.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment35" id="d15264e158">Element</th>
+<th class="cellalignment52" id="d15264e161">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e166" headers="d15264e158"><img width="47" height="46" src="img/GUID-0B293D49-C292-44DC-9CA8-C54D59F6E05E-default.png" alt="Sevices menu icon" title="Sevices menu icon" /> (Next to the word Oracle)</td>
+<td class="cellalignment53" headers="d15264e166 d15264e161">
+<p>Click and select a choice from the menu to open the service console for one of the Oracle Cloud Services to which you subscribe.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e175" headers="d15264e158">
+<p><img width="21" height="23" src="img/GUID-6FE3B404-11B7-4838-A3ED-10902FC1F716-default.png" alt="Service type menu icon" title="Service type menu icon" /> (Next to the service name)</p>
+</td>
+<td class="cellalignment53" headers="d15264e175 d15264e161">
+<p>Click and select a choice from the drop-down menu to open the service console for one of the Oracle Cloud Platform Services to which you subscribe.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e185" headers="d15264e158">
+<p><span class="bold">Services</span></p>
+</td>
+<td class="cellalignment53" headers="d15264e185 d15264e161">
+<p>Click to redisplay this page.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e193" headers="d15264e158">
+<p><span class="bold">Activity</span></p>
+</td>
+<td class="cellalignment53" headers="d15264e193 d15264e161">
+<p>Click to view all operations performed on your service instances. See <a href="GUID-45D5725E-A2D4-4228-B082-1ACD18A11ECE.htm" title="Use the Activity page to view activities for Oracle Java Cloud Service instances in your identity domain. You can restrict the list of activities displayed by using search filters.">Viewing Activity for Service Instances in an Identity Domain</a>.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e207" headers="d15264e158">
+<p><span class="bold">SSH Access</span></p>
+</td>
+<td class="cellalignment53" headers="d15264e207 d15264e161">
+<p>Click to manage SSH keys for your service instances. See <a href="GUID-840351A6-E2E8-46A9-ABA7-E91B6BDECDF2.htm" title="Use the SSH Access page to view and manage SSH keys for Oracle Java Cloud Service instances in your identity domain.">Managing SSH Access for an Oracle Java Cloud Service Instance</a>.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e224" headers="d15264e158">
+<p><span class="bold">Welcome!</span></p>
+</td>
+<td class="cellalignment53" headers="d15264e224 d15264e161">
+<p>Click to return to the Welcome page.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e232" headers="d15264e158">
+<p><span class="bold">REST API</span></p>
+</td>
+<td class="cellalignment53" headers="d15264e232 d15264e161">
+<p>Opens the REST API documentation.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e240" headers="d15264e158">
+<p>Services (Summary panel)</p>
+</td>
+<td class="cellalignment53" headers="d15264e240 d15264e161">
+<p>Number of Oracle Java Cloud Service instances in the identity domain.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e247" headers="d15264e158">
+<p>OCPUs (Summary panel)</p>
+</td>
+<td class="cellalignment53" headers="d15264e247 d15264e161">
+<p>Total number of Oracle Compute Units (OCPUs) allocated across all Oracle Java Cloud Service instances.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e254" headers="d15264e158">
+<p>Memory (Summary panel)</p>
+</td>
+<td class="cellalignment53" headers="d15264e254 d15264e161">
+<p>Total amount of memory in GBs allocated across all Oracle Java Cloud Service instances.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e261" headers="d15264e158">
+<p>Storage (Summary panel)</p>
+</td>
+<td class="cellalignment53" headers="d15264e261 d15264e161">
+<p>Total amount of block storage in GBs allocated across all Oracle Java Cloud Service instances.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e269" headers="d15264e158">
+<p>Public IPs (Summary panel)</p>
+</td>
+<td class="cellalignment53" headers="d15264e269 d15264e161">
+<p>Total number of IP reservations allocated across all Oracle Java Cloud Service instances.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e276" headers="d15264e158">
+<p>Services (heading)</p>
+</td>
+<td class="cellalignment53" headers="d15264e276 d15264e161">
+<p>All Oracle Java Cloud Service instances in the identity domain.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e283" headers="d15264e158">
+<p><img width="193" height="18" src="img/GUID-BF142E18-43BD-40B8-9008-EB24FCD0DD6B-default.gif" alt="Search field" title="Search field" /></p>
+</td>
+<td class="cellalignment53" headers="d15264e283 d15264e161">
+<p>Enter a full or partial service instance name to filter the list of service instances to include only the services that contain the string in their service name.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e292" headers="d15264e158">
+<p><img width="23" height="22" src="img/GUID-08E43FD3-B338-4802-8EBB-C8ABD091FB88-default.png" alt="Refresh" title="Refresh" /></p>
+</td>
+<td class="cellalignment53" headers="d15264e292 d15264e161">
+<p>Click to refresh the page. The date and time the page was last refreshed is displayed adjacent to this button.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e301" headers="d15264e158">
+<p><span class="bold">Create Service</span></p>
+</td>
+<td class="cellalignment53" headers="d15264e301 d15264e161">
+<p>Create a new Oracle Java Cloud Service Instance. See <a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2" title="To create a new Oracle Java Cloud Service instance, use the Provision New Java Cloud Service wizard as described in the following sections.">Creating an Oracle Java Cloud Service Instance</a>.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e316" headers="d15264e158">
+<p><img width="49" height="38" src="img/GUID-386E6B18-1D61-47C7-9AB2-4B6634CB7D33-default.gif" alt="Instance Up" title="Instance Up" /></p>
+</td>
+<td class="cellalignment53" headers="d15264e316 d15264e161">
+<p>Oracle Java Cloud Service instance. Click this icon to view more details.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e326" headers="d15264e158">
+<p><img width="24" height="24" src="img/GUID-C78AC3F3-9562-4D4D-8F7C-F4255818AC23-default.png" alt="In Progress Icon" title="In Progress Icon" /></p>
+</td>
+<td class="cellalignment53" headers="d15264e326 d15264e161">
+<p>Status icon indicating that the Oracle Java Cloud Service instance is being created.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e335" headers="d15264e158">
+<p><img width="24" height="24" src="img/GUID-7802916A-DBA3-4EB1-9DFD-3B08AA70FAE0-default.png" alt="maintenance icon" title="maintenance icon" /></p>
+</td>
+<td class="cellalignment53" headers="d15264e335 d15264e161">
+<p>Status icon indicating the Oracle Java Cloud Service instance is undergoing maintenance or terminating.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e344" headers="d15264e158">
+<p><img width="24" height="24" src="img/GUID-D0A97801-8D64-4538-8888-AC9D9AC55B90-default.png" alt="Failed or stopped icon." title="Failed or stopped icon." /></p>
+</td>
+<td class="cellalignment53" headers="d15264e344 d15264e161">
+<p>Status icon indicating that the Oracle Java Cloud Service instance is failed to be created. This icon can also mean that the service instance has stopped. See the Activity section of this page.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e353" headers="d15264e158">
+<p><span class="variable">service-name</span></p>
+</td>
+<td class="cellalignment53" headers="d15264e353 d15264e161">
+<p>Name of the Oracle Java Cloud Service instance. Click the name to view more details.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e361" headers="d15264e158">
+<p>Status</p>
+</td>
+<td class="cellalignment53" headers="d15264e361 d15264e161">
+<p>Status of the service instance. Valid values include: In Progress, Maintenance, Terminating, Stopped, and Failed.</p>
+<p>Click the status label to view progress messages.</p>
+<div class="infobox-note" id="GUID-19357F9E-2790-48E0-81C0-0AD7FD4E33EE__GUID-344D0253-60AC-4F42-9D82-54320AA70C9B">
+<p class="notep1">Note:</p>
+Running service instances do not display this field.</div>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e373" headers="d15264e158">
+<p>Version</p>
+</td>
+<td class="cellalignment53" headers="d15264e373 d15264e161">
+<p>Version of Oracle WebLogic Server configured for the Oracle Java Cloud Service instance. Valid values include: 12.2.1.2, 12.1.3.0 or 11.1.1.7.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e380" headers="d15264e158">
+<p>Edition</p>
+</td>
+<td class="cellalignment53" headers="d15264e380 d15264e161">
+<p>Software edition. Valid values include: Standard, Enterprise, or Suite.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e387" headers="d15264e158">
+<p>JDK</p>
+</td>
+<td class="cellalignment53" headers="d15264e387 d15264e161">JDK version used by the Oracle Java Cloud Service instance.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e393" headers="d15264e158">
+<p>Nodes</p>
+</td>
+<td class="cellalignment53" headers="d15264e393 d15264e161">
+<p>Number of nodes allocated for the Oracle Java Cloud Service instance.</p>
+<p><span>When Oracle Coherence is enabled for a service instance:</span> This number includes the application tier nodes (storage-disabled) and Coherence data tier nodes (storage-enabled).</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e404" headers="d15264e158">
+<p>Load Balancer</p>
+</td>
+<td class="cellalignment53" headers="d15264e404 d15264e161">
+<p>Flag indicating that the load balancer is configured for the Oracle Java Cloud Service instance. If not configured, this field does not appear.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e411" headers="d15264e158">
+<p>Coherence</p>
+</td>
+<td class="cellalignment53" headers="d15264e411 d15264e161">
+<p>Flag indicating that <span>Oracle Coherence</span> is configured for the Oracle Java Cloud Service instance. If not configured, this field does not appear.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e421" headers="d15264e158">
+<p>Submitted On</p>
+</td>
+<td class="cellalignment53" headers="d15264e421 d15264e161">
+<p>When status is In Progress, date and time in UTC that the Oracle Java Cloud Service instance creation request was submitted.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e428" headers="d15264e158">
+<p>Created On</p>
+</td>
+<td class="cellalignment53" headers="d15264e428 d15264e161">
+<p>When provisioning is complete, date and time in UTC that the Oracle Java Cloud Service instance was created.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e435" headers="d15264e158">
+<p>OCPUs</p>
+</td>
+<td class="cellalignment53" headers="d15264e435 d15264e161">
+<p>Number of OCPUs allocated for the Oracle Java Cloud Service instance.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e442" headers="d15264e158">
+<p>Memory</p>
+</td>
+<td class="cellalignment53" headers="d15264e442 d15264e161">
+<p>Amount of memory in GBs allocated for the Oracle Java Cloud Service instance.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e449" headers="d15264e158">
+<p>Storage</p>
+</td>
+<td class="cellalignment53" headers="d15264e449 d15264e161">
+<p>Amount of storage in GBs allocated for the Oracle Java Cloud Service instance.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e457" headers="d15264e158">
+<p><img width="14" height="15" src="img/GUID-D0E9F26E-D981-4A6C-9C9C-E53E732DCDA2-default.gif" alt="Menu icon" title="Menu icon" /> (adjacent to the service instance name)</p>
+</td>
+<td class="cellalignment53" headers="d15264e457 d15264e161">
+<p>Instance menu icon provides the following options:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Open WebLogic Server Console</span>&mdash;Open the WebLogic Console to administer your application environment. See <a href="GUID-D2461227-4463-471D-A2E2-41E63AE0D092.htm#GUID-D2461227-4463-471D-A2E2-41E63AE0D092" title="You can use various consoles to administer the software that an Oracle Java Cloud Service instance is running and to also administer related Oracle Cloud services.">Accessing the Administrative Consoles Used by Oracle Java Cloud Service</a>.</p>
+</li>
+<li>
+<p><span class="bold">Open Fusion Middleware Control Console</span>&mdash;Open Fusion Middleware Control to administer your application environment. See <a href="GUID-D2461227-4463-471D-A2E2-41E63AE0D092.htm#GUID-D2461227-4463-471D-A2E2-41E63AE0D092" title="You can use various consoles to administer the software that an Oracle Java Cloud Service instance is running and to also administer related Oracle Cloud services.">Accessing the Administrative Consoles Used by Oracle Java Cloud Service</a>.</p>
+</li>
+<li>
+<p><span class="bold">Open Load Balancer Console</span>&mdash;Open the console to administer the load balancer, if the load balancer has been configured for the service instance. See <a href="GUID-D2461227-4463-471D-A2E2-41E63AE0D092.htm#GUID-D2461227-4463-471D-A2E2-41E63AE0D092" title="You can use various consoles to administer the software that an Oracle Java Cloud Service instance is running and to also administer related Oracle Cloud services.">Accessing the Administrative Consoles Used by Oracle Java Cloud Service</a> and <a href="GUID-4D705FE3-4FB0-4EEE-B5C9-86F3A20C5869.htm#GUID-4D705FE3-4FB0-4EEE-B5C9-86F3A20C5869" title="Oracle Traffic Director is used as the load balancer for an Oracle Java Cloud Service instance.">Configuring a Load Balancer for an Oracle Java Cloud Service Instance</a>.</p>
+</li>
+<li>
+<p><span class="bold">View Service Metrics</span>&mdash;Displays a graph of heap usage for all servers, overall Managed Servers, Overall Administration Server, and individual Managed Servers. If a load balancer is present, you can select to see response time. See <a href="GUID-B76602B2-156D-4EAE-91F4-08A0520844FD.htm#GUID-B76602B2-156D-4EAE-91F4-08A0520844FD" title="Oracle Java Cloud Service provides a graph view that enables you to view heap usage metrics and response times for service instances.">Viewing Service Metrics in Oracle Java Cloud Service</a>.</p>
+</li>
+<li>
+<p><span class="bold">SSH Access</span>&mdash;Add public SSH keys to the VMs that make up this service instance. To manage the keys for all service instances see <a href="GUID-840351A6-E2E8-46A9-ABA7-E91B6BDECDF2.htm" title="Use the SSH Access page to view and manage SSH keys for Oracle Java Cloud Service instances in your identity domain.">Managing SSH Access for an Oracle Java Cloud Service Instance</a>.</p>
+</li>
+<li>
+<p><span class="bold">Delete</span>&mdash;Deletes the service instance. See <a href="GUID-A58DDD63-CD0F-49F4-AF78-AF4FA5C42C3A.htm#GUID-A58DDD63-CD0F-49F4-AF78-AF4FA5C42C3A" title="When you no longer require an Oracle Java Cloud Service instance, you can delete it. Your account is no longer charged for the instance.">Deleting an Oracle Java Cloud Service Instance</a>.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d15264e552" headers="d15264e158">
+<p>Service create or delete history</p>
+</td>
+<td class="cellalignment53" headers="d15264e552 d15264e161">
+<p>Shows details about created or deleted service instances.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Range</span>&mdash;Specifies a range of days for which you are interested in viewing created and failed service instances.</p>
+</li>
+<li>
+<p><span class="bold">Show only failed attempts</span>&mdash;Check this box if you want to see failed attempts only.</p>
+</li>
+<li>
+<p><span class="bold">Details</span>&mdash;Displays system messages logged during the creation or deletion process. Messages include information about auto-retry attempts.</p>
+</li>
+<li>
+<p><span class="bold">Complete Cleanup</span>&mdash; This button appears only if there are failed resources created during a successful auto-retry process. If you select this button, the failed resources are deleted. You might have to press the button again and wait, repeating this process until the button is no longer displayed.</p>
+</li>
+<li>
+<p><span class="bold">Retry Delete</span>&mdash;This button appears only if an attempt to delete a failed service instances is unsuccessful. The software cleans up failed resources and tries again to delete the service instance. You might have to press the button again and wait, repeating this process until the button is no longer displayed.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-01F749C8-3463-4F6F-906B-2F6B27BA7C0E.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-6A53CD39-AFEB-4C1B-BDC0-6110897F635E.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

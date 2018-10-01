@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Creating Instances Using Orchestrations with Custom Configurations</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can create orchestrations with custom configurations for multitier application deployment." />
+<meta name="dcterms.created" content="2018-05-15T07:53:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E62130-11" />
+<meta name="dcterms.isVersionOf" content="ELUSE" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-B4DECE8C-6E30-4538-9047-70E05AC6720D.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-232E5BCE-42F5-412E-AD6D-543A2A8024EA.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUSE.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-D686EFFB-B862-452A-A4C1-9C9291C58518"></a> <span id="PAGE" style="display:none;">47/81</span> <!-- End Header -->
+<a id="ELUSE195"></a><a id="ELUSE193"></a>
+<h1 id="ELUSE-GUID-D686EFFB-B862-452A-A4C1-9C9291C58518" class="sect1">Creating Instances Using Orchestrations with Custom Configurations</h1>
+<div>
+<p>You can create orchestrations with custom configurations for multitier application deployment.</p>
+<div class="section">
+<p class="subhead1">Prerequisites</p>
+<p>For instances to be launched using the orchestration, you must define the following elements for the orchestration:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>SSH key</p>
+</li>
+<li>
+<p>Network configuration.</p>
+</li>
+<li>
+<p>Storage volumes</p>
+</li>
+</ul>
+<p>You can also save the orchestration as a deployment plan for creating other orchestrations.</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Log in to the UI and go to the <span class="bold">Self Service Portal</span>.</span></li>
+<li class="stepexpand"><span>In the <span class="bold">Self Service Portal</span>, click the <span class="bold">Home</span> tab.</span></li>
+<li class="stepexpand"><span>In the <span class="bold">Services</span> section, click <span class="bold">Request New Service</span>.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Select</span> for creating an orchestration to create a set of instances with custom configurations for multitier applications.</span>
+<div>The <span class="wintitle">Request Orchestration</span> wizard is displayed.</div>
+</li>
+<li class="stepexpand"><span>In the <span class="wintitle">Request Orchestration: General</span> step, enter the following details:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>Select the Oracle Compute Site.</p>
+</li>
+<li>
+<p>In the <span class="bold">Name</span> field, enter a name for the orchestration.</p>
+</li>
+<li>
+<p>(Optional) Provide a description for the orchestration.</p>
+</li>
+<li>
+<p>Select <span class="bold">None</span> if you want to specify the orchestration elements in the wizard or you can select a saved JSON file for the orchestration or a deployment plan to create the orchestration.</p>
+</li>
+<li>
+<p>Select to start the orchestration immediately or schedule when to start and end the orchestration.</p>
+</li>
+</ul>
+<p>Click <span class="bold">Next</span>.</p>
+</div>
+</li>
+<li class="stepexpand"><span>In the Request Orchestration: Deployment Configuration step, click <span class="bold">Add Launch Plan</span> to define the configuration settings for one or more instances.</span>
+<div>Specify the configuration for the different elements of your orchestration using one or more launch plans.&nbsp;A launch plan defines the configuration settings for one or more instances. An orchestration consists of one or more launch plans and their startup order.&nbsp;</div>
+</li>
+<li class="stepexpand"><span>Enter a name for the launch plan and click <span class="bold">Add</span>.</span>
+<div>The launch plan name you entered appears in the launch panel.
+<div class="figure" id="GUID-D686EFFB-B862-452A-A4C1-9C9291C58518__GUID-F2FE8964-6E7F-451B-AC33-D0F81C6FC69C"><img width="572" height="384" src="img/GUID-BB6D64C1-C752-41AA-8B3F-57470A213175-default.png" alt="Description of GUID-BB6D64C1-C752-41AA-8B3F-57470A213175-default.png follows" title="Description of GUID-BB6D64C1-C752-41AA-8B3F-57470A213175-default.png follows" /><br />
+<a href="img_text/GUID-BB6D64C1-C752-41AA-8B3F-57470A213175-default.htm">Description of the illustration GUID-BB6D64C1-C752-41AA-8B3F-57470A213175-default.png</a></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>Click the newly created launch plan.</span>
+<div>The <span class="bold">Launch Configuration</span> and <span class="bold">Common Settings</span> tabs are displayed in the <span class="bold">Deployment Configuration</span> page.</div>
+</li>
+<li class="stepexpand"><span>In the <span class="bold">Launch Configuration</span> tab, enter the following details:</span>
+<ol>
+<li><span>Specify the high availability policy for an orchestration, which affects how the orchestration is managed by the system. You can select <span class="bold">Active</span>, <span class="bold">Monitor</span>, or <span class="bold">No High Availability</span>.</span></li>
+<li><span>To deploy the launch plan on different compute nodes, select <span class="bold">Deploy on Different Nodes</span>. Otherwise, the launch plans may be deployed on the same nodes.</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>In the <span class="bold">Common Settings</span> tab, enter the following details:</span>
+<ol>
+<li class="substepexpand"><span>Oracle Compute Template: Click the Search icon and select a template from the list.</span></li>
+<li class="substepexpand"><span>Shape: Select a shape from the drop-down list.</span></li>
+<li class="substepexpand"><span>Configure EM Agent: Select this option to configure the EM agent on the instances. This option is disabled if the tenant does not have access to the EoIB OMS and IPoIB instance storage networks that are required to deploy the management agent on the instances, and the selected template is not configured for the EM agent.</span></li>
+<li class="substepexpand"><span>Credentials: You can set the SSH key credentials for passwordless access to the instances. You can use any existing SSH key available in the tenant.</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>Select from Compute Site: Select any existing SSH keys from the list.</p>
+</li>
+<li>
+<p>Enter Key: If you generated an SSH key pair, then enter the SSH public key.</p>
+</li>
+<li>
+<p>Key is in a File: If you stored the SSH key in a file, then click&nbsp;<span class="bold">Choose File</span>&nbsp;and select the public key stored in a file.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="substepexpand"><span>Network Configuration: Click&nbsp;<span class="bold">Add</span>&nbsp;to select one or more network interfaces that will be assigned to the instances.&nbsp;The networks can be either a tenant or service network.</span>
+<div>
+<div class="infobox-note" id="GUID-D686EFFB-B862-452A-A4C1-9C9291C58518__GUID-303B5518-609E-4244-8F13-AB8F52D04E73">
+<p class="notep1">Note:</p>
+<div class="p">
+<ul style="list-style-type: disc;">
+<li>
+<p>If you have selected the <span class="bold">Configure EM Agent</span> option, you must add at least one network to your orchestration for it to successfully boot up.</p>
+</li>
+<li>
+<p>If you have not selected the <span class="bold">Configure EM Agent</span> option, you must add at least two networks to your orchestration for it to successfully boot up.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+<li class="substepexpand"><span>(Optional) Domain Name System (DNS) Configuration: Enter the DNS servers and search domains for the selected network.</span></li>
+<li class="substepexpand"><span>(Optional) Network Information System (NIS) Configuration: Enter the NIS Domain name and add the NIS servers list.</span></li>
+<li class="substepexpand"><span>(Optional) Storage Configuration: You can create and attach storage volumes to the instances. Click <span class="bold">Create</span> and enter the details of the storage volume such as name, size, and number of volumes.</span></li>
+</ol>
+<ol>
+<li><span>(Optional) Advance Configuration: You can specify additional attributes and tags to the instances. For attributes, click <span class="bold">Add</span>. In the <span class="bold">Add Attributes</span> window, specify the key and value for the attribute. In the <span class="bold">Tags</span> field, you can enter tags to identify the instance deployment request.</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>After you have defined the launch plan, you can add one or more instances that can use this launch plan. In the left navigation pane, click&nbsp;<span class="bold">Add Oracle VM Instance</span>.&nbsp;In the <span class="bold">Add VM Instance</span> window, specify the name and number of the VM instances to be created.&nbsp;If you are adding more than one instance, then the name you specify will be used as a prefix to generate a unique name for each VM instance. Define configuration settings at the instance level and override the settings defined at the launch plan level.</span>
+<div>
+<div class="figure" id="GUID-D686EFFB-B862-452A-A4C1-9C9291C58518__GUID-688C19DB-B7A4-4158-9790-246551B2072C"><img width="595" height="381" src="img/GUID-8C535BE8-537D-4965-A3C1-D9EAE2B06B45-default.png" alt="Description of GUID-8C535BE8-537D-4965-A3C1-D9EAE2B06B45-default.png follows" title="Description of GUID-8C535BE8-537D-4965-A3C1-D9EAE2B06B45-default.png follows" /><br />
+<a href="img_text/GUID-8C535BE8-537D-4965-A3C1-D9EAE2B06B45-default.htm">Description of the illustration GUID-8C535BE8-537D-4965-A3C1-D9EAE2B06B45-default.png</a>
+<div class="p">You can select each instance and override the common launch plan settings.
+<div class="figure" id="GUID-D686EFFB-B862-452A-A4C1-9C9291C58518__GUID-4999D369-393C-4E4E-B53F-F0F53CA73EEC"><img width="676" height="463" src="img/GUID-9776F1E6-36CD-428B-A8A4-D414F110247B-default.png" alt="Description of GUID-9776F1E6-36CD-428B-A8A4-D414F110247B-default.png follows" title="Description of GUID-9776F1E6-36CD-428B-A8A4-D414F110247B-default.png follows" /><br />
+<a href="img_text/GUID-9776F1E6-36CD-428B-A8A4-D414F110247B-default.htm">Description of the illustration GUID-9776F1E6-36CD-428B-A8A4-D414F110247B-default.png</a></div>
+<!-- class="figure" --></div>
+</div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Next</span>.</span>
+<div>The <span class="bold">Request Orchestration: Review</span> page is displayed.</div>
+</li>
+<li class="stepexpand"><span>To save the orchestration as a deployment plan that can be used for other orchestrations, click <span class="bold">Save as Deployment Plan</span>. You can also view the JSON format of the orchestration configuration. You can copy this orchestration to a file and save it for later use.</span>
+<div>For more information about orchestration templates, see <a href="GUID-F7D91076-1736-4B54-89D5-73C23A45BF85.htm" title="An orchestration is stored in a file in JSON format.">Orchestration Templates</a>.</div>
+</li>
+<li class="stepexpand"><span>Review the configuration parameters for creating the orchestration and click <span class="bold">Submit</span> &nbsp;to submit the orchestration request.</span></li>
+</ol>
+<div class="section">The orchestration is started, and it launches the instances as configured.</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment95">
+<tr>
+<td class="cellalignment102">
+<table class="cellalignment100">
+<tr>
+<td class="cellalignment99"><a href="GUID-B4DECE8C-6E30-4538-9047-70E05AC6720D.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment99"><a href="GUID-232E5BCE-42F5-412E-AD6D-543A2A8024EA.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment104">
+<table class="cellalignment98">
+<tr>
+<td class="cellalignment99"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment99"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

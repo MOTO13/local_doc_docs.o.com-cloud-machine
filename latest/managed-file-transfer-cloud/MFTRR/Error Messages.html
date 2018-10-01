@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Managed File Transfer Cloud Service on Oracle Public Cloud Machine</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Use the Event Service REST API for Oracle Managed File Transfer Cloud Service to discover and trigger sources.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Managed File Transfer Cloud Service on Oracle Public Cloud Machine">
+        <meta property="og:description" content="Use the Event Service REST API for Oracle Managed File Transfer Cloud Service to discover and trigger sources.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Managed File Transfer Cloud Service on Oracle Public Cloud Machine">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="Status%20Codes.html" title="Previous" type="text/html">
+        <link rel="next" href="Use%20cURL.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="Status%20Codes.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="Use%20cURL.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Managed File Transfer Cloud Service on Oracle Public Cloud Machine</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">Error Messages</h2> 
+<div class="body refbody">
+ <p class="shortdesc">The following table summarizes the error messages that may be returned when you send requests to the Oracle Managed File Transfer Cloud Service REST API and provides a short description and workaround.</p> 
+ <div class="section"> 
+  <div class="tablenoborder">
+   <table cellpadding="4" cellspacing="0" summary="" id="GUID-F901D0A3-7243-4848-A256-581F6C744FAC__GUID-46EB9FF7-D15A-4BEA-9E02-EC80BC1E6C9B" class="table" frame="border" border="1" rules="all">
+    <thead class="thead" align="left">
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d196e20"><p class="p">Error Code</p> </th> 
+      <th class="entry" valign="top" id="d196e23"><p class="p">Error Key</p> </th> 
+      <th class="entry" valign="top" id="d196e26"><p class="p">Error Message</p> </th> 
+      <th class="entry" valign="top" id="d196e29"><p class="p">Workaround</p> </th> 
+     </tr> 
+    </thead> 
+    <tbody class="tbody">
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d196e34" headers="d196e20 "><p class="p"><samp class="ph codeph">MFT-5403</samp></p> </th> 
+      <td class="entry" valign="top" headers="d196e34 d196e23 "><p class="p"><samp class="ph codeph">MFT_WS_DISCOVERY_COULD_NOT_QUERY_MFT_SOURCES</samp></p> </td> 
+      <td class="entry" valign="top" headers="d196e34 d196e26 "><p class="p">Discovery service is unable to query MFT Sources for the given application {application} and search Filter {search filter}.</p> </td> 
+      <td class="entry" valign="top" headers="d196e34 d196e29 "><p class="p">The parameters used for the application and search filter are invalid. Resubmit your request with valid parameters.</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d196e49" headers="d196e20 "><p class="p"><samp class="ph codeph">MFT-5436</samp></p> </th> 
+      <td class="entry" valign="top" headers="d196e49 d196e23 "><p class="p"><samp class="ph codeph">MFT_WS_EVENT_SERVICE_NO_EVENT_FOUND</samp></p> </td> 
+      <td class="entry" valign="top" headers="d196e49 d196e26 "><p class="p">Error in processing EventService request. No Event found with provided Event Session Id {id}.</p> </td> 
+      <td class="entry" valign="top" headers="d196e49 d196e29 "><p class="p">No event was found matching the submitted Event Session Id. Resubmit your request with a valid Event Session Id.</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" id="d196e64" headers="d196e20 "><p class="p"><samp class="ph codeph">MFT-5423</samp></p> </th> 
+      <td class="entry" valign="top" headers="d196e64 d196e23 "><p class="p"><samp class="ph codeph">MFT_WS_EVENT_SERVICE_SOURCE_DONT_EXITS_OR_NOT_DEPLOYED</samp></p> </td> 
+      <td class="entry" valign="top" headers="d196e64 d196e26 "><p class="p">Error in processing EventService request. The source {source} either doesn't exist or not deployed</p> </td> 
+      <td class="entry" valign="top" headers="d196e64 d196e29 "><p class="p">The event service triggered either does not exist or is not deployed. Deploy the source or check that the name of the source is correct and resubmit your request.</p> </td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+ </div> 
+</div></div>
+        </article>
+    </body>
+</html>

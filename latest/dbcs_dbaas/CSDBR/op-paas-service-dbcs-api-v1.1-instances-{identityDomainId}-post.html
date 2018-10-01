@@ -1,0 +1,1875 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>Public Cloud Machine REST API for Oracle Database Cloud Service - Create a Service Instance</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Use the Oracle Database Cloud Service REST API to create and manage Database Cloud Service instances.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="Public Cloud Machine REST API for Oracle Database Cloud Service">
+        <meta property="og:description" content="Use the Oracle Database Cloud Service REST API to create and manage Database Cloud Service instances.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="Public Cloud Machine REST API for Oracle Database Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="api-Service%20Instances.html" title="Previous" type="text/html">
+        <link rel="next" href="op-paas-service-dbcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-delete.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="api-Service%20Instances.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="op-paas-service-dbcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-delete.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            
+            <header>
+
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Public Cloud Machine REST API for Oracle Database Cloud Service</a></li>
+                    <li>Tasks</li>
+                    
+                    <li class="active">
+                        
+                        <a href="api-Service%20Instances.html">Service Instances</a>
+                        
+                    </li>
+                    
+                </ol>
+                
+                <p class="draftsubtitle"></p>
+                
+                <h2>Create a Service Instance</h2>
+                <div>
+                    <div class="label label-post text-uppercase">post</div>
+                    <p style="word-break: break-word;"><strong>/paas/service/dbcs/api/v1.1/instances/{identityDomainId}</strong></p>
+                </div>
+            </header>
+            <section>
+
+                <div class="description">Creates a Database Cloud Service instance.</div>
+
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                        <li role="presentation" class="active"><a href="#request" aria-controls="request" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-in" aria-hidden="true"></span> Request</a></li>
+                        <li role="presentation"><a href="#response" aria-controls="response" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-out" aria-hidden="true"></span> Response</a></li>
+                        
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="request">
+                            <h3 class="visible-print-block">Request</h3>
+                            
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/vnd.com.oracle.oracloud.provisioning.Service+json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Path Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>identityDomainId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the identity domain for the Database Cloud Service account.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+
+                            
+                            
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Header Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>Authorization</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Base64 encoding of the user name and password of the user making the request. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                        <dt>X-ID-TENANT-NAME</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the identity domain for the Database Cloud Service account. For more information, see <a href='security-authentication-authorization.html'>Security, Authentication and Authorization</a>.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">Body Parameter</div>
+                                <div style="padding-bottom: 0px" class="panel-body">
+                                    
+                                    <div style="margin-bottom: 8px"></div>
+                                    
+
+                                    <div class="schema-container">
+                                    
+                                    <div id="request-definitions-create-instance" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : Request Body</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+<div>Title: <code>Request Body</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-create-instance-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-create-instance-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-create-instance-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-create-instance-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-create-instance-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>customParameters</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-definitions-create-instance-customparameters-object" role="button" class="btn btn-default btn-sm">customParameters Object</a></div>
+
+
+<div>Title: <code>customParameters Object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>description</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Free-form text that provides additional information about the service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>edition</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div><p>Database edition for the service instance:</p><ul><li><p><code>SE</code>: Standard Edition</p></li><li><p><code>EE</code>: Enterprise Edition</p></li><li><p><code>EE_HP</code>: Enterprise Edition - High Performance</p></li><li><p><code>EE_EP</code>: Enterprise Edition - Extreme Performance</p></li></ul><p>If you specify <code>SE</code>, a Standard Edition Two database is created if you specify <code>12.1.0.2</code> for <code>version</code> and a Standard Edition One database is created if you specify <code>11.2.0.4</code> for <code>version</code>.</p><p>Edition must be <code>Enterprise Edition - Extreme Performance</code> to configure the Database Cloud Service instance as Cluster Database.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>level</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Service level for the service instance; use the value <code>PAAS</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>parameters</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#request-definitions-create-instance-properties-parameters" role="button" class="btn btn-default btn-sm">parameters Array</a></div>
+
+
+<div>Title: <code>parameters Array</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Array of one JSON object that specifies configuration details of the services instance. This array is not required if the <code>level</code> value is <code>BASIC</code>.</div>
+
+            
+        </dd>
+        
+        <dt>serviceName</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of Database Cloud Service instance. The service name:<ul><li>Must not exceed 50 characters (15 characters for a service instance that uses Oracle RAC).</li><li>Must start with a letter.</li><li>Must contain only letters, numbers, or hyphens.</li><li>Must not contain any other special characters.</li><li>Must be unique within the identity domain.</li></ul></div>
+
+
+
+            
+        </dd>
+        
+        <dt>shape</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Desired compute shape. A shape defines the number of Oracle Compute Units (OCPUs) and amount of memory (RAM). Valid shapes include: <ul><li>oc3: 1 OCPU, 7.5 GB memory</li><li>oc4: 2 OCPUs, 15 GB memory</li><li>oc5: 4 OCPUs, 30 GB memory</li><li>oc6: 8 OCPUs, 15 GB memory</li><li>oc1m: 1 OCPU, 15 GB memory</li><li>oc2m: 2 OCPUs, 30 GB memory</li><li>oc3m: 4 OCPUs, 60 GB memory</li><li>oc4m: 8 OCPUs, 120 GB memory</li></ul>.<p>See <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=OCSUG210' target='_blank'>About Shapes</a> in <i>Using Oracle Compute Cloud Service</i> for more information about shapes.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>subscriptionType</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Billing unit. Valid values are:<ul><li><code>HOURLY</code>: Pay only for the number of hours used during your billing period. This is the default.</li><li><code>MONTHLY</code>: Pay one price for the full month irrespective of the number of hours used.</li></ul></div>
+
+
+
+            
+        </dd>
+        
+        <dt>version</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Oracle Database software version; one of: <code>12.2.0.1</code>, <code>12.1.0.2</code> or <code>11.2.0.4</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>vmPublicKeyText</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Public key for the secure shell (SSH). This key will be used for authentication when connecting to the Database Cloud Service instance using an SSH client. You generate an SSH public-private key pair using a standard SSH key generation tool. See <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=CSDBI3443' target='_blank'>Connecting to a Compute Node Through Secure Shell (SSH)</a> in <i>Using Oracle Database Cloud Service</i>.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-create-instance-customparameters-object" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : customParameters Object</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+<div>Title: <code>customParameters Object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-create-instance-customparameters-object-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-create-instance-customparameters-object-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-create-instance-customparameters-object-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-create-instance-customparameters-object-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-create-instance-customparameters-object-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>db_demo</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Indicates whether to include the Demos PDB: <code>"yes"</code> or <code>"no"</code>.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-create-instance-properties-parameters" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : parameters Array</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+<div>Title: <code>parameters Array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Array of one JSON object that specifies configuration details of the services instance. This array is not required if the <code>level</code> value is <code>BASIC</code>.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-create-instance-properties-parameters-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-create-instance-properties-parameters-items" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-create-instance-properties-parameters-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-create-instance-properties-parameters-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-create-instance-properties-parameters-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#request-definitions-create-instance-parameters-item" role="button" class="btn btn-default btn-sm">parameters Array Item</a></div>
+
+
+<div>Title: <code>parameters Array Item</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-create-instance-parameters-item" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : parameters Array Item</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+<div>Title: <code>parameters Array Item</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-create-instance-parameters-item-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-create-instance-parameters-item-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-create-instance-parameters-item-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-create-instance-parameters-item-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-create-instance-parameters-item-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>adminPassword</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Password for Oracle Database administrator users <code>sys</code> and <code>system</code>. The password must meet the following requirements:<ul><li>Starts with a letter</li><li>Is between 8 and 30 characters long</li><li>Contains letters, at least one number, and optionally, any number of these special characters: dollar sign ($), pound sign (#), and underscore (_).</li></ul></div>
+
+
+
+            
+        </dd>
+        
+        <dt>backupDestination</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Backup destination. Valid values are: <ul><li><code>NFS</code> - Backups are configured to be created automatically and stored on an NFS remote backup location.</li><li><code>NONE</code> - Backups are not configured.</li></ul></div>
+
+
+
+            
+        </dd>
+        
+        <dt>charset</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Character Set for the Database Cloud Service Instance. Default value is <code>AL32UTF8</code>. <p>Valid values are <code>AL32UTF8</code>, <code>AR8ADOS710</code>, <code>AR8ADOS720</code>, <code>AR8APTEC715</code>, <code>AR8ARABICMACS</code>, <code>AR8ASMO8X</code>, <code>AR8ISO8859P6</code>, <code>AR8MSWIN1256</code>, <code>AR8MUSSAD768</code>, <code>AR8NAFITHA711</code>, <code>AR8NAFITHA721</code>, <code>AR8SAKHR706</code>, <code>AR8SAKHR707</code>, <code>AZ8ISO8859P9E</code>, <code>BG8MSWIN</code>, <code>BG8PC437S</code>, <code>BLT8CP921</code>, <code>BLT8ISO8859P13</code>, <code>BLT8MSWIN1257</code>, <code>BLT8PC775</code>, <code>BN8BSCII</code>, <code>CDN8PC863</code>, <code>CEL8ISO8859P14</code>, <code>CL8ISO8859P5</code>, <code>CL8ISOIR111</code>, <code>CL8KOI8R</code>, <code>CL8KOI8U</code>, <code>CL8MACCYRILLICS</code>, <code>CL8MSWIN1251</code>, <code>EE8ISO8859P2</code>, <code>EE8MACCES</code>, <code>EE8MACCROATIANS</code>, <code>EE8MSWIN1250</code>, <code>EE8PC852</code>, <code>EL8DEC</code>, <code>EL8ISO8859P7</code>, <code>EL8MACGREEKS</code>, <code>EL8MSWIN1253</code>, <code>EL8PC437S</code>, <code>EL8PC851</code>, <code>EL8PC869</code>, <code>ET8MSWIN923</code>, <code>HU8ABMOD</code>, <code>HU8CWI2</code>, <code>IN8ISCII</code>, <code>IS8PC861</code>, <code>IW8ISO8859P8</code>, <code>IW8MACHEBREWS</code>, <code>IW8MSWIN1255</code>, <code>IW8PC1507</code>, <code>JA16EUC</code>, <code>JA16EUCTILDE</code>, <code>JA16SJIS</code>, <code>JA16SJISTILDE</code>, <code>JA16VMS</code>, <code>KO16KSC5601</code>, <code>KO16KSCCS</code>, <code>KO16MSWIN949</code>, <code>LA8ISO6937</code>, <code>LA8PASSPORT</code>, <code>LT8MSWIN921</code>, <code>LT8PC772</code>, <code>LT8PC774</code>, <code>LV8PC1117</code>, <code>LV8PC8LR</code>, <code>LV8RST104090</code>, <code>N8PC865</code>, <code>NE8ISO8859P10</code>, <code>NEE8ISO8859P4</code>, <code>RU8BESTA</code>, <code>RU8PC855</code>, <code>RU8PC866</code>, <code>SE8ISO8859P3</code>, <code>TH8MACTHAIS</code>, <code>TH8TISASCII</code>, <code>TR8DEC</code>, <code>TR8MACTURKISHS</code>, <code>TR8MSWIN1254</code>, <code>TR8PC857</code>, <code>US7ASCII</code>, <code>US8PC437</code>, <code>UTF8</code>, <code>VN8MSWIN1258</code>, <code>VN8VN3</code>, <code>WE8DEC</code>, <code>WE8DG</code>, <code>WE8ISO8859P1</code>, <code>WE8ISO8859P15</code>, <code>WE8ISO8859P9</code>, <code>WE8MACROMAN8S</code>, <code>WE8MSWIN1252</code>, <code>WE8NCR4970</code>, <code>WE8NEXTSTEP</code>, <code>WE8PC850</code>, <code>WE8PC858</code>, <code>WE8PC860</code>, <code>WE8ROMAN8</code>, <code>ZHS16CGB231280</code>, <code>ZHS16GBK</code>, <code>ZHT16BIG5</code>, <code>ZHT16CCDC</code>, <code>ZHT16DBT</code>, <code>ZHT16HKSCS</code>, <code>ZHT16MSWIN950</code>, <code>ZHT32EUC</code>, <code>ZHT32SOPS</code>, <code>ZHT32TRIS</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>cloudStorageContainer</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The path of the NFS remote backup location where backups of the service instance are to be stored. This path must be of the format <code><i>host-name</i>:<i>absolute-path</i></code> or <code><i>ip-address</i>:<i>absolute-path</i></code></div>
+
+
+
+            
+        </dd>
+        
+        <dt>isRac</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Specify if a cluster database using Oracle Real Application Clusters should be configured. Valid values are <code>yes</code> and <code>no</code>. Default value is <code>no</code>.</p></div>
+
+
+
+            
+        </dd>
+        
+        <dt>ncharset</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>National Character Set for the Database Cloud Service instance. Default value is <code>AL16UTF16</code>. <p>Valid values are <code>AL16UTF16</code> and <code>UTF8</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>pdbName</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div><b>Note:</b> This attribute is valid when Database Cloud Service instance is configured with version <code>12c</code>.<p>Pluggable Database Name for the Database Cloud Service instance. Default value is <code>pdb1</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>publicNetwork</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Public network to draw IP addresses from for the Database Cloud Service Instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>sid</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Database Name (sid) for the Database Cloud Service instance. Default value is <code>ORCL</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>timezone</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Time Zone for the Database Cloud Service instance. Default value is <code>UTC</code>. <p>Valid values are <code>Africa/Cairo</code>, <code>Africa/Casablanca</code>, <code>Africa/Harare</code>, <code>Africa/Monrovia</code>, <code>Africa/Nairobi</code>, <code>Africa/Tripoli</code>, <code>Africa/Windhoek</code>, <code>America/Araguaina</code>, <code>America/Asuncion</code>, <code>America/Bogota</code>, <code>America/Caracas</code>, <code>America/Chihuahua</code>, <code>America/Cuiaba</code>, <code>America/Denver</code>, <code>America/Fortaleza</code>, <code>America/Guatemala</code>, <code>America/Halifax</code>, <code>America/Manaus</code>, <code>America/Matamoros</code>, <code>America/Monterrey</code>, <code>America/Montevideo</code>, <code>America/Phoenix</code>, <code>America/Santiago</code>, <code>America/Tijuana</code>, <code>Asia/Amman</code>, <code>Asia/Ashgabat</code>, <code>Asia/Baghdad</code>, <code>Asia/Baku</code>, <code>Asia/Bangkok</code>, <code>Asia/Beirut</code>, <code>Asia/Calcutta</code>, <code>Asia/Damascus</code>, <code>Asia/Dhaka</code>, <code>Asia/Irkutsk</code>, <code>Asia/Jerusalem</code>, <code>Asia/Kabul</code>, <code>Asia/Karachi</code>, <code>Asia/Kathmandu</code>, <code>Asia/Krasnoyarsk</code>, <code>Asia/Magadan</code>, <code>Asia/Muscat</code>, <code>Asia/Novosibirsk</code>, <code>Asia/Riyadh</code>, <code>Asia/Seoul</code>, <code>Asia/Shanghai</code>, <code>Asia/Singapore</code>, <code>Asia/Taipei</code>, <code>Asia/Tehran</code>, <code>Asia/Tokyo</code>, <code>Asia/Ulaanbaatar</code>, <code>Asia/Vladivostok</code>, <code>Asia/Yakutsk</code>, <code>Asia/Yerevan</code>, <code>Atlantic/Azores</code>, <code>Australia/Adelaide</code>, <code>Australia/Brisbane</code>, <code>Australia/Darwin</code>, <code>Australia/Hobart</code>, <code>Australia/Perth</code>, <code>Australia/Sydney</code>, <code>Brazil/East</code>, <code>Canada/Newfoundland</code>, <code>Canada/Saskatchewan</code>, <code>Europe/Amsterdam</code>, <code>Europe/Athens</code>, <code>Europe/Dublin</code>, <code>Europe/Helsinki</code>, <code>Europe/Istanbul</code>, <code>Europe/Kaliningrad</code>, <code>Europe/Moscow</code>, <code>Europe/Paris</code>, <code>Europe/Prague</code>, <code>Europe/Sarajevo</code>, <code>Pacific/Auckland</code>, <code>Pacific/Fiji</code>, <code>Pacific/Guam</code>, <code>Pacific/Honolulu</code>, <code>Pacific/Samoa</code>, <code>US/Alaska</code>, <code>US/Central</code>, <code>US/Eastern</code>, <code>US/East-Indiana</code>, <code>US/Pacific</code>, <code>UTC</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>type</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Component type to which the set of parameters applies. Valid values are: <ul><li><code>db</code> - Oracle Database </li>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>usableStorage</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Storage volume size for data. Default value is 25GB. Minimum allowed size is 15GB. Maximum allowed size is 500GB if backup destination is specified and 1000GB if no backup destination is specified. Backup volume size is calculated based on data size.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    </div>
+
+                                    
+                                    
+                                    
+                                    		
+                                </div>
+                            </div>
+                            
+
+
+
+                            
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="response">
+                            <h3 class="visible-print-block">Response</h3>
+
+                            
+
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">202 Response <span class="glyphicon glyphicon-ok-sign response-symbol" data-response-code="202" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    Accepted. See <a href='status-codes.html'>Status Codes</a> for information about other possible HTTP status codes.
+                                </div>
+
+                                
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">Headers</div>
+                                    <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                        <div class="schema-container">
+                                        <dl style="margin-bottom: 0px" class="schema-properties">
+                                            
+                                            <dt>Location</dt>
+                                            <dd>
+                                                
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>A REST URI you can use to check the progress and completion of the instance creation operation, as described in <a href='op-paas-service-dbcs-api-v1.1-instances-{identityDomainId}-status-{requestName}-job-{jobId}-get.html'>View the Job Status of an Operation</a>.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                            </dd>
+                                            
+                                        </dl>
+                                            
+                                       </div>
+                                    </div>
+                                </div>
+                                
+                                
+
+                                
+
+                            </div>
+                            
+
+
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+        </article>
+    </body>
+</html>

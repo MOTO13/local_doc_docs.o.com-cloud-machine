@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Electrical Power</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Learn about the electrical power specifications and requirements for OPCM and the optional ZS3 storage expansion rack." />
+<meta name="dcterms.created" content="2017-04-10T14:54:01Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Customer Deployment Guide" />
+<meta name="dcterms.identifier" content="E65770-09" />
+<meta name="dcterms.isVersionOf" content="ELPSS" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-4E31839C-5234-4021-A42E-DF88D70B1291.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-3A9544AC-A5AE-41CF-AD12-7F7AB03ED98F.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELPSS.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-BE0ECAA0-BE20-477E-A50A-8FF47D1F315F"></a> <span id="PAGE" style="display:none;">9/16</span> <!-- End Header -->
+<h1 id="ELPSS-GUID-BE0ECAA0-BE20-477E-A50A-8FF47D1F315F" class="sect1"><span class="enumeration_section">1.4</span> Electrical Power</h1>
+<div>
+<p>Learn about the electrical power specifications and requirements for <span id="ACRONYM-AF466053">OPCM</span> and the optional ZS3 storage expansion rack.</p>
+<div class="section">
+<p class="subhead1">Power Consumption</p>
+<p>The following table describes the typical and maximum power consumption for <span id="GUID-BE0ECAA0-BE20-477E-A50A-8FF47D1F315F__ACRONYM-AF466053">OPCM</span>:</p>
+<div class="tblformalwide" id="GUID-BE0ECAA0-BE20-477E-A50A-8FF47D1F315F__GUID-DCD8E4CC-A9A1-4561-80DD-1008A68E413F">
+<p class="titleintable">Table 1-7 <span>OPCM</span> Power Consumption</p>
+<table class="cellalignment134" title="OPCM Power Consumption" summary="The table contains four columns. The first column with the Power Consumption heading includes the Maximum and Typical consumption. The remaining three columns describe the consumption values for all OPCM models: 288, 576, and 1080.">
+<thead>
+<tr class="cellalignment125">
+<th class="cellalignment135" id="d3067e49">Power Consumption</th>
+<th class="cellalignment135" id="d3067e51">Model 288</th>
+<th class="cellalignment135" id="d3067e53">Model 576</th>
+<th class="cellalignment135" id="d3067e55">Model 1080</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e59" headers="d3067e49">Maximum</td>
+<td class="cellalignment125" headers="d3067e59 d3067e51">7.732 kW, 7.887 kVA</td>
+<td class="cellalignment125" headers="d3067e59 d3067e53">13.444 kW, 13.713 kVA</td>
+<td class="cellalignment125" headers="d3067e59 d3067e55">23.520 kW, 23.990 kVA</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e68" headers="d3067e49">Typical</td>
+<td class="cellalignment125" headers="d3067e68 d3067e51">5.412 kW, 5.521 kVA</td>
+<td class="cellalignment125" headers="d3067e68 d3067e53">9.411 kW, 9.599 kVA</td>
+<td class="cellalignment125" headers="d3067e68 d3067e55">16.464 kW, 16.793 kVA</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>The following table describes the typical and maximum power consumption for the optional <span>OPCM</span> ZS3 storage expansion rack:</p>
+<div class="tblformalwide" id="GUID-BE0ECAA0-BE20-477E-A50A-8FF47D1F315F__GUID-F75A57B4-CFCB-47BE-8B2B-6AEA11489CD0">
+<p class="titleintable">Table 1-8 <span>OPCM</span> ZS3 Storage Expansion Rack Power Consumption</p>
+<table class="cellalignment134" title="OPCM ZS3 Storage Expansion Rack Power Consumption" summary="The table contains three columns. The first column with the Power Consumption heading describes the Maximum and Typical consumption. The remaining two columns describe the consumption values for all OPCM ZS3 storage expansion models: 268, and 536.">
+<thead>
+<tr class="cellalignment125">
+<th class="cellalignment135" id="d3067e97">Power Consumption</th>
+<th class="cellalignment135" id="d3067e99">Model 268</th>
+<th class="cellalignment135" id="d3067e101">Model 536</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e105" headers="d3067e97">Maximum</td>
+<td class="cellalignment125" headers="d3067e105 d3067e99">6.671kW</td>
+<td class="cellalignment125" headers="d3067e105 d3067e101">13.342 kW</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e112" headers="d3067e97">Typical</td>
+<td class="cellalignment125" headers="d3067e112 d3067e99">3.177 kW</td>
+<td class="cellalignment125" headers="d3067e112 d3067e101">6.354 kW</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Power Distribution Units</p>
+<p><span id="GUID-BE0ECAA0-BE20-477E-A50A-8FF47D1F315F__EXALOGICELASTICCLOUD-881D7151">Oracle Public Cloud Machine</span> (<span>OPCM</span>) can operate effectively over a wide range of voltages and frequencies. However, it must have a reliable power source. Damage may occur if the ranges are exceeded. Electrical disturbances such as the following may damage an <span>OPCM</span>:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Fluctuations caused by brownouts</p>
+</li>
+<li>
+<p>Wide and rapid variations in input voltage levels or in input power frequency</p>
+</li>
+<li>
+<p>Electrical storms</p>
+</li>
+<li>
+<p>Faults in the distribution system, such as defective wiring</p>
+</li>
+</ul>
+<p>To protect the system, dedicated power distribution system and power-conditioning equipment should be used. Lightning arresters or power cables should be used to protect from electrical storms.</p>
+<p>Each rack has two pre-installed Power Distribution Units (PDUs). The PDUs accept different power sources. You must select the type of PDU that meets the requirements for your data center.</p>
+<p>The following table lists the available PDUs for <span>OPCM</span> and <span>OPCM</span> ZS3 Storage Expansion depending on the model and your region:</p>
+<div class="tblformalwide" id="GUID-BE0ECAA0-BE20-477E-A50A-8FF47D1F315F__GUID-1BABF230-0BBB-4684-B991-C9FCE80B1A52">
+<p class="titleintable">Table 1-9 Available PDUs by Region and Model</p>
+<table class="cellalignment134" title="Available PDUs by Region and Model" summary="The table contains three columns. The column with the OPCM Model heading lists all OPCM and ZS3 models. The third column with the Available PDUs heading lists all the types of PDUs and their relation with the region and OPCM models and ZS3 Storage Expansion found in the second and first columns.">
+<thead>
+<tr class="cellalignment125">
+<th class="cellalignment135" id="d3067e176"><span>OPCM</span> Model</th>
+<th class="cellalignment135" id="d3067e180">Region</th>
+<th class="cellalignment135" id="d3067e182">Available PDUs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e186" headers="d3067e176">288 and 576</td>
+<td class="cellalignment125" headers="d3067e186 d3067e180">Americas, Japan, and Taiwan</td>
+<td class="cellalignment125" headers="d3067e186 d3067e182">
+<ul style="list-style-type: disc;">
+<li>
+<p>Single-Phase x 15kVA Low Voltage</p>
+</li>
+<li>
+<p>Three-Phase x 15kVA Low Voltage</p>
+</li>
+<li>
+<p>Single-Phase x 22kVA Low Voltage</p>
+</li>
+<li>
+<p>Three-Phase x 24kVA Low Voltage</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e205" headers="d3067e176">1080</td>
+<td class="cellalignment125" headers="d3067e205 d3067e180">Americas, Japan, and Taiwan</td>
+<td class="cellalignment125" headers="d3067e205 d3067e182">
+<ul style="list-style-type: disc;">
+<li>
+<p>Three-Phase x 24kVA Low Voltage</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e215" headers="d3067e176">ZS3 Storage Expansion 268 and 536</td>
+<td class="cellalignment125" headers="d3067e215 d3067e180">Americas, Japan, and Taiwan</td>
+<td class="cellalignment125" headers="d3067e215 d3067e182">
+<ul style="list-style-type: disc;">
+<li>
+<p>Single-Phase x 15kVA Low Voltage</p>
+</li>
+<li>
+<p>Three-Phase x 15kVA Low Voltage</p>
+</li>
+<li>
+<p>Single-Phase x 22kVA Low Voltage</p>
+</li>
+<li>
+<p>Three-Phase x 24kVA Low Voltage</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e234" headers="d3067e176">288 and 576</td>
+<td class="cellalignment125" headers="d3067e234 d3067e180">EMEA and rest of APAC</td>
+<td class="cellalignment125" headers="d3067e234 d3067e182">
+<ul style="list-style-type: disc;">
+<li>
+<p>Three-Phase x 15kVA High Voltage</p>
+</li>
+<li>
+<p>Single-Phase x 22kVA High Voltage</p>
+</li>
+<li>
+<p>Three-Phase x 24kVA High Voltage</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e250" headers="d3067e176">1080</td>
+<td class="cellalignment125" headers="d3067e250 d3067e180">EMEA and rest of APAC</td>
+<td class="cellalignment125" headers="d3067e250 d3067e182">
+<ul style="list-style-type: disc;">
+<li>
+<p>Three-Phase x 24kVA High Voltage</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e260" headers="d3067e176">ZS3 Storage Expansion 268 and 536</td>
+<td class="cellalignment125" headers="d3067e260 d3067e180">EMEA and rest of APAC</td>
+<td class="cellalignment125" headers="d3067e260 d3067e182">
+<ul style="list-style-type: disc;">
+<li>
+<p>Three-Phase x 15kVA High Voltage</p>
+</li>
+<li>
+<p>Single-Phase x 22kVA High Voltage</p>
+</li>
+<li>
+<p>Three-Phase x 24kVA High Voltage</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>The following table lists the PDU low voltage specifications:</p>
+<div class="tblformalwide" id="GUID-BE0ECAA0-BE20-477E-A50A-8FF47D1F315F__GUID-0E0AD7B2-E9E6-46F6-9149-B2D09F50B33B">
+<p class="titleintable">Table 1-10 PDU Low Voltage Requirements</p>
+<table class="cellalignment134" title="PDU Low Voltage Requirements" summary="The table contains five columns. The column with the Specification heading lists the PDU low voltage requirements for the different types of PDUs. The other four columns list the values for 15 kVA 1 phase, 15 kVA 3 phase, 22 kVA 1 phase, and 24 kVA 3 phase.">
+<thead>
+<tr class="cellalignment125">
+<th class="cellalignment135" id="d3067e290">Specification</th>
+<th class="cellalignment135" id="d3067e293">15 kVA, 1 phase</th>
+<th class="cellalignment135" id="d3067e296">15 kVA, 3 phase</th>
+<th class="cellalignment135" id="d3067e299">22 kVA, 1 phase</th>
+<th class="cellalignment135" id="d3067e302">24 kVA, 3 phase</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e307" headers="d3067e290">
+<p>Phase</p>
+</td>
+<td class="cellalignment125" headers="d3067e307 d3067e293">
+<p>1 ph</p>
+</td>
+<td class="cellalignment125" headers="d3067e307 d3067e296">
+<p>3 ph</p>
+</td>
+<td class="cellalignment125" headers="d3067e307 d3067e299">
+<p>1 ph</p>
+</td>
+<td class="cellalignment125" headers="d3067e307 d3067e302">
+<p>3 ph</p>
+</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e323" headers="d3067e290">
+<p>Market Part Number</p>
+</td>
+<td class="cellalignment125" headers="d3067e323 d3067e293">
+<p>6442A</p>
+</td>
+<td class="cellalignment125" headers="d3067e323 d3067e296">
+<p>6440A</p>
+</td>
+<td class="cellalignment125" headers="d3067e323 d3067e299">
+<p>7100873</p>
+</td>
+<td class="cellalignment125" headers="d3067e323 d3067e302">
+<p>XSR-24K-IEC309-4P</p>
+</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e339" headers="d3067e290">
+<p>Manufacturing Part Number</p>
+</td>
+<td class="cellalignment125" headers="d3067e339 d3067e293">
+<p>597-0566-01</p>
+</td>
+<td class="cellalignment125" headers="d3067e339 d3067e296">
+<p>597-0564-01</p>
+</td>
+<td class="cellalignment125" headers="d3067e339 d3067e299">
+<p>7018123</p>
+</td>
+<td class="cellalignment125" headers="d3067e339 d3067e302">
+<p>594-5596-01</p>
+</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e355" headers="d3067e290">
+<p>Voltage</p>
+</td>
+<td class="cellalignment125" headers="d3067e355 d3067e293">
+<p>200-240 VAC 1ph</p>
+</td>
+<td class="cellalignment125" headers="d3067e355 d3067e296">
+<p>200-240 VAC 3ph</p>
+</td>
+<td class="cellalignment125" headers="d3067e355 d3067e299">
+<p>200-240 VAC 1ph</p>
+</td>
+<td class="cellalignment125" headers="d3067e355 d3067e302">
+<p>200-240 VAC 3ph</p>
+</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e371" headers="d3067e290">
+<p>Amps Per PDU</p>
+</td>
+<td class="cellalignment125" headers="d3067e371 d3067e293">
+<p>72A (3 &times; 24A)</p>
+</td>
+<td class="cellalignment125" headers="d3067e371 d3067e296">
+<p>69A (3 &times; 23A)</p>
+</td>
+<td class="cellalignment125" headers="d3067e371 d3067e299">
+<p>110.4 (3x36.8A)</p>
+</td>
+<td class="cellalignment125" headers="d3067e371 d3067e302">
+<p>120A (6 &times; 20A)</p>
+</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e387" headers="d3067e290">
+<p>Outlets</p>
+</td>
+<td class="cellalignment125" headers="d3067e387 d3067e293">
+<p>42 C13, 6 C19</p>
+</td>
+<td class="cellalignment125" headers="d3067e387 d3067e296">
+<p>42 C13, 6 C19</p>
+</td>
+<td class="cellalignment125" headers="d3067e387 d3067e299">
+<p>42 C13, 6 C19</p>
+</td>
+<td class="cellalignment125" headers="d3067e387 d3067e302">
+<p>42 C13, 6 C19</p>
+</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e403" headers="d3067e290">
+<p>Number of Inputs</p>
+</td>
+<td class="cellalignment125" headers="d3067e403 d3067e293">
+<p>3x30A, 1 ph</p>
+</td>
+<td class="cellalignment125" headers="d3067e403 d3067e296">
+<p>1x60A, 3 ph</p>
+</td>
+<td class="cellalignment125" headers="d3067e403 d3067e299">
+<p>3 x50A 1 ph</p>
+</td>
+<td class="cellalignment125" headers="d3067e403 d3067e302">
+<p>2x60A, 3 ph</p>
+</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e419" headers="d3067e290">
+<p>Current</p>
+</td>
+<td class="cellalignment125" headers="d3067e419 d3067e293">
+<p>24A max. per input</p>
+</td>
+<td class="cellalignment125" headers="d3067e419 d3067e296">
+<p>40A max. per phase</p>
+</td>
+<td class="cellalignment125" headers="d3067e419 d3067e299">
+<p>36.8A per input</p>
+</td>
+<td class="cellalignment125" headers="d3067e419 d3067e302">
+<p>34.6A max. per phase</p>
+</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e435" headers="d3067e290">
+<p>Data Center Receptacle</p>
+</td>
+<td class="cellalignment125" headers="d3067e435 d3067e293">
+<p>NEMA L6-30R</p>
+</td>
+<td class="cellalignment125" headers="d3067e435 d3067e296">
+<p>IEC309-3P4W-IP67</p>
+<p>(60A, 250V, AC, 3 ph)</p>
+<p>IEC309 60A 3ph 4 Wire</p>
+<p>Hubbell HBL460R/C9W or equivalent.</p>
+</td>
+<td class="cellalignment125" headers="d3067e435 d3067e299">
+<p>Hubbell CS8265C</p>
+</td>
+<td class="cellalignment125" headers="d3067e435 d3067e302">
+<p>IEC309-3P4W-IP67</p>
+<p>(60A, 250V, AC, 3 ph)</p>
+<p>IEC309 60A 3ph 4 Wire</p>
+<p>Hubbell HBL460R/C9W or equivalent.</p>
+</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e466" headers="d3067e290">
+<p>Number of Outlets Per Rack</p>
+</td>
+<td class="cellalignment125" headers="d3067e466 d3067e293">
+<p>6</p>
+</td>
+<td class="cellalignment125" headers="d3067e466 d3067e296">
+<p>2</p>
+</td>
+<td class="cellalignment125" headers="d3067e466 d3067e299">
+<p>6</p>
+</td>
+<td class="cellalignment125" headers="d3067e466 d3067e302">
+<p>4</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>The following table lists the PDU high voltage specifications:</p>
+<div class="tblformalwide" id="GUID-BE0ECAA0-BE20-477E-A50A-8FF47D1F315F__GUID-236D4DBB-9E65-49B3-80F2-60A22CFD514A">
+<p class="titleintable">Table 1-11 PDU High Voltage Requirements</p>
+<table class="cellalignment134" title="PDU High Voltage Requirements" summary="The table contains five columns. The column with the Specification heading lists the PDU high voltage requirements for the different types of PDUs. The other four columns list the values for 15 kVA 1 phase, 15 kVA 3 phase, 22 kVA 1 phase, and 24 kVA 3 phase.">
+<thead>
+<tr class="cellalignment125">
+<th class="cellalignment135" id="d3067e495">Specification</th>
+<th class="cellalignment135" id="d3067e498">15 kVA, 3 phase</th>
+<th class="cellalignment135" id="d3067e501">22 kVA, 1 phase</th>
+<th class="cellalignment135" id="d3067e504">24 kVA, 3 phase</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e509" headers="d3067e495">
+<p>Phase</p>
+</td>
+<td class="cellalignment125" headers="d3067e509 d3067e498">
+<p>3 ph</p>
+</td>
+<td class="cellalignment125" headers="d3067e509 d3067e501">
+<p>1 ph</p>
+</td>
+<td class="cellalignment125" headers="d3067e509 d3067e504">
+<p>3 ph</p>
+</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e522" headers="d3067e495">
+<p>Market Part Number</p>
+</td>
+<td class="cellalignment125" headers="d3067e522 d3067e498">
+<p>6441A</p>
+</td>
+<td class="cellalignment125" headers="d3067e522 d3067e501">
+<p>7100874</p>
+</td>
+<td class="cellalignment125" headers="d3067e522 d3067e504">
+<p>XSR-24K-IEC309-5P</p>
+</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e535" headers="d3067e495">
+<p>Manufacturing Part Number</p>
+</td>
+<td class="cellalignment125" headers="d3067e535 d3067e498">
+<p>597-0565-01</p>
+</td>
+<td class="cellalignment125" headers="d3067e535 d3067e501">
+<p>7018124</p>
+</td>
+<td class="cellalignment125" headers="d3067e535 d3067e504">
+<p>594-5600-01</p>
+</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e548" headers="d3067e495">
+<p>Voltage</p>
+</td>
+<td class="cellalignment125" headers="d3067e548 d3067e498">
+<p>220/380-240/415 VAC 3ph</p>
+</td>
+<td class="cellalignment125" headers="d3067e548 d3067e501">
+<p>200-240 VAC 1ph</p>
+</td>
+<td class="cellalignment125" headers="d3067e548 d3067e504">
+<p>220/380-240/415 VAC 3ph</p>
+</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e561" headers="d3067e495">
+<p>Amps Per PDU</p>
+</td>
+<td class="cellalignment125" headers="d3067e561 d3067e498">
+<p>62.7 A (3 &times; 20.9A)</p>
+</td>
+<td class="cellalignment125" headers="d3067e561 d3067e501">
+<p>96A (3x32A)</p>
+</td>
+<td class="cellalignment125" headers="d3067e561 d3067e504">
+<p>109A (6 &times; 18.1A)</p>
+</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e574" headers="d3067e495">
+<p>Outlets</p>
+</td>
+<td class="cellalignment125" headers="d3067e574 d3067e498">
+<p>42 C13, 6 C19</p>
+</td>
+<td class="cellalignment125" headers="d3067e574 d3067e501">
+<p>42 C13, 6 C19</p>
+</td>
+<td class="cellalignment125" headers="d3067e574 d3067e504">
+<p>42 C13, 6 C19</p>
+</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e587" headers="d3067e495">
+<p>Number of Inputs</p>
+</td>
+<td class="cellalignment125" headers="d3067e587 d3067e498">
+<p>1x25A, 3 ph</p>
+</td>
+<td class="cellalignment125" headers="d3067e587 d3067e501">
+<p>3 x 32A 1 ph</p>
+</td>
+<td class="cellalignment125" headers="d3067e587 d3067e504">
+<p>2x25A, 3 ph</p>
+</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e600" headers="d3067e495">
+<p>Current</p>
+</td>
+<td class="cellalignment125" headers="d3067e600 d3067e498">
+<p>24A max. per input</p>
+</td>
+<td class="cellalignment125" headers="d3067e600 d3067e501">
+<p>32 A per input</p>
+</td>
+<td class="cellalignment125" headers="d3067e600 d3067e504">
+<p>18 A max. per input</p>
+</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e613" headers="d3067e495">
+<p>Data Center Receptacle</p>
+</td>
+<td class="cellalignment125" headers="d3067e613 d3067e498">
+<p>IEC 309-4P5W-IP44</p>
+<p>(32A, 400V, AC, 3ph)</p>
+<p>IEC309 32A 3ph 5 Wire Hubbell HBL532R/C9W or equivalent.</p>
+</td>
+<td class="cellalignment125" headers="d3067e613 d3067e501">
+<p>IEC 309-2P3W-IP44</p>
+<p>(32A, 250V, AC, 3ph)</p>
+<p>IEC309 32A 1ph 3 Wire Hubbell HBL332R/C9W or equivalent</p>
+</td>
+<td class="cellalignment125" headers="d3067e613 d3067e504">
+<p>IEC 309-4P5W-IP44(32A, 400V, AC, 3ph)</p>
+<p>IEC309 32A 3ph 5 Wire Hubbell HBL532R/C9W or equivalent.</p>
+</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d3067e637" headers="d3067e495">
+<p>Number of Outlets Per Rack</p>
+</td>
+<td class="cellalignment125" headers="d3067e637 d3067e498">
+<p>2</p>
+</td>
+<td class="cellalignment125" headers="d3067e637 d3067e501">
+<p>6</p>
+</td>
+<td class="cellalignment125" headers="d3067e637 d3067e504">
+<p>4</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment124">
+<tr>
+<td class="cellalignment131">
+<table class="cellalignment129">
+<tr>
+<td class="cellalignment128"><a href="GUID-4E31839C-5234-4021-A42E-DF88D70B1291.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment128"><a href="GUID-3A9544AC-A5AE-41CF-AD12-7F7AB03ED98F.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment133">
+<table class="cellalignment127">
+<tr>
+<td class="cellalignment128"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment128"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

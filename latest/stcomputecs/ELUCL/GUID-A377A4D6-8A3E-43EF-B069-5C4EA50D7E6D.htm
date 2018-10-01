@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Overview of the Oracle Compute CLI</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-07T05:55:01Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine CLI Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E69222-06" />
+<meta name="dcterms.isVersionOf" content="ELUCL" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-2FD61692-F7E8-48A0-8170-8524F09CD56C.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-E11D9ED0-2E92-42D6-9E89-F21463626929.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUCL.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D"></a> <span id="PAGE" style="display:none;">5/40</span> <!-- End Header -->
+<a id="ELACI252"></a><a id="ELACI113"></a>
+<h1 id="ELUCL-GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D" class="sect1"><span class="enumeration_chapter">2</span> Overview of the Oracle Compute CLI</h1>
+<div>
+<p>This section provides an overview for using the <code class="codeph">oracle-compute</code> command for managing Oracle Compute Cloud Service on <span id="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D__ORACLEEXALOGICELASTICCLOUD-881D6B97">Oracle Public Cloud Machine</span>.</p>
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-6DA98174-9F39-466E-BA3B-C7B18238B399">General Syntax</a></p>
+</li>
+<li>
+<p><a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a></p>
+</li>
+<li>
+<p><a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-B18E77E8-1B34-4CC8-98CC-F67144017BEF">General Command Actions</a></p>
+</li>
+<li>
+<p><a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-DF3BA89D-0139-4A2D-AA8F-8C0FB5F0C72C">About Object Names</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<a id="ELACI114"></a>
+<div class="props_rev_3"><a id="GUID-6DA98174-9F39-466E-BA3B-C7B18238B399"></a>
+<h2 id="ELUCL-GUID-6DA98174-9F39-466E-BA3B-C7B18238B399" class="sect2">General Syntax</h2>
+<div>
+<div class="section">
+<p>The <code class="codeph">oracle-compute</code> CLI tool has the following syntax:</p>
+<pre dir="ltr">
+oracle-compute -u <span class="variable">user</span> [ -a <span class="variable">url</span>] [ -p<span class="variable"> file</span>] [<span class="variable">options</span>] <span class="variable">action</span> <span class="variable">object</span> [<span class="variable">--parameter1 arg1 --parameter2 arg2 ...</span>]
+</pre></div>
+<!-- class="section" -->
+<div class="tblformal" id="GUID-6DA98174-9F39-466E-BA3B-C7B18238B399__GUID-E8A85229-BACB-4C46-B8F0-8F04059B04C1">
+<table class="cellalignment29" summary="The table below lists the generalized syntax options available for the commands oracle-compute and oracle-compute-admin.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment41" id="d2729e105">Command Option</th>
+<th class="cellalignment42" id="d2729e108">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment43" id="d2729e113" headers="d2729e105">
+<p><code class="codeph">-u <span class="variable">username</span>| --user=<span class="variable">username</span></code></p>
+</td>
+<td class="cellalignment44" headers="d2729e113 d2729e108">
+<p>The tenant user name (<code class="codeph">/<span class="variable">tenant_name</span>/<span class="variable">username</span></code>), or tenant administrators (<code class="codeph">/<span class="variable">tenant_name</span>/<span class="variable">username</span></code>)</p>
+<p>Defaults to ORACLE_COMPUTE_USER environment variable.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment43" id="d2729e144" headers="d2729e105">
+<p><code class="codeph">-a <span class="variable">url</span>| --address=<span class="variable">url</span></code></p>
+</td>
+<td class="cellalignment44" headers="d2729e144 d2729e108">
+<p>(Optional) URL of Oracle Compute API service.</p>
+<p>Defaults to ORACLE_COMPUTE_API environment variable.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment43" id="d2729e159" headers="d2729e105">
+<p><code class="codeph">-p <span class="variable">file</span>| --pass=<span class="variable">file</span></code></p>
+</td>
+<td class="cellalignment44" headers="d2729e159 d2729e108">
+<p>(Optional) File containing the user password.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment43" id="d2729e172" headers="d2729e105">
+<p><span class="variable">--options</span></p>
+</td>
+<td class="cellalignment44" headers="d2729e172 d2729e108">
+<p>(Optional)See <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment43" id="d2729e183" headers="d2729e105">
+<p><span class="variable">action</span></p>
+</td>
+<td class="cellalignment44" headers="d2729e183 d2729e108">
+<p>An operation to execute. See <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-B18E77E8-1B34-4CC8-98CC-F67144017BEF">General Command Actions</a>.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment43" id="d2729e194" headers="d2729e105">
+<p><span class="variable">object</span></p>
+</td>
+<td class="cellalignment44" headers="d2729e194 d2729e108">
+<p>The target of the action. See <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-DF3BA89D-0139-4A2D-AA8F-8C0FB5F0C72C">About Object Names</a>.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment43" id="d2729e205" headers="d2729e105">
+<p><span class="variable">--parameters</span></p>
+</td>
+<td class="cellalignment44" headers="d2729e205 d2729e108">
+<p>(Optional) Action-specific and object-specific parameters to direct the operation.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<a id="ELACI115"></a>
+<div class="props_rev_3"><a id="GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2"></a>
+<h2 id="ELUCL-GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2" class="sect2">General Command Options</h2>
+<div>
+<div class="section">
+<p>This section lists the options common to all commands.</p>
+<dl>
+<dt class="dlterm"><a id="GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2__GUID-16F8BA02-F84E-435D-AD97-A817F0AE9556"><!-- --></a><code class="codeph">-d, --debug</code></dt>
+<dd>
+<p>Enables the debug mode that shows the full details of the requests and responses.</p>
+</dd>
+<dt class="dlterm"><a id="GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2__GUID-DEC7956B-AFDC-4601-B361-325A81E087CF"><!-- --></a><code class="codeph">-f <span class="variable">format</span> | --format=<span class="variable">format</span></code></dt>
+<dd>
+<p>Specifies the format of the command output:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph">table</code> (default): Each field is displayed in a separate column.</p>
+</li>
+<li>
+<p><code class="codeph">tabbed</code>: Each record is displayed as a tab-separated list on a single line.</p>
+</li>
+<li>
+<p><code class="codeph">csv</code>: Each record is displayed as a comma-separated list on a single line.</p>
+</li>
+<li>
+<p><code class="codeph">json</code>: The output is displayed in JavaScript Object Notation (JSON) format. When you specify this format, the CLI ignores the <code class="codeph">-F</code> option.</p>
+</li>
+<li>
+<p><code class="codeph">xml</code>: The output is displayed in XML format. This format can be used only for commands for the <code class="codeph">user</code> resource.</p>
+</li>
+</ul>
+</dd>
+<dt class="dlterm"><a id="GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2__GUID-5EBF86A2-6D48-46BF-8B7B-605F0D5EDE7E"><!-- --></a><code class="codeph">-F <span class="variable">fields</span> |, --fields=<span class="variable">fields</span></code></dt>
+<dd>
+<p>Specifies the fields depending on the type of object. Use this option to filter the fields or columns in the display of a large result.</p>
+</dd>
+<dt class="dlterm"><a id="GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2__GUID-B878E647-AFEA-4F9B-B3B8-3019958F8C1D"><!-- --></a><code class="codeph">-h | --help</code></dt>
+<dd>
+<p>Shows the help message and then exits.</p>
+</dd>
+<dt class="dlterm"><a id="GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2__GUID-0C6922CB-6A4A-40F7-8EAD-186C8C10E653"><!-- --></a><code class="codeph">-H | --no-header</code></dt>
+<dd>
+<p>Suppresses column headings in the default table output.</p>
+</dd>
+</dl>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="ELACI116"></a>
+<div class="props_rev_3"><a id="GUID-B18E77E8-1B34-4CC8-98CC-F67144017BEF"></a>
+<h2 id="ELUCL-GUID-B18E77E8-1B34-4CC8-98CC-F67144017BEF" class="sect2">General Command Actions</h2>
+<div>
+<div class="section">
+<p>This section lists the actions that can be executed on an object. Not all objects can use all actions.</p>
+<dl class="0.77* 3.23*">
+<dt class="dlterm"><a id="GUID-B18E77E8-1B34-4CC8-98CC-F67144017BEF__GUID-DB68E20E-6BD7-4880-A4E1-06C2B1606510"><!-- --></a><code class="codeph">add</code></dt>
+<dd>
+<p>Creates an object in a container.</p>
+</dd>
+<dt class="dlterm"><a id="GUID-B18E77E8-1B34-4CC8-98CC-F67144017BEF__GUID-C4E5E861-566D-49AD-9F41-62F95641CB83"><!-- --></a><code class="codeph">delete</code></dt>
+<dd>
+<p>Deletes an object. No response is returned.</p>
+</dd>
+<dt class="dlterm"><a id="GUID-B18E77E8-1B34-4CC8-98CC-F67144017BEF__GUID-D1DCAFD6-DFCA-4D21-B0B6-72FD9E0B1461"><!-- --></a><code class="codeph">discover</code></dt>
+<dd>
+<p>Discovers objects in a container without the requirement of <code class="codeph">list</code> or <code class="codeph">get</code> permissions on each object. You must specify a container, which can only be a parent path of the key field (for example, <code class="codeph">/</code> or <code class="codeph">/mytenant</code>). Only objects in that container and names of subcontainers that the user has permission to discover are returned. The contents of subcontainers are not returned.</p>
+</dd>
+<dt class="dlterm"><a id="GUID-B18E77E8-1B34-4CC8-98CC-F67144017BEF__GUID-BD85F19D-16BD-4545-9BAB-38EE7794533D"><!-- --></a><code class="codeph">get</code></dt>
+<dd>
+<p>Retrieves information of a specific object.</p>
+</dd>
+<dt class="dlterm"><a id="GUID-B18E77E8-1B34-4CC8-98CC-F67144017BEF__GUID-8F162959-18E4-4AE3-B745-C07BA7F1FB3C"><!-- --></a><code class="codeph">list</code></dt>
+<dd>
+<p>Retrieves information about the listed object in the container you specify. The container can only be a key field of the specific object (for example, the tenant name, such as <code class="codeph">/mytenant/public</code>) or a parent path of the key field (for example, <code class="codeph">/</code> or <code class="codeph">/cloud</code>) subject to listing permissions. Oracle Compute object key fields are usually the object names or ID fields (for example, <code class="codeph">/mytenant/public/myinstance</code> for an instance). Be sure to use the correct field as the container, as detailed in the specific command descriptions. Use arguments to filter the output as needed.</p>
+</dd>
+<dt class="dlterm"><a id="GUID-B18E77E8-1B34-4CC8-98CC-F67144017BEF__GUID-895753AF-3983-41A0-81F6-E1E5142B6DBE"><!-- --></a><code class="codeph">update</code></dt>
+<dd>
+<p>Updates information of an object.</p>
+</dd>
+</dl>
+</div>
+<!-- class="section" -->
+<div class="section">Each action can display its specific requirements for each type of object.
+<p>You can also expand Oracle Compute CLI commands at the action level to list all the objects associated with that action. For example, the <code class="codeph">oracle-compute add</code> command lists all the objects for which the <code class="codeph">add</code> action can be performed.</p>
+</div>
+<!-- class="section" -->
+<div class="example" id="GUID-B18E77E8-1B34-4CC8-98CC-F67144017BEF__GUID-FE28B4AB-6357-460E-A0AD-37DC4ED10C5C">
+<pre dir="ltr">
+$ oracle-compute add
+
+oracle-compute add alertrule &lt;name&gt; &lt;subscriber&gt; [--event] [--event_type] [--severity] [--error_code] [--alert_type] \
+[--frequency]
+oracle-compute add imagelist &lt;name&gt; &lt;description&gt; [--default]
+oracle-compute add imagelistentry &lt;imagelist name&gt; &lt;machineimages&gt; &lt;version&gt; [--attributes]
+oracle-compute add machineimage &lt;name&gt; &lt;file&gt; [--attributes] [--quota]
+oracle-compute add orchestration &lt;filename&gt;
+oracle-compute add servicenet &lt;name&gt; &lt;type&gt; [--pkey] [--num_provider_nodes] [--description]
+oracle-compute add snapshot &lt;instance&gt; [--name] [--machineimage] [--quota]
+oracle-compute add sshkey &lt;name&gt; &lt;key&gt; [--enabled] [--osuser]
+oracle-compute add storageattachment &lt;instance_name&gt; &lt;storage_volume_name&gt; &lt;index&gt;
+oracle-compute add storagevolume &lt;name&gt; &lt;size&gt; &lt;properties&gt; [--description] [--source_storagevolume_name] [--imagelist] \
+[--imagelist_entry] [--tags] [--quota]
+oracle-compute add user &lt;username&gt; &lt;fullname&gt; &lt;email&gt; [--role] [--password]
+oracle-compute add vethernet &lt;name&gt; &lt;description&gt; &lt;type&gt; &lt;id&gt; [--switchports] [--svcnet]
+</pre></div>
+<!-- class="example" -->
+<div class="section">In the same way, the Oracle Compute CLI also lists all the actions that can be performed on an object. For example, the <code class="codeph">oracle-compute instance</code> command lists all the actions associated with object <code class="codeph">instance</code>.</div>
+<!-- class="section" -->
+<div class="example" id="GUID-B18E77E8-1B34-4CC8-98CC-F67144017BEF__GUID-980D172F-EC76-4CE4-806A-3796EDF10EAD">
+<pre dir="ltr">
+$oracle-compute instance
+
+oracle-compute delete instance &lt;name&gt;
+oracle-compute discover instance &lt;container&gt;
+oracle-compute get instance &lt;name&gt;
+oracle-compute list instance &lt;container&gt; [--tags] [--quota] [--vcable_id]
+oracle-compute restart instance &lt;name&gt;
+oracle-compute shutdown instance &lt;name&gt;
+oracle-compute update instance &lt;name&gt; [--shape] [--networking] [--nis] [--tag] [--delete_tag]
+</pre></div>
+<!-- class="example" --></div>
+</div>
+<a id="ELACI117"></a>
+<div class="props_rev_3"><a id="GUID-DF3BA89D-0139-4A2D-AA8F-8C0FB5F0C72C"></a>
+<h2 id="ELUCL-GUID-DF3BA89D-0139-4A2D-AA8F-8C0FB5F0C72C" class="sect2">About Object Names</h2>
+<div>
+<div class="section">Each Oracle Compute object for which you can execute a CLI command is identified uniquely by its URI. An object such as an instance, a storage volume, or an SSH key has a name based on its position in a hierarchy of containers.
+<p>For example, the object name <code class="codeph">/mytenant/public/8e7c16ad-1bc4-4743-a9ce-781be4e26f24</code> indicates that this instance <code class="codeph">8e7c16ad-1bc4-4743-a9ce-781be4e26f24</code> is in the container <code class="codeph">public,</code> and <code class="codeph">public</code> is in the container <code class="codeph">mytenant</code>.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-2FD61692-F7E8-48A0-8170-8524F09CD56C.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-E11D9ED0-2E92-42D6-9E89-F21463626929.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

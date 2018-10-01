@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="generator" content="DITA Open Toolkit version 1.8.5" />
+<title>Description of the illustration jcs_diagram_topology_coherence</title>
+<link rel="stylesheet" href="../../dcommon/css/blafdoc.css" title="Oracle BLAFDoc" type="text/css" />
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<div>
+<p>The Oracle Java Cloud Service (JCS) VM topology diagram shows a single service instance JCS1, which is comprised of 7VMs. The WLS Admin Server and first Managed Server are located in VM1. The second Managed Server is located in VM2. These two Managed Servers are part of a cluster that is storage-disabled. VM3, VM4 and VM5 each contain a Managed Coherence Server. These 3 Managed Coherence Servers are part of a second cluster that is storage-enabled. The 2 Managed Servers and the 3 Coherence Managed Servers are part of a single Coherence Cluster.</p>
+<p>The Oracle Traffic Director (OTD) Admin Server and the first OTD instance are located in VM6. Another OTD instance is located in VM7. VM1–VM5 are connected to two Oracle Database Cloud Service deployments: DBCS1 and DBCS2. DBCS1 contains the Oracle Schema and DBCS2 contains the Application Database. The diagram shows 3 different roles accessing the components of this service instance: Administrators, Application Clients and Service Console/REST/CLI. Application Clients connect to the OTD VMs using port 443. Administrators connect to all VMs using port 22. They also connect to the OTD Admin Server using port 8989 and the WLS Admin Server using port 7002. The Service Console/REST/CLI users connect to the JCS and DBCS using port 443.</p>
+</div>
+<div class="footer"><img class="copyrightlogo" src="../../dcommon/gifs/oracle.gif" alt="Oracle Logo" /> <a href="../../dcommon/html/cpyr.htm"><br />
+<span class="copyrightlogo">Copyright&nbsp;©&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.</span></a></div>
+</body>
+</html>

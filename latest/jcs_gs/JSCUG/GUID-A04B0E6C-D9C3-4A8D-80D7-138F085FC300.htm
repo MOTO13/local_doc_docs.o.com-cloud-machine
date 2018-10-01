@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>About Backup and Restoration of Oracle Java Cloud Service Instances</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="By backing up your Oracle Java Cloud Service instances, you can preserve them in a particular state. If you later make configuration changes to a service that you don&rsquo;t want, you can undo them by restoring the service instance&rsquo;s configuration data from a backup. You can also restore the software to its current official patch set update (PSU) level." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-EDAEEE74-17E4-43CF-9059-F777255DFBDC.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-CF725B2D-DC34-4E1C-BAD7-2955ED03430C.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300"></a> <span id="PAGE" style="display:none;">64/131</span> <!-- End Header -->
+<a id="JSCUG3361"></a><a id="JSCUG3312"></a>
+<h1 id="JSCUG-GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300" class="sect1">About Backup and Restoration of Oracle Java Cloud Service Instances</h1>
+<div>
+<p>By backing up your Oracle Java Cloud Service instances, you can preserve them in a particular state. If you later make configuration changes to a service that you don&rsquo;t want, you can undo them by restoring the service instance&rsquo;s configuration data from a backup. You can also restore the software to its current official patch set update (PSU) level.</p>
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300.htm#GUID-777806D0-C9C6-4D7E-86A1-6B4B7FA7667A" title="What a backup contains depends on whether the backup is an incremental backup or a full backup.">Contents of a Backup</a></p>
+</li>
+<li>
+<p><a href="GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300.htm#GUID-9CD83FFB-7304-40A9-A468-80D1E609D482" title="Backups are initiated in several different ways.">How Backups Are Initiated</a></p>
+</li>
+<li>
+<p><a href="GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300.htm#GUID-DAC654D7-1675-4615-8B6C-77587759ABAE" title="Oracle Java Cloud Service stores all backups on a remote file system. To speed up restorations from recent backups, Oracle Java Cloud Service also keeps a local copy of any backup it has recently created.">Where Backups Are Stored</a></p>
+</li>
+<li>
+<p><a href="GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300.htm#GUID-2B8D081E-8133-42DC-967A-DB6D5699BBC1" title="During a backup of an Oracle Java Cloud Service instance, the service instance continues to run and all applications deployed to the service instance remain available.">What Happens During a Backup</a></p>
+</li>
+<li>
+<p><a href="GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300.htm#GUID-016771AA-18EA-43D3-88BD-0AC7F33D8C0E" title="Restorations are initiated in several different ways.">How Restorations Are Initiated</a></p>
+</li>
+<li>
+<p><a href="GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300.htm#GUID-74F51136-3203-4A95-929C-AE08C910926C" title="When restoration of a service instance is initiated, Oracle Java Cloud Service shuts down the service instance's servers. After the restoration is complete, Oracle Java Cloud Service restarts the service instance's servers.">What Happens when a Service Instance Is Restored</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<a id="JSCUG3362"></a><a id="JSCUG3334"></a>
+<div class="props_rev_3"><a id="GUID-777806D0-C9C6-4D7E-86A1-6B4B7FA7667A"></a>
+<h2 id="JSCUG-GUID-777806D0-C9C6-4D7E-86A1-6B4B7FA7667A" class="sect2">Contents of a Backup</h2>
+<div>
+<p>What a backup contains depends on whether the backup is an <span class="bold">incremental backup</span> or a <span class="bold">full backup</span>.</p>
+<p>Oracle Java Cloud Service ensures that backups contain only the volumes and other metadata that are needed for a proper restoration of a service instance. For details about the volumes that are backed up, see <a href="GUID-CD8653E2-142A-4186-8365-911433DB96E1.htm#GUID-AAE72531-41A4-4462-B90C-D2D812EEA68E" title="You have access to all Oracle Compute Cloud Service virtual machine instances created for Oracle Java Cloud Service, including the virtual machine on which the WebLogic Administration Server is running.">About the Disk Volumes</a>.</p>
+<div class="section">
+<p class="subhead2">Topics:</p>
+</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300.htm#GUID-56F011B5-4327-48C1-955B-9E735BC6EBD0" title="A full backup contains all the runtime artifacts required to restore the service instance&rsquo;s configuration data.">Contents of a Full Backup</a></p>
+</li>
+<li>
+<p><a href="GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300.htm#GUID-B39DDB08-A2DA-4145-AFA8-FBDD4194EF13" title="An incremental backup contains changes to configuration data on all virtual machines since the last scheduled full backup.">Contents of an Incremental Backup</a></p>
+</li>
+<li>
+<p><a href="GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300.htm#GUID-CC42BC9B-00E6-4D38-A0F1-213C97C72942" title="Each incremental backup is linked to the last full scheduled backup that was performed before the incremental backup. As a result, each full scheduled backup is linked to all incremental backups that were performed between that full backup and the next scheduled full backup.">Links Between an Incremental Backup and Its Related Full Backup</a></p>
+</li>
+<li>
+<p><a href="GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300.htm#GUID-CE767D8D-28B4-4425-8B93-6074D777173D" title="Oracle Java Cloud Service ensures that backups contain only the information that is needed for a proper restoration of a service instance.">Items that Are Not Backed Up</a></p>
+</li>
+</ul>
+</div>
+<a id="JSCUG3364"></a>
+<div class="props_rev_3"><a id="GUID-56F011B5-4327-48C1-955B-9E735BC6EBD0"></a>
+<h3 id="JSCUG-GUID-56F011B5-4327-48C1-955B-9E735BC6EBD0" class="sect3">Contents of a Full Backup</h3>
+<div>
+<p><span class="bold">A full backup</span> contains all the runtime artifacts required to restore the service instance&rsquo;s configuration data.</p>
+<p>Specifically, a full backup contains these items:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The Oracle WebLogic Server domain configuration of the service instance, which consists of these items:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The <code class="codeph">$DOMAIN_HOME</code> volume of each virtual machine</p>
+<p>This includes any Managed Server persistent stores that are not stored in the database. WebLogic Server persistent stores are used for transaction logs and Java Message Service (JMS) providers.</p>
+</li>
+<li>
+<p>Oracle WebLogic Server domain configuration files in the <code class="codeph">$MW_HOME</code> volume of the Administration Server virtual machine</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Oracle Traffic Director configuration for the load balancer</p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-56F011B5-4327-48C1-955B-9E735BC6EBD0__GUID-F20DCE18-4061-489E-9509-4C18CCB54B24">
+<p class="notep1">Note:</p>
+<p><span>Oracle Java Cloud Service</span> does <span class="bold">not</span> back up any software, including Oracle Fusion Middleware software installed on the <code class="codeph">$MW_HOME</code> volume. You are responsible for ensuring that you can re-install any software that you have installed on a service instance&rsquo;s VMs if necessary.</p>
+</div>
+<p>For more information about the disk volumes in a service instance see <a href="GUID-CD8653E2-142A-4186-8365-911433DB96E1.htm#GUID-AAE72531-41A4-4462-B90C-D2D812EEA68E" title="You have access to all Oracle Compute Cloud Service virtual machine instances created for Oracle Java Cloud Service, including the virtual machine on which the WebLogic Administration Server is running.">About the Disk Volumes</a>.</p>
+</div>
+</div>
+<a id="JSCUG3363"></a>
+<div class="props_rev_3"><a id="GUID-B39DDB08-A2DA-4145-AFA8-FBDD4194EF13"></a>
+<h3 id="JSCUG-GUID-B39DDB08-A2DA-4145-AFA8-FBDD4194EF13" class="sect3">Contents of an Incremental Backup</h3>
+<div>
+<p><span class="bold">An incremental backup</span> contains changes to configuration data on all virtual machines since the last scheduled full backup.</p>
+<div class="infobox-note" id="GUID-B39DDB08-A2DA-4145-AFA8-FBDD4194EF13__GUID-A4AB8C2C-EE42-46C4-BED4-10606E702EC5">
+<p class="notep1">Note:</p>
+<p>All incremental backups are automated scheduled backups. You cannot create an incremental backup on demand.</p>
+</div>
+<p>While creating an incremental backup, <span>Oracle Java Cloud Service</span> promotes the backup to a full backup if any of the following conditions are met:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The configuration data of the service instance has been restored since the last scheduled full backup.</p>
+</li>
+<li>
+<p>The service instance has been scaled out since the last scheduled full backup.</p>
+</li>
+<li>
+<p><span>Oracle Java Cloud Service</span> can now reach a virtual machine that it could not reach during the last scheduled full backup.</p>
+</li>
+<li>
+<p>The last full scheduled backup is no longer available.</p>
+</li>
+</ul>
+<p>You can recognize a promoted backup in the list of available backups from its type and creation time. Any full, automated backup created at the scheduled time for an incremental backup has been promoted.</p>
+</div>
+</div>
+<a id="JSCUG3419"></a>
+<div class="props_rev_3"><a id="GUID-B244CD97-4D7C-4C9B-8DB4-CCDEDF8595A7"></a>
+<h3 id="JSCUG-GUID-B244CD97-4D7C-4C9B-8DB4-CCDEDF8595A7" class="sect3">Contents of a Database Backup</h3>
+<div>
+<p>A database backup contains Oracle Fusion Middleware component schemas and application data for an <span>Oracle Java Cloud Service</span> instance.</p>
+<p><span>Oracle Java Cloud Service</span> can only back up this database if the service instance is connected to an <span>Oracle Database Cloud Service</span> database deployment. See <a href="GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300.htm#GUID-CE767D8D-28B4-4425-8B93-6074D777173D" title="Oracle Java Cloud Service ensures that backups contain only the information that is needed for a proper restoration of a service instance.">Items that Are Not Backed Up</a>.</p>
+<p>All scheduled automated backups include a database backup. You can choose whether or not to include a database backup in backups that you initiate. For more information, see:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300.htm#GUID-9CD83FFB-7304-40A9-A468-80D1E609D482" title="Backups are initiated in several different ways.">How Backups Are Initiated</a></p>
+</li>
+<li>
+<p><a href="GUID-20AE6F0E-FF15-47F2-9CBF-7B9CC31BBFCA.htm#GUID-20AE6F0E-FF15-47F2-9CBF-7B9CC31BBFCA" title="You can create a full backup immediately without having to wait for the next scheduled backup.">Initiating an On-Demand Backup of an Oracle Java Cloud Service Instance</a></p>
+</li>
+</ul>
+<p>When you initiate an on-demand backup, you have the option to keep the backup forever (it will not expire and not be deleted automatically). The extent of a database backup depends on whether the backup is to be kept forever:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>If the backup is to be kept forever, the database backup is a full backup.</p>
+</li>
+<li>
+<p>Otherwise, the Recovery Manager (RMAN) software that backs up the database determines whether the backup shall be a full backup or an incremental backup.</p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-B244CD97-4D7C-4C9B-8DB4-CCDEDF8595A7__GUID-76CDA5FA-D088-4051-BEED-DA335AABD0EF">
+<p class="notep1">Note:</p>
+<span>To ensure that you can restore the database for an <span>Oracle Java Cloud Service</span> instance without risking data loss for other service instances, do <span class="bold">not</span> use the same <span>Oracle Database Cloud Service</span> database deployment with multiple <span>Oracle Java Cloud Service</span> instances.</span> <span>Backups of an <span>Oracle Database Cloud Service</span> database deployment that is used with multiple <span>Oracle Java Cloud Service</span> instances contain data for all the <span>Oracle Java Cloud Service</span> instances. If you restore the database while restoring an <span>Oracle Java Cloud Service</span> instance, data for all the <span>Oracle Java Cloud Service</span> instances is restored.</span></div>
+</div>
+</div>
+<a id="JSCUG3365"></a>
+<div class="props_rev_3"><a id="GUID-CC42BC9B-00E6-4D38-A0F1-213C97C72942"></a>
+<h3 id="JSCUG-GUID-CC42BC9B-00E6-4D38-A0F1-213C97C72942" class="sect3">Links Between an Incremental Backup and Its Related Full Backup</h3>
+<div>
+<p>Each incremental backup is linked to the last full scheduled backup that was performed before the incremental backup. As a result, each full scheduled backup is linked to all incremental backups that were performed between that full backup and the next scheduled full backup.</p>
+<p>You can restore a service instance from an incremental backup without the need to restore the full backup to which the incremental backup is linked. <span>Oracle Java Cloud Service</span> restores all the data from the linked full backup required for a complete restoration of the service instance. For more information, see <a href="GUID-88CEA944-DFAB-45A1-9224-CB34C7112280.htm#GUID-88CEA944-DFAB-45A1-9224-CB34C7112280" title="You can restore an Oracle Java Cloud Service instance from a backup to undo configuration changes you don&rsquo;t want and to return the service instance to a particular state. The instance&rsquo;s configuration data is always restored, but you can also choose whether to restore the Oracle WebLogic Server and the JDK software to its current official patch set update (PSU) level or to leave it unchanged.">Restoring an Oracle Java Cloud Service Instance from a Backup</a>.</p>
+<p>However, you <span class="bold">cannot</span> delete or archive a full backup with linked incremental backups without deleting or archiving the incremental backups. For more information, see:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-61B5685C-2D85-48A8-82CA-4150069E7A08.htm#GUID-61B5685C-2D85-48A8-82CA-4150069E7A08" title="You can delete a backup that you no longer require to release storage or prevent an Oracle Java Cloud Service instance from being restored from the backup.">Deleting a Backup</a></p>
+</li>
+<li>
+<p><a href="GUID-61B5685C-2D85-48A8-82CA-4150069E7A08.htm#GUID-61B5685C-2D85-48A8-82CA-4150069E7A08" title="You can delete a backup that you no longer require to release storage or prevent an Oracle Java Cloud Service instance from being restored from the backup.">Deleting a Backup</a></p>
+</li>
+<li>
+<p><a href="../JSRMR/Downloading%20a%20Backup%20for%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html" target="_blank">Downloading or Archiving a Backup for a Service Instance</a> in <span><cite>REST API for Oracle Java Cloud Service</cite></span></p>
+</li>
+</ul>
+</div>
+</div>
+<a id="JSCUG3366"></a>
+<div class="props_rev_3"><a id="GUID-CE767D8D-28B4-4425-8B93-6074D777173D"></a>
+<h3 id="JSCUG-GUID-CE767D8D-28B4-4425-8B93-6074D777173D" class="sect3">Items that Are Not Backed Up</h3>
+<div>
+<p><span>Oracle Java Cloud Service</span> ensures that backups contain only the information that is needed for a proper restoration of a service instance.</p>
+<p>Therefore, the following items are <span class="bold">not</span> backed up:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Users' custom volumes</p>
+</li>
+<li>
+<p>The <code class="codeph">$JDK_HOME</code> volume, which contains the JDK software</p>
+</li>
+<li>
+<p>Software binary files in the <code class="codeph">$MW_HOME</code> volume</p>
+</li>
+</ul>
+<p>Additionally, <span>Oracle Java Cloud Service</span> does not back up the database unless it is connected to an <span>Oracle Database Cloud Service</span> database deployment. For other types of databases, you can manually coordinate the database backups to occur on the same schedule as <span>Oracle Java Cloud Service</span>. Similarly, if you use <span>Oracle Java Cloud Service</span> to restore a service instance from a backup, you can also separately restore the database from a backup taken at the same time.</p>
+</div>
+</div>
+</div>
+<a id="JSCUG3335"></a>
+<div class="props_rev_3"><a id="GUID-9CD83FFB-7304-40A9-A468-80D1E609D482"></a>
+<h2 id="JSCUG-GUID-9CD83FFB-7304-40A9-A468-80D1E609D482" class="sect2">How Backups Are Initiated</h2>
+<div>
+<p>Backups are initiated in several different ways.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span>Oracle Java Cloud Service</span> initiates scheduled automated backups on the following default schedule:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Full backups are initiated weekly starting 12 hours after a service instance was created, rounded to the nearest five-minute interval.</p>
+<p>For example, if a service instance is created at 1:01 PM on a Monday, full backups are initiated at 1:00 AM on Tuesdays.</p>
+</li>
+<li>
+<p>Incremental backups are initiated every day except the day of a full backup at the same time that full backups are initiated.</p>
+<p>For example, if a service instance is created at 1:01 PM on a Monday, incremental backups are initiated at 1:00 AM every day except Tuesdays.</p>
+</li>
+</ul>
+<p>You can change the schedule on which automated backups are initiated. See <a href="GUID-F9A3A1B3-2705-4265-AFC9-6398E3B3D494.htm#GUID-F9A3A1B3-2705-4265-AFC9-6398E3B3D494" title="You can configure backups for an Oracle Java Cloud Service instance to customize when the service instance is automatically backed up and how backups are stored.">Configuring Automated Backups for an Oracle Java Cloud Service Instance</a>.</p>
+</li>
+<li>
+<p>You can initiate a backup immediately without having to wait for the next scheduled backup as explained in <a href="GUID-20AE6F0E-FF15-47F2-9CBF-7B9CC31BBFCA.htm#GUID-20AE6F0E-FF15-47F2-9CBF-7B9CC31BBFCA" title="You can create a full backup immediately without having to wait for the next scheduled backup.">Initiating an On-Demand Backup of an Oracle Java Cloud Service Instance</a>.</p>
+</li>
+<li>
+<p><span>Oracle Java Cloud Service</span> initiates a full backup immediately before a service instance is patched, scaled in, or scaled out.</p>
+</li>
+</ul>
+<p>Backups are enabled by default in <span>Oracle Java Cloud Service</span>, but you can disable this feature on new and existing service instances. See:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-7472FA73-3CD6-4E2F-A78F-BB715A57CC5B.htm" title="Disable both automated and on-demand backups for an Oracle Java Cloud Service instance.">Disabling or Enabling Backups for an Oracle Java Cloud Service Instance on OPCM</a></p>
+</li>
+</ul>
+</div>
+</div>
+<a id="JSCUG3336"></a>
+<div class="props_rev_3"><a id="GUID-DAC654D7-1675-4615-8B6C-77587759ABAE"></a>
+<h2 id="JSCUG-GUID-DAC654D7-1675-4615-8B6C-77587759ABAE" class="sect2">Where Backups Are Stored</h2>
+<div>
+<p><span><span>Oracle Java Cloud Service</span> stores all backups on a remote file system.</span> To speed up restorations from recent backups, <span>Oracle Java Cloud Service</span> also keeps a local copy of any backup it has recently created.</p>
+<div class="infobox-note" id="GUID-DAC654D7-1675-4615-8B6C-77587759ABAE__GUID-8BAB7CB1-B856-48CE-8255-F1772D2F40CA">
+<p class="notep1">Note:</p>
+Do not attempt to download the backup files generated by <span>Oracle Java Cloud Service</span>. These files are encrypted and not accessible offline. You must use <span>Oracle Java Cloud Service</span> to restore a service instance from a backup.</div>
+<div class="section">
+<p class="subhead2">How Backups on a Remote File System Are Stored</p>
+<p>By default, <span>Oracle Java Cloud Service</span> stores backups on the remote file system that was specified when the service instance was created. You can choose to store the backups on a different file system as explained in <a href="GUID-F9A3A1B3-2705-4265-AFC9-6398E3B3D494.htm#GUID-F9A3A1B3-2705-4265-AFC9-6398E3B3D494" title="You can configure backups for an Oracle Java Cloud Service instance to customize when the service instance is automatically backed up and how backups are stored.">Configuring Automated Backups for an Oracle Java Cloud Service Instance on OPCM</a>.</p>
+<div class="infobox-note" id="GUID-DAC654D7-1675-4615-8B6C-77587759ABAE__GUID-A4139AE2-6139-4A0D-B912-A54B4F4C3B1D">
+<p class="notep1">Note:</p>
+If the file system contains backup archives that <span>Oracle Java Cloud Service</span> has moved there, it cannot be changed.</div>
+<p><span>Oracle Java Cloud Service</span> automatically deletes a backup when the retention period for the backup has elapsed.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">How Local Copies of Backups Are Stored</p>
+<p><span>Oracle Java Cloud Service</span> stores local copies in a dedicated volume mounted on the block storage attached to the virtual machine where the Administration Server is running. A backup fails if there is insufficient free space on this volume.</p>
+<p>How long <span>Oracle Java Cloud Service</span> keeps the local copy of a backup before deleting it depends on the extent of the backup:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>For an incremental backup, <span>Oracle Java Cloud Service</span> keeps the local copy for seven days.</p>
+</li>
+<li>
+<p>For a full backup, <span>Oracle Java Cloud Service</span> keeps the local copy for as long as the local copy of its last related incremental backups is kept, or for seven days, whichever is longer.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">How Backups and Local Copies Are Deleted Automatically</p>
+<p>After completing the day&rsquo;s scheduled backup, <span>Oracle Java Cloud Service</span> deletes any backups or local copies that are due to be deleted that day. If the scheduled backup fails because of insufficient space, backups and local copies that are due to be deleted are still deleted.</p>
+<div class="infobox-note" id="GUID-DAC654D7-1675-4615-8B6C-77587759ABAE__GUID-FA843C55-EB38-4D0E-B78C-D97017E7EED8">
+<p class="notep1">Note:</p>
+<p>When an <span>Oracle Java Cloud Service</span> instance is deleted, all its backups are deleted.</p>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="JSCUG3337"></a>
+<div class="props_rev_3"><a id="GUID-2B8D081E-8133-42DC-967A-DB6D5699BBC1"></a>
+<h2 id="JSCUG-GUID-2B8D081E-8133-42DC-967A-DB6D5699BBC1" class="sect2">What Happens During a Backup</h2>
+<div>
+<p>During a backup of an Oracle Java Cloud Service instance, the service instance continues to run and all applications deployed to the service instance remain available.</p>
+<p>To prevent configuration changes during a backup, Oracle Java Cloud Service locks the Oracle WebLogic Server domain. After locking the domain, Oracle Java Cloud Service backs up files on each node as described in <a href="GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300.htm#GUID-777806D0-C9C6-4D7E-86A1-6B4B7FA7667A" title="What a backup contains depends on whether the backup is an incremental backup or a full backup.">Contents of a Backup</a>.</p>
+<div class="infobox-note" id="GUID-2B8D081E-8133-42DC-967A-DB6D5699BBC1__GUID-D6583B21-9850-4049-8E9A-302C2855C506">
+<p class="notep1">Note:</p>
+<p>Do <span class="bold">not</span> to attempt to start the administration server while a backup is in progress.</p>
+</div>
+<p>While the backup is in progress, you cannot start any other management operation on the service instance.</p>
+<p>When the backup is complete, Oracle Java Cloud Service unlocks the Oracle WebLogic Server domain. If the backup is a scheduled backup, Oracle Java Cloud Service also cleans up aged backups as follows:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>It deletes from local storage all backups old enough to be stored only on a remote file system.</p>
+</li>
+<li>
+<p>It deletes from wherever they are stored any remaining copies of backups whose retention period has elapsed.</p>
+</li>
+</ul>
+<p>If the scheduled backup fails because of insufficient space, the aged backups are still cleaned up.</p>
+<p>If the backup includes a database backup, Oracle Java Cloud Service uses Recovery Manager (RMAN) to back up the <span>Oracle Database Cloud Service</span> database deployment. The backup of the database is coordinated with the backup of other volumes.</p>
+<div class="infobox-note" id="GUID-2B8D081E-8133-42DC-967A-DB6D5699BBC1__GUID-AD69C0AE-B63F-4D79-9756-4843DFADCABB">
+<p class="notep1">Note:</p>
+<p>Oracle Java Cloud Service does not automatically remove transaction records when backing up a service instance. Therefore, you must remove transaction records after you restore a service instance from a backup.</p>
+</div>
+</div>
+</div>
+<a id="JSCUG3374"></a>
+<div class="props_rev_3"><a id="GUID-016771AA-18EA-43D3-88BD-0AC7F33D8C0E"></a>
+<h2 id="JSCUG-GUID-016771AA-18EA-43D3-88BD-0AC7F33D8C0E" class="sect2">How Restorations Are Initiated</h2>
+<div>
+<p>Restorations are initiated in several different ways.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>You can initiate a restoration as explained in <a href="GUID-88CEA944-DFAB-45A1-9224-CB34C7112280.htm#GUID-88CEA944-DFAB-45A1-9224-CB34C7112280" title="You can restore an Oracle Java Cloud Service instance from a backup to undo configuration changes you don&rsquo;t want and to return the service instance to a particular state. The instance&rsquo;s configuration data is always restored, but you can also choose whether to restore the Oracle WebLogic Server and the JDK software to its current official patch set update (PSU) level or to leave it unchanged.">Restoring an Oracle Java Cloud Service Instance from a Backup</a>.</p>
+</li>
+<li>
+<p>When a patch is rolled back, Oracle Java Cloud Service initiates a restoration to return the software to the official PSU level it was at before the patch was applied. The restoration that Oracle Java Cloud Service initiates appears in the instance&rsquo;s restoration history on the <span class="wintitle">Backup</span> page.</p>
+</li>
+</ul>
+</div>
+</div>
+<a id="JSCUG3338"></a>
+<div class="props_rev_3"><a id="GUID-74F51136-3203-4A95-929C-AE08C910926C"></a>
+<h2 id="JSCUG-GUID-74F51136-3203-4A95-929C-AE08C910926C" class="sect2">What Happens when a Service Instance Is Restored</h2>
+<div>
+<p>When restoration of a service instance is initiated, Oracle Java Cloud Service shuts down the service instance's servers. After the restoration is complete, Oracle Java Cloud Service restarts the service instance's servers.</p>
+<p>If the hosts in the backup and the service instance don&rsquo;t match, how Oracle Java Cloud Service handles the mismatch depends on the cause of the mismatch.</p>
+<div class="section">
+<p class="subhead2">The Service Instance Contains Managed Server Hosts Not in the Backup</p>
+<p>If the service instance contains any managed server hosts that are not in the backup, Oracle Java Cloud Service warns you that it cannot restore the managed server hosts that are not part of the backup.</p>
+<p>Before trying to restore again, you can scale in the service instance to delete the nodes that correspond to these managed server hosts. For more information, see <a href="GUID-3054AC97-E2C6-45DE-818E-33671C0C8280.htm#GUID-3054AC97-E2C6-45DE-818E-33671C0C8280" title="You can scale in an Oracle Java Cloud Service cluster to remove a selected node from the cluster. When you scale in, Oracle Java Cloud Service removes the selected WebLogic Server Managed Server instance and the VM that it is running on.">Scaling In an Oracle Java Cloud Service Instance</a>.</p>
+<p>If you choose to continue without scaling in the service instance, Oracle Java Cloud Service asks you to confirm that you understand that the service instance will be scaled in automatically.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">The Service Instance Contains Hosts on the Coherence Data Tier Not in the Backup</p>
+<p><span>When Oracle Coherence is enabled for a service instance:</span> Managed Servers configured on the Coherence data tier are identified by <code class="codeph"><span class="variable">managedserver</span>_server_<span class="variable">n</span>_DG</code>. If a service instance contains Managed Server hosts on the Coherence data tier that are not in the backup, scale in the service instance by removing the capacity unit that manages those specific nodes and the corresponding managed server hosts before trying to restore the service instance. For information about removing a specific capacity unit, see <a href="GUID-506493C3-FEC4-48FE-87BB-7764DCA4612A.htm#GUID-FC95A5B6-DE4F-4713-809C-79E7C4215597" title="To increase or decrease the Coherence cache capacity for an Oracle Java Cloud Service&mdash;Coherence instance, you can use the Oracle Java Cloud Service Console to scale out or scale in the Coherence data tier by adding or removing one capacity unit at a time.">Scaling the Coherence Data Tier by Using the Oracle Java Cloud Service Console</a>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">The Backup Contains Hosts Not in the Service Instance</p>
+<p>If the backup contains any hosts that are not in the service instance, Oracle Java Cloud Service does <span class="bold">not</span> attempt to remove the managed servers on these hosts from the administration server configuration. You must use Oracle WebLogic Server to remove the managed servers on these hosts from the administration server configuration.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-EDAEEE74-17E4-43CF-9059-F777255DFBDC.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-CF725B2D-DC34-4E1C-BAD7-2955ED03430C.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

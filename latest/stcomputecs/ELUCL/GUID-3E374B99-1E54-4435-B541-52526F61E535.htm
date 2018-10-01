@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Managing Image Lists</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-07T05:55:01Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine CLI Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E69222-06" />
+<meta name="dcterms.isVersionOf" content="ELUCL" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-D946E8D4-12A6-4F7B-979D-BB7272196F48.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUCL.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-3E374B99-1E54-4435-B541-52526F61E535"></a> <span id="PAGE" style="display:none;">22/40</span> <!-- End Header -->
+<h1 id="ELUCL-GUID-3E374B99-1E54-4435-B541-52526F61E535" class="sect1">Managing Image Lists</h1>
+<div>
+<div class="section">Machine images must be added to an image list to create a versioned instance template. When defining the launch plan for an orchestration to create an instance, an image list must be selected. You may also optionally select the version of the member machine image for launch. If no version is selected, then the default entry defined for the image list is launched. For example, you might want to set up an image list containing a selection of machine images of various Oracle Linux releases.</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-3E374B99-1E54-4435-B541-52526F61E535.htm#GUID-12D987E7-ACA7-4282-8788-60362E02D174" title="This command enables you to add a new image list.">add imagelist</a></p>
+</li>
+<li>
+<p><a href="GUID-3E374B99-1E54-4435-B541-52526F61E535.htm#GUID-073E644B-9D35-4057-9E1D-D37C3EC4BEC2" title="This command enables you to delete an existing image list.">delete imagelist</a></p>
+</li>
+<li>
+<p><a href="GUID-3E374B99-1E54-4435-B541-52526F61E535.htm#GUID-BB18D0DE-32E1-4F2C-9976-B770F0E0ECBE" title="This command enables you to update an image list.">update imagelist</a></p>
+</li>
+<li>
+<p><a href="GUID-3E374B99-1E54-4435-B541-52526F61E535.htm#GUID-62AFF150-9FF7-484A-8F38-60D6CF64D756" title="This command enables you to discover image lists in a specific container. This command enables you to retrieve information for a specific image list.This command enables you to retrieve information for image lists in a container or subcontainers.">Retrieve Image List Details</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-12D987E7-ACA7-4282-8788-60362E02D174"></a>
+<h2 id="ELUCL-GUID-12D987E7-ACA7-4282-8788-60362E02D174" class="sect2">add imagelist</h2>
+<div>
+<p>This command enables you to add a new image list.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-12D987E7-ACA7-4282-8788-60362E02D174__GUID-6AA608C1-B25C-4006-A443-2B0DBF43CF96">
+<p class="notep1">Note:</p>
+You can add only private image lists to the system. To make these image lists public, contact you Oracle Cloud Administrator.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute add imagelist <span class="variable">name</span> <span class="variable">description</span> [<span class="variable">--default</span>]</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-12D987E7-ACA7-4282-8788-60362E02D174__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table lists the parameters and descriptions for adding an image list.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d14193e107">Parameter</th>
+<th class="cellalignment26" id="d14193e109">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d14193e113" headers="d14193e107">name</td>
+<td class="cellalignment27" headers="d14193e113 d14193e109">A unique hierarchical name for the image list. For example, /mytenant/public/myimagelist .
+<p>Object names can contain only alphanumeric characters, hyphens, and periods. Object names are case-sensitive.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d14193e120" headers="d14193e107">description</td>
+<td class="cellalignment27" headers="d14193e120 d14193e109">A description of this image list</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d14193e125" headers="d14193e107">--default</td>
+<td class="cellalignment27" headers="d14193e125 d14193e109">(Optional) The version of the image in the list that should be considered the default. The default is used on instance launch if a specific version has not been given.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute add imagelist &nbsp;/mytenant/admin/oel6 "new imagelist" --default=1</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute add imagelist  /mytenant/admin/oel6 "new imagelist" --default=1 -f json
+{
+ "list": [
+  {
+   "default": 1,
+   "uri": "http://api.oc.example.com/imagelist/mytenant/admin/oel6",
+   "description": "new imagelist",
+   "name": "/mytenant/admin/oel6",
+   "entries": []
+  }
+ ]
+}
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-073E644B-9D35-4057-9E1D-D37C3EC4BEC2"></a>
+<h2 id="ELUCL-GUID-073E644B-9D35-4057-9E1D-D37C3EC4BEC2" class="sect2">delete imagelist</h2>
+<div>
+<p>This command enables you to delete an existing image list.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-073E644B-9D35-4057-9E1D-D37C3EC4BEC2__GUID-D74BEB63-72B8-4F63-919E-77044E723CFA">
+<p class="notep1">Note:</p>
+You can delete only private image lists that you have created.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute delete imagelist <span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-073E644B-9D35-4057-9E1D-D37C3EC4BEC2__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for deleting an image list.">
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment16" rowspan="1" colspan="1" id="d14193e190">
+<p>Parameter</p>
+</td>
+<td class="cellalignment16" rowspan="1" colspan="1" headers="d14193e190">
+<p>Description</p>
+</td>
+</tr>
+</tbody>
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d14193e201">Parameter</th>
+<th class="cellalignment26" id="d14193e203">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d14193e207" headers="d14193e201">name</td>
+<td class="cellalignment27" headers="d14193e207 d14193e203">A unique hierarchical name for the image list. For example, <code class="codeph">/mytenant/public/myimagelist</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute delete imagelist /mytenant/public/oel6</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-BB18D0DE-32E1-4F2C-9976-B770F0E0ECBE"></a>
+<h2 id="ELUCL-GUID-BB18D0DE-32E1-4F2C-9976-B770F0E0ECBE" class="sect2">update imagelist</h2>
+<div>
+<p>This command enables you to update an image list.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-BB18D0DE-32E1-4F2C-9976-B770F0E0ECBE__GUID-556E61D6-0CFC-42BF-88A8-E8BA7B6009DD">
+<p class="notep1">Note:</p>
+You can update only private image lists that you have created.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute update imagelist <span class="variable">name</span> [<span class="variable">--description</span>] [<span class="variable">--default</span>]</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-BB18D0DE-32E1-4F2C-9976-B770F0E0ECBE__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table lists parameters and descriptions for updating an image list.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d14193e277">Parameter</th>
+<th class="cellalignment26" id="d14193e279">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d14193e283" headers="d14193e277">name</td>
+<td class="cellalignment27" headers="d14193e283 d14193e279">A unique hierarchical name for the image list. For example, <code class="codeph">/mytenant/public/myimagelist</code></td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d14193e290" headers="d14193e277">--description</td>
+<td class="cellalignment27" headers="d14193e290 d14193e279">(Optional) A description of this image list</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d14193e295" headers="d14193e277">--default</td>
+<td class="cellalignment27" headers="d14193e295 d14193e279">(Optional) The default machine image when launching instances from this image list</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ &nbsp;oracle-compute update imagelist /mytenant/public/ol66_40GB --description "Refreshed imagelist"</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$  oracle-compute update imagelist /mytenant/public/ol66_40GB --description "Refreshed imagelist" -f json
+{
+ "list": [{ 
+  "default": 2, 
+  "description": "Refreshed imagelist", 
+  "entries": [], 
+  "uri": "https://api.oc.example.com/imagelist/mytenant/public/ol66_40GB", 
+  "name": "/mytenant/public/ol66_40GB" 
+  }]
+
+}
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-62AFF150-9FF7-484A-8F38-60D6CF64D756"></a>
+<h2 id="ELUCL-GUID-62AFF150-9FF7-484A-8F38-60D6CF64D756" class="sect2">Retrieve Image List Details</h2>
+<div>
+<div class="section">You can retrieve image list details by using the CLI.</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-3E374B99-1E54-4435-B541-52526F61E535.htm#GUID-B57B45A8-C475-4D80-8C5C-FD801719935C" title="This command enables you to discover image lists in a specific container.">discover imagelist</a></p>
+</li>
+<li>
+<p><a href="GUID-3E374B99-1E54-4435-B541-52526F61E535.htm#GUID-DA8D9916-EE7A-4A98-9A2C-68ED048DB00A" title="This command enables you to retrieve information for a specific image list.">get imagelist</a></p>
+</li>
+<li>
+<p><a href="GUID-3E374B99-1E54-4435-B541-52526F61E535.htm#GUID-70464DB5-3888-4D3B-96A2-E9CF726AE5F2" title="This command enables you to retrieve information for image lists in a container or subcontainers.">list imagelist</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect3"><a id="GUID-B57B45A8-C475-4D80-8C5C-FD801719935C"></a>
+<h3 id="ELUCL-GUID-B57B45A8-C475-4D80-8C5C-FD801719935C" class="sect3">discover imagelist</h3>
+<div>
+<p>This command enables you to discover image lists in a specific container.</p>
+<div class="section">
+<p class="subhead3">Syntax</p>
+<p><code class="codeph">oracle-compute discover imagelist <span class="variable">container</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-B57B45A8-C475-4D80-8C5C-FD801719935C__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for listing image lists.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d14193e403">Parameter</th>
+<th class="cellalignment26" id="d14193e405">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d14193e409" headers="d14193e403">container</td>
+<td class="cellalignment27" headers="d14193e409 d14193e405">Hierarchical name-space for the image list</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<p><code class="codeph">oracle-compute discover imagelist /oracle/public</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Sample Output</p>
+<pre dir="ltr">
+$ oracle-compute discover imagelist /oracle/public
+entry
+/oracle/public/linux5_16.1.2_64  
+/oracle/public/linux6_16.1.2_64  
+/oracle/public/linux6_12.2.1.0.0_64_jaas_16.2.1.0.103
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-DA8D9916-EE7A-4A98-9A2C-68ED048DB00A"></a>
+<h3 id="ELUCL-GUID-DA8D9916-EE7A-4A98-9A2C-68ED048DB00A" class="sect3">get imagelist</h3>
+<div>
+<p>This command enables you to retrieve information for a specific image list.</p>
+<div class="section">
+<p class="subhead3">Syntax</p>
+<p><code class="codeph">oracle-compute get imagelist <span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-DA8D9916-EE7A-4A98-9A2C-68ED048DB00A__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table lists the parameter and description for retrieving details of a specific image list.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d14193e470">Parameter</th>
+<th class="cellalignment26" id="d14193e472">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d14193e476" headers="d14193e470">name</td>
+<td class="cellalignment27" headers="d14193e476 d14193e472">A unique hierarchical name for the image list. For example, <code class="codeph">/mytenant/public/myimagelist</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<p><code class="codeph">$ oracle-compute get imagelist /oracle/public/linux6_16.1.2_64</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute get imagelist /oracle/public/linux6_16.1.2_64 -F name,description,default
+name                                 description                 default
+/oracle/public/linux6_16.1.2_64      A default public image.     1
+$
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-70464DB5-3888-4D3B-96A2-E9CF726AE5F2"></a>
+<h3 id="ELUCL-GUID-70464DB5-3888-4D3B-96A2-E9CF726AE5F2" class="sect3">list imagelist</h3>
+<div>
+<p>This command enables you to retrieve information for image lists in a container or subcontainers.</p>
+<div class="section">
+<p class="subhead3">Syntax</p>
+<p><code class="codeph">oracle-compute list imagelist <span class="variable">container</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-70464DB5-3888-4D3B-96A2-E9CF726AE5F2__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for listing image lists.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d14193e541">Parameter</th>
+<th class="cellalignment26" id="d14193e543">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d14193e547" headers="d14193e541">container</td>
+<td class="cellalignment27" headers="d14193e547 d14193e543">Hierarchical name-space for the image list.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<p><code class="codeph">$ oracle-compute list imagelist /oracle/public</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute list imagelist /oracle/public -F name,description,default 
+name                                                  description             default  
+/oracle/public/linux5_16.1.2_64                       A default public image. 1  
+/oracle/public/linux6_16.1.2_64                       A default public image. 1 
+/oracle/public/linux6_12.2.1.0.0_64_jaas_16.2.1.0.103 JCS Image               1
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-30D4428C-ED9D-46B0-B768-1D3F53FEDEF1.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-D946E8D4-12A6-4F7B-979D-BB7272196F48.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

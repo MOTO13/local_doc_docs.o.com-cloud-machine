@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Factory Network Settings</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-28T10:06:16Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Oracle&reg; Public Cloud Machine Deploying Oracle Big Data Cloud Machine" />
+<meta name="dcterms.identifier" content="E85987-01" />
+<meta name="dcterms.isVersionOf" content="BDMDG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="http://docs.oracle.com/cloud-machine/latest/" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-3AF59D81-0433-4EF8-8DB2-C6F162FE77DC.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-E05EADA5-2847-4EC4-8626-1300FA4D234B.htm" title="Next" type="text/html" />
+<link rel="alternate" href="BDMDG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="BDMDG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="BDMDG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-AEA7B190-2768-4049-B418-39034972355B"></a> <span id="PAGE" style="display:none;">16/17</span> <!-- End Header -->
+<script  >
+//<![CDATA[
+window.name='GUID-AEA7B190-2768-4049-B418-39034972355B'
+//]]>
+</script> <script  >
+    function footdisplay(footnum,footnote) {
+    var msg = window.open('about:blank', 'NewWindow' + footnum,
+        'directories=no,height=100,location=no,menubar=no,resizable=yes,' +
+        'scrollbars=yes,status=no,toolbar=no,width=598');
+    msg.document.open('text/html');
+    msg.document.write('<!DOCTYPE html ');
+    msg.document.write('PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" ');
+    msg.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'); 
+    msg.document.write('<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" ><head><title>');
+   
+    msg.document.write('Footnote&amp;nbsp; ' + footnum);
+    msg.document.write('<\/title><meta http-equiv="Content-Type" ');
+    msg.document.write('content="text/html; charset=utf-8" />');
+    msg.document.write('');
+    msg.document.write('<style> <![CDATA[ ');
+    msg.document.write('h1 {text-align: center; font-size: 14pt;}');
+    msg.document.write('fieldset {border: none;}');
+    msg.document.write('form {text-align: center;}');
+    msg.document.write(' ]]\u003e <\/style>');
+    msg.document.write('<\/head><body><div id="footnote"><h1>Footnote&nbsp; ' + footnum + '<\/h1><p>');
+    msg.document.write(footnote);
+    msg.document.write('<\/p><form action="" method="post"><fieldset>');
+    msg.document.write('<input type="button" value="OK" ');
+    msg.document.write('onclick="window.close();" />');
+    msg.document.write('<\/fieldset><\/form><\/div><\/body><\/html>');
+    msg.document.close();
+    setTimeout(function() {
+        var height = msg.document.getElementById('footnote').offsetHeight;
+        msg.resizeTo(598, height + 100);
+    }
+    , 100);
+    msg.focus();
+}
+</script><noscript>
+<p>The script content on this page is for navigation purposes only and does not alter the content in any way.</p>
+</noscript>
+<h1 id="BDMDG-GUID-AEA7B190-2768-4049-B418-39034972355B" class="sect1">Factory Network Settings</h1>
+<div>
+<div class="section">
+<p>This initial network configuration is set at the factory for <span>Oracle Big Data Cloud Machine</span>:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Gateway</span>: 192.168.1.254 in all devices as required</p>
+</li>
+<li>
+<p><span class="bold">Subnet Mask</span>: 255.255.255.0 in all devices as required</p>
+</li>
+<li>
+<p>I<span class="bold">P Address Range</span>: 192.168.1.1 to 192.168.1.211</p>
+</li>
+</ul>
+<p>The following table lists the default IP addresses for <span>Oracle Big Data Cloud Machine</span>.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformal" id="GUID-AEA7B190-2768-4049-B418-39034972355B__CHDEGIDJ">
+<table class="cellalignment36" summary="default IP addresses">
+<thead>
+<tr class="cellalignment27">
+<th class="cellalignment37" id="d3571e51">Host</th>
+<th class="cellalignment38" id="d3571e54">Administrative IP Addresses</th>
+<th class="cellalignment39" id="d3571e57">Oracle ILOM IP Addresses</th>
+<th class="cellalignment38" id="d3571e60">InfiniBand Bonded IP Addresses</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment27">
+<td class="cellalignment40" id="d3571e65" headers="d3571e51">
+<p>bda18<a id="GUID-AEA7B190-2768-4049-B418-39034972355B__CHDEAEBJ" href="#GUID-AEA7B190-2768-4049-B418-39034972355B__CHDEAEBJ" onclick='footdisplay(1,"Full racks only ")'><sup>Foot&nbsp;1</sup></a></p>
+</td>
+<td class="cellalignment41" headers="d3571e65 d3571e54">
+<p><code class="codeph">192.168.1.18</code></p>
+</td>
+<td class="cellalignment42" headers="d3571e65 d3571e57">
+<p><code class="codeph">192.168.1.118</code></p>
+</td>
+<td class="cellalignment41" headers="d3571e65 d3571e60">
+<p><code class="codeph">192.168.10.18</code></p>
+</td>
+</tr>
+<tr class="cellalignment27">
+<td class="cellalignment40" id="d3571e84" headers="d3571e51">
+<p>bda17<a id="fnsrc_d3571e87" href="#fnsrc_d3571e87" onclick='footdisplay(1,"Full racks only ")'><sup>Footref&nbsp;1</sup></a></p>
+</td>
+<td class="cellalignment41" headers="d3571e84 d3571e54">
+<p><code class="codeph">192.168.1.17</code></p>
+</td>
+<td class="cellalignment42" headers="d3571e84 d3571e57">
+<p><code class="codeph">192.168.1.117</code></p>
+</td>
+<td class="cellalignment41" headers="d3571e84 d3571e60">
+<p><code class="codeph">192.168.10.17</code></p>
+</td>
+</tr>
+<tr class="cellalignment27">
+<td class="cellalignment40" id="d3571e102" headers="d3571e51">
+<p>bda16<a id="fnsrc_d3571e105" href="#fnsrc_d3571e105" onclick='footdisplay(1,"Full racks only ")'><sup>Footref&nbsp;1</sup></a></p>
+</td>
+<td class="cellalignment41" headers="d3571e102 d3571e54">
+<p><code class="codeph">192.168.1.16</code></p>
+</td>
+<td class="cellalignment42" headers="d3571e102 d3571e57">
+<p><code class="codeph">192.168.1.116</code></p>
+</td>
+<td class="cellalignment41" headers="d3571e102 d3571e60">
+<p><code class="codeph">192.168.10.16</code></p>
+</td>
+</tr>
+<tr class="cellalignment27">
+<td class="cellalignment40" id="d3571e120" headers="d3571e51">
+<p>bda15<a id="fnsrc_d3571e123" href="#fnsrc_d3571e123" onclick='footdisplay(1,"Full racks only ")'><sup>Footref&nbsp;1</sup></a></p>
+</td>
+<td class="cellalignment41" headers="d3571e120 d3571e54">
+<p><code class="codeph">192.168.1.15</code></p>
+</td>
+<td class="cellalignment42" headers="d3571e120 d3571e57">
+<p><code class="codeph">192.168.1.115</code></p>
+</td>
+<td class="cellalignment41" headers="d3571e120 d3571e60">
+<p><code class="codeph">192.168.10.15</code></p>
+</td>
+</tr>
+<tr class="cellalignment27">
+<td class="cellalignment40" id="d3571e138" headers="d3571e51">
+<p>bda14<a id="fnsrc_d3571e141" href="#fnsrc_d3571e141" onclick='footdisplay(1,"Full racks only ")'><sup>Footref&nbsp;1</sup></a></p>
+</td>
+<td class="cellalignment41" headers="d3571e138 d3571e54">
+<p><code class="codeph">192.168.1.14</code></p>
+</td>
+<td class="cellalignment42" headers="d3571e138 d3571e57">
+<p><code class="codeph">192.168.1.114</code></p>
+</td>
+<td class="cellalignment41" headers="d3571e138 d3571e60">
+<p><code class="codeph">192.168.10.14</code></p>
+</td>
+</tr>
+<tr class="cellalignment27">
+<td class="cellalignment40" id="d3571e156" headers="d3571e51">
+<p>bda13<a id="fnsrc_d3571e159" href="#fnsrc_d3571e159" onclick='footdisplay(1,"Full racks only ")'><sup>Footref&nbsp;1</sup></a></p>
+</td>
+<td class="cellalignment41" headers="d3571e156 d3571e54">
+<p><code class="codeph">192.168.1.13</code></p>
+</td>
+<td class="cellalignment42" headers="d3571e156 d3571e57">
+<p><code class="codeph">192.168.1.113</code></p>
+</td>
+<td class="cellalignment41" headers="d3571e156 d3571e60">
+<p><code class="codeph">192.168.10.13</code></p>
+</td>
+</tr>
+<tr class="cellalignment27">
+<td class="cellalignment40" id="d3571e174" headers="d3571e51">
+<p>bda12<a id="GUID-AEA7B190-2768-4049-B418-39034972355B__CHDEDCHB" href="#GUID-AEA7B190-2768-4049-B418-39034972355B__CHDEDCHB" onclick='footdisplay(2,"Full racks or starter racks with additional servers only ")'><sup>Foot&nbsp;2</sup></a></p>
+</td>
+<td class="cellalignment41" headers="d3571e174 d3571e54">
+<p><code class="codeph">192.168.1.12</code></p>
+</td>
+<td class="cellalignment42" headers="d3571e174 d3571e57">
+<p><code class="codeph">192.168.1.112</code></p>
+</td>
+<td class="cellalignment41" headers="d3571e174 d3571e60">
+<p><code class="codeph">192.168.10.12</code></p>
+</td>
+</tr>
+<tr class="cellalignment27">
+<td class="cellalignment40" id="d3571e193" headers="d3571e51">
+<p>bda11<a id="fnsrc_d3571e196" href="#fnsrc_d3571e196" onclick='footdisplay(2,"Full racks or starter racks with additional servers only ")'><sup>Footref&nbsp;2</sup></a></p>
+</td>
+<td class="cellalignment41" headers="d3571e193 d3571e54">
+<p><code class="codeph">192.168.1.11</code></p>
+</td>
+<td class="cellalignment42" headers="d3571e193 d3571e57">
+<p><code class="codeph">192.168.1.111</code></p>
+</td>
+<td class="cellalignment41" headers="d3571e193 d3571e60">
+<p><code class="codeph">192.168.10.11</code></p>
+</td>
+</tr>
+<tr class="cellalignment27">
+<td class="cellalignment40" id="d3571e211" headers="d3571e51">
+<p>bda10<a id="fnsrc_d3571e214" href="#fnsrc_d3571e214" onclick='footdisplay(2,"Full racks or starter racks with additional servers only ")'><sup>Footref&nbsp;2</sup></a></p>
+</td>
+<td class="cellalignment41" headers="d3571e211 d3571e54">
+<p><code class="codeph">192.168.1.10</code></p>
+</td>
+<td class="cellalignment42" headers="d3571e211 d3571e57">
+<p><code class="codeph">192.168.1.110</code></p>
+</td>
+<td class="cellalignment41" headers="d3571e211 d3571e60">
+<p><code class="codeph">192.168.10.10</code></p>
+</td>
+</tr>
+<tr class="cellalignment27">
+<td class="cellalignment40" id="d3571e229" headers="d3571e51">
+<p>bdasw-ib3</p>
+</td>
+<td class="cellalignment41" headers="d3571e229 d3571e54">
+<p><code class="codeph">192.168.1.203</code></p>
+</td>
+<td class="cellalignment42" headers="d3571e229 d3571e57">&nbsp;</td>
+<td class="cellalignment41" headers="d3571e229 d3571e60">&nbsp;</td>
+</tr>
+<tr class="cellalignment27">
+<td class="cellalignment40" id="d3571e239" headers="d3571e51">
+<p>Cisco Switch</p>
+</td>
+<td class="cellalignment41" headers="d3571e239 d3571e54">
+<p><code class="codeph">192.168.1.200</code></p>
+</td>
+<td class="cellalignment42" headers="d3571e239 d3571e57">&nbsp;</td>
+<td class="cellalignment41" headers="d3571e239 d3571e60">&nbsp;</td>
+</tr>
+<tr class="cellalignment27">
+<td class="cellalignment40" id="d3571e250" headers="d3571e51">
+<p>bdasw-ib2</p>
+</td>
+<td class="cellalignment41" headers="d3571e250 d3571e54">
+<p><code class="codeph">192.168.1.202</code></p>
+</td>
+<td class="cellalignment42" headers="d3571e250 d3571e57">&nbsp;</td>
+<td class="cellalignment41" headers="d3571e250 d3571e60">&nbsp;</td>
+</tr>
+<tr class="cellalignment27">
+<td class="cellalignment40" id="d3571e260" headers="d3571e51">
+<p>bda9<a id="fnsrc_d3571e263" href="#fnsrc_d3571e263" onclick='footdisplay(2,"Full racks or starter racks with additional servers only ")'><sup>Footref&nbsp;2</sup></a></p>
+</td>
+<td class="cellalignment41" headers="d3571e260 d3571e54">
+<p><code class="codeph">192.168.1.9</code></p>
+</td>
+<td class="cellalignment42" headers="d3571e260 d3571e57">
+<p><code class="codeph">192.168.1.109</code></p>
+</td>
+<td class="cellalignment41" headers="d3571e260 d3571e60">
+<p><code class="codeph">192.168.10.9</code></p>
+</td>
+</tr>
+<tr class="cellalignment27">
+<td class="cellalignment40" id="d3571e278" headers="d3571e51">
+<p>bda8<a id="fnsrc_d3571e281" href="#fnsrc_d3571e281" onclick='footdisplay(2,"Full racks or starter racks with additional servers only ")'><sup>Footref&nbsp;2</sup></a></p>
+</td>
+<td class="cellalignment41" headers="d3571e278 d3571e54">
+<p><code class="codeph">192.168.1.8</code></p>
+</td>
+<td class="cellalignment42" headers="d3571e278 d3571e57">
+<p><code class="codeph">192.168.1.108</code></p>
+</td>
+<td class="cellalignment41" headers="d3571e278 d3571e60">
+<p><code class="codeph">192.168.10.8</code></p>
+</td>
+</tr>
+<tr class="cellalignment27">
+<td class="cellalignment40" id="d3571e296" headers="d3571e51">
+<p>bda7<a id="fnsrc_d3571e299" href="#fnsrc_d3571e299" onclick='footdisplay(2,"Full racks or starter racks with additional servers only ")'><sup>Footref&nbsp;2</sup></a></p>
+</td>
+<td class="cellalignment41" headers="d3571e296 d3571e54">
+<p><code class="codeph">192.168.1.7</code></p>
+</td>
+<td class="cellalignment42" headers="d3571e296 d3571e57">
+<p><code class="codeph">192.168.1.107</code></p>
+</td>
+<td class="cellalignment41" headers="d3571e296 d3571e60">
+<p><code class="codeph">192.168.10.7</code></p>
+</td>
+</tr>
+<tr class="cellalignment27">
+<td class="cellalignment40" id="d3571e314" headers="d3571e51">
+<p>bda6</p>
+</td>
+<td class="cellalignment41" headers="d3571e314 d3571e54">
+<p><code class="codeph">192.168.1.6</code></p>
+</td>
+<td class="cellalignment42" headers="d3571e314 d3571e57">
+<p><code class="codeph">192.168.1.106</code></p>
+</td>
+<td class="cellalignment41" headers="d3571e314 d3571e60">
+<p><code class="codeph">192.168.10.6</code></p>
+</td>
+</tr>
+<tr class="cellalignment27">
+<td class="cellalignment40" id="d3571e330" headers="d3571e51">
+<p>bda5</p>
+</td>
+<td class="cellalignment41" headers="d3571e330 d3571e54">
+<p><code class="codeph">192.168.1.5</code></p>
+</td>
+<td class="cellalignment42" headers="d3571e330 d3571e57">
+<p><code class="codeph">192.168.1.105</code></p>
+</td>
+<td class="cellalignment41" headers="d3571e330 d3571e60">
+<p><code class="codeph">192.168.10.5</code></p>
+</td>
+</tr>
+<tr class="cellalignment27">
+<td class="cellalignment40" id="d3571e346" headers="d3571e51">
+<p>bda4</p>
+</td>
+<td class="cellalignment41" headers="d3571e346 d3571e54">
+<p><code class="codeph">192.168.1.4</code></p>
+</td>
+<td class="cellalignment42" headers="d3571e346 d3571e57">
+<p><code class="codeph">192.168.1.104</code></p>
+</td>
+<td class="cellalignment41" headers="d3571e346 d3571e60">
+<p><code class="codeph">192.168.10.4</code></p>
+</td>
+</tr>
+<tr class="cellalignment27">
+<td class="cellalignment40" id="d3571e362" headers="d3571e51">
+<p>bda3</p>
+</td>
+<td class="cellalignment41" headers="d3571e362 d3571e54">
+<p><code class="codeph">192.168.1.3</code></p>
+</td>
+<td class="cellalignment42" headers="d3571e362 d3571e57">
+<p><code class="codeph">192.168.1.103</code></p>
+</td>
+<td class="cellalignment41" headers="d3571e362 d3571e60">
+<p><code class="codeph">192.168.10.3</code></p>
+</td>
+</tr>
+<tr class="cellalignment27">
+<td class="cellalignment40" id="d3571e378" headers="d3571e51">
+<p>bda2</p>
+</td>
+<td class="cellalignment41" headers="d3571e378 d3571e54">
+<p><code class="codeph">192.168.1.2</code></p>
+</td>
+<td class="cellalignment42" headers="d3571e378 d3571e57">
+<p><code class="codeph">192.168.1.102</code></p>
+</td>
+<td class="cellalignment41" headers="d3571e378 d3571e60">
+<p><code class="codeph">192.168.10.2</code></p>
+</td>
+</tr>
+<tr class="cellalignment27">
+<td class="cellalignment40" id="d3571e394" headers="d3571e51">
+<p>bda1</p>
+</td>
+<td class="cellalignment41" headers="d3571e394 d3571e54">
+<p><code class="codeph">192.168.1.1</code></p>
+</td>
+<td class="cellalignment42" headers="d3571e394 d3571e57">
+<p><code class="codeph">192.168.1.101</code></p>
+</td>
+<td class="cellalignment41" headers="d3571e394 d3571e60">
+<p><code class="codeph">192.168.10.1</code></p>
+</td>
+</tr>
+<tr class="cellalignment27">
+<td class="cellalignment40" id="d3571e410" headers="d3571e51">
+<p>bdasw-ib1</p>
+</td>
+<td class="cellalignment41" headers="d3571e410 d3571e54">
+<p><code class="codeph">196.168.1.201</code></p>
+</td>
+<td class="cellalignment42" headers="d3571e410 d3571e57">&nbsp;</td>
+<td class="cellalignment41" headers="d3571e410 d3571e60">&nbsp;</td>
+</tr>
+<tr class="cellalignment27">
+<td class="cellalignment40" id="d3571e421" headers="d3571e51">
+<p>PDU A</p>
+</td>
+<td class="cellalignment41" headers="d3571e421 d3571e54">
+<p><code class="codeph">192.168.1.210</code></p>
+</td>
+<td class="cellalignment42" headers="d3571e421 d3571e57">&nbsp;</td>
+<td class="cellalignment41" headers="d3571e421 d3571e60">&nbsp;</td>
+</tr>
+<tr class="cellalignment27">
+<td class="cellalignment40" id="d3571e431" headers="d3571e51">
+<p>PDU B</p>
+</td>
+<td class="cellalignment41" headers="d3571e431 d3571e54">
+<p><code class="codeph">192.168.1.211</code></p>
+</td>
+<td class="cellalignment42" headers="d3571e431 d3571e57">&nbsp;</td>
+<td class="cellalignment41" headers="d3571e431 d3571e60">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p class="tablefootnote"><sup class="tablefootnote">Footnote&nbsp;1</sup></p>
+<p>Full racks only</p>
+<p class="tablefootnote"><sup class="tablefootnote">Footnote&nbsp;2</sup></p>
+<p>Full racks or starter racks with additional servers only</p>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment26">
+<tr>
+<td class="cellalignment33">
+<table class="cellalignment31">
+<tr>
+<td class="cellalignment30"><a href="GUID-3AF59D81-0433-4EF8-8DB2-C6F162FE77DC.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment30"><a href="GUID-E05EADA5-2847-4EC4-8626-1300FA4D234B.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment35">
+<table class="cellalignment29">
+<tr>
+<td class="cellalignment30"><a href="http://docs.oracle.com/cloud-machine/latest/"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment30"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment30"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment30"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+</body>
+</html>

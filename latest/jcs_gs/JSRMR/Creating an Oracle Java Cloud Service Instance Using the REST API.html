@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="Use%20Cases.html" title="Previous" type="text/html">
+        <link rel="next" href="Update%20the%20Default%20Access%20Ports.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="Use%20Cases.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="Update%20the%20Default%20Access%20Ports.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">Creating a Service Instance</h2> 
+<div class="body taskbody">
+ <p class="shortdesc">You can create an Oracle Java Cloud Service instance using the REST API, as described in the following procedure.</p> 
+ <div class="section">
+  <p class="p">You can enable Oracle Coherence and add a load balancer when you create a service instance.</p> 
+  <p class="p"><strong class="ph b">Database software release:</strong> Only Oracle Java Cloud Service instances based on WebLogic Server 12.2.1 fully support using the Oracle Database 12.2 version for the database that contains the Oracle Infrastructure schemas required for Oracle Java Cloud Service.</p> 
+  <p class="p">On <strong class="ph b">Oracle Public Cloud</strong>, note the following about Exadata databases and AppToCloud migration:</p> 
+  <p class="p"><strong class="ph b">Exadata database:</strong> If you plan to use an Oracle Exadata database with an Oracle Java Cloud Service instance, you must obtain IP reservations for the Managed Servers you are going to provision before creating the service instance; you will not be able to create the instance without IP reservations. The number of IP reservations you need corresponds to the number of Managed Server nodes you want to provision in the cluster. See the My Oracle Support document titled <cite class="cite">How to Request Authorized IPs for Provisioning a Java Cloud Service with Database Exadata Cloud Service</cite> (MOS Note 2163568.1) to submit a request for IP reservations. When you create the service instance, you must use <samp class="ph codeph">ipReservations</samp> in the request body to specify one or more pre-allocated IP reservations.</p> 
+  <p class="p"><strong class="ph b">AppToCloud migration:</strong> If you plan to import an on-premises WebLogic Server domain configuration and its deployed applications into Oracle Java Cloud Service instance, you must create a service instance with the AppToCloud artifacts needed to migrate the domain and its resources. Before you can create such a service instance, there are certain prerequisites that must be met, and certain on-premises tasks and Oracle Cloud tasks that must be performed. See <a class="xref" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=JSCUG-GUID-9873F59C-09B7-4F89-8FC6-B889056D2442" target="_blank">About AppToCloud Prerequisites</a> and <a class="xref" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=JSCUG-GUID-052B3FFD-E447-4D4E-B20A-F169BA2C45E4" target="_blank">Typical Workflow for Migrating Applications to Oracle Java Cloud Service</a> in <em class="ph i">Using Oracle Java Cloud Service</em>. After performing the required tasks, to associate the service instance with the AppToCloud artifacts when you create the instance, you must use <samp class="ph codeph">customPayload</samp> in the request body and adhere to certain conditions as described in <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-post.html" target="_blank">Create a Service Instance</a>.</p> 
+  <p class="p"><strong class="ph b">Note:</strong> The cURL command examples use the URL structure <samp class="ph codeph">https://rest_server_url/<em class="ph i">resource-path</em></samp>, where <samp class="ph codeph">rest_server_url</samp> is the Oracle Public Cloud or Oracle Cloud Machine REST server to contact for your identity domain or tenant name. See <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a> for the appropriate URL structure to use on Oracle Public Cloud or Oracle Cloud Machine.</p> 
+  <p class="p">To create an Oracle Java Cloud Service instance:</p> 
+ </div> 
+ <ol class="ol steps">
+  <li class="li step stepexpand"><span class="ph cmd">Before creating an Oracle Java Cloud Service instance, review the service instances that currently exist to ensure the name of your new service instance is unique.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain</strong>
+</pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">For more information, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-get.html" target="_blank">View All Service Instances</a>.</p> 
+    <p class="p">The following shows an example of the response body. In this example, there are two service instances, <samp class="ph codeph">My12cServer</samp> that is running 12<em class="ph i">c</em> and <samp class="ph codeph">My11gServer</samp> that is running 11<em class="ph i">g</em>.</p> 
+    <pre class="pre codeblock">{
+    "uri":"https:\/\/rest_server_url/\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain",
+    "service_type":"jaas",
+    "implementation_version":"1.0",
+    "services" : [
+    {
+        "service_name":"<strong class="ph b">My12cServer</strong>",
+        "version":"12cR3",
+        "wlsVersion":"12.1.3.0.x",
+        "status":"Running",
+        "error_status_desc": "",
+        "compliance_status": "",
+        "compliance_status_desc": "",
+        "auto_update": "true",
+        "description":"WebLogicEnterprise",
+        "identity_domain":"ExampleIdentityDomain",
+        "creation_time": "Fri Jan 23 22:18:26 UTC 2015",
+        "last_modified_time": "Fri Jan 23 22:18:26 UTC 2015",
+        "created_by":"username",
+        "service_uri":"https:\/\/rest_server_url/\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/My12cServer"
+    },
+    {
+        "service_name":"<strong class="ph b">My11gServer</strong>",
+        "version":"11g",
+        "wlsVersion":"10.3.6.0.xx",
+        "status":"Running",
+        "description":"",
+        "identity_domain":"ExampleIdentityDomain",
+        "creation_time": "Wed Jan 21 12:23:26 UTC 2015",
+        "last_modified_time": ""Wed Jan 21 12:23:26 UTC 2015",
+        "created_by":"username",
+        "service_uri":"https:\/\/rest_server_url/\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/My11gServer"
+    }]
+}
+</pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">Create a JSON document, <tt class="ph tt">create.json</tt>, that defines the details of the service instance.</span>
+   <div class="itemgroup info">
+    <p class="p">The following shows an example of the request document. In this example:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p">Service instance is named <samp class="ph codeph">ExampleInstance</samp>.</p> </li> 
+     <li class="li"><p class="p">Service level is <samp class="ph codeph">PAAS</samp>.</p> </li> 
+     <li class="li"><p class="p">Software installed is WebLogic Server Enterprise Edition (<samp class="ph codeph">EE</samp>), version is <samp class="ph codeph">12.1.3</samp>.</p> </li> 
+     <li class="li"><p class="p">Domain name is configured as <samp class="ph codeph">ExampleDomain</samp>.</p> </li> 
+     <li class="li"><p class="p">Cluster name is configured as <samp class="ph codeph">ExampleCluster</samp>.</p> </li> 
+     <li class="li"><p class="p">Two Managed Servers are configured within a cluster.</p> </li> 
+     <li class="li"><p class="p">Oracle Traffic Director is enabled for load balancing.</p> </li> 
+     <li class="li"><p class="p">Compute shape for the service instance and load balancer is configured with 1 OCPU and 7.5 GB memory (OC3).</p> </li> 
+    </ul> 
+    <p class="p"><strong class="ph b">Note</strong>: If using WebLogic Server 12.2.1 and domain partitions, you must use the <samp class="ph codeph">PAAS</samp> service level and either the <samp class="ph codeph">EE</samp> or <samp class="ph codeph">SUITE</samp> edition.</p> 
+    <p class="p">On <strong class="ph b">Oracle Public Cloud</strong>, the following are also included in the example:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p">Access rules that control external communication to administration consoles (such as the WebLogic Server and load balancer consoles) are enabled.</p> </li> 
+     <li class="li"><p class="p">If the specified storage container name does not exist, the container will be created for you.</p> </li> 
+    </ul> 
+    <p class="p"><strong class="ph b">Example Request document on Oracle Public Cloud:</strong></p> 
+    <pre class="pre codeblock">{
+    "serviceName" : "ExampleInstance",
+    "level" : "PAAS",
+    "subscriptionType" : "HOURLY",
+    "enableAdminConsole": true,
+    "description" : "Example, Inc product distribution center",
+    "provisionOTD" : true,
+    "cloudStorageContainer" : "develop-jcs/JCSBackup",
+    "cloudStorageUser" : "storageusername",
+    "cloudStoragePassword" : "Mypassword2!",
+    "createStorageContainerIfMissing" : true,
+    "sampleAppDeploymentRequested" : true,
+    "parameters" : [
+    {
+        "type" : "weblogic",
+        "version" : "12.1.3",
+        "edition" : "EE",
+        "domainMode" : "PRODUCTION",
+        "managedServerCount" : "2",
+        "adminPort" : "7001",
+        "deploymentChannelPort" : "9001",
+        "securedAdminPort" : "7002",
+        "contentPort" : "8001",
+        "securedContentPort" : "8002",
+        "domainName" : "ExampleDomain",
+        "clusterName" : "ExampleCluster",
+        "adminUserName" : "myadminuser",
+        "adminPassword" : "Mypassword1!",
+        "nodeManagerPort" : "5556",
+        "nodeManagerUserName" : "nodeMangerAdmin",
+        "nodeManagerPassword" : "Mypassword1!",
+        "dbServiceName" : "myDBService",
+        "dbaName" : "SYS",
+        "dbaPassword" : "Mypassword3!",
+        "shape" : "oc3",
+        "domainVolumeSize" : "10G",
+        "backupVolumeSize" : "50G",
+        "VMsPublicKey" : "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEArHjWnvrmTQBRb5a/3d62HA8+sbX0c2MJcfAhH3ETF3nUYqrmur+ZYYT7bTEbXyRO+qkU0Ey3yHK5rSeiwuye15ZMQy6J0cGstNTJMiqLVsBWURUFSYG2Fs2EfM1fnOe1W60KgjSHKQDmmiwVtay2hgWSBq66t9u370a0BD2dwc= mypublickey"
+    },
+    {
+        "type" : "OTD",
+        "adminUserName" : "otdAdmin",
+        "adminPassword" : "Mypassword1!",
+        "listenerPortsEnabled" : true,
+        "listenerPort" : "8080",
+        "listenerType" : "http",
+        "securedListenerPort" : "8081",
+        "loadBalancingPolicy" : "least_connection_count",
+        "adminPort" : "8989",
+        "shape" : "oc3",
+        "VMsPublicKey" : "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEArHjWnvrmTQBRb5a/3d62HA8+sbX0c2MJcfAhH3ETF3nUYqrmur+ZYYT7bTEbXyRO+qkU0Ey3yHK5rSeiwuye15ZMQy6J0cGstNTJMiqLVsBWURUFSYG2Fs2EfM1fnOe1W60KgjSHKQDmmiwVtay2hgWSBq66t9u370a0BD2dwc= mypublickey" 
+    }]
+}
+</pre> 
+    <p class="p"><strong class="ph b">Example Request document on Oracle Cloud Machine:</strong></p> 
+    <pre class="pre codeblock">{
+    "serviceName" : "ExampleInstance",
+    "level" : "PAAS",
+    "description" : "Example, Inc product distribution center",
+    "provisionOTD" : true,
+    "cloudStorageContainer" : "123.34.0.1:/export/XYZ/abcd05/psmbackup/farbackup",
+    "publicNetwork":"/mytenantname/public/vnet-eoib-vlan127",
+    "sampleAppDeploymentRequested" : true, 
+    "parameters" : [
+    {
+        "type" : "weblogic",
+        "version" : "12.1.3",
+        "edition" : "EE",
+        "domainMode" : "PRODUCTION",
+        "managedServerCount" : "2",
+        "adminPort" : "7001",
+        "deploymentChannelPort" : "9001",
+        "securedAdminPort" : "7002",
+        "contentPort" : "8001",
+        "securedContentPort" : "8002",        
+        "domainName" : "ExampleDomain",
+        "clusterName" : "ExampleCluster",
+        "adminUserName" : "myadminuser",
+        "adminPassword" : "Mypassword1!",
+        "nodeManagerPort" : "5556",
+        "nodeManagerUserName" : "nodeMangerAdmin",
+        "nodeManagerPassword" : "Mypassword1!",
+        "connectString" : "123.34.1.1:1521:orcl12c",
+        "dbaName" : "dbausername",
+        "dbaPassword" : "Mypassword3!",
+        "dbNetwork" : "/mytenantname/public/vnet-ipoib-priv",
+        "shape" : "oc3",
+        "domainVolumeSize" : "10G",
+        "backupVolumeSize" : "50G",
+        "VMsPublicKey" : "ssh-rsa ABCDB3NzaC1yc2EAAAABJQAAAIEArHjWnvrmTQBRb5a/3d62HA8+sbX0c2MJcfAhH3ETF3nUYqrmur+ZYYT7bTEbXyRO+qkU0Ey3yHK5rSeiwuye15ZMQy6J0cGstNTJMiqLVsBWURUFSYG2Fs2EfM1fnOe1W60KgjSHKQDmmiwVtay2hgWSBq66t9u370a0BD2dwc= mypublickey"
+    },
+    {
+        "type" : "otd",
+        "adminUserName" : "otdAdmin",
+        "adminPassword" : "Mypassword1!",
+        "listenerPortsEnabled" : true,
+        "listenerPort" : "8080",
+        "listenerType" : "http",
+        "loadBalancingPolicy" : "least_connection_count",
+        "securedListenerPort" : "8081",
+        "adminPort" : "8989",
+        "shape" : "oc3",
+        "VMsPublicKey" : "ssh-rsa ABCDB3NzaC1yc2EAAAABJQAAAIEArHjWnvrmTQBRb5a/3d62HA8+sbX0c2MJcfAhH3ETF3nUYqrmur+ZYYT7bTEbXyRO+qkU0Ey3yHK5rSeiwuye15ZMQy6J0cGstNTJMiqLVsBWURUFSYG2Fs2EfM1fnOe1W60KgjSHKQDmmiwVtay2hgWSBq66t9u370a0BD2dwc= mypublickey" 
+    }]
+}
+
+</pre> 
+    <p class="p">If enabling Oracle Coherence for a service instance, you must use the <samp class="ph codeph">SUITE</samp> edition and include the <samp class="ph codeph">"type":"datagrid"</samp> option. Then specify attributes to use a default capacity unit or define your own configuration for a capacity unit. See <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-post.html" target="_blank">Create a Service Instance</a>. The <samp class="ph codeph">"type":"datagrid"</samp> example that follows uses a default capacity unit.</p> 
+    <pre class="pre codeblock">    {
+        "type" : "datagrid",
+        "scalingUnitCount"  : "1",
+        "clusterName"       : "ExampleDGCluster",
+        "scalingUnitName"   : "SMALL"
+    }  </pre> 
+    <p class="p">In the <samp class="ph codeph">"type":"datagrid"</samp> example: </p> 
+    <ul class="ul">
+     <li class="li"><p class="p">Name for the storage-enabled WebLogic Server cluster is <samp class="ph codeph">ExampleDGCluster</samp>.</p> </li> 
+     <li class="li"><p class="p">The <samp class="ph codeph">SMALL</samp> default capacity unit is configured.</p> </li> 
+     <li class="li"><p class="p">One count of the default capacity unit is configured.</p> </li> 
+    </ul> 
+    <p class="p">On <strong class="ph b">Oracle Public Cloud</strong>, if the service instance you are creating uses an Oracle Exadata database, you must specify the IP reservations for the Managed Server nodes using the <samp class="ph codeph">ipReservations</samp> property for <samp class="ph codeph">weblogic</samp> type only, as shown in the following example: </p> 
+    <pre class="pre codeblock">    "parameters" : [
+    {
+        "type" : "weblogic",
+        "managedServerCount" : "2",
+        "ipReservations": "ipres01, ipres02",
+        ...
+    }
+    ...
+    ]</pre> 
+    <p class="p">For other parameters, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-post.html" target="_blank">Create a Service Instance</a>. For example on Oracle Public cloud, you must use <samp class="ph codeph">customPayload</samp> if you are creating a service instance with AppToCloud artifacts.</p> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">Create the Oracle Java Cloud Service instance, passing the JSON document defined in step 2.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X POST -u username:userPassword1! -d @create.json -H "Content-Type:application/vnd.com.oracle.oracloud.provisioning.Service+json" -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain</strong>
+</pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">POST</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-d</samp> option to identify the request document, in JSON format, on the local machine (<samp class="ph codeph">create.json</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to identify the content type as <samp class="ph codeph">application/vnd.com.oracle.oracloud.provisioning.Service+json</samp> and define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">The following shows an example of the response header.</p> 
+    <pre class="pre codeblock">
+HTTP/1.1 100 Continue
+
+HTTP/1.1 202 Accepted
+Date: Thu, 14 Jul 2016 23:16:53 GMT
+Location: <strong class="ph b">https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/status/create/job/8466</strong>
+Content-Length: 0
+Content-Type: application/vnd.com.oracle.oracloud.provisioning.Service+json
+Service-URI: https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance
+Retry-After: 60
+</pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">Check the status of the service instance creation operation using the resource URI returned in the <samp class="ph codeph">Location</samp> header. For more information, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-status-%7BrequestName%7D-job-%7BjobId%7D-get.html" target="_blank">View the Status of a Service Instance Lifecycle Operation</a>.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/status/create/job/8466</strong>
+</pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">The following example shows the contents of the response body, including the status and messages:</p> 
+    <pre class="pre codeblock">{
+    "service_name": "ExampleInstance",
+    "version": "12cR3",
+    "wlsVersion": "12.1.3.0.xxxxxx",
+    "status": "In Progress",
+    "error_status_desc": "",
+    "compliance_status": "",
+    "compliance_status_desc": "",
+    "auto_update": "true",
+    "description": "Example, Inc product distribution",
+    "identity_domain": "ExampleIdentityDomain",
+    "creation_time": "Thu Jul 14 23:16:58 UTC 2016",
+    "last_modified_time": "Thu Jul 14 23:16:56 UTC 2016",
+    "created_by": "username",
+    "service_uri" : "https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/ExampleInstance",
+    "message": [
+      "Created Compute resources for WebLogic Server...",
+      "Created security resources for the service...",
+      "Started all Compute resources...",
+      "Establishing SSH connectivity to WebLogic Administration Server ..."
+  ]
+}
+</pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">Once the service instance is created and running, view the service instance details.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance</strong>
+</pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">For more information, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-get.html" target="_blank">View a Service Instance</a>.</p> 
+    <p class="p">The following example shows the contents of the response body on <strong class="ph b">Oracle Public Cloud</strong>.</p> 
+    <pre class="pre codeblock">{
+    "service_name" : "ExampleInstance",
+    "version" : "12cR3",
+    "wlsVersion" : "12.1.3.0.xxxxxx",
+    "status" : "Running",
+    "error_status_desc": "",
+    "compliance_status": "",
+    "compliance_status_desc": "",
+    "auto_update": "true",    
+    "description" : "Example, Inc product distribution center",
+    "identity_domain" : "ExampleIdentityDomain",
+    "creation_time": "Thu Jul 14 23:16:58 UTC 2016",
+    "last_modified_time": "Thu Jul 14 23:16:56 UTC 2016",
+    "created_by" : "username",
+    "service_uri" : "https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/ExampleInstance",
+    "domain_name" : "ExampleDomain",
+    "domain_mode" : "PRODUCTION",
+    "cluster_name" : "ExampleCluster",
+    "num_nodes" : 3,
+    "level" : "PAAS",
+    "subscription_type" : "HOURLY",
+    "edition" : "EE",
+    "shape" : "oc3",
+    "otd_provisioned" : "yes",
+    "otd_shape": "oc3",
+    "otd_storage_size": 41984, 
+    "service_components": [
+    {
+        "type": "WLS",
+        "version": "12.1.3.0.xxxxxx"
+    },
+    {
+        "type": "JDK",
+        "version": "1.7.0_xxx"
+    },
+    {
+        "type": "OTD_JDK",
+        "version": "1.7.0_xxx"
+    },
+    {
+        "type": "OTD",
+        "version": "11.1.1.9.x"
+    }],
+    "creation_job_id" : "8466",
+    "deletion_job_id": 0,
+    "db_info" : "myDBService:1521\/PDB1.exampleidentitydomain.oraclecloud.internal",
+    "db_service_name" : "myDBService", 
+    "num_ip_reservations" : 3,
+    "wls_admin_url" : "https:\/\/192.0.2.0:7002\/console",
+    "fmw_control_url" : "https:\/\/192.0.2.16:7002\/em",
+    "otd_admin_url" : "https:\/\/192.0.2.23:8989",
+    "sample_app_url": "https:\/\/192.0.2.23\/sample-app\/",
+    "secure_content_url" : "https:\/\/192.0.2.23",
+    "content_url" : "http:\/\/192.0.2.23",
+    "wls_deployment_channel_port": 9001,
+    "psm_plugin_version": "16.3.3-xxx",
+    "compute_site_name": "US000_Z00",
+    "db_associations": [
+    {
+        "db_service_name": "myDBService",
+        "db_infra": true,
+        "db_connect_string": "myDBService:1521\/PDB1.exampleidentitydomain.oraclecloud.internal",
+        "pdb_service_name": "PDB1",
+        "db_version": "12.1.0.2"
+    }]
+}
+</pre> 
+    <p class="p">The following example shows the contents of the response body on <strong class="ph b">Oracle Cloud Machine</strong>.</p> 
+    <pre class="pre codeblock">{
+    "service_name" : "ExampleInstance",
+    "version" : "12cR3",
+    "wlsVersion" : "12.1.3.0.xxxxxx",
+    "status" : "Running",
+    "error_status_desc": "",
+    "compliance_status": "",
+    "compliance_status_desc": "",
+    "auto_update": "true",    
+    "description" : "Example, Inc product distribution center",
+    "identity_domain" : "ExampleIdentityDomain",
+    "creation_time": "Fri Jan 23 22:18:26 UTC 2015",
+    "last_modified_time": "Fri Jan 23 22:18:26 UTC 2015",
+    "created_by" : "username",
+    "service_uri" : "https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/myTenantName\/ExampleInstance",
+    "domain_name" : "ExampleDomain",
+    "domain_mode" : "PRODUCTION",
+    "cluster_name" : "ExampleCluster",
+    "num_nodes" : 3,
+    "level" : "PAAS",
+    "subscription_type" : "HOURLY",
+    "edition" : "EE",
+    "shape" : "oc3",
+    "otd_provisioned" : "yes",
+    "otd_shape": "oc3",
+    "otd_storage_size": 43008, 
+    "service_components": [
+    {
+        "type": "WLS",
+        "version": "12.1.3.0.xxxxxx"
+    },
+    {
+        "type": "JDK",
+        "version": "1.7.0_xxx"
+    },
+    {
+        "type": "OTD_JDK",
+        "version": "1.7.0_xxx"
+    },
+    {
+        "type": "OTD",
+        "version": "11.1.1.9.x"
+    }],
+    "creation_job_id" : "1",
+    "deletion_job_id": 0,
+    "db_info" : "mydbhost:1521\/mydbserviceinfo",
+    "num_ip_reservations" : 3,
+    "wls_admin_url" : "https:\/\/thehost:7002\/console",
+    "fmw_control_url" : "https:\/\/thehost:7002\/em",
+    "otd_admin_url" : "https:\/\/thelbhost:8989",
+    "sample_app_url": "https:\/\/thehost\/sample-app\/",
+    "content_url": "http:\/\/thehost",
+    "secure_content_url" : "https:\/\/thehost",
+    "wls_deployment_channel_port": 9001, 
+    "psm_plugin_version": "16.3.3-x-xxx",
+    "compute_site_name": "PRIVATE_SITE",
+    "db_associations": [
+    {
+        "db_connect_string": "myDBService:1521\/mydbserviceinfo",
+        "db_infra": true
+    }]
+}
+</pre> 
+    <p class="p">If enabling Oracle Coherence by using a default capacity unit, the <samp class="ph codeph">datagrid</samp> option is included in the contents of the response body:</p> 
+    <pre class="pre codeblock">  "options": [{
+    "type": "datagrid",
+    "clusters": [{
+      "clusterName": "ExampleDGCluster",
+      "scalingUnitCount": 1,
+      "scalingUnitName": "SMALL",
+      "shape": "oc3",
+      "vmCount": 3,
+      "jvmCount": 1,
+      "heapSize": "4608M",
+      "maxScalingUnit": 10,
+      "heapIncrements": "13824M",
+      "primaryIncrements": "4608M",
+      "totalHeap": "13824M",
+      "totalPrimary": "4608M",
+      "maxHeap": "138240M",
+      "maxPrimary": "46080M",
+      "scalingUnitInstances": [{
+        "servers": [
+          {"name": "ExampleI_server_3_DG"},
+          {"name": "ExampleI_server_4_DG"},
+          {"name": "ExampleI_server_5_DG"}
+        ],
+        "scalingUnitInstanceId": 2,
+        "status": "Ready"
+      }]
+    }]
+  }]</pre> 
+   </div></li> 
+ </ol> 
+</div></div>
+        </article>
+    </body>
+</html>

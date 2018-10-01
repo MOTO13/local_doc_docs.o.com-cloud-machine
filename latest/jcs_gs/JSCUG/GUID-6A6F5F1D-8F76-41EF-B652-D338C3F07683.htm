@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Using Oracle Coherence in Oracle Java Cloud Service on Oracle Public Cloud Machine</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Enable Oracle Coherence in Oracle Java Cloud Service to use in-memory data grid and caching for Coherence applications that are deployed to Oracle WebLogic Server environments in the cloud." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-455C1BD1-5361-460C-B1FA-7CA96A0B701C.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-16418889-DD11-43BA-B0A8-0F2226F08A1A.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-6A6F5F1D-8F76-41EF-B652-D338C3F07683"></a> <span id="PAGE" style="display:none;">104/131</span> <!-- End Header -->
+<h1 id="JSCUG-GUID-6A6F5F1D-8F76-41EF-B652-D338C3F07683" class="sect1"><span class="enumeration_chapter">11</span> Using <span>Oracle Coherence in Oracle Java Cloud Service</span> <span>on <span>Oracle Public Cloud Machine</span></span></h1>
+<div>
+<p>Enable <span>Oracle Coherence in Oracle Java Cloud Service</span> to use in-memory data grid and caching for Coherence applications that are deployed to Oracle WebLogic Server environments in the cloud.</p>
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-16418889-DD11-43BA-B0A8-0F2226F08A1A.htm" title="You can enable Oracle Coherence for an Oracle Java Cloud Service instance to use in-memory data grid and caching for your Coherence applications deployed to the cloud.">Workflow for Using Oracle Coherence in Oracle Java Cloud Service</a></p>
+</li>
+<li>
+<p><a href="GUID-2BF3A152-1A20-44CD-A29D-B0949A73F2CA.htm#GUID-2BF3A152-1A20-44CD-A29D-B0949A73F2CA" title="Oracle Coherence is a fault-tolerant, in-memory data management solution for clustered applications and application servers, enabling Java EE applications to predictably scale by providing fast, reliable, and scalable access to frequently used data. You can enable Oracle Coherence for Oracle Java Cloud Service instances to use in-memory data grid and caching out-of-the-box for Coherence applications deployed to Oracle WebLogic Server environments in the cloud.">About Oracle Coherence in Oracle Java Cloud Service</a></p>
+</li>
+<li>
+<p><a href="GUID-7BEF123A-54F3-4E37-8CCC-518CFFFF817B.htm" title="You can enable Oracle Coherence when you create a service instance in Oracle Java Cloud Service using the Oracle Java Cloud Service Console or the REST API. For clarification purposes in this document and others, service instances provisioned to use Oracle Coherence in Oracle Java Cloud Service are referred to as Oracle Java Cloud Service&mdash;Coherence instances.">About Oracle Java Cloud Service&mdash;Coherence Instances</a></p>
+</li>
+<li>
+<p><a href="GUID-1AB37F9D-3A5F-47A7-A61B-A751B09215E1.htm#GUID-1AB37F9D-3A5F-47A7-A61B-A751B09215E1" title="Oracle Java Cloud Service uses capacity units to provision Oracle WebLogic Server and Oracle Coherence environments that provide a preconfigured amount of Coherence cache capacity. A capacity unit is a group of virtual machines (VMs) running a number of JVMs (Managed Coherence Servers), and is meant to scale linearly in the context of your application. Capacity is defined as a fixed amount of primary cache storage to allocate for Coherence, based on the general rule of splitting the JVM heap size into thirds, using 1/3rd for primary cache storage, 1/3rd for backup storage, and 1/3rd for scratch space.">About Capacity Units for Oracle Java Cloud Service&mdash;Coherence Instances</a></p>
+</li>
+<li>
+<p><a href="GUID-8A746C30-70CF-4C73-9EAE-9ABA2E0093D8.htm#GUID-8A746C30-70CF-4C73-9EAE-9ABA2E0093D8" title="Your role determines the type of tasks you can perform on Oracle Java Cloud Service&mdash;Coherence instances. All service tasks and lifecycle operations can be performed by using the Oracle Java Cloud Service Console.">About Service Lifecyle Operations and Oracle Java Cloud Service&mdash;Coherence Instances</a></p>
+</li>
+<li>
+<p><a href="GUID-92C5D8E0-308D-4833-82CC-41A5497E4728.htm" title="The Oracle Java Cloud Service REST API provides an alternative to using the web-based Oracle Java Cloud Service Console to create and manage Oracle Java Cloud Service instances that have Oracle Coherence enabled.">About Using the REST API to Create and Manage Oracle Java Cloud Service&mdash;Coherence Instances</a></p>
+</li>
+<li>
+<p><a href="GUID-13290CD2-48E2-4E71-B1C3-7860672503A6.htm" title="Oracle Java Cloud Service&mdash;Coherence instances are service instances created in Oracle Java Cloud Service that have Oracle Coherence enabled. You can use the Oracle Java Cloud Service Console or the REST API to create and manage service instances.">Creating an Oracle Java Cloud Service&mdash;Coherence Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-99880EDC-768B-455E-B7F4-22254FD01B42.htm#GUID-99880EDC-768B-455E-B7F4-22254FD01B42" title="Only the REST API can be used to add a Coherence data tier to an Oracle Java Cloud Service instance that's already been provisioned. You cannot use the Oracle Java Cloud Service Console to enable Oracle Coherence on a service instance that&rsquo;s already created.">Adding a Coherence Data Tier to an Oracle Java Cloud Service Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-506493C3-FEC4-48FE-87BB-7764DCA4612A.htm#GUID-506493C3-FEC4-48FE-87BB-7764DCA4612A" title="The Coherence data tier of an Oracle Java Cloud Service&mdash;Coherence instance is scaled independently of the application tier. You can use the Oracle Java Cloud Service Console or the REST API to scale the Coherence data tier.">Scaling the Coherence Data Tier of an Oracle Java Cloud Service Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-627556AD-A3A2-451D-95D7-9F6E1E8F0AEF.htm" title="You use the Oracle Java Cloud Service Console or the REST API to apply a patch to an Oracle Java Cloud Service&mdash;Coherence instance.">Patching an Oracle Java Cloud Service&mdash;Coherence Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-FE484476-7B40-4217-A9DC-2D6F19AC3114.htm" title="You cannot use the Oracle Java Cloud Service Console to remove the Coherence data tier. You can perform the task by using the REST API only.">Deleting the Coherence Data Tier of an Oracle Java Cloud Service Instance</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-455C1BD1-5361-460C-B1FA-7CA96A0B701C.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-16418889-DD11-43BA-B0A8-0F2226F08A1A.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

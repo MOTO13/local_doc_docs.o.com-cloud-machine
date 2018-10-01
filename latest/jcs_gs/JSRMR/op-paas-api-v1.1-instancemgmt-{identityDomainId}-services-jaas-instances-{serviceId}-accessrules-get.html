@@ -1,0 +1,1851 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service - View All Access Rules</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-accessrules-%7BruleName%7D-put.html" title="Previous" type="text/html">
+        <link rel="next" href="api-AppToCloud%20Migration.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-accessrules-%7BruleName%7D-put.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="api-AppToCloud%20Migration.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            
+            <header>
+
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li>Tasks</li>
+                    
+                    <li class="active">
+                        
+                        <a href="api-Access%20Rules.html">Access Rules</a>
+                        
+                    </li>
+                    
+                </ol>
+                
+                <p class="draftsubtitle"></p>
+                
+                <h2>View All Access Rules</h2>
+                <div>
+                    <div class="label label-get text-uppercase">get</div>
+                    <p style="word-break: break-word;"><strong>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/jaas/instances/{serviceId}/accessrules</strong></p>
+                </div>
+            </header>
+            <section>
+
+                <div class="description">This endpoint is only available on Oracle Public Cloud.<p>Returns information about all access rules defined for an Oracle Java Cloud Service instance.<p>The access rules that control external communication to the WebLogic Server Administration Console, Fusion Middleware Control, and Load Balancer Console are disabled by default if you did not set <code>enableAdminConsole</code> to <code>true</code> when you provisioned the service instance. To gain access to the administration consoles, you are required to explicitly enable the access rules for them. See <a href='op-paas-api-v1.1-instancemgmt-{identityDomainId}-services-jaas-instances-{serviceId}-accessrules-{ruleName}-put.html'>Update an Access Rule</a>.</div>
+
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                        <li role="presentation" class="active"><a href="#request" aria-controls="request" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-in" aria-hidden="true"></span> Request</a></li>
+                        <li role="presentation"><a href="#response" aria-controls="response" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-out" aria-hidden="true"></span> Response</a></li>
+                        
+                        <li role="presentation"><a href="#examples" aria-controls="examples" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-edit" aria-hidden="true"></span> Examples</a></li>
+                        
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="request">
+                            <h3 class="visible-print-block">Request</h3>
+                            
+
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Path Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>identityDomainId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                        <dt>serviceId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the Oracle Java Cloud Service instance.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+
+                            
+                            
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Header Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>X-ID-TENANT-NAME</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+
+
+                            
+
+
+
+                            
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="response">
+                            <h3 class="visible-print-block">Response</h3>
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">200 Response <span class="glyphicon glyphicon-ok-sign response-symbol" data-response-code="200" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    OK. See <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=jcs_rest_statuscodes'>Status Codes</a> for information about other possible HTTP status codes.
+                                </div>
+
+                                
+                                
+
+                                
+                                <div class="panel panel-default">
+
+                                    <div class="panel-heading">Body</div>
+                                    <div class="panel-body">
+                                        
+                                        <div>The response body contains information about the access rules.</div>
+                                        
+
+                                        <div class="schema-container">
+                                        
+                                        <div id="200-definitions-secrules-response" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : secrules-response</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The response body contains information about the access rules.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-secrules-response-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-secrules-response-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-secrules-response-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-secrules-response-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-secrules-response-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>accessRules</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-secrules-response-properties-accessRules" role="button" class="btn btn-default btn-sm">accessRules</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups details about access rules.</div>
+
+            
+        </dd>
+        
+        <dt>activities</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-secrules-response-properties-activities" role="button" class="btn btn-default btn-sm">activities</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups details about ongoing and failed activity messages, if available.</div>
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-secrules-response-properties-accessRules" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : accessRules</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups details about access rules.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-secrules-response-properties-accessRules-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-secrules-response-properties-accessRules-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-secrules-response-properties-accessRules-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-secrules-response-properties-accessRules-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-secrules-response-properties-accessRules-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-secrules-details" role="button" class="btn btn-default btn-sm">secrules-details</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-secrules-response-properties-activities" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : activities</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups details about ongoing and failed activity messages, if available.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-secrules-response-properties-activities-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-secrules-response-properties-activities-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-secrules-response-properties-activities-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-secrules-response-properties-activities-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-secrules-response-properties-activities-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-secrules-activities" role="button" class="btn btn-default btn-sm">secrules-activities</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-secrules-details" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : secrules-details</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-secrules-details-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-secrules-details-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-secrules-details-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-secrules-details-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-secrules-details-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>description</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Description of the rule.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>destination</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The service component to allow traffic to. For example, <code>WLS_ADMIN_SERVER</code> or <code>OTD</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>ports</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Ports for the rule. This can be a single port or a port range.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>ruleName</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the rule.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>ruleType</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Type of rule. For example, <code>SYSTEM</code>, <code>DEFAULT</code>, or <code>USER</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>source</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The hosts from which traffic is allowed. For example, <code>PUBLIC-INTERNET</code> for any host on the Internet, a single IP address or a comma-separated list of subnets (in CIDR format) or IPv4 addresses, or a service component name such as <code>WLS_ADMIN_SERVER</code>, <code>WLS_MANAGED_SERVER</code>, <code>OTD</code>, or <code>DB</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>status</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Status of the rule. Valid value: <code>disabled</code> or <code>enabled</code>.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-secrules-activities" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : secrules-activities</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-secrules-activities-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-secrules-activities-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-secrules-activities-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-secrules-activities-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-secrules-activities-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>activity</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-secrules-activities-properties-activity" role="button" class="btn btn-default btn-sm">activity</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups messages and errors for ongoing and failed activities.</div>
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-secrules-activities-properties-activity" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : activity</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups messages and errors for ongoing and failed activities.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-secrules-activities-properties-activity-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-secrules-activities-properties-activity-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-secrules-activities-properties-activity-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-secrules-activities-properties-activity-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-secrules-activities-properties-activity-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-message-errors" role="button" class="btn btn-default btn-sm">message-errors</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-message-errors" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : message-errors</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-message-errors-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-message-errors-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-message-errors-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-message-errors-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-message-errors-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>errors</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Error encountered for an ongoing or failed activity.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>message</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Message of an ongoing or failed activity.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+
+
+                        </div>
+                        
+                        <div role="tabpanel" class="tab-pane fade" id="examples">
+                            <h3>Examples</h3>
+                            <div class="body conbody">
+ <p class="p">The following example shows how to view all access rules defined for an Oracle Java Cloud Service instance, by submitting a GET request on the REST resource using cURL.</p> 
+ <p class="p"><strong class="ph b">Note:</strong> The command in this example uses the URL structure <samp class="ph codeph">https://rest_server_url/<em class="ph i">resource-path</em></samp>, where <samp class="ph codeph">rest_server_url</samp> is the Oracle Public Cloud REST server to contact for your identity domain. See <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a> for the appropriate URL structure to use for Oracle Public Cloud.</p> 
+ <div class="section">
+  <h3 class="title sectiontitle">cURL Command</h3>
+  <pre class="pre">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/api/v1.1/instancemgmt/ExampleIdentityDomain/services/jaas/instances/ExampleInstance/accessrules</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Header</h3>
+  <p class="p">The following shows an example of the response header.</p> 
+  <pre class="pre">HTTP/1.1 200 OK
+Date: Sat, 18 Jun 2016 02:23:06 GMT
+Transfer-Encoding: chunked
+Content-Type: application/json</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Body</h3>
+  <p class="p">The following is an example of the response returned in JSON format. It shows the SYSTEM and DEFAULT rules that are created after a service instance is provisioned without enabling administration consoles (<samp class="ph codeph">"enableAdminConsole" : false</samp>). </p> 
+  <pre class="pre">{
+    "accessRules":[
+    {
+        "ruleName":"ora_p2otd_ahttps",
+        "description":"Permit public to https to OTD admin server",
+        "status":"disabled",
+        "source":"PUBLIC-INTERNET",
+        "destination":"OTD",
+        "ports":"8989",
+        "protocol": "tcp",
+        "ruleType":"DEFAULT"
+    },
+    {
+        "ruleName":"ora_p2otd_chttps",
+        "description":"Permit public to https to OTD server",
+        "status":"enabled",
+        "source":"PUBLIC-INTERNET",
+        "destination":"OTD",
+        "ports":"443",
+        "protocol": "tcp",
+        "ruleType":"DEFAULT"
+    },
+    {
+        "ruleName":"ora_p2otd_ssh",
+        "description":"Permit public to ssh to OTD server",
+        "status":"enabled",
+        "source":"PUBLIC-INTERNET",
+        "destination":"OTD",
+        "ports":"22",
+        "protocol": "tcp",
+        "ruleType":"DEFAULT"
+    },
+    {
+        "ruleName":"ora_p2otd_chttp",
+        "description":"Permit public to http to OTD server",
+        "status":"enabled",
+        "source":"PUBLIC-INTERNET",
+        "destination":"OTD",
+        "ports":"80",
+        "protocol": "tcp",
+        "ruleType":"DEFAULT"
+    },
+    {
+        "ruleName":"sys_otd2ms_chttp",
+        "description":"DO NOT MODIFY: Permit http connection to managed servers from OTD",
+        "status":"enabled",
+        "source":"OTD",
+        "destination":"WLS_MANAGED_SERVER",
+        "ports":"8001",
+        "protocol": "tcp",
+        "ruleType":"SYSTEM"
+    },
+    {
+        "ruleName":"sys_otd2ms_chttps",
+        "description":"DO NOT MODIFY: Permit https connection to managed servers from OTD",
+        "status":"enabled",
+        "source":"OTD",
+        "destination":"WLS_MANAGED_SERVER",
+        "ports":"8002",
+        "protocol": "tcp",
+        "ruleType":"SYSTEM"
+    },
+    {
+        "ruleName":"sys_admin2otd_ssh",
+        "description":"DO NOT MODIFY: Permit admin server to ssh to otd",
+        "status":"enabled",
+        "source":"WLS_ADMIN_SERVER",
+        "destination":"OTD","ports":"22",
+        "protocol": "tcp",
+        "ruleType":"SYSTEM"
+    },
+    {
+        "ruleName":"sys_ms2db_dblistener",
+        "description":"DO NOT MODIFY: Permit listener connection to database from managed servers",
+        "status":"enabled",
+        "source":"WLS_MANAGED_SERVER",
+        "destination":"DB",
+        "ports":"1521",
+        "protocol": "tcp",
+        "ruleType":"SYSTEM"
+    },
+    {
+        "ruleName":"sys_ms2db_ssh",
+        "description":"DO NOT MODIFY: Permit managed servers to ssh to db",
+        "status":"enabled",
+        "source":"WLS_MANAGED_SERVER",
+        "destination":"DB",
+        "ports":"22",
+        "protocol": "tcp",
+        "ruleType":"SYSTEM"
+    },
+    {
+        "ruleName":"ora_p2admin_ssh",
+        "description":"Permit public to ssh to admin server",
+        "status":"enabled",
+        "source":"PUBLIC-INTERNET",
+        "destination":"WLS_ADMIN_SERVER",
+        "ports":"22",
+        "protocol": "tcp",
+        "ruleType":"DEFAULT"
+    },
+    {
+        "ruleName":"ora_p2admin_ahttps",
+        "description":"Permit public to https to admin server",
+        "status":"disabled",
+        "source":"PUBLIC-INTERNET",
+        "destination":"WLS_ADMIN_SERVER",
+        "ports":"7002",
+        "protocol": "tcp",
+        "ruleType":"DEFAULT"
+    }],
+    "activities":[]
+}</pre> 
+  <p class="p">The following example shows a USER rule that is not enabled.</p> 
+  <pre class="pre">{
+    "accessRules":[
+    {
+        "ruleName": "my_corp_vnc",
+        "description": "corporate to VNC to Admin Server",
+        "status": "disabled",
+        "source": "192.123.45.6/32",
+        "destination": "WLS_ADMIN_SERVER",
+        "ports": "5900",
+        "protocol": "tcp",
+        "ruleType":"USER"
+    },
+    ...
+    ],
+    "activities":[]
+}</pre> 
+  <p class="p">The following example shows the access rules created when a service instance is provisioned using an IP network.</p> 
+  <pre class="pre">{
+    "accessRules":[
+    {
+        "ruleName":"sys_ms2db_dblistener",
+        "status":"enabled",
+        "source":"WLS_MANAGED_SERVER",
+        "destination":"DBaaS:DBServicename:DB",
+        "ports":"1521",
+        "protocol":"tcp",
+        "ruleType":"SYSTEM"
+    },
+    {
+        "ruleName":"sys_ms2db_ssh",
+        "status":"enabled",
+        "source":"WLS_MANAGED_SERVER",
+        "destination":"DBaaS:DBServicename:DB",
+        "ports":"22",
+        "protocol":"tcp",
+        "ruleType":"SYSTEM"
+    },
+    {
+        "ruleName":"ora_p2admin_ssh",
+        "status":"enabled",
+        "source":"PUBLIC-INTERNET",
+        "destination":"WLS_ADMIN_SERVER",
+        "ports":"22",
+        "protocol":"tcp",
+        "ruleType":"DEFAULT"
+    },
+    {
+        "ruleName":"ora_p2admin_ahttps",
+        "status":"disabled",
+        "source":"PUBLIC-INTERNET",
+        "destination":"WLS_ADMIN_SERVER",
+        "ports":"7002",
+        "protocol":"tcp",
+        "ruleType":"DEFAULT"
+    },
+    {
+        "ruleName":"sys_infra2admin_ssh",
+        "status":"enabled",
+        "source":"PAAS-INFRA",
+        "destination":"WLS_ADMIN_SERVER",
+        "ports":"22",
+        "protocol":"tcp",
+        "ruleType":"SYSTEM"
+    },
+    {
+        "ruleName":"ora_p2ms_chttp",
+        "status":"enabled",
+        "source":"PUBLIC-INTERNET",
+        "destination":"WLS_MANAGED_SERVER",
+        "ports":"80",
+        "protocol":"tcp",
+        "ruleType":"DEFAULT"
+    },
+    {
+        "ruleName":"ora_p2ms_chttps",
+        "status":"enabled",
+        "source":"PUBLIC-INTERNET",
+        "destination":"WLS_MANAGED_SERVER",
+        "ports":"443",
+        "protocol":"tcp",
+        "ruleType":"DEFAULT"
+    }],
+    "activities":[]
+}</pre> 
+ </div> 
+</div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+        </article>
+    </body>
+</html>

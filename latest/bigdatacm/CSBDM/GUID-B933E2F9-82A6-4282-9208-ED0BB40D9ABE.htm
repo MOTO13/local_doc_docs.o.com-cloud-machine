@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Supporting Multiple Key Pairs for Secure Shell (SSH) Access</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="By default, the Oracle Big Data Cloud Machine opc user has Secure Shell (SSH) access to all the nodes of the cluster when using the SSH key pair that was provided when the cluster was provisioned. You can also provide SSH access from different clients and for other users. For example, you may want to provide opc access to an Oracle Big Data Discovery administrator who accesses the cluster from a different computer, or you may want to create other users with different access rights." />
+<meta name="dcterms.created" content="2017-05-03T11:44:48Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Big Data Cloud Machine" />
+<meta name="dcterms.identifier" content="E85986-01" />
+<meta name="dcterms.isVersionOf" content="CSBDM" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="http://docs.oracle.com/cloud-machine/latest/" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-BEA41872-F433-4C0A-B501-EBE98E05C76F.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-FA8D6317-BE96-4393-9C82-73B3CAB9ECA0.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSBDM.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSBDM.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSBDM.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-B933E2F9-82A6-4282-9208-ED0BB40D9ABE"></a> <span id="PAGE" style="display:none;">26/51</span> <!-- End Header -->
+<h1 id="CSBDM-GUID-B933E2F9-82A6-4282-9208-ED0BB40D9ABE" class="sect1">Supporting Multiple Key Pairs for Secure Shell (SSH) Access</h1>
+<div>
+<p>By default, the <span>Oracle Big Data Cloud Machine</span> <code class="codeph">opc</code> user has Secure Shell (SSH) access to all the nodes of the cluster when using the SSH key pair that was provided when the cluster was provisioned. You can also provide SSH access from different clients and for other users. For example, you may want to provide <code class="codeph">opc</code> access to an Oracle Big Data Discovery administrator who accesses the cluster from a different computer, or you may want to create other users with different access rights.</p>
+<div class="section">
+<p class="subhead1">Adding SSH Support for the opc User Using a Different Key Pair</p>
+<p>When an<span>Oracle Big Data Cloud Machine</span> cluster is provisioned, <code class="codeph">/home/opc/.ssh/authorized_keys</code> files are created on all the nodes of the cluster. The <code class="codeph">authorized_keys</code> files contain the SSH public key that was provided when the cluster was provisioned.</p>
+<p>To add an additional public key for the <code class="codeph">opc</code> user,</p>
+<ol>
+<li>
+<p>Obtain the new SSH public key.</p>
+<p>The user who needs access to the cluster can create the SSH key pair, retain the private key, and transfer the public key to the <span>Oracle Big Data Cloud Machine</span> administrator. Or, the administrator can create the new key pair and transfer the private key to the other user. See <a href="GUID-C13B13F7-454E-445A-99B8-CDDA410CA652.htm#GUID-C13B13F7-454E-445A-99B8-CDDA410CA652" title="Several tools exist to generate SSH public/private key pairs. The following sections show how to generate an SSH key pair on UNIX, UNIX-like and Windows platforms.">Generating a Secure Shell (SSH) Public/Private Key Pair</a>.</p>
+</li>
+<li>
+<p>Connect as the <code class="codeph">opc</code> user to a node to which you want to add the key. See <a href="GUID-84261712-B6BA-4786-AE93-653B4AAF40B1.htm#GUID-84261712-B6BA-4786-AE93-653B4AAF40B1" title="PuTTY is a freely available SSH client program for Windows.UNIX and UNIX-like platforms (including Solaris and Linux) include the ssh utility, an SSH client.">Connecting to a Cluster Node Through Secure Shell (SSH)</a>.</p>
+</li>
+<li>
+<p>On a new line of the <code>/home/opc/.ssh/authorized_keys</code> file, paste the contents of the new SSH public key file. Do not add extra lines or line breaks.</p>
+</li>
+<li>
+<p>Repeat the process on every node to which you want to provide access by using the new key pair.</p>
+</li>
+</ol>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Adding SSH Support for Other User Accounts</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p>To add an SSH key pair for a user other than <code class="codeph">opc</code>:</p>
+<ol>
+<li>
+<p>Obtain the new SSH public key.</p>
+<p>The user who needs access to the cluster can create the SSH key pair, retain the private key, and transfer the public key to the <span>Oracle Big Data Cloud Machine</span> administrator. Or, the administrator can create the new key pair and transfer the private key to the other user. See <a href="GUID-C13B13F7-454E-445A-99B8-CDDA410CA652.htm#GUID-C13B13F7-454E-445A-99B8-CDDA410CA652" title="Several tools exist to generate SSH public/private key pairs. The following sections show how to generate an SSH key pair on UNIX, UNIX-like and Windows platforms.">Generating a Secure Shell (SSH) Public/Private Key Pair</a>.</p>
+</li>
+<li>
+<p>Connect as the <code class="codeph">opc</code> user to a node to which you want to add the key. See <a href="GUID-84261712-B6BA-4786-AE93-653B4AAF40B1.htm#GUID-84261712-B6BA-4786-AE93-653B4AAF40B1" title="PuTTY is a freely available SSH client program for Windows.UNIX and UNIX-like platforms (including Solaris and Linux) include the ssh utility, an SSH client.">Connecting to a Cluster Node Through Secure Shell (SSH)</a>.</p>
+</li>
+<li>
+<p>Create a <code>/home/<span class="variable">user</span>/.ssh/authorized_keys</code> file, where <code class="codeph">user</code> is the name of the user who will have SSH access.</p>
+</li>
+<li>
+<p>Paste the contents of the new SSH public key file into<code>/home/<span class="variable">user</span>/.ssh/authorized_keys</code> file. Do not add extra lines or line breaks.</p>
+</li>
+<li>
+<p>Repeat the process on every node to which you want to provide SSH access for the user.</p>
+</li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment67">
+<tr>
+<td class="cellalignment74">
+<table class="cellalignment72">
+<tr>
+<td class="cellalignment71"><a href="GUID-BEA41872-F433-4C0A-B501-EBE98E05C76F.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment71"><a href="GUID-FA8D6317-BE96-4393-9C82-73B3CAB9ECA0.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment76">
+<table class="cellalignment70">
+<tr>
+<td class="cellalignment71"><a href="http://docs.oracle.com/cloud-machine/latest/"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment71"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment71"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment71"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

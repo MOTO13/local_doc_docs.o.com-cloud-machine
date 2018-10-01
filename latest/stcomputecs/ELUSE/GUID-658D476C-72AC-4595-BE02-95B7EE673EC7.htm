@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Getting Started with Using Oracle Compute Cloud Service on OPCM</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2018-05-15T07:53:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E62130-11" />
+<meta name="dcterms.isVersionOf" content="ELUSE" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-31E89478-1031-4510-B6C0-97A42776A737.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-81FD06EA-F60C-4910-A1EC-4162123F5751.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUSE.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-658D476C-72AC-4595-BE02-95B7EE673EC7"></a> <span id="PAGE" style="display:none;">16/81</span> <!-- End Header -->
+<h1 id="ELUSE-GUID-658D476C-72AC-4595-BE02-95B7EE673EC7" class="sect1">Getting Started with Using Oracle Compute Cloud Service on <span id="ACRONYM-AF466053">OPCM</span></h1>
+<div>
+<div class="section">
+<p>You must have the following information to get started and use the Oracle Compute Cloud Service:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>URL for Enterprise Manager UI</p>
+</li>
+<li>
+<p>Web UI login credential</p>
+</li>
+<li>
+<p>Oracle Compute Site name in the UI</p>
+</li>
+<li>
+<p>Oracle Compute Site login credential</p>
+</li>
+</ul>
+<p>Contact your Tenant Administrator for more information.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Setting Up the Self Service Portal View</p>
+<p>You must set your credentials for the Oracle Compute site in the UI. This is an one time setup that must be done to access the Self Service Portal and use the resources in the allocated site.</p>
+<ol>
+<li>
+<p>Log in to the UI and go to the <span class="bold">Self Service Portal</span>.</p>
+</li>
+<li>
+<p>In the top right corner of the Self Service Portal page, click <span class="bold">Preferences</span>.</p>
+<p>The <span class="bold">Preferences</span> window is displayed.</p>
+<div class="figure" id="GUID-658D476C-72AC-4595-BE02-95B7EE673EC7__GUID-A3D6A0F7-BB8D-47CD-90C3-F78788322287"><img width="650" height="316" src="img/GUID-610CE4E5-DB1F-420F-A48D-CBF5015CEE6C-default.png" alt="Description of GUID-610CE4E5-DB1F-420F-A48D-CBF5015CEE6C-default.png follows" title="Description of GUID-610CE4E5-DB1F-420F-A48D-CBF5015CEE6C-default.png follows" /><br />
+<a href="img_text/GUID-610CE4E5-DB1F-420F-A48D-CBF5015CEE6C-default.htm">Description of the illustration GUID-610CE4E5-DB1F-420F-A48D-CBF5015CEE6C-default.png</a></div>
+<!-- class="figure" --></li>
+<li>
+<p>In the left navigation pane, select <span class="bold">Infrastructure - Oracle Compute</span>.</p>
+</li>
+<li>
+<p>Select the Oracle Compute Site name and click <span class="bold">Set</span>.</p>
+<p>The <span class="bold">Setup Credential</span> window is displayed.</p>
+</li>
+<li>
+<p>Enter the Oracle Compute Site login credentials provided to you as follows:</p>
+<ol>
+<li>
+<p><span class="bold">Username</span>: Enter the user name in the format of <code class="codeph">/<span class="variable">tenant_name</span>/<span class="variable">user_name</span></code>. For example, <code class="codeph">/mytenant/user123</code>.</p>
+</li>
+<li>
+<p><span class="bold">Password</span>: Enter the password.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Click <span class="bold">OK</span>.</p>
+<p>The user name is associated with the selected Oracle Compute Site.</p>
+</li>
+<li>
+<p>Select the <span class="bold">Oracle Compute Site</span> and click <span class="bold">Test</span>.</p>
+<p>The test must succeed, confirming the connection with the given credentials.</p>
+</li>
+<li>
+<p>To set the preferences, click <span class="bold">Apply</span> .</p>
+</li>
+</ol>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Workflow to Create an Instance in Oracle Compute Cloud Service</p>
+<p>Instances can be created or launched only through orchestrations in Oracle Compute Cloud Service. An orchestration can contain one or more plans where plans represent objects of a specific type, such as instances and storage volumes. Oracle Compute Cloud Service&nbsp;supports multiple workflows for creating compute, network, and storage resources. Within an orchestration you can specify dependencies to control the sequence in which the objects are created and destroyed. For example, if an instance uses a storage volume, then the storage volume must be created before the instance can be launched. If you create and attach a storage volume to an instance as part of the orchestration, then both the instance and storage volume are deleted when the orchestration is stopped.&nbsp;If you want to retain the storage volume of an instance, then shutdown the orchestration instead of stop to release the compute resources.</p>
+<p>A typical workflow to create an instance is described in the following table. Use this workflow as a reference to get started with&nbsp;Oracle Compute Cloud Service on <span id="GUID-658D476C-72AC-4595-BE02-95B7EE673EC7__ACRONYM-AF466053">OPCM</span>.</p>
+<div class="tblformal" id="GUID-658D476C-72AC-4595-BE02-95B7EE673EC7__GUID-FA5079CD-9397-43ED-AB6D-48425B776E97">
+<table class="cellalignment110" summary="This table describes the procedures to get started with using Oracle Compute Cloud Service on OPCM.">
+<thead>
+<tr class="cellalignment96">
+<th class="cellalignment111" id="d4002e149">Task</th>
+<th class="cellalignment111" id="d4002e151">Description</th>
+<th class="cellalignment111" id="d4002e153">More Information</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d4002e157" headers="d4002e149">Understand Oracle Compute Cloud Service terminology.</td>
+<td class="cellalignment112" headers="d4002e157 d4002e151">Learn about instances, images, shapes,&nbsp;orchestrations, private networks, storage volumes, snapshots, and so on.</td>
+<td class="cellalignment112" headers="d4002e157 d4002e153"><a href="GUID-203AB1EE-45F5-4701-BF15-8C8D6190E66B.htm#GUID-203AB1EE-45F5-4701-BF15-8C8D6190E66B">Oracle Compute Cloud Service Terminology</a></td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d4002e165" headers="d4002e149">Generate SSH key pairs.</td>
+<td class="cellalignment112" headers="d4002e165 d4002e151">Generate the SSH key pairs that you plan to use to access instances.</td>
+<td class="cellalignment112" headers="d4002e165 d4002e153"><a href="GUID-27253116-1FFF-4E1C-A7A7-BB2A03B5BAA5.htm" title="You must generate an SSH key pair, associate the public key with your instances, and use the private key to log in to the instances using SSH.">Generating an SSH Key Pair</a></td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d4002e176" headers="d4002e149">Access the service.</td>
+<td class="cellalignment112" headers="d4002e176 d4002e151">Access the service through the&nbsp;Oracle Compute Cloud Service&nbsp;web console, Oracle Compute CLI,&nbsp;or RESTful API.</td>
+<td class="cellalignment112" headers="d4002e176 d4002e153"><a href="GUID-E543C849-480F-40BB-AC1B-E1F7F348CE63.htm">About the Interfaces to Oracle Compute Cloud Service</a></td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d4002e184" headers="d4002e149">Create private networks.</td>
+<td class="cellalignment112" headers="d4002e184 d4002e151">Create private networks to connect multiple instances in a tenant.</td>
+<td class="cellalignment112" headers="d4002e184 d4002e153"><a href="GUID-28246879-BEE7-4820-8230-55EF0FAA5B7C.htm" title="This section describes how to create and manage IPoIB tenant vNets, and manage IP addresses.">Managing Networks</a></td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d4002e195" headers="d4002e149">(Optional) Create storage volumes.</td>
+<td class="cellalignment112" headers="d4002e195 d4002e151">Provide storage for your instances by creating and attaching storage volumes.</td>
+<td class="cellalignment112" headers="d4002e195 d4002e153"><a href="GUID-8F2A30B0-E7F9-4EAC-988C-BA531E202A1F.htm" title="This section describes how to create and manage storage volumes, and take snapshots of storage volumes.">Managing Storage Volumes</a></td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d4002e206" headers="d4002e149">Launch instances.</td>
+<td class="cellalignment112" headers="d4002e206 d4002e151">Create and start the orchestration to launch the instances with the desired compute, storage, and network resources.</td>
+<td class="cellalignment112" headers="d4002e206 d4002e153"><a href="GUID-618A1CE4-8DBC-4795-A7E5-3B5F49D80FFB.htm" title="This section describes how to create instances using orchestrations, and manage instances.">Managing Instances</a></td>
+</tr>
+<tr class="cellalignment96">
+<td class="cellalignment112" id="d4002e217" headers="d4002e149">Log in to instances.</td>
+<td class="cellalignment112" headers="d4002e217 d4002e151">Use SSH to access your instances securely.</td>
+<td class="cellalignment112" headers="d4002e217 d4002e153"><a href="GUID-2EE72D99-92A6-4050-962B-84523A479E7C.htm" title="You can use SSH to log in to your instance.">Accessing an Instance Using SSH</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment95">
+<tr>
+<td class="cellalignment102">
+<table class="cellalignment100">
+<tr>
+<td class="cellalignment99"><a href="GUID-31E89478-1031-4510-B6C0-97A42776A737.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment99"><a href="GUID-81FD06EA-F60C-4910-A1EC-4162123F5751.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment104">
+<table class="cellalignment98">
+<tr>
+<td class="cellalignment99"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment99"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

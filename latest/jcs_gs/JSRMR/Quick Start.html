@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="rest-endpoints.html" title="Previous" type="text/html">
+        <link rel="next" href="Obtain%20Account%20Information.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="rest-endpoints.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="Obtain%20Account%20Information.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">Quick Start</h2> 
+<div class="body taskbody">
+ <p class="shortdesc">Set up your environment and use the REST API to create your first Oracle Java Cloud Service instance by performing the tasks described in the following sections.</p> 
+ <div class="section context">
+  All documentation is applicable to using the REST API on Oracle Public Cloud and Oracle Cloud Machine unless otherwise indicated.
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">A Note About Terminology</h3>
+  <p class="p">Throughout the documentation, any reference to identity domain or <samp class="ph codeph">{identityDomainId}</samp> in a resource path refers to the <strong class="ph b">tenant name</strong> for Oracle Java Cloud Service on Oracle Cloud Machine.</p> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Prerequisites (Oracle Public Cloud)</h3>
+  <p class="p">Ensure that you have completed the prerequisite tasks as described in the following table.</p> 
+  <div class="tablenoborder">
+   <span class="desc tabledesc">This table lists the prerequisite tasks on Oracle Public Cloud.</span>
+   <table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all">
+    <thead class="thead" align="left">
+     <tr class="row">
+      <th class="firstcol" valign="top" width="50%" id="d9086e39">Prerequisite</th> 
+      <th class="entry" valign="top" width="50%" id="d9086e41">More Information</th> 
+     </tr> 
+    </thead> 
+    <tbody class="tbody">
+     <tr class="row">
+      <th class="firstcol" valign="top" width="50%" id="d9086e45" headers="d9086e39 "><p class="p">Obtain trial or paid subscriptions to these services:</p> 
+       <ul class="ul">
+        <li class="li"><p class="p">Oracle Java Cloud Service</p> </li> 
+        <li class="li"><p class="p">Oracle Database Cloud Service</p> </li> 
+        <li class="li"><p class="p">Oracle Storage Cloud Service</p> </li> 
+       </ul> </th> 
+      <td class="entry" valign="top" width="50%" headers="d9086e45 d9086e41 "><p class="p"><a class="xref" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=buyer" target="_blank">Get Subscriptions</a> and <a class="xref" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=JSCUG-GUID-8408EA3E-8058-470A-A414-DB9A840320D4" target="_blank">How to Begin with Oracle Java Cloud Service Subscriptions</a></p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" width="50%" id="d9086e68" headers="d9086e39 "><p class="p">Create an SSH public/private key pair</p> </th> 
+      <td class="entry" valign="top" width="50%" headers="d9086e68 d9086e41 "><p class="p"><a class="xref" href="https://apexapps.oracle.com/pls/apex/f?p=44785:112:0:::112:P112_CONTENT_ID:10023" target="_blank">Create SSH Keys for Use with Oracle Cloud Services</a> (tutorial)</p> <p class="p"><a class="xref" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=JSCUG3297" target="_blank">Generating a Secure Shell (SSH) Public-Private Key Pair</a> in <em class="ph i">Using Oracle Java Cloud Service</em></p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" width="50%" id="d9086e85" headers="d9086e39 "><p class="p">Create Oracle Storage Cloud Service containers</p> </th> 
+      <td class="entry" valign="top" width="50%" headers="d9086e85 d9086e41 "><p class="p"><a class="xref" href="https://apexapps.oracle.com/pls/apex/f?p=44785:112:0::::P112_CONTENT_ID:10888" target="_blank">Creating Containers Using the REST API</a> (tutorial)</p> <p class="p">If using a new Oracle Storage Cloud Service subscription, be sure to set a replication policy for your Oracle Storage Cloud Service before you create your first container. See <a class="xref" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=CSSTO-GUID-F1126868-8390-41B0-A97D-EC145995C33B" target="_blank">How to Begin with Oracle Storage Cloud Service Subscriptions</a> in <em class="ph i">Using Oracle Storage Cloud Service</em>.</p> <p class="p"><strong class="ph b">Note</strong>: If you do not create a storage container before you create your Oracle Java Cloud Service instance, you can set the boolean parameter <samp class="ph codeph">createStorageContainerIfMissing</samp> to <samp class="ph codeph">true</samp> in your request document and specify a container name that does not yet exist in Oracle Storage Cloud Service. This enables the provisioning system to create the container for you before it provisions the service instance.</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" width="50%" id="d9086e114" headers="d9086e39 "><p class="p">Create database deployments in Oracle Database Cloud Service to host the:</p> 
+       <ul class="ul">
+        <li class="li"><p class="p">Oracle Fusion Middleware component schemas required by Oracle Java Required Files (JRF)</p> </li> 
+        <li class="li"><p class="p">(Optional) Application schemas</p> </li> 
+       </ul> </th> 
+      <td class="entry" valign="top" width="50%" headers="d9086e114 d9086e41 "><p class="p">You can create the required schema database deployment and an application schema database deployment using Oracle Database 11<em class="ph i">g</em> Release 2, Oracle Database 12<em class="ph i">c</em> Release 1, or Oracle Database 12<em class="ph i">c</em> Release 2. However, note that only Oracle Java Cloud Service instances based on WebLogic Server 12.2.1 fully support the Oracle Database 12.2 version for the database that contains the Oracle Infrastructure schemas required for Oracle Java Cloud Service.</p> <p class="p"><a class="xref" href="https://apexapps.oracle.com/pls/apex/f?p=44785:112:0::::P112_CONTENT_ID:10799" target="_blank">Database Cloud Service Quick Start</a> (tutorial)</p> <p class="p"><a class="xref" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=CSDBI3299" target="_blank">Creating a Database Deployment</a> in <em class="ph i">Using Oracle Database Cloud Service</em></p> <p class="p"><strong class="ph b">Note</strong>: If using the BASIC level of Oracle Database Cloud Service with the BASIC level of Oracle Java Cloud Service, you must configure the Database Cloud Service environment before you create the database deployment. See <a class="xref" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=JSCUG-GUID-192AA728-0AEF-4E8A-AFA8-68D1EEC78E35" target="_blank">Using a Database Cloud Service - Virtual Image Database Deployment</a>.</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" width="50%" id="d9086e157" headers="d9086e39 "><p class="p">Submit a request to obtain IP reservations (only if using an Oracle Exadata database)</p> </th> 
+      <td class="entry" valign="top" width="50%" headers="d9086e157 d9086e41 "><p class="p">If you plan to use an Oracle Exadata database with your Oracle Java Cloud Service instance, you must obtain IP reservations for the Managed Servers you are going to provision before creating the service instance; you will not be able to create the instance without IP reservations. See the My Oracle Support document entitled <cite class="cite">How to Request Authorized IPs for Provisioning a Java Cloud Service with Database Exadata Cloud Service</cite> (MOS Note 2163568.1) to learn how to submit a request for IP reservations.</p> </td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Prerequisites (Oracle Cloud Machine)</h3>
+  <p class="p">Ensure that you have completed the prerequisite tasks as described in the following table.</p> 
+  <div class="tablenoborder">
+   <span class="desc tabledesc">This table lists the prerequisite tasks on Oracle Cloud Machine.</span>
+   <table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all">
+    <thead class="thead" align="left">
+     <tr class="row">
+      <th class="firstcol" valign="top" width="50%" id="d9086e180">Prerequisite</th> 
+      <th class="entry" valign="top" width="50%" id="d9086e182">More Information</th> 
+     </tr> 
+    </thead> 
+    <tbody class="tbody">
+     <tr class="row">
+      <th class="firstcol" valign="top" width="50%" id="d9086e186" headers="d9086e180 "><p class="p">Create an SSH public/private key pair</p> </th> 
+      <td class="entry" valign="top" width="50%" headers="d9086e186 d9086e182 "><p class="p"><a class="xref" href="https://apexapps.oracle.com/pls/apex/f?p=44785:112:0:::112:P112_CONTENT_ID:10023" target="_blank">Create SSH Keys for Use with Oracle Cloud Services</a> (tutorial)</p> <p class="p"><a class="xref" href="../JSCUG/GUID-4285B8CF-A228-4B89-9552-FE6446B5A673.htm#JSCUG3297" target="_blank">Generating a Secure Shell (SSH) Public-Private Key Pair</a> in <em class="ph i">Using Oracle Java Cloud Service on OPCM</em></p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" width="50%" id="d9086e203" headers="d9086e180 "><p class="p">Obtain connection details to a database</p> </th> 
+      <td class="entry" valign="top" width="50%" headers="d9086e203 d9086e182 "><p class="p">Contact your Oracle Cloud Administrator or Tenant Administrator for the following:</p> 
+       <ul class="ul">
+        <li class="li"><p class="p">Connection string to a database in one of the following formats: <samp class="ph codeph"><em class="ph i">host</em>:<em class="ph i">port</em>:<em class="ph i">SID</em></samp> or <samp class="ph codeph"><em class="ph i">host</em>:<em class="ph i">port</em>/<em class="ph i">Service_Name</em></samp></p> </li> 
+        <li class="li"><p class="p">User name for the database administrator</p> </li> 
+        <li class="li"><p class="p">Password for the database administrator</p> </li> 
+       </ul> <p class="p"><strong class="ph b">Note:</strong> Only Oracle Java Cloud Service instances based on WebLogic Server 12.2.1 fully support the Oracle Database 12.2 version for the database that contains the Oracle schemas required for Oracle Java Cloud Service.</p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" width="50%" id="d9086e243" headers="d9086e180 "><p class="p">Obtain connection details to an external backup storage disk</p> </th> 
+      <td class="entry" valign="top" width="50%" headers="d9086e243 d9086e182 "><p class="p">Contact your Oracle Cloud Administrator or Tenant Administrator for the URI to a remote networked disk share in one of the following formats:</p> 
+       <ul class="ul">
+        <li class="li"><p class="p"><samp class="ph codeph"><em class="ph i">host_name</em>:<em class="ph i">absolute_path_to_remote_backup_disk</em></samp></p> </li> 
+        <li class="li"><p class="p"><samp class="ph codeph"><em class="ph i">host_ip</em>:<em class="ph i">absolute_path_to_remote_backup_disk</em></samp></p> </li> 
+       </ul> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" width="50%" id="d9086e267" headers="d9086e180 "><p class="p">Obtain database network and public access network details</p> </th> 
+      <td class="entry" valign="top" width="50%" headers="d9086e267 d9086e182 "><p class="p">Contact your Oracle Cloud Administrator or Tenant Administrator for the following networks:</p> 
+       <ul class="ul">
+        <li class="li"><p class="p"> Public Access Network: Path to the network that will be used to access the service instance, in the format <samp class="ph codeph">/<em class="ph i">tenant_name</em>/public/<em class="ph i">EoIB_vNet_name</em></samp>.</p> </li> 
+        <li class="li"><p class="p">Database Network: Path to the network through which the service instance will access the database that contains the Oracle Fusion Middleware component schemas. For example, <samp class="ph codeph">/mytenant/public/IPoIB_dbaccess</samp>.</p> </li> 
+       </ul> </td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Main Tasks</h3>
+  <p class="p">Perform the following tasks to create your first Oracle Java Cloud Service instance using the REST API.</p> 
+  <div class="tablenoborder">
+   <span class="desc tabledesc">This table lists the main tasks for using REST API to create your first Oracle Java Cloud Service instance.</span>
+   <table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all">
+    <thead class="thead" align="left">
+     <tr class="row">
+      <th class="firstcol" valign="top" width="50%" id="d9086e305">Main Task</th> 
+      <th class="entry" valign="top" width="50%" id="d9086e307">More Information</th> 
+     </tr> 
+    </thead> 
+    <tbody class="tbody">
+     <tr class="row">
+      <th class="firstcol" valign="top" width="50%" id="d9086e311" headers="d9086e305 "><p class="p">Obtain the appropriate sign-in credentials from your account administrator, Oracle Cloud Administrator, or Tenant Administrator.</p> </th> 
+      <td class="entry" valign="top" width="50%" headers="d9086e311 d9086e307 "><p class="p"><a class="xref" href="Obtain%20Account%20Information.html" target="_blank">Obtain Account Information</a></p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" width="50%" id="d9086e320" headers="d9086e305 "><p class="p">Install cURL, the open source, command-line tool for transferring data with URL syntax. It supports various protocols including HTTP and HTTPs. The examples throughout the documentation use cURL to demonstrate how to access the Oracle Java Cloud Service REST API.</p> </th> 
+      <td class="entry" valign="top" width="50%" headers="d9086e320 d9086e307 "><p class="p"><a class="xref" href="Install%20cURL.html" target="_blank">Install cURL</a></p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" width="50%" id="d9086e329" headers="d9086e305 "><p class="p">Create the request document, in JSON format, to define the details of your create service instance request.</p> </th> 
+      <td class="entry" valign="top" width="50%" headers="d9086e329 d9086e307 "><p class="p"><a class="xref" href="Create%20the%20Request%20Document.html" target="_blank">Create the Request Document</a></p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" width="50%" id="d9086e338" headers="d9086e305 "><p class="p">Create your first Oracle Java Cloud Service instance, passing the request document defined previously.</p> </th> 
+      <td class="entry" valign="top" width="50%" headers="d9086e338 d9086e307 "><p class="p"><a class="xref" href="Create%20Your%20First%20Instance.html" target="_blank">Create Your First Service Instance</a></p> </td> 
+     </tr> 
+     <tr class="row">
+      <th class="firstcol" valign="top" width="50%" id="d9086e347" headers="d9086e305 "><p class="p">View the service instance details after the instance is created.</p> </th> 
+      <td class="entry" valign="top" width="50%" headers="d9086e347 d9086e307 "><p class="p"><a class="xref" href="Review%20the%20Details%20of%20Your%20First%20Instance.html" target="_blank">Review the Details of Your First Service Instance</a></p> </td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+ </div> 
+</div></div>
+        </article>
+    </body>
+</html>

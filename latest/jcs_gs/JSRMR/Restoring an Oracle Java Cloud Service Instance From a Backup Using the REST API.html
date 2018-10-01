@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="Downloading%20a%20Backup%20for%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html" title="Previous" type="text/html">
+        <link rel="next" href="Patching%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="Downloading%20a%20Backup%20for%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="Patching%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">Restoring a Service Instance</h2> 
+<div class="body taskbody">
+ <p class="shortdesc">You can restore an Oracle Java Cloud Service instance from a backup using the REST API, as described in the following procedure. You use a restore operation to undo configuration changes you do not want by returning the service instance to a particular state.</p> 
+ <div class="section">
+  <p class="p">When you restore from a backup, you can also choose to reset the Oracle WebLogic Server and the JDK software to the versions that correspond to the official patch set update (PSU) level of the software that Oracle Java Cloud Service is currently running, or leave the versions unchanged.</p> 
+  <p class="p">Consider the following before you restore an Oracle Java Cloud Service instance:</p> 
+  <ul class="ul">
+   <li class="li"><p class="p">If the hosts in the backup and the service instance do not match, how Oracle Java Cloud Service handles the mismatch depends on the cause of the mismatch.</p> </li> 
+   <li class="li"><p class="p">If a service instance contains Coherence Managed Servers that are not included the backup, you must scale in the Coherence data tier on the instance before trying to restore the instance. You scale in the Coherence data tier by removing the capacity unit that manages those specific Managed Servers. Managed Servers configured on the Coherence data tier are identified by <samp class="ph codeph"><em class="ph i">managedserver</em>_server_<em class="ph i">n</em>_DG</samp>. Use the Oracle Java Cloud Service Console to remove a specific capacity unit. </p> </li> 
+   <li class="li"><p class="p"><strong class="ph b">On Oracle Public Cloud:</strong> If a database backup was included in the Oracle Java Cloud Service instance backup, know that restoration of the database files for the Oracle Database Cloud Service database deployment associated with the Oracle Java Cloud Service instance is not supported through the Oracle Java Cloud Service instance restore operation. You need to restore the database files separately. Depending on whether the Database Cloud Service database deployment is hosting a single-instance database or an Oracle Real Application Clusters (RAC) database, you use an RMAN tag or a timestamp of the associated database backup to restore the database files. The RMAN tag or timestamp is the <samp class="ph codeph">dbTag</samp> value that is returned when you perform a GET request on the Oracle Java Cloud Service instance backup, as described in <a class="xref" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-backups-%7BbackupId%7D-get.html" target="_blank">View a Backup</a>. For more information about restoring the database files for the Database Cloud Service database deployment, see <a class="xref" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=CSDBI-GUID-C9A1467F-9AA4-433E-92A6-E46182D2B4C2" target="_blank">Restoring from a Specific Backup</a> or <a class="xref" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=CSDBI-GUID-73B84014-88DA-40D1-A5F1-6EC4537F2778" target="_blank">Restoring to a Specific Point in Time</a> in <cite class="cite">Using Oracle Database Cloud Service</cite>.</p> </li> 
+  </ul> 
+  <p class="p">On Oracle Public Cloud, see these topics in <cite class="cite">Using Oracle Java Cloud Service</cite>:</p> 
+  <ul class="ul">
+   <li class="li"><p class="p"><a class="xref" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=JSCUG-GUID-88CEA944-DFAB-45A1-9224-CB34C7112280" target="_blank">Restoring an Oracle Java Cloud Service Instance from a Backup</a></p> </li> 
+   <li class="li"><p class="p"><a class="xref" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=JSCUG-GUID-74F51136-3203-4A95-929C-AE08C910926C" target="_blank">What Happens When a Service Instance is Restored</a></p> </li> 
+   <li class="li"><p class="p"><a class="xref" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=JSCUG-GUID-FC95A5B6-DE4F-4713-809C-79E7C4215597" target="_blank">Scaling the Coherence Data Tier by Using the Oracle Java Cloud Service Console</a></p> </li> 
+  </ul> 
+  <p class="p">On Oracle Cloud Machine, see these topics in <cite class="cite">Using Oracle Java Cloud Service on OPCM</cite>:</p> 
+  <ul class="ul">
+   <li class="li"><p class="p"><a class="xref" href="../JSCUG/GUID-88CEA944-DFAB-45A1-9224-CB34C7112280.htm#JSCUG-GUID-88CEA944-DFAB-45A1-9224-CB34C7112280" target="_blank">Restoring an Oracle Java Cloud Service Instance from a Backup</a></p> </li> 
+   <li class="li"><p class="p"><a class="xref" href="../JSCUG/GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300.htm#JSCUG-GUID-74F51136-3203-4A95-929C-AE08C910926C" target="_blank">What Happens When a Service Instance is Restored</a></p> </li> 
+   <li class="li"><p class="p"><a class="xref" href="../JSCUG/GUID-506493C3-FEC4-48FE-87BB-7764DCA4612A.htm#JSCUG-GUID-FC95A5B6-DE4F-4713-809C-79E7C4215597" target="_blank">Scaling the Coherence Data Tier by Using the Oracle Java Cloud Service Console</a></p> </li> 
+  </ul> 
+  <p class="p"><strong class="ph b">Note:</strong> The cURL command examples use the URL structure <samp class="ph codeph">https://rest_server_url/<em class="ph i">resource-path</em></samp>, where <samp class="ph codeph">rest_server_url</samp> is the Oracle Public Cloud or Oracle Cloud Machine REST server to contact for your identity domain or tenant name. See <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a> for the appropriate URL structure to use on Oracle Public Cloud or Oracle Cloud Machine.</p> 
+  <p class="p">To restore an Oracle Java Cloud Service instance from a backup:</p> 
+ </div> 
+ <ol class="ol steps">
+  <li class="li step stepexpand"><span class="ph cmd">Before restoring from a backup, review the backups that are currently defined to retrieve the ID of the backup from which you want to restore.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/api/v1.1/instancemgmt/ExampleIdentityDomain/services/jaas/instances/ExampleInstance/backups</strong>
+</pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">The following example shows the response in JSON format on Oracle Public Cloud. There is one completed backup.</p> 
+    <pre class="pre codeblock">{
+    "backups":[
+    {
+        "backupId":"1449332100032",
+        "jobId":"8191",
+        "backupStartDate":"Sat Dec 05 16:15:00 GMT 2015",
+        "backupCompleteDate":"Sat Dec 05 17:36:18 GMT 2015",
+        "expirationDate":"Mon Jan 04 16:15:00 GMT 2016",
+        "initiatedBy":"scheduled",
+        "full":true,
+        "local":false,
+        "localCopy":true,
+        "databaseIncluded":true,
+        "size":"15.8MB",
+        "sizeInBytes":16557866,
+        "dbTag":"TAG20151205T163004",
+        "status":"Completed",
+        "href":"https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/ExampleInstance\/backups\/1449332100032",
+        "serviceComponents":[
+        {
+            "type":"JDK",
+            "version":"1.7.0_xx"
+        },
+        {
+            "type":"OTD",
+            "version":"11.1.1.9.x"
+        },
+        {
+            "type":"WLS",
+            "version":"12.1.3.0.x"
+        },
+        {
+            "type":"OTD_JDK",
+            "version":"1.7.0_xx"
+        }],
+        "notes":"Automated backup"
+    }]
+}</pre> 
+    <p class="p">The following example shows the response in JSON format on Oracle Cloud Machine. There is one completed backup.</p> 
+    <pre class="pre codeblock">{
+    "backups":[
+    {
+        "backupId":"1449223500059",
+        "jobId":"6270",
+        "backupStartDate":"Fri Dec 04 10:05:00 GMT 2015",
+        "backupCompleteDate":"Fri Dec 04 10:10:06 GMT 2015",
+        "expirationDate":"Sat Jan 09 10:05:00 GMT 2016",
+        "initiatedBy":"scheduled",
+        "full":true,
+        "local":false,
+        "localCopy":true,
+        "databaseIncluded":false,
+        "size":"1697.4MB",
+        "sizeInBytes":1779870512,
+        "status":"Completed",
+        "href":"https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/myTenantName\/ExampleInstance\/backups\/1449223500059",
+        "serviceComponents":[
+        {
+            "type":"OTD",
+            "version":"11.1.1.9.x"
+        },
+        {
+            "type":"JDK",
+            "version":"1.7.0_xx"
+        },
+        {
+            "type":"WLS",
+            "version":"12.1.3.0.x"
+        },
+        {
+            "type":"OTD_JDK",
+            "version":"1.7.0_xx"
+        }],
+        "notes":"Automated backup"
+    }]
+}</pre> 
+    <p class="p">For more information, see <a class="xref" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-backups-get.html" target="_blank">View All Backups</a>.</p> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">Create a JSON document, <samp class="ph codeph">restore.json</samp>, that defines the backup ID from which to restore.</span>
+   <div class="itemgroup info">
+    <p class="p">Using the example shown earlier for Oracle Public Cloud, the backup ID is:</p> 
+    <pre class="pre codeblock">{
+    "backupId":"1449332100032" 
+}</pre> 
+    <p class="p">See <a class="xref" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-restoredbackups-post.html" target="_blank">Restore a Service Instance</a> for the complete list of request attributes you can use.</p> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">Restore the Oracle Java Cloud Service instance from a backup, passing the JSON document created in step 2.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X POST -u username:userPassword1! -d @restore.json -H "Content-Type:application/json" -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/api/v1.1/instancemgmt/ExampleIdentityDomain/services/jaas/instances/ExampleInstance/restoredbackups</strong>
+</pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">POST</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-d</samp> option to identify the request document, in JSON format, on the local machine (<samp class="ph codeph">restore.json</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to identify the content type as <samp class="ph codeph">application/json</samp> and define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p"><strong class="ph b">Note:</strong> You cannot restore from an existing backup when the backup service for the specified service instance is in a DISABLED state.</p> 
+    <p class="p">For more information, see <a class="xref" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-restoredbackups-post.html" target="_blank">Restore a Service Instance</a>.</p> 
+    <p class="p">The following shows an example of the response in JSON format.</p> 
+    <pre class="pre codeblock">{
+    "operationName":"restore-backup", 
+    "job_id":"8227",
+    "target_uri":"https:\/\/rest_server_url/\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/ExampleInstance\/restoredbackups\/8227"
+} </pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">View detailed information about the restoration operation using the restoration operation status URI (<samp class="ph codeph">target_uri</samp>) returned in the response body in step 3.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/api/v1.1/instancemgmt/ExampleIdentityDomain/services/jaas/instances/ExampleInstance/restoredbackups/8227</strong>
+</pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">POST</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">For more information, see <a class="xref" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-restoredbackups-%7BjobId%7D-get.html" target="_blank">View the Status of a Restoration Operation</a>.</p> 
+    <p class="p">The following shows an example of the response body in JSON format on Oracle Public Cloud:</p> 
+    <pre class="pre codeblock">{
+    "backupId":"1449332100032",
+    "backupStartDate":"Sat Dec 05 16:15:00 GMT 2015",
+    "jobId":"8227",
+    "recoveryStartDate":"Thu Dec 10 23:11:55 GMT 2015",
+    "recoveryCompleteDate":"Thu Dec 10 23:24:26 GMT 2015"
+    "status":"Completed",
+    "statusDetails":"Downloading the backup archive from the Oracle Storage Cloud Service container...The backup archive already exists in the block storage and does not need to be downloaded from the Oracle Storage Cloud Service container...
+       Submitted the restoration precheck for remote execution...Restoration precheck passed...Submitted the restoration for remote execution...
+       Stopping WebLogic Server...Stopped WebLogic Server...Restoring the configuration data for WebLogic Server administration server on host exampleinstance-wls-1...
+       Restored the configuration data for WebLogic Server administration server on host exampleinstance-wls-1...Restoring Oracle Traffic Director on host exampleinstance-lb-1...
+       Restored Oracle Traffic Director on host exampleinstance-lb-1...Restoring the configuration data for WebLogic Server administration server on host exampleinstance-wls-2...
+       Restored the configuration data for WebLogic Server administration server on host exampleinstance-wls-2...
+       Starting WebLogic Server...Started WebLogic Server...Unlocked the WebLogic Server domain configuration...
+       Completed the restoration...Validated the load balancer",
+    "staticDataIncluded":false,
+    "configDataIncluded":true,
+    "otdIncluded":true,
+    "databaseIncluded":false
+}</pre> 
+    <p class="p">The following shows an example of the response body in JSON format on Oracle Cloud Machine:</p> 
+    <pre class="pre codeblock">{
+    "backupId":"1449223500059",
+    "backupStartDate":"Fri Dec 04 10:05:00 GMT 2015",
+    "jobId":"2001",
+    "recoveryStartDate":"Fri Jan 01 00:39:49 GMT 2016",
+    "recoveryCompleteDate":"Fri Jan 01 00:56:23 GMT 2016",
+    "status":"Completed",
+    "statusDetails":"The backup archive already exists in the block storage and does not need to be downloaded from the Oracle Storage Cloud Service container...
+      Submitted the restoration precheck for remote execution...Restoration precheck passed...Submitted the restoration for remote execution...
+      Stopping WebLogic Server...Stopped WebLogic Server...
+      Restoring the binary and configuration data for WebLogic Server administration server on host exampleinstance-wls-1...
+      Restored the binary and configuration data for WebLogic Server administration server on host exampleinstance-wls-1...
+      Starting WebLogic Server...Started WebLogic Server...
+      Unlocked the WebLogic Server domain configuration...Completed the restoration",
+    "staticDataIncluded":false,
+    "configDataIncluded":true,
+    "otdIncluded":false,
+    "databaseIncluded":false,
+}</pre> 
+   </div></li> 
+ </ol> 
+</div></div>
+        </article>
+    </body>
+</html>

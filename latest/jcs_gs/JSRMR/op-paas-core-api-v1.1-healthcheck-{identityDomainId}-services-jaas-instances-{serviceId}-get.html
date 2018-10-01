@@ -1,0 +1,3215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service - Monitor a Service Instance</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="api-Health%20Monitoring.html" title="Previous" type="text/html">
+        <link rel="next" href="api-Managed%20Servers.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="api-Health%20Monitoring.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="api-Managed%20Servers.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            
+            <header>
+
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li>Tasks</li>
+                    
+                    <li class="active">
+                        
+                        <a href="api-Health%20Monitoring.html">Health Monitoring</a>
+                        
+                    </li>
+                    
+                </ol>
+                
+                <p class="draftsubtitle"></p>
+                
+                <h2>Monitor a Service Instance</h2>
+                <div>
+                    <div class="label label-get text-uppercase">get</div>
+                    <p style="word-break: break-word;"><strong>/paas/core/api/v1.1/healthcheck/{identityDomainId}/services/jaas/instances/{serviceId}</strong></p>
+                </div>
+            </header>
+            <section>
+
+                <div class="description">Returns health monitoring data for the specified Oracle Java Cloud Service instance.<p>Monitoring information is provided at the following levels: <ul><li>Service instance</li><li>Component (OTD, WLS)</li><li>Virtual Machine (VM) </li><li>Server</li></ul><p>More detailed run-time metrics are provided at the OTD and server level.<p>For the OTD component, the following health metrics are provided:<ul><li><code>epsLast5MinAvg</code> - Average errors per second over the last 5 minutes.</li><li><code>errorRequestCount</code> - Total error request count since the load balancer has been up and running.</li><li><code>rtLast4MinAvg</code> - Average response time over the last 5 minutes.</li><li><code>requestCount</code> - Total request count since the load balancer has been up and running.</li><li><code>upsince</code> - Time (UTC) since the load balancer has been up and running.</li></ul><p>For each server, the following metrics are provided: <ul><li><code>heapfree</code> - Amount of heap memory in megabyes (MBs) that is free.</li><li><code>heapmax</code> - Maximum heap size in MBs.</li><li><code>upsince</code> - Time (UTC) since the load balancer has been up and running.</li></ul><b>Note</b>: Health monitoring metrics are updated on an hourly basis. As a result, the metrics might be slightly out-of-date until the next hourly refresh.</div>
+
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                        <li role="presentation" class="active"><a href="#request" aria-controls="request" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-in" aria-hidden="true"></span> Request</a></li>
+                        <li role="presentation"><a href="#response" aria-controls="response" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-out" aria-hidden="true"></span> Response</a></li>
+                        
+                        <li role="presentation"><a href="#examples" aria-controls="examples" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-edit" aria-hidden="true"></span> Examples</a></li>
+                        
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="request">
+                            <h3 class="visible-print-block">Request</h3>
+                            
+
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Path Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>identityDomainId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account (on Oracle Public Cloud).<p>Tenant name for the Oracle Java Cloud Service instance (on Oracle Cloud Machine).</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                        <dt>serviceId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the Oracle Java Cloud Service instance.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+
+                            
+                            
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Header Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>X-ID-TENANT-NAME</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account (on Oracle Public Cloud).<p>Tenant name for the Oracle Java Cloud Service instance (on Oracle Cloud Machine).</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+
+
+                            
+
+
+
+                            
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="response">
+                            <h3 class="visible-print-block">Response</h3>
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">200 Response <span class="glyphicon glyphicon-ok-sign response-symbol" data-response-code="200" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    OK. See <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=jcs_rest_statuscodes'>Status Codes</a> for information about other possible HTTP status codes.
+                                </div>
+
+                                
+                                
+
+                                
+                                <div class="panel panel-default">
+
+                                    <div class="panel-heading">Body</div>
+                                    <div class="panel-body">
+                                        
+                                        <div>The response body includes health monitoring information.</div>
+                                        
+
+                                        <div class="schema-container">
+                                        
+                                        <div id="200-definitions-monitor-response" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : monitor-response</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The response body includes health monitoring information.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-monitor-response-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-monitor-response-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-monitor-response-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-monitor-response-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-monitor-response-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>identity_domain</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account (on Oracle Public Cloud).<p>Tenant name for the Oracle Java Cloud Service instance (on Oracle Cloud Machine).</div>
+
+
+
+            
+        </dd>
+        
+        <dt>service_components</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-monitor-response-properties-service_components" role="button" class="btn btn-default btn-sm">service_components</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups the health details for Oracle Java Cloud Service components.</div>
+
+            
+        </dd>
+        
+        <dt>service_name</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the Oracle Java Cloud Service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>summary</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-monitor-response-properties-summary" role="button" class="btn btn-default btn-sm">summary</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups the health summary details for the Oracle Java Cloud Service instance.</div>
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-monitor-response-properties-service_components" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : service_components</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups the health details for Oracle Java Cloud Service components.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-monitor-response-properties-service_components-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-monitor-response-properties-service_components-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-monitor-response-properties-service_components-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-monitor-response-properties-service_components-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-monitor-response-properties-service_components-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-service_components_health" role="button" class="btn btn-default btn-sm">service_components_health</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-monitor-response-properties-summary" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : summary</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups the health summary details for the Oracle Java Cloud Service instance.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-monitor-response-properties-summary-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-monitor-response-properties-summary-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-monitor-response-properties-summary-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-monitor-response-properties-summary-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-monitor-response-properties-summary-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>status</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Status of the instance. Valid values are <code>UP</code>, <code>DOWN</code>, or <code>ERROR</code> (indicating a system error was encountered during health check).</div>
+
+
+
+            
+        </dd>
+        
+        <dt>status_time</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Time at which the status was recorded (UTC).</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-service_components_health" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : service_components_health</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-service_components_health-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-service_components_health-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-service_components_health-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-service_components_health-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-service_components_health-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>component</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Component for which health data is recorded. Valid values include: <code>OTD</code> and <code>WLS</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>health_data</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-service_components_health-properties-health_data" role="button" class="btn btn-default btn-sm">health_data</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups the runtime metrics for the Oracle Java Cloud Service instance component.</div>
+
+            
+        </dd>
+        
+        <dt>summary</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-service_components_health-properties-summary" role="button" class="btn btn-default btn-sm">summary</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups the health summary for the Oracle Java Cloud Service instance component.</div>
+
+            
+        </dd>
+        
+        <dt>vms</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-service_components_health-properties-vms" role="button" class="btn btn-default btn-sm">vms</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups the health details of VMs associated with an Oracle Java Cloud Service component.</div>
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-service_components_health-properties-health_data" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : health_data</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups the runtime metrics for the Oracle Java Cloud Service instance component.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-service_components_health-properties-health_data-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-service_components_health-properties-health_data-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-service_components_health-properties-health_data-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-service_components_health-properties-health_data-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-service_components_health-properties-health_data-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-health_data" role="button" class="btn btn-default btn-sm">health_data</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-service_components_health-properties-summary" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : summary</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups the health summary for the Oracle Java Cloud Service instance component.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-service_components_health-properties-summary-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-service_components_health-properties-summary-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-service_components_health-properties-summary-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-service_components_health-properties-summary-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-service_components_health-properties-summary-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>status</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Status of the component. Valid values are <code>UP</code>, <code>DOWN</code>, or <code>ERROR</code> (indicating a system error was encountered during health check).</div>
+
+
+
+            
+        </dd>
+        
+        <dt>status_message</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Status message, if available.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>status_time</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Time at which the status was recorded (UTC).</div>
+
+
+
+            
+        </dd>
+        
+        <dt>sub_status</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Status of a subcomponent, if applicable.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-service_components_health-properties-vms" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : vms</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups the health details of VMs associated with an Oracle Java Cloud Service component.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-service_components_health-properties-vms-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-service_components_health-properties-vms-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-service_components_health-properties-vms-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-service_components_health-properties-vms-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-service_components_health-properties-vms-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-vms" role="button" class="btn btn-default btn-sm">vms</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-health_data" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : health_data</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-health_data-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-health_data-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-health_data-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-health_data-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-health_data-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>displayName</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Display name for the health monitoring runtime metric.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>name</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the health monitoring runtime metric.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>unit</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Unit measurement of the metric. For example, <code>MB</code> and <code>ms</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>value</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Value of the health monitoring data.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-vms" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : vms</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-vms-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-vms-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-vms-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-vms-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-vms-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>servers</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-vms-properties-servers" role="button" class="btn btn-default btn-sm">servers</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups the health details of servers running on a VM.</div>
+
+            
+        </dd>
+        
+        <dt>summary</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-vms-properties-summary" role="button" class="btn btn-default btn-sm">summary</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups the health summary for a VM.</div>
+
+            
+        </dd>
+        
+        <dt>vm</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the VM.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-vms-properties-servers" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : servers</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups the health details of servers running on a VM.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-vms-properties-servers-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-vms-properties-servers-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-vms-properties-servers-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-vms-properties-servers-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-vms-properties-servers-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-servers" role="button" class="btn btn-default btn-sm">servers</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-vms-properties-summary" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : summary</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups the health summary for a VM.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-vms-properties-summary-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-vms-properties-summary-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-vms-properties-summary-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-vms-properties-summary-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-vms-properties-summary-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>status</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Status of the VM. Valid values are <code>UP</code>, <code>DOWN</code>, or <code>ERROR</code> (indicating a system error was encountered during health check).</div>
+
+
+
+            
+        </dd>
+        
+        <dt>status_time</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Time at which the status was recorded (UTC).</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-servers" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : servers</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-servers-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-servers-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-servers-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-servers-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-servers-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>health_data</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-servers-properties-health_data" role="button" class="btn btn-default btn-sm">health_data</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups the health details for the server.</div>
+
+            
+        </dd>
+        
+        <dt>server_name</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the server.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>server_role</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Server type. For example: <code>MANAGED</code> or <code>ADMIN</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>summary</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-servers-properties-summary" role="button" class="btn btn-default btn-sm">summary</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups the health status summary for the server.</div>
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-servers-properties-health_data" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : health_data</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups the health details for the server.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-servers-properties-health_data-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-servers-properties-health_data-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-servers-properties-health_data-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-servers-properties-health_data-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-servers-properties-health_data-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-health_data" role="button" class="btn btn-default btn-sm">health_data</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-servers-properties-summary" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : summary</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups the health status summary for the server.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-servers-properties-summary-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-servers-properties-summary-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-servers-properties-summary-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-servers-properties-summary-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-servers-properties-summary-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>status</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Status of the server. Valid values are <code>UP</code>, <code>DOWN</code>, or <code>ERROR</code> (indicating a system error was encountered during health check).</div>
+
+
+
+            
+        </dd>
+        
+        <dt>status_message</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Status message, if available.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>status_time</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Time at which the status was recorded (UTC).</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">404 Response <span class="glyphicon glyphicon-alert response-symbol" data-response-code="404" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    Not Found
+                                </div>
+
+                                
+                                
+
+                                
+
+                            </div>
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">500 Response <span class="glyphicon glyphicon-remove-sign response-symbol" data-response-code="500" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    Internal Server Error
+                                </div>
+
+                                
+                                
+
+                                
+
+                            </div>
+                            
+
+
+                        </div>
+                        
+                        <div role="tabpanel" class="tab-pane fade" id="examples">
+                            <h3>Examples</h3>
+                            <div class="body conbody">
+ <p class="p">The following example shows how to monitor an Oracle Java Cloud Service instance by submitting a GET request on the REST resource using cURL.</p> 
+ <p class="p"><strong class="ph b">Note:</strong> The command in this example uses the URL structure <samp class="ph codeph">https://rest_server_url/<em class="ph i">resource-path</em></samp>, where <samp class="ph codeph">rest_server_url</samp> is the Oracle Public Cloud or Oracle Cloud Machine REST server to contact for your identity domain or tenant name. See <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a> for the appropriate URL structure to use on Oracle Public Cloud or Oracle Cloud Machine.</p> 
+ <div class="section">
+  <h3 class="title sectiontitle">cURL Command</h3>
+  <pre class="pre">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/core/api/v1.1/healthcheck/ExampleIdentityDomain/services/jaas/instances/ExampleInstance</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Header</h3>
+  <p class="p">The following shows an example of the response header.</p> 
+  <pre class="pre">HTTP/1.1 200 OK
+Date: Thu, 17 Nov 2016 20:23:11 GMT
+Transfer-Encoding: chunked
+Content-Type: application/json</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Body</h3>
+  <p class="p">The following example shows the response returned in JSON format. </p> 
+  <pre class="pre">{
+    "summary":
+    {
+        "status":"UP",
+        "status_time":"2016-11-17T20:23:20.029+00:00"
+    },
+    "identity_domain":"ExampleIdentityDomain",
+    "service_components":[
+    {
+        "summary":
+        {
+            "status":"UP",
+            "status_time":"2016-11-17T20:23:11.000+00:00"
+        },
+        "component":"OTD",
+        "vms":[
+        {
+            "summary":
+            {
+                "status":"UP",
+                "status_time":"2016-11-17T20:23:18.511+00:00"
+            },
+            "vm":"exampleinstance-lb-1",
+            "servers":[]
+        }],
+        "health_data":[
+        {
+            "unit":"count",
+            "name":"requestCount",
+            "value":"2",
+            "displayName":"Execution t"
+        },
+        {
+            "unit":"count",
+            "name":"errorRequestCount",
+            "value":"0",
+            "displayName":"Execution t"
+        },
+        {
+            "unit":"ms",
+            "name":"epsLast5MinAvg",
+            "value":"0",
+            "displayName":"Execution time"
+        },
+        {
+            "unit":"ms",
+            "name":"upsince",
+            "value":"2016-11-17T19:53:16.000+00:00",
+            "displayName":"Server time from when it was up."
+        },
+        {
+            "unit":"ms",
+            "name":"rtLast5MinAvg",
+            "value":"0",
+            "displayName":"Execution t"
+        }]
+    },
+    {
+        "summary":
+        {
+            "status":"UP",
+            "status_time":"2016-11-17T20:23:10.000+00:00",
+            "status_message":"Number of servers processing request:1"
+        },
+        "component":"WLS",
+        "vms":[
+        {
+            "summary":
+            {
+                "status":"UP",
+                "status_time":"2016-11-17T20:23:18.511+00:00"
+            },
+            "vm":"exampleinstance-wls-1",
+            "servers":[
+            {
+                "summary":
+                {
+                    "status":"UP",
+                    "status_time":"2016-11-17T20:23:10.000+00:00"
+                },
+                "server_name":"ExampleI_server_1",
+                "server_role":"MANAGED",
+                "health_data":[
+                {
+                    "unit":"MB",
+                    "name":"heapmax",
+                    "value":"1820.5",
+                    "displayName":"Max memory"
+                },
+                {
+                    "unit":"ms",
+                    "name":"upsince",
+                    "value":"2016-11-17T19:56:14.000+00:00",
+                    "displayName":"Server time from when it was up."
+                },
+                {
+                    "unit":"MB",
+                    "name":"heapfree",
+                    "value":"1328.96",
+                    "displayName":"Free memory"
+                }]
+            },
+            {
+                "summary":
+                {
+                    "status":"UP",
+                    "status_time":"2016-11-17T20:23:10.000+00:00",
+                    "status_message":"Not processing requests"
+                },
+                "server_name":"ExampleI_adminserver",
+                "server_role":"ADMIN",
+                "health_data":[
+                {
+                    "unit":"MB",
+                    "name":"heapmax",
+                    "value":"1820.5",
+                    "displayName":"Max memory"
+                },
+                {
+                    "unit":"ms",
+                    "name":"upsince",
+                    "value":"2016-11-17T17:50:22.000+00:00",
+                    "displayName":"Server time from when it was up."
+                    },                                                
+                {
+                    "unit":"MB",
+                    "name":"heapfree",
+                    "value":"1146.91",
+                    "displayName":"Free memory"
+                }]
+            }]
+        }]
+    }],
+    "service_name":"ExampleInstance"
+}</pre> 
+ </div> 
+</div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+        </article>
+    </body>
+</html>

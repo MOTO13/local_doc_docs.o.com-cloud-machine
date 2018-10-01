@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service - View the Status of a Service Instance Lifecycle Operation</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-get.html" title="Previous" type="text/html">
+        <link rel="next" href="api-SSH%20Access.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-get.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="api-SSH%20Access.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            
+            <header>
+
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li>Tasks</li>
+                    
+                    <li class="active">
+                        
+                        <a href="api-Service%20Instances.html">Service Instances</a>
+                        
+                    </li>
+                    
+                </ol>
+                
+                <p class="draftsubtitle"></p>
+                
+                <h2>View the Status of a Service Instance Lifecycle Operation</h2>
+                <div>
+                    <div class="label label-get text-uppercase">get</div>
+                    <p style="word-break: break-word;"><strong>/paas/service/jcs/api/v1.1/instances/{identityDomainId}/status/{requestName}/job/{jobId}</strong></p>
+                </div>
+            </header>
+            <section>
+
+                <div class="description">Returns the status of an Oracle Java Cloud Service instance lifecycle operation.</div>
+
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                        <li role="presentation" class="active"><a href="#request" aria-controls="request" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-in" aria-hidden="true"></span> Request</a></li>
+                        <li role="presentation"><a href="#response" aria-controls="response" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-out" aria-hidden="true"></span> Response</a></li>
+                        
+                        <li role="presentation"><a href="#examples" aria-controls="examples" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-edit" aria-hidden="true"></span> Examples</a></li>
+                        
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="request">
+                            <h3 class="visible-print-block">Request</h3>
+                            
+
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Path Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>identityDomainId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account (on Oracle Public Cloud).<p>Tenant name for the Oracle Java Cloud Service instance (on Oracle Cloud Machine).</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                        <dt>jobId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Job ID.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                        <dt>requestName</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the request for which you want to view status. Valid values include:<ul><li><code>create</code>: View the status for a create service instance operation (<a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=jcs_rest_provision'>Create a Service Instance</a>).</li><li><code>delete</code>: View the status of a delete instance operation (<a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=jcs_rest_svcdelete'>Delete a Service Instance</a>).</li><li><code>control</code>: View the status of a lifecycle state control operation (<a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=jcs_rest_svcstop'>Stop and Start a Service Instance and Individual VMs</a>).</li><li><code>scale</code>: View the status of a Coherence data tier scale operation (<a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=jcs_rest_cohscale'>Scale a Coherence Data Tier</a> and <a href='op-paas-service-jcs-api-v1.1-instances-{identityDomainId}-{serviceId}-clusters-post.html'>Add a Coherence Data Tier Cluster</a>).</li></ul></div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+
+                            
+                            
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Header Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>X-ID-TENANT-NAME</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account (on Oracle Public Cloud).<p>Tenant name for the Oracle Java Cloud Service instance (on Oracle Cloud Machine).</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+
+
+                            
+
+
+
+                            
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="response">
+                            <h3 class="visible-print-block">Response</h3>
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/vnd.com.oracle.oracloud.provisioning.Service+json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">200 Response <span class="glyphicon glyphicon-ok-sign response-symbol" data-response-code="200" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    OK (when operation is completed). See Root-Schema below.
+                                </div>
+
+                                
+                                
+
+                                
+
+                            </div>
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">202 Response <span class="glyphicon glyphicon-ok-sign response-symbol" data-response-code="202" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    Accepted (when operation is running). See <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=jcs_rest_statuscodes'>Status Codes</a> for information about other possible HTTP status codes.
+                                </div>
+
+                                
+                                
+
+                                
+                                <div class="panel panel-default">
+
+                                    <div class="panel-heading">Body</div>
+                                    <div class="panel-body">
+                                        
+                                        <div>The response body contains information about the service instance and the status of the operation.</div>
+                                        
+
+                                        <div class="schema-container">
+                                        
+                                        <div id="202-definitions-lifecyclestatus-response" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : lifecyclestatus-response</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The response body contains information about the service instance and the status of the operation.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-202-definitions-lifecyclestatus-response-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-202-definitions-lifecyclestatus-response-properties" aria-expanded="false" aria-controls="collapseListGroup-202-definitions-lifecyclestatus-response-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-202-definitions-lifecyclestatus-response-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-202-definitions-lifecyclestatus-response-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>auto_update</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether updates to the Oracle Cloud Tools are automatically applied to the Oracle Java Cloud Service instance during the maintenance window. The Oracle Cloud Tools are used to manage the lifecycle of your service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>compliance-status</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Status indicating whether the version of Oracle Cloud Tools is out of compliance. Oracle uses Oracle Cloud Tools to manage the lifecycle of your service instance.<p>If the Oracle Cloud Tools are out of compliance, this attribute is set to one of the following status values:<ul><li><code>NEW_VERSION</code>: Indicates a new version of Oracle Cloud Tools is available. Oracle strongly recommends that you apply this update as soon as possible.</li><li><code>DEPRECATED</code>: Indicates that the current version of Oracle Cloud Tools is deprecated. Apply the latest Oracle Cloud Tools update to avoid any disruption of service in the future.</li><li><code>UNSUPPORTED</code>: Indicates that the current version of Oracle Cloud Tools is not supported. Apply the latest patch to resume normal operations.</li></ul><p>If the Oracle Cloud Tools are up-to-date, this attribute is blank.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>compliance_status_desc</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Description that provides more details about the compliance status of the Oracle Cloud Tools, used to manage the lifecycle of your Oracle Java Cloud Service instance. If the service instance is out of compliance, this attribute is set to one of the following descriptions, based on the status value:If the Oracle Cloud Tools are out of compliance, this attribute is set to one of the following status values:<ul><li><code>NEW_VERSION</code>:  newer version of Oracle tools <code><i>latestVersion</i></code> is available. This update includes critical fixes to Oracle Cloud Tools. Oracle uses cloud tools to manage lifecycle of your service. Oracle strongly recommends that customers apply this update as soon as possible.</li><li><code>DEPRECATED</code>:  This service is currently in a deprecated state because the Oracle tools version <code><i>deprecatedVersion</i></code> is deprecated. Apply the latest Oracle tools update as this version may not be supported in the future.</li><li><code>UNSUPPORTED</code>:  This service is currently in an unsupported state because the Oracle tools version <code><i>unsupportedVersion</i></code> is obsolete. Apply the latest patch to resume normal operations.</li></ul><p>If the Oracle Cloud Tools are up-to-date, this attribute is blank.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>created_by</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the user account used to create the Oracle Java Cloud Service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>creation_time</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time the Oracle Java Cloud Service instance was created.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>description</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Free-form text that provides additional information about the service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>error_status_desc</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Error status that describes the reason that the Oracle Java Cloud Service instance is in an erroneous state. The following provides an example of the description:<p><code>This service is currently in an erroneous state as the tools are in an inconsistent state. Reason - <i>error details</i>. Apply the latest tools patch to resume normal operations on this service.</code></div>
+
+
+
+            
+        </dd>
+        
+        <dt>identity_domain</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account (on Oracle Public Cloud).<p>Tenant name for the Oracle Java Cloud Service instance (on Oracle Cloud Machine).</div>
+
+
+
+            
+        </dd>
+        
+        <dt>last_modified_time</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time the Oracle Java Cloud Service instance was last modified.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>message</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#202-definitions-lifecyclestatus-response-properties-message" role="button" class="btn btn-default btn-sm">message</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Contains system messages returned during the service instance lifecycle operation.</div>
+
+            
+        </dd>
+        
+        <dt>service_name</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of Oracle Java Cloud Service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>service_uri</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Resource URL for the Oracle Java Cloud Service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>status</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies the status of the Oracle Java Cloud Service instance. Valid values include: <code>Running</code>, <code>In Progress</code>, <code>Maintenance</code>, <code>Stopped</code>, <code>Terminating</code>, and <code>Failed</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>version</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Oracle Fusion Middleware software version. For example: <code>12cRelease212</code>, <code>12cRelease2</code>, <code>12cR3</code> and <code>11g</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>wlsVersion</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Oracle WebLogic Server software version. For example: <code>12.2.1.2.0</code>, <code>12.2.1.0.x</code>, <code>12.1.3.0.x</code> and <code>10.3.6.0.x</code>.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="202-definitions-lifecyclestatus-response-properties-message" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : message</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Contains system messages returned during the service instance lifecycle operation.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-202-definitions-lifecyclestatus-response-properties-message-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-202-definitions-lifecyclestatus-response-properties-message-items" aria-expanded="false" aria-controls="collapseListGroup-202-definitions-lifecyclestatus-response-properties-message-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-202-definitions-lifecyclestatus-response-properties-message-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-202-definitions-lifecyclestatus-response-properties-message-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+
+
+                        </div>
+                        
+                        <div role="tabpanel" class="tab-pane fade" id="examples">
+                            <h3>Examples</h3>
+                            <div class="body conbody">
+ <p class="p">The following example shows how to view the status of an Oracle Java Cloud Service instance operation by submitting a GET request on the REST resource using cURL. The REST resource URI is returned in the <samp class="ph codeph">Location</samp> header when submitting the service instance request.</p> 
+ <p class="p"><strong class="ph b">Note:</strong> The command in this example uses the URL structure <samp class="ph codeph">https://rest_server_url/<em class="ph i">resource-path</em></samp>, where <samp class="ph codeph">rest_server_url</samp> is the Oracle Public Cloud or Oracle Cloud Machine REST server to contact for your identity domain or tenant name. See <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a> for the appropriate URL structure to use on Oracle Public Cloud or Oracle Cloud Machine.</p> 
+ <div class="section">
+  <h3 class="title sectiontitle">cURL Command</h3>
+  <p class="p">The following command returns the status of a service instance <samp class="ph codeph">create</samp> operation. Other operations are <samp class="ph codeph">delete</samp>, <samp class="ph codeph">scale</samp>, and <samp class="ph codeph">control</samp>.</p> 
+  <pre class="pre">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/status/create/job/7495
+</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Header</h3>
+  <p class="p">The following shows an example of the response header for a <samp class="ph codeph">create</samp> operation that has completed :</p> 
+  <pre class="pre">HTTP/1.1 200 OK
+Date: Thu, 25 Aug 2016 22:52:41 GMT
+Transfer-Encoding: chunked
+Content-Type: application/vnd.com.oracle.oracloud.provisioning.Service+json
+Service-URI: https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/Exampleinstance</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Body</h3>
+  <p class="p">The following example shows the contents of the response for a <samp class="ph codeph">create</samp> operation. Your response output will differ depending on the operation type.</p> 
+  <pre class="pre">{
+  "service_name": "ExampleInstance",
+  "version": "12cR3",
+  "wlsVersion": "12.1.3.0.160419",
+  "status": "In Progress",
+  "error_status_desc": "",
+  "compliance_status": "",
+  "compliance_status_desc": "",
+  "auto_update": "true",
+  "description": "Example, Inc product distribution",
+  "identity_domain": "ExampleIdentityDomain",
+  "creation_time": "Thu Aug 25 22:32:8 UTC 2016",
+  "last_modified_time": "Thu Aug 25 22:32:6 UTC 2016",
+  "created_by": "username",
+  "service_uri" : "https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/ExampleInstance",
+  "message": [
+    "Created Compute resources for WebLogic Server...",
+    "Created security resources for the service...",
+    "Started all Compute resources...",
+    "Established SSH connectivity to WebLogic Administration Server...",
+    "WebLogic Administration Server Configuration completed...",
+    "WebLogic Managed Servers Configuration completed...",
+    "    Configuration check for Host [exampleinstance-wls-1] containing WebLogic Managed Server(s) [[ExampleI_server_1]] completed...",
+    "Successfully provisioned WebLogic Administration Server and 1 Managed Servers...",
+    "    Service Reachabilty Check (SRC) of WebLogic Administration Server completed...",
+    "    Service Reachabilty Check (SRC) of WebLogic Managed Server(s) [ExampleI_server_1] completed...",
+    "Established SSH connectivity to Load Balancer...",
+    "Configured Load Balancer...",
+    "Performing Service Reachability Check (SRC) of Load Balancer...",
+    "Service Reachabilty Check (SRC) of Load Balancer completed..."  ]
+}</pre> 
+ </div> 
+</div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+        </article>
+    </body>
+</html>

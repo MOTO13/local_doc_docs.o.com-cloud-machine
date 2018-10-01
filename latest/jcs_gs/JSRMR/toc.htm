@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service - Table of Contents</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        
+        
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            
+            
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+		<p class="draftsubtitle"></p>
+                <h2>Table of Contents</h2>
+            </header>
+            <ul>
+                <li><a href="index.html">About the REST APIs</a></li>
+                <li><a href="rest-endpoints.html">All REST Endpoints</a></li>
+            </ul>
+            
+            <h2 id="get-started">Get Started</h2>
+            <ul>
+                <li><a href="Quick%20Start.html">Quick Start</a>
+ <ul>
+  <li><a href="Obtain%20Account%20Information.html">Obtain Account Information</a></li>
+  <li><a href="Install%20cURL.html">Install cURL</a></li>
+  <li><a href="Create%20the%20Request%20Document.html">Create the Request Document</a></li>
+  <li><a href="Create%20Your%20First%20Instance.html">Create Your First Instance</a></li>
+  <li><a href="Review%20the%20Details%20of%20Your%20First%20Instance.html">Review the Details of Your First Service Instance</a></li>
+ </ul></li>
+<li><a href="SendRequests.html">Send Requests</a></li>
+<li><a href="Authentication.html">Authentication</a></li>
+<li><a href="Use%20cURL.html">Use cURL</a></li>
+<li><a href="Status%20Codes.html">Status Codes</a></li>
+<li><a href="Use%20Cases.html">Use Cases</a>
+ <ul>
+  <li><a href="Creating%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html">Creating a Service Instance</a></li>
+  <li><a href="Update%20the%20Default%20Access%20Ports.html">Updating the Default Access Ports When Creating a Service Instance</a></li>
+  <li><a href="Stopping%20and%20Starting%20a%20Service%20Instance%20and%20Individual%20VMs.html">Stopping and Starting a Service Instance and Individual VMs</a></li>
+  <li><a href="Monitoring%20the%20Health%20of%20Your%20Oracle%20Java%20Cloud%20Service%20Instances.html">Monitoring a Service Instance</a></li>
+  <li><a href="Scaling%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html">Scaling a Service Instance</a></li>
+  <li><a href="Adding%20a%20Coherence%20Data%20Tier%20Cluster%20to%20an%20Oracle%20Java%20Cloud%20Service%20Using%20the%20REST%20API.html">Adding a Coherence Data Tier Cluster to a Service Instance</a></li>
+  <li><a href="Scaling%20the%20Coherence%20Data%20Tier%20of%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html">Scaling the Coherence Data Tier of a Service Instance</a></li>
+  <li><a href="Configuring%20Automated%20Backups%20for%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html">Configuring Automated Backups for a Service Instance</a></li>
+  <li><a href="Initiating%20an%20On-demand%20Backup%20for%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html">Initiating an On-Demand Backup for a Service Instance</a></li>
+  <li><a href="Downloading%20a%20Backup%20for%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html">Downloading or Archiving a Backup for a Service Instance</a></li>
+  <li><a href="Restoring%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20From%20a%20Backup%20Using%20the%20REST%20API.html">Restoring a Service Instance</a></li>
+  <li><a href="Patching%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html">Patching a Service Instance</a></li>
+  <li><a href="Deleting%20the%20Coherence%20Data%20Tier%20Cluster%20of%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html">Deleting the Coherence Data Tier Cluster of a Service Instance</a></li>
+  <li><a href="Deleting%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html">Deleting a Service Instance</a></li>
+ </ul></li>
+<li><a href="DeprecationNotice.html">Deprecation Notices (Paths and Endpoints)</a></li>
+            </ul>
+            
+            
+            
+            <h2 id="tasks">Tasks</h2>
+            <ul>
+            <li><a href="api-Access%20Rules.html">Access Rules</a><ul><li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-accessrules-post.html">Add an Access Rule</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-accessrules-%7BruleName%7D-put.html">Update an Access Rule</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-accessrules-get.html">View All Access Rules</a></li>
+</ul>
+</li>
+<li><a href="api-AppToCloud%20Migration.html">AppToCloud Migration</a><ul><li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-import-post.html">Import a WebLogic Server Domain Configuration</a></li>
+</ul>
+</li>
+<li><a href="api-Automatic%20Scaling.html">Automatic Scaling</a><ul><li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-JaaS-instances-%7BserviceId%7D-autoscaling-policies-post.html">Create an Auto Scaling Policy</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-JaaS-instances-%7BserviceId%7D-autoscaling-policies-delete.html">Delete an Auto Scaling Policy</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-JaaS-instances-%7BserviceId%7D-autoscaling-policies-put.html">Update an Auto Scaling Policy</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-JaaS-instances-%7BserviceId%7D-autoscaling-policies-get.html">View an Auto Scaling Policy</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-JaaS-instances-%7BserviceId%7D-autoscaling-activities-get.html">View the Events Triggered by an Auto Scaling Policy</a></li>
+</ul>
+</li>
+<li><a href="api-Backups%20and%20Restorations.html">Backups and Restorations</a><ul><li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-deletedbackups-post.html">Delete a Backup (Asynchronous)</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-backups-%7BbackupId%7D-delete.html">Delete a Backup (Synchronous)</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-backups-post.html">Initiate an On-demand Backup</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-backups-%7BbackupId%7D-post.html">Move a Backup (Download or Archive)</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-restoredbackups-post.html">Restore a Service Instance</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-backupconfig-post.html">Update the Backup Configuration</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-backups-%7BbackupId%7D-get.html">View a Backup</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-deletedbackups-%7BjobId%7D-get.html">View a Deleted Backup</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-backups-get.html">View All Backups</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-deletedbackups-get.html">View All Deleted Backups</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-restoredbackups-get.html">View All Restoration Operations</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-backupconfig-get.html">View the Backup Configuration</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-restoredbackups-%7BjobId%7D-get.html">View the Status of a Restoration Operation</a></li>
+</ul>
+</li>
+<li><a href="api-Coherence%20Data%20Tiers.html">Coherence Data Tiers</a><ul><li><a href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-clusters-post.html">Add a Coherence Data Tier Cluster</a></li>
+<li><a href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-clusters-%7BclusterName%7D-delete.html">Delete a Coherence Data Tier Cluster</a></li>
+<li><a href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-clusters-%7BclusterName%7D-put.html">Scale a Coherence Data Tier</a></li>
+<li><a href="op-paas-service-jcs-api-v1.1-datagrid-%7BidentityDomainId%7D-config-scalingUnits-defaultScalingUnits-get.html">View Default Capacity Units</a></li>
+</ul>
+</li>
+<li><a href="api-Health%20Monitoring.html">Health Monitoring</a><ul><li><a href="op-paas-core-api-v1.1-healthcheck-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-get.html">Monitor a Service Instance</a></li>
+</ul>
+</li>
+<li><a href="api-Managed%20Servers.html">Managed Servers</a><ul><li><a href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-servers-%7Bname%7D-get.html">View a Managed Server</a></li>
+<li><a href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-servers-get.html">View All Managed Servers</a></li>
+<li><a href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-servers-history-get.html">View All Server Operations</a></li>
+<li><a href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-servers-history-job-%7BjobId%7D-get.html">View the Status of a Server Operation by Job ID</a></li>
+<li><a href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-servers-history-%7Bid%7D-get.html">View the Status of a Server Operation by Operation ID</a></li>
+</ul>
+</li>
+<li><a href="api-Patches.html">Patches</a><ul><li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-patches-%7BpatchId%7D-put.html">Apply a Patch</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-patches-checks-%7BpatchId%7D-put.html">Perform a Patching Precheck</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-patches-%7BrollbackId%7D-rollback-put.html">Rollback a Patch</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-patches-applied-%7Bid%7D-get.html">View a Patch Operation</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-patches-checks-get.html">View All Patching Precheck Operations</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-patches-applied-get.html">View Applied Patches</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-patches-available-get.html">View Available Patches</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-patches-checks-job-%7BjobId%7D-get.html">View the Status of a Patching Precheck Operation</a></li>
+</ul>
+</li>
+<li><a href="api-Scaling.html">Scaling</a><ul><li><a href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-%7BserverName%7D-put.html">Scale a Node</a></li>
+<li><a href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-servers-%7Bname%7D-delete.html">Scale In a Cluster</a></li>
+<li><a href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-servers-%7Bname%7D-post.html">Scale Out a Cluster</a></li>
+</ul>
+</li>
+<li><a href="api-Service%20Instances.html">Service Instances</a><ul><li><a href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-post.html">Create a Service Instance</a></li>
+<li><a href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-put.html">Delete a Service Instance</a></li>
+<li><a href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-post.html">Stop and Start a Service Instance and Individual VMs</a></li>
+<li><a href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-get.html">View a Service Instance</a></li>
+<li><a href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-get.html">View All Service Instances</a></li>
+<li><a href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-status-%7BrequestName%7D-job-%7BjobId%7D-get.html">View the Status of a Service Instance Lifecycle Operation</a></li>
+</ul>
+</li>
+<li><a href="api-SSH%20Access.html">SSH Access</a><ul><li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-credentials-crednames-%7BcredentialName%7D-post.html">Add a New SSH Public Key</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-credentials-crednames-get.html">Retrieve the SSH Key Description Using Query Parameters</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-credentials-get.html">Retrieve the SSH Key Value Using Query Parameters</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-credentials-crednames-%7BcredentialName%7D-get.html">View the SSH Key Description</a></li>
+<li><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-credentials-%7BcredentialName%7D-get.html">View the SSH Key Value</a></li>
+<li><a href="op-paas-api-v1.1-activitylog-%7BidentityDomainId%7D-job-%7BjobId%7D-get.html">View the Status of an Add SSH Key Operation by Job Id</a></li>
+</ul>
+</li>
+
+            </ul>           
+            
+            
+            
+                     
+        </article>
+    </body>
+</html>

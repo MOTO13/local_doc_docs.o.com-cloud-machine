@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Linux User Accounts</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="This section provides information about Linux user accounts that are provisioned on Oracle Database Cloud Service." />
+<meta name="dcterms.created" content="2017-06-19T15:22:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Database Cloud Service" />
+<meta name="dcterms.identifier" content="E72994-04" />
+<meta name="dcterms.isVersionOf" content="CSDBI" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-17839AE1-45DD-48E2-A5A2-99A1428A3916.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-657C9E03-EA98-4011-BA08-129643C813DE.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSDBI.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSDBI.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSDBI.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-53778B80-072D-4968-B5F8-81D3216F1D9A"></a> <span id="PAGE" style="display:none;">128/190</span> <!-- End Header -->
+<a id="CSDBI3534"></a><a id="CSDBI3533"></a>
+<h1 id="CSDBI-GUID-53778B80-072D-4968-B5F8-81D3216F1D9A" class="sect1">Linux User Accounts</h1>
+<div>
+<p>This section provides information about Linux user accounts that are provisioned on <span>Oracle Database Cloud Service</span>.</p>
+<p>Every <span>Database Cloud Service</span> compute node is provisioned with the following operating system user accounts.</p>
+<div class="tblformal" id="GUID-53778B80-072D-4968-B5F8-81D3216F1D9A__GUID-AD401ECF-2DDE-46A2-BC3D-1DC313D9935F">
+<table class="cellalignment11" summary="Table listing created users in column 1 and descriptions of the users in column 2.">
+<thead>
+<tr class="cellalignment2">
+<th class="cellalignment16" id="d31152e26">User</th>
+<th class="cellalignment17" id="d31152e29">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment2">
+<td class="cellalignment18" id="d31152e34" headers="d31152e26">
+<p><code class="codeph">opc</code></p>
+</td>
+<td class="cellalignment19" headers="d31152e34 d31152e29">
+<p>The system administrator account you use with the <code class="codeph">sudo</code> command to perform operations that require root-user access.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment18" id="d31152e45" headers="d31152e26">
+<p><code class="codeph">oracle</code></p>
+</td>
+<td class="cellalignment19" headers="d31152e45 d31152e29">
+<p>The Oracle Database administrator account you use to access the system and perform non-root database administration tasks. A home directory, <code class="codeph">/home/oracle</code>, is created for this user. This user cannot use the <code class="codeph">sudo</code> command to perform operations that require root-user access.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment18" id="d31152e59" headers="d31152e26">
+<p><code class="codeph">root</code></p>
+</td>
+<td class="cellalignment19" headers="d31152e59 d31152e29">
+<p>The root administrator for the system. You do not have direct access to this account. To perform operations that require root-user access, use the <code class="codeph">sudo</code> command as the <code class="codeph">opc</code> user.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<div class="section" id="GUID-53778B80-072D-4968-B5F8-81D3216F1D9A__CIHEAEDG">
+<p>The following environment variables are created for the <code class="codeph">opc</code> and <code class="codeph">oracle</code> users.</p>
+<div class="tblformal" id="GUID-53778B80-072D-4968-B5F8-81D3216F1D9A__GUID-76C5A8FD-A5AE-40DD-AEAC-E10FF25CF319">
+<table class="cellalignment11" summary="Table listing created environment variables in column 1 and descriptions of the variables in column 2.">
+<thead>
+<tr class="cellalignment2">
+<th class="cellalignment16" id="d31152e89">Variable</th>
+<th class="cellalignment17" id="d31152e92">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment2">
+<td class="cellalignment18" id="d31152e97" headers="d31152e89">
+<p><code class="codeph">HOME</code></p>
+</td>
+<td class="cellalignment19" headers="d31152e97 d31152e92">
+<p>The home directory of the user, either <code class="codeph">/home/opc</code> or <code class="codeph">/home/oracle</code>.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment18" id="d31152e111" headers="d31152e89">
+<p><code class="codeph">HOSTNAME</code></p>
+</td>
+<td class="cellalignment19" headers="d31152e111 d31152e92">
+<p>The host name of the compute node.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment18" id="d31152e119" headers="d31152e89">
+<p><code class="codeph">LANG</code></p>
+</td>
+<td class="cellalignment19" headers="d31152e119 d31152e92">
+<p>The system language, <code class="codeph">en_US.UTF-8</code>.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment18" id="d31152e130" headers="d31152e89">
+<p><code class="codeph">OH</code></p>
+</td>
+<td class="cellalignment19" headers="d31152e130 d31152e92">
+<p>Short form for <code class="codeph">ORACLE_HOME</code>.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment18" id="d31152e141" headers="d31152e89">
+<p><code class="codeph">ORACLE_HOME</code></p>
+</td>
+<td class="cellalignment19" headers="d31152e141 d31152e92">
+<p>The Oracle Database home directory:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Oracle Database 12c Release 2: <code class="codeph">/u01/app/oracle/product/12.2.0/dbhome_1</code></p>
+</li>
+<li>
+<p>Oracle Database 12c Release 1: <code class="codeph">/u01/app/oracle/product/12.1.0/dbhome_1</code></p>
+</li>
+<li>
+<p>Oracle Database 11g Release 2: <code class="codeph">/u01/app/oracle/product/11.2.0/dbhome_1</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment18" id="d31152e165" headers="d31152e89">
+<p><code class="codeph">ORACLE_SID</code></p>
+</td>
+<td class="cellalignment19" headers="d31152e165 d31152e92">
+<p>The database system identifier (SID) provided during the database deployment creation process.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment18" id="d31152e173" headers="d31152e89">
+<p><code class="codeph">PATH</code></p>
+</td>
+<td class="cellalignment19" headers="d31152e173 d31152e92">
+<p>The paths to search for executables; set to include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph">/sbin</code></p>
+</li>
+<li>
+<p><code class="codeph">/usr/sbin</code></p>
+</li>
+<li>
+<p><code class="codeph">/bin</code></p>
+</li>
+<li>
+<p><code class="codeph">/usr/bin</code></p>
+</li>
+<li>
+<p><code class="codeph">$ORACLE_HOME/bin</code></p>
+</li>
+<li>
+<p><code class="codeph">$ORACLE_HOME/OPatch</code></p>
+</li>
+<li>
+<p><code class="codeph">$HOME</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment18" id="d31152e210" headers="d31152e89">
+<p><code class="codeph">SHELL</code></p>
+</td>
+<td class="cellalignment19" headers="d31152e210 d31152e92">
+<p>The default shell, <code class="codeph">/bin/bash</code>.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment18" id="d31152e221" headers="d31152e89">
+<p><code class="codeph">USER</code></p>
+</td>
+<td class="cellalignment19" headers="d31152e221 d31152e92">
+<p>The user name, either <code class="codeph">opc</code> or <code class="codeph">oracle</code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="GUID-17839AE1-45DD-48E2-A5A2-99A1428A3916.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="GUID-657C9E03-EA98-4011-BA08-129643C813DE.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

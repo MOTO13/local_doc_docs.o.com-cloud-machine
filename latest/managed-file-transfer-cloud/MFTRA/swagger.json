@@ -1,0 +1,1979 @@
+
+{
+    "basePath":"/mftapp/rest/v1",
+    "info":{
+        "title":"REST API for Oracle Managed File Transfer Cloud Service 12.2.1.2",
+        "version":"2017.01.27",
+        "description":"Use the REST API for Oracle Managed File Transfer Cloud Service to list services, administer metadata and artifacts, discover and trigger sources, and purge old instance and payload data. To manage SOA Cloud Service servers and services, see the <a href=\"http://docs.oracle.com/cloud/latest/soacs_gs/SCSAP/index.html\">REST API for Oracle SOA Cloud Service</a>.",
+        "x-summary":"Use the REST API for Oracle Managed File Transfer Cloud Service to list services, administer metadata and artifacts, discover and trigger sources, and purge old instance and payload data."
+    },
+    "paths":{
+        "/artifacts":{
+            "delete":{
+                "description":"delete the specified artifacts from the MDS repository",
+                "summary":"DeleteArtifacts",
+                "operationId":"delete /artifacts",
+                "produces":[
+                    "application/json"
+                ],
+                "consumes":[
+                ],
+                "parameters":[
+                    {
+                        "type":"string",
+                        "name":"sourceName",
+                        "in":"query",
+                        "description":"Source name to be deleted",
+                        "required":false
+                    },
+                    {
+                        "type":"string",
+                        "name":"targetName",
+                        "in":"query",
+                        "description":"Target of export to be deleted",
+                        "required":false
+                    },
+                    {
+                        "type":"string",
+                        "name":"transferName",
+                        "in":"query",
+                        "description":"Name of transfer to be deleted",
+                        "required":false
+                    },
+                    {
+                        "type":"string",
+                        "name":"domainName",
+                        "in":"query",
+                        "description":"Name of the domain to be deleted",
+                        "required":false
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successfully deleted the artifact"
+                    },
+                    "500":{
+                        "examples":{
+                            "application/json":{
+                                "errorCode":"MFT-2404",
+                                "errorKey":"MFT_MDS_SOURCE_DELETE_ERROR",
+                                "errorMessage":"Error occurred while deleting the source [file_src] from metadata store."
+                            }
+                        },
+                        "schema":{
+                            "type":"object",
+                            "title":"Error information.",
+                            "properties":{
+                                "errorCode":{
+                                    "type":"string",
+                                    "description":"The error code that Oracle Managed File Transfer returns."
+                                },
+                                "errorKey":{
+                                    "type":"string",
+                                    "description":"The error key that Oracle Managed File Transfer returns."
+                                },
+                                "errorMessage":{
+                                    "type":"string",
+                                    "description":"A message describing the error that Oracle Managed File Transfer returns."
+                                }
+                            }
+                        },
+                        "description":""
+                    }
+                },
+                "tags":[
+                    "Administration Service/MFT Artifacts"
+                ],
+                "x-internal-id":"artifacts-delete"
+            },
+            "put":{
+                "description":"",
+                "summary":"Method to update existing artifacts",
+                "operationId":"put /artifacts",
+                "consumes":[
+                    "multipart/form-data"
+                ],
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "type":"boolean",
+                        "name":"previewModeFlag",
+                        "in":"query",
+                        "description":"Value depicts if preview mode is true or false",
+                        "required":false
+                    },
+                    {
+                        "schema":{
+                        },
+                        "name":"body",
+                        "in":"body",
+                        "description":"",
+                        "required":false
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"",
+                        "schema":{
+                            "title":"MFT Artifacts result",
+                            "type":"object",
+                            "properties":{
+                                "successResults":{
+                                    "description":"",
+                                    "type":"array",
+                                    "items":{
+                                        "type":"object",
+                                        "properties":{
+                                            "artifactName":{
+                                                "description":"",
+                                                "type":"string"
+                                            },
+                                            "id":{
+                                                "description":"",
+                                                "type":"string"
+                                            },
+                                            "artifactCategory":{
+                                                "description":"",
+                                                "type":"string"
+                                            },
+                                            "errorMessage":{
+                                                "description":"",
+                                                "type":"string"
+                                            }
+                                        }
+                                    }
+                                },
+                                "failureResults":{
+                                    "description":"",
+                                    "type":"array",
+                                    "items":{
+                                        "type":"object",
+                                        "properties":{
+                                            "artifactName":{
+                                                "description":"",
+                                                "type":"string"
+                                            },
+                                            "artifactCategory":{
+                                                "description":"",
+                                                "type":"string"
+                                            },
+                                            "errorMessage":{
+                                                "description":"",
+                                                "type":"string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500":{
+                        "examples":{
+                            "application/json":{
+                                "errorCode":"MFT-7439",
+                                "errorKey":"MFT_UTILITY_COULD_NOT_QUERY_MDS_ARTIFACT_ID_BY_NAME",
+                                "errorMessage":"Unable to find artifact by artifact name src1"
+                            }
+                        },
+                        "description":"",
+                        "schema":{
+                            "type":"object",
+                            "properties":{
+                                "errorCode":{
+                                    "type":"string",
+                                    "description":""
+                                },
+                                "errorKey":{
+                                    "type":"string",
+                                    "description":""
+                                },
+                                "errorMessage":{
+                                    "type":"string",
+                                    "description":""
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags":[
+                    "Administration Service/MFT Artifacts"
+                ],
+                "x-internal-id":"artifacts-put"
+            },
+            "post":{
+                "description":"",
+                "summary":"Create a MFT Artifact",
+                "operationId":"post /artifacts",
+                "consumes":[
+                    "multipart/form-data"
+                ],
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "type":"boolean",
+                        "name":"previewModeFlag",
+                        "in":"query",
+                        "description":"Value depicts if preview mode is true or false",
+                        "required":false
+                    },
+                    {
+                        "schema":{
+                        },
+                        "name":"body",
+                        "in":"body",
+                        "description":"",
+                        "required":false
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"",
+                        "schema":{
+                            "type":"object",
+                            "title":"MFT Artifacts result.",
+                            "properties":{
+                                "successResults":{
+                                    "description":"",
+                                    "type":"array",
+                                    "items":{
+                                        "type":"object",
+                                        "properties":{
+                                            "artifactName":{
+                                                "description":"",
+                                                "type":"string"
+                                            },
+                                            "artifactCategory":{
+                                                "description":"",
+                                                "type":"string"
+                                            },
+                                            "errorMessage":{
+                                                "description":"",
+                                                "type":"string"
+                                            }
+                                        }
+                                    }
+                                },
+                                "failureResults":{
+                                    "description":"",
+                                    "type":"array",
+                                    "items":{
+                                        "type":"object",
+                                        "properties":{
+                                            "artifactName":{
+                                                "description":"",
+                                                "type":"string"
+                                            },
+                                            "artifactCategory":{
+                                                "description":"",
+                                                "type":"string"
+                                            },
+                                            "errorMessage":{
+                                                "description":"",
+                                                "type":"string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500":{
+                        "examples":{
+                            "application/json":{
+                                "errorCode":"MFT-7441",
+                                "errorKey":"MFT_UTILITY_COULD_NOT_SAVE_MDS_ARTIFACT",
+                                "errorMessage":"Unable to create artifact."
+                            }
+                        },
+                        "description":"",
+                        "schema":{
+                            "type":"object",
+                            "properties":{
+                                "errorCode":{
+                                    "type":"string"
+                                },
+                                "errorKey":{
+                                    "type":"string"
+                                },
+                                "errorMessage":{
+                                    "type":"string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags":[
+                    "Administration Service/MFT Artifacts"
+                ],
+                "x-internal-id":"artifacts-post"
+            },
+            "get":{
+                "parameters":[
+                    {
+                        "type":"string",
+                        "name":"sourceName",
+                        "in":"query",
+                        "description":"Source name to be exported",
+                        "required":false
+                    },
+                    {
+                        "type":"string",
+                        "name":"targetName",
+                        "in":"query",
+                        "description":"Target of export",
+                        "required":false
+                    },
+                    {
+                        "type":"string",
+                        "name":"transferName",
+                        "in":"query",
+                        "description":"Name of transfer",
+                        "required":false
+                    },
+                    {
+                        "type":"string",
+                        "name":"domainName",
+                        "in":"query",
+                        "description":"Domain Name",
+                        "required":false
+                    }
+                ],
+                "produces":[
+                    "application/json"
+                ],
+                "description":"",
+                "summary":"Export MFT artifacts in zip format and configPlan file in XML format",
+                "operationId":"get /artifacts",
+                "responses":{
+                    "200":{
+                        "headers":{
+                            "location":{
+                                "description":"Relative URL of the export properties.",
+                                "type":"string"
+                            }
+                        },
+                        "description":"export artifacts was completed."
+                    },
+                    "500":{
+                        "examples":{
+                            "application/json":{
+                                "errorCode":"MFT-7415",
+                                "errorKey":"MFT_UNSUPPORTED_ARTIFACT_TYPE",
+                                "errorMessage":"Unsupported artifact type found. Artifact type: {TYPE}."
+                            }
+                        },
+                        "schema":{
+                            "type":"object",
+                            "title":"Error information.",
+                            "properties":{
+                                "errorCode":{
+                                    "type":"string",
+                                    "description":"The error code that Oracle Managed File Transfer returns."
+                                },
+                                "errorKey":{
+                                    "type":"string",
+                                    "description":"The error key that Oracle Managed File Transfer returns."
+                                },
+                                "errorMessage":{
+                                    "type":"string",
+                                    "description":"A message describing the error that Oracle Managed File Transfer returns."
+                                }
+                            }
+                        },
+                        "description":""
+                    }
+                },
+                "tags":[
+                    "Administration Service/MFT Artifacts"
+                ],
+                "x-internal-id":"artifacts-get"
+            }
+        },
+        "/artifacts/repository":{
+            "get":{
+                "parameters":[
+                    {
+                        "type":"string",
+                        "name":"artifactType",
+                        "in":"query",
+                        "description":"Type of the artifact to be verified, only support TRANSFER artifactType",
+                        "required":true
+                    },
+                    {
+                        "type":"string",
+                        "name":"artifactName",
+                        "in":"query",
+                        "description":"Name of the artifact to be verified",
+                        "required":true
+                    }
+                ],
+                "produces":[
+                    "application/json"
+                ],
+                "description":"",
+                "summary":"To check if artifact exists in MFT Repository",
+                "operationId":"get /artifacts/repository",
+                "responses":{
+                    "200":{
+                        "description":"",
+                        "schema":{
+                            "type":"object",
+                            "properties":{
+                                "artifactExists":{
+                                    "type":"boolean"
+                                }
+                            }
+                        }
+                    },
+                    "500":{
+                        "examples":{
+                            "application/json":{
+                                "errorCode":"MFT-7415",
+                                "errorKey":"MFT_UNSUPPORTED_ARTIFACT_TYPE",
+                                "errorMessage":"Unsupported artifact type found. Artifact type: {SOURCE}."
+                            }
+                        },
+                        "description":"",
+                        "schema":{
+                            "type":"object",
+                            "properties":{
+                                "errorCode":{
+                                    "type":"string"
+                                },
+                                "errorKey":{
+                                    "type":"string"
+                                },
+                                "errorMessage":{
+                                    "type":"string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags":[
+                    "Administration Service/MFT Artifacts"
+                ],
+                "x-internal-id":"artifacts-repository-get"
+            }
+        },
+        "/artifacts/appProperties":{
+            "put":{
+                "description":"",
+                "summary":"Updates the application properties on the server",
+                "operationId":"put /artifacts/appProperties",
+                "consumes":[
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "type":"string",
+                        "name":"location",
+                        "in":"header",
+                        "description":"Relative URL of the update SFTP properties event.",
+                        "required":true
+                    },
+                    {
+                        "x-examples":{
+                            "application/json":{
+                                "outboundDatasource":"outds",
+                                "internalFtp":21,
+                                "controlDirectory":"/test/milton",
+                                "internalAddress":"127.0.0.1",
+                                "externalFtp":21,
+                                "sourceProcessors":1,
+                                "instanceProcessors":2,
+                                "storeReferencePayload":true,
+                                "payloadStorageDirectory":"/test",
+                                "inboundDatasource":"inds",
+                                "storeInlinePayload":"fileSystem",
+                                "externalSftp":22,
+                                "targetProcessors":3,
+                                "generateChecksum":true,
+                                "externalFtps":990,
+                                "internalFtps":990,
+                                "internalSftp":22,
+                                "calloutDirectory":"/tester",
+                                "externalAddress":"127.0.0.1"
+                            }
+                        },
+                        "schema":{
+                            "type":"object",
+                            "properties":{
+                                "outboundDatasource":{
+                                    "type":"string"
+                                },
+                                "internalFtp":{
+                                    "type":"integer"
+                                },
+                                "controlDirectory":{
+                                    "type":"string"
+                                },
+                                "internalAddress":{
+                                    "type":"string"
+                                },
+                                "externalFtp":{
+                                    "type":"integer"
+                                },
+                                "sourceProcessors":{
+                                    "type":"integer"
+                                },
+                                "instanceProcessors":{
+                                    "type":"integer"
+                                },
+                                "storeReferencePayload":{
+                                    "type":"boolean"
+                                },
+                                "payloadStorageDirectory":{
+                                    "type":"string"
+                                },
+                                "inboundDatasource":{
+                                    "type":"string"
+                                },
+                                "storeInlinePayload":{
+                                    "type":"string"
+                                },
+                                "externalSftp":{
+                                    "type":"integer"
+                                },
+                                "targetProcessors":{
+                                    "type":"integer"
+                                },
+                                "generateChecksum":{
+                                    "type":"boolean"
+                                },
+                                "externalFtps":{
+                                    "type":"integer"
+                                },
+                                "internalFtps":{
+                                    "type":"integer"
+                                },
+                                "internalSftp":{
+                                    "type":"integer"
+                                },
+                                "calloutDirectory":{
+                                    "type":"string"
+                                },
+                                "externalAddress":{
+                                    "type":"string"
+                                }
+                            }
+                        },
+                        "name":"body",
+                        "in":"body",
+                        "description":"",
+                        "required":false
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"App properties were updated."
+                    },
+                    "500":{
+                        "examples":{
+                            "application/json":{
+                                "errorCode":"MFT-6036",
+                                "errorKey":"MFT_CSF_KEY_DOES_NOT_EXIST_EXCEPTION",
+                                "errorMessage":"Key not found for the given key alias aliasName in credential store."
+                            }
+                        },
+                        "schema":{
+                            "type":"object",
+                            "properties":{
+                                "errorCode":{
+                                    "type":"string"
+                                },
+                                "errorKey":{
+                                    "type":"string"
+                                },
+                                "errorMessage":{
+                                    "type":"string"
+                                }
+                            }
+                        },
+                        "description":""
+                    }
+                },
+                "tags":[
+                    "Administration Service/MFT Artifacts"
+                ],
+                "x-internal-id":"artifacts-appProperties-put"
+            }
+        },
+        "/artifacts/{artifactType}/{artifactName}":{
+            "delete":{
+                "description":"",
+                "summary":"Operation to delete specific artifact based on type and name",
+                "operationId":"delete /artifacts/{artifactType}/{artifactName}",
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "type":"string",
+                        "name":"artifactName",
+                        "in":"path",
+                        "description":"Name of Artifact",
+                        "required":true
+                    },
+                    {
+                        "type":"string",
+                        "name":"artifactType",
+                        "in":"path",
+                        "description":"Type of Artifact",
+                        "required":true
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"",
+                        "schema":{
+                        }
+                    },
+                    "500":{
+                        "examples":{
+                            "application/json":{
+                                "errorCode":"MFT-7415",
+                                "errorKey":"MFT_UNSUPPORTED_ARTIFACT_TYPE",
+                                "errorMessage":"Unsupported artifact type found. Artifact type: {TYPE}."
+                            }
+                        },
+                        "description":"",
+                        "schema":{
+                            "type":"object",
+                            "properties":{
+                                "errorCode":{
+                                    "type":"string"
+                                },
+                                "errorKey":{
+                                    "type":"string"
+                                },
+                                "errorMessage":{
+                                    "type":"string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags":[
+                    "Administration Service/MFT Artifacts"
+                ],
+                "x-internal-id":"artifacts-{artifactType}-{artifactName}-delete"
+            }
+        },
+        "/artifacts/sftpProperties":{
+            "put":{
+                "description":"",
+                "summary":"Updates the SFTP properties on the server",
+                "operationId":"put /artifacts/sftpProperties",
+                "consumes":[
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "type":"string",
+                        "name":"location",
+                        "in":"header",
+                        "description":"Relative URL of the update SFTP properties event.",
+                        "required":true
+                    },
+                    {
+                        "x-examples":{
+                            "application/json":{
+                                "enableSftp":"true",
+                                "keyAlias":"aliasName",
+                                "privateKeyPassword":"welcome1"
+                            }
+                        },
+                        "schema":{
+                            "type":"object",
+                            "properties":{
+                                "enableSftp":{
+                                    "type":"boolean"
+                                },
+                                "keyAlias":{
+                                    "type":"string"
+                                },
+                                "privateKeyPassword":{
+                                    "type":"string"
+                                }
+                            }
+                        },
+                        "name":"body",
+                        "in":"body",
+                        "description":"",
+                        "required":false
+                    }
+                ],
+                "responses":{
+                    "201":{
+                        "description":"SFTP properties were updated."
+                    },
+                    "500":{
+                        "examples":{
+                            "application/json":{
+                                "errorCode":"MFT-6036",
+                                "errorKey":"MFT_CSF_KEY_DOES_NOT_EXIST_EXCEPTION",
+                                "errorMessage":"Key not found for the given key alias aliasName in credential store."
+                            }
+                        },
+                        "schema":{
+                            "type":"object",
+                            "properties":{
+                                "errorCode":{
+                                    "type":"string"
+                                },
+                                "errorKey":{
+                                    "type":"string"
+                                },
+                                "errorMessage":{
+                                    "type":"string"
+                                }
+                            }
+                        },
+                        "description":""
+                    }
+                },
+                "tags":[
+                    "Administration Service/MFT Artifacts"
+                ],
+                "x-internal-id":"artifacts-sftpProperties-put"
+            }
+        },
+        "/mftapp/rest/v1/applicationMetadata":{
+            "get":{
+                "description":" The response contains the absolute URLs referencing to the Metadata archive and Config file. User artifactName and artifactType parameters to export the transfer and related metadata. To export the artifact from a deployment, provide the label. Use the logFormat flag to get a partial/full details in the config plan file.",
+                "summary":"Get the download links for the MFT MDS archive and Config Plan files",
+                "operationId":"get /applicationMetadata",
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "type":"string",
+                        "name":"artifactName",
+                        "in":"query",
+                        "description":"Name of the artifact to be exported",
+                        "required":false
+                    },
+                    {
+                        "type":"string",
+                        "name":"artifactType",
+                        "in":"query",
+                        "description":"Type of the artifact to be exported, only support TRANSFER artifactType",
+                        "required":false
+                    },
+                    {
+                        "type":"string",
+                        "name":"label",
+                        "in":"query",
+                        "description":"Label of the deployment to be exported",
+                        "required":false
+                    },
+                    {
+                        "type":"boolean",
+                        "name":"longFormat",
+                        "in":"query",
+                        "description":"Option to export the long format having full attribute details in config plan file",
+                        "required":false
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "schema":{
+                            "type":"object",
+                            "properties":{
+                                "links":{
+                                    "type":"array",
+                                    "description":"Links to metadata files.",
+                                    "items":[
+                                        {
+                                            "type":"object",
+                                            "properties":{
+                                                "rel":{
+                                                    "type":"string"
+                                                },
+                                                "href":{
+                                                    "type":"string"
+                                                },
+                                                "mediaType":{
+                                                    "type":"string"
+                                                }
+                                            },
+                                            "required":[
+                                                "rel",
+                                                "href",
+                                                "mediaType"
+                                            ]
+                                        },
+                                        {
+                                            "type":"object",
+                                            "properties":{
+                                                "rel":{
+                                                    "type":"string"
+                                                },
+                                                "href":{
+                                                    "type":"string"
+                                                },
+                                                "mediaType":{
+                                                    "type":"string"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            "required":[
+                                "links"
+                            ]
+                        },
+                        "description":""
+                    },
+                    "500":{
+                        "examples":{
+                            "application/json":{
+                                "errorCode":"MFT-7415",
+                                "errorKey":"MFT_UNSUPPORTED_ARTIFACT_TYPE",
+                                "errorMessage":"Unsupported artifact type found. Artifact type: <type>"
+                            }
+                        },
+                        "schema":{
+                            "type":"object",
+                            "title":"Error information.",
+                            "properties":{
+                                "errorCode":{
+                                    "type":"string",
+                                    "description":"The error code that Oracle Managed File Transfer returns."
+                                },
+                                "errorKey":{
+                                    "type":"string",
+                                    "description":"The error key that Oracle Managed File Transfer returns."
+                                },
+                                "errorMessage":{
+                                    "type":"string",
+                                    "description":"A message describing the error that Oracle Managed File Transfer returns."
+                                }
+                            }
+                        },
+                        "description":""
+                    }
+                },
+                "tags":[
+                    "Administration Service/MFT Application Metadata"
+                ],
+                "x-internal-id":"mftapp-rest-v1-applicationMetadata-get"
+            },
+            "put":{
+                "description":" Supports importing metadata along with optional config plan file which allows to override the attributes in the metadata files.",
+                "summary":"Import the MFT metadata into the MFT MDS store",
+                "operationId":"put /applicationMetadata",
+                "consumes":[
+                    "multipart/form-data"
+                ],
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "type":"boolean",
+                        "name":"previewModeFlag",
+                        "in":"query",
+                        "description":"Flag to view the preview the import without actually importing metadata.",
+                        "required":false
+                    },
+                    {
+                        "schema":{
+                        },
+                        "name":"body",
+                        "in":"body",
+                        "description":"",
+                        "required":false
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "schema":{
+                            "type":"object",
+                            "properties":{
+                                "artifactsAdded":{
+                                    "type":"string"
+                                },
+                                "artifactsModified":{
+                                    "type":"string"
+                                },
+                                "skippedTransfers":{
+                                    "type":"array",
+                                    "items":{
+                                        "type":"string"
+                                    }
+                                },
+                                "failedTransfers":{
+                                    "type":"array",
+                                    "items":{
+                                        "type":"string"
+                                    }
+                                },
+                                "configPlanOverrideResultSummmary":{
+                                    "type":"array",
+                                    "items":{
+                                        "type":"object",
+                                        "properties":{
+                                            "artifactName":{
+                                                "type":"string"
+                                            },
+                                            "artifactType":{
+                                                "type":"string"
+                                            },
+                                            "attributeName":{
+                                                "type":"string"
+                                            },
+                                            "oldValue":{
+                                                "type":"string"
+                                            },
+                                            "newValue":{
+                                                "type":"string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "description":""
+                    },
+                    "500":{
+                        "examples":{
+                            "application/json":{
+                                "errorCode":"MFT-2351",
+                                "errorKey":"MFT_IMPORT_ERROR",
+                                "errorMessage":"Error occurred while importing the metadata."
+                            }
+                        },
+                        "schema":{
+                            "type":"object",
+                            "title":"Error information.",
+                            "properties":{
+                                "errorCode":{
+                                    "type":"string",
+                                    "description":"The error code that Oracle Managed File Transfer returns."
+                                },
+                                "errorKey":{
+                                    "type":"string",
+                                    "description":"A message describing the error that Oracle Managed File Transfer returns."
+                                },
+                                "errorMessage":{
+                                    "type":"string",
+                                    "description":"A message that describes the error that Oracle Managed File Transfer returns"
+                                }
+                            }
+                        },
+                        "description":""
+                    }
+                },
+                "tags":[
+                    "Administration Service/MFT Application Metadata"
+                ],
+                "x-internal-id":"mftapp-rest-v1-applicationMetadata-put"
+            },
+            "delete":{
+                "description":"",
+                "summary":"Reset the entire MFT Metadata repository",
+                "operationId":"delete /applicationMetadata",
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "type":"boolean",
+                        "name":"preserveUserPreferencesFlag",
+                        "in":"query",
+                        "description":"Flag to specify whether the user preferences should be retained for not",
+                        "required":false
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":""
+                    },
+                    "500":{
+                        "examples":{
+                            "application/json":{
+                                "errorCode":"MFT-2403",
+                                "errorKey":"MFT_MDS_RESET_ERROR",
+                                "errorMessage":"Error occurred while resetting the metadata with preserved user changes true."
+                            }
+                        },
+                        "schema":{
+                            "type":"object",
+                            "title":"Error information.",
+                            "properties":{
+                                "errorCode":{
+                                    "type":"string",
+                                    "description":"The error code that Oracle Managed File Transfer returns."
+                                },
+                                "errorKey":{
+                                    "type":"string",
+                                    "description":"A message describing the error that Oracle Managed File Transfer returns."
+                                },
+                                "errorMessage":{
+                                    "type":"string",
+                                    "description":"A message that describes the error that Oracle Managed File Transfer returns"
+                                }
+                            }
+                        },
+                        "description":""
+                    }
+                },
+                "tags":[
+                    "Administration Service/MFT Application Metadata"
+                ],
+                "x-internal-id":"mftapp-rest-v1-applicationMetadata-delete"
+            }
+        },
+        "/mftapp/rest/v1/applicationMetadata/{file}":{
+            "get":{
+                "description":" User can download either metadata archive or config plan.",
+                "summary":"Download the metadata file",
+                "operationId":"get /applicationMetadata/{file}",
+                "produces":[
+                    "application/json",
+                    "application/octet-stream"
+                ],
+                "parameters":[
+                    {
+                        "type":"string",
+                        "name":"file",
+                        "in":"path",
+                        "description":"The file to be downloaded",
+                        "required":true
+                    },
+                    {
+                        "type":"string",
+                        "name":"artifactName",
+                        "in":"query",
+                        "description":"Name of the artifact to be exported",
+                        "required":false
+                    },
+                    {
+                        "type":"string",
+                        "name":"artifactType",
+                        "in":"query",
+                        "description":"Type of the artifact to be exported",
+                        "required":false
+                    },
+                    {
+                        "type":"string",
+                        "name":"label",
+                        "in":"query",
+                        "description":"Label of the deployment to be exported",
+                        "required":false
+                    },
+                    {
+                        "type":"boolean",
+                        "name":"longFormat",
+                        "in":"query",
+                        "description":"Option to export the long format having full attribute details in config plan file",
+                        "required":false
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":""
+                    },
+                    "500":{
+                        "examples":{
+                            "application/json":{
+                                "errorCode":"MFT-2301",
+                                "errorKey":"MFT_EXPORT_ERROR",
+                                "errorMessage":"Error occurred while exporting the metadata."
+                            }
+                        },
+                        "schema":{
+                            "type":"object",
+                            "title":"Error information.",
+                            "properties":{
+                                "errorCode":{
+                                    "type":"string",
+                                    "description":"The error code that Oracle Managed File Transfer returns."
+                                },
+                                "errorKey":{
+                                    "type":"string",
+                                    "description":"A message describing the error that Oracle Managed File Transfer returns."
+                                },
+                                "errorMessage":{
+                                    "type":"string",
+                                    "description":"A message that describes the error that Oracle Managed File Transfer returns"
+                                }
+                            }
+                        },
+                        "description":""
+                    }
+                },
+                "tags":[
+                    "Administration Service/MFT Application Metadata"
+                ],
+                "x-internal-id":"mftapp-rest-v1-applicationMetadata-{file}-get"
+            }
+        },
+        "/purges":{
+        },
+        "/purges/schedules":{
+        },
+        "/purges/schedules/{scheduleName}":{
+            "put":{
+                "description":"",
+                "summary":"Modify Purge Schedule",
+                "operationId":"put /purges/schedules/{scheduleName}",
+                "responses":{
+                    "500":{
+                        "description":"Something went wrong",
+                        "schema":{
+                            "$ref":"#/definitions/error"
+                        },
+                        "examples":{
+                            "application/json":{
+                                "errorCode":"MFT-5835",
+                                "errorKey":"MFT_ESS_PURGE_SCHEDULE_DEACTIVATE_EXCEPTION",
+                                "errorMessage":"Trying to deactivate a non-active Schedule Purge [Default_Purge_Schedule]."
+                            }
+                        }
+                    },
+                    "200":{
+                        "description":"Purge Schedule modification succeeded.",
+                        "headers":{
+                            "location":{
+                                "type":"string",
+                                "description":"Relative URL of the Purge Schedule."
+                            }
+                        }
+                    }
+                },
+                "produces":[
+                    "application/json"
+                ],
+                "consumes":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "type":"string",
+                        "name":"scheduleName",
+                        "in":"path",
+                        "required":true,
+                        "description":"name of the Purge Schedule"
+                    },
+                    {
+                        "name":"action",
+                        "type":"string",
+                        "in":"query",
+                        "description":"Action to modify Purge Schedule",
+                        "required":false
+                    },
+                    {
+                        "name":"body",
+                        "in":"body",
+                        "description":"",
+                        "required":false,
+                        "schema":{
+                            "$ref":"#/definitions/mftPurgeScheduleDO"
+                        },
+                        "x-examples":{
+                            "application/json":{
+                                "retentionPeriod":"7",
+                                "startDate":"10-05-2016",
+                                "instanceStatuses":{
+                                    "instanceStatus":[
+                                        "F",
+                                        "C"
+                                    ]
+                                },
+                                "include":true,
+                                "scheduleTime":"04:32:10",
+                                "comment":"No Comment",
+                                "transfers":{
+                                    "transfer":[
+                                        "T1",
+                                        "T2"
+                                    ]
+                                },
+                                "endDate":"10-07-2016",
+                                "frequency":"DAILY"
+                            }
+                        }
+                    }
+                ],
+                "tags":[
+                    "Administration Service/MFT Purge"
+                ],
+                "x-internal-id":"purges-schedules-{scheduleName}-put"
+            }
+        },
+        "/sources":{
+            "get":{
+                "description":" Gets the list of sources active in MFT based on the criteria like application type, binding type, etc. The response contains the list of sources with URLs.",
+                "summary":"Get available active sources",
+                "operationId":"get /sources",
+                "produces":[
+                    "application/json"
+                ],
+                "consumes":[
+                ],
+                "parameters":[
+                    {
+                        "type":"string",
+                        "name":"searchFilter",
+                        "in":"query",
+                        "description":"Full/partial Name of source(s) to be discovered",
+                        "required":false
+                    },
+                    {
+                        "type":"string",
+                        "name":"application",
+                        "in":"query",
+                        "description":"Type of the application binding you want to discover",
+                        "required":false
+                    },
+                    {
+                        "type":"string",
+                        "name":"bindingType",
+                        "in":"query",
+                        "description":"Binding type of source you want to discover",
+                        "required":false
+                    },
+                    {
+                        "type":"boolean",
+                        "name":"onlyEventEnabled",
+                        "in":"query",
+                        "description":"Discover only event enabled sources",
+                        "required":false
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Describes active sources.",
+                        "schema":{
+                            "title":"activeSources",
+                            "type":"object",
+                            "properties":{
+                                "sources":{
+                                    "title":"sources",
+                                    "type":"array",
+                                    "description":"Sources discovered",
+                                    "items":{
+                                        "title":"items",
+                                        "type":"object",
+                                        "properties":{
+                                            "name":{
+                                                "type":"string",
+                                                "description":"Name of the source."
+                                            },
+                                            "url":{
+                                                "type":"string",
+                                                "description":"URL of the source."
+                                            },
+                                            "bindingType":{
+                                                "type":"string",
+                                                "description":"Binding type of the source."
+                                            },
+                                            "eventInvokeUrl":{
+                                                "type":"string",
+                                                "description":"URL at which to invoke the event."
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500":{
+                        "description":"Error information.",
+                        "schema":{
+                            "title":"errors",
+                            "type":"object",
+                            "properties":{
+                                "errorCode":{
+                                    "type":"string",
+                                    "description":"The error code that Oracle Managed File Transfer returns."
+                                },
+                                "errorKey":{
+                                    "type":"string",
+                                    "description":"The error key that Oracle Managed File Transfer returns."
+                                },
+                                "errorMessage":{
+                                    "type":"string",
+                                    "description":"A message describing the error that Oracle Managed File Transfer returns."
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags":[
+                    "Event Service/Discover Sources"
+                ],
+                "x-internal-id":"sources-get"
+            }
+        },
+        "/events":{
+            "post":{
+                "description":" Triggers the file transfer from the specified source, submitting the file to MFT for processing. Responds with a unique id called \"eventSessionid\" which is used to track the event status and to get the resulting instance details.",
+                "summary":"Trigger a source",
+                "operationId":"post /events",
+                "produces":[
+                    "application/json"
+                ],
+                "consumes":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "name":"sourceName",
+                        "in":"body",
+                        "description":"Name of the source to be triggered.",
+                        "required":true,
+                        "schema":{
+                            "type":"object",
+                            "properties":{
+                                "sourceName":{
+                                    "type":"string",
+                                    "description":"Name of the source to be triggered."
+                                },
+                                "properties":{
+                                    "title":"properties",
+                                    "type":"object",
+                                    "description":"Properties passed with the source name.",
+                                    "properties":{
+                                        "entry":{
+                                            "description":"Each entry is a key value pair of 'string'.",
+                                            "type":"array",
+                                            "title":"entry",
+                                            "items":{
+                                                "title":"items",
+                                                "type":"object",
+                                                "properties":{
+                                                    "key":{
+                                                        "type":"string",
+                                                        "pattern":"^(/[^/]+)+$"
+                                                    },
+                                                    "value":{
+                                                        "type":"string",
+                                                        "pattern":"^(/[^/]+)+$"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Response returned when source is successfully triggered.",
+                        "schema":{
+                            "title":"eventSessionId",
+                            "type":"object",
+                            "properties":{
+                                "eventSessionId":{
+                                    "type":"string",
+                                    "description":"The ID of the event created."
+                                }
+                            }
+                        }
+                    },
+                    "500":{
+                        "description":"Error information.",
+                        "schema":{
+                            "title":"errors",
+                            "type":"object",
+                            "properties":{
+                                "errorCode":{
+                                    "type":"string",
+                                    "description":"The error code that Oracle Managed File Transfer returns."
+                                },
+                                "errorKey":{
+                                    "type":"string",
+                                    "description":"The error key that Oracle Managed File Transfer returns."
+                                },
+                                "errorMessage":{
+                                    "type":"string",
+                                    "description":"A message describing the error that Oracle Managed File Transfer returns."
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags":[
+                    "Event Service/Invoke MFT Events"
+                ],
+                "x-internal-id":"events-post"
+            }
+        },
+        "/events/{eventSessionId}":{
+            "get":{
+                "description":" Gets the event status and instances count for various statuses. Requires submitting an eventSessionId as a path parameter.",
+                "summary":"Get the instances summary of an event",
+                "operationId":"get /events/{eventSessionId}",
+                "produces":[
+                    "application/json"
+                ],
+                "consumes":[
+                ],
+                "parameters":[
+                    {
+                        "name":"eventSessionId",
+                        "in":"path",
+                        "description":"ID of the event session,",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Event status.",
+                        "schema":{
+                            "title":"eventStatus",
+                            "type":"object",
+                            "properties":{
+                                "activeInstanceCount":{
+                                    "type":"integer",
+                                    "description":"The number of active instances."
+                                },
+                                "completedInstanceCount":{
+                                    "type":"integer",
+                                    "description":"The number of completed instances."
+                                },
+                                "failedInstanceCount":{
+                                    "type":"integer",
+                                    "description":"The number of failed instances."
+                                },
+                                "status":{
+                                    "type":"string",
+                                    "description":"String value depicting status of the instance."
+                                },
+                                "comments":{
+                                    "type":"string",
+                                    "description":"String value describing success or failure reason of the event."
+                                }
+                            }
+                        }
+                    },
+                    "500":{
+                        "description":"Error information.",
+                        "schema":{
+                            "title":"errors",
+                            "type":"object",
+                            "properties":{
+                                "errorCode":{
+                                    "type":"string",
+                                    "description":"The error code that Oracle Managed File Transfer returns."
+                                },
+                                "errorKey":{
+                                    "type":"string",
+                                    "description":"The error key that Oracle Managed File Transfer returns."
+                                },
+                                "errorMessage":{
+                                    "type":"string",
+                                    "description":"A message describing the error that Oracle Managed File Transfer returns."
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags":[
+                    "Event Service/Invoke MFT Events"
+                ],
+                "x-internal-id":"events-{eventSessionId}-get"
+            }
+        },
+        "/events/{eventSessionId}/instances":{
+            "get":{
+                "description":" Retrieves details about the instances created by an event. Requires submitting an eventSessionId as a path parameter. Submit with query parameter inDetail=true for response to contain complete details of the resultant instances; submit without query parameter for response to contain minimal details.",
+                "summary":"Get the details of the resultant instances of an event",
+                "operationId":"get /events/{eventSessionId}/instances",
+                "produces":[
+                    "application/json"
+                ],
+                "consumes":[
+                ],
+                "parameters":[
+                    {
+                        "type":"boolean",
+                        "name":"inDetail",
+                        "in":"query",
+                        "description":"Return complete details of the resultant instances of an event.",
+                        "required":false
+                    },
+                    {
+                        "name":"eventSessionId",
+                        "in":"path",
+                        "description":"ID of the event session,",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Event details.",
+                        "schema":{
+                            "title":"eventDetails",
+                            "type":"object",
+                            "properties":{
+                                "eventSessionId":{
+                                    "type":"string",
+                                    "description":"Session ID of the event being queried."
+                                },
+                                "totalInstances":{
+                                    "type":"integer",
+                                    "description":"Total number of instances created out of this event."
+                                },
+                                "sourceName":{
+                                    "type":"string",
+                                    "description":"Name of the source."
+                                },
+                                "sourceType":{
+                                    "type":"string",
+                                    "description":"Depicts the source types for which the event was executed (File, FTP, SFTP, etc.)."
+                                },
+                                "endpointReference":{
+                                    "type":"string",
+                                    "description":"The source endpoint URL."
+                                },
+                                "submittedBy":{
+                                    "type":"string",
+                                    "description":"User who submitted the request."
+                                },
+                                "instances":{
+                                    "type":"array",
+                                    "title":"instances",
+                                    "description":"Information about the instances.",
+                                    "items":{
+                                        "title":"items",
+                                        "type":"object",
+                                        "properties":{
+                                            "fileName":{
+                                                "type":"string",
+                                                "description":"Name of the processed file."
+                                            },
+                                            "status":{
+                                                "title":"status",
+                                                "type":"object",
+                                                "description":"String values depicting status of the instance.",
+                                                "properties":{
+                                                    "status":{
+                                                        "type":"string",
+                                                        "description":"Final status of the instance (Active, Completed, or Failed)."
+                                                    },
+                                                    "subStatus":{
+                                                        "type":"string",
+                                                        "description":"Substatus of the instance (Pending, Scheduled, Error, etc.)."
+                                                    }
+                                                }
+                                            },
+                                            "details":{
+                                                "title":"details",
+                                                "type":"object",
+                                                "description":"Details of the instance.",
+                                                "properties":{
+                                                    "statusDetail":{
+                                                        "type":"string",
+                                                        "description":"Consolidated detail about the statuses of the instances related to a particular source."
+                                                    },
+                                                    "bytesReceived":{
+                                                        "type":"string",
+                                                        "description":"Bytes received."
+                                                    },
+                                                    "receivedTime":{
+                                                        "type":"string",
+                                                        "description":"Time at which the file was picked up from the source."
+                                                    },
+                                                    "sourceURL":{
+                                                        "type":"string",
+                                                        "description":"The source endpoint URL."
+                                                    },
+                                                    "priority":{
+                                                        "type":"string",
+                                                        "description":"Priority at which file is processed (High, Medium, or Low)."
+                                                    },
+                                                    "targets":{
+                                                        "type":"array",
+                                                        "title":"targets",
+                                                        "description":"Target associated with the transfer.",
+                                                        "items":{
+                                                            "title":"items",
+                                                            "type":"object",
+                                                            "properties":{
+                                                                "targetName":{
+                                                                    "type":"string",
+                                                                    "description":"Name of the target."
+                                                                },
+                                                                "status":{
+                                                                    "type":"string",
+                                                                    "description":"Overall status of the target message process (Active, Completed, or Failed)."
+                                                                },
+                                                                "deliveryStatus":{
+                                                                    "type":"string",
+                                                                    "description":"Delivery status of the target message (pending, in progress, paused, etc.)."
+                                                                },
+                                                                "deliveredFileName":{
+                                                                    "type":"string",
+                                                                    "description":"Name of the file delivered."
+                                                                },
+                                                                "bytesTransferred":{
+                                                                    "type":"string",
+                                                                    "description":"Bytes transferred."
+                                                                },
+                                                                "completionTime":{
+                                                                    "type":"string",
+                                                                    "description":"Time of completion."
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500":{
+                        "description":"Error information.",
+                        "schema":{
+                            "title":"error",
+                            "type":"object",
+                            "properties":{
+                                "errorCode":{
+                                    "type":"string",
+                                    "description":"The error code that Oracle Managed File Transfer returns."
+                                },
+                                "errorKey":{
+                                    "type":"string",
+                                    "description":"The error key that Oracle Managed File Transfer returns."
+                                },
+                                "errorMessage":{
+                                    "type":"string",
+                                    "description":"A message describing the error that Oracle Managed File Transfer returns."
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags":[
+                    "Event Service/Invoke MFT Events"
+                ],
+                "x-internal-id":"events-{eventSessionId}-instances-get"
+            }
+        },
+        "/metadata-catalog":{
+            "get":{
+                "description":" Lists each resource name with alternate and describe links which can be used to get the meta data of the resource",
+                "summary":"Get the list of available resources",
+                "operationId":"get /metadata-catalog",
+                "responses":{
+                    "200":{
+                        "description":"",
+                        "schema":{
+                            "$ref":"#/definitions/resourceCatalog"
+                        },
+                        "examples":{
+                            "application/json":{
+                                "items":[
+                                    {
+                                        "name":"events",
+                                        "links":[
+                                            {
+                                                "rel":"alternate",
+                                                "href":"http://host:port/mftapp/rest/v1/metadata-catalog/events",
+                                                "mediaType":"application/schema+json"
+                                            },
+                                            {
+                                                "rel":"describes",
+                                                "href":"http://host:port/mftapp/rest/v1/events"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name":"sources",
+                                        "links":[
+                                            {
+                                                "rel":"alternate",
+                                                "href":"http://host:port/mftapp/rest/v1/metadata-catalog/sources",
+                                                "mediaType":"application/schema+json"
+                                            },
+                                            {
+                                                "rel":"describes",
+                                                "href":"http://host:port/mftapp/rest/v1/sources"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "links":[
+                                    {
+                                        "rel":"alternate",
+                                        "href":"http://host:port/mftapp/rest/v1/metadata-catalog/catalog",
+                                        "mediaType":"application/schema+json"
+                                    },
+                                    {
+                                        "rel":"self",
+                                        "href":"http://host:port/mftapp/rest/v1/metadata-catalog/"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "500":{
+                        "description":"Something went wrong",
+                        "schema":{
+                            "$ref":"#/definitions/error"
+                        },
+                        "examples":{
+                            "application/json":{
+                                "errorCode":"MFT-5445",
+                                "errorKey":"MFT_REST_UNABLE_TO_LIST_RESOURCES_CATALOG",
+                                "errorMessage":"Unable to list the resources catalog of MFT RESTful services."
+                            }
+                        }
+                    }
+                },
+                "produces":[
+                    "application/json"
+                ],
+                "tags":[
+                    "MFT Catalog Service"
+                ],
+                "x-internal-id":"metadata-catalog-get"
+            }
+        },
+        "/metadata-catalog/{resource}":{
+            "get":{
+                "description":"",
+                "summary":"Get schema of the resource in string format",
+                "operationId":"get /metadata-catalog/{resource}",
+                "responses":{
+                    "200":{
+                        "description":"",
+                        "schema":{
+                            "$ref":"#/definitions/resourceSchema"
+                        }
+                    },
+                    "500":{
+                        "description":"Something went wrong",
+                        "schema":{
+                            "$ref":"#/definitions/error"
+                        },
+                        "examples":{
+                            "application/json":{
+                                "errorCode":"MFT-5445",
+                                "errorKey":"MFT_REST_UNABLE_TO_LIST_RESOURCES_CATALOG",
+                                "errorMessage":"Unable to list the resources catalog of MFT RESTful services."
+                            }
+                        }
+                    }
+                },
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "name":"resource",
+                        "in":"path",
+                        "description":"Name of the resource for which schema is requested",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "tags":[
+                    "MFT Catalog Service"
+                ],
+                "x-internal-id":"metadata-catalog-{resource}-get"
+            }
+        }
+    },
+    "definitions":{
+        "mftPurgeScheduleDO-xml":{
+        },
+        "mftPurgeScheduleDO":{
+            "type":"object",
+            "properties":{
+                "retentionPeriod":{
+                    "type":"string"
+                },
+                "startDate":{
+                    "type":"string"
+                },
+                "instanceStatuses":{
+                    "type":"object",
+                    "properties":{
+                        "instanceStatus":{
+                            "type":"array",
+                            "items":{
+                                "type":"string"
+                            }
+                        }
+                    }
+                },
+                "include":{
+                    "type":"boolean"
+                },
+                "scheduleTime":{
+                    "type":"string"
+                },
+                "comment":{
+                    "type":"string"
+                },
+                "transfers":{
+                    "type":"object",
+                    "properties":{
+                        "transfer":{
+                            "type":"array",
+                            "items":{
+                                "type":"string"
+                            }
+                        }
+                    }
+                },
+                "endDate":{
+                    "type":"string"
+                },
+                "frequency":{
+                    "type":"string"
+                }
+            }
+        },
+        "error-xml":{
+        },
+        "error":{
+            "title":"Error information.",
+            "type":"object",
+            "properties":{
+                "errorCode":{
+                    "type":"string",
+                    "description":"The error code that Oracle Managed File Transfer returns."
+                },
+                "errorKey":{
+                    "type":"string",
+                    "description":"The error key that Oracle Managed File Transfer returns."
+                },
+                "errorMessage":{
+                    "type":"string",
+                    "description":"A message describing the error that Oracle Managed File Transfer returns."
+                }
+            }
+        },
+        "resourceCatalog-xml":{
+        },
+        "resourceCatalog":{
+            "type":"object",
+            "properties":{
+                "items":{
+                    "type":"array",
+                    "description":"Information about the MFT resources.",
+                    "items":[
+                        {
+                            "type":"object",
+                            "properties":{
+                                "name":{
+                                    "description":"Name of the resource.",
+                                    "type":"string"
+                                },
+                                "links":{
+                                    "type":"array",
+                                    "items":[
+                                        {
+                                            "type":"object",
+                                            "properties":{
+                                                "rel":{
+                                                    "description":"Relationship to resource.",
+                                                    "type":"string"
+                                                },
+                                                "href":{
+                                                    "description":"Reference to resource.",
+                                                    "type":"string"
+                                                },
+                                                "mediaType":{
+                                                    "description":"Media type of response.",
+                                                    "type":"string"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "links":{
+                    "type":"array",
+                    "items":[
+                        {
+                            "type":"object",
+                            "properties":{
+                                "rel":{
+                                    "description":"Relationship to resource.",
+                                    "type":"string"
+                                },
+                                "href":{
+                                    "description":"Reference to resource.",
+                                    "type":"string"
+                                },
+                                "mediaType":{
+                                    "description":"Media type of response.",
+                                    "type":"string"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "resourceSchema-xml":{
+        },
+        "resourceSchema":{
+            "title":"RAML Schema.",
+            "type":"object",
+            "properties":{
+                "schema":{
+                    "type":"string",
+                    "description":"RAML schema of the resource"
+                }
+            }
+        }
+    },
+    "tags":[
+        {
+            "name":"Administration Service/MFT Application Metadata",
+            "description":"Represents the MFT MDS metadata repository operations."
+        },
+        {
+            "name":"Administration Service/MFT Artifacts",
+            "description":"Represents the MFT artifacts operations."
+        },
+        {
+            "name":"Administration Service/MFT Purge",
+            "description":"Use the Purge APIs to purge old instance and payload data."
+        },
+        {
+            "name":"Event Service/Discover Sources",
+            "description":"Discover available active MFT sources."
+        },
+        {
+            "name":"Event Service/Invoke MFT Events",
+            "description":"Trigger sources and get instance details of events."
+        },
+        {
+            "name":"MFT Catalog Service",
+            "description":"Lists all the services available in MFT."
+        }
+    ],
+    "swagger":"2.0"
+}

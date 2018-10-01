@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Adding Temporary Storage to a Database Deployment</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-06-19T15:22:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Database Cloud Service" />
+<meta name="dcterms.identifier" content="E72994-04" />
+<meta name="dcterms.isVersionOf" content="CSDBI" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-12A94B2E-2F7A-441F-995E-D45CC24910C4.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-2CC67761-AAD2-4432-A992-6B509FCC9BB7.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSDBI.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSDBI.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSDBI.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-90E792E1-EC2D-42B4-976E-375485C2A44A"></a> <span id="PAGE" style="display:none;">21/190</span> <!-- End Header -->
+<h1 id="CSDBI-GUID-90E792E1-EC2D-42B4-976E-375485C2A44A" class="sect1">Adding Temporary Storage to a Database Deployment</h1>
+<div>
+<div class="section">
+<p>In general, when you add storage to a database deployment on <span>Oracle Database Cloud Service</span>, you want the storage to be permanent; that is, to remain attached and available until the deployment is deleted. To add this kind of permanent storage, scale up the storage as described in <a href="GUID-457D283C-D890-4B4F-B65C-26D05B4C80CC.htm">Scaling a Database Deployment</a>.</p>
+<p>However, you may sometimes want to add storage to a database deployment temporarily for a short period of time, after which you want to detach and delete the storage.</p>
+<p><span class="bold">Topics</span></p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-90E792E1-EC2D-42B4-976E-375485C2A44A.htm#GUID-90E792E1-EC2D-42B4-976E-375485C2A44A__ADDTEMPSTORAGE">Adding Temporary Storage to a Database Deployment</a></p>
+</li>
+<li>
+<p><a href="GUID-90E792E1-EC2D-42B4-976E-375485C2A44A.htm#GUID-90E792E1-EC2D-42B4-976E-375485C2A44A__DELETETEMPSTORAGE">Deleting Temporary Storage from a Database Deployment</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-90E792E1-EC2D-42B4-976E-375485C2A44A__ADDTEMPSTORAGE">
+<p class="subhead1">Adding Temporary Storage to a Database Deployment</p>
+<p>To add temporary storage to a database deployment, you add a storage volume to a compute node. First, you create a Compute Cloud Service storage volume and attach it to the compute node. Then, while logged into the compute node you use Linux commands to partition, format and mount the storage volume.</p>
+<p>The storage you add by following these steps is &ldquo;temporary&rdquo; in that you can later unmount it from the compute node and delete it. In all other ways it is &ldquo;permanent&rdquo;: it remains in existence, even if you delete the database deployment to which it is attached, until you delete it.</p>
+<div class="infobox-note" id="GUID-90E792E1-EC2D-42B4-976E-375485C2A44A__GUID-9A707103-48EB-410C-88C9-CE9A378A54D7">
+<p class="notep1">Note:</p>
+<p>If the database deployment to which you attach this temporary storage is restarted or is stopped and then started, the storage volume becomes detached from the compute node and you must reattach it. For instructions, see <a class="olink ELUSE267" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=E73828-01&amp;id=ELUSE267">Attaching a Storage Volume to an Instance</a> in <cite>Public Cloud Machine Using Oracle Compute Cloud Service</cite>. After reattaching the storage volume, you must then connect to the compute node and remount it.</p>
+<p>If the compute node is rebooted, such as when following the instructions in <a href="GUID-407918B4-6EC9-4979-BBD3-1731BD375BA0.htm">Rebooting a Compute Node</a>, the temporary storage becomes unmounted and you must remount it.</p>
+</div>
+<p>When adding a Compute Cloud Service storage volume as temporary storage, keep these points in mind:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>A compute node can have a maximum of ten storage volumes attached to it.</p>
+</li>
+<li>
+<p>You can create a storage volume from 1 GB to 2048 GB in size, in increments of 1 GB.</p>
+</li>
+</ul>
+<p>To add temporary storage to a database deployment:</p>
+<ol>
+<li>
+<p>Create a storage volume by following the instructions in <a class="olink ELUSE162" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=E73828-01&amp;id=ELUSE162">Creating a Storage Volume</a> in <cite>Public Cloud Machine Using Oracle Compute Cloud Service</cite>.</p>
+</li>
+<li>
+<p>Attach the storage volume to the Compute Cloud Service instance on which the compute node is running by following the instructions in <a class="olink ELUSE267" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=E73828-01&amp;id=ELUSE267">Attaching a Storage Volume to an Instance</a> in <cite>Public Cloud Machine Using Oracle Compute Cloud Service</cite>.</p>
+<p>When you attach the storage volume, <span>assign it the next available disk number</span>. Note down this disk number for later use.</p>
+</li>
+<li>
+<p>Connect as the <code class="codeph"><span class="bold">opc</span></code> user to the compute node.</p>
+<p>For detailed instructions, see <a href="GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1.htm#GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1">Connecting to a Compute Node Through Secure Shell (SSH)</a>.</p>
+</li>
+<li>
+<p>Start a root-user command shell:</p>
+<pre dir="ltr">
+$ <span class="bold">sudo -s</span>
+#
+</pre></li>
+<li>
+<p>Confirm the addition of the storage volume by using the <code class="codeph">ls</code> command:</p>
+<pre dir="ltr">
+# <span class="bold">ls /dev/xvd*</span>
+</pre>
+<p>In the listing that is displayed, look for an entry of the form <code class="codeph">/dev/xvd<span class="codeinlineitalic">LETTER</span></code>, where <code class="codeph"><span class="codeinlineitalic">LETTER</span></code> is the letter that is alphabetically one higher than the storage volume&rsquo;s disk number.</p>
+<p>For example, if the storage volume&rsquo;s disk number is 6, you should look for the entry <code class="codeph">/dev/xvdg</code> because the letter &ldquo;g&rdquo; is the seventh letter of the alphabet.</p>
+</li>
+<li>
+<p>Create a single, primary partition that occupies the entire storage volume by using the <code class="codeph">fdisk</code> command. For example:</p>
+<pre dir="ltr">
+# <span class="bold">fdisk /dev/xvdg</span>
+Device contains neither a valid DOS partition table, nor Sun, SGI or OSF disklabel
+Building a new DOS disklabel with disk identifier 0xaa660f6f.
+Changes will remain in memory only, until you decide to write them.
+After that, of course, the previous content won't be recoverable.
+
+Warning: invalid flag 0x0000 of partition table 4 will be corrected by w(rite)
+
+WARNING: DOS-compatible mode is deprecated. It's strongly recommended to
+         switch off the mode (command 'c') and change display units to
+         sectors (command 'u').
+
+Command (m for help): <span class="bold">c</span>
+DOS Compatibility flag is not set
+
+Command (m for help): <span class="bold">u</span>
+Changing display/entry units to sectors
+
+Command (m for help): <span class="bold">n</span>
+Command action
+   e   extended
+   p   primary partition (1-4)
+<span class="bold">p</span>
+Partition number (1-4): <span class="bold">1</span>
+First sector (2048-20971519, default 2048): <span class="bold">[press Enter]</span>
+Using default value 2048
+Last sector, +sectors or +size{K,M,G} (2048-20971519, default 20971519): <span class="bold">[press Enter]</span>
+Using default value 20971519
+
+Command (m for help): <span class="bold">p</span>
+
+Disk /dev/xvdg: 10.7 GB, 10737418240 bytes
+255 heads, 63 sectors/track, 1305 cylinders, total 20971520 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0xaa660f6f
+
+    Device Boot      Start         End      Blocks   Id  System
+/dev/xvdg1            2048    20971519    10484736   83  Linux
+
+Command (m for help): <span class="bold">w</span>
+The partition table has been altered!
+
+Calling ioctl() to re-read partition table.
+Syncing disks.
+</pre>
+<p>In this example, note the use of the <code class="codeph"><span class="bold">p</span></code> command to print the partition table before writing the table and exiting. Use this command and note down the name of the new partition as displayed in the Device column.</p>
+</li>
+<li>
+<p>Create a file system on the partition by using the <code class="codeph">mkfs</code> command. For example:</p>
+<pre dir="ltr">
+# <span class="bold">mkfs -t ext4 /dev/xvdg1</span>
+mke2fs 1.41.12 (17-May-2010)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+655360 inodes, 2621184 blocks
+131059 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=2684354560
+80 block groups
+32768 blocks per group, 32768 fragments per group
+8192 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632
+
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+This filesystem will be automatically checked every 32 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+</pre></li>
+<li>
+<p>Create a directory to use as the mount point for the partition by using the <code class="codeph">mkdir</code> command. For example:</p>
+<pre dir="ltr">
+# <span class="bold">mkdir /u05</span>
+</pre></li>
+<li>
+<p>Mount the partition on the directory you just created by using the <code class="codeph">mount</code> command. For example:</p>
+<pre dir="ltr">
+# <span class="bold">mount /dev/xvdg1 /u05</span>
+</pre></li>
+<li>
+<p>Set the ownership and permissions of the mount-point directory appropriately by using the <code class="codeph">chown</code> and <code class="codeph">chmod</code> commands. For example:</p>
+<pre dir="ltr">
+<span class="bold"># chown oracle:oinstall /u05</span>
+# <span class="bold">chmod 755 /u05</span>
+</pre></li>
+<li>
+<p>Exit the root-user command shell:</p>
+<pre dir="ltr">
+# <span class="bold">exit</span>
+$
+</pre></li>
+</ol>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-90E792E1-EC2D-42B4-976E-375485C2A44A__DELETETEMPSTORAGE">
+<p class="subhead1">Deleting Temporary Storage from a Database Deployment</p>
+<p>To delete temporary storage, you unmount the storage on the compute node and then detach the storage volume from the Compute Cloud Service instance and delete it.</p>
+<p>To delete temporary storage from a database deployment:</p>
+<ol>
+<li>
+<p>Connect as the <code class="codeph"><span class="bold">opc</span></code> user to the compute node.</p>
+<p>For detailed instructions, see <a href="GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1.htm#GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1">Connecting to a Compute Node Through Secure Shell (SSH)</a>.</p>
+</li>
+<li>
+<p>Start a root-user command shell:</p>
+<pre dir="ltr">
+$ <span class="bold">sudo -s</span>
+#
+</pre></li>
+<li>
+<p>Display mounted filesystems and confirm the mount point of your temporary storage volume:</p>
+<pre dir="ltr">
+# <span class="bold">df -hT</span>
+</pre></li>
+<li>
+<p>Unmount your temporary storage volume; for example:</p>
+<pre dir="ltr">
+# <span class="bold">umount /u05</span>
+</pre>
+<div class="infobox-note" id="GUID-90E792E1-EC2D-42B4-976E-375485C2A44A__GUID-B57E3195-DB2D-4434-B4C9-6B5F93940A02">
+<p class="notep1">Note:</p>
+<p>The Linux command to unmount a volume is <code class="codeph"><span class="codeinlineitalic">u</span>mount</code> (with no <span class="italic">n</span>).</p>
+</div>
+</li>
+<li>
+<p>Exit the root-user command shell and disconnect from the compute node:</p>
+<pre dir="ltr">
+# <span class="bold">exit</span>
+exit
+$ <span class="bold">exit</span>
+</pre></li>
+<li>
+<p>Detach the storage volume from the Compute Cloud Service instance on which the compute node is running by following the instructions in <a class="olink ELUSE-GUID-6D6D5DD7-6454-4BD8-95B4-A94B2593221A" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=E73828-01&amp;id=ELUSE-GUID-6D6D5DD7-6454-4BD8-95B4-A94B2593221A">Detaching a Storage Volume from an Instance</a> in <cite>Public Cloud Machine Using Oracle Compute Cloud Service</cite>.</p>
+</li>
+<li>
+<p>Delete the storage volume by following the instructions in <a class="olink ELUSE165" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=E73828-01&amp;id=ELUSE165">Deleting a Storage Volume</a> in <cite>Public Cloud Machine Using Oracle Compute Cloud Service</cite>.</p>
+</li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="GUID-12A94B2E-2F7A-441F-995E-D45CC24910C4.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="GUID-2CC67761-AAD2-4432-A992-6B509FCC9BB7.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

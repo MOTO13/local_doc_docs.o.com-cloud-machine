@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Using Tablespace Encryption in Database Cloud Service</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="All new tablespaces you create in a Database Cloud Service database are encrypted by default." />
+<meta name="dcterms.created" content="2017-06-19T15:22:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Database Cloud Service" />
+<meta name="dcterms.identifier" content="E72994-04" />
+<meta name="dcterms.isVersionOf" content="CSDBI" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-EB2F77CF-D6F7-4F06-88C9-D0F5464AC968.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-4C4276E6-BCD4-47BE-93DF-0EAD71EA315F.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSDBI.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSDBI.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSDBI.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-6C18CC56-223B-4373-B5F6-2F70CBA72975"></a> <span id="PAGE" style="display:none;">75/190</span> <!-- End Header -->
+<h1 id="CSDBI-GUID-6C18CC56-223B-4373-B5F6-2F70CBA72975" class="sect1">Using Tablespace Encryption in <span>Database Cloud Service</span></h1>
+<div>
+<p>All new tablespaces you create in <span>a Database Cloud Service</span> database are encrypted by default.</p>
+<div class="section">
+<div class="p">However, not all of the tablespaces created when you create a database deployment are encrypted:
+<ul style="list-style-type: disc;">
+<li>
+<p>In an Oracle Database 11<span class="italic">g</span> database, none of the tablespaces created when you create a database deployment are encrypted.</p>
+</li>
+<li>
+<p>In an Oracle Database 12c Release 1 database, none of the tablespaces created when you create a database deployment are encrypted. This includes the tablespaces in the root (<code class="codeph">CDB$ROOT</code>), the seed (<code class="codeph">PDB$SEED</code>), and the PDB created when you create a database deployment.</p>
+</li>
+<li>
+<p>In an Oracle Database 12c Release 2 database, only the USERS tablespaces created when you create a database deployment are encrypted. None of the other tablespaces are encrypted. This includes the tablespaces in the root (<code class="codeph">CDB$ROOT</code>), the seed (<code class="codeph">PDB$SEED</code>), and the PDB created when you create a database deployment.</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-6C18CC56-223B-4373-B5F6-2F70CBA72975.htm#GUID-37928A72-9F54-4794-AAC2-006C642B3C12" title="User-created tablespaces are encrypted by default.">Creating Encrypted Tablespaces</a></p>
+</li>
+<li>
+<p><a href="GUID-6C18CC56-223B-4373-B5F6-2F70CBA72975.htm#GUID-26B5DB17-E631-4C2D-A172-C02C0D8C1D14" title="You can manage the software keystore (known as an Oracle wallet in Oracle Database 11g), the master encryption key, and control whether encryption is enabled by default.">Managing Tablespace Encryption</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-37928A72-9F54-4794-AAC2-006C642B3C12"></a>
+<h2 id="CSDBI-GUID-37928A72-9F54-4794-AAC2-006C642B3C12" class="sect2">Creating Encrypted Tablespaces</h2>
+<div>
+<p>User-created tablespaces are encrypted by default.</p>
+<p>By default, any new tablespaces you create by using the SQL <code class="codeph">CREATE TABLESPACE</code> command, or any tool executing the <code class="codeph">CREATE TABLESPACE</code> command, will be encrypted with the AES128 encryption algorithm. You do not need to include the <code class="codeph">USING 'encrypt_algorithm'</code> clause to use the default encryption.</p>
+<p>You can specify another supported algorithm by including the <code class="codeph">USING 'encrypt_algorithm'</code> clause on the <code class="codeph">CREATE TABLESPACE</code> command. Supported algorithms for Oracle Database 11<span class="italic">g</span> and Oracle Database 12<span class="italic">c</span> are AES256, AES192, AES128, and 3DES168.</p>
+</div>
+</div>
+<div class="sect2"><a id="GUID-26B5DB17-E631-4C2D-A172-C02C0D8C1D14"></a>
+<h2 id="CSDBI-GUID-26B5DB17-E631-4C2D-A172-C02C0D8C1D14" class="sect2">Managing Tablespace Encryption</h2>
+<div>
+<p>You can manage the software keystore (known as an Oracle wallet in Oracle Database 11<span class="italic">g</span>), the master encryption key, and control whether encryption is enabled by default.</p>
+<div class="section">
+<p class="subhead2">Managing the Software Keystore and Master Encryption Key</p>
+<p>Tablespace encryption uses a two-tiered, key-based architecture to transparently encrypt (and decrypt) tablespaces. The master encryption key is stored in an external security module (software keystore). This master encryption key is used to encrypt the tablespace encryption key, which in turn is used to encrypt and decrypt data in the tablespace.</p>
+<p>When the database deployment is created on <span>Database Cloud Service</span>, a local auto-login software keystore is created. The keystore is local to the compute node and is protected by a system-generated password. The auto-login software keystore is automatically opened when accessed.</p>
+<p>You can change (rotate) the master encryption key by using the <code class="codeph">tde rotate masterkey</code> subcommand of the <code class="codeph">dbaascli</code> utility. When you execute this subcommand you will be prompted for the keystore password. Enter the password specified during the database deployment creation process. For example:</p>
+<pre dir="ltr">
+DBAAS&gt;<span class="bold">tde rotate masterkey</span>
+Executing command tde rotate masterkey
+Enter keystore password:
+Successfully rotated TDE masterkey
+</pre>
+<p>For more information about changing the master encryption key, see <span class="q">"Managing the TDE Master Encryption Key"</span> in <cite>Oracle Database Advanced Security Guide</cite> for Release <a href="http://www.oracle.com/pls/topic/lookup?ctx=db122&amp;id=ASOAG10407" target="_blank">12.2</a> or <a href="http://www.oracle.com/pls/topic/lookup?ctx=db121&amp;id=ASOAG10407" target="_blank">12.1</a> or <span class="q">"Setting and Resetting the Master Encryption Key"</span> in <cite>Oracle Database Advanced Security Administrator's Guide</cite> for Release <a href="http://www.oracle.com/pls/topic/lookup?ctx=db112&amp;id=ASOAG9525" target="_blank">11.2</a>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Controlling Default Tablespace Encryption</p>
+<p>The <code class="codeph">ENCRYPT_NEW_TABLESPACES</code> initialization parameter controls default encryption of new tablespaces. In <span>Database Cloud Service</span> databases, this parameter is set to <code class="codeph">CLOUD_ONLY</code>. <span>See <a href="GUID-8AF785C2-296C-4385-B8E3-440ACF5462D9.htm" title="Initialization parameters configure the database instance, including memory structures, and define locations for database files.">Viewing and Modifying Initialization Parameters</a> for additional information.</span></p>
+<p>Values of this parameter are as follows.</p>
+<div class="tblformal" id="GUID-26B5DB17-E631-4C2D-A172-C02C0D8C1D14__GUID-046C0A8A-474D-49F9-851C-EF50D1B249E0">
+<table class="cellalignment11" summary="This table describes the values of the ENCRYPT_NEW_TABLESPACES parameter.">
+<thead>
+<tr class="cellalignment2">
+<th class="cellalignment12" id="d19801e189">Value</th>
+<th class="cellalignment13" id="d19801e193">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d19801e199" headers="d19801e189">
+<p><code class="codeph">ALWAYS</code></p>
+</td>
+<td class="cellalignment15" headers="d19801e199 d19801e193">
+<p>Any tablespace created will be transparently encrypted with the AES128 algorithm unless a different algorithm is specified on the <code class="codeph">ENCRYPTION</code> clause.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d19801e212" headers="d19801e189">
+<p><code class="codeph">CLOUD_ONLY</code></p>
+</td>
+<td class="cellalignment15" headers="d19801e212 d19801e193">
+<p>Tablespaces created in a Database Cloud Service database will be transparently encrypted with the AES128 algorithm unless a different algorithm is specified on the <code class="codeph">ENCRYPTION</code> clause. For non-Database Cloud Service databases, tablespaces will only be encrypted if the <code class="codeph">ENCRYPTION</code> clause is specified. This is the default value.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d19801e226" headers="d19801e189">
+<p><code class="codeph">DDL</code></p>
+</td>
+<td class="cellalignment15" headers="d19801e226 d19801e193">
+<p>Tablespaces are not transparently encrypted and are only encrypted if the <code class="codeph">ENCRYPTION</code> clause is specified.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="GUID-EB2F77CF-D6F7-4F06-88C9-D0F5464AC968.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="GUID-4C4276E6-BCD4-47BE-93DF-0EAD71EA315F.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

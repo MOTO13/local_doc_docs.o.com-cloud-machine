@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>About Networking in Oracle Compute Cloud Service</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2018-05-15T07:53:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E62130-11" />
+<meta name="dcterms.isVersionOf" content="ELUSE" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-28246879-BEE7-4820-8230-55EF0FAA5B7C.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-135FABF1-8709-4F80-B091-3E42A198D12D.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUSE.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-74D3FC54-AD2F-4EA9-A40D-4DA203297F66"></a> <span id="PAGE" style="display:none;">25/81</span> <!-- End Header -->
+<h1 id="ELUSE-GUID-74D3FC54-AD2F-4EA9-A40D-4DA203297F66" class="sect1">About Networking in Oracle Compute Cloud Service</h1>
+<div>
+<p>All the client-side networks provided by <span id="GUID-74D3FC54-AD2F-4EA9-A40D-4DA203297F66__ORACLEEXALOGICELASTICCLOUD-881D6B97">Oracle Public Cloud Machine</span> are either Ethernet over InfiniBand (EoIB) or IP over InfiniBand (IPoIB). An EoIB network connection is required for external communication, and an IPoIB network connection is required for internal communication.</p>
+<p>There are two types of cloud networks that you can use for the instances:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Tenant networks</span></p>
+<p>Networks that are assigned exclusively for a specific tenant. Only the instances in that tenant can use this network.</p>
+</li>
+<li>
+<p><span class="bold">Service networks</span></p>
+<p>Networks that provide access to shared services across multiple tenants. The instances using this network have either the Service Consumer or Service Provider role.</p>
+</li>
+</ul>
+<p>The Oracle Cloud Administrator creates and manages all the network connections for external access. Whereas, you can create and manage all the IPoIB tenant network connections for internal communication. When you want to connect to the external systems outside the cloud, use EoIB networks for the instances. For communicating with the systems inside the cloud, use IPoIB networks for the instances. You need to assign at least one network connection to launch an instance using orchestration.</p>
+<div class="section">
+<p class="subhead1">IPoIB Tenant Networks</p>
+<p>You can create and manage only the IPoIB tenant networks. An IPoIB tenant network must be created for communication among instances in the same tenant. EoIB tenant networks, and EoIB and IPoIB service networks are all created and managed by the Oracle Cloud Administrator.</p>
+<p>You can create IPoIB networks either by specifying the IP subnet from which the IP addresses will be used for the instances to be launched, or specifying the global IP pool and the subnet is derived from the pool.</p>
+<p>A global IP pool allows IPoIB networks to be created without specifying the IP CIDR or ranges. The IP subnet is allocated from a common pool of IP addresses. You can define the network size while creating the vNet, and the smallest subnet is derived from the global IP pool. A unique CIDR is assigned to the vNet and includes all the IP addresses represented by that CIDR. The IP subnet network size is determined by the following method:</p>
+<ol>
+<li>
+<p>Add 2 to the number of IP addresses requested while creating the IPoIB vNet.</p>
+</li>
+<li>
+<p>The result is rounded to the nearest power of 2.</p>
+</li>
+</ol>
+<p>For example, if you requested 5 IP address, adding 2 extra addresses to it makes 7 and rounding to the nearest power of 2 is 8. The IP subnet is created with 8 IP addresses. The first and last addresses of a subnet are not allocated to instances as unicast addresses, therefore the balance (6 addresses) is assigned to the vNet for allocation.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment95">
+<tr>
+<td class="cellalignment102">
+<table class="cellalignment100">
+<tr>
+<td class="cellalignment99"><a href="GUID-28246879-BEE7-4820-8230-55EF0FAA5B7C.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment99"><a href="GUID-135FABF1-8709-4F80-B091-3E42A198D12D.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment104">
+<table class="cellalignment98">
+<tr>
+<td class="cellalignment99"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment99"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

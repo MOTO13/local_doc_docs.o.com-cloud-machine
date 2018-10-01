@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Managed File Transfer Cloud Service on Oracle Public Cloud Machine</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Use the Event Service REST API for Oracle Managed File Transfer Cloud Service to discover and trigger sources.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Managed File Transfer Cloud Service on Oracle Public Cloud Machine">
+        <meta property="og:description" content="Use the Event Service REST API for Oracle Managed File Transfer Cloud Service to discover and trigger sources.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Managed File Transfer Cloud Service on Oracle Public Cloud Machine">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="SendRequests.html" title="Previous" type="text/html">
+        <link rel="next" href="Status%20Codes.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="SendRequests.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="Status%20Codes.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Managed File Transfer Cloud Service on Oracle Public Cloud Machine</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">Authentication</h2> 
+<div class="body conbody">
+ <p class="p">Oracle Managed File Transfer Cloud Service on Oracle Public Cloud Machine uses a certificate authority (CA) certificate, issued by Verisign, to enable clients to connect securely to the server. </p> 
+ <div class="note note" id="GUID-51E5C29A-6B7E-487A-8832-5D709410C16A__GUID-33420530-834D-485B-86FD-39DF2DABE91C">
+  <span class="notetitle">Note::</span> Ensure that you have the appropriate log-in credentials for triggering a source in Oracle Managed File Transfer Cloud Service.
+ </div> 
+ <div class="p">
+  You access the Oracle Managed File Transfer Cloud Service REST resources over HTTPS and must provide the following information for authentication:
+  <ul class="ul">
+   <li class="li"><p class="p">An SSL certificate authority (CA) certificate file or bundle to authenticate against the Verisign CA certificate.</p> </li> 
+   <li class="li"><p class="p">User name and password for your Oracle Managed File Transfer Cloud Service account.</p> </li> 
+   <li class="li"><p class="p">Custom header, X-ID-TENANT-NAME, to identify the identity domain.</p> </li> 
+  </ul> 
+ </div> 
+ <p class="p">For example, to authenticate using cURL:</p> 
+ <ul class="ul">
+  <li class="li"><p class="p">Set the cURL environment variable, <samp class="ph codeph">CURL_CA_BUNDLE</samp>, to the location of your local CA certificate bundle. For information about CA certificate verification using cURL, see: <a class="xref" href="http://curl.haxx.se/docs/sslcerts.html" target="_blank">http://curl.haxx.se/docs/sslcerts.html</a>.</p> </li> 
+  <li class="li"><p class="p">Use the -u cURL option to pass the user name and password for your Oracle Managed File Transfer Cloud Service account (for example, <samp class="ph codeph">jsmith</samp> and <samp class="ph codeph">superstrongpassword</samp>).</p> </li> 
+  <li class="li"><p class="p">Use the -H cURL option to pass the X-ID-TENANT-NAME custom header .</p> </li> 
+ </ul> 
+ <p class="p">The following example cURL command returns detailed information for the instances created by an event with an eventSessionId of <samp class="ph codeph">799AE14A-9E37-42B9-9789-8F005039953E</samp>:</p> 
+ <pre class="pre codeblock">curl -u jsmith:superstrongpassword
+ -H "Content-Type:application/json"
+ -H "Accept: application/json"
+ -H "X-ID-TENANT-NAME:ExampleIdentityDomain"
+ -X GET https://<var class="keyword varname">api-host</var>/paas/service/mftapp/rest/v1/events/799AE14A-9E37-42B9-9789-8F005039953E/instances?inDetail=true</pre> 
+ <p class="p">Where <samp class="ph codeph"><var class="keyword varname">api-host</var></samp>: Host name. Get the host name (which may or may not include a port number) from your account administrator.</p> 
+</div></div>
+        </article>
+    </body>
+</html>

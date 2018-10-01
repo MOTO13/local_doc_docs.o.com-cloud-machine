@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Managing the Life Cycle of Oracle SOA Cloud Service Instances</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="This section describes how to manage the life cycle of Oracle SOA Cloud Service instances." />
+<meta name="dcterms.created" content="2017-04-10T13:38:19Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle SOA Cloud Service" />
+<meta name="dcterms.identifier" content="E78502-02" />
+<meta name="dcterms.isVersionOf" content="CSBCS" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-544C682A-6ECB-499F-9A9D-DFFF522F1AB7.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-0A50CA0F-BEE3-46EE-A651-2D3D9E397117.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSBCS.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSBCS.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSBCS.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-384D99CC-C8A1-4309-BB77-DF8257F6FF35"></a> <span id="PAGE" style="display:none;">9/83</span> <!-- End Header -->
+<h1 id="CSBCS-GUID-384D99CC-C8A1-4309-BB77-DF8257F6FF35" class="sect1">Managing the Life Cycle of Oracle SOA Cloud Service Instances</h1>
+<div>
+<div><span>This section describes how to manage the life cycle of Oracle SOA Cloud Service instances.</span></div>
+<div class="section">
+<p class="subhead1">Topics:</p>
+</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-384D99CC-C8A1-4309-BB77-DF8257F6FF35.htm#GUID-1E436E48-0BC3-40AF-A528-1EC0D99B5E58" title="With a few clicks of the mouse, you can create an Oracle WebLogic Server production environment in the cloud that is based on best practices, optimized for high performance and reliability, and is integrated with your Oracle service instances.">About Life Cycle Management of Oracle SOA Cloud Service Instances</a></p>
+</li>
+<li>
+<p><a href="GUID-384D99CC-C8A1-4309-BB77-DF8257F6FF35.htm#GUID-60AFCD05-756F-46E0-BC2B-5DC952B99246" title="To manage the life cycle of Oracle SOA Cloud Service instances, consider the typical workflow described in the following table.">Typical Workflow for Managing the Life Cycle of Oracle SOA Cloud Service Instances</a></p>
+</li>
+<li>
+<p><a href="GUID-51392B25-E93A-43C0-B232-96E66A9A7C08.htm#GUID-244FCA50-66A1-434F-8B52-BD6E2054B779" title="Start the provisioning process by creating a new instance.">Creating an Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-27812696-7861-4DCD-B37D-997D98B81F23.htm#GUID-392BA61A-01BF-4201-8567-BB790BC36331" title="You can use the Oracle SOA Cloud Service Console to view all existing Oracle SOA Cloud Service instances and to create new instances.">Exploring the Oracle SOA Cloud Service Console</a></p>
+</li>
+<li>
+<p><a href="GUID-27812696-7861-4DCD-B37D-997D98B81F23.htm#GUID-04927B37-2E50-4560-9597-9F7E792310D2" title="You can use the Overview tile on the Oracle SOA Cloud Service Instance page to view overview information for a specific Oracle SOA Cloud Service instance. To access this page, click an instance name or icon in the Oracle SOA Cloud Service Console.">Exploring the Oracle SOA Cloud Service Instance Overview Page</a></p>
+</li>
+<li>
+<p><a href="GUID-EF344A90-D0DE-4724-AD25-CE2F80308901.htm" title="You can disable the load balancer to suspend the Oracle SOA Cloud Service instance temporarily, to block any new traffic from being delivered to the service instance. This is useful when you want to perform routine maintenance on an Oracle SOA Cloud Service instance, but do not want to stop the service instance. Once the maintenance activities have been completed, you can re-enable the load balancer to allow traffic to be delivered.">Suspending an Oracle SOA Cloud Service Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-00F566BE-2A62-406F-9524-C13E4B0A6ED4.htm" title="You can stop and start an Oracle SOA Cloud Service instance and, when the service instance is running, start, stop, and restart individual server or load balancer VMs.">Stopping and Starting an Oracle SOA Cloud Service Instance and Individual VMs</a></p>
+</li>
+<li>
+<p><a href="GUID-2BC07A9E-2C0A-4303-9E84-037F2550B8F1.htm" title="When you no longer require an Oracle SOA Cloud Service instance, you can delete it.">Deleting an Oracle SOA Cloud Service Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-27812696-7861-4DCD-B37D-997D98B81F23.htm#GUID-04927B37-2E50-4560-9597-9F7E792310D2" title="You can use the Overview tile on the Oracle SOA Cloud Service Instance page to view overview information for a specific Oracle SOA Cloud Service instance. To access this page, click an instance name or icon in the Oracle SOA Cloud Service Console.">Exploring the Oracle SOA Cloud Service Instance Overview Page</a></p>
+</li>
+</ul>
+</div>
+<div class="props_rev_3"><a id="GUID-1E436E48-0BC3-40AF-A528-1EC0D99B5E58"></a>
+<h2 id="CSBCS-GUID-1E436E48-0BC3-40AF-A528-1EC0D99B5E58" class="sect2">About Life Cycle Management of Oracle SOA Cloud Service Instances</h2>
+<div>
+<p>With a few clicks of the mouse, you can create an Oracle WebLogic Server production environment in the cloud that is based on best practices, optimized for high performance and reliability, and is integrated with your Oracle service instances.</p>
+<p>When you create an Oracle SOA Cloud Service instance, you create and configure an Oracle Fusion Middleware Infrastructure domain with the resources defined in the following table.</p>
+<div class="tblformalwide" id="GUID-1E436E48-0BC3-40AF-A528-1EC0D99B5E58__GUID-64BEB8CC-C220-4E89-B473-0371ED866C58">
+<table class="cellalignment84" summary="This table summarizes the resources in a domain.">
+<thead>
+<tr class="cellalignment70">
+<th class="cellalignment94" id="d2944e94">Resources</th>
+<th class="cellalignment95" id="d2944e97">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment70">
+<td class="cellalignment96" id="d2944e102" headers="d2944e94">
+<p>Administration Server</p>
+</td>
+<td class="cellalignment97" headers="d2944e102 d2944e97">
+<p>Operates as the central control entity for the configuration of the entire domain. It maintains the domain's configuration documents and distributes changes in the configuration documents to managed servers.</p>
+<p>Each Oracle SOA Cloud Service instance has one server instance that hosts the administration server.</p>
+</td>
+</tr>
+<tr class="cellalignment70">
+<td class="cellalignment96" id="d2944e111" headers="d2944e94">
+<p>Managed Servers</p>
+</td>
+<td class="cellalignment97" headers="d2944e111 d2944e97">
+<p>Host business applications, application components, Web services, and their associated resources.</p>
+<p>When creating a service instance, you can configure up to four managed servers, then scale out, as needed.</p>
+<p>Each Oracle SOA Cloud Service instance has one or more managed servers, each hosted by its own administration server.</p>
+<p>By default, the managed servers are named as follows: <span class="italic"><code class="codeph">first8charsOfDomainName</code></span><code class="codeph">_server_</code><span class="italic"><code class="codeph">n</code></span> (where <span class="italic"><code class="codeph">n</code></span> starts with 1 and is incremented by 1 for each additional managed server to guarantee unique names).</p>
+</td>
+</tr>
+<tr class="cellalignment70">
+<td class="cellalignment96" id="d2944e137" headers="d2944e94">
+<p>Cluster</p>
+</td>
+<td class="cellalignment97" headers="d2944e137 d2944e97">
+<p>Consists of multiple Oracle WebLogic Server instances running simultaneously and working together to provide increased scalability and reliability. In a cluster, most resources and services are deployed identically to each managed server (as opposed to a single managed server), enabling failover and load balancing.</p>
+<p>A cluster is configured automatically for a production-level service instance.</p>
+<p>By default, the cluster name is generated from the first eight characters of the Oracle SOA Cloud Service instance name using the following format: <span class="italic"><code class="codeph">first8charsOfServiceInstanceName</code></span><code class="codeph">_cluster</code>.</p>
+</td>
+</tr>
+<tr class="cellalignment70">
+<td class="cellalignment96" id="d2944e154" headers="d2944e94">
+<p>Load Balancer</p>
+</td>
+<td class="cellalignment97" headers="d2944e154 d2944e97">
+<p>Employs Oracle Traffic Director for load balancing to manage routing requests across all managed servers and provide failover and replication.</p>
+<p>It is recommended that you enable the load balancer when you configure more than one managed server in your environment. Enabling the load balancer is optional.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>If you want more information about Oracle WebLogic Server domains, see <a class="olink INTRO173" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=E78496-01&amp;id=INTRO173">WebLogic Server Domains</a> in <span class="italic">Understanding Oracle WebLogic Server</span>.</p>
+<p>After the Oracle SOA Cloud Service instance is created, the administration server in the domain is started automatically. You can deploy applications and manage the domain resources using the standard administration tools, including Enterprise Manager Fusion Middleware Control, Oracle WebLogic Server Administration Console, Oracle WebLogic Scripting Tool (WLST), Node Manager, and Oracle Traffic Director Console.</p>
+<div class="infobox-note" id="GUID-1E436E48-0BC3-40AF-A528-1EC0D99B5E58__GUID-0E1AF2DF-1147-433B-BB3B-F8F93FE46C34">
+<p class="notep1">Note:</p>
+<p>If you extend your domain using the administration tools, for example, to add an additional cluster, you are responsible for maintaining those additional resources.</p>
+</div>
+</div>
+</div>
+<div class="props_rev_3"><a id="GUID-60AFCD05-756F-46E0-BC2B-5DC952B99246"></a>
+<h2 id="CSBCS-GUID-60AFCD05-756F-46E0-BC2B-5DC952B99246" class="sect2">Typical Workflow for Managing the Life Cycle of Oracle SOA Cloud Service Instances</h2>
+<div>
+<p>To manage the life cycle of Oracle SOA Cloud Service instances, consider the typical workflow described in the following table.</p>
+<div class="infobox-note" id="GUID-60AFCD05-756F-46E0-BC2B-5DC952B99246__GUID-54AC514D-E93F-4053-8463-A995E3AC6F9D">
+<p class="notep1">Note:</p>
+<p>The table provides links to information about how to perform each task by using the web browser-based Oracle SOA Cloud Service Console. For information about using the REST API to manage the life cycle of Oracle SOA Cloud Service instances, see <a class="olink soacs_ocm_rest_api" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=E78496-01&amp;id=soacs_ocm_rest_api">REST API for Oracle SOA Cloud Service</a>.</p>
+</div>
+<div class="tblformalwide" id="GUID-60AFCD05-756F-46E0-BC2B-5DC952B99246__GUID-9AF84160-67AF-4E9D-8590-96E6AECFAB63">
+<table class="cellalignment84" summary="Typical workflow for managing the life cycle of Oracle SOA Suite as a Service instances,">
+<thead>
+<tr class="cellalignment70">
+<th class="cellalignment108" id="d2944e201">Task</th>
+<th class="cellalignment109" id="d2944e204">Description</th>
+<th class="cellalignment94" id="d2944e207">More Information</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment70">
+<td class="cellalignment110" id="d2944e212" headers="d2944e201">
+<p>Create an Oracle SOA Cloud Service instance</p>
+</td>
+<td class="cellalignment111" headers="d2944e212 d2944e204">
+<p>Create a new Oracle SOA Cloud Service instance by stepping through the Oracle SOA Cloud Service provisioning wizard.</p>
+</td>
+<td class="cellalignment96" headers="d2944e212 d2944e207">
+<p><a href="GUID-51392B25-E93A-43C0-B232-96E66A9A7C08.htm#GUID-244FCA50-66A1-434F-8B52-BD6E2054B779" title="Start the provisioning process by creating a new instance.">Creating an Instance</a></p>
+</td>
+</tr>
+<tr class="cellalignment70">
+<td class="cellalignment110" id="d2944e226" headers="d2944e201">
+<p>View all Oracle SOA Cloud Service instances</p>
+</td>
+<td class="cellalignment111" headers="d2944e226 d2944e204">
+<p>View status, resource allocation, and other details for all Oracle SOA Cloud Service instances.</p>
+</td>
+<td class="cellalignment96" headers="d2944e226 d2944e207">
+<p><a href="GUID-27812696-7861-4DCD-B37D-997D98B81F23.htm#GUID-392BA61A-01BF-4201-8567-BB790BC36331" title="You can use the Oracle SOA Cloud Service Console to view all existing Oracle SOA Cloud Service instances and to create new instances.">Exploring the Oracle SOA Cloud Service Console</a></p>
+</td>
+</tr>
+<tr class="cellalignment70">
+<td class="cellalignment110" id="d2944e240" headers="d2944e201">
+<p>View detailed information about an Oracle SOA Cloud Service instance</p>
+</td>
+<td class="cellalignment111" headers="d2944e240 d2944e204">
+<p>View status, resource allocation, and other details for an Oracle SOA Cloud Service instance.</p>
+</td>
+<td class="cellalignment96" headers="d2944e240 d2944e207">
+<p><a href="GUID-27812696-7861-4DCD-B37D-997D98B81F23.htm#GUID-04927B37-2E50-4560-9597-9F7E792310D2" title="You can use the Overview tile on the Oracle SOA Cloud Service Instance page to view overview information for a specific Oracle SOA Cloud Service instance. To access this page, click an instance name or icon in the Oracle SOA Cloud Service Console.">Exploring the Oracle SOA Cloud Service Instance Overview Page</a></p>
+</td>
+</tr>
+<tr class="cellalignment70">
+<td class="cellalignment110" id="d2944e254" headers="d2944e201">
+<p>Suspend an Oracle SOA Cloud Service instance</p>
+</td>
+<td class="cellalignment111" headers="d2944e254 d2944e204">
+<p>Disable the load balancer to block any new traffic to an Oracle SOA Cloud Service instance temporarily while maintenance is performed.</p>
+</td>
+<td class="cellalignment96" headers="d2944e254 d2944e207">
+<p><a href="GUID-EF344A90-D0DE-4724-AD25-CE2F80308901.htm" title="You can disable the load balancer to suspend the Oracle SOA Cloud Service instance temporarily, to block any new traffic from being delivered to the service instance. This is useful when you want to perform routine maintenance on an Oracle SOA Cloud Service instance, but do not want to stop the service instance. Once the maintenance activities have been completed, you can re-enable the load balancer to allow traffic to be delivered.">Suspending an Oracle SOA Cloud Service Instance</a></p>
+</td>
+</tr>
+<tr class="cellalignment70">
+<td class="cellalignment110" id="d2944e268" headers="d2944e201">
+<p>Stop, start, or restart a service instance or individual server VMs</p>
+</td>
+<td class="cellalignment111" headers="d2944e268 d2944e204">
+<p>Stop service instances or individual server VMs. Restart the administration server or individual server VMs if reboot is needed.</p>
+</td>
+<td class="cellalignment96" headers="d2944e268 d2944e207">
+<p><a href="GUID-00F566BE-2A62-406F-9524-C13E4B0A6ED4.htm" title="You can stop and start an Oracle SOA Cloud Service instance and, when the service instance is running, start, stop, and restart individual server or load balancer VMs.">Stopping and Starting an Oracle SOA Cloud Service Instance and Individual VMs</a></p>
+</td>
+</tr>
+<tr class="cellalignment70">
+<td class="cellalignment110" id="d2944e282" headers="d2944e201">
+<p>Delete an Oracle SOA Service instance</p>
+</td>
+<td class="cellalignment111" headers="d2944e282 d2944e204">
+<p>Manage access to an Oracle SOA Cloud Service instance by deleting the service instance.</p>
+</td>
+<td class="cellalignment96" headers="d2944e282 d2944e207">
+<p><a href="GUID-2BC07A9E-2C0A-4303-9E84-037F2550B8F1.htm" title="When you no longer require an Oracle SOA Cloud Service instance, you can delete it.">Deleting an Oracle SOA Cloud Service Instance</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment69">
+<tr>
+<td class="cellalignment81">
+<table class="cellalignment74">
+<tr>
+<td class="cellalignment73"><a href="GUID-544C682A-6ECB-499F-9A9D-DFFF522F1AB7.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment73"><a href="GUID-0A50CA0F-BEE3-46EE-A651-2D3D9E397117.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment83">
+<table class="cellalignment72">
+<tr>
+<td class="cellalignment73"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment73"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment73"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

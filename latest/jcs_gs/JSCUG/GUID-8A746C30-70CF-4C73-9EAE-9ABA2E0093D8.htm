@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>About Service Lifecycle Operations and Oracle Java Cloud Service&mdash;Coherence Instances</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Your role determines the type of tasks you can perform on Oracle Java Cloud Service&mdash;Coherence instances. All service tasks and lifecycle operations can be performed by using the Oracle Java Cloud Service Console." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-1AB37F9D-3A5F-47A7-A61B-A751B09215E1.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-92C5D8E0-308D-4833-82CC-41A5497E4728.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-8A746C30-70CF-4C73-9EAE-9ABA2E0093D8"></a> <span id="PAGE" style="display:none;">109/131</span> <!-- End Header -->
+<h1 id="JSCUG-GUID-8A746C30-70CF-4C73-9EAE-9ABA2E0093D8" class="sect1">About Service Lifecycle Operations and <span>Oracle Java Cloud Service&mdash;Coherence</span> Instances</h1>
+<div>
+<p>Your role determines the type of tasks you can perform on <span>Oracle Java Cloud Service&mdash;Coherence</span> instances. All service tasks and lifecycle operations can be performed by using the <span>Oracle Java Cloud Service</span> Console.</p>
+<div class="section">
+<p class="subhead1">Topics:</p>
+</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-8A746C30-70CF-4C73-9EAE-9ABA2E0093D8.htm#GUID-D72F501A-5DD8-4F52-981B-A5E913AD3A22" title="You can enable Oracle Coherence for an Oracle Java Cloud Service instance to use in-memory data grid and caching for your Coherence application deployed to the cloud. Use the Oracle Java Cloud Service Console or the REST API to create an Oracle Java Cloud Service&mdash;Coherence instance.">About Creating an Oracle Java Cloud Service&mdash;Coherence Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-8A746C30-70CF-4C73-9EAE-9ABA2E0093D8.htm#GUID-1F72823C-9C0A-420D-9370-13B13A3ACA40" title="You can deploy and undeploy Oracle Coherence applications to an Oracle Java Cloud Service&mdash;Coherence instance by using the WebLogic Server Administration Console, Fusion Middleware Control, WLST commands, or an IDE. You cannot deploy and undeploy applications directly through the Oracle Java Cloud Service Console.">About Deploying Applications to an Oracle Java Cloud Service&mdash;Coherence Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-8A746C30-70CF-4C73-9EAE-9ABA2E0093D8.htm#GUID-8E39F8A6-FE52-4792-88D1-B530D69EC596" title="In the Oracle Java Cloud Service Console, you initiate a scaling operation on the Coherence data tier by choosing to add or remove a capacity unit. The capacity unit definition declared for an Oracle Java Cloud Service&mdash;Coherence instance during initial provisioning predetermines how many storage-enabled nodes to add or remove when you scale the Coherence data tier.">About Scaling an Oracle Java Cloud Service&mdash;Coherence Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-8A746C30-70CF-4C73-9EAE-9ABA2E0093D8.htm#GUID-C9925CF6-EBB2-475E-95F5-1F62B02334E1" title="Weekly full backups and daily incremental backups are already scheduled for you when your Oracle Java Cloud Service&mdash;Coherence instance is provisioned. Backups contain only the volumes that are needed for a proper restoration of a service instance.">About Backing Up and Restoring an Oracle Java Cloud Service&mdash;Coherence Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-8A746C30-70CF-4C73-9EAE-9ABA2E0093D8.htm#GUID-4A35E3B3-BF4C-4CB7-9B5F-3EC3E94A5293" title="When released, patches for Oracle WebLogic Server, Oracle Traffic Director (load balancer), Oracle Fusion Middleware, and JDK are made available on the Oracle Java Cloud Service Console. When there is a PSU patch for Oracle Coherence, the patch is included as part of the Fusion Middleware patch. You can use the Oracle Java Cloud Service Console or the REST API to patch your Oracle Java Cloud Service&mdash;Coherence instance on your own schedule.">About Patching an Oracle Java Cloud Service&mdash;Coherence Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-8A746C30-70CF-4C73-9EAE-9ABA2E0093D8.htm#GUID-2C60D638-EA54-4579-A928-08DB216FE59B" title="Stopping an Oracle Java Cloud Service&mdash;Coherence instance stops the virtual machines on which the Administration Server, the application tier Managed Servers, the Coherence data tier Managed Servers, and the Load Balancer (if present) are running.">About Stopping and Starting an Oracle Java Cloud Service&mdash;Coherence Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-8A746C30-70CF-4C73-9EAE-9ABA2E0093D8.htm#GUID-CF83F6F9-3C43-4DCA-94E4-7314985D3707" title="You use the Oracle Java Cloud Service Console or the REST API to delete Oracle Java Cloud Service&mdash;Coherence instances that you no longer need.">About Deleting an Oracle Java Cloud Service&mdash;Coherence Instance</a></p>
+</li>
+</ul>
+<p>To use the REST API to perform service tasks and lifecycle operations, see <a href="GUID-92C5D8E0-308D-4833-82CC-41A5497E4728.htm" title="The Oracle Java Cloud Service REST API provides an alternative to using the web-based Oracle Java Cloud Service Console to create and manage Oracle Java Cloud Service instances that have Oracle Coherence enabled.">About Using the REST API to Create and Manage Oracle Java Cloud Service&mdash;Coherence Instances</a>.</p>
+</div>
+<div class="sect2"><a id="GUID-D72F501A-5DD8-4F52-981B-A5E913AD3A22"></a>
+<h2 id="JSCUG-GUID-D72F501A-5DD8-4F52-981B-A5E913AD3A22" class="sect2">About Creating an <span>Oracle Java Cloud Service&mdash;Coherence</span> Instance</h2>
+<div>
+<p>You can enable <span>Oracle Coherence</span> for an <span>Oracle Java Cloud Service</span> instance to use in-memory data grid and caching for your Coherence application deployed to the cloud. Use the <span>Oracle Java Cloud Service</span> Console or the REST API to create an <span>Oracle Java Cloud Service&mdash;Coherence</span> instance.</p>
+<p>Before you provision an <span>Oracle Java Cloud Service&mdash;Coherence</span> instance, ensure you're familiar with capacity units. See <a href="GUID-1AB37F9D-3A5F-47A7-A61B-A751B09215E1.htm#GUID-1AB37F9D-3A5F-47A7-A61B-A751B09215E1" title="Oracle Java Cloud Service uses capacity units to provision Oracle WebLogic Server and Oracle Coherence environments that provide a preconfigured amount of Coherence cache capacity. A capacity unit is a group of virtual machines (VMs) running a number of JVMs (Managed Coherence Servers), and is meant to scale linearly in the context of your application. Capacity is defined as a fixed amount of primary cache storage to allocate for Coherence, based on the general rule of splitting the JVM heap size into thirds, using 1/3rd for primary cache storage, 1/3rd for backup storage, and 1/3rd for scratch space.">About Capacity Units for Oracle Java Cloud Service&mdash;Coherence Instances</a>.</p>
+<p>To create a service instance using the Create Java Cloud Service wizard (which is launched from the <span>Oracle Java Cloud Service</span> Console), see <a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2" title="To create a new Oracle Java Cloud Service instance, use the Provision New Java Cloud Service wizard as described in the following sections.">Creating an Oracle Java Cloud Service Instance</a>.</p>
+<p>When you provision an <span>Oracle Java Cloud Service&mdash;Coherence</span> instance using the wizard, there are certain options you must select so that an environment for using <span>Oracle Coherence in Oracle Java Cloud Service</span> is correctly provisioned and configured. See <a href="GUID-7BEF123A-54F3-4E37-8CCC-518CFFFF817B.htm" title="You can enable Oracle Coherence when you create a service instance in Oracle Java Cloud Service using the Oracle Java Cloud Service Console or the REST API. For clarification purposes in this document and others, service instances provisioned to use Oracle Coherence in Oracle Java Cloud Service are referred to as Oracle Java Cloud Service&mdash;Coherence instances.">About Oracle Java Cloud Service&mdash;Coherence Instances</a>.</p>
+<p>For information about using the REST API to create a service instance, see <span><a href="../JSRMR/op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-post.html" target="_blank">Create a Service Instance</a> in <cite>REST API for Oracle Java Cloud Service</cite></span>.</p>
+<p>To enable <span>Oracle Coherence</span> for an existing <span>Oracle Java Cloud Service</span> instance, use the REST API, as described in <span><a href="../JSRMR/Adding%20a%20Coherence%20Data%20Tier%20Cluster%20to%20an%20Oracle%20Java%20Cloud%20Service%20Using%20the%20REST%20API.html" target="_blank">Adding a Coherence Data Tier Cluster to a Service Instance</a></span> in <cite>REST API for Oracle Java Cloud Service</cite>. See also <a href="GUID-99880EDC-768B-455E-B7F4-22254FD01B42.htm#GUID-3B2AAD5E-2B28-46B1-90AE-ED0F7732FE58" title="Adding a Coherence data tier to an Oracle Java Cloud Service instance that's already provisioned means you're enabling Oracle Coherence for the service instance by creating a storage-enabled, data tier WebLogic Server cluster of Managed Servers. If a service instance already has Coherence enabled, you cannot add a second data tier cluster to the service instance.">Considerations When Adding a Coherence Data Tier to an Oracle Java Cloud Service Instance</a>.</p>
+</div>
+</div>
+<div class="sect2"><a id="GUID-1F72823C-9C0A-420D-9370-13B13A3ACA40"></a>
+<h2 id="JSCUG-GUID-1F72823C-9C0A-420D-9370-13B13A3ACA40" class="sect2">About Deploying Applications to an <span>Oracle Java Cloud Service&mdash;Coherence</span> Instance</h2>
+<div>
+<p>You can deploy and undeploy Oracle Coherence applications to an <span>Oracle Java Cloud Service&mdash;Coherence</span> instance by using the WebLogic Server Administration Console, Fusion Middleware Control, WLST commands, or an IDE. You cannot deploy and undeploy applications directly through the <span>Oracle Java Cloud Service</span> Console.</p>
+<p>Deploying applications to your Oracle WebLogic Server environment in the cloud is the same as deploying to an on-premises environment. The GAR is deployed to the Coherence data tier cluster in the domain; the EAR (WAR and GAR) is deployed to the application tier cluster.</p>
+<p>For more information about deploying applications, see <a href="GUID-18128901-2017-4407-8DA9-0BCE933C8C07.htm" title="This section describes deploying and undeploying applications to an Oracle Java Cloud Service instance by using: Fusion Middleware Control, the WebLogic Server Administration Console, WLST commands, and an IDE. You cannot deploy and undeploy applications directly through the Oracle Java Cloud Service Console.">Deploying and Undeploying Applications for an Oracle Java Cloud Service Instance</a>.</p>
+</div>
+</div>
+<div class="sect2"><a id="GUID-8E39F8A6-FE52-4792-88D1-B530D69EC596"></a>
+<h2 id="JSCUG-GUID-8E39F8A6-FE52-4792-88D1-B530D69EC596" class="sect2">About Scaling an <span>Oracle Java Cloud Service&mdash;Coherence</span> Instance</h2>
+<div>
+<p>In the <span>Oracle Java Cloud Service</span> Console, you initiate a scaling operation on the Coherence data tier by choosing to add or remove a capacity unit. The capacity unit definition declared for an <span>Oracle Java Cloud Service&mdash;Coherence</span> instance during initial provisioning predetermines how many storage-enabled nodes to add or remove when you scale the Coherence data tier.</p>
+<p>By adding or removing a capacity unit, the total primary cache storage to allocate for Coherence is increased or decreased by the amount of cache capacity as preconfigured by one capacity unit.</p>
+<p>Before scaling the Coherence data tier, understanding certain aspects of the scaling operation will help ensure a successful experience. For details, see <a href="GUID-506493C3-FEC4-48FE-87BB-7764DCA4612A.htm#GUID-43B12F2A-B2EA-4CBC-AB98-9160033F13C3" title="Scaling the Coherence data tier of an Oracle Java Cloud Service&mdash;Coherence instance means you're adding or removing a predefined number of virtual machines (VMs) and Managed Coherence Servers (or JVMs), thereby increasing or decreasing the total cache capacity to allocate for Coherence in the domain.">Considerations When Scaling the Coherence Data Tier of an Oracle Java Cloud Service Instance</a>.</p>
+<p>To scale the Coherence data tier using the <span>Oracle Java Cloud Service</span> Console, see <a href="GUID-506493C3-FEC4-48FE-87BB-7764DCA4612A.htm#GUID-FC95A5B6-DE4F-4713-809C-79E7C4215597" title="To increase or decrease the Coherence cache capacity for an Oracle Java Cloud Service&mdash;Coherence instance, you can use the Oracle Java Cloud Service Console to scale out or scale in the Coherence data tier by adding or removing one capacity unit at a time.">Scaling the Coherence Data Tier by Using the Oracle Java Cloud Service Console</a>.</p>
+<p>To scale the Coherence data tier using the REST API, see <span><a href="../JSRMR/op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-clusters-%7BclusterName%7D-put.html" target="_blank">Scale a Coherence Data Tier</a> in <cite>REST API for Oracle Java Cloud Service</cite></span>.</p>
+<p>The application tier is scaled independently of the Coherence data tier. To scale the application tier of an <span>Oracle Java Cloud Service&mdash;Coherence</span> instance, see <a href="GUID-2B7339B1-19CB-455E-8433-9530F6F56A0B.htm" title="Scaling lets you add or remove resources for an Oracle Java Cloud Service instance on demand in response to changes in load on the service instance.">Scaling an Oracle Java Cloud Service Instance</a>.</p>
+<p>For service instances provisioned with the <span>Oracle Java Cloud Service</span>&mdash;Virtual Image service level, you must use the WebLogic Server Administration Console to add or remove Managed Servers. Scaling by using the <span>Oracle Java Cloud Service</span> Console or the REST API is not supported by <span>Oracle Java Cloud Service</span>&mdash;Virtual Image instances.</p>
+</div>
+</div>
+<div class="sect2"><a id="GUID-C9925CF6-EBB2-475E-95F5-1F62B02334E1"></a>
+<h2 id="JSCUG-GUID-C9925CF6-EBB2-475E-95F5-1F62B02334E1" class="sect2">About Backing Up and Restoring an <span>Oracle Java Cloud Service&mdash;Coherence</span> Instance</h2>
+<div>
+<p>Weekly full backups and daily incremental backups are already scheduled for you when your <span>Oracle Java Cloud Service&mdash;Coherence</span> instance is provisioned. Backups contain only the volumes that are needed for a proper restoration of a service instance.</p>
+<p>Note that data stored in the Coherence data tier is not backed up or restored as part of the <span>Oracle Java Cloud Service</span> backup and restoration functionality.</p>
+<p>When a service instance contains Managed Server hosts on the Coherence data tier that are not in a backup, you should scale in the service instance by removing the capacity unit that manages those specific nodes and the corresponding Managed Server hosts before trying to restore the service instance from the backup. For information about removing a specific capacity unit, see <a href="GUID-506493C3-FEC4-48FE-87BB-7764DCA4612A.htm#GUID-FC95A5B6-DE4F-4713-809C-79E7C4215597" title="To increase or decrease the Coherence cache capacity for an Oracle Java Cloud Service&mdash;Coherence instance, you can use the Oracle Java Cloud Service Console to scale out or scale in the Coherence data tier by adding or removing one capacity unit at a time.">Scaling the Coherence Data Tier by Using the Oracle Java Cloud Service Console</a>.</p>
+<p>In terms of initiating an operation related to backup or restoration (for example, configuring when automated backups are performed, initiating a backup on-demand, restoring a service instance from a backup, or deleting a backup), there are no differences between <span>Oracle Java Cloud Service&mdash;Coherence</span> instances and service instances without Coherence enabled. For complete information about backup or restoration, such as backup contents and storage, and what happens during a backup or restoration operation, see <a href="GUID-EDAEEE74-17E4-43CF-9059-F777255DFBDC.htm" title="You can back up and restore your Oracle Java Cloud Service instances to return their software and data to a particular state.">Backing Up and Restoring an Oracle Java Cloud Service Instance</a>.</p>
+<p>You can use the <span>Oracle Java Cloud Service</span> Console or the REST API to perform backup and restoration operations. See <a href="GUID-CF725B2D-DC34-4E1C-BAD7-2955ED03430C.htm#GUID-CF725B2D-DC34-4E1C-BAD7-2955ED03430C" title="To back up and restore an Oracle Java Cloud Service instance, consider this typical workflow.">Typical Workflow for Backing Up and Restoring an Oracle Java Cloud Service Instance</a> for instructions on how to perform all operations using the <span>Oracle Java Cloud Service</span> Console. For information about using the REST API to back up or restore a service instance, see <span><a href="../JSRMR/api-Backups%20and%20Restorations.html" target="_blank">Backups and Restorations</a> in <cite>REST API for Oracle Java Cloud Service</cite></span>.</p>
+<p>Using the <span>Oracle Java Cloud Service</span> Console or the REST API to back up or restore a service instance is not supported by <span>Oracle Java Cloud Service&mdash;Coherence</span> instances that are provisioned with the <span>Oracle Java Cloud Service</span>&mdash;Virtual Image service level.</p>
+</div>
+</div>
+<div class="sect2"><a id="GUID-4A35E3B3-BF4C-4CB7-9B5F-3EC3E94A5293"></a>
+<h2 id="JSCUG-GUID-4A35E3B3-BF4C-4CB7-9B5F-3EC3E94A5293" class="sect2">About Patching an <span>Oracle Java Cloud Service&mdash;Coherence</span> Instance</h2>
+<div>
+<p>When released, patches for Oracle WebLogic Server, Oracle Traffic Director (load balancer), Oracle Fusion Middleware, and JDK are made available on the <span>Oracle Java Cloud Service</span> Console. When there is a PSU patch for Oracle Coherence, the patch is included as part of the Fusion Middleware patch. You can use the <span>Oracle Java Cloud Service</span> Console or the REST API to patch your <span>Oracle Java Cloud Service&mdash;Coherence</span> instance on your own schedule.</p>
+<p>In terms of initiating an operation related to viewing details of a patch and rolling back a patch, there are no differences between an <span>Oracle Java Cloud Service</span> instance without Coherence and a service instance that has Coherence enabled. When applying a patch to an <span>Oracle Java Cloud Service&mdash;Coherence</span> instance, note that by default the patching operation checks that the <code class="codeph">StatusHA</code> state for a Coherence member reaches <code class="codeph">NODE-SAFE</code> before shutting down the node to apply the patch.</p>
+<p>For information about how to perform all patching and rollback operations using the <span>Oracle Java Cloud Service</span> Console, see <a href="GUID-127512FF-D1AA-43CF-A4F9-7985B98C831E.htm#GUID-127512FF-D1AA-43CF-A4F9-7985B98C831E" title="Consider the typical workflow for patching an Oracle Java Cloud Service instance, as described in the following table.">Typical Workflow for Patching an Oracle Java Cloud Service Instance</a>. For information about using the REST API to apply or roll back a patch, see <span><a href="../JSRMR/api-Patches.html" target="_blank">Patches</a> in <cite>REST API for Oracle Java Cloud Service</cite></span>.</p>
+<p>Applying or rolling back a patch by using the <span>Oracle Java Cloud Service</span> Console or the REST API is not supported in <span>Oracle Java Cloud Service&mdash;Coherence</span> instances that are provisioned at the Virtual Image service level.</p>
+<div class="section">
+<p class="subhead2">What Happens During Patching</p>
+<p>All general information about patching are found in <a href="GUID-0BF293EB-603D-4391-A14E-5738EE384C50.htm#GUID-0BF293EB-603D-4391-A14E-5738EE384C50" title="You can quickly and easily apply patches to an Oracle Java Cloud Service instance, without any command-line intervention.">About Patching an Oracle Java Cloud Service Instance</a>.</p>
+<p>Before patching <span>Oracle Java Cloud Service&mdash;Coherence</span> instances, understanding certain aspects of the patching operation will help ensure a successful patching experience.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>All Managed Coherence Servers on a VM are shut down before the patch is applied to the VM.</p>
+</li>
+<li>
+<p>If the topology consists of a few VMs with multiple Managed Coherence Servers on each VM, then the load on the remaining cluster nodes may increase significantly.</p>
+</li>
+<li>
+<p>A Managed Coherence Server is stopped gracefully prior to being shut down.</p>
+</li>
+<li>
+<p>By default, the patching process performs a rolling restart of Managed Coherence Servers. Maintaining data is achieved by checking the <code class="codeph">StatusHA</code> state of the services within the cluster and ensuring that they are always in state <code class="codeph">NODE-SAFE</code> before shutting down a node to apply the patch.</p>
+</li>
+<li>
+<p>If there is no high availability requirement for your application and you can accept the possibility of data loss, you may choose to override the default behavior by selecting the Confirm checkbox on the Patch Service dialog (if patching through the <span>Oracle Java Cloud Service</span> Console). When selected, the patching process will shut down a node to apply the patch even if <code class="codeph">NODE-SAFE</code> cannot be reached. When the Confirm checkbox is not selected, note that patching will fail if <code class="codeph">NODE-SAFE</code> cannot be reached.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-2C60D638-EA54-4579-A928-08DB216FE59B"></a>
+<h2 id="JSCUG-GUID-2C60D638-EA54-4579-A928-08DB216FE59B" class="sect2">About Stopping and Starting an <span>Oracle Java Cloud Service&mdash;Coherence</span> Instance</h2>
+<div>
+<p>Stopping an <span>Oracle Java Cloud Service&mdash;Coherence instance</span> stops the virtual machines on which the Administration Server, the application tier Managed Servers, the Coherence data tier Managed Servers, and the Load Balancer (if present) are running.</p>
+<p>Note the following about stopping and starting:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>When an <span>Oracle Java Cloud Service&mdash;Coherence instance</span> is stopped, all data in the Coherence cache is lost.</p>
+</li>
+<li>
+<p>Starting an <span>Oracle Java Cloud Service&mdash;Coherence instance</span> starts all the virtual machines on which the Administration Server, the application tier Managed Servers, the Coherence data tier Managed Servers, and the Load Balancer (if present) are running.</p>
+</li>
+<li>
+<p>Unlike application tier virtual machines, you cannot stop or start Coherence data tier virtual machines individually.</p>
+</li>
+</ul>
+<p>For more information about stopping and starting a service instance, see <a href="GUID-A0491DD0-6E6C-405D-A00C-A213AABDF91C.htm#GUID-B663B1CE-1B99-40FF-9CDA-9BC76E43134E" title="You can stop and start an Oracle Java Cloud Service instance and, when the service instance is running, stop, start, and restart individual server or load balancer VMs.">About Stopping and Starting an Oracle Java Cloud Service Instance and Individual VMs</a>.</p>
+</div>
+</div>
+<div class="sect2"><a id="GUID-CF83F6F9-3C43-4DCA-94E4-7314985D3707"></a>
+<h2 id="JSCUG-GUID-CF83F6F9-3C43-4DCA-94E4-7314985D3707" class="sect2">About Deleting an <span>Oracle Java Cloud Service&mdash;Coherence</span> Instance</h2>
+<div>
+<p>You use the <span>Oracle Java Cloud Service</span> Console or the REST API to delete <span>Oracle Java Cloud Service&mdash;Coherence</span> instances that you no longer need.</p>
+<p>To delete a service instance using the <span>Oracle Java Cloud Service</span> Console, see <a href="GUID-A58DDD63-CD0F-49F4-AF78-AF4FA5C42C3A.htm#GUID-A58DDD63-CD0F-49F4-AF78-AF4FA5C42C3A" title="When you no longer require an Oracle Java Cloud Service instance, you can delete it. Your account is no longer charged for the instance.">Deleting an Oracle Java Cloud Service Instance</a>. For information deleting a service instance using the REST API, see <span><a href="../JSRMR/op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-put.html" target="_blank">Delete a Service Instance</a> in <cite>REST API for Oracle Java Cloud Service</cite></span>.</p>
+<p>When you delete an <span>Oracle Java Cloud Service&mdash;Coherence</span> instance, the entire environment is removed. If you want to remove only the resources and entities related to <span>Oracle Coherence in Oracle Java Cloud Service</span>, see <a href="GUID-FE484476-7B40-4217-A9DC-2D6F19AC3114.htm" title="You cannot use the Oracle Java Cloud Service Console to remove the Coherence data tier. You can perform the task by using the REST API only.">Deleting the Coherence Data Tier of an Oracle Java Cloud Service Instance</a>.</p>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-1AB37F9D-3A5F-47A7-A61B-A751B09215E1.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-92C5D8E0-308D-4833-82CC-41A5497E4728.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

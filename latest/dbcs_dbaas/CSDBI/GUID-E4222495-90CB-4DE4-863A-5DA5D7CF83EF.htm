@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Problems with Patching and Rollback</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="The following solutions apply to problems with patching and rollback operations on Oracle Database Cloud Service." />
+<meta name="dcterms.created" content="2017-06-19T15:22:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Database Cloud Service" />
+<meta name="dcterms.identifier" content="E72994-04" />
+<meta name="dcterms.isVersionOf" content="CSDBI" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-FD166862-E46D-497B-AE25-8220D01B56DB.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-83C76930-5141-49EA-8A45-BB107FBC955D.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSDBI.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSDBI.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSDBI.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-E4222495-90CB-4DE4-863A-5DA5D7CF83EF"></a> <span id="PAGE" style="display:none;">124/190</span> <!-- End Header -->
+<a id="CSDBI3480"></a><a id="CSDBI3481"></a><a id="CSDBI3479"></a>
+<h1 id="CSDBI-GUID-E4222495-90CB-4DE4-863A-5DA5D7CF83EF" class="sect1">Problems with Patching and Rollback</h1>
+<div>
+<p>The following solutions apply to problems with patching and rollback operations on <span>Oracle Database Cloud Service</span>.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-E4222495-90CB-4DE4-863A-5DA5D7CF83EF.htm#GUID-16269127-ECEE-4085-B56D-783B1743B54F">I receive a message stating that the virtual machines are unhealthy</a></p>
+</li>
+<li>
+<p><a href="GUID-E4222495-90CB-4DE4-863A-5DA5D7CF83EF.htm#GUID-96902B26-7DE3-4405-8760-F6235948023C">I receive a message stating that the instance is busy with another operation</a></p>
+</li>
+<li>
+<p><a href="GUID-E4222495-90CB-4DE4-863A-5DA5D7CF83EF.htm#GUID-316F42CB-E2E0-4731-B35E-76CB179805B1">I cannot apply a patch due to a lack of storage space</a></p>
+</li>
+<li>
+<p><a href="GUID-E4222495-90CB-4DE4-863A-5DA5D7CF83EF.htm#GUID-DF3CC8EF-968B-4D81-8060-B006698ABB69">My attempt to roll back the January 2015 Patch Set Update (Jan 2015 PSU) fails</a></p>
+</li>
+<li>
+<p><a href="GUID-E4222495-90CB-4DE4-863A-5DA5D7CF83EF.htm#GUID-13DB9821-7FE5-451F-B1E2-EDFDF538B240">My attempt to roll back the April 2015 Patch Set Update (Apr 2015 PSU) fails</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2"><a id="GUID-16269127-ECEE-4085-B56D-783B1743B54F"></a>
+<h2 id="CSDBI-GUID-16269127-ECEE-4085-B56D-783B1743B54F" class="sect2">I receive a message stating that the virtual machines are unhealthy</h2>
+<div>
+<p>You cannot apply a patch if the compute nodes are not in a healthy state.</p>
+<p>Restore the deployment using a backup and try patching again.</p>
+</div>
+</div>
+<div class="sect2"><a id="GUID-96902B26-7DE3-4405-8760-F6235948023C"></a>
+<h2 id="CSDBI-GUID-96902B26-7DE3-4405-8760-F6235948023C" class="sect2">I receive a message stating that the instance is busy with another operation</h2>
+<div>
+<p>You cannot apply a patch when the deployment is under maintenance, for example, scaling or backup.</p>
+<p>Wait until the deployment is no longer under maintenance and try patching again.</p>
+</div>
+</div>
+<div class="sect2"><a id="GUID-316F42CB-E2E0-4731-B35E-76CB179805B1"></a>
+<h2 id="CSDBI-GUID-316F42CB-E2E0-4731-B35E-76CB179805B1" class="sect2">I cannot apply a patch due to a lack of storage space</h2>
+<div>
+<p>When you apply a patch, storage space is required for temporary files that are created and used during the patching operation. If you receive a message indicating that you don&rsquo;t have sufficient space to patch, either when applying the patch or checking its prerequisites, take these steps:</p>
+<ol>
+<li>
+<p><span class="bold">Check whether you might actually have enough space.</span></p>
+<p>The patching tools check whether you have 15 GB free space on <code class="codeph">/u01</code>, but the space actually required for temporary use during patching is somewhat less than 15 GB. To check whether you might have enough space:</p>
+<ol>
+<li>
+<p>Connect as the <code class="codeph"><span class="bold">opc</span></code> user to the compute node .</p>
+<p>For detailed instructions, see <a href="GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1.htm#GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1">Connecting to a Compute Node Through Secure Shell (SSH)</a>.</p>
+</li>
+<li>
+<p>Display the mounted filesystems:</p>
+<pre dir="ltr">
+$ <span class="bold">df -hT</span>
+</pre></li>
+<li>
+<p>Locate the row for <code class="codeph">/u01</code> and check its space available, as reported in the <code class="codeph">Avail</code> column.</p>
+</li>
+<li>
+<p>If the space available is 13 GB or greater, you have enough space to patch and you can continue to Step&nbsp;e. If you do not have enough space, close your connection and go to Step&nbsp;2.</p>
+</li>
+<li>
+<p>Start a root-user command shell:</p>
+<pre dir="ltr">
+$ <span class="bold">sudo -s</span>
+#
+</pre></li>
+<li>
+<p>Navigate to the <code class="codeph">/var/opt/oracle/patch</code> directory:</p>
+<pre dir="ltr">
+# <span class="bold">cd /var/opt/oracle/patch</span>
+</pre></li>
+<li>
+<p>Use an editor such as <code class="codeph">vim</code> to change the value of the <code class="codeph">ignore_space_less_than_15g</code> key in the <code class="codeph">dbpatchm.cfg</code> file from <code class="codeph">0</code> (zero) to <code class="codeph">1</code> (one):</p>
+<pre dir="ltr">
+ignore_space_less_than_15g=1
+</pre></li>
+<li>
+<p>Apply the patch according to the instructions in <a href="GUID-50BDEF7D-A30E-4B32-BAE7-486538413E2D.htm">Applying a Patch</a>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><span class="bold">Add temporary storage for the temporary files.</span></p>
+<p>If you do not have enough space on /u01, you can add temporary storage to the compute node, apply the patch, and then remove the temporary storage:</p>
+<ol>
+<li>
+<p>Add 20 GB of temporary storage to the compute node by following these instructions: <a href="GUID-90E792E1-EC2D-42B4-976E-375485C2A44A.htm#GUID-90E792E1-EC2D-42B4-976E-375485C2A44A__ADDTEMPSTORAGE">Adding Temporary Storage to a Database Deployment</a>. When following these instructions, use <code class="codeph">/patchtemp</code> as the mount point directory.</p>
+</li>
+<li>
+<p>Connect to the compute node as the <code class="codeph"><span class="bold">opc</span></code> user.</p>
+<p>For detailed instructions, see <a href="GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1.htm#GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1">Connecting to a Compute Node Through Secure Shell (SSH)</a>.</p>
+</li>
+<li>
+<p>Start a root-user command shell:</p>
+<pre dir="ltr">
+$ <span class="bold">sudo -s</span>
+#
+</pre></li>
+<li>
+<p>Navigate to the <code class="codeph">/var/opt/oracle/patch</code> directory:</p>
+<pre dir="ltr">
+# <span class="bold">cd /var/opt/oracle/patch</span>
+</pre></li>
+<li>
+<p>Use an editor such as <code class="codeph">vim</code> to edit the <code class="codeph">dbpatchm.cfg</code> file:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Change the value of the <code class="codeph">temporary_space</code> key from <code class="codeph">"/u01/download"</code> to <code class="codeph">"/patchtemp/download"</code></p>
+</li>
+<li>
+<p>Change the value of the <code class="codeph">ignore_space_less_than_15g</code> key from <code class="codeph">0</code> (zero) to <code class="codeph">1</code> (one)</p>
+</li>
+</ul>
+<p>For example:</p>
+<pre dir="ltr">
+temporary_space="/patchtemp/download";
+...
+ignore_space_less_than_15g=1
+</pre></li>
+<li>
+<p>Apply the patch according to the instructions in <a href="GUID-50BDEF7D-A30E-4B32-BAE7-486538413E2D.htm">Applying a Patch</a>.</p>
+</li>
+<li>
+<p>Remove the 20 GB of temporary storage you added to the compute node by following these instructions: <a href="GUID-90E792E1-EC2D-42B4-976E-375485C2A44A.htm#GUID-90E792E1-EC2D-42B4-976E-375485C2A44A__DELETETEMPSTORAGE">Deleting Temporary Storage from a Database Deployment</a></p>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-DF3CC8EF-968B-4D81-8060-B006698ABB69"></a>
+<h2 id="CSDBI-GUID-DF3CC8EF-968B-4D81-8060-B006698ABB69" class="sect2">My attempt to roll back the January 2015 Patch Set Update (Jan 2015 PSU) fails</h2>
+<div>
+<p>The January 2015 Patch Set Update includes overlay patches and so requires you to take special steps in order to roll it back. To roll back this patch set update, follow the instructions in <a href="GUID-B36215AD-6909-49B0-A4FA-1E1F2BBAFBAA.htm" title="You can use the dbpatchm subcommand of the dbaascli utility to roll back the last patch or failed patch attempt to a database deployment hosting a single-instance database.">Rolling Back a Patch or Failed Patch by Using the dbpatchm Subcommand</a>, which includes these special steps.</p>
+</div>
+</div>
+<div class="sect2"><a id="GUID-13DB9821-7FE5-451F-B1E2-EDFDF538B240"></a>
+<h2 id="CSDBI-GUID-13DB9821-7FE5-451F-B1E2-EDFDF538B240" class="sect2">My attempt to roll back the April 2015 Patch Set Update (Apr 2015 PSU) fails</h2>
+<div>
+<p>The April 2015 Patch Set Update includes overlay patches and so requires you to take special steps in order to roll it back. To roll back this patch set update, follow the instructions in <a href="GUID-B36215AD-6909-49B0-A4FA-1E1F2BBAFBAA.htm" title="You can use the dbpatchm subcommand of the dbaascli utility to roll back the last patch or failed patch attempt to a database deployment hosting a single-instance database.">Rolling Back a Patch or Failed Patch by Using the dbpatchm Subcommand</a>, which includes these special steps.</p>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="GUID-FD166862-E46D-497B-AE25-8220D01B56DB.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="GUID-83C76930-5141-49EA-8A45-BB107FBC955D.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

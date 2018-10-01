@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Adding an SSH Key</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="SSH keys are used for passwordless access to instances. Before creating any instance, you must generate an SSH key pair and upload the SSH public key that must be associated with the instance." />
+<meta name="dcterms.created" content="2018-05-15T07:53:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E62130-11" />
+<meta name="dcterms.isVersionOf" content="ELUSE" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-27253116-1FFF-4E1C-A7A7-BB2A03B5BAA5.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-28246879-BEE7-4820-8230-55EF0FAA5B7C.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUSE.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-1496E27C-DDAF-4D49-B8AA-162C8C018856"></a> <span id="PAGE" style="display:none;">23/81</span> <!-- End Header -->
+<h1 id="ELUSE-GUID-1496E27C-DDAF-4D49-B8AA-162C8C018856" class="sect1">Adding an SSH Key</h1>
+<div>
+<p>SSH keys are used for passwordless access to instances. Before creating any instance, you must generate an SSH key pair and upload the SSH public key that must be associated with the instance.</p>
+<ol>
+<li><span>Log in to the UI and go to the <span class="bold">Self Service Portal</span>.</span></li>
+<li><span>Click <span class="bold">Preferences</span>.</span></li>
+<li><span>In the <span class="bold">Preferences</span> window, select <span class="bold">Infrastructure - Oracle Compute</span> in the left pane.</span></li>
+<li><span>In the <span class="bold">Configure SSH Keys and Host Credentials</span> region, click <span class="bold">Add</span>.</span></li>
+<li><span>In the <span class="bold">Configure SSH Keys and Host Credentials</span> window, provide the following details:</span>
+<ol>
+<li><span>Select <span class="bold">SSH Key</span> as the Credential Type.</span></li>
+<li><span>In the <span class="bold">Credential Name</span> field, enter the SSH key name.</span></li>
+<li><span>Select the user name as <span class="bold">oracle</span> or <span class="bold">root</span>.</span></li>
+<li><span>Select a credential value. If you select&nbsp;<span class="bold">Enter Key</span>, then you must specify the SSH public and private key pair required to access the VM instances. If you select&nbsp;<span class="bold">Key is in a File</span>, then click&nbsp;<span class="bold">Choose File</span>&nbsp;and select the public and private key from a file.</span></li>
+</ol>
+</li>
+<li><span>Click <span class="bold">OK</span>.</span></li>
+</ol>
+</div>
+<div class="sect2"><a id="GUID-12197D31-32F9-4BF3-955B-1103195C03A8"></a>
+<h2 id="ELUSE-GUID-12197D31-32F9-4BF3-955B-1103195C03A8" class="sect2">Adding an SSH Key Using the CLI or API</h2>
+<div>
+<div class="section">
+<p>Use the following command to add an SSH public key:</p>
+<p><code class="codeph">oracle-compute add sshkey <span class="variable">keyname</span> <span class="variable">keyfile</span> [--enabled] [--osuser]</code></p>
+<p>You can associate the SSH key with the operating system user; the SSH public key is appended to the users&rsquo; authorized keys file <code class="codeph">/home/&lt;osuser&gt;/.ssh/authorized_keys</code></p>
+<p>For more information, see <span class="italic"><a class="olink ELUCL-GUID-2FD61692-F7E8-48A0-8170-8524F09CD56C" target="_blank" href="../ELUCL/GUID-2FD61692-F7E8-48A0-8170-8524F09CD56C.htm#ELUCL-GUID-2FD61692-F7E8-48A0-8170-8524F09CD56C">CLI Reference for Oracle Compute Cloud Service</a></span>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p>To add an SSH Key using the API, use the <code class="codeph">POST https://api.oc.example.com/sshkey/</code> method.</p>
+<p>For more information, see <span class="italic"><a class="olink ELUAP-GUID-A5AFEE46-BD9C-4C99-BCAC-F38876F991DC" target="_blank" href="../ELUAP/GUID-A5AFEE46-BD9C-4C99-BCAC-F38876F991DC.htm#ELUAP-GUID-A5AFEE46-BD9C-4C99-BCAC-F38876F991DC">REST API Reference for Oracle Compute Cloud Service</a></span>.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment95">
+<tr>
+<td class="cellalignment102">
+<table class="cellalignment100">
+<tr>
+<td class="cellalignment99"><a href="GUID-27253116-1FFF-4E1C-A7A7-BB2A03B5BAA5.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment99"><a href="GUID-28246879-BEE7-4820-8230-55EF0FAA5B7C.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment104">
+<table class="cellalignment98">
+<tr>
+<td class="cellalignment99"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment99"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

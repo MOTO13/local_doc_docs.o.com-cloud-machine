@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Managed File Transfer Cloud Service 12.2.1.2 - Trigger a source</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Use the REST API for Oracle Managed File Transfer Cloud Service to list services, administer metadata and artifacts, discover and trigger sources, and purge old instance and payload data.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Managed File Transfer Cloud Service 12.2.1.2">
+        <meta property="og:description" content="Use the REST API for Oracle Managed File Transfer Cloud Service to list services, administer metadata and artifacts, discover and trigger sources, and purge old instance and payload data.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Managed File Transfer Cloud Service 12.2.1.2">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="op-events-%7BeventSessionId%7D-get.html" title="Previous" type="text/html">
+        <link rel="next" href="api-MFT%20Catalog%20Service.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="op-events-%7BeventSessionId%7D-get.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="api-MFT%20Catalog%20Service.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            
+            <header>
+
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Managed File Transfer Cloud Service 12.2.1.2</a></li>
+                    <li>Tasks</li>
+                    
+                    <li>
+                        
+                        Event Service
+                        
+                    </li>
+                    
+                    <li class="active">
+                        
+                        <a href="api-Event%20Service-Invoke%20MFT%20Events.html">Invoke MFT Events</a>
+                        
+                    </li>
+                    
+                </ol>
+                
+                <p class="draftsubtitle"></p>
+                
+                <h2>Trigger a source</h2>
+                <div>
+                    <div class="label label-post text-uppercase">post</div>
+                    <p style="word-break: break-word;"><strong>/mftapp/rest/v1/events</strong></p>
+                </div>
+            </header>
+            <section>
+
+                <div class="description"> Triggers the file transfer from the specified source, submitting the file to MFT for processing. Responds with a unique id called "eventSessionid" which is used to track the event status and to get the resulting instance details.</div>
+
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                        <li role="presentation" class="active"><a href="#request" aria-controls="request" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-in" aria-hidden="true"></span> Request</a></li>
+                        <li role="presentation"><a href="#response" aria-controls="response" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-out" aria-hidden="true"></span> Response</a></li>
+                        
+                        <li role="presentation"><a href="#examples" aria-controls="examples" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-edit" aria-hidden="true"></span> Examples</a></li>
+                        
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="request">
+                            <h3 class="visible-print-block">Request</h3>
+                            
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+
+                            
+                            
+                            
+
+                            
+                            
+
+                            
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">Body Parameter</div>
+                                <div style="padding-bottom: 0px" class="panel-body">
+                                    
+                                    <div style="margin-bottom: 8px">Name of the source to be triggered.</div>
+                                    
+
+                                    <div class="schema-container">
+                                    
+                                    <div id="request-paths--events-post-parameters-0-schema" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : /paths/~1events/post/parameters/0/schema</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-paths--events-post-parameters-0-schema-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-paths--events-post-parameters-0-schema-properties" aria-expanded="false" aria-controls="collapseListGroup-request-paths--events-post-parameters-0-schema-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-paths--events-post-parameters-0-schema-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-paths--events-post-parameters-0-schema-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>properties</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-paths--events-post-parameters-0-schema-properties-properties" role="button" class="btn btn-default btn-sm">properties</a></div>
+
+
+<div>Title: <code>properties</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Properties passed with the source name.</div>
+
+            
+        </dd>
+        
+        <dt>sourceName</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the source to be triggered.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-paths--events-post-parameters-0-schema-properties-properties" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : properties</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+<div>Title: <code>properties</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Properties passed with the source name.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-paths--events-post-parameters-0-schema-properties-properties-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-paths--events-post-parameters-0-schema-properties-properties-properties" aria-expanded="false" aria-controls="collapseListGroup-request-paths--events-post-parameters-0-schema-properties-properties-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-paths--events-post-parameters-0-schema-properties-properties-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-paths--events-post-parameters-0-schema-properties-properties-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>entry</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#request-paths--events-post-parameters-0-schema-properties-properties-properties-entry" role="button" class="btn btn-default btn-sm">entry</a></div>
+
+
+<div>Title: <code>entry</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Each entry is a key value pair of 'string'.</div>
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-paths--events-post-parameters-0-schema-properties-properties-properties-entry" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : entry</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+<div>Title: <code>entry</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Each entry is a key value pair of 'string'.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-paths--events-post-parameters-0-schema-properties-properties-properties-entry-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-paths--events-post-parameters-0-schema-properties-properties-properties-entry-items" aria-expanded="false" aria-controls="collapseListGroup-request-paths--events-post-parameters-0-schema-properties-properties-properties-entry-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-request-paths--events-post-parameters-0-schema-properties-properties-properties-entry-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-paths--events-post-parameters-0-schema-properties-properties-properties-entry-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#request-paths--events-post-parameters-0-schema-properties-properties-properties-entry-items" role="button" class="btn btn-default btn-sm">items</a></div>
+
+
+<div>Title: <code>items</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-paths--events-post-parameters-0-schema-properties-properties-properties-entry-items" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : items</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+<div>Title: <code>items</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-paths--events-post-parameters-0-schema-properties-properties-properties-entry-items-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-paths--events-post-parameters-0-schema-properties-properties-properties-entry-items-properties" aria-expanded="false" aria-controls="collapseListGroup-request-paths--events-post-parameters-0-schema-properties-properties-properties-entry-items-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-paths--events-post-parameters-0-schema-properties-properties-properties-entry-items-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-paths--events-post-parameters-0-schema-properties-properties-properties-entry-items-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>key</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Pattern: <code>^(/[^/]+)+$</code></div>
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>value</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Pattern: <code>^(/[^/]+)+$</code></div>
+
+
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    </div>
+
+                                    
+                                    
+                                    
+                                    		
+                                </div>
+                            </div>
+                            
+
+
+
+                            
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="response">
+                            <h3 class="visible-print-block">Response</h3>
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">200 Response <span class="glyphicon glyphicon-ok-sign response-symbol" data-response-code="200" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    Response returned when source is successfully triggered.
+                                </div>
+
+                                
+                                
+
+                                
+                                <div class="panel panel-default">
+
+                                    <div class="panel-heading">Body</div>
+                                    <div class="panel-body">
+                                        
+
+                                        <div class="schema-container">
+                                        
+                                        <div id="200-paths--events-post-responses-200-schema" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : eventSessionId</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+<div>Title: <code>eventSessionId</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-paths--events-post-responses-200-schema-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-paths--events-post-responses-200-schema-properties" aria-expanded="false" aria-controls="collapseListGroup-200-paths--events-post-responses-200-schema-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-paths--events-post-responses-200-schema-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-paths--events-post-responses-200-schema-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>eventSessionId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The ID of the event created.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">500 Response <span class="glyphicon glyphicon-remove-sign response-symbol" data-response-code="500" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    Error information.
+                                </div>
+
+                                
+                                
+
+                                
+                                <div class="panel panel-default">
+
+                                    <div class="panel-heading">Body</div>
+                                    <div class="panel-body">
+                                        
+
+                                        <div class="schema-container">
+                                        
+                                        <div id="500-paths--events-post-responses-500-schema" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : errors</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+<div>Title: <code>errors</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-500-paths--events-post-responses-500-schema-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-500-paths--events-post-responses-500-schema-properties" aria-expanded="false" aria-controls="collapseListGroup-500-paths--events-post-responses-500-schema-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-500-paths--events-post-responses-500-schema-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-500-paths--events-post-responses-500-schema-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>errorCode</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The error code that Oracle Managed File Transfer returns.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>errorKey</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The error key that Oracle Managed File Transfer returns.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>errorMessage</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>A message describing the error that Oracle Managed File Transfer returns.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+
+
+                        </div>
+                        
+                        <div role="tabpanel" class="tab-pane fade" id="examples">
+                            <h3>Examples</h3>
+                            <div class="body conbody">
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Request Body</h3>
+  <p class="p">The following example shows the contents of the request body in JSON format:</p> 
+  <pre class="pre">{
+  "sourceName": "src1",
+  "properties": {
+	"entry": [
+	  {
+		"key": "name1",
+		"value": "value1"
+	  },
+	  {
+		"key": "name2",
+		"value": "value2"
+	  }
+			 ]
+	}
+}</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Body: 200 Response</h3>
+  <p class="p">The following example shows the contents of the response body for a successful request in JSON format:</p> 
+  <pre class="pre">{
+	"eventSessionId":"799AE14A-9E37-42B9-9789-8F005039953E"
+}  </pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Body: 500 Response</h3>
+  <p class="p">The following example shows the contents of the response body for an unsuccessful request in JSON format:</p> 
+  <pre class="pre">  {
+	"errorCode":"MFT-5423"
+	"errorKey":"MFT_WS_EVENT_SERVICE_SOURCE_DONT_EXITS_OR_NOT_DEPLOYED"
+	"errorMessage":"Error in processing EventService request. The source {source} either doesn't exist or not deployed"             
+  }</pre> 
+ </div> 
+</div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+        </article>
+    </body>
+</html>

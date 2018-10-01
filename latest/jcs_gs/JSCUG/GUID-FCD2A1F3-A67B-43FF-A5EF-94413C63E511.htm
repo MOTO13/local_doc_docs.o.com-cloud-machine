@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Design Considerations for an Oracle Java Cloud Service Instance</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Before creating an Oracle Java Cloud Service instance, there are details you should consider in order to create the service instance that best meets your requirements." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-DB265806-BD36-43F8-9B68-C725A875088E.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-FCD2A1F3-A67B-43FF-A5EF-94413C63E511"></a> <span id="PAGE" style="display:none;">15/131</span> <!-- End Header -->
+<h1 id="JSCUG-GUID-FCD2A1F3-A67B-43FF-A5EF-94413C63E511" class="sect1">Design Considerations for an Oracle Java Cloud Service Instance</h1>
+<div>
+<p>Before creating an <span>Oracle Java Cloud Service</span> instance, there are details you should consider in order to create the service instance that best meets your requirements.</p>
+<p>Take the following into consideration when designing a service instance:</p>
+<div class="section">
+<div class="tblformalwide" id="GUID-FCD2A1F3-A67B-43FF-A5EF-94413C63E511__THISTABLESUMMARIZESTHERESOURCESINAD-949B7B1E">
+<table class="cellalignment30" summary="This table summarizes design considerations for Oracle Java Cloud Service instances">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d9061e21">Details</th>
+<th class="cellalignment27" id="d9061e24">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment28" id="d9061e29" headers="d9061e21">
+<p>Service Level</p>
+</td>
+<td class="cellalignment29" headers="d9061e29 d9061e24">
+<p>You can select one of these service levels:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span>Oracle Java Cloud Service</span>&mdash;Virtual Image</p>
+<p>Developer-level service. Supports Oracle Java Cloud Service instance creation and monitoring.</p>
+<p>This service level does not support backup and restoration; patching; or scaling. You cannot provision a domain partition if you specify this service level.</p>
+</li>
+<li>
+<p><span>Oracle Java Cloud Service</span></p>
+<p>Production-level service. Supports Oracle Java Cloud Service instance creation and monitoring; domain partitions; backup and restoration; patching; and scaling.</p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-FCD2A1F3-A67B-43FF-A5EF-94413C63E511__GUID-FAB87DE8-8FB2-4432-BA81-85DECA681F68">
+<p class="notep1">Note:</p>
+The <span>Oracle Java Cloud Service</span> for Fusion Middleware service level is not supported.</div>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment28" id="d9061e57" headers="d9061e21">
+<p>Software Release</p>
+</td>
+<td class="cellalignment29" headers="d9061e57 d9061e24">
+<p>You can select one of three Oracle WebLogic Server releases:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>For Oracle WebLogic Server 11<span class="italic">g</span> (11.1.1.7) &mdash; See <a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudas111170&amp;id=INTRO108" target="_blank"><span class="italic">Introducing Oracle WebLogic Server</span></a></p>
+</li>
+<li>
+<p>For Oracle WebLogic Server 12<span class="italic">c</span> (12.1.3 ) &mdash; See <a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw121300&amp;id=INTRO123" target="_blank"><span class="italic">Understanding Oracle WebLogic Server</span></a></p>
+</li>
+<li>
+<p>For Oracle WebLogic Server 12c (12.2.1.2.0) &mdash; See <a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=INTRO123" target="_blank"><span class="italic">Understanding Oracle WebLogic Server</span></a></p>
+</li>
+</ul>
+<p>See <a href="GUID-35AC2310-F95C-46F7-AF22-C198C0DBF8A2.htm#GUID-D0068D72-9546-4FE0-8972-ECE29D39122C" title="When creating an Oracle Java Cloud Service instance, you have your choice of an environment that&rsquo;s designed for higher availability needs, such as user acceptance testing, staging and production, or an environment that&rsquo;s designed for development and testing.">About Oracle Java Cloud Service Offerings and Oracle WebLogic Server Software Releases</a>.</p>
+<p>With <span>Oracle Java Cloud Service</span> you can easily apply patches to an existing service instance, but it does not provide automated tooling to upgrade an existing service instance to a newer release of Oracle WebLogic Server.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment28" id="d9061e109" headers="d9061e21">
+<p>Edition</p>
+</td>
+<td class="cellalignment29" headers="d9061e109 d9061e24">
+<p>You can choose one of these Oracle WebLogic Server editions:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Standard Edition</span></p>
+</li>
+<li>
+<p><span class="bold">Enterprise Edition</span></p>
+</li>
+<li>
+<p><span class="bold">Enterprise Edition with Coherence (Suite)</span></p>
+</li>
+</ul>
+<p>Certain WebLogic Server capabilities are only supported in specific editions. To learn about these editions see:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-35AC2310-F95C-46F7-AF22-C198C0DBF8A2.htm#GUID-5BEB5C7A-DAEE-40C6-BDE0-819E10D62848" title="When you create an Oracle Java Cloud Service instance, you must choose an edition for the Oracle WebLogic Servers configured for the service instance: Standard Edition, Enterprise Edition, or Enterprise Edition with Coherence.">About Oracle WebLogic Server Editions Available for Oracle Java Cloud Service</a></p>
+</li>
+<li>
+<p><a href="http://www.oracle.com/us/products/middleware/cloud-app-foundation/weblogic/overview/index.html" target="_blank">Oracle WebLogic Server</a> product page</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment28" id="d9061e149" headers="d9061e21">
+<p>Compute Shape</p>
+</td>
+<td class="cellalignment29" headers="d9061e149 d9061e24">
+<p><span>Oracle Java Cloud Service</span> provides a set of compute shapes that are optimized for different use cases. Choose from a set of all-purpose and memory-intensive shapes. The larger the compute shape, the greater the processing power and the more memory that is available.</p>
+<p>See <a href="GUID-A3190691-7808-4E14-8873-2FA205F58134.htm" title="When you provision an Oracle Java Cloud Service instance and specify a compute shape, the JVM heap size for WebLogic Server and Load Balancer processes is determined automatically.">About Default Heap Size Settings for Oracle Java Cloud Service Instances</a>.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment28" id="d9061e170" headers="d9061e21">
+<p>Cluster</p>
+</td>
+<td class="cellalignment29" headers="d9061e170 d9061e24">
+<p>You select an initial cluster size of 1, 2, or 4 Managed Servers. In general, the larger the cluster the more application requests that can be processed by your service instance. However, with <span>Oracle Java Cloud Service</span> you can also scale in and out this cluster after you create the service instance.</p>
+<p>For more information about clusters see:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=INTRO185" target="_blank">WebLogic Server Clustering</a> in <cite>Understanding Oracle WebLogic Server (12.2.1)</cite></p>
+</li>
+<li>
+<p><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw121300&amp;id=INTRO185" target="_blank">WebLogic Server Clustering</a> in <cite>Understanding Oracle WebLogic Server (12.1.3)</cite></p>
+</li>
+<li>
+<p><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudas111170&amp;id=CLUST622" target="_blank">Understanding WebLogic Server Clustering</a> in <cite>Using Clusters for Oracle WebLogic Server (10.3.6)</cite></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment28" id="d9061e207" headers="d9061e21">
+<p>Domain Partition</p>
+</td>
+<td class="cellalignment29" headers="d9061e207 d9061e24">
+<p>A WebLogic Server 12<span class="italic">c</span> domain can optionally be organized into multiple partitions. Each partition is dedicated to running specific applications and related resources, and is managed independently of other partitions in the same domain. You can define partitions when you create a service instance, and you can add or remove domain partitions after you create the service instance by using Fusion Middleware Control. These domain partitions will be created with a default resource management policy. Domain partitions also enable you to create different security realms for the overall WebLogic Server domain and for each partition. Each security realm can have its own identity store with users, credentials and groups.</p>
+<p>See <a href="https://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=WLSMT718" target="_blank">About WebLogic Server MT</a> in <cite>Using WebLogic Server Multitenant</cite>.</p>
+<div class="p" id="GUID-FCD2A1F3-A67B-43FF-A5EF-94413C63E511__GUID-973496E1-E2E2-497B-A0F4-99B1E590E13C">You cannot configure domain partitions if you select:
+<ul style="list-style-type: disc;">
+<li>
+<p>The <span>Oracle Java Cloud Service</span>&mdash;Virtual Image service level</p>
+</li>
+<li>
+<p>The Standard Edition of Oracle WebLogic Server</p>
+</li>
+<li>
+<p>The 11<span class="italic">g</span> release of WebLogic Server</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment28" id="d9061e244" headers="d9061e21">
+<p>Client Access</p>
+</td>
+<td class="cellalignment29" headers="d9061e244 d9061e24">
+<p>By default, access to an <span>Oracle Java Cloud Service</span> instance can only be done over secure protocols like HTTPS and SSH. If you plan to access an application through the HTTP port, you can enable this port manually after creating a service instance. See:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-E9AE5F41-2B59-40A8-90A2-02DBF783079B.htm#GUID-E9AE5F41-2B59-40A8-90A2-02DBF783079B" title="If you create an Oracle Java Cloud Service instance by using the web console rather than the REST API, HTTPS access is enabled by default but HTTP access is disabled. You can enable HTTP access on the load balancer after you have created the service instance.">Enabling HTTP Access to an Oracle Java Cloud Service Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-EDC1BD9B-1C42-4220-8163-4B27AADDA98F.htm#GUID-EDC1BD9B-1C42-4220-8163-4B27AADDA98F" title="To use the resources available within your Oracle Java Cloud Service instances, access them through the default ports.">Understanding the Default Access Ports</a></p>
+</li>
+</ul>
+<p>The HTTP port is disabled by default only when creating the service instance by using the <span>Oracle Java Cloud Service</span> console. The HTTP port is enabled by default if you create the service instance by using the REST API.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment28" id="d9061e282" headers="d9061e21">
+<p>Coherence Data Tier</p>
+</td>
+<td class="cellalignment29" headers="d9061e282 d9061e24">
+<p>If you choose to provision an Oracle Coherence data tier in your service instance, <span>Oracle Java Cloud Service</span> creates a second WebLogic Server cluster in the domain to host your in-memory data grid, or cache. This Coherence cluster provides your applications with fast, reliable, and scalable access to frequently used data. You configure the data grid&rsquo;s initial cache capacity by selecting a predefined capacity unit or by defining your own custom one. The capacity unit controls the size of the cache in GB, the number of VMs in the cluster, and the compute shape of these VMs. See <a href="GUID-1AB37F9D-3A5F-47A7-A61B-A751B09215E1.htm#GUID-1AB37F9D-3A5F-47A7-A61B-A751B09215E1" title="Oracle Java Cloud Service uses capacity units to provision Oracle WebLogic Server and Oracle Coherence environments that provide a preconfigured amount of Coherence cache capacity. A capacity unit is a group of virtual machines (VMs) running a number of JVMs (Managed Coherence Servers), and is meant to scale linearly in the context of your application. Capacity is defined as a fixed amount of primary cache storage to allocate for Coherence, based on the general rule of splitting the JVM heap size into thirds, using 1/3rd for primary cache storage, 1/3rd for backup storage, and 1/3rd for scratch space.">About Capacity Units for Oracle Java Cloud Service&mdash;Coherence Instances</a>.</p>
+<p>After a service instance is created, you can increase cache capacity by adding one capacity unit at a time. See <a href="GUID-506493C3-FEC4-48FE-87BB-7764DCA4612A.htm#GUID-506493C3-FEC4-48FE-87BB-7764DCA4612A" title="The Coherence data tier of an Oracle Java Cloud Service&mdash;Coherence instance is scaled independently of the application tier. You can use the Oracle Java Cloud Service Console or the REST API to scale the Coherence data tier.">Scaling the Coherence Data Tier of an Oracle Java Cloud Service Instance</a>.</p>
+<p><span>Oracle Java Cloud Service</span> can only provision a Coherence data tier in your service instance if you select Enterprise Edition with Coherence (Suite).</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment28" id="d9061e323" headers="d9061e21">
+<p>Database</p>
+</td>
+<td class="cellalignment29" headers="d9061e323 d9061e24">
+<p><span>Oracle Java Cloud Service</span> requires access to an existing relational database that contains the standard Oracle Infrastructure schema. <span>Oracle Java Cloud Service</span> uses Java Database Connectivity (JDBC) to access this database.</p>
+<p>Create an <span>Oracle Database Cloud Service</span> database deployment or use an existing on-premises Oracle database. During the service creation process, <span>Oracle Java Cloud Service</span> will provision <span>Oracle Database Cloud Service</span> with the required schema. If you select some other Oracle database, you must manually create this schema prior to creating the <span>Oracle Java Cloud Service</span> instance.</p>
+<p>See <a class="olink CSDBI3299" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=E70959-01&amp;id=CSDBI3299">Creating a Database Deployment</a> in <cite><span><cite>Using Oracle Database Cloud Service</cite></span></cite>.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment28" id="d9061e360" headers="d9061e21">
+<p>Load Balancer</p>
+</td>
+<td class="cellalignment29" headers="d9061e360 d9061e24">
+<p>The load balancer is an instance of Oracle Traffic Director (OTD). The load balancer routes requests it receives from clients to the WebLogic Servers configured in an <span>Oracle Java Cloud Service</span> instance. Using a load balancer is recommended if you are configuring more than one managed server. A load balancer also gives you the ability to suspend an <span>Oracle Java Cloud Service</span> instance temporarily to perform routine maintenance.</p>
+<p>You can configure a second load balancer while provisioning the service instance, or add one later after the service instance is provisioned. Each load balancer is assigned a separate public IP address. A configuration with two active load balancers provides these advantages:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>High availability if a load balancer becomes unavailable.</p>
+</li>
+<li>
+<p>Multiple load balancers for greater application throughput.</p>
+</li>
+</ul>
+<p>However, in this configuration the client is responsible for utilizing both load balancer nodes, and for failing over to another node should one become unavailable.</p>
+<p>You cannot remove the first load balancer after adding it to your <span>Oracle Java Cloud Service</span> instance. You can disable it, but you will be charged for having it in your service instance.</p>
+<p>See:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-41A9CF0D-028D-4C62-B9C6-D369452D5937.htm#GUID-41A9CF0D-028D-4C62-B9C6-D369452D5937" title="You can disable the load balancer to suspend the Oracle Java Cloud Service instance temporarily, to block any new traffic from being delivered to the service instance. This is useful when you want to perform routine maintenance on an Oracle Java Cloud Service instance, but do not want to stop the service instance. Once the maintenance activities have been completed, you can re-enable the load balancer to allow traffic to be delivered.">Suspending an Oracle Java Cloud Service Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-5D722781-44AD-4BAA-B726-A285154F8534.htm#GUID-5D722781-44AD-4BAA-B726-A285154F8534" title="You can disable the load balancer for an Oracle Java Cloud Service instance to suspend the service instance during maintenance, or enable the load balancer to resume a service instance after maintenance.">Disabling or Enabling the Load Balancer for an Oracle Java Cloud Service Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-6B2C2199-C004-4DA0-81FE-979FFB98B7C6.htm" title="You can add a load balancer to an Oracle Java Cloud Service instance after its creation.">Adding a Load Balancer to an Oracle Java Cloud Service Instance</a></p>
+</li>
+<li>
+<p><a href="GUID-7D16153E-6028-4FDD-9CFD-49F48D6F379E.htm" title="If your Oracle Java Cloud Service instance has an existing load balancer node you can add a second active load balancer node to the same instance.">Adding a Second Load Balancer to an Oracle Java Cloud Service Instance</a></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-DB265806-BD36-43F8-9B68-C725A875088E.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

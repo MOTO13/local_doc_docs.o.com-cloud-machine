@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Viewing Shapes</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-07T05:33:13Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine REST API Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E68443-07" />
+<meta name="dcterms.isVersionOf" content="ELUAP" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-7D04FD96-6C9F-49BC-A2FC-2C840A3C9BA0.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUAP.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-91DB5163-DF72-44F2-A08E-FD58BBF6BFAD"></a> <span id="PAGE" style="display:none;">17/40</span> <!-- End Header -->
+<h1 id="ELUAP-GUID-91DB5163-DF72-44F2-A08E-FD58BBF6BFAD" class="sect1">Viewing Shapes</h1>
+<div>
+<div class="section">
+<p>Shapes define the compute resources for an instance. You can view the shapes that are available to your tenant.&nbsp;Contact your Oracle Cloud Administrator if you need a shape with a different configuration.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-91DB5163-DF72-44F2-A08E-FD58BBF6BFAD.htm#GUID-7F406CF9-03B7-4E76-8BDE-6CA9085AEC05" title="This API enables you to determine what shapes you have access to in a specific container.">Discover Shapes</a></p>
+</li>
+<li>
+<p><a href="GUID-91DB5163-DF72-44F2-A08E-FD58BBF6BFAD.htm#GUID-876299C4-AFD7-4B45-8881-5AF8E5F13448" title="This API enables you to retrieve information for a specific shape.">Get Shape</a></p>
+</li>
+<li>
+<p><a href="GUID-91DB5163-DF72-44F2-A08E-FD58BBF6BFAD.htm#GUID-81860484-5A34-4E3C-8C9B-343D9BAA06A4" title="This API enables you to list information about shapes.">List Shapes</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-7F406CF9-03B7-4E76-8BDE-6CA9085AEC05"></a>
+<h2 id="ELUAP-GUID-7F406CF9-03B7-4E76-8BDE-6CA9085AEC05" class="sect2">Discover Shapes</h2>
+<div>
+<p>This API enables you to determine what shapes you have access to in a specific container.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-7F406CF9-03B7-4E76-8BDE-6CA9085AEC05__GUID-3C704071-7208-409A-B100-F6443AFF0802">
+<p class="notep1">Note:</p>
+The discover API calls display the names of the objects in the specified container, not the details about the objects. To list the names of the objects, you must set the <code class="codeph">Accept</code> header to <code class="codeph">application/oracle-compute-v3+directory+json</code>. For all other purposes, you must set the <code class="codeph">Accept</code> header to <code class="codeph">application/oracle-compute-v3+json</code>.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Method</p>
+<p><code class="codeph">GET</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/shape/<span class="variable">container</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/shape/<span class="variable">container</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI Parameter</p>
+<div class="tblformal" id="GUID-7F406CF9-03B7-4E76-8BDE-6CA9085AEC05__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment56" summary="Parameter and description for discovering shapes using API.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment57" id="d15053e117">Parameter</th>
+<th class="cellalignment57" id="d15053e119">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d15053e123" headers="d15053e117">container</td>
+<td class="cellalignment58" headers="d15053e123 d15053e119">(Optional) Hierarchical namespace for shapes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/shape/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Response Body</p>
+<pre dir="ltr">
+{"result": [
+        "/large", 
+        "/oc1", 
+        "/oc1m", 
+        "/oc2m", 
+        "/oc3", 
+        "/oc3m", 
+        "/oc4", 
+        "/oc4m", 
+        "/oc5", 
+        "/oc5m", 
+        "/oc6", 
+        "/oc7", 
+        "/ot1", 
+        "/small"]
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-876299C4-AFD7-4B45-8881-5AF8E5F13448"></a>
+<h2 id="ELUAP-GUID-876299C4-AFD7-4B45-8881-5AF8E5F13448" class="sect2">Get Shape</h2>
+<div>
+<p>This API enables you to retrieve information for a specific shape.</p>
+<div class="section">
+<p class="subhead2">Method</p>
+<p><code class="codeph">GET</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/shape/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/shape/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI Parameter</p>
+<div class="tblformal" id="GUID-876299C4-AFD7-4B45-8881-5AF8E5F13448__GUID-7C0E640D-8860-4DC0-BFE0-50D2F623F309">
+<table class="cellalignment62" summary="Parameter and description for retrieving information for a specific shape using API.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d15053e195">Parameter</th>
+<th class="cellalignment64" id="d15053e197">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d15053e201" headers="d15053e195">name</td>
+<td class="cellalignment66" headers="d15053e201 d15053e197">Name of the shape</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/shape/oc3</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Response Body</p>
+<pre dir="ltr">
+{
+  "ram": 7680,
+  "cpus": 2.0,
+  "uri": "https://api.oc.example.com/shape/oc3",
+  "name": "oc3"
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-81860484-5A34-4E3C-8C9B-343D9BAA06A4"></a>
+<h2 id="ELUAP-GUID-81860484-5A34-4E3C-8C9B-343D9BAA06A4" class="sect2">List Shapes</h2>
+<div>
+<p>This API enables you to list information about shapes.</p>
+<div class="section">
+<p class="subhead2">Method</p>
+<p><code class="codeph">GET</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/shape/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/shape/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/shape/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Response Body</p>
+<pre dir="ltr">
+{
+  "result": [
+    {
+      "ram": 7680,
+      "cpus": 2.0,
+      "uri": "https://api.oc.example.com/shape/oc3",
+      "name": "oc3"
+    },
+    {
+      "ram": 15360,
+      "cpus": 4.0,
+      "uri": "https://api.oc.example.com/shape/oc4",
+      "name": "oc4"
+    },
+    {
+      "ram": 30720,
+      "cpus": 8.0,
+      "uri": "https://api.oc.example.com/shape/oc5",
+      "name": "oc5"
+    }
+  ]
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment49">
+<tr>
+<td class="cellalignment59">
+<table class="cellalignment54">
+<tr>
+<td class="cellalignment53"><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment53"><a href="GUID-7D04FD96-6C9F-49BC-A2FC-2C840A3C9BA0.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment61">
+<table class="cellalignment52">
+<tr>
+<td class="cellalignment53"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment53"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

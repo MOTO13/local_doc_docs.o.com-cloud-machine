@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Controlling Network Access to Services</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Oracle Big Data Cloud Machine provides a utility that uses Linux iptables and configuration files called whitelists to filter network traffic to services in the cluster. The whitelist configuration specifies whether network requests from specified clients will be accepted or denied for specified services at specified ports. When a connection tries to establish itself, iptables looks for a matching client IP address or range of IP addresses in the whitelist. If it doesn&rsquo;t find one, it uses the default action." />
+<meta name="dcterms.created" content="2017-05-03T11:44:48Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Big Data Cloud Machine" />
+<meta name="dcterms.identifier" content="E85986-01" />
+<meta name="dcterms.isVersionOf" content="CSBDM" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="http://docs.oracle.com/cloud-machine/latest/" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-B6EDF7FB-A94A-4356-AF5E-C9307721F772.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-AAFDC601-A0E2-4D3C-A773-F11B3AEA9298.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSBDM.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSBDM.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSBDM.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-4DC086BF-DBB9-43A0-BE0D-1CCBED87BEB4"></a> <span id="PAGE" style="display:none;">19/51</span> <!-- End Header -->
+<h1 id="CSBDM-GUID-4DC086BF-DBB9-43A0-BE0D-1CCBED87BEB4" class="sect1">Controlling Network Access to Services</h1>
+<div>
+<p><span>Oracle Big Data Cloud Machine</span> provides a utility that uses Linux <code class="codeph">iptables</code> and configuration files called <span class="italic">whitelists</span> to filter network traffic to services in the cluster. The whitelist configuration specifies whether network requests from specified clients will be accepted or denied for specified services at specified ports. When a connection tries to establish itself, <code class="codeph">iptables</code> looks for a matching client IP address or range of IP addresses in the whitelist. If it doesn&rsquo;t find one, it uses the default action.</p>
+<div class="section" id="GUID-4DC086BF-DBB9-43A0-BE0D-1CCBED87BEB4__SERVICESTHATCANBEADDEDTOTHEWHITELIS-3B5E1641">
+<p class="subhead1">Services That Can Be Added to the Whitelist</p>
+<p>The following table shows the services that can be added to the whitelist, the files that store the configurations for those services, and their default behaviors; that is, when their configuration files are empty:</p>
+<div class="tblformal" id="GUID-4DC086BF-DBB9-43A0-BE0D-1CCBED87BEB4__GUID-A4A43A8F-5FC5-4C41-9C97-93304C747124">
+<table class="cellalignment77" summary="This table lists the services for which the network whitelist is used (in the left column) and the path and filename of the configuration file for those services (in the middle column), and the default behavior when the file is empty (in the right column).">
+<thead>
+<tr class="cellalignment68">
+<th class="cellalignment78" id="d10993e40">Service</th>
+<th class="cellalignment78" id="d10993e43">Whitelist Configuration File</th>
+<th class="cellalignment78" id="d10993e46">Default (Empty File)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d10993e51" headers="d10993e40">
+<p>Cloudera Manager</p>
+</td>
+<td class="cellalignment79" headers="d10993e51 d10993e43">
+<p><code>/opt/oracle/bda/cloudera_manager_whitelist</code></p>
+</td>
+<td class="cellalignment79" headers="d10993e51 d10993e46">
+<p>Deny access</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d10993e62" headers="d10993e40">
+<p>Hue</p>
+</td>
+<td class="cellalignment79" headers="d10993e62 d10993e43">
+<p><code>/opt/oracle/bda/hue_whitelist</code></p>
+</td>
+<td class="cellalignment79" headers="d10993e62 d10993e46">
+<p>Deny access</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d10993e73" headers="d10993e40">
+<p>Secure Shell (SSH)</p>
+</td>
+<td class="cellalignment79" headers="d10993e73 d10993e43">
+<p><code>/opt/oracle/bda/ssh_whitelist</code></p>
+</td>
+<td class="cellalignment79" headers="d10993e73 d10993e46">
+<p>Allow access</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p><span class="italic">Don&rsquo;t edit the configuration files directly</span>. Use the <code class="codeph">bdacli bdcs_whitelist</code> command, as described below.</p>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-4DC086BF-DBB9-43A0-BE0D-1CCBED87BEB4__MANAGINGTHEWHITELISTWITHTHEBDACLIBD-3B5E10DB">
+<p class="subhead1">Managing the Whitelist With the bdacli bdcs_whitelist Command</p>
+<p>Use the <code class="codeph">bdacli bdcs_whitelist</code> command to manage the whitelist configuration for a cluster.</p>
+<p>Run the command as the <code class="codeph">root</code> user on the primary host of the cluster. To find out what your primary host is, connect to any node and enter <code class="codeph">bdacli getinfo cluster_primary_host</code>. For example:</p>
+<pre dir="ltr">
+# <span class="bold">bdacli getinfo cluster_primary_host</span>
+host1891
+</pre></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">bdacli bdcs_whitelist Usage</p>
+<p><span class="bold">Syntax</span></p>
+<pre dir="ltr">
+bdacli bdcs_whitelist <span class="italic">parameters</span>
+</pre>
+<p><span class="bold">Parameters</span></p>
+<p>The following table describe the parameters for the <code class="codeph">bdacli bdcs_whitelist</code> command.</p>
+<div class="tblformal" id="GUID-4DC086BF-DBB9-43A0-BE0D-1CCBED87BEB4__GUID-FD0D79F0-2212-48DF-A32E-DD5531D39275">
+<table class="cellalignment77" summary="This table lists the bdacli whitelist command parameters in the left column and describes them in the right column.">
+<thead>
+<tr class="cellalignment68">
+<th class="cellalignment81" id="d10993e138">Parameter</th>
+<th class="cellalignment81" id="d10993e140">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d10993e144" headers="d10993e138"><code class="codeph">reset_default_config</code></td>
+<td class="cellalignment68" headers="d10993e144 d10993e140">Resets the files to empty and applies the default configuration. Denies all incoming traffic to the server except SSH, which allows all traffic. This only affects ports controlled by the whitelist. All other <code class="codeph">iptables</code> configurations aren&rsquo;t touched.</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d10993e153" headers="d10993e138"><code class="codeph">reload_config</code></td>
+<td class="cellalignment68" headers="d10993e153 d10993e140">Deletes all <code class="codeph">iptables</code> rules on ports controlled by the whitelist files and reprocesses what is in the whitelist files. If the files are empty, the default configuration is applied. If there are one or more entries, then all traffic is denied except the whitelist in the files.</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d10993e162" headers="d10993e138"><code class="codeph">allow <span class="variable">service</span> <span class="variable">ip/range</span></code></td>
+<td class="cellalignment68" headers="d10993e162 d10993e140">
+<p>Adds an IP address or a range of IP addresses to the whitelist of the named service and runs an <code class="codeph">iptables</code> command to allow access to that service from those IP addresses. See the <span class="bold">Variable</span> table, below, for descriptions of the <code class="codeph"><span class="variable">service</span></code> and <code class="codeph"><span class="variable">ip/range</span></code> variables.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d10993e188" headers="d10993e138"><code class="codeph">deny <span class="variable">service</span> <span class="variable">ip/range</span></code></td>
+<td class="cellalignment68" headers="d10993e188 d10993e140">
+<p>Removes an IP address or a range of IP addresses to the whitelist of a specific service and runs an <code class="codeph">iptables</code> command to deny access to that service from those IP addresses. See the <span class="bold">Variables</span> table, below, for descriptions of the <code class="codeph"><span class="variable">service</span></code> and <code class="codeph"><span class="variable">ip/range</span></code> variables.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p><span class="bold">Variables</span></p>
+<p>The following table describe the variables for the <code class="codeph">bdacli bdcs_whitelist allow</code> and <code class="codeph">bdacli bdcs_whitelist deny</code> commands.</p>
+<div class="tblformal" id="GUID-4DC086BF-DBB9-43A0-BE0D-1CCBED87BEB4__GUID-340DD014-3757-43F9-8749-6513AE890688">
+<table class="cellalignment77" summary="This table lists the bdacli whitelist allow/deny variables in the left column and describes them in the right column">
+<thead>
+<tr class="cellalignment68">
+<th class="cellalignment81" id="d10993e232">Variable</th>
+<th class="cellalignment81" id="d10993e234">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d10993e238" headers="d10993e232"><code class="codeph"><span class="codeinlineitalic">service</span></code></td>
+<td class="cellalignment68" headers="d10993e238 d10993e234">
+<p>One of the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph">cloudera_manager</code></p>
+</li>
+<li>
+<p><code class="codeph">hue</code></p>
+</li>
+<li>
+<p><code class="codeph">ssh</code></p>
+</li>
+<li>
+<p><code class="codeph">all</code> &mdash; where the command applies to all the above services. We recommend that you do not use <code class="codeph">all</code>, but rather run the command for just the services you need to open. This is recommended because it leaves the critical SSH settings alone (which default to open) unless you explicitly change them. Changing SSH settings from the default can lock you permanently out of the cluster.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d10993e267" headers="d10993e232"><code class="codeph">ip/range</code></td>
+<td class="cellalignment68" headers="d10993e267 d10993e234">
+<p>One of the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Specify a single IP address by simply giving the address, for example: <code class="codeph"><span class="bold">192.0.2.48</span></code></p>
+</li>
+<li>
+<p>Specify a range of IP addresses by using either of the following:</p>
+<p><code class="codeph"><span class="bold">192.0.2.0/24</span></code></p>
+<p><code class="codeph"><span class="bold">192.0.2.0/255.255.255.0</span></code></p>
+<p>Both of the above ranges mean <code class="codeph">192.0.2.0</code> to <code class="codeph">192.0.2.255</code> inclusive&nbsp;</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Example</p>
+<pre dir="ltr">
+# <span class="bold">bdacli bdcs_whitelist allow cloudera_manager 198.51.100.48</span>
+BDCS Network Services Firewall &amp; Whitelist
+host1891.us.example.com
+host1892.us.example.com
+host1893.us.example.com
+host1894.us.example.com
+host1895.us.example.com
+</pre>
+<p>In the above example:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph">bdacli bdcs_whitelist allow cloudera_manager</code> specifies that Cloudera Manager will accept requests from the specified client IP addresses.</p>
+</li>
+<li>
+<p><code class="codeph">198.51.100.48</code> specifies that the client with that IP address will be allowed access to the service.</p>
+</li>
+<li>
+<p><code class="codeph">host1891.us.example.com</code> through <code class="codeph">host1895.us.example.com</code> are the host names of the nodes of the cluster.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-4DC086BF-DBB9-43A0-BE0D-1CCBED87BEB4__CONFIGURATIONFILES-3B5E0972">
+<p class="subhead1">Reviewing the Configuration</p>
+<p>After changing the configuration, you should check to see that it is as expected. There are two ways you can do this:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Review the whitelist configuration files for the services, for example:</p>
+<pre dir="ltr">
+# <span class="bold">more /opt/oracle/bda/cloudera_manager_whitelist</span>
+198.51.100.48
+# <span class="bold">more /opt/oracle/bda/hue_whitelist</span>
+198.51.100.48
+</pre></li>
+<li>
+<p>Use the <code class="codeph">iptables -L</code> command to show the network firewall rules in effect, including whitelist rules. You must run this command as the <code class="codeph">root</code> user.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment67">
+<tr>
+<td class="cellalignment74">
+<table class="cellalignment72">
+<tr>
+<td class="cellalignment71"><a href="GUID-B6EDF7FB-A94A-4356-AF5E-C9307721F772.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment71"><a href="GUID-AAFDC601-A0E2-4D3C-A773-F11B3AEA9298.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment76">
+<table class="cellalignment70">
+<tr>
+<td class="cellalignment71"><a href="http://docs.oracle.com/cloud-machine/latest/"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment71"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment71"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment71"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

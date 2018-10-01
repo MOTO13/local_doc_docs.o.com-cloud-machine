@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Creating Connections</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You define connections to the specific cloud applications that you want to integrate. The following topics describe how to define connections:" />
+<meta name="dcterms.created" content="2017-03-02T11:32:56Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Integration Cloud Service" />
+<meta name="dcterms.identifier" content="E67461-04" />
+<meta name="dcterms.isVersionOf" content="ICSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-56EF491A-71B8-4EE4-A119-3D564E1C75EE.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-8EC9D802-9DD6-485B-9C2A-218C61E9F1FB.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E"></a> <span id="PAGE" style="display:none;">22/116</span> <!-- End Header -->
+<h1 id="ICSUG-GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E" class="sect1">Creating Connections</h1>
+<div>
+<p>You define connections to the specific cloud applications that you want to integrate. The following topics describe how to define connections:</p>
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" title="The first step in creating an integration is to create the connections to the applications with which you want to share data.">Creating a Connection</a></p>
+</li>
+<li>
+<p><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-6CD39FBD-7E66-4DB2-997D-EEE3EB3CFBBE" title="From the Connection Administrator section of the connection, you can add a contact email address for notifications.">Adding a Contact Email</a></p>
+</li>
+<li>
+<p><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-6DE35F8D-A2A5-4E47-9FC3-CC702B13CD0E" title="Enter connection information so your application can process requests.">Configuring Connection Properties</a></p>
+</li>
+<li>
+<p><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-39669C56-2CA9-4663-A2A9-F5B49EAF743B" title="Configure security for your connection by selecting the security policy and specifying login credentials.">Configuring Connection Security</a></p>
+</li>
+<li>
+<p><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-035AEC59-52B8-4F63-BE0D-0F8CCF89FD22" title="Test your connection to ensure that it is successfully configured.">Testing the Connection</a></p>
+</li>
+<li>
+<p><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-14C32FCB-0E2D-4543-B489-34AE136397ED" title="You can edit connection settings after creating a new connection.">Editing a Connection</a></p>
+</li>
+<li>
+<p><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-44A50218-C1B3-4503-9F71-0CA8CF8BC7C0" title="You can clone a copy of an existing connection. It is a quick way to create a new connection.">Cloning a Connection</a></p>
+</li>
+<li>
+<p><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-39E653C5-6506-427B-923E-45BD965D1F69" title="You can delete a connection from the connection menu.">Deleting a Connection</a></p>
+</li>
+<li>
+<p><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-E2CD3E29-33B5-4245-BA25-770444AABD4B" title="You can manually refresh the currently-cached metadata available to adapters that have implemented metadata caching. Metadata changes typically relate to customizations of integrations, such as adding custom objects and attributes to integrations. There may also be cases in which integrations have been patched, which results in additional custom objects and attributes being added. This option is similar to clearing the cache in your browser. Without a manual refresh, a staleness check is only performed when you drag a connection into an integration. This is typically sufficient, but in some cases you may know that a refresh is required. For these cases, the Refresh Metadata menu option is provided.">Refreshing Integration Metadata</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"></a>
+<h2 id="ICSUG-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" class="sect2">Creating a Connection</h2>
+<div>
+<p>The first step in creating an integration is to create the connections to the applications with which you want to share data.</p>
+<ol>
+<li class="stepexpand"><span>In the Integration Cloud Service toolbar, click <span class="bold">Designer</span>.<br /></span>
+<div class="imageleft"><img class="imageleft" width="276" height="58" src="img/GUID-7557A237-0437-4506-B9B6-62B88DC0C8D7-default.png" alt="Description of GUID-7557A237-0437-4506-B9B6-62B88DC0C8D7-default.png follows" title="Description of GUID-7557A237-0437-4506-B9B6-62B88DC0C8D7-default.png follows" /><br />
+<a href="img_text/GUID-7557A237-0437-4506-B9B6-62B88DC0C8D7-default.htm">Description of the illustration GUID-7557A237-0437-4506-B9B6-62B88DC0C8D7-default.png</a></div>
+<br /></li>
+<li class="stepexpand"><span>On the Designer Portal, click <span class="bold">Connections</span>.<br /></span>
+<div class="imageleft"><img class="imageleft" width="248" height="272" src="img/GUID-DE718BE5-071A-4E11-AD6E-AA6F48EA01AC-default.png" alt="Description of GUID-DE718BE5-071A-4E11-AD6E-AA6F48EA01AC-default.png follows" title="Description of GUID-DE718BE5-071A-4E11-AD6E-AA6F48EA01AC-default.png follows" /><br />
+<a href="img_text/GUID-DE718BE5-071A-4E11-AD6E-AA6F48EA01AC-default.htm">Description of the illustration GUID-DE718BE5-071A-4E11-AD6E-AA6F48EA01AC-default.png</a></div>
+<br /></li>
+<li class="stepexpand"><span>Click <span class="bold">Create New Connection</span>.<br />
+<img width="263" height="151" src="img/GUID-8CBFC9BE-8EE5-44B3-8EDC-DB4B6FB5698C-default.png" alt="Description of GUID-8CBFC9BE-8EE5-44B3-8EDC-DB4B6FB5698C-default.png follows" title="Description of GUID-8CBFC9BE-8EE5-44B3-8EDC-DB4B6FB5698C-default.png follows" /><br />
+<a href="img_text/GUID-8CBFC9BE-8EE5-44B3-8EDC-DB4B6FB5698C-default.htm">Description of the illustration GUID-8CBFC9BE-8EE5-44B3-8EDC-DB4B6FB5698C-default.png</a><br /></span>
+<div>The Create Connection &mdash; Select Adapter dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>Select an adapter from the dialog. You can also search for the type of adapter to use by entering a partial or full name in the Search field, and clicking <span class="bold">Search</span>.</span>
+<div>The New Connection &mdash; Information dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>Enter the information to describe the connection. Use a meaningful name to help others find your connection when they begin to create their own integrations.<br /></span>
+<div class="imageleft"><span><img class="imageleft" width="546" height="302" src="img/GUID-E8AD2A83-4A18-45A6-B178-505A5DA95E0E-default.png" alt="Description of GUID-E8AD2A83-4A18-45A6-B178-505A5DA95E0E-default.png follows" title="Description of GUID-E8AD2A83-4A18-45A6-B178-505A5DA95E0E-default.png follows" /><br />
+<a href="img_text/GUID-E8AD2A83-4A18-45A6-B178-505A5DA95E0E-default.htm">Description of the illustration GUID-E8AD2A83-4A18-45A6-B178-505A5DA95E0E-default.png</a></span></div>
+<span><br /></span></li>
+<li class="stepexpand"><span>Click <span class="bold">Create</span>.</span>
+<div>Your connection is created and you are now ready to configure connection details, such as email contact, connection properties, security policies, and connection login credentials.</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-6CD39FBD-7E66-4DB2-997D-EEE3EB3CFBBE"></a>
+<h2 id="ICSUG-GUID-6CD39FBD-7E66-4DB2-997D-EEE3EB3CFBBE" class="sect2">Adding a Contact Email</h2>
+<div>
+<p>From the Connection Administrator section of the connection, you can add a contact email address for notifications.</p>
+<ol>
+<li><span>In the <span class="bold">Email Address</span> field, enter an email address to receive email notifications when problems occur.</span></li>
+<li><span>In the upper right corner, click <span class="bold">Save</span>.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-6DE35F8D-A2A5-4E47-9FC3-CC702B13CD0E"></a>
+<h2 id="ICSUG-GUID-6DE35F8D-A2A5-4E47-9FC3-CC702B13CD0E" class="sect2">Configuring Connection Properties</h2>
+<div>
+<p>Enter connection information so your application can process requests.</p>
+<ol>
+<li class="stepexpand"><span>Click <span class="bold">Configure Connectivity</span>.</span>
+<div>The Connection Properties dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>See the following sections for information about specifying connection properties.</span>
+<ul>
+<li><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-FF7CA1B4-66DC-4699-B01F-6044399332CE" title="The following table describes the Oracle RightNow WSDL requirements.">Specifying the Oracle RightNow Cloud WSDL</a></li>
+<li><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-70E9C6CF-C38E-46DD-ACC7-96656FC114FD" title="You must specify a mandatory Oracle Sales Cloud Adapter service catalog service WSDL (for accessing business objects) and optionally an event catalog URL (for accessing event subscriptions) in the Connection Properties dialog.">Specifying the Oracle Sales Cloud Adapter Service Catalog Service WSDL or Event Catalog URL</a></li>
+<li><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-A0411445-D52D-400C-A535-23922EBC4FB6" title="The following table describes the Oracle Messaging Cloud Service messaging URI requirements.">Specifying the Oracle Messaging Service Cloud Service Messaging URI</a></li>
+<li><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-AEEEFBAE-466E-4035-86BE-3900D0CEF952" title="The following table describes the Oracle Eloqua company name requirements.">Specifying the Oracle Eloqua Cloud Company Name</a></li>
+<li><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-DF4E8EE7-9C7C-471A-A22D-8CBAE5EF39FF" title="You must specify a mandatory Oracle HCM Cloud service catalog service WSDL (for accessing business objects) and optionally an event catalog URL (for accessing event subscriptions).">Specifying the Oracle HCM Cloud Service Catalog Service WSDL or Event Catalog URL</a></li>
+<li><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-2C42BEF9-DB1C-422A-83A7-C89F8375A16C" title="The following table describes the Salesforce WSDL requirements.">Specifying the Salesforce Cloud WSDL</a></li>
+<li><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-FCF2A3A6-1492-4794-9160-6DDE5EB163A6" title="You specify a mandatory Oracle ERP Cloud service catalog service WSDL (for accessing business objects) and optionally an event catalog URL (for accessing event subscriptions). The service catalog service WSDL is required to configure the adapter for both inbound and outbound endpoints using either business objects or business services. The event catalog URL is required for configuring the inbound adapter for event subscriptions.">Specifying the Oracle ERP Cloud Service Catalog Service WSDL or Event Catalog URL</a></li>
+<li><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-CCC54D99-38FD-4C45-B34F-841A8260A7FE" title="The following table describes the SOAP Adapter WSDL requirements.">Specifying the SOAP Adapter WSDL</a></li>
+<li><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-B5DD4318-61CD-466E-82DE-87C0B64020AA" title="The following table describes the REST Adapter endpoint requirements.">Specifying the REST Adapter Endpoint</a></li>
+<li><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-F9589402-6B30-4418-B35C-889495974A13" title="The following table describes the Oracle CPQ Cloud WSDL requirements.">Specifying the Oracle CPQ Cloud WSDL</a></li>
+<li><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-9F7B3FA9-28A1-4C12-9C01-D10ECB0AD7F7" title="The following table describes the NetSuite Adapter WSDL requirements.">Specifying the NetSuite Adapter WSDL</a></li>
+</ul>
+<div>For the Eventbrite Adapter, see <a class="olink ICSEB-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSEB/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSEB-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Eventbrite Adapter</span></a>.</div>
+<div>For the Evernote Adapter, see <a class="olink ICSEN-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSEN/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSEN-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Evernote Adapter</span></a>.</div>
+<div>For the Facebook Adapter, see <a class="olink ICSFB-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSFB/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSFB-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Facebook Adapter</span></a>.</div>
+<div>For the FTP Adapter, see <a class="olink ICSFT-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSFT/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSFT-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the FTP Adapter</span></a>.</div>
+<div>For the Gmail Adapter, see <a class="olink ICSGM-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSGM/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSGM-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Gmail Adapter</span></a>.</div>
+<div>For the Google Calendar Adapter, see <a class="olink ICSGO-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSGO/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSGO-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Google Calendar Adapter</span></a>.</div>
+<div>For the Google Task Adapter, see <a class="olink ICSGT-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSGT/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSGT-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Google Task Adapter</span></a>.</div>
+<div>For the LinkedIn Adapter, see <a class="olink ICSLI-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSLI/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSLI-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the LinkedIn Adapter</span></a>.</div>
+<div>For the MailChimp Adapter, see <a class="olink ICSCH-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSCH/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSCH-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the MailChimp Adapter</span></a>.</div>
+<div>For the Microsoft Calendar Adapter, see <a class="olink ICSMS-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSMS/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSMS-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Microsoft Calendar Adapter</span></a>.</div>
+<div>For the Microsoft Contact Adapter, see <a class="olink ICSMT-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSMT/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSMT-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Microsoft Contact Adapter</span></a>.</div>
+<div>For the Microsoft Email Adapter, see <a class="olink ICSME-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSME/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSME-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Microsoft Email Adapter</span></a>.</div>
+<div>For the MySQL Adapter, see <a class="olink ICSSQ-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSSQ/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSSQ-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the MySQL Adapter</span></a>.</div>
+<div>For the Oracle Commerce Cloud Adapter, see <a class="olink ICSCC-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSCC/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSCC-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Oracle Commerce Cloud Adapter</span></a>.</div>
+<div>For the Oracle Database Adapter, see <a class="olink ICSSB-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSSB/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSSB-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Oracle Database Adapter</span></a>.</div>
+<div>For the Oracle E-Business Suite Adapter, see <a class="olink ICSEA" target="_blank" href="../ICSEA/toc.htm"><span class="italic">Using Oracle E-Business Suite Adapter</span></a>.</div>
+<div>For the Oracle Siebel Adapter, see <a class="olink ICSSI-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSSI/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSSI-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Oracle Siebel Adapter</span></a>.</div>
+<div>For the SurveyMonkey Adapter, see <a class="olink ICSSM-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSSM/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSSM-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the SurveyMonkey Adapter</span></a>.</div>
+<div>For the SAP Adapter, see <a class="olink ICSSA-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSSA/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSSA-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the SAP Adapter</span></a>.</div>
+<div>For the Twitter Adapter, see <a class="olink ICSTW-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSTW/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSTW-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Twitter Adapter</span></a>.</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">OK</span>.</span>
+<div>You are now ready to configure connection security.</div>
+</li>
+</ol>
+</div>
+<div class="sect3"><a id="GUID-FF7CA1B4-66DC-4699-B01F-6044399332CE"></a>
+<h3 id="ICSUG-GUID-FF7CA1B4-66DC-4699-B01F-6044399332CE" class="sect3">Specifying the Oracle RightNow Cloud WSDL</h3>
+<div>
+<p>The following table describes the Oracle RightNow WSDL requirements.</p>
+<div class="section">
+<div class="tblformal" id="GUID-FF7CA1B4-66DC-4699-B01F-6044399332CE__GUID-2F7D5ADB-0AB7-4A39-AEA6-CA1A638FCF38">
+<table class="cellalignment367" summary="Requirements for configuring Oracle RightNow connectivity.">
+<thead>
+<tr class="cellalignment355">
+<th class="cellalignment365" id="d8854e491">WSDL Requirements</th>
+<th class="cellalignment365" id="d8854e493">Where Do You Get the WSDL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment355">
+<td class="cellalignment366" id="d8854e497" headers="d8854e491">
+<p>Only the standard WSDL is supported. The partner WSDL is not supported.</p>
+</td>
+<td class="cellalignment366" headers="d8854e497 d8854e493">
+<p>The standard WSDL can include support for both business objects and event subscriptions. This enables you to receive either a business object or an event subscriptions as a request from the Oracle RightNow application. Event subscriptions are supported only if the Oracle RightNow application version is equal to or greater than version 15.5 (May 2015 release). Otherwise, only business objects are visible for selection in the configuration wizard.</p>
+<div class="p">To obtain the standard WSDL:
+<ol>
+<li>
+<p>Collect the following details from your Oracle RightNow Cx Account:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Host</p>
+</li>
+<li>
+<p>Interface name</p>
+</li>
+<li>
+<p>User name and password</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Open your web browser and enter the following URL to obtain the standard WSDL, replacing the host name and interface details as appropriate.</p>
+<pre dir="ltr">
+https://<span class="italic">host_name</span>/cgi-bin/<span class="italic">interface</span>.cfg/services/soap?wsdl
+</pre>
+<p>For example:</p>
+<pre dir="ltr">
+https://integration-test.rightnowdemo.com/cgi-bin/integration_
+test.cfg/services/soap?wsdl
+</pre>
+<p>or</p>
+<pre dir="ltr">
+https://integration-test.rightnowdemo.com/cgi-bin/integration_test.cfg/services/soap?wsdl=typed
+</pre>
+<p>Permissions for the Public SOAP API must be enabled for the user account to enable use of the Oracle RightNow Connect Web Services for SOAP API. Permissions for the Public SOAP API enable staff members with this profile to access the public SOAP API through account or session authentication.</p>
+<p>The Oracle RightNow adapter does not support a partner WSDL/generic WSDL. Therefore, the following URL is not supported.</p>
+<pre dir="ltr">
+https://integration-test.rightnowdemo.com/cgi-bin/integration_test.cfg/services
+/soap?wsdl=generic
+</pre></li>
+</ol>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-70E9C6CF-C38E-46DD-ACC7-96656FC114FD"></a>
+<h3 id="ICSUG-GUID-70E9C6CF-C38E-46DD-ACC7-96656FC114FD" class="sect3">Specifying the <span>Oracle Sales Cloud Adapter</span> Service Catalog Service WSDL or Event Catalog URL</h3>
+<div>
+<p>You must specify a mandatory <span>Oracle Sales Cloud Adapter</span> service catalog service WSDL (for accessing business objects) and optionally an event catalog URL (for accessing event subscriptions) in the Connection Properties dialog.</p>
+<div class="section">
+<p class="subhead3"></p>
+<p>A mandatory <span>Oracle Sales Cloud Adapter</span> service catalog service WSDL is required to configure the adapter for both inbound and outbound endpoints using either business objects or business services. You can also optionally specify an event catalog URL for accessing and configuring the inbound adapter to use event subscriptions.</p>
+</div>
+<!-- class="section" -->
+<div class="example" id="GUID-70E9C6CF-C38E-46DD-ACC7-96656FC114FD__GUID-10667652-46E7-474E-BB35-73E315584A91"></div>
+<!-- class="example" -->
+<div class="section">
+<p class="subhead3">Obtaining the Service Catalog Service WSDL</p>
+<div class="tblformal" id="GUID-70E9C6CF-C38E-46DD-ACC7-96656FC114FD__GUID-2F7D5ADB-0AB7-4A39-AEA6-CA1A638FCF38">
+<table class="cellalignment367" summary="Requirements for configuring Oracle Sales Cloud connectivity.">
+<thead>
+<tr class="cellalignment355">
+<th class="cellalignment368" id="d8854e593">WSDL Requirements</th>
+<th class="cellalignment368" id="d8854e595">Where Do You Get the WSDL?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e599" headers="d8854e593">
+<p>The URL must be that of a service catalog service WSDL. The service catalog service is a Fusion Application service that returns a list of external services available for integration. It allows clients to retrieve information about all public Fusion Application service endpoints available for that instance.</p>
+<p>The service catalog service enables clients to retrieve information about all public Oracle Fusion Application service endpoints available for that instance. The information it returns is specific to the particular cloud instance and also reflects the new services that may have been introduced in patches applied to the instance. This service is used to programmatically discover the SOAP services available on the cloud instance and retrieve the necessary metadata to invoke the SOAP services to manage business objects.</p>
+</td>
+<td class="cellalignment355" headers="d8854e599 d8854e595">
+<p>The developer creating an Oracle Sales Cloud connection must work with the Oracle Sales Cloud service administrator to get the concrete WSDL URL for the service catalog service provisioned for the specific SaaS application.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>This section describes how to derive the external virtual host and port for a tokenized service catalog service WSDL. The topology information in the Topology Registration setup task contains the external virtual host and port for the domains and applications. The following instructions describe the steps for deriving the values using the service catalog service WSDL URL as an example: <code class="codeph">https://<span class="codeinlineitalic">atf_server</span>:<span class="codeinlineitalic">port</span>/fndAppCoreServices/ServiceCatalogService</code>.</p>
+<p>To access the Review Topology page, the ASM_REVIEW_TOPOLOGY_HIERARCHY_PRIV entitlement must be granted to the user&rsquo;s job role. The entitlement is granted to the ASM_APPLICATION_DEPLOYER_DUTY duty role, which is inherited by the duty roles ASM_APPLICATION_DEVELOPER_DUTY and ASM_APPLICATION_ADMIN_DUTY.</p>
+<p>If the menu items and tasks described in the following procedure are not available in your cloud instance, your user account is missing the required role. Contact your cloud instance security administrator for assistance.</p>
+<ol>
+<li>
+<p>Log in to the cloud instance.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Navigator</span> icon in the global area in the top part of the window, then chose <span class="bold">Setup and Maintenance</span> under the <span class="bold">Tools</span> heading.</p>
+</li>
+<li>
+<p>Select <span class="bold">Review Topology</span> under the <span class="bold">Topology Registration</span> section in the <span class="bold">Tasks</span> regional area on the left side of the window.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Detailed</span> tab in the middle of the window.</p>
+<p>The tab shows the list of domains configured in the cloud instance.<br />
+<span class="imageleft"><img class="imageleft" width="943" height="791" src="img/GUID-A83FF1BE-84D9-49C5-8820-9F7EBB92A3FD-default.png" alt="Description of GUID-A83FF1BE-84D9-49C5-8820-9F7EBB92A3FD-default.png follows" title="Description of GUID-A83FF1BE-84D9-49C5-8820-9F7EBB92A3FD-default.png follows" /><br />
+<a href="img_text/GUID-A83FF1BE-84D9-49C5-8820-9F7EBB92A3FD-default.htm">Description of the illustration GUID-A83FF1BE-84D9-49C5-8820-9F7EBB92A3FD-default.png</a></span><br /></p>
+</li>
+<li>
+<div class="p">Map the token name for the service path value to the domain name in the Topology Manager:
+<div class="tblformal" id="GUID-70E9C6CF-C38E-46DD-ACC7-96656FC114FD__GUID-94658D1F-6BBF-49DC-8F10-9EA8E15BC56D">
+<table class="cellalignment364">
+<thead>
+<tr class="cellalignment355">
+<th class="cellalignment368" id="d8854e669">Token Name in Service Path</th>
+<th class="cellalignment368" id="d8854e671">Domain Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e675" headers="d8854e669">atf_server</td>
+<td class="cellalignment355" headers="d8854e675 d8854e671">CommonDomain</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e680" headers="d8854e669">crm_server</td>
+<td class="cellalignment355" headers="d8854e680 d8854e671">CRMDomain</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e685" headers="d8854e669">fin_server</td>
+<td class="cellalignment355" headers="d8854e685 d8854e671">FinancialDomain</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e690" headers="d8854e669">hcm_server</td>
+<td class="cellalignment355" headers="d8854e690 d8854e671">HCMDomain</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e695" headers="d8854e669">ic_server</td>
+<td class="cellalignment355" headers="d8854e695 d8854e671">ICDomain</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e700" headers="d8854e669">prc_server</td>
+<td class="cellalignment355" headers="d8854e700 d8854e671">ProcurementDomain</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e705" headers="d8854e669">prj_server</td>
+<td class="cellalignment355" headers="d8854e705 d8854e671">ProjectsDomain</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e710" headers="d8854e669">scm_server</td>
+<td class="cellalignment355" headers="d8854e710 d8854e671">SCMDomain</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</li>
+<li>
+<p>Expand the domain name and select any external virtual host and port for the J2EE applications that are deployed on the domain. In the sample window, the values for this particular instance are <span class="bold">fs-your-cloud-hostname</span> and <span class="bold">443</span>, respectively.<br />
+<span class="imageleft"><img class="imageleft" width="935" height="640" src="img/GUID-CB01D3AF-462B-4765-81A8-7E2BBEE1BA6F-default.png" alt="Description of GUID-CB01D3AF-462B-4765-81A8-7E2BBEE1BA6F-default.png follows" title="Description of GUID-CB01D3AF-462B-4765-81A8-7E2BBEE1BA6F-default.png follows" /><br />
+<a href="img_text/GUID-CB01D3AF-462B-4765-81A8-7E2BBEE1BA6F-default.htm">Description of the illustration GUID-CB01D3AF-462B-4765-81A8-7E2BBEE1BA6F-default.png</a></span><br /></p>
+</li>
+<li>
+<p>Replace the <code class="codeph"><span class="codeinlineitalic">domainName</span>_<span class="codeinlineitalic">server</span>:<span class="codeinlineitalic">PortNumber</span></code> with the external virtual host and port identified in the previous step. For example:</p>
+<p><code class="codeph">https://fs-your-cloud-hostname:port/fndAppCoreServices/ServiceCatalogService?wsdl</code></p>
+</li>
+</ol>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Obtaining the Event Catalog URL</p>
+<p>You must know the customer relationship management (CRM) URL format to access the CRM application user interface. Follow the URL format to determine the event catalog URL. For example, if the CRM URL format is:</p>
+<pre dir="ltr">
+https://fusxxxx-crm-ext.us.oracle.com/customer/faces/CrmFusionHome
+</pre>
+<p>Then the event catalog URL is:</p>
+<pre dir="ltr">
+https://fusxxxx-crm-ext.us.oracle.com/soa-infra
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-A0411445-D52D-400C-A535-23922EBC4FB6"></a>
+<h3 id="ICSUG-GUID-A0411445-D52D-400C-A535-23922EBC4FB6" class="sect3">Specifying the Oracle Messaging Service Cloud Service Messaging URI</h3>
+<div>
+<p>The following table describes the Oracle Messaging Cloud Service messaging URI requirements.</p>
+<div class="section">
+<div class="tblformal" id="GUID-A0411445-D52D-400C-A535-23922EBC4FB6__GUID-2F7D5ADB-0AB7-4A39-AEA6-CA1A638FCF38">
+<table class="cellalignment367" summary="Requirements for configuring Oracle Messaging Service Cloud connectivity.">
+<thead>
+<tr class="cellalignment355">
+<th class="cellalignment368" id="d8854e784">WSDL Requirements</th>
+<th class="cellalignment368" id="d8854e786">Where Do You Get the WSDL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e790" headers="d8854e784">
+<p>No restrictions.</p>
+</td>
+<td class="cellalignment355" headers="d8854e790 d8854e786">
+<p>Specify the URI of the messaging service to which you subscribed.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-AEEEFBAE-466E-4035-86BE-3900D0CEF952"></a>
+<h3 id="ICSUG-GUID-AEEEFBAE-466E-4035-86BE-3900D0CEF952" class="sect3">Specifying the Oracle Eloqua Cloud Company Name</h3>
+<div>
+<p>The following table describes the Oracle Eloqua company name requirements.</p>
+<div class="section">
+<div class="tblformal" id="GUID-AEEEFBAE-466E-4035-86BE-3900D0CEF952__GUID-2F7D5ADB-0AB7-4A39-AEA6-CA1A638FCF38">
+<table class="cellalignment367" summary="Requirements for specifying the Oracle Eloqua company name.">
+<thead>
+<tr class="cellalignment355">
+<th class="cellalignment368" id="d8854e828">Company Name Requirements</th>
+<th class="cellalignment368" id="d8854e830">Where Do You Get the Company Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e834" headers="d8854e828">
+<p>There are no special requirements.</p>
+</td>
+<td class="cellalignment355" headers="d8854e834 d8854e830">
+<p>Not applicable.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-DF4E8EE7-9C7C-471A-A22D-8CBAE5EF39FF"></a>
+<h3 id="ICSUG-GUID-DF4E8EE7-9C7C-471A-A22D-8CBAE5EF39FF" class="sect3">Specifying the Oracle HCM Cloud Service Catalog Service WSDL or Event Catalog URL</h3>
+<div>
+<p>You must specify a mandatory Oracle HCM Cloud service catalog service WSDL (for accessing business objects) and optionally an event catalog URL (for accessing event subscriptions).</p>
+<div class="section">
+<p class="subhead3">Obtaining the Service Cloud Service WSDL</p>
+<p>A mandatory Oracle HCM Cloud service catalog service WSDL is required for accessing business objects. You can also optionally specify an event catalog URL for event subscriptions. The service catalog service WSDL is required to configure the adapter for both inbound and outbound endpoints using either business objects or business services. The event catalog URL is required for configuring the inbound adapter for event subscriptions.</p>
+<div class="tblformal" id="GUID-DF4E8EE7-9C7C-471A-A22D-8CBAE5EF39FF__GUID-2F7D5ADB-0AB7-4A39-AEA6-CA1A638FCF38">
+<table class="cellalignment367" summary="The following table describes the Oracle HCM Cloud WSDL requirements.">
+<thead>
+<tr class="cellalignment355">
+<th class="cellalignment368" id="d8854e877">WSDL Requirements</th>
+<th class="cellalignment368" id="d8854e879">Where Do You Get the WSDL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e883" headers="d8854e877">
+<p>The URL must be that of a service catalog service WSDL. The service catalog service enables clients to retrieve information about all public Oracle Fusion Application service endpoints available for that instance. The information it returns is specific to the particular cloud instance and also reflects the new services that may have been introduced in patches applied to the instance. This service is used to programmatically discover the SOAP services available on the cloud instance and retrieve the necessary metadata to invoke the SOAP services to manage business objects.</p>
+</td>
+<td class="cellalignment355" headers="d8854e883 d8854e879">
+<p>The developer creating an Oracle HCM Cloud connection must work with the Oracle HCM Cloud service administrator to get the concrete WSDL URL for the service catalog service provisioned for the specific SaaS application. The concrete WSDL URL must be supplied while creating the connection.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Prerequisites</p>
+<p>This section describes how to derive the external virtual host and port for a tokenized service WSDL. The topology information in the Topology Registration setup task contains the external virtual host and port for the domains and applications. The following instructions describe the steps for deriving the values using the service catalog service WSDL URL as an example: <code class="codeph">https://atf_server:<span class="codeinlineitalic">port</span>/fndAppCoreServices/ServiceCatalogService</code>.</p>
+<p>To access the Review Topology page, the ASM_REVIEW_TOPOLOGY_HIERARCHY_PRIV entitlement must be granted to the user's job role. The entitlement is granted to the ASM_APPLICATION_DEPLOYER_DUTY duty role, which is inherited by the duty roles ASM_APPLICATION_DEVELOPER_DUTY and ASM_APPLICATION_ADMIN_DUTY.</p>
+<p>If the menu items and tasks described in the following procedure are not available in your cloud instance, your user account is missing the required role. Contact your cloud instance security administrator for assistance.</p>
+<ol>
+<li>
+<p>Log in to the cloud instance.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Navigator</span> icon in the global area in the top part of the window, then chose <span class="bold">Setup and Maintenance</span> under the <span class="bold">Tools</span> heading.</p>
+</li>
+<li>
+<p>Select <span class="bold">Review Topology</span> under the <span class="bold">Topology Registration</span> section in the <span class="bold">Tasks</span> regional area on the left side of the window.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Detailed</span> tab in the middle of the window.</p>
+<p>The tab shows the list of domains configured in the cloud instance.<br />
+<span class="imageleft"><img class="imageleft" width="943" height="791" src="img/GUID-A83FF1BE-84D9-49C5-8820-9F7EBB92A3FD-default.png" alt="Description of GUID-A83FF1BE-84D9-49C5-8820-9F7EBB92A3FD-default.png follows" title="Description of GUID-A83FF1BE-84D9-49C5-8820-9F7EBB92A3FD-default.png follows" /><br />
+<a href="img_text/GUID-A83FF1BE-84D9-49C5-8820-9F7EBB92A3FD-default.htm">Description of the illustration GUID-A83FF1BE-84D9-49C5-8820-9F7EBB92A3FD-default.png</a></span><br /></p>
+</li>
+<li>
+<div class="p">Map the token name for the service path value to the domain name in the Topology Manager:
+<div class="tblformal" id="GUID-DF4E8EE7-9C7C-471A-A22D-8CBAE5EF39FF__GUID-94658D1F-6BBF-49DC-8F10-9EA8E15BC56D">
+<table class="cellalignment364">
+<thead>
+<tr class="cellalignment355">
+<th class="cellalignment368" id="d8854e951">Token Name in Service Path</th>
+<th class="cellalignment368" id="d8854e953">Domain Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e957" headers="d8854e951">atf_server</td>
+<td class="cellalignment355" headers="d8854e957 d8854e953">CommonDomain</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e962" headers="d8854e951">crm_server</td>
+<td class="cellalignment355" headers="d8854e962 d8854e953">CRMDomain</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e967" headers="d8854e951">fin_server</td>
+<td class="cellalignment355" headers="d8854e967 d8854e953">FinancialDomain</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e972" headers="d8854e951">hcm_server</td>
+<td class="cellalignment355" headers="d8854e972 d8854e953">HCMDomain</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e977" headers="d8854e951">ic_server</td>
+<td class="cellalignment355" headers="d8854e977 d8854e953">ICDomain</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e982" headers="d8854e951">prc_server</td>
+<td class="cellalignment355" headers="d8854e982 d8854e953">ProcurementDomain</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e987" headers="d8854e951">prj_server</td>
+<td class="cellalignment355" headers="d8854e987 d8854e953">ProjectsDomain</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e992" headers="d8854e951">scm_server</td>
+<td class="cellalignment355" headers="d8854e992 d8854e953">SCMDomain</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</li>
+<li>
+<p>Expand the domain name and select any external virtual host and port for the J2EE applications that are deployed on the domain. In the sample window, the values for this particular instance are <span class="bold">fs-your-cloud-hostname</span> and <span class="bold">443</span>, respectively.<br />
+<span class="imageleft"><img class="imageleft" width="935" height="640" src="img/GUID-CB01D3AF-462B-4765-81A8-7E2BBEE1BA6F-default.png" alt="Description of GUID-CB01D3AF-462B-4765-81A8-7E2BBEE1BA6F-default.png follows" title="Description of GUID-CB01D3AF-462B-4765-81A8-7E2BBEE1BA6F-default.png follows" /><br />
+<a href="img_text/GUID-CB01D3AF-462B-4765-81A8-7E2BBEE1BA6F-default.htm">Description of the illustration GUID-CB01D3AF-462B-4765-81A8-7E2BBEE1BA6F-default.png</a></span><br /></p>
+</li>
+<li>
+<p>Replace the <code class="codeph"><span class="codeinlineitalic">domainName</span>_<span class="codeinlineitalic">server</span>:<span class="codeinlineitalic">PortNumber</span></code> with the external virtual host and port identified in the previous step. For example:</p>
+<p><code class="codeph">https://fs-your-cloud-hostname:port/fndAppCoreServices/ServiceCatalogService?wsdl</code></p>
+</li>
+</ol>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Obtaining the Event Catalog URL</p>
+<p>You must know the CRM URL format to access the CRM application user interface. Follow the URL format to determine the event catalog URL. For example, if the CRM URL format is:</p>
+<pre dir="ltr">
+https://fusxxxx-crm-ext.us.oracle.com/customer/faces/CrmFusionHome
+</pre>
+<p>Then the event catalog URL is:</p>
+<pre dir="ltr">
+https://fusxxxx-crm-ext.us.oracle.com/soa-infra
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-2C42BEF9-DB1C-422A-83A7-C89F8375A16C"></a>
+<h3 id="ICSUG-GUID-2C42BEF9-DB1C-422A-83A7-C89F8375A16C" class="sect3">Specifying the Salesforce WSDL</h3>
+<div>
+<p>The following table describes the Salesforce WSDL requirements.</p>
+<div class="section">
+<div class="tblformal" id="GUID-2C42BEF9-DB1C-422A-83A7-C89F8375A16C__GUID-2F7D5ADB-0AB7-4A39-AEA6-CA1A638FCF38">
+<table class="cellalignment367" summary="Requirements for configuring Salesforce connectivity.">
+<thead>
+<tr class="cellalignment355">
+<th class="cellalignment368" id="d8854e1066">WSDL Requirements</th>
+<th class="cellalignment368" id="d8854e1068">Where Do You Get the WSDL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e1072" headers="d8854e1066">
+<p>Only enterprise WSDLs are supported.</p>
+</td>
+<td class="cellalignment355" headers="d8854e1072 d8854e1068">
+<p>See the instructions below.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<ol>
+<li>
+<p>Log in to your Enterprise, Unlimited, or Developer Edition Salesforce.com account. Open the Web browser and enter the following URL:</p>
+<p><code class="codeph">www.salesforce.com</code></p>
+</li>
+<li>
+<p>Log in to <code class="codeph">Salesforce.com</code> using a valid user name and password.</p>
+<p>You must log in as an administrator or user with the <span class="bold">Modify All Data</span> permission. Logins are checked to ensure that they are from a known IP address.</p>
+</li>
+<li>
+<p>Under <span class="bold">App Setup</span>, Expand <span class="bold">Develop</span> and click <span class="bold">API</span> to display the WSDL download page.</p>
+</li>
+<li>
+<p>If the organization has managed packages installed in the organization, click <span class="bold">Generate Enterprise WSDL</span>. Salesforce prompts you to select the version of each installed package to include in the generated WSDL or right-click <span class="bold">Generate Enterprise WSDL</span> and save it to a local directory.</p>
+<p>In the right-click menu, Internet Explorer users can choose <span class="bold">Save Target As</span>, while Mozilla Firefox users can choose <span class="bold">Save Link As</span> to save it to the local directory.</p>
+<p>The Save dialog is displayed.</p>
+</li>
+<li>
+<p>Provide a name for the WSDL file and a location to save the file on your file system, and click <span class="bold">Save</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-FCF2A3A6-1492-4794-9160-6DDE5EB163A6"></a>
+<h3 id="ICSUG-GUID-FCF2A3A6-1492-4794-9160-6DDE5EB163A6" class="sect3">Specifying the Oracle ERP Cloud Service Catalog Service WSDL or Event Catalog URL</h3>
+<div>
+<p>You specify a mandatory Oracle ERP Cloud service catalog service WSDL (for accessing business objects) and optionally an event catalog URL (for accessing event subscriptions). The service catalog service WSDL is required to configure the adapter for both inbound and outbound endpoints using either business objects or business services. The event catalog URL is required for configuring the inbound adapter for event subscriptions.</p>
+<div class="section">
+<p class="subhead3">Obtaining the Service Cloud Service WSDL</p>
+<div class="tblformal" id="GUID-FCF2A3A6-1492-4794-9160-6DDE5EB163A6__GUID-2F7D5ADB-0AB7-4A39-AEA6-CA1A638FCF38">
+<table class="cellalignment367" summary="Requirements for configuring Oracle ERP Cloud connectivity.">
+<thead>
+<tr class="cellalignment355">
+<th class="cellalignment368" id="d8854e1168">WSDL Requirements</th>
+<th class="cellalignment368" id="d8854e1170">Where Do You Get the WSDL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e1174" headers="d8854e1168">
+<p>The URL must be that of a service catalog service WSDL. The service catalog service is a Fusion Application service that returns a list of external services available for integration. It allows clients to retrieve information about all public Fusion Application service endpoints available for that instance.</p>
+<p>The service catalog service enables clients to retrieve information about all public Oracle Fusion Application service endpoints available for that instance. The information it returns is specific to the particular cloud instance and also reflects the new services that may have been introduced in patches applied to the instance. This service is used to programmatically discover the SOAP services available on the cloud instance and retrieve the necessary metadata to invoke the SOAP services to manage business objects.</p>
+</td>
+<td class="cellalignment355" headers="d8854e1174 d8854e1170">
+<p>The developer creating an Oracle ERP Cloud connection must work with the Oracle ERP Cloud service administrator to get the concrete WSDL URL for the service catalog service provisioned for the specific SaaS application.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>This section describes how to derive the external virtual host and port for a tokenized service WSDL. The topology information in the Topology Registration setup task contains the external virtual host and port for the domains and applications. The following instructions describe the steps for deriving the values using the service catalog service WSDL URL as an example: <code class="codeph">https://atf_server:<span class="codeinlineitalic">port</span>/fndAppCoreServices/ServiceCatalogService</code>.</p>
+<p>To access the Review Topology page, the ASM_REVIEW_TOPOLOGY_HIERARCHY_PRIV entitlement must be granted to the user's job role. The entitlement is granted to the ASM_APPLICATION_DEPLOYER_DUTY duty role, which is inherited by the duty roles ASM_APPLICATION_DEVELOPER_DUTY and ASM_APPLICATION_ADMIN_DUTY.</p>
+<p>If the menu items and tasks described in the following procedure are not available in your cloud instance, your user account is missing the required role. Contact your cloud instance security administrator for assistance.</p>
+<ol>
+<li>
+<p>Log in to the cloud instance.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Navigator</span> icon in the global area in the top part of the window, then chose <span class="bold">Setup and Maintenance</span> under the <span class="bold">Tools</span> heading.</p>
+</li>
+<li>
+<p>Select <span class="bold">Review Topology</span> under the <span class="bold">Topology Registration</span> section in the <span class="bold">Tasks</span> regional area on the left side of the window.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Detailed</span> tab in the middle of the window.</p>
+<p>The tab shows the list of domains configured in the cloud instance.<br />
+<span class="imageleft"><img class="imageleft" width="943" height="791" src="img/GUID-A83FF1BE-84D9-49C5-8820-9F7EBB92A3FD-default.png" alt="Description of GUID-A83FF1BE-84D9-49C5-8820-9F7EBB92A3FD-default.png follows" title="Description of GUID-A83FF1BE-84D9-49C5-8820-9F7EBB92A3FD-default.png follows" /><br />
+<a href="img_text/GUID-A83FF1BE-84D9-49C5-8820-9F7EBB92A3FD-default.htm">Description of the illustration GUID-A83FF1BE-84D9-49C5-8820-9F7EBB92A3FD-default.png</a></span><br /></p>
+</li>
+<li>
+<div class="p">Map the token name for the service path value to the domain name in the Topology Manager:
+<div class="tblformal" id="GUID-FCF2A3A6-1492-4794-9160-6DDE5EB163A6__GUID-94658D1F-6BBF-49DC-8F10-9EA8E15BC56D">
+<table class="cellalignment364">
+<thead>
+<tr class="cellalignment355">
+<th class="cellalignment368" id="d8854e1241">Token Name in Service Path</th>
+<th class="cellalignment368" id="d8854e1243">Domain Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e1247" headers="d8854e1241">atf_server</td>
+<td class="cellalignment355" headers="d8854e1247 d8854e1243">CommonDomain</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e1252" headers="d8854e1241">crm_server</td>
+<td class="cellalignment355" headers="d8854e1252 d8854e1243">CRMDomain</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e1257" headers="d8854e1241">fin_server</td>
+<td class="cellalignment355" headers="d8854e1257 d8854e1243">FinancialDomain</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e1262" headers="d8854e1241">hcm_server</td>
+<td class="cellalignment355" headers="d8854e1262 d8854e1243">HCMDomain</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e1267" headers="d8854e1241">ic_server</td>
+<td class="cellalignment355" headers="d8854e1267 d8854e1243">ICDomain</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e1272" headers="d8854e1241">prc_server</td>
+<td class="cellalignment355" headers="d8854e1272 d8854e1243">ProcurementDomain</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e1277" headers="d8854e1241">prj_server</td>
+<td class="cellalignment355" headers="d8854e1277 d8854e1243">ProjectsDomain</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e1282" headers="d8854e1241">scm_server</td>
+<td class="cellalignment355" headers="d8854e1282 d8854e1243">SCMDomain</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</li>
+<li>
+<p>Expand the domain name and select any external virtual host and port for the J2EE applications that are deployed on the domain. In the sample window, the values for this particular instance are <span class="bold">fs-your-cloud-hostname</span> and <span class="bold">443</span>, respectively.<br />
+<span class="imageleft"><img class="imageleft" width="935" height="640" src="img/GUID-CB01D3AF-462B-4765-81A8-7E2BBEE1BA6F-default.png" alt="Description of GUID-CB01D3AF-462B-4765-81A8-7E2BBEE1BA6F-default.png follows" title="Description of GUID-CB01D3AF-462B-4765-81A8-7E2BBEE1BA6F-default.png follows" /><br />
+<a href="img_text/GUID-CB01D3AF-462B-4765-81A8-7E2BBEE1BA6F-default.htm">Description of the illustration GUID-CB01D3AF-462B-4765-81A8-7E2BBEE1BA6F-default.png</a></span><br /></p>
+</li>
+<li>
+<p>Replace the <code class="codeph"><span class="codeinlineitalic">domainName</span>_<span class="codeinlineitalic">server</span>:<span class="codeinlineitalic">PortNumber</span></code> with the external virtual host and port identified in the previous step. For example:</p>
+<p><code class="codeph">https://fs-your-cloud-hostname:port/fndAppCoreServices/ServiceCatalogService?wsdl</code></p>
+</li>
+</ol>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Obtaining the Event Catalog URL</p>
+<p>You must know the CRM URL format to access the CRM application user interface. Follow the URL format to determine the event catalog URL. For example, if the CRM URL format is:</p>
+<pre dir="ltr">
+https://fusxxxx-crm-ext.us.oracle.com/customer/faces/CrmFusionHome
+</pre>
+<p>Then the event catalog URL is:</p>
+<pre dir="ltr">
+https://fusxxxx-crm-ext.us.oracle.com/soa-infra
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-CCC54D99-38FD-4C45-B34F-841A8260A7FE"></a>
+<h3 id="ICSUG-GUID-CCC54D99-38FD-4C45-B34F-841A8260A7FE" class="sect3">Specifying the SOAP Adapter WSDL</h3>
+<div>
+<p>The following table describes the SOAP Adapter WSDL requirements.</p>
+<div class="section">
+<div class="tblformal" id="GUID-CCC54D99-38FD-4C45-B34F-841A8260A7FE__GUID-2F7D5ADB-0AB7-4A39-AEA6-CA1A638FCF38">
+<table class="cellalignment367" summary="Requirements for configuring Oracle SOAP Adapter connectivity.">
+<thead>
+<tr class="cellalignment355">
+<th class="cellalignment368" id="d8854e1357">WSDL Requirements</th>
+<th class="cellalignment368" id="d8854e1359">Where Do You Get the WSDL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment355">
+<td class="cellalignment355" id="d8854e1363" headers="d8854e1357">
+<p>There is no restriction on the type of WSDL to use.</p>
+</td>
+<td class="cellalignment355" headers="d8854e1363 d8854e1359">
+<p>Any valid WSDL is an acceptable input.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-B5DD4318-61CD-466E-82DE-87C0B64020AA"></a>
+<h3 id="ICSUG-GUID-B5DD4318-61CD-466E-82DE-87C0B64020AA" class="sect3">Specifying the REST Adapter Endpoint</h3>
+<div>
+<p>The following table describes the REST Adapter endpoint requirements.</p>
+<div class="section">
+<div class="tblformal" id="GUID-B5DD4318-61CD-466E-82DE-87C0B64020AA__GUID-2F7D5ADB-0AB7-4A39-AEA6-CA1A638FCF38">
+<table class="cellalignment367" summary="Requirements for configuring REST Adapter connectivity.">
+<thead>
+<tr class="cellalignment355">
+<th class="cellalignment365" id="d8854e1401">Endpoint Requirements</th>
+<th class="cellalignment365" id="d8854e1403">Where Do You Get the Endpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment355">
+<td class="cellalignment366" id="d8854e1407" headers="d8854e1401">
+<p>Specify an endpoint that adheres to the following format.</p>
+<pre dir="ltr">
+https://<span class="italic">hostname</span>:443/integration/flowapi/rest/RESTTORESTINTEGRATIONPUT_TEST/v01/
+</pre></td>
+<td class="cellalignment366" headers="d8854e1407 d8854e1403">
+<p>Not applicable.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-F9589402-6B30-4418-B35C-889495974A13"></a>
+<h3 id="ICSUG-GUID-F9589402-6B30-4418-B35C-889495974A13" class="sect3">Specifying the Oracle CPQ Cloud WSDL</h3>
+<div>
+<p>The following table describes the Oracle CPQ Cloud WSDL requirements.</p>
+<div class="section">
+<div class="tblformal" id="GUID-F9589402-6B30-4418-B35C-889495974A13__GUID-2F7D5ADB-0AB7-4A39-AEA6-CA1A638FCF38">
+<table class="cellalignment367" summary="Requirements for configuring Oracle CPQ Cloud connectivity.">
+<thead>
+<tr class="cellalignment355">
+<th class="cellalignment365" id="d8854e1450">WSDL Requirements</th>
+<th class="cellalignment365" id="d8854e1452">Where Do You Get the WSDL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment355">
+<td class="cellalignment366" id="d8854e1456" headers="d8854e1450">
+<ul style="list-style-type: disc;">
+<li>
+<p>The WSDL must be generated by the CPQ Cloud site to integrate with Integration Cloud Service.</p>
+</li>
+<li>
+<p>Web Services 2.0 must be used to generate the URL needed to generate the WSDL.</p>
+</li>
+<li>
+<p>The Commerce SOAP server URL endpoint must be used to generate the URL needed to generate the WSDL.</p>
+</li>
+<li>
+<p>The commerce process to integrate with ICS must be used to generate the URL needed to generate the WSDL.</p>
+</li>
+</ul>
+</td>
+<td class="cellalignment366" headers="d8854e1456 d8854e1452">
+<p>Integration Cloud Service uses the Oracle CPQ Cloud transaction WSDL to understand the valid data and operations provided by Oracle CPQ Cloud.</p>
+<div class="p">To access the Oracle CPQ Cloud transaction WSDL:
+<ol>
+<li>
+<p>Log in to the Oracle CPQ Cloud site that you want integrate with Integration Cloud Service.</p>
+</li>
+<li>
+<p>To open the Admin home page, click <span class="bold">Admin</span>.</p>
+<p>The Admin home page appears.</p>
+</li>
+<li>
+<p>Under <span class="bold">Integration Platform</span>, click <span class="bold">Web Services</span>.</p>
+</li>
+<li>
+<p>For the <span class="bold">Web Service Version</span>, select <span class="bold">2.0</span>.</p>
+</li>
+<li>
+<p>Ensure that the <span class="bold">Commerce</span> tab is the current tab.</p>
+</li>
+<li>
+<p>From the <span class="bold">Process Name</span> list, select the name of the commerce process to integrate with Integration Cloud Service.</p>
+</li>
+<li>
+<p>In the <span class="bold">SOAP Server URL</span> field, append <code class="codeph">?WSDL</code> to the end of the value.</p>
+<p>For example: <code class="codeph">https://<span class="codeinlineitalic">site_URL</span>/v2_0/receiver/commerce/<span class="codeinlineitalic">processVarName</span>/?WSDL</code>.</p>
+<p>where:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph"><span class="codeinlineitalic">site_URL</span></code> is the base URL of the Oracle CPQ Cloud site.</p>
+</li>
+<li>
+<p><code class="codeph">processVarName</code>is the variable name of the selected commerce process.</p>
+</li>
+<li>
+<p>Optional: To confirm that the URL is correct, open it in a web browser. A page of WSDL should appear.</p>
+</li>
+</ul>
+<p>Use the URL you created as needed in Integration Cloud Service to reference the CPQ Cloud transaction WSDL.</p>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-9F7B3FA9-28A1-4C12-9C01-D10ECB0AD7F7"></a>
+<h3 id="ICSUG-GUID-9F7B3FA9-28A1-4C12-9C01-D10ECB0AD7F7" class="sect3">Specifying the NetSuite Adapter WSDL</h3>
+<div>
+<p>The following table describes the NetSuite Adapter WSDL requirements.</p>
+<div class="section">
+<div class="tblformal" id="GUID-9F7B3FA9-28A1-4C12-9C01-D10ECB0AD7F7__GUID-2F7D5ADB-0AB7-4A39-AEA6-CA1A638FCF38">
+<table class="cellalignment367" summary="Requirements for configuring Oracle NetSuite Cloud adapter connectivity.">
+<thead>
+<tr class="cellalignment355">
+<th class="cellalignment365" id="d8854e1589">WSDL Requirements</th>
+<th class="cellalignment365" id="d8854e1591">Where Do You Get the WSDL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment355">
+<td class="cellalignment366" id="d8854e1595" headers="d8854e1589">
+<p>You must specify the NetSuite WSDL.</p>
+</td>
+<td class="cellalignment366" headers="d8854e1595 d8854e1591">
+<p>Specify the following NetSuite WSDL:</p>
+<pre dir="ltr">
+https://webservices.netsuite.com/wsdl/<span class="italic">NetSuite_application_version</span>/netsuite.wsdl
+</pre>
+<p>where <code class="codeph"><span class="codeinlineitalic">NetSuite_application_version</span></code> is the version of the NetSuite application. For example:</p>
+<pre dir="ltr">
+https://webservices.netsuite.com/wsdl/v2014_2_0/netsuite.wsdl
+</pre>
+<pre dir="ltr">
+https://webservices.netsuite.com/wsdl/v2015_1_0/netsuite.wsdl
+</pre>
+<p>The web services may or may not be hosted at the above location. The adapter can programmatically determine the correct URL for the web services. NetSuite hosts customer accounts in multiple locations. For example:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph">webservices.netsuite.com</code></p>
+</li>
+<li>
+<p><code class="codeph">webservices.na1.netsuite.com</code></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+</div>
+<div class="sect2"><a id="GUID-39669C56-2CA9-4663-A2A9-F5B49EAF743B"></a>
+<h2 id="ICSUG-GUID-39669C56-2CA9-4663-A2A9-F5B49EAF743B" class="sect2">Configuring Connection Security</h2>
+<div>
+<p>Configure security for your connection by selecting the security policy and specifying login credentials.</p>
+<ol>
+<li class="stepexpand"><span>Click <span class="bold">Configure Credentials</span>.</span></li>
+<li class="stepexpand"><span>Enter your login credentials.</span>
+<ol>
+<li><span>Select the security policy. The default security policy is displayed first. The security policies available for selection are defined by the adapter you are configuring. For example, the Oracle RightNow Cloud and Oracle Sales Cloud adapters support the username password token policy, the Oracle Eloqua Cloud adapter supports HTTP basic authentication, and the SOAP adapter supports username password token, basic authentication, or not selecting any policy.</span></li>
+<li><span>If configuring an Eloqua Cloud connection, enter the company property.</span></li>
+<li><span>Enter a username and password.</span></li>
+<li><span>Reenter the password a second time.</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">OK</span>.</span>
+<div>You are now ready to test your connection.</div>
+</li>
+</ol>
+</div>
+<div class="sect3"><a id="GUID-F28DFA0B-0B1F-48A0-B9B2-9C982FA7AB59"></a>
+<h3 id="ICSUG-GUID-F28DFA0B-0B1F-48A0-B9B2-9C982FA7AB59" class="sect3">Configuring the Connection Security Policy</h3>
+<div>
+<p>The different adapters support a variety of security policies. Some support only a single type, others support multiple types of security policies.</p>
+<div class="section">
+<p>The following table lists the different adapters, the types of security policies they support, and the fields required by those policies.</p>
+<div class="tblformal" id="GUID-F28DFA0B-0B1F-48A0-B9B2-9C982FA7AB59__GUID-C1736C4B-A3C4-4685-A96D-F7EE75A51FAE">
+<table class="cellalignment364" summary="Table lists the different adapters and the security policies they support. It also lists the fields required by each policy type.">
+<thead>
+<tr class="cellalignment355">
+<th class="cellalignment365" id="d8854e1716">Adapter Type</th>
+<th class="cellalignment365" id="d8854e1718">Security Policies</th>
+<th class="cellalignment365" id="d8854e1720">Fields</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment355">
+<td class="cellalignment366" id="d8854e1724" headers="d8854e1716">
+<p><span class="bold">SOAP Adapter</span></p>
+</td>
+<td class="cellalignment366" headers="d8854e1724 d8854e1718">
+<p>Username Password Token</p>
+</td>
+<td class="cellalignment366" headers="d8854e1724 d8854e1720">
+<ul style="list-style-type: disc;">
+<li>
+<p>Username &mdash; The name of a user who has access to the destination web service.</p>
+</li>
+<li>
+<p>Password</p>
+</li>
+<li>
+<p>Confirm Password</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment366" id="d8854e1743" headers="d8854e1716">&nbsp;</td>
+<td class="cellalignment366" headers="d8854e1743 d8854e1718">
+<p>Basic Authentication (In the trigger (inbound) direction, HTTP basic authentication over SSL is supported.)</p>
+<p>If Basic Authentication is required for both trigger and invoke, you must create two separate connections</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>One for the trigger with the user name and password set to the ICS runtime user name and password.</p>
+</li>
+<li>
+<p>One for the invoke, with the user name/and password set to the outbound web service.</p>
+</li>
+</ul>
+</td>
+<td class="cellalignment366" headers="d8854e1743 d8854e1720">
+<ul style="list-style-type: disc;">
+<li>
+<p>Username &mdash; The name of a user who has access to the destination web service.</p>
+</li>
+<li>
+<p>Password</p>
+</li>
+<li>
+<p>Confirm Password</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment366" id="d8854e1769" headers="d8854e1716">&nbsp;</td>
+<td class="cellalignment366" headers="d8854e1769 d8854e1718">
+<p>No Security Policy</p>
+</td>
+<td class="cellalignment366" headers="d8854e1769 d8854e1720">&nbsp;</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment366" id="d8854e1777" headers="d8854e1716">
+<p><span class="bold">REST Adapter</span></p>
+</td>
+<td class="cellalignment366" headers="d8854e1777 d8854e1718">
+<p>Basic Authentication</p>
+</td>
+<td class="cellalignment366" headers="d8854e1777 d8854e1720">
+<ul style="list-style-type: disc;">
+<li>
+<p>Username &mdash; The name of a user who has access to the destination web service.</p>
+</li>
+<li>
+<p>Password</p>
+</li>
+<li>
+<p>Confirm Password</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment366" id="d8854e1796" headers="d8854e1716">&nbsp;</td>
+<td class="cellalignment366" headers="d8854e1796 d8854e1718">
+<p>OAuth Client Credentials</p>
+</td>
+<td class="cellalignment366" headers="d8854e1796 d8854e1720">
+<ul style="list-style-type: disc;">
+<li>
+<p>Access Token URI &mdash; The URL from which to obtain the access token.</p>
+</li>
+<li>
+<p>Client Id &mdash; The client identifier issued to the client during the registration process.</p>
+</li>
+<li>
+<p>Client Secret &mdash; The client secret.</p>
+</li>
+<li>
+<p>Scope &mdash; The scope of the access request. Scopes enable you to specify which type of access you need. Scopes limit access for the OAuth token. They do not grant any additional permission beyond that which the user already possesses.</p>
+</li>
+<li>
+<p>Auth Request Media Type &mdash; The format of the data you want to receive.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment366" id="d8854e1819" headers="d8854e1716">&nbsp;</td>
+<td class="cellalignment366" headers="d8854e1819 d8854e1718">
+<p>OAuth Resource Owner Password Credentials</p>
+</td>
+<td class="cellalignment366" headers="d8854e1819 d8854e1720">
+<ul style="list-style-type: disc;">
+<li>
+<p>Access Token URI &mdash; The URL from which to obtain the access token.</p>
+</li>
+<li>
+<p>Client Id &mdash; The client identifier issued to the client during the registration process.</p>
+</li>
+<li>
+<p>Client Secret &mdash; The client secret.</p>
+</li>
+<li>
+<p>Scope &mdash; The scope of the access request. Scopes enable you to specify which type of access you need. Scopes limit access for the OAuth token. They do not grant any additional permission beyond that which the user already possesses.</p>
+</li>
+<li>
+<p>Auth Request Media Type &mdash; The format of the data you want to receive.</p>
+</li>
+<li>
+<p>Username &mdash; The resource owner&rsquo;s user name.</p>
+</li>
+<li>
+<p>Password &mdash; The resource owner&rsquo;s password.</p>
+</li>
+<li>
+<p>Confirm Password</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment366" id="d8854e1851" headers="d8854e1716">&nbsp;</td>
+<td class="cellalignment366" headers="d8854e1851 d8854e1718">OAuth Authorization Code Credentials</td>
+<td class="cellalignment366" headers="d8854e1851 d8854e1720">
+<ul style="list-style-type: disc;">
+<li>
+<p>Client Id &mdash; The client identifier issued to the client during the registration process.</p>
+</li>
+<li>
+<p>Client Secret &mdash; The client secret.</p>
+</li>
+<li>
+<p>Authorization Code URI&mdash; The URI from which to request the authorization code.</p>
+</li>
+<li>
+<p>Access Token URI &mdash; URI to use for the access token.</p>
+</li>
+<li>
+<p>Scope &mdash; The scope of the access request. Scopes enable you to specify which type of access you need. Scopes limit access for the OAuth token. They do not grant any additional permission beyond that which the user already possesses.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment366" id="d8854e1872" headers="d8854e1716">&nbsp;</td>
+<td class="cellalignment366" headers="d8854e1872 d8854e1718">
+<p>OAuth Custom Three Legged Flow</p>
+</td>
+<td class="cellalignment366" headers="d8854e1872 d8854e1720">
+<p>Complete the fields appropriate to your integration. You must already have created your client application to complete the necessary fields.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Authorization Request &mdash; The client application URL to which you are redirected when you provide consent. The authorization server sends a callback to Oracle Integration Cloud Service to obtain an access token for storage. When you create your client application, you must register a redirect URI where the client application is listening.</p>
+</li>
+<li>
+<p>Access Token Request &mdash; The access token request to use to fetch the access token. Specify the request using CURL syntax. For example:</p>
+<pre dir="ltr">
+-X POST <span class="italic">method</span> -H <span class="italic">headers</span> -d <span class="italic">string_data</span> <span class="italic">access_token_uri</span>?<span class="italic">query_parameters</span>
+</pre></li>
+<li>
+<p>Refresh Token Request &mdash; The refresh token request to use to fetch the access token. This request refreshes the access token if it expires. Specify the request using CURL syntax. For example</p>
+<pre dir="ltr">
+-X POST <span class="italic">method</span> -H <span class="italic">headers</span> -d <span class="italic">string_data</span> <span class="italic">access_token_uri</span>?<span class="italic">query_parameters</span>
+</pre></li>
+<li>
+<p>Saccess_token &mdash; Use a regular expression (regex) to retrieve the access token.</p>
+</li>
+<li>
+<p>Srefresh_token &mdash; Use regex to retrieve the refresh token.</p>
+</li>
+<li>
+<p>Sexpiry &mdash; Use regex to identify when the access token expires.</p>
+</li>
+<li>
+<p>Stoken_type &mdash; Use regex to identify the access token type.</p>
+</li>
+<li>
+<p>access_token_usage &mdash; Specify how to pass the access token to access a protected resource. You can pass the token as a bearer token or as a query parameter. For example:</p>
+<pre dir="ltr">
+-H Authorization: Bearer ${access_token}
+</pre></li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment366" id="d8854e1939" headers="d8854e1716">&nbsp;</td>
+<td class="cellalignment366" headers="d8854e1939 d8854e1718">
+<p>OAuth Custom Two Legged Flow</p>
+</td>
+<td class="cellalignment366" headers="d8854e1939 d8854e1720">
+<p>Complete the fields appropriate to your integration. You must already have created your client application to complete the necessary fields.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Access Token Request &mdash; The access token request to use to fetch the access token. Specify the request using CURL syntax. For example:</p>
+<pre dir="ltr">
+-X POST <span class="italic">method</span> -H <span class="italic">headers</span> -d <span class="italic">string_data</span> <span class="italic">access_token_uri</span>?<span class="italic">query_parameters</span>
+</pre></li>
+<li>
+<p>Refresh Token Request &mdash; The refresh token request to use to fetch the access token. This request refreshes the access token if it expires. Specify the request using CURL syntax. For example</p>
+<pre dir="ltr">
+-X POST <span class="italic">method</span> -H <span class="italic">headers</span> -d <span class="italic">string_data</span> <span class="italic">access_token_uri</span>?<span class="italic">query_parameters</span>
+</pre></li>
+<li>
+<p>Sauth_code &mdash; Use regex to identify the authorization code.</p>
+</li>
+<li>
+<p>Saccess_token &mdash; Use regex to identify the access token.</p>
+</li>
+<li>
+<p>Srefresh_token &mdash; Use regex to identify the refresh token.</p>
+</li>
+<li>
+<p>Sexpiry &mdash; Use regex to identify when the access token expires.</p>
+</li>
+<li>
+<p>Stoken_type &mdash; Use regex to identify the access token type.</p>
+</li>
+<li>
+<p>access_token_usage &mdash; Specify how to pass the access token to access a protected resource. You can pass the token as a bearer token or as a query parameter. For example:</p>
+<pre dir="ltr">
+-H Authorization: Bearer ${access_token}
+</pre></li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment366" id="d8854e2006" headers="d8854e1716">&nbsp;</td>
+<td class="cellalignment366" headers="d8854e2006 d8854e1718">
+<p>No Security Policy</p>
+</td>
+<td class="cellalignment366" headers="d8854e2006 d8854e1720">&nbsp;</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment366" id="d8854e2014" headers="d8854e1716">
+<p><span class="bold">Salesforce Adapter</span></p>
+</td>
+<td class="cellalignment366" headers="d8854e2014 d8854e1718">
+<p>Salesforce Login</p>
+</td>
+<td class="cellalignment366" headers="d8854e2014 d8854e1720">
+<ul style="list-style-type: disc;">
+<li>
+<p>Username &mdash; The name of a user who has access to the destination web service.</p>
+</li>
+<li>
+<p>Password</p>
+</li>
+<li>
+<p>Confirm Password</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment366" id="d8854e2035" headers="d8854e1716">
+<p><span class="bold">NetSuite Adapter</span></p>
+</td>
+<td class="cellalignment366" headers="d8854e2035 d8854e1718">
+<p>NetSuite Authentication</p>
+</td>
+<td class="cellalignment366" headers="d8854e2035 d8854e1720">
+<ul style="list-style-type: disc;">
+<li>
+<p>Email Address &mdash; Email address that serves as the user name.</p>
+</li>
+<li>
+<p>Account</p>
+</li>
+<li>
+<p>Role &mdash; Role-based access control ensures that users can only use data and application functionality that is related to their responsibilities.</p>
+</li>
+<li>
+<p>Password</p>
+</li>
+<li>
+<p>Confirm Password</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment366" id="d8854e2060" headers="d8854e1716">
+<p><span class="bold">Oracle Eloqua Cloud Adapter</span></p>
+</td>
+<td class="cellalignment366" headers="d8854e2060 d8854e1718">
+<p>Eloqua HTTP Basic Authentication</p>
+</td>
+<td class="cellalignment366" headers="d8854e2060 d8854e1720">
+<ul style="list-style-type: disc;">
+<li>
+<p>Company &mdash; The company name.</p>
+</li>
+<li>
+<p>Username</p>
+</li>
+<li>
+<p>Password</p>
+</li>
+<li>
+<p>Confirm Password</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment366" id="d8854e2082" headers="d8854e1716">
+<p><span class="bold">Oracle Sales Cloud Adapter</span></p>
+</td>
+<td class="cellalignment366" headers="d8854e2082 d8854e1718">
+<p>Username Password Token</p>
+</td>
+<td class="cellalignment366" headers="d8854e2082 d8854e1720">
+<ul style="list-style-type: disc;">
+<li>
+<p>Username</p>
+</li>
+<li>
+<p>Password</p>
+</li>
+<li>
+<p>Confirm Password</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment366" id="d8854e2101" headers="d8854e1716">
+<p><span class="bold">Oracle HCM Cloud Adapter</span></p>
+</td>
+<td class="cellalignment366" headers="d8854e2101 d8854e1718">
+<p>Username Password Token</p>
+</td>
+<td class="cellalignment366" headers="d8854e2101 d8854e1720">
+<ul style="list-style-type: disc;">
+<li>
+<p>Username</p>
+</li>
+<li>
+<p>Password</p>
+</li>
+<li>
+<p>Confirm Password</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment366" id="d8854e2120" headers="d8854e1716">
+<p><span class="bold">Oracle ERP Cloud Adapter</span></p>
+</td>
+<td class="cellalignment366" headers="d8854e2120 d8854e1718">
+<p>Username Password Token</p>
+</td>
+<td class="cellalignment366" headers="d8854e2120 d8854e1720">
+<ul style="list-style-type: disc;">
+<li>
+<p>Username</p>
+</li>
+<li>
+<p>Password</p>
+</li>
+<li>
+<p>Confirm Password</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment366" id="d8854e2139" headers="d8854e1716">
+<p><span class="bold">Oracle RightNow Cloud Adapter</span></p>
+</td>
+<td class="cellalignment366" headers="d8854e2139 d8854e1718">
+<p>Username Password Token</p>
+</td>
+<td class="cellalignment366" headers="d8854e2139 d8854e1720">
+<ul style="list-style-type: disc;">
+<li>
+<p>Username</p>
+</li>
+<li>
+<p>Password</p>
+</li>
+<li>
+<p>Confirm Password</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment366" id="d8854e2158" headers="d8854e1716">
+<p><span class="bold">Oracle Message Cloud Service</span></p>
+</td>
+<td class="cellalignment366" headers="d8854e2158 d8854e1718">
+<p>Username Password Token</p>
+</td>
+<td class="cellalignment366" headers="d8854e2158 d8854e1720">
+<ul style="list-style-type: disc;">
+<li>
+<p>Username</p>
+</li>
+<li>
+<p>Password</p>
+</li>
+<li>
+<p>Confirm Password</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment355">
+<td class="cellalignment366" id="d8854e2177" headers="d8854e1716">
+<p><span class="bold">Oracle CPQ Cloud</span></p>
+</td>
+<td class="cellalignment366" headers="d8854e2177 d8854e1718">
+<p>Username Password Token</p>
+</td>
+<td class="cellalignment366" headers="d8854e2177 d8854e1720">
+<ul style="list-style-type: disc;">
+<li>
+<p>Username</p>
+</li>
+<li>
+<p>Password</p>
+</li>
+<li>
+<p>Confirm Password</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>For the security policies of additional adapters, see the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>For the Eventbrite Adapter, see <a class="olink ICSEB-GUID-0AFC3988-1CEF-4624-A8D7-CD09C1E34211" target="_blank" href="../ICSEB/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSEB-GUID-0AFC3988-1CEF-4624-A8D7-CD09C1E34211"><span class="italic">Using the Eventbrite Adapter</span></a>.</p>
+</li>
+<li>
+<p>For the Evernote Adapter, see <a class="olink ICSEN-GUID-AE7BF523-5425-499B-84AA-44FE06E061E8" target="_blank" href="../ICSEN/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSEN-GUID-AE7BF523-5425-499B-84AA-44FE06E061E8"><span class="italic">Using the Evernote Adapter</span></a>.</p>
+</li>
+<li>
+<p>For the Facebook Adapter, see <a class="olink ICSFB-GUID-D2A0E132-69DF-476D-B31F-F0DC7B9833A6" target="_blank" href="../ICSFB/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSFB-GUID-D2A0E132-69DF-476D-B31F-F0DC7B9833A6"><span class="italic">Using the Facebook Adapter</span></a>.</p>
+</li>
+<li>
+<p>For the FTP Adapter, see <a class="olink ICSFT-GUID-6BD410FC-061C-4F5B-B900-A586638710CA" target="_blank" href="../ICSFT/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSFT-GUID-6BD410FC-061C-4F5B-B900-A586638710CA"><span class="italic">Using the FTP Adapter</span></a>.</p>
+</li>
+<li>
+<p>For the Gmail Adapter, see <a class="olink ICSGM-GUID-173F2E84-9729-4402-8881-EEDD84284222" target="_blank" href="../ICSGM/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSGM-GUID-173F2E84-9729-4402-8881-EEDD84284222"><span class="italic">Using the Gmail Adapter</span></a>.</p>
+</li>
+<li>
+<p>For the Google Calendar Adapter, see <a class="olink ICSGO-GUID-E1E07C95-0436-4D3C-BCD9-41A3451BA47D" target="_blank" href="../ICSGO/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSGO-GUID-E1E07C95-0436-4D3C-BCD9-41A3451BA47D"><span class="italic">Using the Google Calendar Adapter</span></a>.</p>
+</li>
+<li>
+<p>For the Google Task Adapter, see <a class="olink ICSGT-GUID-017296B6-8C25-4297-B175-7C8E2F71ED3E" target="_blank" href="../ICSGT/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSGT-GUID-017296B6-8C25-4297-B175-7C8E2F71ED3E"><span class="italic">Using the Google Task Adapter</span></a>.</p>
+</li>
+<li>
+<p>For the LinkedIn Adapter, see <a class="olink ICSLI-GUID-97C05E88-4186-475A-B266-B77E363F249C" target="_blank" href="../ICSLI/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSLI-GUID-97C05E88-4186-475A-B266-B77E363F249C"><span class="italic">Using the LinkedIn Adapter</span></a>.</p>
+</li>
+<li>
+<p>For the MailChimp Adapter, see <a class="olink ICSCH-GUID-B6E54331-C52D-44A1-99A2-B388348F971B" target="_blank" href="../ICSCH/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSCH-GUID-B6E54331-C52D-44A1-99A2-B388348F971B"><span class="italic">Using the MailChimp Adapter</span></a>.</p>
+</li>
+<li>
+<p>For the Microsoft Calendar Adapter, see <a class="olink ICSMS-GUID-5AFDE406-8168-4875-9CA7-792ECD363DA6" target="_blank" href="../ICSMS/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSMS-GUID-5AFDE406-8168-4875-9CA7-792ECD363DA6"><span class="italic">Using the Microsoft Calendar Adapter</span></a>.</p>
+</li>
+<li>
+<p>For the Microsoft Contact Adapter, see <a class="olink ICSMT-GUID-030E9999-78CD-461E-987E-61DB5524C660" target="_blank" href="../ICSMT/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSMT-GUID-030E9999-78CD-461E-987E-61DB5524C660"><span class="italic">Using the Microsoft Contact Adapter</span></a>.</p>
+</li>
+<li>
+<p>For the Microsoft Email Adapter, see <a class="olink ICSME-GUID-ED8BA700-3C23-4065-BA9B-9553DBAFE274" target="_blank" href="../ICSME/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSME-GUID-ED8BA700-3C23-4065-BA9B-9553DBAFE274"><span class="italic">Using the Microsoft Email Adapter</span></a>.</p>
+</li>
+<li>
+<p>For the MySQL Adapter, see <a class="olink ICSSQ-GUID-EBD7CF54-9B0C-4882-83DC-813A47AC7EA9" target="_blank" href="../ICSSQ/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSSQ-GUID-EBD7CF54-9B0C-4882-83DC-813A47AC7EA9"><span class="italic">Using the MySQL Adapter</span></a>.</p>
+</li>
+<li>
+<p>For the Oracle Commerce Cloud Adapter, see <a class="olink ICSCC-GUID-7C793F3A-310E-4948-8EFF-6318E7F64533" target="_blank" href="../ICSCC/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSCC-GUID-7C793F3A-310E-4948-8EFF-6318E7F64533"><span class="italic">Using the Oracle Commerce Cloud Adapter</span></a>.</p>
+</li>
+<li>
+<p>For the Oracle Database Adapter, see <a class="olink ICSSB-GUID-DE7103DC-FBF7-4B78-BC02-027920F6CEF0" target="_blank" href="../ICSSB/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSSB-GUID-DE7103DC-FBF7-4B78-BC02-027920F6CEF0"><span class="italic">Using the Oracle Database Adapter</span></a>.</p>
+</li>
+<li>
+<p>For the Oracle E-Business Suite Adapter, see <a class="olink ICSEA" target="_blank" href="../ICSEA/toc.htm"><span class="italic">Using Oracle E-Business Suite Adapter</span></a>.</p>
+</li>
+<li>
+<p>For the Oracle Siebel Adapter, see <a class="olink ICSSI-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSSI/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSSI-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Oracle Siebel Adapter</span></a>.</p>
+</li>
+<li>
+<p>For the SurveyMonkey Adapter, see <a class="olink ICSSM-GUID-5747D82F-F2D2-4C09-B65A-F69E508DE486" target="_blank" href="../ICSSM/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSSM-GUID-5747D82F-F2D2-4C09-B65A-F69E508DE486"><span class="italic">Using the SurveyMonkey Adapter</span></a>.</p>
+</li>
+<li>
+<p>For the SAP Adapter, see <a class="olink ICSSA-GUID-C6B3CF5A-DC12-4F8C-8F4A-5B885BE8D4C4" target="_blank" href="../ICSSA/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSSA-GUID-C6B3CF5A-DC12-4F8C-8F4A-5B885BE8D4C4"><span class="italic">Using the SAP Adapter</span></a>.</p>
+</li>
+<li>
+<p>For the Twitter Adapter, see <a class="olink ICSTW-GUID-00EF97BF-31BA-48D7-B96E-31A215532AF8" target="_blank" href="../ICSTW/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSTW-GUID-00EF97BF-31BA-48D7-B96E-31A215532AF8"><span class="italic">Using the Twitter Adapter</span></a>.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<div class="sect2"><a id="GUID-035AEC59-52B8-4F63-BE0D-0F8CCF89FD22"></a>
+<h2 id="ICSUG-GUID-035AEC59-52B8-4F63-BE0D-0F8CCF89FD22" class="sect2">Testing the Connection</h2>
+<div>
+<p>Test your connection to ensure that it is successfully configured.</p>
+<ol>
+<li class="stepexpand"><span>In the upper right corner of the page, click <span class="bold">Test</span>.</span>
+<div>If successful, the following message is displayed and the progress indicator shows 100%.
+<p><code class="codeph">The connection test was successful!</code></p>
+</div>
+</li>
+<li class="stepexpand"><span>If your connection was unsuccessful, an error message is displayed with details. Verify that the configuration details you entered are correct.</span></li>
+<li class="stepexpand"><span>When complete, click <span class="bold">Save</span>.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-14C32FCB-0E2D-4543-B489-34AE136397ED"></a>
+<h2 id="ICSUG-GUID-14C32FCB-0E2D-4543-B489-34AE136397ED" class="sect2">Editing a Connection</h2>
+<div>
+<p>You can edit connection settings after creating a new connection.</p>
+<ol>
+<li class="stepexpand"><span>In the <span>Oracle Integration Cloud Service</span> toolbar, click <span class="bold">Designer</span>.</span></li>
+<li class="stepexpand"><span>On the Designer Portal, click <span class="bold">Connections</span>.</span></li>
+<li class="stepexpand"><span>On the Connections page, select <span class="bold">Edit</span> from the connection <span class="bold">Actions</span> menu or click the connection name.<br />
+<img width="121" height="77" src="img/GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.png" alt="Description of GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.png follows" title="Description of GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.png follows" /><br />
+<a href="img_text/GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.htm">Description of the illustration GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.png</a><br /></span>
+<div>The Connection page is displayed.</div>
+</li>
+<li class="stepexpand"><span>To edit the notification email contact, change the email address in the <span class="bold">Email Address</span> field.</span></li>
+<li class="stepexpand"><span>To edit the connection properties, click <span class="bold">Configure Connectivity</span>. Note that some connections do not include this button. If your connector does not include a <span class="bold">Configure Connectivity</span> button, then click the <span class="bold">Configure Credentials</span> button.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-44A50218-C1B3-4503-9F71-0CA8CF8BC7C0"></a>
+<h2 id="ICSUG-GUID-44A50218-C1B3-4503-9F71-0CA8CF8BC7C0" class="sect2">Cloning a Connection</h2>
+<div>
+<p>You can clone a copy of an existing connection. It is a quick way to create a new connection.</p>
+<ol>
+<li class="stepexpand"><span>In the <span>Oracle Integration Cloud Service</span> toolbar, click <span class="bold">Designer</span>.</span></li>
+<li class="stepexpand"><span>On the Designer Portal, click <span class="bold">Connections</span>.</span></li>
+<li class="stepexpand"><span>On the Connections page, select <span class="bold">Clone</span> from the connection <span class="bold">Actions</span> menu.<br />
+<img width="121" height="77" src="img/GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.png" alt="Description of GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.png follows" title="Description of GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.png follows" /><br />
+<a href="img_text/GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.htm">Description of the illustration GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.png</a><br /></span>
+<div>The Clone Connection dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>Enter the connection information.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Clone</span>.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Edit</span> to configure the credentials of your cloned connection. Cloning a connection does not copy the credentials.</span></li>
+</ol>
+<div class="section">See <a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-14C32FCB-0E2D-4543-B489-34AE136397ED" title="You can edit connection settings after creating a new connection.">Editing a Connection</a> for instructions.</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-39E653C5-6506-427B-923E-45BD965D1F69"></a>
+<h2 id="ICSUG-GUID-39E653C5-6506-427B-923E-45BD965D1F69" class="sect2">Deleting a Connection</h2>
+<div>
+<p>You can delete a connection from the connection menu.</p>
+<ol>
+<li class="stepexpand"><span>In the <span>Oracle Integration Cloud Service</span> toolbar, click <span class="bold">Designer</span>.</span></li>
+<li class="stepexpand"><span>On the Designer Portal, click <span class="bold">Connections</span>.</span></li>
+<li class="stepexpand"><span>On the Connections page, click <span class="bold">Delete</span> from the connection <span class="bold">Actions</span> menu.<br />
+<img width="121" height="77" src="img/GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.png" alt="Description of GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.png follows" title="Description of GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.png follows" /><br />
+<a href="img_text/GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.htm">Description of the illustration GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.png</a><br /></span>
+<div>The Delete Connection dialog is displayed if the connection is not used in an integration.</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Yes</span> to confirm deletion.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-E2CD3E29-33B5-4245-BA25-770444AABD4B"></a>
+<h2 id="ICSUG-GUID-E2CD3E29-33B5-4245-BA25-770444AABD4B" class="sect2">Refreshing Integration Metadata</h2>
+<div>
+<p>You can manually refresh the currently-cached metadata available to adapters that have implemented metadata caching. Metadata changes typically relate to customizations of integrations, such as adding custom objects and attributes to integrations. There may also be cases in which integrations have been patched, which results in additional custom objects and attributes being added. This option is similar to clearing the cache in your browser. Without a manual refresh, a staleness check is only performed when you drag a connection into an integration. This is typically sufficient, but in some cases you may know that a refresh is required. For these cases, the <span class="bold">Refresh Metadata</span> menu option is provided.</p>
+<div class="section">To refresh integration metadata:
+<div class="infobox-note" id="GUID-E2CD3E29-33B5-4245-BA25-770444AABD4B__GUID-4558664B-C97A-4889-AC51-7DD45B3550ED">
+<p class="notep1">Note:</p>
+The <span class="bold">Refresh Metadata</span> menu option is only available with adapters that have implemented metadata caching.</div>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>In the Integration Cloud Service toolbar, click <span class="bold">Designer</span>.<br /></span>
+<div class="imageleft"><img class="imageleft" width="276" height="58" src="img/GUID-7557A237-0437-4506-B9B6-62B88DC0C8D7-default.png" alt="Description of GUID-7557A237-0437-4506-B9B6-62B88DC0C8D7-default.png follows" title="Description of GUID-7557A237-0437-4506-B9B6-62B88DC0C8D7-default.png follows" /><br />
+<a href="img_text/GUID-7557A237-0437-4506-B9B6-62B88DC0C8D7-default.htm">Description of the illustration GUID-7557A237-0437-4506-B9B6-62B88DC0C8D7-default.png</a></div>
+<br /></li>
+<li class="stepexpand"><span>In the Designer Portal, click <span class="bold">Connections</span>.</span></li>
+<li class="stepexpand"><span>Locate the connection to refresh.</span></li>
+<li class="stepexpand"><span>From the menu at the right, select <span class="bold">Refresh Metadata</span>.<br /></span>
+<div class="imageleft"><img class="imageleft" width="1139" height="153" src="img/GUID-CD8C7FBE-0816-49C0-9C0D-6163E3D7D654-default.png" alt="Description of GUID-CD8C7FBE-0816-49C0-9C0D-6163E3D7D654-default.png follows" title="Description of GUID-CD8C7FBE-0816-49C0-9C0D-6163E3D7D654-default.png follows" /><br />
+<a href="img_text/GUID-CD8C7FBE-0816-49C0-9C0D-6163E3D7D654-default.htm">Description of the illustration GUID-CD8C7FBE-0816-49C0-9C0D-6163E3D7D654-default.png</a></div>
+<br />
+<div>A message is displayed indicating that the refresh was successful.
+<pre dir="ltr">
+Metadata refresh for connection "RightNow" has been initiated successfully.
+</pre></div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment354">
+<tr>
+<td class="cellalignment361">
+<table class="cellalignment359">
+<tr>
+<td class="cellalignment358"><a href="GUID-56EF491A-71B8-4EE4-A119-3D564E1C75EE.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment358"><a href="GUID-8EC9D802-9DD6-485B-9C2A-218C61E9F1FB.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment363">
+<table class="cellalignment357">
+<tr>
+<td class="cellalignment358"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment358"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment358"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

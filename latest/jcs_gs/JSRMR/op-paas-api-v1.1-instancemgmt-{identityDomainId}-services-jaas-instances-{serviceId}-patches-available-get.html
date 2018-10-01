@@ -1,0 +1,3363 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service - View Available Patches</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-patches-applied-get.html" title="Previous" type="text/html">
+        <link rel="next" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-patches-checks-job-%7BjobId%7D-get.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-patches-applied-get.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-patches-checks-job-%7BjobId%7D-get.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            
+            <header>
+
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li>Tasks</li>
+                    
+                    <li class="active">
+                        
+                        <a href="api-Patches.html">Patches</a>
+                        
+                    </li>
+                    
+                </ol>
+                
+                <p class="draftsubtitle"></p>
+                
+                <h2>View Available Patches</h2>
+                <div>
+                    <div class="label label-get text-uppercase">get</div>
+                    <p style="word-break: break-word;"><strong>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/jaas/instances/{serviceId}/patches/available</strong></p>
+                </div>
+            </header>
+            <section>
+
+                <div class="description">Returns a list of all available patches for an Oracle Java Cloud Service instance.</div>
+
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                        <li role="presentation" class="active"><a href="#request" aria-controls="request" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-in" aria-hidden="true"></span> Request</a></li>
+                        <li role="presentation"><a href="#response" aria-controls="response" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-out" aria-hidden="true"></span> Response</a></li>
+                        
+                        <li role="presentation"><a href="#examples" aria-controls="examples" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-edit" aria-hidden="true"></span> Examples</a></li>
+                        
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="request">
+                            <h3 class="visible-print-block">Request</h3>
+                            
+
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Path Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>identityDomainId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account (on Oracle Public Cloud).<p>Tenant name for the Oracle Java Cloud Service instance (on Oracle Cloud Machine).</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                        <dt>serviceId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the Oracle Java Cloud Service instance.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+
+                            
+                            
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Header Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>X-ID-TENANT-NAME</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account (on Oracle Public Cloud).<p>Tenant name for the Oracle Java Cloud Service instance (on Oracle Cloud Machine).</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+
+
+                            
+
+
+
+                            
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="response">
+                            <h3 class="visible-print-block">Response</h3>
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">200 Response <span class="glyphicon glyphicon-ok-sign response-symbol" data-response-code="200" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    OK. See <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=jcs_rest_statuscodes'>Status Codes</a> for information about other possible HTTP status codes.
+                                </div>
+
+                                
+                                
+
+                                
+                                <div class="panel panel-default">
+
+                                    <div class="panel-heading">Body</div>
+                                    <div class="panel-body">
+                                        
+                                        <div>The response body contains information about the available patches.</div>
+                                        
+
+                                        <div class="schema-container">
+                                        
+                                        <div id="200-definitions-available-patches-response" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : available-patches-response</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The response body contains information about the available patches.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-available-patches-response-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-available-patches-response-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-available-patches-response-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-available-patches-response-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-available-patches-response-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-available-patches" role="button" class="btn btn-default btn-sm">available-patches</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Information about the available patches.</div>
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-available-patches" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : available-patches</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Information about the available patches.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-available-patches-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-available-patches-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-available-patches-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-available-patches-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-available-patches-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>availablePatchGuiMetadata</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-available-patches-properties-availablePatchGuiMetadata" role="button" class="btn btn-default btn-sm">availablePatchGuiMetadata</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Instruction to the metadata UI about the patch.</div>
+
+            
+        </dd>
+        
+        <dt>componentPatches</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-available-patches-properties-componentPatches" role="button" class="btn btn-default btn-sm">componentPatches</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>A map that groups details of a component in the patch. A component could be WLS, JDK, OTD_JDK, or ORACLE_TOOLS.</div>
+
+            
+        </dd>
+        
+        <dt>displayName</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Display name of the patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>entryDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time the patch is created.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>entryUserId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the user that created the patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>includesConfigUpgrade</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that indicates whether the patch includes a configuration upgrade.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>induceDownTime</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that indicates whether the patching induces a downtime of the service.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>isAutoApply</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that indicates whether the patch can be applied automatically.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>isCustomerVisible</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that indicates whether the patch is visible to customer.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>isDeleted</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that indicates whether the patch has been deleted and is no longer available. The information about the patch is not removed from the list of available patches in order to maintain an historical record of all patches.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>lastprePreCheckResult</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-available-patches-properties-lastprePreCheckResult" role="button" class="btn btn-default btn-sm">lastprePreCheckResult</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about the last precheck operation.</div>
+
+            
+        </dd>
+        
+        <dt>metaVersion</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The release version of metadata service manager.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>minToolsVersion</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Minimum version of the Oracle Cloud Tools required by the patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>patchCategory</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Category of the patch. For example: <code>ORACLE_TOOLS</code>, <code>General</code>, <code>JDK</code>, <code>Multiple</code>, <code>Security</code>, <code>VM_SCRIPTS</code>, and so on.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>patchCustomActions</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-available-patches-properties-patchCustomActions" role="button" class="btn btn-default btn-sm">patchCustomActions</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>List of customer actions during patching.</div>
+
+            
+        </dd>
+        
+        <dt>patchDescription</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Description of the patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>patchId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Patch ID.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>patchNumber</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Patch number.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>patchReleaseUrl</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>URL that provides more information about the patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>patchSeverity</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Severity of the patch. For example, <code>Critical</code>, <code>Mandatory</code>, <code>Recommended</code>, <code>Optional</code>, and so on.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>patchType</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Patch type classification. Valid values include:<ul><li><code>COMPOSITE</code>- composite patch</li><li><code>JCS_TOOLS</code>- Oracle Java Cloud Service tools update</li><li><code>JDK</code>- JDK update</li><li><code>JRF_UPDATE</code>- Oracle JRF update</li><li><code>PS</code>- patch set</li><li><code>PSU</code>- patch set update</li></ul></div>
+
+
+
+            
+        </dd>
+        
+        <dt>releaseDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time the patch is released.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>releaseVersion</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Release version of the component in this patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>requiresRestart</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that indicates whether the patch requires a restart of the service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>serviceType</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Type of service that was patched. For Oracle Java Cloud Service, service type is <code>JaaS</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>serviceTypeVersions</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Oracle Java Cloud Service instance version to which the patch can be applied. For example: <code>14.1</code>, <code>Any</code>, where <code>Any</code> indicates that the patch can be applied to any version.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>serviceVersion</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Version of Oracle Java Cloud Service instance that will be patched. For example, <code>12cR3</code> or <code>11g,12c,12cR3</code>. </div>
+
+
+
+            
+        </dd>
+        
+        <dt>supportedStrategy</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Supported patching strategy. For example: <code>In Place</code>.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-available-patches-properties-availablePatchGuiMetadata" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : availablePatchGuiMetadata</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Instruction to the metadata UI about the patch.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-available-patches-properties-availablePatchGuiMetadata-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-available-patches-properties-availablePatchGuiMetadata-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-available-patches-properties-availablePatchGuiMetadata-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-available-patches-properties-availablePatchGuiMetadata-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-available-patches-properties-availablePatchGuiMetadata-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>supportsPreCheck</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that indicates whether the patch supports precheck via the web user interface.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-available-patches-properties-componentPatches" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : componentPatches</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>A map that groups details of a component in the patch. A component could be WLS, JDK, OTD_JDK, or ORACLE_TOOLS.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-available-patches-properties-componentPatches-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-available-patches-properties-componentPatches-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-available-patches-properties-componentPatches-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-available-patches-properties-componentPatches-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-available-patches-properties-componentPatches-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>expectedAppliedPatches</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>List of prerequisite patches that should already be applied prior to installing this patch.<p><b>Note:</b> If you have applied custom patches other than those defined on this list, you will need to reapply them after applying this patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>id</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>ID of a component patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>releaseVersion</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Release version of the component in this patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>version</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Version of the patch component.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>zipBundles</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-available-patches-properties-componentPatches-properties-zipBundles" role="button" class="btn btn-default btn-sm">zipBundles</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Zips that contain the patched binaries or patches for the service volumes.</div>
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-available-patches-properties-lastprePreCheckResult" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : lastprePreCheckResult</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about the last precheck operation.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-available-patches-properties-lastprePreCheckResult-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-available-patches-properties-lastprePreCheckResult-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-available-patches-properties-lastprePreCheckResult-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-available-patches-properties-lastprePreCheckResult-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-available-patches-properties-lastprePreCheckResult-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>endDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time that the patching precheck operation stopped.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>href</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>URL for checking the status of the patching precheck job.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>id</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>ID of the operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>inProgress</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that indicates whether the patch precheck is still in progress.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>jobId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Job ID for the patching precheck operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>jsonResult</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>System messages.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>patchId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Patch ID.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>performedBy</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the user account used to perform the patch precheck.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>preCheckMessages</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-available-patches-properties-lastprePreCheckResult-properties-preCheckMessages" role="button" class="btn btn-default btn-sm">preCheckMessages</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>List of patching precheck messages. No patching precheck messages are returned when the precheck completes successfully.</div>
+
+            
+        </dd>
+        
+        <dt>startDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time that the patching precheck operation started.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>status</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Status of the patching precheck operation. Valid values include: <ul><li><code>PASSED_PRECHECK</code> - Patching precheck passed.</li><li><code>DIDNT_PASS_PRECHECK</code> - Patching precheck did not pass. Check the <code>preCheckMessages</code> attribute for more information.</li><li><code>DIDNT_FINISHED_PRECHECK</code> - An internal error was encountered and the patching precheck could not be performed.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-available-patches-properties-patchCustomActions" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : patchCustomActions</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>List of customer actions during patching.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-available-patches-properties-patchCustomActions-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-available-patches-properties-patchCustomActions-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-available-patches-properties-patchCustomActions-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-available-patches-properties-patchCustomActions-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-available-patches-properties-patchCustomActions-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-available-patches-properties-componentPatches-properties-zipBundles" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : zipBundles</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Zips that contain the patched binaries or patches for the service volumes.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-available-patches-properties-componentPatches-properties-zipBundles-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-available-patches-properties-componentPatches-properties-zipBundles-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-available-patches-properties-componentPatches-properties-zipBundles-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-available-patches-properties-componentPatches-properties-zipBundles-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-available-patches-properties-componentPatches-properties-zipBundles-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>id</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>ID of a component patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>md5sum</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Checksum used to validate the patch binary.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>provisioningObjectRef</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Location of binary to use when creating a new service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>storageKey</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Location of the patch zip on the cloud.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>zipVersion</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Software version that is included in the zip.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-available-patches-properties-lastprePreCheckResult-properties-preCheckMessages" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : preCheckMessages</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>List of patching precheck messages. No patching precheck messages are returned when the precheck completes successfully.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-available-patches-properties-lastprePreCheckResult-properties-preCheckMessages-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-available-patches-properties-lastprePreCheckResult-properties-preCheckMessages-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-available-patches-properties-lastprePreCheckResult-properties-preCheckMessages-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-available-patches-properties-lastprePreCheckResult-properties-preCheckMessages-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-available-patches-properties-lastprePreCheckResult-properties-preCheckMessages-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+
+
+                        </div>
+                        
+                        <div role="tabpanel" class="tab-pane fade" id="examples">
+                            <h3>Examples</h3>
+                            <div class="body conbody">
+ <p class="p">The following example shows how to view available patches for an Oracle Java Cloud Service instance by submitting a GET request on the REST resource using cURL.</p> 
+ <p class="p"><strong class="ph b">Note:</strong> The command in this example uses the URL structure <samp class="ph codeph">https://rest_server_url/<em class="ph i">resource-path</em></samp>, where <samp class="ph codeph">rest_server_url</samp> is the Oracle Public Cloud or Oracle Cloud Machine REST server to contact for your identity domain or tenant name. See <a class="xref" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=jcs_rest_sendrequest" target="_blank">Send Requests</a> for the appropriate URL structure to use on Oracle Public Cloud or Oracle Cloud Machine.</p> 
+ <div class="section">
+  <h3 class="title sectiontitle">cURL Command</h3>
+  <pre class="pre">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/api/v1.1/instancemgmt/ExampleIdentityDomain/services/jaas/instances/ExampleInstance/patches/available
+</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Header</h3>
+  <p class="p">The following shows an example of the response header.</p> 
+  <pre class="pre">HTTP/1.1 200 OK
+Date: Mon, 06 Jun 2016 20:25:49 GMT
+Content-Type: application/json</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Body</h3>
+  <p class="p">The following is an example of the response body in JSON format, showing an available patch for WebLogic Server.</p> 
+  <pre class="pre">[
+  {
+    "availablePatchGuiMetadata":{"supportsPreCheck":true},
+    "lastprePreCheckResult":
+    {
+      "id":1905,
+      "jobId":"4535918",
+      "patchId":"Patch_12.1.3.0.6",
+      "jsonResult":"{\"resultMessage\":\"Completed\",\"messages\":[]}",
+      "startDate":"Jun 3, 2016 2:37:26 PM",
+      "endDate":"Jun 3, 2016 2:40:19 PM",
+      "performedBy":"username",
+      "inProgress":false,
+      "status":"PASSED_PRECHECK",
+      "preCheckMessages":[]
+    },
+    "patchId":"Patch_12.1.3.0.6",
+    "patchNumber":"Patch_12.1.3.0.6",
+    "patchCategory":"General",
+    "patchSeverity":"Normal",
+    "patchDescription":"WLS PATCH SET UPDATE 12.1.3.0.6",
+    "patchReleaseUrl":"https://support.oracle.com/epmos/faces/PatchDetail?patchId\u003d21983457",
+    "serviceType":"JaaS",
+    "serviceVersion":"12cR3",
+    "releaseDate":"Jan 15, 2016 1:40:00 AM",
+    "entryDate":"Jun 4, 2016 2:43:25 AM",
+    "entryUserId":"OCLOUD9_TAS_APPID",
+    "componentPatches":
+    {
+      "WLS":
+      {
+        "id":711,
+        "version":"12.1.3.0.6",
+        "releaseVersion":"12.1.3.0.6",
+        "expectedAppliedPatches":"opatch:21983457,20244872,21773981,18974665,21680406",
+        "zipBundles":
+        {
+          "WLS":
+          {
+            "id":681,
+            "md5sum":"0c48b61090a2970061c4367047a10dba",
+            "provisioningObjectRef":"FMW/12.1.3.0.6/160202/fmiddleware.zip",
+            "storageKey":"PATCH/WLS/Patch_12.1.3.0.6",
+            "zipVersion":"12.1.3.0.6"
+          }
+        }
+      }
+    },
+    "patchType":"PSU",
+    "requiresRestart":true,
+    "serviceTypeVersions":"ANY",
+    "isDeleted":false,
+    "minToolsVersion":"15.1.3-0-1501230343",
+    "displayName":"12.1.3.0.6",
+    "releaseVersion":"12.1.3.0.6"
+  }
+]
+
+</pre> 
+ </div> 
+</div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+        </article>
+    </body>
+</html>

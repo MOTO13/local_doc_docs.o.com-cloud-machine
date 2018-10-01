@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Managing SSH Keys</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-07T05:33:13Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine REST API Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E68443-07" />
+<meta name="dcterms.isVersionOf" content="ELUAP" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-FF5BD712-A4BB-4095-8279-7C5914D61F98.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUAP.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-26C605BD-B81A-43A2-AE12-5021CD755271"></a> <span id="PAGE" style="display:none;">15/40</span> <!-- End Header -->
+<h1 id="ELUAP-GUID-26C605BD-B81A-43A2-AE12-5021CD755271" class="sect1">Managing SSH Keys</h1>
+<div>
+<div class="section">You can automate the login process to instances by using the SSH keys.</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-26C605BD-B81A-43A2-AE12-5021CD755271.htm#GUID-9D4368E3-E0D2-4F83-A137-1D3AF7232BBA" title="This API enables you to import a new public SSH key and associate it to a user.">Add Public SSH Key</a></p>
+</li>
+<li>
+<p><a href="GUID-26C605BD-B81A-43A2-AE12-5021CD755271.htm#GUID-682F50D9-8658-43BA-ABCE-BB829C9A7426" title="This API enables you to delete a specific SSH key.">Delete SSH Key</a></p>
+</li>
+<li>
+<p><a href="GUID-26C605BD-B81A-43A2-AE12-5021CD755271.htm#GUID-23446B2A-576D-4A2A-BB52-798C09ED4925" title="This API enables you to update/overwrite the key, the enabled field, and the osuser field for a specific SSH key.">Update SSH Key</a></p>
+</li>
+<li>
+<p><a href="GUID-26C605BD-B81A-43A2-AE12-5021CD755271.htm#GUID-C1C9601A-598B-47CF-86F9-484FB933A534" title="This API enables you to discover SSH keys in a specific container and subcontainer.This API enables you to retrieve information for a specific SSH key..This API enables you to list SSH key information in a specific container and subcontainer.">Retrieve SSH Key Details</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-9D4368E3-E0D2-4F83-A137-1D3AF7232BBA"></a>
+<h2 id="ELUAP-GUID-9D4368E3-E0D2-4F83-A137-1D3AF7232BBA" class="sect2">Add Public SSH Key</h2>
+<div>
+<p>This API enables you to import a new public SSH key and associate it to a user.</p>
+<div class="section">
+<p class="subhead2">Method</p>
+<p><code class="codeph">POST</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/sshkey</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/sshkey/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Request Body Parameters</p>
+<div class="tblformal" id="GUID-9D4368E3-E0D2-4F83-A137-1D3AF7232BBA__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment56" summary="This table lists the request body parameters and descriptions for adding an SSH Key.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment57" id="d11904e104">Parameter</th>
+<th class="cellalignment57" id="d11904e106">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d11904e110" headers="d11904e104">name</td>
+<td class="cellalignment58" headers="d11904e110 d11904e106">Name of the SSH key.
+<p>Object names can contain only alphanumeric characters, hyphens, and periods. Object names are case-sensitive.</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d11904e117" headers="d11904e104">key</td>
+<td class="cellalignment58" headers="d11904e117 d11904e106">SSH public key value</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d11904e122" headers="d11904e104">enabled</td>
+<td class="cellalignment58" headers="d11904e122 d11904e106">(Optional) Specifies if the SSH key is enabled or disabled. &nbsp;The default value is <code class="codeph">True</code>.</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d11904e130" headers="d11904e104">osuser</td>
+<td class="cellalignment58" headers="d11904e130 d11904e106">(Optional) Operating system user to which this key will be assigned. &nbsp;If this option is not specified, no key is installed in the VM.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/sshkey/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Request Body</p>
+<pre dir="ltr">
+{
+        "osuser": "oracle", 
+        "enabled": true,
+        "key": "ssh-rsa AA16hLNo4kWmYslf....leo@t410....",
+        "name": "/mytenant/public/oracle_key1"
+}
+</pre></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Response Body</p>
+<pre dir="ltr">
+{
+        "osuser": "oracle", 
+        "enabled": true, 
+        "uri": "https://api/sshkey/mytenant/public/oracle_key1", 
+        "key": "ssh-rsa AA16hLNo4kWmYslf....leo@t410....", 
+        "name": "/mytenant/public/oracle_key1"
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-682F50D9-8658-43BA-ABCE-BB829C9A7426"></a>
+<h2 id="ELUAP-GUID-682F50D9-8658-43BA-ABCE-BB829C9A7426" class="sect2">Delete SSH Key</h2>
+<div>
+<p>This API enables you to delete a specific SSH key.</p>
+<div class="section">
+<p class="subhead2">Method</p>
+<p><code class="codeph">DELETE</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/sshkey/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/sshkey/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI Parameter</p>
+<div class="tblformal" id="GUID-682F50D9-8658-43BA-ABCE-BB829C9A7426__GUID-6AAECDD4-E1F1-479A-B46F-95BAB2CB82AD">
+<table class="cellalignment62" summary="This table specifies the URI Parameter and description for deleting an SSH key.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d11904e207">Parameter</th>
+<th class="cellalignment64" id="d11904e209">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d11904e213" headers="d11904e207">name</td>
+<td class="cellalignment66" headers="d11904e213 d11904e209">Name of the SSH key to be deleted</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/sshkey/mytenant/public/key1</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-23446B2A-576D-4A2A-BB52-798C09ED4925"></a>
+<h2 id="ELUAP-GUID-23446B2A-576D-4A2A-BB52-798C09ED4925" class="sect2">Update SSH Key</h2>
+<div>
+<p>This API enables you to update/overwrite the key, the enabled field, and the osuser field for a specific SSH key.</p>
+<div class="section">
+<p class="subhead2">Method</p>
+<p><code class="codeph">PUT</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/sshkey/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/sshkey/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI Parameter</p>
+<div class="tblformal" id="GUID-23446B2A-576D-4A2A-BB52-798C09ED4925__THISTABLESPECIFIESURIPARAMETERANDDE-6274A92B">
+<table class="cellalignment62" summary="This table specifies URI parameter and description for updating an SSH key">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d11904e281">Parameters</th>
+<th class="cellalignment64" id="d11904e283">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d11904e287" headers="d11904e281">name</td>
+<td class="cellalignment66" headers="d11904e287 d11904e283">Name of the SSH key</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Request Body Parameters</p>
+<div class="tblformal" id="GUID-23446B2A-576D-4A2A-BB52-798C09ED4925__THISTABLESPECIFIESTHEREQUESTBODYPAR-6274A776">
+<table class="cellalignment62" summary="This table specifies the Request Body parameters and descriptions for updating an SSH key">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d11904e302">Parameters</th>
+<th class="cellalignment64" id="d11904e304">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d11904e308" headers="d11904e302">key</td>
+<td class="cellalignment66" headers="d11904e308 d11904e304">(Optional) Name of the file that contains the value of the SSH public key</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d11904e313" headers="d11904e302">enabled</td>
+<td class="cellalignment66" headers="d11904e313 d11904e304">(Optional) Specifies if the key is enabled or disabled. The default value is <code class="codeph">True</code></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d11904e320" headers="d11904e302">osuser</td>
+<td class="cellalignment66" headers="d11904e320 d11904e304">(Optional) OS user to which this key will be assigned</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/sshkey/mytenant/public/myuser</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Request Body</p>
+<pre dir="ltr">
+{
+        "osuser": "myuser"
+        "enabled": true,
+        "key": "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA0ibAEmysI4o1zf...",
+        "name": "/mytenant/public/myuser"
+}
+</pre></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Response Body</p>
+<pre dir="ltr">
+{
+        "osuser": "myuser"
+        "enabled": true,
+        "uri": "https://api.oc.example.com/sshkey/mytenant/public/myuser",
+        "key": "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA0ibAEmysI4o1zfb4dOJIyaN67pya8A...",
+        "name": "/mytenant/public/myuser"
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-C1C9601A-598B-47CF-86F9-484FB933A534"></a>
+<h2 id="ELUAP-GUID-C1C9601A-598B-47CF-86F9-484FB933A534" class="sect2">Retrieve SSH Key Details</h2>
+<div>
+<div class="section">You can retrieve SSH Key details by using the REST API.</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-26C605BD-B81A-43A2-AE12-5021CD755271.htm#GUID-55EE4E3E-65E3-472C-89F5-F38CB74AC565" title="This API enables you to discover SSH keys in a specific container and subcontainer.">Discover SSH Keys</a></p>
+</li>
+<li>
+<p><a href="GUID-26C605BD-B81A-43A2-AE12-5021CD755271.htm#GUID-8175AEA3-63CB-46EF-85DD-828686D4E8B9" title="This API enables you to retrieve information for a specific SSH key..">Get SSH Key</a></p>
+</li>
+<li>
+<p><a href="GUID-26C605BD-B81A-43A2-AE12-5021CD755271.htm#GUID-F4E05FA0-FC3E-4786-AD15-B19EF4C3AFEA" title="This API enables you to list SSH key information in a specific container and subcontainer.">List SSH Keys</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect3"><a id="GUID-55EE4E3E-65E3-472C-89F5-F38CB74AC565"></a>
+<h3 id="ELUAP-GUID-55EE4E3E-65E3-472C-89F5-F38CB74AC565" class="sect3">Discover SSH Keys</h3>
+<div>
+<p>This API enables you to discover SSH keys in a specific container and subcontainer.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-55EE4E3E-65E3-472C-89F5-F38CB74AC565__GUID-111E61DA-EE68-44DB-8608-98BD9C51C50F">
+<p class="notep1">Note:</p>
+The discover API calls display the names of the objects in the specified container, not the details about the objects. To list the names of the objects, you must set the <code class="codeph">Accept</code> header to <code class="codeph">application/oracle-compute-v3+directory+json</code>. For all other purposes, you must set the <code class="codeph">Accept</code> header to <code class="codeph">application/oracle-compute-v3+json</code>.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Method</p>
+<p><code class="codeph">GET</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">REST Resource</p>
+<p><code class="codeph">/sshkey/<span class="variable">container</span>/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/sshkey/<span class="variable">container</span>/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI Parameter</p>
+<div class="tblformal" id="GUID-55EE4E3E-65E3-472C-89F5-F38CB74AC565__GUID-993E33A8-739F-4048-8427-2D0729DBD1EB">
+<table class="cellalignment62" summary="This table specifies the URI parameter and description for listing all SSH Keys in a container.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d11904e460">Parameter</th>
+<th class="cellalignment64" id="d11904e462">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d11904e466" headers="d11904e460">container</td>
+<td class="cellalignment66" headers="d11904e466 d11904e462">Hierarchical namespace for SSH key</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/sshkey/mytenant/public/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example Response Data</p>
+<pre dir="ltr">
+{
+  "result": [
+    "/mytenant/public/adminkey",
+    "/mytenant/public/permkey",
+    "/mytenant/public/tempkey"
+  ]
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-8175AEA3-63CB-46EF-85DD-828686D4E8B9"></a>
+<h3 id="ELUAP-GUID-8175AEA3-63CB-46EF-85DD-828686D4E8B9" class="sect3">Get SSH Key</h3>
+<div>
+<p>This API enables you to retrieve information for a specific SSH key..</p>
+<div class="section">
+<p class="subhead3">Method</p>
+<p><code class="codeph">GET</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">REST Resource</p>
+<p><code class="codeph">/sshkey/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/sshkey/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI Parameter</p>
+<div class="tblformal" id="GUID-8175AEA3-63CB-46EF-85DD-828686D4E8B9__GUID-82C181B6-3646-4253-8E1B-1742F1200F5B">
+<table class="cellalignment62" summary="This table specifies the URI parameter and description for retrieving details of a SSH Key.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d11904e538">Parameter</th>
+<th class="cellalignment64" id="d11904e540">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d11904e544" headers="d11904e538">name</td>
+<td class="cellalignment66" headers="d11904e544 d11904e540">Name of the SSH key, for which information is retrieved</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/sshkey/mytenant/public/oracle_key1</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example Response Data</p>
+<pre dir="ltr">
+{
+        "osuser": "oracle", 
+        "enabled": true, 
+        "uri": "https://api/sshkey/mytenant/public/oracle_key1", 
+        "key": "ssh-rsa AAAAB3LNo4kWmYslf...leo@t410.....", 
+        "name": "/mytenant/public/oracle_key1"
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-F4E05FA0-FC3E-4786-AD15-B19EF4C3AFEA"></a>
+<h3 id="ELUAP-GUID-F4E05FA0-FC3E-4786-AD15-B19EF4C3AFEA" class="sect3">List SSH Keys</h3>
+<div>
+<p>This API enables you to list SSH key information in a specific container and subcontainer.</p>
+<div class="section">
+<p class="subhead3">Method</p>
+<p><code class="codeph">GET</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">REST Resource</p>
+<p><code class="codeph">/sshkey/<span class="variable">container</span>/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/sshkey/<span class="variable">container</span>/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI Parameter</p>
+<div class="tblformal" id="GUID-F4E05FA0-FC3E-4786-AD15-B19EF4C3AFEA__GUID-993E33A8-739F-4048-8427-2D0729DBD1EB">
+<table class="cellalignment62" summary="This table specifies the URI parameter and description for listing details of all SSH Keys in a container.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d11904e619">Parameter</th>
+<th class="cellalignment64" id="d11904e621">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d11904e625" headers="d11904e619">container</td>
+<td class="cellalignment66" headers="d11904e625 d11904e621">Hierarchical namespace for the SSH key</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/sshkey/mytenant/public/myuser</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example Response Data</p>
+<pre dir="ltr">
+{
+        "osuser": "myuser",
+        "enabled": true,
+        "uri": "https://api.oc.example.com/sshkey/mytenant/public/myuser",
+        "key": "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA0ibAEmysI4o1zfb4dOJIyaN67pya8A...AWS",
+        "name": "/mytenant/public/myuser"
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment49">
+<tr>
+<td class="cellalignment59">
+<table class="cellalignment54">
+<tr>
+<td class="cellalignment53"><a href="GUID-FF5BD712-A4BB-4095-8279-7C5914D61F98.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment53"><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment61">
+<table class="cellalignment52">
+<tr>
+<td class="cellalignment53"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment53"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

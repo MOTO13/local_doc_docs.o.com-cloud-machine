@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Managing Passwords for Oracle Java Cloud Service on OPCM</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You may need to update the various credentials used to run a service instance, in order to meet corporate security policies or government regulations, or in response to a perceived security threat." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-A1EF3986-C1DF-4A4D-A291-2311E2AE75C8.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-A568C26C-D1EC-4B9A-AF09-556D31933BCE.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-3DE807DE-6526-47E3-A4D1-F408A63BC883"></a> <span id="PAGE" style="display:none;">91/131</span> <!-- End Header -->
+<h1 id="JSCUG-GUID-3DE807DE-6526-47E3-A4D1-F408A63BC883" class="sect1">Managing Passwords for <span>Oracle Java Cloud Service</span> <span>on <span>OPCM</span></span></h1>
+<div>
+<p>You may need to update the various credentials used to run a service instance, in order to meet corporate security policies or government regulations, or in response to a perceived security threat.</p>
+<div class="section">
+<p>The specific tools and procedures you use to modify passwords depends on the type of user and where it is stored in the environment. In addition, there are consequences to changing certain system users because other resources in the environment use these credentials as well.</p>
+<p>For general information about users, see <a href="GUID-5221CD3F-1C60-47E8-A62B-D4942B970DA5.htm" title="There are multiple types of users associated with Oracle Java Cloud Service. Each has its own purpose and is found in a specific identity store.">Understanding Users in Oracle Java Cloud Service</a>.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformal" id="GUID-3DE807DE-6526-47E3-A4D1-F408A63BC883__THISTABLELISTSTHEDIFFERENTUSERSASSO-728B92F9">
+<table class="cellalignment33" summary="This table lists the different users associated with an Oracle Java Cloud Service instance. For each user the table provides resources and tips for updating the password as well as for updating any other resources that depend on this password.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment65" id="d46483e39">User</th>
+<th class="cellalignment66" id="d46483e42">Updating the Password</th>
+<th class="cellalignment66" id="d46483e45">Updating Dependencies</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment67" id="d46483e50" headers="d46483e39">
+<p>WebLogic Server Administrator</p>
+</td>
+<td class="cellalignment68" headers="d46483e50 d46483e42">
+<p>By default your Oracle WebLogic Server domain is configured to use the embedded LDAP security provider as the identity store for users, passwords and groups. This includes the WebLogic Server administrator user whose credentials you initialize when you create the <span>Oracle Java Cloud Service</span> instance.</p>
+<p>You can use any available WebLogic Server tools to modify user credentials in the embedded LDAP, including the Administration Console, WLST and REST API. To use the Administration Console, see <cite>Modify Users</cite> in one of these publications:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="http://docs.oracle.com/cloud/latest/fmw122100/WLACH/taskhelp/security/ModifyUsers.html" target="_blank">Administration Console Online Help (12.2.1)</a></p>
+</li>
+<li>
+<p><a href="http://docs.oracle.com/cloud/latest/fmw121300/WLACH/taskhelp/security/ModifyUsers.html" target="_blank">Administration Console Online Help (12.1.3)</a></p>
+</li>
+<li>
+<p><a href="http://docs.oracle.com/cloud/latest/as111170/WLACH/taskhelp/security/ModifyUsers.html" target="_blank">Administration Console Online Help (11.1.1.7)</a></p>
+</li>
+</ul>
+</td>
+<td class="cellalignment68" headers="d46483e50 d46483e45">
+<p>Administrative credentials are required in order to boot the servers in your domain. A boot identity file is a text file that contains encrypted user credentials for starting and stopping an instance of WebLogic Server. If you change the password for this user, you must also update any boot identity files that use the same credentials. These files are located on the VM file system. Replace the current encrypted password with your new password. Otherwise, servers may fail to boot if you attempt to restart them.</p>
+<p>See <cite>Boot Identity Files</cite> in one of these publications:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=START128" target="_blank">Administration Console Online Help (12.2.1)</a></p>
+</li>
+<li>
+<p><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw121300&amp;id=START128" target="_blank">Administration Console Online Help (12.1.3)</a></p>
+</li>
+<li>
+<p><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudas111170&amp;id=START128" target="_blank">Administration Console Online Help (11.1.1.7)</a></p>
+</li>
+</ul>
+<p>For information on using SSH to access <span>Oracle Java Cloud Service</span> VMs, see <a href="GUID-B5656350-E387-4E43-91A6-8C20D78288A7.htm" title="You can access the services and resources that an Oracle Java Cloud Service instance's VM provides by logging into the VM as the opc user through SSH. You can use any SSH utility you want. For example, if you are using Windows, you might use PuTTY; if you are using Linux, you might use OpenSSH.">Accessing a VM Through a Secure Shell (SSH)</a>.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment67" id="d46483e122" headers="d46483e39">
+<p>Load Balancer Administrator</p>
+</td>
+<td class="cellalignment68" headers="d46483e122 d46483e42">
+<p>If you add a load balancer to your <span>Oracle Java Cloud Service</span> instance when you initially create it, the load balancer is configured with the same credentials as the WebLogic Server administrator. If you add a load balancer at a later time, you have the option to provide different credentials. In either case use the Load Balancer Console to change this user&rsquo;s password.</p>
+<p>For service instances running Oracle Traffic Director 12<span class="italic">c</span>, see <a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=TASKS676" target="_blank">Configure WebLogic Server Users</a> in <cite>Administering Oracle WebLogic Server with Fusion Middleware Control</cite>. Be sure to access the console for the load balancer, and not for the WebLogic Server domain.</p>
+<p>For service instances running Oracle Traffic Director 11<span class="italic">g</span>, see <a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudas111170&amp;id=TDADG134" target="_blank">Securing Access to the Administration Server</a> in <cite>Oracle Traffic Director Administrator&rsquo;s Guide</cite>.</p>
+</td>
+<td class="cellalignment68" headers="d46483e122 d46483e45">
+<p>None</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment67" id="d46483e159" headers="d46483e39">
+<p>Database User</p>
+</td>
+<td class="cellalignment68" headers="d46483e159 d46483e42">
+<p>The Oracle WebLogic Server domain in an <span>Oracle Java Cloud Service</span> instance is automatically configured with several JDBC data sources. Each data source connects to an <span>Oracle Database Cloud Service</span> database deployment. You specify the database name and credentials for these data sources when you create the service instance.</p>
+<p>If you modify the password for one of the database users, the data sources in the WebLogic domain may fail to connect to the database. Use one of the standard WebLogic administrative interfaces to modify the connection properties of the existing data sources. See <cite>Configuring JDBC Data Sources</cite> in one of the following publications:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=JDBCA137" target="_blank">Administering JDBC Data Sources for Oracle WebLogic Server (12.2.1)</a></p>
+</li>
+<li>
+<p><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw121300&amp;id=JDBCA137" target="_blank">Administering JDBC Data Sources for Oracle WebLogic Server (12.1.3)</a></p>
+</li>
+<li>
+<p><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudas111170&amp;id=JDBCA137" target="_blank">Configuring and Managing JDBC Data Sources for Oracle WebLogic Server (10.3.6)</a></p>
+</li>
+</ul>
+<p>For more information about data sources in <span>Oracle Java Cloud Service</span>, see <a href="GUID-75A0CF03-6FB1-4F70-B5C5-762480677EEC.htm" title="The Oracle WebLogic Server domain in an Oracle Java Cloud Service instance is automatically configured with several JDBC data sources. You can customize these data sources and also create additional ones.">Understanding Data Sources</a>.</p>
+</td>
+<td class="cellalignment68" headers="d46483e159 d46483e45">
+<p>When you create a service instance, you select one database deployment to host the <span class="bold">Oracle Required Schema</span> and you provide appropriate database credentials. If you modify the password of this database user, you must perform an additional task. Use the WebLogic Scripting Tool (WLST) to execute the <code class="codeph">modifyBootStrapCredential</code> command and then restart the Administration Server.</p>
+<pre dir="ltr">
+modifyBootStrapCredential(jpsConfigFile='/u01/data/domains/<span class="italic">DOMAIN_NAME</span>/config/
+fmwconfig/jps-config.xml',username='<span class="italic">SCHEMA_PREFIX</span>_OPSS',
+password='<span class="italic">NEW_PASSWORD</span>')
+</pre>
+<p>See <a href="GUID-DDAA8721-472D-4062-8379-AD0A0A883BC9.htm" title="An Oracle Java Cloud Service instance can fail suddenly and issue password expiry error messages.">Problems with Failure of a Running Service When the Schema User Password Expires</a></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment67" id="d46483e237" headers="d46483e39">
+<p>Application User</p>
+</td>
+<td class="cellalignment68" headers="d46483e237 d46483e42">
+<p>By default your Oracle WebLogic Server domain is configured to use the embedded LDAP security provider as the identity store for users, passwords and groups. This includes any custom application users you&rsquo;ve defined.</p>
+<p>You can use any available WebLogic Server tools to modify user credentials in the embedded LDAP, including the Administration Console, WLST and REST API. To use the Administration Console, see <cite>Modify Users</cite> in one of these publications:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="http://docs.oracle.com/cloud/latest/fmw122100/WLACH/taskhelp/security/ModifyUsers.html" target="_blank">Administration Console Online Help (12.2.1)</a></p>
+</li>
+<li>
+<p><a href="http://docs.oracle.com/cloud/latest/fmw121300/WLACH/taskhelp/security/ModifyUsers.html" target="_blank">Administration Console Online Help (12.1.3)</a></p>
+</li>
+<li>
+<p><a href="http://docs.oracle.com/cloud/latest/as111170/WLACH/taskhelp/security/ModifyUsers.html" target="_blank">Administration Console Online Help (11.1.1.7)</a></p>
+</li>
+</ul>
+<p>Alternatively, you can customize your WebLogic domain to use other security providers for users and passwords, such as a database or an LDAP server. In general, you do not use WebLogic Server to directly modify user credentials in these external identity stores. Instead use the native administrative tools offered by these resources. For more information about security providers, see <a href="GUID-A1EF3986-C1DF-4A4D-A291-2311E2AE75C8.htm" title="Get an overview of the different ways in which you can determine the identity of a user or system that is accessing an application running in Oracle Java Cloud Service. Clients can authenticate against an external LDAP or database, or their identities can be validated with different token technologies like SAML.">Understanding Authentication Options</a>.</p>
+</td>
+<td class="cellalignment68" headers="d46483e237 d46483e45">
+<p>None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-A1EF3986-C1DF-4A4D-A291-2311E2AE75C8.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-A568C26C-D1EC-4B9A-AF09-556D31933BCE.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

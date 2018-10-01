@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="Deleting%20the%20Coherence%20Data%20Tier%20Cluster%20of%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html" title="Previous" type="text/html">
+        <link rel="next" href="DeprecationNotice.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="Deleting%20the%20Coherence%20Data%20Tier%20Cluster%20of%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="DeprecationNotice.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">Deleting a Service Instance</h2> 
+<div class="body taskbody">
+ <p class="shortdesc">You can delete an Oracle Java Cloud Service instance using the REST API, as described in the following procedure.</p> 
+ <div class="section">
+  <p class="p">On Oracle Public Cloud, if the service instance uses an Oracle Exadata database, the IP reservations associated with the Managed Server nodes are released but not deleted.</p> 
+  <p class="p"><strong class="ph b">Note:</strong> The cURL command examples use the URL structure <samp class="ph codeph">https://rest_server_url/<em class="ph i">resource-path</em></samp>, where <samp class="ph codeph">rest_server_url</samp> is the Oracle Public Cloud or Oracle Cloud Machine REST server to contact for your identity domain or tenant name. See <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a> for the appropriate URL structure to use on Oracle Public Cloud or Oracle Cloud Machine.</p> 
+  <p class="p">To delete an Oracle Java Cloud Service instance:</p> 
+ </div> 
+ <ol class="ol steps">
+  <li class="li step stepexpand"><span class="ph cmd">Before deleting an Oracle Java Cloud Service instance, review the service instances that currently exist to confirm the name of the service instance that you want to delete.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain</strong>
+</pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">For more information, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-get.html" target="_blank">View All Service Instances</a>.</p> 
+    <p class="p">The following shows an example of the response body. In this example, there are three service instances, <samp class="ph codeph">ExampleInstance</samp>, <samp class="ph codeph">My12cServer</samp>, and <samp class="ph codeph">My11gServer</samp>.</p> 
+    <pre class="pre codeblock">{
+    "uri":"https:\/\rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain",
+    "service_type":"jaas",
+    "implementation_version":"1.0",
+    "services" : [
+    {
+        "service_name":"<strong class="ph b">ExampleInstance</strong>",
+        "version":"12cR3",
+        "wlsVersion":"12.1.3.0.x",
+        "status":"Running",
+        "error_status_desc": "",
+        "compliance_status": "",
+        "compliance_status_desc": "",
+        "auto_update": "true",
+        "description":"WebLogicEnterprise",
+        "identity_domain":"ExampleIdentityDomain",
+        "creation_time" : "Thu Jun 3 8:19:30 UTC 2014",
+        "last_modified_time" : "Thu Jun 26 22:19:26 UTC 2014",
+        "created_by":"username",
+        "service_uri":"https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/ExampleInstance"
+    },
+    {
+        "service_name":"<strong class="ph b">My12cServer</strong>",
+        "version":"12cR3",
+        "wlsVersion":"12.1.3.0.x",
+        "status":"Running",
+        "error_status_desc": "",
+        "compliance_status": "",
+        "compliance_status_desc": "",
+        "auto_update": "true",
+        "description":"WebLogicEnterprise",
+        "identity_domain":"ExampleIdentityDomain",
+        "creation_time":"Wed May 28 15:36:57 GMT 2014",
+        "last_modified_time":"Thu May 29 09:15:57 GMT 2014",
+        "created_by":"username",
+        "service_uri":"https:\/\/rest_server_url\/paas/\service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/My12cServer"
+    },
+    {
+        "service_name":"<strong class="ph b">My11gServer</strong>",
+        "version":"11g",
+        "wlsVersion":"10.3.6.0.xx",
+        "status":"Running",
+        "error_status_desc": "",
+        "compliance_status": "",
+        "compliance_status_desc": "",
+        "auto_update": "true",
+        "description":"",
+        "identity_domain":"ExampleIdentityDomain",
+        "creation_time":"Tue May 27 18:11:41 GMT 2014",
+        "last_modified_time":"Wed May 28 00:35:11 GMT 2014",
+        "created_by":"username",
+        "service_uri":"https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/My11gServer"
+    }]
+}
+</pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">Create a JSON document, <samp class="ph codeph">delete.json</samp>. Enable the <samp class="ph codeph">forceDelete</samp> flag to force the removal of the service instance regardless of whether there are processes running.</span>
+   <div class="itemgroup info">
+    <p class="p">On Oracle Public Cloud, provide the user name of the database administrator and the database administrator password that was specified when the Database Cloud Service database deployment was created. </p> 
+    <p class="p">On Oracle Cloud Machine, provide the user name and password for the database network administrator.</p> 
+    <p class="p">The following shows an example of the request document on Oracle Public Cloud.</p> 
+    <pre class="pre codeblock">{
+    "dbaName": "SYS",
+    "dbaPassword": "MyPassword1!",
+    "forceDelete": true
+}
+</pre> 
+    <p class="p">The following shows an example of the request document on Oracle Cloud Machine.</p> 
+    <pre class="pre codeblock">{
+    "dbaName": "mydbadminname",
+    "dbaPassword": "MyPassword1!",
+    "forceDelete": true
+}
+</pre> 
+    <p class="p"> For more information about the request attributes, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-put.html" target="_blank">Delete a Service Instance</a>.</p> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">Delete the service instance, <samp class="ph codeph">ExampleInstance</samp>, passing the JSON document defined in step 2.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X PUT -u username:userPassword1! -d @delete.json -H "Content-Type:application/vnd.com.oracle.oracloud.provisioning.Service+json" -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance
+</strong></pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">PUT</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p">-d option to identify the request document, in JSON format, on the local machine (<samp class="ph codeph">delete.json</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to identify the content type as <samp class="ph codeph">application/vnd.com.oracle.oracloud.provisioning.Service+json</samp> and define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">For more information, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-put.html" target="_blank">Delete a Service Instance</a>.</p> 
+    <p class="p">The following shows an example of the response header and body.</p> 
+    <pre class="pre codeblock">HTTP/1.1 202 Accepted
+Date: Wed, 24 Jun 2015 19:52:03 GMT
+Location: https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/status/delete/job/11
+...
+{
+    "service_name":"ExampleInstance", 
+    "version":"12cR3",
+    "wlsVersion":"12.1.3.0.x",
+    "status":"Terminating",
+    "error_status_desc":"",
+    "compliance_status":"",
+    "compliance_status_desc":"",
+    "auto_update":"true",
+    "description":"ExampleInstance",
+    "identity_domain":"ExampleIdentityDomain",
+    "creation_time":"Wed May 13 0:27:30 UTC 2015",
+    "last_modified_time":"Sat Jun 13 16:10:26 UTC 2015",
+    "created_by":"username",
+    "service_uri":"https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/ExampleInstance"
+}</pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">Check the status of the delete operation using the resource URI returned in the <samp class="ph codeph">Location</samp> header. </span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/status/delete/job/11</strong>
+</pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">For more information, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-status-%7BrequestName%7D-job-%7BjobId%7D-get.html" target="_blank">View the Status of a Service Instance Lifecycle Operation</a>.</p> 
+    <p class="p">The following example shows the contents of the response body, including the status messages:</p> 
+    <pre class="pre codeblock">{
+    "service_name": "ExampleInstance",
+    "version": "12cR3",
+    "wlsVersion": "12.1.3.0.x",
+    "status": "Terminating",
+    "error_status_desc": "",
+    "compliance_status": "",
+    "compliance_status_desc": "",
+    "auto_update": "true",
+    "description": "ExampleInstance",
+    "identity_domain": "ExampleIdentityDomain",
+    "creation_time": "Wed May 13 0:27:30 UTC 2015",
+    "last_modified_time": "Sat Jun 13 16:10:26 UTC 2015",
+    "created_by": "username",
+    "service_uri": "https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/ExampleInstance",
+  "message": [
+    "Successfully terminated the backup service...",
+    "Stopping Compute resources..."
+  ]
+}
+</pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">Once the service instance is deleted, review the service instances that currently exist to confirm the deletion.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain</strong>
+</pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">The following shows an example of the response body. In this example, there are two service instances, <samp class="ph codeph">My12cServer</samp> and <samp class="ph codeph">My11gServer</samp>. <samp class="ph codeph">ExampleInstance</samp> has been deleted successfully.</p> 
+    <pre class="pre codeblock">{
+    "uri":"https:\/\rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain",
+    "service_type":"jaas",
+    "implementation_version":"1.0",
+    "services" : [    
+    {
+        "service_name":"<strong class="ph b">My12cServer</strong>",
+        "version":"12cR3",
+        "wlsVersion":"12.1.3.0.x",
+        "status":"Running",
+        "error_status_desc": "",
+        "compliance_status": "",
+        "compliance_status_desc": "",
+        "auto_update": "true",
+        "description":"WebLogicEnterprise",
+        "identity_domain":"ExampleIdentityDomain",
+        "creation_time":"Wed May 28 15:36:57 GMT 2014",
+        "last_modified_time":"Thu May 29 09:15:57 GMT 2014",
+        "created_by":"username",
+        "service_uri":"https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/My12cServer"
+    },
+    {
+        "service_name":"<strong class="ph b">My11gServer</strong>",
+        "version":"11g",
+        "wlsVersion":"10.3.6.0.xx",
+        "status":"Running",
+        "error_status_desc": "",
+        "compliance_status": "",
+        "compliance_status_desc": "",
+        "auto_update": "true",
+        "description":"",
+        "identity_domain":"ExampleIdentityDomain",
+        "creation_time":"Tue May 27 18:11:41 GMT 2014",
+        "last_modified_time":"Wed May 28 00:35:11 GMT 2014",
+        "created_by":"username",
+        "service_uri":"https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/My11gServer"
+    }]
+}</pre> 
+   </div></li> 
+ </ol> 
+</div></div>
+        </article>
+    </body>
+</html>

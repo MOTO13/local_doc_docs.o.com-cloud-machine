@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>About Database Cloud Service Database Deployments</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-06-19T15:22:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Database Cloud Service" />
+<meta name="dcterms.identifier" content="E72994-04" />
+<meta name="dcterms.isVersionOf" content="CSDBI" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-4AD7C69E-20FF-4C47-BB71-429A08D061B4.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-EB9DC20F-C296-41E1-A3A1-3291AABCABE2.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSDBI.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSDBI.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSDBI.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-660363B8-0E2F-4A4F-A9BD-70A43F332A16"></a> <span id="PAGE" style="display:none;">6/190</span> <!-- End Header -->
+<a id="CSDBI3321"></a>
+<h1 id="CSDBI-GUID-660363B8-0E2F-4A4F-A9BD-70A43F332A16" class="sect1">About <span>Database Cloud Service</span> Database Deployments</h1>
+<div>
+<p>When you create a new database deployment on <span>Oracle Database Cloud Service</span>, you use the <span>Provision New Oracle Database Cloud Service</span> wizard, which steps you through the process of making the choices that produce a database deployment tailored to your needs. These choices include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-660363B8-0E2F-4A4F-A9BD-70A43F332A16.htm#GUID-5717CBF9-1D7A-4DDE-B250-7AD5C528C3B3">Service Level</a></p>
+</li>
+<li>
+<p><a href="GUID-660363B8-0E2F-4A4F-A9BD-70A43F332A16.htm#GUID-E1E78D34-4B7B-4FE9-9DC4-49C7E5DF241A">Metering Frequency</a></p>
+</li>
+<li>
+<p><a href="GUID-660363B8-0E2F-4A4F-A9BD-70A43F332A16.htm#GUID-634027B5-B318-41FC-8685-25BC892078B4">Oracle Database Software Release</a></p>
+</li>
+<li>
+<p><a href="GUID-660363B8-0E2F-4A4F-A9BD-70A43F332A16.htm#GUID-6C0B1E17-98A5-4522-A3B9-36EFA05E64F9">Oracle Database Software Edition</a></p>
+</li>
+<li>
+<p><a href="GUID-660363B8-0E2F-4A4F-A9BD-70A43F332A16.htm#GUID-61C0A3F6-1760-47EC-8B3E-8B50AE1276D9">Oracle Database Type</a></p>
+</li>
+<li>
+<p><a href="GUID-660363B8-0E2F-4A4F-A9BD-70A43F332A16.htm#GUID-ABDB48B9-01F5-4F32-AD35-08251F67B641">Computing Power</a></p>
+</li>
+<li>
+<p><a href="GUID-660363B8-0E2F-4A4F-A9BD-70A43F332A16.htm#GUID-0F42D983-9941-4702-B570-7E308AE50190">Database Storage</a></p>
+</li>
+<li>
+<p><a href="GUID-660363B8-0E2F-4A4F-A9BD-70A43F332A16.htm#GUID-323A034B-D335-40A9-853C-ADB67E30EE9F">Automatic Backup Configuration</a></p>
+</li>
+</ul>
+</div>
+<a id="CSDBI3322"></a>
+<div class="props_rev_3"><a id="GUID-5717CBF9-1D7A-4DDE-B250-7AD5C528C3B3"></a>
+<h2 id="CSDBI-GUID-5717CBF9-1D7A-4DDE-B250-7AD5C528C3B3" class="sect2">Service Level</h2>
+<div>
+<div class="section">
+<p>When creating a database deployment on <span>Oracle Database Cloud Service</span>, <span class="bold">Oracle Database Cloud Service</span> is the only service level available. With this service level, Oracle Database and supporting software is installed for you, an Oracle database is created using values you provide when creating the deployment, and the database is started. Additionally, you can direct <span>Database Cloud Service</span> to set up automatic backups. Finally, the deployment includes cloud tooling that simplifies backup, recovery, patching and upgrade operations. You have root privilege, so you can load and run software in the compute environment. You have full administrative privileges for the Oracle database. You are responsible for making any changes to the automated maintenance setup, and you are responsible for recovery operations in the event of a failure.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Cloud Tooling for <span>Database Cloud Service</span></p>
+<p>In addition to the capabilities of the web-based <span>Oracle Database Cloud Service</span> console, <span>Database Cloud Service</span> offers the following tools on the compute nodes associated with the Oracle Database Cloud Service service level:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Simple Automated Backups: use the <code class="codeph">bkup_api</code> utility (<code class="codeph">raccli</code> on deployments that use Oracle Real Application Clusters) to perform on-demand backups and to change how automatic backups are configured. See <a href="GUID-0864AA36-8FE4-4D62-9F18-A0550D4BC89B.htm" title="This section explains how to back up and restore Oracle databases on Oracle Database Cloud Service.">Backing Up and Restoring Databases on Database Cloud Service</a>.</p>
+</li>
+<li>
+<p>Simple Automated Recovery: use the <code class="codeph">orec</code> subcommand of the <code class="codeph">dbaascli</code> utility (<code class="codeph">raccli</code> on deployments that use Oracle Real Application Clusters) to restore from backups. See <a href="GUID-0864AA36-8FE4-4D62-9F18-A0550D4BC89B.htm" title="This section explains how to back up and restore Oracle databases on Oracle Database Cloud Service.">Backing Up and Restoring Databases on Database Cloud Service</a>.</p>
+</li>
+<li>
+<p>Simple Automated Patching: use the <code class="codeph">dbpatchm</code> subcommand of the <code class="codeph">dbaascli</code> utility (<code class="codeph">raccli</code> on deployments that use Oracle Real Application Clusters) to apply patches. See <a href="GUID-59CE35D2-4948-4274-8707-F8F447721DF2.htm" title="This section explains how to apply a patch to Oracle Database Cloud Service, and roll back the patch as necessary.">Patching Database Cloud Service</a>.</p>
+</li>
+<li>
+<p>New DBaaS Monitor: use the Oracle DBaaS Monitor web application to monitor the Oracle database and computing resources. See <a href="GUID-B3A91C63-713B-458B-ABA7-C0DB7B3362DE.htm">Accessing Oracle DBaaS Monitor</a>. Oracle DBaaS Monitor is not available on deployments that use Oracle Real Application Clusters.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="CSDBI3323"></a>
+<div class="props_rev_3"><a id="GUID-E1E78D34-4B7B-4FE9-9DC4-49C7E5DF241A"></a>
+<h2 id="CSDBI-GUID-E1E78D34-4B7B-4FE9-9DC4-49C7E5DF241A" class="sect2">Metering Frequency</h2>
+<div>
+<div class="section">
+<p>When creating a database deployment on <span>Oracle Database Cloud Service</span>, you choose one of the following metering frequencies:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Hourly</span>&mdash;Pay only for the number of hours used during your billing period.</p>
+<p>You cannot switch a deployment from hourly to monthly metering frequency after it is created.</p>
+</li>
+<li>
+<p><span class="bold">Monthly</span>&mdash;Pay one price for the full month irrespective of the number of hours used.</p>
+<p>For deployments that are started in the middle of a month, the price is pro-rated; you pay only for the partial month from the start date.</p>
+<p>You cannot switch a deployment from monthly to hourly metering frequency after it is created.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="CSDBI3324"></a>
+<div class="props_rev_3"><a id="GUID-634027B5-B318-41FC-8685-25BC892078B4"></a>
+<h2 id="CSDBI-GUID-634027B5-B318-41FC-8685-25BC892078B4" class="sect2">Oracle Database Software Release</h2>
+<div>
+<p>When creating a database deployment on <span>Oracle Database Cloud Service</span>, you choose one of the following Oracle Database software releases:</p>
+<ul style="list-style-type: disc;" id="GUID-634027B5-B318-41FC-8685-25BC892078B4__VERSIONLIST-63B9334B">
+<li>
+<p><span class="bold">Oracle Database 11g Release 2</span></p>
+</li>
+<li>
+<p><span class="bold">Oracle Database 12c Release 1</span></p>
+</li>
+<li>
+<p><span class="bold">Oracle Database 12c Release 2</span></p>
+</li>
+</ul>
+</div>
+</div>
+<a id="CSDBI3325"></a>
+<div class="props_rev_3"><a id="GUID-6C0B1E17-98A5-4522-A3B9-36EFA05E64F9"></a>
+<h2 id="CSDBI-GUID-6C0B1E17-98A5-4522-A3B9-36EFA05E64F9" class="sect2">Oracle Database Software Edition</h2>
+<div>
+<div class="section">
+<p>When creating a database deployment on <span>Oracle Database Cloud Service</span>, you choose one of the following Oracle Database software editions. For detailed information about the included Oracle Database features, options and packs, see the <a href="http://www.oracle.com/pls/topic/lookup?ctx=db122&amp;id=DBLIC-GUID-60BD93ED-D100-4F84-94DC-3AAB2D466E34" target="_blank">Permitted Features</a> section of <cite>Oracle Database Licensing Information User Manual</cite>.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Standard Edition</span>&mdash;Oracle Database Standard Edition, which delivers unprecedented ease of use, power, and performance for workgroup, department-level, and Web applications. It includes all the facilities necessary to build business-critical applications.</p>
+</li>
+<li>
+<p><span class="bold">Enterprise Edition</span>&mdash;Oracle Database Enterprise Edition, which provides the performance, availability, scalability, and security required for mission-critical applications such as high-volume online transaction processing (OLTP) applications, query-intensive data warehouses, and demanding Internet applications.</p>
+</li>
+<li>
+<p><span class="bold">Enterprise Edition - High Performance</span>&mdash;provides all the features of Enterprise Edition, plus many of the available Oracle Database options and management packs.</p>
+</li>
+<li>
+<p><span class="bold">Enterprise Edition - Extreme Performance</span>&mdash;provides all the features of Enterprise Edition, plus all of the Oracle Database options and management packs appropriate for use in <span>Oracle Database Cloud Service</span>.</p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-6C0B1E17-98A5-4522-A3B9-36EFA05E64F9__GUID-5BCB5B03-4D07-43D8-A376-A2BC11396F21">
+<p class="notep1">Note:</p>
+<p>If you choose Enterprise Edition or Enterprise Edition - High Performance, all available database enterprise management packs and Enterprise Edition options are included in the database deployment. The packs and options that are not part of the software edition you chose are available to you for use on a trial basis.</p>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-61C0A3F6-1760-47EC-8B3E-8B50AE1276D9"></a>
+<h2 id="CSDBI-GUID-61C0A3F6-1760-47EC-8B3E-8B50AE1276D9" class="sect2">Oracle Database Type</h2>
+<div>
+<div class="section">
+<p>When creating a database deployment on <span>Oracle Database Cloud Service</span>, you choose one of the following database types:</p>
+<ul style="list-style-type: disc;" id="GUID-61C0A3F6-1760-47EC-8B3E-8B50AE1276D9__DATABASE-TYPE-LIST">
+<li>
+<p><span class="bold">Single Instance</span>&mdash;A single Oracle Database instance and database data store hosted on one compute node. For more information about this type, see <a href="GUID-17839AE1-45DD-48E2-A5A2-99A1428A3916.htm" title="This section provides information about the content and configuration of a newly created database deployment on Oracle Database Cloud Service using the Oracle Database Cloud Service service level.">Characteristics of an Oracle Database Cloud Deployment</a>.</p>
+</li>
+<li>
+<p><span class="bold">Database Clustering with RAC</span>&mdash;A two-node clustered database using Oracle Real Application Clusters technology; two compute nodes each host an Oracle Database instance, and the two instances access the same shared database data store. For more information about this type, see <a href="GUID-4D8BB260-2672-46BE-BF57-ABB9612D97D2.htm" title="This section provides information about the content and configuration of a newly created database deployment on Oracle Database Cloud Service that hosts an Oracle Real Application Clusters (Oracle RAC) database.">Characteristics of an Oracle Database Cloud Service Deployment Using Oracle RAC</a>.</p>
+</li>
+</ul>
+<p>Not all types are available with all combinations of service level and software edition:</p>
+<ul style="list-style-type: disc;" id="GUID-61C0A3F6-1760-47EC-8B3E-8B50AE1276D9__LEVEL-AND-EDITION-RESTRICTIONS">
+<li>
+<p>Single Instance is the only type supported by the Standard Edition software edition.</p>
+</li>
+<li>
+<p>Database Clustering with RAC is available only with Enterprise Edition - Extreme Performance software edition.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="CSDBI3326"></a>
+<div class="props_rev_3"><a id="GUID-ABDB48B9-01F5-4F32-AD35-08251F67B641"></a>
+<h2 id="CSDBI-GUID-ABDB48B9-01F5-4F32-AD35-08251F67B641" class="sect2">Computing Power</h2>
+<div>
+<p>When creating a database deployment on <span>Oracle Database Cloud Service</span>, you choose the computing power for the associated compute node (or compute nodes in the case of deployments that use Oracle Real Application Clusters) from a list of supported OCPU (Oracle CPU) and processor RAM combinations. These combinations fall into two categories:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>General Purpose:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>OC4 - 2 OCPU, 15 GB RAM</p>
+</li>
+<li>
+<p>OC5 - 4 OCPU, 30 GB RAM</p>
+</li>
+<li>
+<p>OC6 - 8 OCPU, 60 GB RAM</p>
+</li>
+</ul>
+</li>
+<li>
+<p>High Memory:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>OC1M - 1 OCPU, 15 GB RAM</p>
+</li>
+<li>
+<p>OC2M - 2 OCPU, 30 GB RAM</p>
+</li>
+<li>
+<p>OC3M - 4 OCPU, 60 GB RAM</p>
+</li>
+<li>
+<p>OC4M - 8 OCPU, 120 GB RAM</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<a id="CSDBI3327"></a>
+<div class="props_rev_3"><a id="GUID-0F42D983-9941-4702-B570-7E308AE50190"></a>
+<h2 id="CSDBI-GUID-0F42D983-9941-4702-B570-7E308AE50190" class="sect2">Database Storage</h2>
+<div>
+<p>When creating a database deployment on <span>Oracle Database Cloud Service</span>, you choose the amount of usable data storage you want for your database in gigabyte (GB) increments up to a maximum of 2&nbsp;TB (2048 GB).</p>
+<p>After you create the database deployment, you can add more data storage as needed. For information, see <a href="GUID-457D283C-D890-4B4F-B65C-26D05B4C80CC.htm#GUID-457D283C-D890-4B4F-B65C-26D05B4C80CC__SCALEUPSTORAGE">Scaling Up the Storage for a Database Deployment</a>.</p>
+<p>By adding more storage, you can create a database of up to 12 TB (11.2 TB on a deployment hosting an Oracle RAC database with backups to remote storage only).</p>
+</div>
+</div>
+<a id="CSDBI3328"></a>
+<div class="props_rev_3"><a id="GUID-323A034B-D335-40A9-853C-ADB67E30EE9F"></a>
+<h2 id="CSDBI-GUID-323A034B-D335-40A9-853C-ADB67E30EE9F" class="sect2">Automatic Backup Configuration</h2>
+<div>
+<div class="section">
+<p>When creating a new database deployment on <span>Oracle Database Cloud Service</span>, you choose whether you want automatic backups to be configured for the database. Your choices are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Remote Storage Only</span>&mdash;30 days' worth of backups are kept, all stored on an NFS remote location.</p>
+<p>If you choose this option, you must provide an NFS remote backup location provided by your tenant administrator.</p>
+</li>
+<li>
+<p><span class="bold">None</span>&mdash;automatic backups are not configured.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="GUID-4AD7C69E-20FF-4C47-BB71-429A08D061B4.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="GUID-EB9DC20F-C296-41E1-A3A1-3291AABCABE2.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

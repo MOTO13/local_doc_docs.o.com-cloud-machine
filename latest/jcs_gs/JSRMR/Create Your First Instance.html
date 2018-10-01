@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="Create%20the%20Request%20Document.html" title="Previous" type="text/html">
+        <link rel="next" href="Review%20the%20Details%20of%20Your%20First%20Instance.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="Create%20the%20Request%20Document.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="Review%20the%20Details%20of%20Your%20First%20Instance.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">Create Your First Instance</h2> 
+<div class="body conbody">
+ <p class="shortdesc">After you have created a request document that defines the details of your service instance, you are ready to create your first Oracle Java Cloud Service instance.</p> 
+ <div class="section">
+  <p class="p">To create your first instance, you pass the following information on the cURL command line.</p> 
+  <ul class="ul">
+   <li class="li">
+    <div class="p">
+     To define the request:
+     <ul class="ul">
+      <li class="li"><p class="p">Use the <samp class="ph codeph">--data</samp> option to pass the <samp class="ph codeph">create.json</samp> file that you created in the previous task, <a class="xref" href="Create%20the%20Request%20Document.html" target="_blank">Create the Request Document</a>.</p> </li> 
+      <li class="li"><p class="p">Use the <samp class="ph codeph">-H</samp> cURL option to pass the <samp class="ph codeph">Content-Type</samp> header to define the content type of the request document as <samp class="ph codeph">application/vnd.com.oracle.oracloud.provisioning.Service+json</samp>.</p> </li> 
+     </ul> 
+    </div> </li> 
+   <li class="li">
+    <div class="p">
+     For authentication, you must specify the account credentials obtained previously, as described in 
+     <a class="xref" href="Obtain%20Account%20Information.html" target="_blank">Obtain Account Information</a>, on the cURL command line, as follows:
+     <ul class="ul">
+      <li class="li"><p class="p">Use the <samp class="ph codeph">-u</samp> cURL option to pass the user name and password for your Oracle Java Cloud Service account </p> </li> 
+      <li class="li"><p class="p">Use the <samp class="ph codeph">-H</samp> cURL option to pass the <samp class="ph codeph">X-ID-TENANT-NAME</samp> custom request header to specify the identity domain ID (on Oracle Public Cloud) or tenant name (Oracle Cloud machine) for your Oracle Java Cloud Service account.</p> </li> 
+     </ul> 
+    </div> </li> 
+  </ul> 
+  <p class="p">For example:</p> 
+  <pre class="pre codeblock">C:&gt; curl -i -X POST -u <em class="ph i">yourUserName</em>:<em class="ph i">yourPassword</em> --data @create.json -H Content-Type:application/vnd.com.oracle.oracloud.provisioning.Service+json -H X-ID-TENANT-NAME:<em class="ph i">yourIdentityDomain</em> https://rest_server_url/paas/service/jcs/api/v1.1/instances/<em class="ph i">yourIdentityDomain</em></pre> 
+  <p class="p"><strong class="ph b">Note: </strong>The command in the example uses the URL structure <samp class="ph codeph">https://rest_server_url/<em class="ph i">resource-path</em></samp>, where <samp class="ph codeph">rest_server_url</samp> is the Oracle Public Cloud or Oracle Cloud Machine REST server to contact for your identity domain or tenant name. See <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a> for the appropriate URL structure to use for Oracle Public Cloud or Oracle Cloud Machine.</p> 
+  <p class="p">The following shows an example of the response header returned.</p> 
+  <div class="p">
+   <pre class="pre codeblock">HTTP/1.1 100 Continue
+
+HTTP/1.1 202 Accepted
+Date: Thu, 14 Jul 2016 23:16:53 GMT
+Location: https://rest_server_url/paas/service/jcs/api/v1.1/instances/<em class="ph i">yourIdentityDomain</em>/status/create/job/8466
+Content-Length: 0
+Content-Type: application/vnd.com.oracle.oracloud.provisioning.Service+json
+Service-URI: https://rest_server_url/paas/service/jcs/api/v1.1/instances/<em class="ph i">yourIdentityDomain</em>/MyFirstInstance
+</pre> 
+  </div> 
+  <p class="p">The create instance process takes several minutes to complete. You can check the status of the create operation using the endpoint returned in the <samp class="ph codeph">Location</samp> header above. For example:</p> 
+  <div class="p">
+   <pre class="pre codeblock">C:&gt; curl -i -X GET -u <em class="ph i">yourUserName</em>:<em class="ph i">yourPassword</em> -H X-ID-TENANT-NAME:<em class="ph i">yourIdentityDomain</em> https://rest_server_url/paas/service/jcs/api/v1.1/instances/<em class="ph i">yourIdentityDomain</em>/status/create/job/8466</pre> 
+  </div> 
+  <p class="p">The following is an example of the response output. The status shown is <strong class="ph b">In Progress</strong>. When a service instance is successfully created and configured, the status is <strong class="ph b">Running</strong>.</p> 
+  <div class="p">
+   <pre class="pre codeblock">{
+    "service_name": "MyFirstInstance",
+    "version": "12cR3",
+    "wlsVersion": "12.1.3.0.xxxxxx",
+    <strong class="ph b">"status": "In Progress"</strong>,
+    "error_status_desc": "",
+    "compliance_status": "",
+    "compliance_status_desc": "",
+    "auto_update": "true",
+    "description": "My first instance using the REST API.",
+    "identity_domain": "<em class="ph i">yourIdentityDomain</em>",
+    "creation_time": "Thu Jul 14 23:16:58 UTC 2016",
+    "last_modified_time": "Thu Jul 14 23:16:56 UTC 2016",
+    "created_by": "<em class="ph i">yourUserName</em>",
+    "service_uri": "https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/<em class="ph i">yourIdentityDomain</em>\/MyFirstInstance",
+    "message": [
+        "Created Compute resources for WebLogic Server...",
+        "Created security resources for the service...",
+        "Starting Compute resources..."
+    ]
+}</pre> 
+  </div> 
+ </div> 
+</div></div>
+        </article>
+    </body>
+</html>

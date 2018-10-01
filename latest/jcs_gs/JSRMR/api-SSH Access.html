@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service - SSH Access REST Endpoints</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-status-%7BrequestName%7D-job-%7BjobId%7D-get.html" title="Previous" type="text/html">
+        <link rel="next" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-credentials-crednames-%7BcredentialName%7D-post.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-status-%7BrequestName%7D-job-%7BjobId%7D-get.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-credentials-crednames-%7BcredentialName%7D-post.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li>Tasks</li>
+                    
+                      
+                    
+                </ol>
+                
+                
+				   <p class="draftsubtitle"></p>
+				
+                <h2>SSH Access REST Endpoints</h2>
+            </header>
+
+            <div class="clearfix">
+                <form class="form-inline endpoints pull-left">
+                    <label for="sortby" class="control-label">Sort by</label>
+
+                    <div id="sortby" class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-primary active">
+                            <input type="radio" name="sort-radio" value="summary" autocomplete="off" checked> Task
+                        </label>
+                        <label class="btn btn-primary">
+                            <input type="radio" name="sort-radio" value="path" autocomplete="off"> Path
+                        </label>
+                        <label class="btn btn-primary">
+                            <input type="radio" name="sort-radio" value="method" autocomplete="off"> Method
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <section>
+
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="summary-sort">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">SSH Access</div>
+                            <div class="panel-body">
+                                <div>View and manage SSH keys for your Oracle Java Cloud Service instances.</div>
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-credentials-crednames-%7BcredentialName%7D-post.html">Add a New SSH Public Key</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/paas/api/v1.1/instancemgmt/{identityDomainId}/services/jaas/instances/{serviceId}/credentials/crednames/{credentialName}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-credentials-crednames-get.html">Retrieve the SSH Key Description Using Query Parameters</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/paas/api/v1.1/instancemgmt/{identityDomainId}/services/jaas/credentials/crednames</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-credentials-get.html">Retrieve the SSH Key Value Using Query Parameters</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/paas/api/v1.1/instancemgmt/{identityDomainId}/services/jaas/credentials</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-credentials-crednames-%7BcredentialName%7D-get.html">View the SSH Key Description</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/paas/api/v1.1/instancemgmt/{identityDomainId}/services/jaas/instances/{serviceId}/credentials/crednames/{credentialName}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-credentials-%7BcredentialName%7D-get.html">View the SSH Key Value</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/paas/api/v1.1/instancemgmt/{identityDomainId}/services/jaas/instances/{serviceId}/credentials/{credentialName}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-paas-api-v1.1-activitylog-%7BidentityDomainId%7D-job-%7BjobId%7D-get.html">View the Status of an Add SSH Key Operation by Job Id</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/paas/api/v1.1/activitylog/{identityDomainId}/job/{jobId}</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="path-sort">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">SSH Access</div>
+                            <div class="panel-body">
+                                <div>View and manage SSH keys for your Oracle Java Cloud Service instances.</div>
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-paas-api-v1.1-activitylog-%7BidentityDomainId%7D-job-%7BjobId%7D-get.html">View the Status of an Add SSH Key Operation by Job Id</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/paas/api/v1.1/activitylog/{identityDomainId}/job/{jobId}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-credentials-get.html">Retrieve the SSH Key Value Using Query Parameters</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/paas/api/v1.1/instancemgmt/{identityDomainId}/services/jaas/credentials</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-credentials-crednames-get.html">Retrieve the SSH Key Description Using Query Parameters</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/paas/api/v1.1/instancemgmt/{identityDomainId}/services/jaas/credentials/crednames</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-credentials-crednames-%7BcredentialName%7D-get.html">View the SSH Key Description</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/paas/api/v1.1/instancemgmt/{identityDomainId}/services/jaas/instances/{serviceId}/credentials/crednames/{credentialName}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-credentials-crednames-%7BcredentialName%7D-post.html">Add a New SSH Public Key</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/paas/api/v1.1/instancemgmt/{identityDomainId}/services/jaas/instances/{serviceId}/credentials/crednames/{credentialName}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-credentials-%7BcredentialName%7D-get.html">View the SSH Key Value</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/paas/api/v1.1/instancemgmt/{identityDomainId}/services/jaas/instances/{serviceId}/credentials/{credentialName}</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="method-sort">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">SSH Access</div>
+                            <div class="panel-body">
+                                <div>View and manage SSH keys for your Oracle Java Cloud Service instances.</div>
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-paas-api-v1.1-activitylog-%7BidentityDomainId%7D-job-%7BjobId%7D-get.html">View the Status of an Add SSH Key Operation by Job Id</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/paas/api/v1.1/activitylog/{identityDomainId}/job/{jobId}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-credentials-get.html">Retrieve the SSH Key Value Using Query Parameters</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/paas/api/v1.1/instancemgmt/{identityDomainId}/services/jaas/credentials</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-credentials-crednames-get.html">Retrieve the SSH Key Description Using Query Parameters</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/paas/api/v1.1/instancemgmt/{identityDomainId}/services/jaas/credentials/crednames</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-credentials-crednames-%7BcredentialName%7D-get.html">View the SSH Key Description</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/paas/api/v1.1/instancemgmt/{identityDomainId}/services/jaas/instances/{serviceId}/credentials/crednames/{credentialName}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-credentials-%7BcredentialName%7D-get.html">View the SSH Key Value</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/paas/api/v1.1/instancemgmt/{identityDomainId}/services/jaas/instances/{serviceId}/credentials/{credentialName}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-credentials-crednames-%7BcredentialName%7D-post.html">Add a New SSH Public Key</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/paas/api/v1.1/instancemgmt/{identityDomainId}/services/jaas/instances/{serviceId}/credentials/crednames/{credentialName}</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </body>
+</html>

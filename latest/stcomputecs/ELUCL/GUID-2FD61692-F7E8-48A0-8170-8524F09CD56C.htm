@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Getting Started with the Oracle Compute CLI</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Oracle Public Cloud Machine supports a customized version of the Oracle Compute Cloud Service (Oracle Compute) command-line interface (CLI). The Oracle Compute CLI supports any action that can be performed by the Oracle Compute REST API. Use the CLI to manage the various Oracle Compute objects. This section gives an overview of the Oracle Compute CLI." />
+<meta name="dcterms.created" content="2017-04-07T05:55:01Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine CLI Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E69222-06" />
+<meta name="dcterms.isVersionOf" content="ELUCL" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-5819A2CA-65EC-4F75-8820-5770F3EEBEE8.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUCL.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-2FD61692-F7E8-48A0-8170-8524F09CD56C"></a> <span id="PAGE" style="display:none;">4/40</span> <!-- End Header -->
+<a id="ELACI251"></a><a id="ELACI107"></a>
+<h1 id="ELUCL-GUID-2FD61692-F7E8-48A0-8170-8524F09CD56C" class="sect1"><span class="enumeration_chapter">1</span> Getting Started with the Oracle Compute CLI</h1>
+<div>
+<div><span><span id="ORACLEEXALOGICELASTICCLOUD-881D6B97">Oracle Public Cloud Machine</span> supports a customized version of the Oracle Compute Cloud Service (Oracle Compute) command-line interface (CLI). The Oracle Compute CLI supports any action that can be performed by the Oracle Compute REST API. Use the CLI to manage the various Oracle Compute objects. This section gives an overview of the Oracle Compute CLI.</span></div>
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-2FD61692-F7E8-48A0-8170-8524F09CD56C.htm#GUID-4D18F8A4-A17D-4476-8535-E4A2A7644EB1">About the Oracle Compute CLI for Oracle Public Cloud Machine</a></p>
+</li>
+<li>
+<p><a href="GUID-2FD61692-F7E8-48A0-8170-8524F09CD56C.htm#GUID-A238FFC5-AAC0-443B-B059-4A4A7F3D798E">Roles of CLI Users</a></p>
+</li>
+<li>
+<p><a href="GUID-2FD61692-F7E8-48A0-8170-8524F09CD56C.htm#GUID-F4FEFB4A-4576-475C-8D55-98B9AC677668">Preparing to Use the Oracle Compute CLI</a></p>
+</li>
+<li>
+<p><a href="GUID-2FD61692-F7E8-48A0-8170-8524F09CD56C.htm#GUID-738EF23B-FF6F-4E75-9F40-09F60EC3AD7D">Setting Up Environment Variables</a></p>
+</li>
+<li>
+<p><a href="GUID-2FD61692-F7E8-48A0-8170-8524F09CD56C.htm#GUID-070E8892-4EB2-4BDE-B5FC-BC098CEE4D9D">Installing the Oracle Compute CLI on a Remote System</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<a id="ELACI108"></a>
+<div class="props_rev_3"><a id="GUID-4D18F8A4-A17D-4476-8535-E4A2A7644EB1"></a>
+<h2 id="ELUCL-GUID-4D18F8A4-A17D-4476-8535-E4A2A7644EB1" class="sect2">About the Oracle Compute CLI for <span>Oracle Public Cloud Machine</span></h2>
+<div>
+<p>Oracle Compute Cloud service supports <code class="codeph">oracle-compute</code> CLI tool. Use this tool to view and manage Oracle Compute objects such as instances, storage volumes, and orchestrations.</p>
+<p>For more information on Oracle Compute Cloud Services and supported objects, see <span class="italic"><a class="olink ELUSE-GUID-658D476C-72AC-4595-BE02-95B7EE673EC7" target="_blank" href="../ELUSE/GUID-658D476C-72AC-4595-BE02-95B7EE673EC7.htm#ELUSE-GUID-658D476C-72AC-4595-BE02-95B7EE673EC7">Getting Started with Using Oracle Compute Cloud Services</a></span> in <span class="italic">Using Oracle Compute Cloud Service</span>.</p>
+</div>
+</div>
+<div class="props_rev_3"><a id="GUID-A238FFC5-AAC0-443B-B059-4A4A7F3D798E"></a>
+<h2 id="ELUCL-GUID-A238FFC5-AAC0-443B-B059-4A4A7F3D798E" class="sect2">Roles of CLI Users</h2>
+<div>
+<div class="section">
+<div class="p">The following CLI user roles are supported:
+<ul style="list-style-type: disc;">
+<li>
+<p>Tenant administrator (<code class="codeph">/<span class="variable">tenant_name</span>/<span class="variable">username</span></code>): Administrator for a given tenant. Can perform all the administrative functions for a tenant. Can create users in their tenancy with Tenant User role. The default tenant admin user is <code class="codeph">/<span class="variable">tenant_name</span>/administrator</code>.</p>
+</li>
+<li>
+<p>Tenant user (<code class="codeph">/<span class="variable">tenant_name</span>/<span class="variable">username</span></code>): User of a tenant group. Can create and use VMs and resources within the tenant.</p>
+</li>
+</ul>
+</div>
+<p>For more information on user roles, see <span class="italic"><a class="olink ELUSE-GUID-658D476C-72AC-4595-BE02-95B7EE673EC7" target="_blank" href="../ELUSE/GUID-658D476C-72AC-4595-BE02-95B7EE673EC7.htm#ELUSE-GUID-658D476C-72AC-4595-BE02-95B7EE673EC7">Getting Started with Using Oracle Compute Cloud Services</a></span> in <span class="italic">Using Oracle Compute Cloud Service</span>.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="ELACI109"></a>
+<div class="props_rev_3"><a id="GUID-F4FEFB4A-4576-475C-8D55-98B9AC677668"></a>
+<h2 id="ELUCL-GUID-F4FEFB4A-4576-475C-8D55-98B9AC677668" class="sect2">Preparing to Use the Oracle Compute CLI</h2>
+<div>
+<p>Before installing the Oracle Compute CLI tools, you must get the <code class="codeph"><span class="codeinlineitalic">API URL</span></code> of the API server used when installing your <span id="GUID-F4FEFB4A-4576-475C-8D55-98B9AC677668__ORACLEEXALOGICELASTICCLOUD-881D6B97">Oracle Public Cloud Machine</span>. You can get this information from Oracle Cloud Administrator.</p>
+<p>Examples in this guide use the following name for the API server:</p>
+<p><code class="codeph">api.oc.example.com</code></p>
+</div>
+</div>
+<a id="ELACI110"></a>
+<div class="props_rev_3"><a id="GUID-738EF23B-FF6F-4E75-9F40-09F60EC3AD7D"></a>
+<h2 id="ELUCL-GUID-738EF23B-FF6F-4E75-9F40-09F60EC3AD7D" class="sect2">Setting Up Environment Variables</h2>
+<div>
+<div class="section">
+<p>Set the environment variables in the shell to avoid having to provide the values in the CLI command.</p>
+<p>The following table lists the environment variables, describes each variable, and provides the command to set the variable in the host using a bash shell.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformal" id="GUID-738EF23B-FF6F-4E75-9F40-09F60EC3AD7D__GUID-7FDABF36-C9E3-4D1E-A6C6-5AF020D55660">
+<table class="cellalignment29" summary="Different types of Environment Variables.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment35" id="d2059e215">Name</th>
+<th class="cellalignment36" id="d2059e218">Description</th>
+<th class="cellalignment37" id="d2059e221">Command</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d2059e226" headers="d2059e215">
+<p>ORACLE_COMPUTE_API</p>
+</td>
+<td class="cellalignment39" headers="d2059e226 d2059e218">
+<p>URL of API endpoint</p>
+<p>When this variable isn't set, you must specify a API endpoint with the <code class="codeph">-a</code> option on the command line.</p>
+</td>
+<td class="cellalignment40" headers="d2059e226 d2059e221">
+<p>export ORACLE_COMPUTE_API=<code class="codeph"><span class="codeinlineitalic">API URL</span></code></p>
+<p>Example:</p>
+<p><code class="codeph">export ORACLE_COMPUTE_API="https://api.oc.example.com"</code></p>
+<p>To make the environment variable persist across login sessions, add this line to your<code class="codeph">.bash_profile</code> or <code class="codeph">.bashrc</code> file.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d2059e257" headers="d2059e215">
+<p>ORACLE_COMPUTE_USER</p>
+</td>
+<td class="cellalignment39" headers="d2059e257 d2059e218">
+<p>The Oracle Compute user name.</p>
+<p>When this variable isn't set, you must specify a user name with the <code class="codeph">-u</code> option on the command line.</p>
+</td>
+<td class="cellalignment40" headers="d2059e257 d2059e221">
+<p>export ORACLE_COMPUTE_USER=<code class="codeph"><span class="codeinlineitalic">username</span></code></p>
+<p>Example:</p>
+<p><code class="codeph">export ORACLE_COMPUTE_USER="mytenant/user"</code></p>
+<p>To make the environment variable persist across login sessions, add this line to your <code class="codeph">.bash_profile</code> or <code class="codeph">.bashrc</code> file.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment38" id="d2059e288" headers="d2059e215">
+<p>ORACLE_COMPUTE_COOKIE</p>
+</td>
+<td class="cellalignment39" headers="d2059e288 d2059e218">
+<p>The value of an authentication token received from the <code class="codeph">oracle-compute auth</code> command. See <a href="GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE.htm#GUID-21FD97EF-1368-49A2-875E-5364CF874DAF" title="This command enables you to specify authentication credentials for a user.">Authenticate User</a>.</p>
+</td>
+<td class="cellalignment40" headers="d2059e288 d2059e221">
+<p>export ORACLE_COMPUTE_COOKIE=<code class="codeph"><span class="codeinlineitalic">auth_token</span></code></p>
+<p>If both ORACLE_COMPUTE_USER and ORACLE_COMPUTE_COOKIE are specified, then ORACLE_COMPUTE_USER takes precedence.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<a id="ELACI111"></a>
+<div class="props_rev_3"><a id="GUID-070E8892-4EB2-4BDE-B5FC-BC098CEE4D9D"></a>
+<h2 id="ELUCL-GUID-070E8892-4EB2-4BDE-B5FC-BC098CEE4D9D" class="sect2">Installing the Oracle Compute CLI on a Remote System</h2>
+<div>
+<div class="section">
+<p>The prerequisites for installing the Oracle Compute CLI on the remote client system are as follows:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Client system must have Oracle Linux 6.3 or later.</p>
+</li>
+<li>
+<p>Client system must have Python 2.6 or later but not Python 3.x.</p>
+</li>
+<li>
+<p>The script must have root privileges in the client system.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p>To install the <code class="codeph">oracle-compute</code> tool:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Install the prerequisite RPMs<code class="codeph">: python-simplejson, python-dateutil, python-setuptools</code>.</span>
+<div>
+<pre dir="ltr">
+sudo yum install python-simplejson python-dateutil python-setuptools
+</pre></div>
+</li>
+<li class="stepexpand"><span>Get the installation script and make it executable.</span>
+<div>
+<pre dir="ltr">
+wget http://<span class="codeinlineitalic">API_URL</span>/tools/Linux/install-IaaS-CLI.sh
+chmod 555 install-IaaS-CLI.sh
+</pre></div>
+</li>
+<li class="stepexpand"><span>Run the installation script.</span>
+<div>
+<pre dir="ltr">
+./install-IaaS-CLI.sh
+</pre>
+<p>Use <code class="codeph">./install-IaaS-CLI.sh http://<span class="codeinlineitalic">API_URL</span></code> if ORACLE_COMPUTE_API variable isn&rsquo;t configured.</p>
+<div class="infobox-note" id="GUID-070E8892-4EB2-4BDE-B5FC-BC098CEE4D9D__GUID-F28B5514-625D-4A2A-9D4E-BB66079AACEA">
+<p class="notep1">Note:</p>
+<p>Use the <code class="codeph">-f</code> option of the script to force run the script, even if the host isn&rsquo;t running on a known RedHat OS.</p>
+</div>
+</div>
+</li>
+</ol>
+<div class="section">
+<div class="p">After the installation, the following CLI tool is available:
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph">/usr/bin/oracle-compute</code></p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-5819A2CA-65EC-4F75-8820-5770F3EEBEE8.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

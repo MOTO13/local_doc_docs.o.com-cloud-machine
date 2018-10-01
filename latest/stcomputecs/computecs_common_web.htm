@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<!--<![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Oracle Compute Cloud Service on Oracle Cloud Machine</title>
+<meta charset="utf-8">
+<meta name="date" content="2006-12-08T18:57:09Z">
+<meta name="copyright" content="Copyright 2011, 2014, Oracle and/or its affiliates.">
+<meta name="description" content="Documentation that shows how to configure and manage virtual machines on Oracle Public Cloud Machine (OPCM).">
+<meta name="keywords" content="None">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="dcterms.identifier" content="E70972-01">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+<link rel="stylesheet" href="dcommon/css/forms.css">
+<link rel="stylesheet" href="dcommon/css/home-search.css">
+<link rel="stylesheet" href="dcommon/css/fonts.css">
+<link rel="stylesheet" href="dcommon/fonts/glyphicons-pro/glyphicons/css/glyphicons.css">
+<link rel="stylesheet" href="dcommon/fonts/glyphicons-pro/glyphicons-halflings/css/glyphicons-halflings.css">
+<link rel="stylesheet" href="dcommon/fonts/glyphicons-pro/glyphicons-social/css/glyphicons-social.css">
+<link rel="stylesheet" href="dcommon/css/normalize.min.css">
+<link rel="stylesheet" href="dcommon/css/main.css">
+<link rel="stylesheet" href="dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="dcommon/css/respond-1140-deskop.css">
+<link rel="stylesheet" href="dcommon/css/leftnav.css">
+<link rel="stylesheet" href="dcommon/css/simpletree.css">
+<link rel="stylesheet" href="dcommon/css/header.css">
+<link rel="stylesheet" href="dcommon/css/footer.css">
+<link rel="stylesheet" href="dcommon/css/home.css">
+<link rel="stylesheet" href="dcommon/css/fusiondoc.css">
+<link rel="stylesheet" href="dcommon/css/print.css">
+<script src="dcommon/js/jquery-1.11.0.min.js"></script><script src="dcommon/js/modernizr-2.6.1-respond-1.1.0.min.js"></script><script src="dcommon/js/jquery-1.10.2.js"></script><script src="dcommon/js/jquery-ui-1.10.4.custom.js"></script><link href="dcommon/css/jquery-ui-1.10.4.custom.css" rel="stylesheet">
+<link rel="stylesheet" href="dcommon/css/search.css">
+<script src="dcommon/js/common.js"></script><script src="dcommon/js/booklist.js"></script><script src="dcommon/js/tabs.js"></script><script src="dcommon/js/leftnav.js"></script><script src="dcommon/js/jquery.matchHeight.js" type="text/javascript"></script><script src="dcommon/js/main.js"></script><link rel="stylesheet" href="dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen">
+<script type="text/javascript" src="dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script><script type="text/javascript" src="dcommon/fancybox/fbattributes.js"></script><script src="dcommon/js/search.js"></script><!--fonts--><!--[if lt IE 9]>
+<link rel="stylesheet" href="{$dcommonref}dcommon/css/ltIE9.css">
+<![endif]-->
+<!--[if IE ]>
+ <link rel="stylesheet" href="{$dcommonref}dcommon/css/IE.css">
+ <![endif]-->
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+<script>
+$(window).load(function () {
+    $("select#ctpages").each(function () {
+        $(this).val($(this).find('option[selected]').val());
+    });
+});
+/////////////////
+
+/////////////////  MatchHeight function
+
+ 
+
+function resizecolumns(){
+
+$('.col2equal > div').matchHeight();
+
+$('.gs-block-2').matchHeight();
+
+$('.gs4b > div').matchHeight();
+
+$('.gs-col-wrapper > div').matchHeight();
+
+};
+
+ 
+
+/////////////////
+
+/////////////////  
+
+ 
+
+$(document).ready(function() {
+
+resizecolumns();
+
+});
+
+$(window).resize(function() {
+
+resizecolumns();
+
+});
+
+ 
+</script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body id="PORTAL2" class="INDEX_DATA_FILE">
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><div id="HEADER">
+<div id="logocover"></div>
+<br class="clearfloat"><div class="header-container"></div>
+<br>
+</div></header><div id="content">
+<div id="shownav" title="Show Navigation"><input type="image" src="dcommon/img/btn-close-nav.png" alt="Open Left Navigation" title="Open Left Navigation"></div>
+<div id="hidenav"><input type="image" src="dcommon/img/btn-close-nav.png" alt="Close Left Navigation" title="Close Left Navigation"></div>
+<div class="left-nav" style="display:block;"><ul>
+<li class="home"><a href="/en/cloud/"><span class="JetFW-caret02-w_16"></span>Cloud</a></li>
+<li id="INDEX"><a style="text-decoration:none" href="index.html">Get Started</a></li>
+<li id="COMPUTECS_COMMON_WEB"><a class="selected" href="#" style="text-decoration:none">Tasks</a></li>
+<li id="DOCS"><a style="text-decoration:none" href="docs.htm">Books</a></li>
+</ul></div>
+<div class="main-pad" id="main">
+<div class="navback border-right"></div>
+<a id="BEGIN" name="BEGIN"></a><span id="category" style="display:none;">Cloud</span><img class="img-right" src="dcommon/img/cloudgs_compute.png" alt="Graphic for Getting Started page"><h1>Oracle Compute Cloud Service on Oracle Cloud Machine<br>
+</h1>
+<h2 class="libportletheader" id="tasks">Tasks</h2><p><strong>Which interface would you like to use today?</strong></p>
+<form action="">
+<label for="ctpages" class="obscure">Links to Additional Task Pages</label><select name="ctpages" id="ctpages" class="SELECTLRG" onchange="window.location=this.value;"><option selected value="computecs_common_web.htm">Web UI</option>
+<option value="computecs_common_api.htm">Rest API</option>
+<option value="computecs_common_cli.htm">CLI</option></select>
+</form>
+<br><br><div class="col2equal">
+<div class="nobullets">
+<h4>Manage Instances</h4>
+<ul>
+<li><a href="ELUSE/GUID-E9CF1073-8DDC-4262-91D7-9DDF3F856942.htm#ELUSE-GUID-E9CF1073-8DDC-4262-91D7-9DDF3F856942">Understand the instance life cycle</a></li>
+<li><a href="ELUSE/GUID-505E61C9-7FF5-4011-A87E-FF700D5689C7.htm#ELUSE-GUID-505E61C9-7FF5-4011-A87E-FF700D5689C7">Create an instance</a></li>
+<li><a href="ELUSE/GUID-DDA83168-BFFF-47B4-91FC-ACEF3C28CA50.htm#ELUSE-GUID-DDA83168-BFFF-47B4-91FC-ACEF3C28CA50">Shut down an instance</a></li>
+<li><a href="ELUSE/GUID-FA97F2F1-6DAC-4E82-BE02-0C3CADC35E4C.htm#ELUSE-GUID-FA97F2F1-6DAC-4E82-BE02-0C3CADC35E4C">Delete an instance</a></li>
+<li><a href="ELUSE/GUID-703822A2-46BE-4656-8EBE-8F7FB615AFF2.htm#ELUSE-GUID-703822A2-46BE-4656-8EBE-8F7FB615AFF2">Restart an instance</a></li>
+<li><a href="ELUSE/GUID-AF6765AD-E707-4D0B-A39A-E083F79BC959.htm#ELUSE-GUID-AF6765AD-E707-4D0B-A39A-E083F79BC959">Attach and detach storage volume</a></li>
+<li><a href="ELUSE/GUID-75DDA9D1-8366-4AEC-BA33-6F3E1503D6AB.htm#ELUSE-GUID-75DDA9D1-8366-4AEC-BA33-6F3E1503D6AB">Attach a network</a></li>
+<li><a href="ELUSE/GUID-9E61F5CA-45F9-4E34-8A21-0E5411122EF9.htm#ELUSE-GUID-9E61F5CA-45F9-4E34-8A21-0E5411122EF9">Update the network configuration</a></li>
+<li><a href="ELUSE/GUID-563D93C6-7340-48E0-8657-75FDBD579BE3.htm#ELUSE-GUID-563D93C6-7340-48E0-8657-75FDBD579BE3">Scale up an instance</a></li>
+<li><a href="ELUSE/GUID-2F4B9D3D-CBEF-4E75-A337-E1E6F414B219.htm#ELUSE-GUID-2F4B9D3D-CBEF-4E75-A337-E1E6F414B219">Patch an instance</a></li>
+</ul>
+</div>
+<div class="nobullets">
+<h4>Automate Instance Provisioning</h4>
+<ul>
+<li><a href="ELUSE/GUID-FA870840-5077-4D1E-9AA2-09E4FEBB4D9D.htm#ELUSE-GUID-FA870840-5077-4D1E-9AA2-09E4FEBB4D9D">Learn about orchestrations</a></li>
+<li><a href="ELUSE/GUID-FA870840-5077-4D1E-9AA2-09E4FEBB4D9D.htm#ELUSE-GUID-868BDFFE-A503-45F5-BFA1-0D1F58B379E8">Understand the orchestration life cycle</a></li>
+<li><a href="ELUSE/GUID-D686EFFB-B862-452A-A4C1-9C9291C58518.htm#ELUSE-GUID-D686EFFB-B862-452A-A4C1-9C9291C58518">Add an orchestration</a></li>
+<li><a href="ELUSE/GUID-AECAAE6D-F6FA-4995-B4A0-264E55D27AEE.htm#ELUSE-GUID-AECAAE6D-F6FA-4995-B4A0-264E55D27AEE">Start an orchestration</a></li>
+<li><a href="ELUSE/GUID-58076227-DE03-49A0-A6A1-CF6AD40E276D.htm#ELUSE-GUID-58076227-DE03-49A0-A6A1-CF6AD40E276D">Stop an orchestration</a></li>
+<li><a href="ELUSE/GUID-AA4984D7-A6D9-4DC2-BC07-DA4ED39DDB6C.htm#ELUSE-GUID-AA4984D7-A6D9-4DC2-BC07-DA4ED39DDB6C">Update an orchestration</a></li>
+<li><a href="ELUSE/GUID-E44EB604-5E8C-4F90-86FC-A0AF39217C4B.htm#GUID-E44EB604-5E8C-4F90-86FC-A0AF39217C4B">Shutting down an orchestration</a></li>
+<li><a href="ELUSE/GUID-C9B759BA-DEE9-45F1-8BD9-1249AF60C82C.htm#GUID-C9B759BA-DEE9-45F1-8BD9-1249AF60C82C">Deleting an orchestration</a></li>
+<li><a href="ELUSE/GUID-F7D91076-1736-4B54-89D5-73C23A45BF85.htm#ELUSE-GUID-F7D91076-1736-4B54-89D5-73C23A45BF85">Orchestration Templates</a></li>
+<li><a href="ELUSE/GUID-58BBCE21-E8CE-4607-AFE5-C534DF286682.htm#ELUSE-GUID-58BBCE21-E8CE-4607-AFE5-C534DF286682">Sample Orchestrations</a></li>
+</ul>
+</div>
+<div class="nobullets">
+<h4>Manage Networking Settings</h4>
+<ul>
+<li><a href="ELUSE/GUID-74D3FC54-AD2F-4EA9-A40D-4DA203297F66.htm#ELUSE-GUID-74D3FC54-AD2F-4EA9-A40D-4DA203297F66">Learn about network settings</a></li>
+<li><a href="ELUSE/GUID-135FABF1-8709-4F80-B091-3E42A198D12D.htm#ELUSE-GUID-135FABF1-8709-4F80-B091-3E42A198D12D">Create an IPoIB tenant vNet</a></li>
+<li><a href="ELUSE/GUID-CE47FA43-7CC5-40B8-9193-9D6633133F0B.htm#ELUSE-GUID-CE47FA43-7CC5-40B8-9193-9D6633133F0B">Update an IPoIB tenant vNet</a></li>
+<li><a href="ELUSE/GUID-99EEAA7C-E15B-4807-B87C-FA25BE9EE890.htm#ELUSE-GUID-99EEAA7C-E15B-4807-B87C-FA25BE9EE890">Delete an IPoIB tenant vNet</a></li>
+<li><a href="ELUSE/GUID-020160BE-A260-4DB8-93A0-8556B68E8CA2.htm#ELUSE-GUID-020160BE-A260-4DB8-93A0-8556B68E8CA2">Reserve an IP address</a></li>
+<li><a href="ELUSE/GUID-21FE0A09-9EE8-42A3-B590-3AE29085CA54.htm#ELUSE-GUID-21FE0A09-9EE8-42A3-B590-3AE29085CA54">Delete an IP address reservation</a></li>
+</ul>
+</div>
+<div class="nobullets">
+<h4>Manage SSH Public Keys</h4>
+<ul>
+<li><a href="ELUSE/GUID-27253116-1FFF-4E1C-A7A7-BB2A03B5BAA5.htm#ELUSE-GUID-27253116-1FFF-4E1C-A7A7-BB2A03B5BAA5">Generate an SSH key pair </a></li>
+<li><a href="ELUSE/GUID-1496E27C-DDAF-4D49-B8AA-162C8C018856.htm#ELUSE-GUID-1496E27C-DDAF-4D49-B8AA-162C8C018856">Add public keys</a></li>
+</ul>
+</div>
+<div class="nobullets">
+<h4>Manage Instance Templates</h4>
+<ul>
+<li><a href="ELUSE/GUID-D84B2543-E529-4871-8879-7DF3057246E4.htm#ELUSE-GUID-D84B2543-E529-4871-8879-7DF3057246E4">Learn about instance templates</a></li>
+<li><a href="ELUSE/GUID-14D73E49-E2BE-482E-BABF-8DC65CB69DD9.htm#ELUSE-GUID-14D73E49-E2BE-482E-BABF-8DC65CB69DD9">Upload a private template</a></li>
+<li><a href="ELUSE/GUID-9F8B9F08-81DF-4B6C-82A3-3A062F20BE66.htm#ELUSE-GUID-9F8B9F08-81DF-4B6C-82A3-3A062F20BE66">Delete a private template</a></li>
+<li><a href="ELUSE/GUID-DFF9F15E-D389-400F-B363-F2BB2F790F1A.htm#ELUSE-GUID-DFF9F15E-D389-400F-B363-F2BB2F790F1A">Create a template from an instance snapshot</a></li>
+</ul>
+</div>
+<div class="nobullets">
+<h4>Manage Storage Volumes</h4>
+<ul>
+<li><a href="ELUSE/GUID-6ACE7B13-442B-459C-8868-566F1CB65E3F.htm#ELUSE-GUID-6ACE7B13-442B-459C-8868-566F1CB65E3F">Learn about storage volumes</a></li>
+<li><a href="ELUSE/GUID-F7F6918E-FD9D-453F-BCEC-EB3876195519.htm#ELUSE-GUID-F7F6918E-FD9D-453F-BCEC-EB3876195519">Create a volume</a></li>
+<li><a href="ELUSE/GUID-62F264D7-E350-4E83-B242-8EA163BE6E51.htm#ELUSE-GUID-62F264D7-E350-4E83-B242-8EA163BE6E51">Take a snapshot of a volume</a></li>
+<li><a href="ELUSE/GUID-295CA674-7467-48CD-B9EC-8FB0C032AB48.htm#ELUSE-GUID-295CA674-7467-48CD-B9EC-8FB0C032AB48">Delete a volume</a></li>
+<li><a href="ELUSE/GUID-AF6765AD-E707-4D0B-A39A-E083F79BC959.htm#ELUSE-GUID-AF6765AD-E707-4D0B-A39A-E083F79BC959">Attach and detach volumes</a></li>
+</ul>
+</div>
+</div>
+</div>
+<br style="clear:both;"><br class="clearfloat"><noscript><p>Scripting on this page causes alternating background colors for the list items in the portlets.</p></noscript>
+<div style="clear:both;height:1px;width:1px"></div>
+</div>
+<script src="dcommon/js/bookpage.js"></script><script src="dcommon/js/search-drop.js"></script><script>
+function PrintPage()
+  {window.print();}
+</script><footer></footer>
+</body>
+</html>

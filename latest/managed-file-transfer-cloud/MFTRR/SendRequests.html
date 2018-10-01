@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Managed File Transfer Cloud Service on Oracle Public Cloud Machine</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Use the Event Service REST API for Oracle Managed File Transfer Cloud Service to discover and trigger sources.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Managed File Transfer Cloud Service on Oracle Public Cloud Machine">
+        <meta property="og:description" content="Use the Event Service REST API for Oracle Managed File Transfer Cloud Service to discover and trigger sources.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Managed File Transfer Cloud Service on Oracle Public Cloud Machine">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="QuickStart.html" title="Previous" type="text/html">
+        <link rel="next" href="Authentication.html" title="Next" type="text/html">
+    
+                    <script>var w=window;if(w.performance||w.mozPerformance||w.msPerformance||w.webkitPerformance){var d=document;AKSB=w.AKSB||{},AKSB.q=AKSB.q||[],AKSB.mark=AKSB.mark||function(e,_){AKSB.q.push(["mark",e,_||(new Date).getTime()])},AKSB.measure=AKSB.measure||function(e,_,t){AKSB.q.push(["measure",e,_,t||(new Date).getTime()])},AKSB.done=AKSB.done||function(e){AKSB.q.push(["done",e])},AKSB.mark("firstbyte",(new Date).getTime()),AKSB.prof={custid:"322179",ustr:"",originlat:"0",clientrtt:"1",ghostip:"23.212.3.15",ipv6:false,pct:"10",clientip:"45.78.37.67",requestid:"2570b08",region:"32996",protocol:"",blver:14,akM:"dsca",akN:"ae",akTT:"O",akTX:"1",akTI:"2570b08",ai:"206465",ra:"false",pmgn:"",pmgi:"",pmp:"",qc:""},function(e){var _=d.createElement("script");_.async="async",_.src=e;var t=d.getElementsByTagName("script"),t=t[t.length-1];t.parentNode.insertBefore(_,t)}(("https:"===d.location.protocol?"https:":"http:")+"//ds-aksb-a.akamaihd.net/aksb.min.js")}</script>
+                    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="QuickStart.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="Authentication.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Managed File Transfer Cloud Service on Oracle Public Cloud Machine</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">Send Requests</h2> 
+<div class="body conbody">
+ <p class="p">Use the following guidelines when sending requests using the REST API for Oracle Managed File Transfer on Oracle Public Cloud Machine.</p> 
+ <div class="section">
+  <h3 class="title sectiontitle">URL Structure</h3>
+  <p class="p">Access the Oracle Managed File Transfer Cloud Service REST resources using the following URL structure:</p> 
+  <pre class="pre codeblock">https://<var class="keyword varname">api-host</var>/paas/service/mftapp/rest/v1/<var class="keyword varname">resource-path</var></pre> 
+  <div class="p">
+   Where:
+   <ul class="ul">
+    <li class="li"><p class="p"><samp class="ph codeph"><var class="keyword varname">api-host</var></samp>: Host name. Get the host name (which may or may not include a port number) from your account administrator.</p> </li> 
+    <li class="li"><p class="p"><samp class="ph codeph"><var class="keyword varname">resource-path</var></samp>: Relative path that defines the REST endpoint. For a complete list of REST endpoints, see <a class="xref" href="rest-endpoints.html">All Rest Endpoints</a>.</p> </li> 
+   </ul> 
+  </div> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Supported Methods</h3>
+  <p class="p">You can perform the operations described in the following table using standard HTTP method requests.</p> 
+  <div class="p"> 
+   <div class="tablenoborder">
+    <table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all">
+     <tbody class="tbody">
+      <tr class="row">
+       <th class="firstcol" valign="top" id="d804e55"><strong class="ph b">HTTP Method</strong></th> 
+       <td class="entry" valign="top" headers="d804e55 "><strong class="ph b">Description</strong></td> 
+      </tr> 
+      <tr class="row">
+       <th class="firstcol" valign="top" id="d804e62"><samp class="ph codeph">GET</samp></th> 
+       <td class="entry" valign="top" headers="d804e62 "><p class="p">Retrieve information about a resource.</p> </td> 
+      </tr> 
+      <tr class="row">
+       <th class="firstcol" valign="top" id="d804e69"><samp class="ph codeph">POST</samp></th> 
+       <td class="entry" valign="top" headers="d804e69 "><p class="p">Create or update a resource.</p> </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+  </div> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Media Types</h3>
+  <p class="p">The following media types are supported by the Oracle Managed File Transfer Cloud Service REST API:</p> 
+  <ul class="ul">
+   <li class="li"><p class="p"><samp class="ph codeph">application/json</samp></p> </li> 
+   <li class="li"><p class="p"><samp class="ph codeph">application/xml</samp> (requests only)</p> </li> 
+  </ul> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Supported Headers</h3>
+  <p class="p">The Oracle Managed File Transfer Cloud Service REST API supports the following headers that may be passed in the header section of the HTTP request or response.</p> 
+  <div class="p"> 
+   <div class="tablenoborder">
+    <table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all">
+     <tbody class="tbody">
+      <tr class="row">
+       <th class="firstcol" valign="top" width="25%" id="d804e103"><strong class="ph b">Header</strong></th> 
+       <td class="entry" valign="top" width="50%" headers="d804e103 "><strong class="ph b">Description</strong></td> 
+       <td class="entry" valign="top" width="25%" headers="d804e103 "><strong class="ph b">Example</strong></td> 
+      </tr> 
+      <tr class="row">
+       <th class="firstcol" valign="top" width="25%" id="d804e113"><samp class="ph codeph">Accept</samp></th> 
+       <td class="entry" valign="top" width="50%" headers="d804e113 "><p class="p">Media type of the body of the response.</p> </td> 
+       <td class="entry" valign="top" width="25%" headers="d804e113 "><samp class="ph codeph">Accept: application/json</samp></td> 
+      </tr> 
+      <tr class="row">
+       <th class="firstcol" valign="top" width="25%" id="d804e123"><samp class="ph codeph">Content-Type</samp></th> 
+       <td class="entry" valign="top" width="50%" headers="d804e123 "><p class="p">Media type of the body of the request. Required for POST and PUT requests.</p> </td> 
+       <td class="entry" valign="top" width="25%" headers="d804e123 "><samp class="ph codeph">Content-Type: application/json</samp></td> 
+      </tr> 
+      <tr class="row">
+       <th class="firstcol" valign="top" width="25%" id="d804e133"><samp class="ph codeph">X-ID-TENANT-NAME</samp></th> 
+       <td class="entry" valign="top" width="50%" headers="d804e133 "><p class="p">Identity domain name of the Oracle Managed File Transfer Cloud Service instance, used for authentication.</p> </td> 
+       <td class="entry" valign="top" width="25%" headers="d804e133 "><samp class="ph codeph">X-ID-TENANT-NAME:ExampleIdentityDomain</samp></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+  </div> 
+ </div> 
+</div></div>
+        </article>
+    </body>
+</html>

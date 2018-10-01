@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Oracle Database Characteristics</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-06-19T15:22:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Database Cloud Service" />
+<meta name="dcterms.identifier" content="E72994-04" />
+<meta name="dcterms.isVersionOf" content="CSDBI" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-7807673B-F079-4E1A-8887-B28267AE6882.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-70D37B4D-32AD-438C-8CCF-FD9F4355DA0E.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSDBI.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSDBI.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSDBI.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-221C2977-3B5A-4376-8DD9-76B1B6A07D6F"></a> <span id="PAGE" style="display:none;">131/190</span> <!-- End Header -->
+<a id="CSDBI3538"></a>
+<h1 id="CSDBI-GUID-221C2977-3B5A-4376-8DD9-76B1B6A07D6F" class="sect1">Oracle Database Characteristics</h1>
+<div>
+<p>When a database deployment is created on <span>Oracle Database Cloud Service</span>, an Oracle database is created using information provided in the <span>Provision New Oracle Database Cloud Service</span> wizard:</p>
+<div class="tblformal" id="GUID-221C2977-3B5A-4376-8DD9-76B1B6A07D6F__GUID-F63CEF0C-8701-46D7-ADFC-0CA94C874F81">
+<table class="cellalignment11" summary="Table of Wizard pages and fields in column 1 and how they are used when creating the Oracle database in column 2.">
+<thead>
+<tr class="cellalignment2">
+<th class="cellalignment12" id="d33015e23">Wizard Page and Field</th>
+<th class="cellalignment13" id="d33015e26">How Used When Creating the Database</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d33015e31" headers="d33015e23">
+<p>Software Release on the Service page</p>
+</td>
+<td class="cellalignment15" headers="d33015e31 d33015e26">
+<p>Determines which version of Oracle Database is used, <span>12c Release 2,</span> 12c Release 1 or 11g Release 2.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d33015e41" headers="d33015e23">
+<p>Software Edition on the Service page</p>
+</td>
+<td class="cellalignment15" headers="d33015e41 d33015e26">
+<p>Determines which database edition is used. The edition determines what database features and options are available. For more information, see <a href="GUID-660363B8-0E2F-4A4F-A9BD-70A43F332A16.htm#GUID-6C0B1E17-98A5-4522-A3B9-36EFA05E64F9">Oracle Database Edition</a>.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d33015e52" headers="d33015e23">
+<p>Usable Data Storage (GB) on the Service Details page</p>
+</td>
+<td class="cellalignment15" headers="d33015e52 d33015e26">
+<p>The amount of data storage for the database data files. A storage volume of this size is created and mounted on <code class="codeph">/u02</code>.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d33015e62" headers="d33015e23">
+<p>Administrator Password on the Service Details page</p>
+</td>
+<td class="cellalignment15" headers="d33015e62 d33015e26">
+<p>The password used for the SYS and SYSTEM database users.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d33015e69" headers="d33015e23">
+<p>DB Name (SID) on the Service Details page</p>
+</td>
+<td class="cellalignment15" headers="d33015e69 d33015e26">
+<p>The database system identifier (SID) of the database.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment14" id="d33015e76" headers="d33015e23">
+<p>PDB Name on the Service Details page</p>
+</td>
+<td class="cellalignment15" headers="d33015e76 d33015e26">
+<p>(Oracle Database 12c only) The name of the default pluggable database (PDB) created in the database.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="GUID-7807673B-F079-4E1A-8887-B28267AE6882.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="GUID-70D37B4D-32AD-438C-8CCF-FD9F4355DA0E.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

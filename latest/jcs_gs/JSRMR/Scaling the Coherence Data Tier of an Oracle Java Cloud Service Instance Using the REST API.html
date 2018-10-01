@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="Adding%20a%20Coherence%20Data%20Tier%20Cluster%20to%20an%20Oracle%20Java%20Cloud%20Service%20Using%20the%20REST%20API.html" title="Previous" type="text/html">
+        <link rel="next" href="Configuring%20Automated%20Backups%20for%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="Adding%20a%20Coherence%20Data%20Tier%20Cluster%20to%20an%20Oracle%20Java%20Cloud%20Service%20Using%20the%20REST%20API.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="Configuring%20Automated%20Backups%20for%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">Scaling the Coherence Data Tier of a Service Instance</h2> 
+<div class="body taskbody">
+ <p class="shortdesc">When you scale the Coherence data tier, it means you are adding Managed Servers to or removing Managed Servers from the storage-enabled WebLogic Server cluster of an Oracle Java Cloud Service instance, as described in the following procedure.</p> 
+ <div class="section">
+  <p class="p">This section applies only to Oracle Java Cloud Service instances that have Oracle Coherence enabled. During a scaling operation on the Coherence data tier, a specific number of capacity units is added or removed based on the capacity unit count requested and the current capacity unit count for the service instance. The number of VMs and Managed Servers to add or remove is predetermined by the capacity unit definition you declared for the service instance during initial provisioning. For example, if a capacity unit definition manages 3 VMs and 1 Managed Server per VM, a scaling operation either adds or removes 3 VMs and 3 Managed Servers for each capacity unit added or removed. You cannot change the definition of your capacity unit when you scale the Coherence data tier.</p> 
+  <p class="p">The application tier of an Oracle Java Cloud Service instance is scaled independently of the Coherence data tier. See <a class="xref" href="Scaling%20an%20Oracle%20Java%20Cloud%20Service%20Instance%20Using%20the%20REST%20API.html" title="You can use the REST API to scale an Oracle Java Cloud Service instance on-demand, as described in the following procedures.">Scaling a Service Instance</a> to scale out or scale in the Managed Servers on the application tier.</p> 
+  <p class="p"><strong class="ph b">Note:</strong></p> 
+  <ul class="ul">
+   <li class="li"><p class="p">The term <em class="ph i">scaling unit</em> used in the REST API means the same as capacity unit.</p> </li> 
+   <li class="li"><p class="p">The cURL command examples use the URL structure <samp class="ph codeph">https://rest_server_url/<em class="ph i">resource-path</em></samp>, where <samp class="ph codeph">rest_server_url</samp> is the Oracle Public Cloud or Oracle Cloud Machine REST server to contact for your identity domain or tenant name. See <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a> for the appropriate URL structure to use on Oracle Public Cloud or Oracle Cloud Machine.</p> </li> 
+  </ul> 
+  <p class="p">To scale the Coherence data tier of an Oracle Java Cloud Service instance:</p> 
+ </div> 
+ <ol class="ol steps">
+  <li class="li step stepexpand"><span class="ph cmd">Before scaling, review the Managed Servers that are currently defined by viewing details of the service instance.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/Example1Instance</strong>
+</pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">For more information, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-get.html" target="_blank">View a Service Instance</a>.</p> 
+    <p class="p">The following shows an example of the response body in JSON format on Oracle Public Cloud. In this example, there is one Managed Server in the Coherence data tier cluster <samp class="ph codeph">Example1_DGCluster</samp>, managed by the capacity unit identified by the Id <samp class="ph codeph">18</samp>. There is one count of the capacity unit as shown by <samp class="ph codeph">scalingUnitCount</samp>.</p> 
+    <pre class="pre codeblock">{
+    "service_name" : "Example1Instance",
+    "version" : "12cR3",
+    "wlsVersion" : "12.1.3.0.xxxxxx",
+    "status" : "Running",
+    "error_status_desc": "",
+    "compliance_status": "",
+    "compliance_status_desc": "",
+    "auto_update": "true",
+    "description" : "Example, Inc product distribution",
+    "identity_domain" : "ExampleIdentityDomain",
+    "creation_time": "Mon Sep 19 22:9:23 UTC 2016",
+    "last_modified_time": "Mon Sep 19 22:9:21 UTC 2016",
+    "created_by":"username",
+    "service_uri" : "https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/Example1Instance",
+    "domain_name" : "Example1_domain",
+    "domain_mode" : "PRODUCTION",
+    "cluster_name" : "Example1_cluster",
+    "num_nodes" : 4,
+    "level" : "PAAS",
+    "subscription_type" : "MONTHLY",
+    "edition" : "SUITE",
+    "shape" : "oc3",
+    "otd_provisioned" : "yes",
+    "otd_shape" : "oc3",
+    "otd_storage_size": 40960,
+    "service_components": [
+    {
+      "type": "JDK",
+      "version": "1.7.0_xxx"
+    },
+    {
+      "type": "WLS",
+      "version": "12.1.3.0.xxxxxx"
+    },
+    {
+      "type": "OTD_JDK",
+      "version": "1.7.0_xxx"
+    },
+    {
+      "type": "OTD",
+      "version": "11.1.1.9.x"
+    }
+    ],
+    "options": [{
+      "type": "datagrid",
+      "clusters": [{
+        "clusterName": "<strong class="ph b">Example1_DGCluster</strong>",
+        "scalingUnitCount": <strong class="ph b">1</strong>,
+        "scalingUnitName": "BASIC",
+        "shape": "oc3",
+        "vmCount": 1,
+        "jvmCount": 1,
+        "heapSize": "4608M",
+        "maxScalingUnit": 30,
+        "heapIncrements": "4608M",
+        "primaryIncrements": "1536M",
+        "totalHeap": "4608M",
+        "totalPrimary": "1536M",
+        "maxHeap": "138240M",
+        "maxPrimary": "46080M",
+        "scalingUnitInstances": [{
+          "servers": [
+            {"name": "Example1_server_3_DG"}
+          ],
+          "scalingUnitInstanceId": <strong class="ph b">18</strong>,
+          "status": "Ready"
+        }]
+      }]
+    }],
+    "creation_job_id": "295",
+    "deletion_job_id": 0,
+    "db_info" : "myDBService:1521\/PDB1.exampleidentitydomain.oraclecloud.internal",
+    "db_service_name": "myDBService",
+    "num_ip_reservations" : 4,
+    "wls_admin_url": "https:\/\/192.0.2.0:7002\/console",
+    "fmw_control_url": "https:\/\/192.0.2.0:7002\/em",
+    "otd_admin_url": "https:\/\/192.0.1.23:8989",
+    "sample_app_url": "https:\/\/192.0.1.23\/sample-app\/",
+    "content_url" : "http:\/\/192.0.1.23",
+    "secure_content_url": "https:\/\/192.0.1.23",
+    "wls_deployment_channel_port": 9001,
+    "psm_plugin_version": "16.3.5-x-xxx",
+    "compute_site_name": "US000_Z00",
+    "db_associations": [
+    {
+        "db_service_name": "myDBService",
+        "db_infra": true,
+        "db_connect_string": "myDBService:1521\/PDB1.exampleidentitydomain.oraclecloud.internal",
+        "pdb_service_name": "PDB1",
+        "db_version": "12.1.0.2"
+    }]
+}</pre> 
+    <p class="p">On Oracle Cloud Machine, you would see similar output but you would not see <samp class="ph codeph">db_service_name</samp>, and for <samp class="ph codeph">db_info</samp> and <samp class="ph codeph">db_associations</samp>, you would see the following instead:</p> 
+    <pre class="pre codeblock">    "db_info": "mydbhost:1521\/dbservicename",
+    "db_associations": [
+    {
+        "db_connect_string": "mydbhost:1521\/dbservicename",
+        "db_infra": true
+    }]</pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">Create a JSON document, <samp class="ph codeph">scaledgcluster.json</samp> , that defines the total number of capacity units you want in the domain.</span>
+   <div class="itemgroup info">
+    <p class="p">In the example shown in the previous step, there is 1 capacity unit, managing 1 VM and 1 Managed Server per VM. If you wish to increase the number of capacity units in the domain by 1, you would define a count of 2 in the JSON document, 2 being the total number of capacity units you want.</p> 
+    <p class="p">The following shows an example of a request document for a count of <samp class="ph codeph">2</samp> capacity units:</p> 
+    <pre class="pre codeblock">{
+  "scalingUnitCount" : "2"
+}
+</pre> 
+    <p class="p">For information about the REST resource attribute, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-clusters-%7BclusterName%7D-put.html" target="_blank">Scale a Coherence Data Tier.</a></p> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">Scale out the Coherence data tier of the service instance, passing the JSON document created in step 2.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X PUT -u username:userPassword1! -d @scaledgcluster.json -H "X-ID-TENANT-NAME:ExampleIdentityDomain" -H "Content-Type:application/vnd.com.oracle.oracloud.datagrid.Service+json" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/Example1Instance/clusters/Example1_DGCluster</strong>
+</pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">PUT</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-d</samp> option to identify the request document, in JSON format, on the local machine (<samp class="ph codeph">scaledgcluster.json</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to identify the content type as <samp class="ph codeph">application/vnd.com.oracle.oracloud.datagrid.Service+json</samp>.</p> </li> 
+    </ul> 
+    <p class="p">For more information, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-clusters-%7BclusterName%7D-put.html" target="_blank">Scale a Coherence Data Tier.</a></p> 
+    <p class="p">The following shows an example of the response header.</p> 
+    <pre class="pre codeblock">HTTP/1.1 202 Accepted
+Date: Tues, 20 Sep 2016 23:9:23 GMT
+Location: https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/status/scale/job/574
+Content-Length: 0
+Content-Type: application/vnd.com.oracle.oracloud.datagrid.Service+json
+Service-URI: https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/Example1Instance/clusters/Example1_DGCluster
+</pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">Check the status of the scale request using the resource URI returned in the <samp class="ph codeph">Location</samp> header. </span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/status/scale/job/574</strong>
+</pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">For more information, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-status-%7BrequestName%7D-job-%7BjobId%7D-get.html" target="_blank">View the Status of a Service Instance Lifecycle Operation</a>.</p> 
+    <p class="p">The following shows an example of the response document when you view the status of the request.</p> 
+    <p class="p">The example scales out the cluster by adding one capacity unit consisting of 1 storage-enabled Managed Server.</p> 
+    <pre class="pre codeblock">{
+    "service_name": "Example1Instance",
+    "version": "12cR3",
+    "wlsVersion": "12.1.3.0.xxxxxx",
+    "status": "Running",
+    "error_status_desc": "",
+    "compliance_status": "",
+    "compliance_status_desc": "",
+    "auto_update": "true",
+    "description" : "Example, Inc product distribution",
+    "identity_domain": "ExampleIdentityDomain",
+    "creation_time": "Mon Sep 19 22:9:23 UTC 2016",
+    "last_modified_time": "Mon Sep 19 22:9:21 UTC 2016",
+    "created_by": "username",
+    "service_uri": "https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/Example1Instance",
+    "message": [
+      "Successfully scaled out cluster [Example1_DGCluster]",
+      "Successfully scaled out cluster [Example1_DGCluster]",
+      "    Successfully created capacity unit(s)...",
+      "    Starting capacity unit...",
+      "    Successfully started capacity unit...",
+      "    Starting to transfer keys to the datagrid VMs",
+      "    Finished transferring keys to datagrid VMs",
+      "    Successfully transferred keys to [example1instance-wls-4]",
+      "    Checking managed servers...",
+      "    Successfully checked managed servers...",
+      "    Performing Service Reachability Check (SRC) of Datagrid Managed Servers.",
+      "    Successfully completed Service Reachability Check (SRC) of Datagrid Managed Servers.",
+      "    Successfully created capacity unit(s)...",
+      "    Successfully created capacity unit(s)...",
+      "        Configuration check for Host [example1instance-wls-4] containing WebLogic Managed Server(s) [[Example1_server_4_DG]] completed...",
+      "        Service Reachabilty Check (SRC) of WebLogic Administration Server completed...",
+      "        Service Reachabilty Check (SRC) of WebLogic Managed Server(s) [Example1_server_1, Example1_server_2, Example1_server_3_DG, Example1_server_4_DG] completed..."
+    ]
+}</pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">When the operation completes and the service instance is running, review the list of Managed Servers to confirm the new Managed Server has been added to the Coherence data tier cluster.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/Example1Instance/servers</strong>
+</pre> 
+    <p class="p">For more information, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-servers-get.html" target="_blank">View All Managed Servers</a>.</p> 
+    <p class="p">The following is an example of the response body in JSON format, showing <samp class="ph codeph">Example1_server_4_DG</samp> has been added to the list of storage-enabled Managed Servers.</p> 
+    <p class="p"><strong class="ph b">Note:</strong> By default, the name of a storage-enabled Managed Server is generated from the first eight characters of the domain name, using the following format: <em class="ph i"><samp class="ph codeph">first8charsOfDomainName</samp></em><samp class="ph codeph">_server_</samp><em class="ph i"><samp class="ph codeph">n</samp></em><samp class="ph codeph">_DG</samp>, where <em class="ph i"><samp class="ph codeph">n</samp></em> is a number that is incremented by 1 for each additional Managed Server to ensure each name is unique.</p> 
+    <pre class="pre codeblock">{
+    "servers": [
+    {
+      "clusterName":"Example1_cluster",
+      "name":"Example1_server_1",
+      "shape":"oc3",
+      "nodeType":"WLS",
+      "isAdmin":true,
+      "hostname":"12.345.678.999",
+      "status":"Ready",
+      "reservedIp":"",
+      "storageAllocated":73728,
+      "creationDate":"19 Sep, 2016 22:09:23 PM"
+    },
+    {
+      "clusterName":"Example1_cluster",
+      "name":"Example1_server_2",
+      "shape":"oc3",
+      "nodeType":"WLS",
+      "isAdmin":false,
+      "hostname":"example1instance-wls-2",
+      "status":"Ready",
+      "reservedIp":"",
+      "storageAllocated":53248,
+      "creationDate":"19 Sep, 2016 22:09:28 PM"
+    },
+    {
+      "clusterName":"Example1_DGCluster",
+      "name":"Example1_server_3_DG",
+      "shape":"oc3",
+      "nodeType":"DG",
+      "isAdmin":false,
+      "hostname":"example1instance-wls-3",
+      "status":"Ready",
+      "reservedIp":"",
+      "jobId":"538",
+      "storageAllocated":43600,
+      "creationDate":"19 Sep, 2016 22:42:59 PM"
+    },
+    {
+      "clusterName":"Example1_DGCluster",
+      "name":"<strong class="ph b">Example1_server_4_DG</strong>",
+      "shape":"oc3",
+      "nodeType":"DG",
+      "isAdmin":false,
+      "hostname":"example1instance-wls-4",
+      "status":"Ready",
+      "reservedIp":"",
+      "jobId":"575",
+      "storageAllocated":43600,
+      "creationDate":"Sep 20, 20165 23:09:23 PM",
+      "createdBy":"username"
+    }
+    ],
+    "serverInProgress":[]
+}</pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">Modify the JSON file to specify a <samp class="ph codeph">ScalingUnitCount</samp> of <samp class="ph codeph">1</samp> (this will remove one capacity unit from the existing Coherence data tier cluster). Then scale in the Coherence data tier of the service instance by passing the modified JSON document.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X PUT -u username:userPassword1! -d @scaledgcluster.json -H "X-ID-TENANT-NAME:ExampleIdentityDomain" -H "Content-Type:application/vnd.com.oracle.oracloud.datagrid.Service+json" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/Example1Instance/clusters/Example1_DGCluster</strong>
+</pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">PUT</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-d</samp> option to identify the request document, in JSON format, on the local machine (<samp class="ph codeph">scaledgcluster.json</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to identify the content type as <samp class="ph codeph">application/vnd.com.oracle.oracloud.datagrid.Service+json</samp>.</p> </li> 
+    </ul> 
+    <p class="p">For more information, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-clusters-%7BclusterName%7D-put.html" target="_blank">Scale a Coherence Data Tier</a>.</p> 
+    <p class="p">The following shows an example of the response header.</p> 
+    <pre class="pre codeblock">HTTP/1.1 202 Accepted
+Date: Tues, 20 Sep 2016 23:29:23 GMT
+Location: https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/status/scale/job/584
+Content-Length: 0
+Content-Type: application/vnd.com.oracle.oracloud.datagrid.Service+json
+Service-URI: https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/Example1Instance/clusters/Example1_DGCluster
+</pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">Check the status of the scale request using the resource URI returned in the <samp class="ph codeph">Location</samp> header. </span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/status/scale/job/584</strong>
+</pre> 
+    <p class="p">Specify the following options on the cURL command line:</p> 
+    <ul class="ul">
+     <li class="li"><p class="p"><samp class="ph codeph">-i</samp> option to include the HTTP header in the output. This option is optional.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-X</samp> option to indicate the type of request (<samp class="ph codeph">GET</samp>).</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-u</samp> option to specify the user name and password for the Oracle Java Cloud Service account for authentication.</p> </li> 
+     <li class="li"><p class="p"><samp class="ph codeph">-H</samp> to define a custom header, <samp class="ph codeph">X-ID-TENANT-NAME</samp>, to identify the identity domain ID or tenant name.</p> </li> 
+    </ul> 
+    <p class="p">For more information, see <a class="xref" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-status-%7BrequestName%7D-job-%7BjobId%7D-get.html" target="_blank">View the Status of a Service Instance Lifecycle Operation</a>.</p> 
+    <p class="p">The following shows an example of the response document when you view the status of the request.</p> 
+    <pre class="pre codeblock">{
+    "service_name": "Example1Instance",
+    "version": "12cR3",
+    "wlsVersion": "12.1.3.0.xxxxxx",
+    "status": "Running",
+    "error_status_desc": "",
+    "compliance_status": "",
+    "compliance_status_desc": "",
+    "auto_update": "true",
+    "description" : "Example, Inc product distribution",
+    "identity_domain": "ExampleIdentityDomain",
+    "creation_time": "Mon Sep 19 22:9:23 UTC 2016",
+    "last_modified_time": "Mon Sep 19 22:9:21 UTC 2016",
+    "created_by": "username",
+    "service_uri": "https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/Example1Instance",
+    "message": [
+      "Successfully scaled in cluster [1].",
+      "    Deleting capacity unit(s) containing [1] virtual machines...",
+      "    Started shutting down and removing managed servers from Admin.",
+      "    Started shutting down and removing managed servers from Admin.",
+      "    Completed removing managed servers from Admin.",
+      "    Stopping and removing resources for capacity unit(s) containing [1] virtual machines...",
+      "    Successfully deleted capacity unit(s) and [1] virtual machines",
+      "Successfully scaled in cluster [Example1_DGCluster]."
+    ]
+}</pre> 
+   </div></li> 
+  <li class="li step stepexpand"><span class="ph cmd">When the operation completes and the service instance is running, review the list of Managed Servers to confirm one storage-enabled Managed Server has been removed.</span>
+   <div class="itemgroup info">
+    <pre class="pre"><strong class="ph b">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/Example1Instance/servers</strong>
+</pre> 
+    <p class="p">The following shows an example of the response body, in JSON format. In the example, there is only one storage-enabled Managed Server currently defined.</p> 
+    <pre class="pre codeblock">{
+    "servers": [
+    {
+      "clusterName":"Example1_cluster",
+      "name":"Example1_server_1",
+      "shape":"oc3",
+      "nodeType":"WLS",
+      "isAdmin":true,
+      "hostname":"12.345.678.999",
+      "status":"Ready",
+      "reservedIp":"",
+      "storageAllocated":73728,
+      "creationDate":"19 Sep, 2016 22:09:23 PM"
+    },
+    {
+      "clusterName":"Example1_cluster",
+      "name":"Example1_server_2",
+      "shape":"oc3",
+      "nodeType":"WLS",
+      "isAdmin":false,
+      "hostname":"example1instance-wls-2",
+      "status":"Ready",
+      "reservedIp":"",
+      "storageAllocated":53248,
+      "creationDate":"19 Sep, 2016 22:09:28 PM"
+    },
+    {
+      "clusterName":"Example1_DGCluster",
+      "name":"Example1_server_3_DG",
+      "shape":"oc3",
+      "nodeType":"DG",
+      "isAdmin":false,
+      "hostname":"example1instance-wls-3",
+      "status":"Ready",
+      "reservedIp":"",
+      "jobId":"538",
+      "storageAllocated":43600,
+      "creationDate":"19 Sep, 2016 22:42:59 PM"
+    }
+    ],
+    "serverInProgress":[]
+}</pre> 
+   </div></li> 
+ </ol> 
+</div></div>
+        </article>
+    </body>
+</html>

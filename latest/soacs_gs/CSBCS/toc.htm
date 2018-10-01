@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Public Cloud Machine Using Oracle SOA Cloud Service - Contents</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="This guide describes how to provision and use Oracle SOA Cloud Service to manage and monitor your SOA composite applications in the cloud." />
+<meta name="dcterms.created" content="2017-04-10T13:38:19Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle SOA Cloud Service" />
+<meta name="dcterms.identifier" content="E78502-02" />
+<meta name="dcterms.isVersionOf" content="CSBCS" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"   src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"   src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Next" href="title.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSBCS.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSBCS.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSBCS.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript"  src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript"  src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript"  src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript"  src="../dcommon/js/foundation.min.js"></script>
+<script type="application/javascript"  src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript"  src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript"  src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="application/javascript"  src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="application/javascript"  src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="application/javascript"  src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="application/javascript"  src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<span id="PAGE" style="display:none;">1/83</span> <!-- End Header -->
+<h1 class="toc">Contents</h1>
+<h2 class="tocheader"><a href="title.htm">Title and Copyright Information</a></h2>
+<h2 class="tocheader"><a href="GUID-0A1BF6FC-DCB9-4356-8870-0F9947B87C80.htm#GUID-0A1BF6FC-DCB9-4356-8870-0F9947B87C80">Preface</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-0A1BF6FC-DCB9-4356-8870-0F9947B87C80.htm#GUID-F56BB73C-A7E2-4D4B-8A9A-B264236BB656">Audience</a></li>
+<li><a href="GUID-0A1BF6FC-DCB9-4356-8870-0F9947B87C80.htm#GUID-0D7ACBE9-7047-4DBE-97AA-703FD2FFBE5A">Documentation Accessibility</a></li>
+<li><a href="GUID-0A1BF6FC-DCB9-4356-8870-0F9947B87C80.htm#GUID-DF58AEDA-8B97-4092-A6B2-1079028FF36E">Related Resources</a></li>
+<li><a href="GUID-0A1BF6FC-DCB9-4356-8870-0F9947B87C80.htm#GUID-EA4926BA-DB43-474B-8FFD-A26BD715833C">Conventions</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-8B2806A9-1714-4510-9F53-3D3B5F9F917F.htm"><span class="secnum">1</span> Getting Started with Oracle SOA Cloud Service</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-A9C9D8C4-FA7D-4097-8D37-5B9933B06A51.htm">About Oracle SOA Cloud Service</a></li>
+<li><a href="GUID-E373B15E-EAB6-4CC1-9ABC-8F4B40C090ED.htm">About the Components of Oracle SOA Cloud Service</a></li>
+<li><a href="GUID-07213F15-AF1F-4BA0-90AB-96F9B0DD6649.htm">About Adapters for <span>Oracle SOA Cloud Service</span></a></li>
+<li><a href="GUID-544C682A-6ECB-499F-9A9D-DFFF522F1AB7.htm">Before You Begin with Oracle SOA Cloud Service</a></li>
+<li><a href="GUID-384D99CC-C8A1-4309-BB77-DF8257F6FF35.htm#GUID-384D99CC-C8A1-4309-BB77-DF8257F6FF35">Managing the Life Cycle of Oracle SOA Cloud Service Instances</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-384D99CC-C8A1-4309-BB77-DF8257F6FF35.htm#GUID-1E436E48-0BC3-40AF-A528-1EC0D99B5E58">About Life Cycle Management of Oracle SOA Cloud Service Instances</a></li>
+<li><a href="GUID-384D99CC-C8A1-4309-BB77-DF8257F6FF35.htm#GUID-60AFCD05-756F-46E0-BC2B-5DC952B99246">Typical Workflow for Managing the Life Cycle of Oracle SOA Cloud Service Instances</a></li>
+</ul>
+</li>
+<li><a href="GUID-0A50CA0F-BEE3-46EE-A651-2D3D9E397117.htm">Keeping Your Service Instances Manageable by Oracle SOA Cloud Service</a></li>
+<li><a href="GUID-E158D173-DC50-4495-9815-4D3A47B8F80C.htm">Accessing Oracle SOA Cloud Service Console</a></li>
+<li><a href="GUID-27812696-7861-4DCD-B37D-997D98B81F23.htm#GUID-27812696-7861-4DCD-B37D-997D98B81F23">About the User Interfaces of Oracle SOA Cloud Service</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-27812696-7861-4DCD-B37D-997D98B81F23.htm#GUID-392BA61A-01BF-4201-8567-BB790BC36331">Exploring the Oracle SOA Cloud Service Console</a></li>
+<li><a href="GUID-27812696-7861-4DCD-B37D-997D98B81F23.htm#GUID-04927B37-2E50-4560-9597-9F7E792310D2">Exploring the Oracle SOA Cloud Service Instance Overview Page</a></li>
+</ul>
+</li>
+<li><a href="GUID-FA5F6392-78D2-4407-AB9F-B0515C394037.htm">Provisioning Oracle SOA Cloud Service</a></li>
+<li><a href="GUID-04C9495D-9C2D-4F0E-9570-F18359C8A03C.htm">Prerequisites to Provisioning Oracle SOA Cloud Service</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-4FD6A8C1-35E1-45AA-B999-00F5871E989C.htm">SSH Key Pair</a></li>
+<li><a href="GUID-276AF21C-EB09-4D37-B54E-DC3999FFA714.htm">Database</a></li>
+<li><a href="GUID-33FA9D5D-714A-4E60-900E-08A733A5A85C.htm">Networks</a></li>
+<li><a href="GUID-42581DFA-F253-4674-AF23-65F40919691E.htm">Remote Backup</a></li>
+</ul>
+</li>
+<li><a href="GUID-51392B25-E93A-43C0-B232-96E66A9A7C08.htm#GUID-51392B25-E93A-43C0-B232-96E66A9A7C08">Using the Provisioning Wizard</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-51392B25-E93A-43C0-B232-96E66A9A7C08.htm#GUID-244FCA50-66A1-434F-8B52-BD6E2054B779">Creating an Instance</a></li>
+<li><a href="GUID-51392B25-E93A-43C0-B232-96E66A9A7C08.htm#GUID-015C4457-6475-4206-9514-82A4BBC3ECB2">Selecting the Service Type</a></li>
+<li><a href="GUID-51392B25-E93A-43C0-B232-96E66A9A7C08.htm#GUID-2CB6D828-55C7-4DC3-86D0-77B2060E77EE">Selecting the Software Image</a></li>
+<li><a href="GUID-51392B25-E93A-43C0-B232-96E66A9A7C08.htm#GUID-800D9502-974C-4431-AC2E-390673613DB3">Specifying Instance Details</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-51392B25-E93A-43C0-B232-96E66A9A7C08.htm#GUID-BB71AEA8-18DB-4979-B0C6-D40E4F3EDCCA">Instance Configuration</a></li>
+<li><a href="GUID-51392B25-E93A-43C0-B232-96E66A9A7C08.htm#GUID-2DA0BB4E-6ACE-41DE-8BED-1973D8AC98A2">WebLogic Administrator</a></li>
+<li><a href="GUID-51392B25-E93A-43C0-B232-96E66A9A7C08.htm#GUID-1EC6BAF3-6983-4A6C-955B-F4F4E5BB3D5E">Database Configuration</a></li>
+<li><a href="GUID-51392B25-E93A-43C0-B232-96E66A9A7C08.htm#GUID-9338F454-0059-42AA-AC59-A8E5DCCAF85A">Load Balancer</a></li>
+<li><a href="GUID-51392B25-E93A-43C0-B232-96E66A9A7C08.htm#GUID-348181FF-8B15-4877-AAC9-297647116818">Network Configuration</a></li>
+<li><a href="GUID-51392B25-E93A-43C0-B232-96E66A9A7C08.htm#GUID-E41BAC6C-789C-4581-BC23-35ADCBDC20D1">Backup Configuration</a></li>
+</ul>
+</li>
+<li><a href="GUID-51392B25-E93A-43C0-B232-96E66A9A7C08.htm#GUID-9678C3C6-3CA5-4250-BC12-A2F0CE4424E0">Confirming Your Selections</a></li>
+</ul>
+</li>
+<li><a href="GUID-8A4B4C6A-2438-4C2E-8E36-3CFA468489B9.htm">Post-Provisioning Tasks for the Integration Analytics Cluster Service Type</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-2D8E791B-694C-496F-A35B-83773A537307.htm">Configuring Data Sources to Point to Real-Time Integration Business Insight Schema</a></li>
+</ul>
+</li>
+<li><a href="GUID-21A4B96B-DF60-4559-AABB-A86AD7FB24F9.htm">About <span>Oracle SOA Cloud Service</span> Roles and User Accounts</a></li>
+<li><a href="GUID-1DFB75AF-031B-4464-AB7A-9CCEE3DF855A.htm#GUID-1DFB75AF-031B-4464-AB7A-9CCEE3DF855A">About the Cloud Adapter Pack</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-1DFB75AF-031B-4464-AB7A-9CCEE3DF855A.htm#GUID-12A22E48-6155-4073-95E6-43AF2C944606">Adding a Managed Server IP in a Non Proxy Host to Enable Deployment From Fusion Middleware Control</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="tocheader"><a href="GUID-E5B42BF3-4BCC-4257-AFA6-244CD40865BB.htm#GUID-E5B42BF3-4BCC-4257-AFA6-244CD40865BB"><span class="secnum">2</span> Differences Between the Cloud and On-Premises Environments</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-E5B42BF3-4BCC-4257-AFA6-244CD40865BB.htm#GUID-CE3F6D28-09A3-4BC4-B7D6-CBE7B9BCC478">Platform Differences Between the Cloud and On-Premises Environments</a></li>
+<li><a href="GUID-E5B42BF3-4BCC-4257-AFA6-244CD40865BB.htm#GUID-CFBBBBF8-A102-44D9-8C33-7A3454CC5CA1">Differences Between Oracle SOA Cloud Service on Oracle Cloud Machine and on Oracle Public Cloud</a></li>
+<li><a href="GUID-E5B42BF3-4BCC-4257-AFA6-244CD40865BB.htm#GUID-4B66969F-2B72-4076-9901-BB07C1A169FA">Differences in Oracle SOA Behavior in the Cloud</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-84CE6C15-FC83-47D5-90C4-D85DE188F212.htm"><span class="secnum">3</span> Developing Applications with Oracle SOA Cloud Service</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-6A22645D-1194-4BF0-98CD-0E272248DC06.htm#GUID-6A22645D-1194-4BF0-98CD-0E272248DC06">Deploying and Undeploying Applications for an Oracle SOA Cloud Service Instance</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-6A22645D-1194-4BF0-98CD-0E272248DC06.htm#GUID-415A34A3-F1BF-4732-A94F-6999E769C95F">Overview of Deployment Tasks for an Oracle SOA Cloud Service Instance</a></li>
+<li><a href="GUID-6A22645D-1194-4BF0-98CD-0E272248DC06.htm#GUID-6DBF457F-34DE-49AA-932A-09F65E859D85">Using Oracle Enterprise Manager Fusion Middleware Control to Deploy an Application</a></li>
+<li><a href="GUID-6A22645D-1194-4BF0-98CD-0E272248DC06.htm#GUID-52AB36B2-ECF5-42CB-9622-497CA4CA1D29">Using the WebLogic Server Administration Console to Deploy and Undeploy an Application</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-6A22645D-1194-4BF0-98CD-0E272248DC06.htm#GUID-3A0A4A01-CF9C-4B7F-8A09-59C39BCDF270">Using the WebLogic Server Administration Console to Start an Application</a></li>
+<li><a href="GUID-6A22645D-1194-4BF0-98CD-0E272248DC06.htm#GUID-B7253E78-3EA1-4966-87F4-2C1ECA010F3A">Using the WebLogic Server Administration Console to Undeploy an Application</a></li>
+</ul>
+</li>
+<li><a href="GUID-6A22645D-1194-4BF0-98CD-0E272248DC06.htm#GUID-9442BC88-91C1-4821-A6A2-A008A1B3F378">Using WLST Commands to Deploy and Undeploy an Application</a></li>
+<li><a href="GUID-6A22645D-1194-4BF0-98CD-0E272248DC06.htm#GUID-1F10B393-1F55-448D-82DD-799DFA906469">Accessing an Application Deployed to an Oracle SOA Cloud Service Instance</a></li>
+</ul>
+</li>
+<li><a href="GUID-84074863-CBB2-471E-A097-365C23F46142.htm#GUID-84074863-CBB2-471E-A097-365C23F46142">Accessing a VM Through a Secure Shell (SSH)</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-84074863-CBB2-471E-A097-365C23F46142.htm#GUID-96ECEF83-520F-4C2A-92E3-DD0ACA83E7E7">Creating an SSH Key Pair</a></li>
+<li><a href="GUID-84074863-CBB2-471E-A097-365C23F46142.htm#GUID-87338786-6D1A-41CD-BF14-06A4417DD4C7">Creating an SSH Tunnel</a></li>
+<li><a href="GUID-84074863-CBB2-471E-A097-365C23F46142.htm#GUID-F8637322-DDB6-4B0C-9683-31D50C38F4A1">Accessing a VM or Load Balancer</a></li>
+</ul>
+</li>
+<li><a href="GUID-8C6E975E-0F23-490F-A976-E099D84E1C10.htm">Accessing a VM Through Virtual Network Computing (VNC)</a></li>
+<li><a href="GUID-846B7E03-DD9D-4AF9-9F6E-82EB8D39EC52.htm">Understanding the Default Access Ports</a></li>
+<li><a href="GUID-24C7A96B-1DC7-45F8-AB5E-0401A90CA25B.htm">Using an OTD Host Name&nbsp;with an Oracle Service Bus Business Service</a></li>
+<li><a href="GUID-FD7CD62B-E484-465A-BFFF-8C5CC3DFEDE2.htm">Using the Frontend Host and HTTPS Port Values in the WSDL URL for Inbound Cloud Adapters</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-6E70C3E3-0E3A-4FA8-B76B-B3C1C0C8EB0C.htm"><span class="secnum">4</span> Administering Oracle SOA Cloud Service</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-098AD3E5-1F39-4F57-8049-4B8F3066958F.htm">Using the Oracle SOA Cloud Service Consoles</a></li>
+<li><a href="GUID-0EEB6D7E-DFD9-47E2-8E6E-1491ABE11F15.htm">Accessing an Administration Console for Software that a Service Instance Is Running</a></li>
+<li><a href="GUID-2BC07A9E-2C0A-4303-9E84-037F2550B8F1.htm">Deleting an Oracle SOA Cloud Service Instance</a></li>
+<li><a href="GUID-00F566BE-2A62-406F-9524-C13E4B0A6ED4.htm">Stopping and Starting an Oracle SOA Cloud Service Instance and Individual VMs</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-6999FD23-25C7-4901-8D04-59C9690E95E2.htm">About Stopping and Starting an Oracle SOA Cloud Service Instance and Individual VMs</a></li>
+<li><a href="GUID-BDE03F08-50D8-42FF-96EE-EC184B6DEF99.htm">Stopping and Starting an Oracle SOA Cloud Service Instance</a></li>
+<li><a href="GUID-CA762780-DAFF-47C5-B794-496372FBDC42.htm">Restarting the Administration Server VM</a></li>
+<li><a href="GUID-7BEB0561-A4B5-4350-9666-2F81C7C41998.htm">Stopping, Starting, and Restarting Managed Server and Load Balancer VMs</a></li>
+<li><a href="GUID-5470A127-16B4-45C2-BD8E-FA0B27D05B0D.htm">Restarting WebLogic Servers</a></li>
+</ul>
+</li>
+<li><a href="GUID-EF344A90-D0DE-4724-AD25-CE2F80308901.htm">Suspending an Oracle SOA Cloud Service Instance</a></li>
+<li><a href="GUID-3E1660A2-AB81-43C7-9A0E-748B0BE12A71.htm">Scaling An Oracle SOA Cloud Service Instance</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-B4E37685-9036-440B-B9DC-21B5A39B1323.htm">About Scaling an Oracle SOA Cloud Service Cluster</a></li>
+<li><a href="GUID-42A64A3A-3463-4B49-AF68-D1635243EAA6.htm">About Scaling an Oracle SOA Cloud Service Node</a></li>
+<li><a href="GUID-E66C9D31-9E5A-4A5F-9551-7B68201B569C.htm">Scaling Out an Oracle SOA Cloud Service Cluster</a></li>
+<li><a href="GUID-DD243DA2-1CB8-47B7-BE50-6BB2A190D5E5.htm">Scaling In an Oracle SOA Cloud Service Cluster</a></li>
+<li><a href="GUID-60FA6DFC-F34C-434F-A0C6-079DCEBB66F8.htm">Scaling an Oracle SOA Cloud Service Node</a></li>
+<li><a href="GUID-5A0F3679-CF87-4DB7-AFF7-745C04C7AA5A.htm">Viewing Scaling Requests</a></li>
+<li><a href="GUID-AE1EED11-F4AE-40FF-B343-6E0CE58A54C9.htm">Understanding the Impact of Scaling on JMS Transport URLs</a></li>
+</ul>
+</li>
+<li><a href="GUID-C2456686-760E-4E0D-821A-321CCCED1756.htm">Backing Up and Restoring an Oracle SOA Cloud Service Instance</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-10503589-B918-4690-8696-83E6632EC439.htm">About Backup and Restoration of Oracle SOA Cloud Service Instances</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-7D0F6F4E-2340-44CE-88B2-86CDDDA69100.htm">Contents of a Backup</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-AC2897EC-03AF-45C9-8A83-6B8BB245A0A9.htm">Contents of an Incremental Backup</a></li>
+<li><a href="GUID-AFCE0A99-F099-47CF-83BD-0A2A0882E568.htm">Contents of a Full Backup</a></li>
+<li><a href="GUID-C1516857-5B9F-4D9F-B4F3-6C83982601D6.htm">Links Between an Incremental Backup and Its Related Full Backup</a></li>
+<li><a href="GUID-1B992101-3D9A-4CDD-A50C-E467B649ABEB.htm">Items that Are Not Backed Up</a></li>
+</ul>
+</li>
+<li><a href="GUID-5C26AB13-5390-4D20-A830-59E7984E7ACE.htm">How Backups Are Initiated</a></li>
+<li><a href="GUID-E17A4E82-D931-4CE7-A652-9DFDA7B0B0D4.htm">Where Backups Are Stored</a></li>
+<li><a href="GUID-95FAC56A-4D02-4DA8-A8C8-5D42271BCB62.htm">What Happens During a Backup</a></li>
+<li><a href="GUID-85C8F4D0-6410-4FDB-A706-3C3C7411DBD5.htm">How Restorations Are Initiated</a></li>
+</ul>
+</li>
+<li><a href="GUID-2C1E802F-98E7-42E7-92DC-F84AC623D0C8.htm">Typical Workflow for Backing Up and Restoring an Oracle SOA Cloud Service Instance</a></li>
+<li><a href="GUID-9FFC92B7-DB53-495A-A84C-03330ABDEFF1.htm">Configuring Automated Backups for an Oracle SOA Cloud Service Instance</a></li>
+<li><a href="GUID-03DB9C99-1BB3-41E6-A5E9-99F880AD023F.htm">Delete a Backup</a></li>
+<li><a href="GUID-42A5AC87-022C-4FE2-96C1-72485AE9C3BE.htm">Initiate an On-Demand Backup of an Oracle SOA Cloud Service Instance</a></li>
+<li><a href="GUID-388B4818-9123-4389-9116-1511BA9A42DF.htm">Restoring an Oracle SOA Cloud Service Instance from a Backup</a></li>
+<li><a href="GUID-8981B1F2-49D8-4263-9E8C-28328BE807DD.htm">Returning an Oracle SOA Cloud Service Instance to Service After Restoration from a Backup</a></li>
+<li><a href="GUID-D82383EF-DD89-4EC6-9029-62CF66A2241C.htm">Exploring the Backup Page</a></li>
+</ul>
+</li>
+<li><a href="GUID-D3C3E279-640D-4CF8-9180-4911823C1CA2.htm">Administering the Load Balancer for an Oracle SOA Cloud Service Instance</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-F2C7FB73-1222-4579-842A-01689484D356.htm">Overview of Load Balancer Administration Tasks</a></li>
+<li><a href="GUID-CBF7BFD8-8B91-4F54-998C-AA5A0E3C4279.htm">Disabling or Enabling the Load Balancer for an Oracle Cloud Service Instance</a></li>
+<li><a href="GUID-F3FAA25A-EBE3-4381-BBA6-69951E756D38.htm">Adding a Load Balancer to an Oracle SOA Cloud Service Instance</a></li>
+<li><a href="GUID-1D573AC7-7B76-4050-B8F4-633118C19555.htm">Configuring a Load Balancer for an Oracle SOA Cloud Service Instance</a></li>
+<li><a href="GUID-314E9587-6573-4623-ADD4-840EAC67B92E.htm">About Load Balancer Virtual Machines</a></li>
+<li><a href="GUID-8026D646-5325-4170-AAC2-1D052671FB0C.htm">Exploring the Load Balancer Page</a></li>
+</ul>
+</li>
+<li><a href="GUID-83D97B02-9D6E-452A-8727-7016F87D4D78.htm">Performing a JNDI Lookup of JMS Resources Deployed on the Administration Server</a></li>
+<li><a href="GUID-FC8FB9F1-99D4-434E-8825-3D368850A37A.htm">Understanding JVM Heap Size Settings</a></li>
+<li><a href="GUID-C702010F-AA93-4619-9B33-EC85F5C62F10.htm">Tuning the Database Parameters</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-051765C7-00D0-4AA8-848F-B82E210984A3.htm"><span class="secnum">5</span> Troubleshooting Oracle SOA Cloud Service</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-C290591C-62E2-4C0C-BE43-A40DBB0CF2B0.htm">Increasing the Oracle Traffic Director Timeout Value</a></li>
+<li><a href="GUID-825190BF-99B7-4D96-A7D5-2C397C529A8C.htm">Problems with Backup and Restoration</a></li>
+<li><a href="GUID-9AF59054-E640-4924-9F4A-198C4B65F49E.htm">How to Use a Browser to Access the WSDL of a Composite That is Deployed onto a SOA Server</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-E65E4B91-A1FE-47E8-B7E3-E1B8CA5B9CE1.htm"><span class="secnum">6</span> Frequently Asked Questions for Oracle SOA Cloud Service</a></h2>
+</div>
+<!-- class="ind" -->
+<!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment69">
+<tr>
+<td class="cellalignment81">
+<table class="cellalignment98">
+<tr>
+<td class="cellalignment73"><a href="title.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment83">
+<table class="cellalignment99">
+<tr>
+<td class="cellalignment73"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment73"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

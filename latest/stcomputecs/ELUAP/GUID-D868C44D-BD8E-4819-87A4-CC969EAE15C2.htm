@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Managing Orchestrations</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-07T05:33:13Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine REST API Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E68443-07" />
+<meta name="dcterms.isVersionOf" content="ELUAP" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-26C605BD-B81A-43A2-AE12-5021CD755271.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-91DB5163-DF72-44F2-A08E-FD58BBF6BFAD.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUAP.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2"></a> <span id="PAGE" style="display:none;">16/40</span> <!-- End Header -->
+<h1 id="ELUAP-GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2" class="sect1">Managing Orchestrations</h1>
+<div>
+<div class="section">
+<p>Orchestration automates the management of your system components for high availability, monitoring, and persistence.</p>
+<p>Orchestration ties together the components that you create into a single, manageable collection.&nbsp;In addition, you can specify the dependencies to control the sequence in which the components are created.&nbsp;For example, you can coordinate the creation of network and storage resources with the creation of the instance and, if high availability is enabled, restart the instance automatically if it terminates unexpectedly.&nbsp;In Oracle Compute Cloud Service, all instances are created using orchestrations.</p>
+<div class="infobox-note" id="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2__GUID-DAC728AA-57BC-4FDE-BB6F-9E475FCBCFD2">
+<p class="notep1">Note:</p>
+Life-cycle commands (such as <code class="codeph">start</code>, <code class="codeph">stop</code>, <code class="codeph">restart</code> etc.) that change the status of an orchestration, return immediately with the status change proceeding on the server side. Orchestration status can be monitored by retrieving the orchestration details.</div>
+<p>For more information about procedures related to orchestrations, see <span class="italic"><a class="olink ELUSE-GUID-F7D91076-1736-4B54-89D5-73C23A45BF85" target="_blank" href="../ELUSE/GUID-F7D91076-1736-4B54-89D5-73C23A45BF85.htm#ELUSE-GUID-F7D91076-1736-4B54-89D5-73C23A45BF85">Orchestration Templates</a></span> in <span class="italic">Using Oracle Compute Cloud Service</span>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-30E44239-C118-47EB-804F-51BC05BD0C9C" title="This API enables you to create a new orchestration from a JSON definition.">Add Orchestration</a></p>
+</li>
+<li>
+<p><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-1E3C9A82-45F2-48CC-8D9C-A23DBCFE64B0" title="This API enables you to delete an orchestration from the system. Only orchestrations with stopped status can be deleted.">Delete Orchestration</a></p>
+</li>
+<li>
+<p><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-759F1FEC-D560-4B99-9BB5-63AB468720B9" title="This API enables you to start a specific orchestration. Only orchestrations with stopped status can be started.">Start Orchestration</a></p>
+</li>
+<li>
+<p><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-CEB31289-E78B-4C8D-BCE1-637286A3B002" title="This API enables you to stop a specific orchestration.&nbsp;Stopping an orchestration deletes all instances, releasing all resources allocated by the orchestration. This includes boot (root) disks and unreserved IP addresses. You can stop orchestrations in any one of the following statuses:ready, shutdown, warning, and error. The orchestration can be started again, thereby creating new instances and allocating new resources.">Stop Orchestration</a></p>
+</li>
+<li>
+<p><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-E683B6EB-FDCB-4F03-A5CF-E1A996ED8D02" title="This API enables you to shut down a VM instance while preserving the resources used by the instance, such as IP addresses and boot disk contents. When the orchestration is restarted, it gets back the same boot disks and IP addresses. If you do not need to preserve these resources use stop orchestration. Orchestrations with a ready or warning state can be shut down.">Shutdown Orchestration</a></p>
+</li>
+<li>
+<p><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-121678A9-B0CC-42DE-8FBB-35138DC53089" title="This API enables you to restart an orchestration that was previously in the shut_down status. You can restart an orchestration with status warning, shut_down or error.">Restart Orchestration</a></p>
+</li>
+<li>
+<p><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-A34F8325-BEBF-4032-8382-41054556D15C" title="This API enables you to update information for a specific orchestration.">Update Orchestration</a></p>
+</li>
+<li>
+<p><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-DF823D62-9411-4BC3-A92B-69B91B2ED391" title="This API enables you to discover orchestrations within a specific container or subcontainer. This API enables you to retrieve details of a specific orchestration. This API enables you to retrieve details about orchestrations in a specific container. The GET method can be used to validate the results of the POST, PUT, and DELETE operations.">Retrieve Orchestration Details</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="props_rev_3"><a id="GUID-30E44239-C118-47EB-804F-51BC05BD0C9C"></a>
+<h2 id="ELUAP-GUID-30E44239-C118-47EB-804F-51BC05BD0C9C" class="sect2">Add Orchestration</h2>
+<div>
+<p>This API enables you to create a new orchestration from a JSON definition.</p>
+<div class="section">
+<p class="subhead2">Method</p>
+<p><code class="codeph">POST</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/orchestration/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/orchestration/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Request Body Parameters</p>
+The JSON format of the orchestration is passed in the request body. For more information about the format and attributes of an orchestration JSON file, see section <span class="italic"><a class="olink ELUSE-GUID-F7D91076-1736-4B54-89D5-73C23A45BF85" target="_blank" href="../ELUSE/GUID-F7D91076-1736-4B54-89D5-73C23A45BF85.htm#ELUSE-GUID-F7D91076-1736-4B54-89D5-73C23A45BF85">Orchestration Templates</a></span> in <span class="italic">Using Oracle Compute Cloud Service</span>.</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/orchestration</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Request Body</p>
+<pre dir="ltr">
+{
+        "relationships": [], 
+        "account": null, 
+        "description": "", 
+        "schedule": {"start_time": null, "stop_time": null}, 
+        "uri": null, 
+        "oplans": 
+        [{
+                        "ha_policy": null, 
+                        "obj_type": "launchplan", 
+                        "objects": 
+                        [{
+                                "instances": 
+                                        [{
+                                                        "imagelist": "/oracle/public/linux6_12.2.1.0.0_64", 
+                                                        "networking": 
+                                                                {
+                                                                        "net1": {"vnet": "/mytenant/public/ipoib1"}, 
+                                                                        "net0": {"vnet": "/mytenant/public/eoib1"}
+                                                                }, 
+                                                        "shape": "oc3", 
+                                                        "label": "pv-mixed1"
+                                        }]
+                        }], 
+                        "label": "pv-mixednet"
+        }], 
+        "name": "/mytenant/public/pv-mixed1"
+}
+</pre></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Response Body</p>
+<pre dir="ltr">
+
+{
+                "relationships": [], 
+                "status": "stopped", 
+                "account": "/mytenant/default", 
+                "description": "", 
+                "schedule": {"start_time": null, "stop_time": null}, 
+                "uri": "http ://api/orchestration/mytenant/public/pv-mixed1", 
+                "oplans": 
+                        [{
+                                        "status": "stopped", 
+                                        "info": {}, 
+                                        "obj_type": "launchplan", 
+                                        "ha_policy": "", 
+                                        "label": "pv-mixednet", 
+                                        "objects": 
+                                        [{
+                                                        "instances": 
+                                                                [{
+                                                                                "imagelist": "/oracle/public/linux6_12.2.1.0.0_64", 
+                                                                                "uri": null, 
+                                                                                "networking": 
+                                                                                {
+                                                                                        "net1": {"vnet": "/mytenant/public/ipoib1"}, 
+                                                                                        "net0": {"vnet": "/mytenant/public/eoib1"}
+                                                                                }, 
+                                                                                "shape": "oc3", 
+                                                                                "label": "pv-mixed1"
+                                                                }]
+                                        }], 
+                                        "status_timestamp": null
+                                }], 
+                        "info": {}, 
+                        "status_timestamp": null, 
+                        "name": "/mytenant/public/pv-mixed1"
+        }
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-1E3C9A82-45F2-48CC-8D9C-A23DBCFE64B0"></a>
+<h2 id="ELUAP-GUID-1E3C9A82-45F2-48CC-8D9C-A23DBCFE64B0" class="sect2">Delete Orchestration</h2>
+<div>
+<p>This API enables you to delete an orchestration from the system. Only orchestrations with <code class="codeph">stopped</code> status can be deleted.</p>
+<div class="section">
+<p class="subhead2">Method</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p><code class="codeph">DELETE</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p><code class="codeph">/orchestration/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/orchestration/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI Parameter</p>
+<div class="tblformal" id="GUID-1E3C9A82-45F2-48CC-8D9C-A23DBCFE64B0__GUID-A1C51A11-0667-4BF4-979E-02568602D025">
+<table class="cellalignment62" summary="URI parameters for deleting an orchestration">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d13113e288">Parameter</th>
+<th class="cellalignment64" id="d13113e290">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d13113e294" headers="d13113e288">
+<p>name</p>
+</td>
+<td class="cellalignment66" headers="d13113e294 d13113e290">A unique hierarchical name of an orchestration.&nbsp;For example, <code class="codeph">/mytenant/public/myorch</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p><code class="codeph">https://api.oc.example.com/orchestration/mytenant/public/myorch</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-759F1FEC-D560-4B99-9BB5-63AB468720B9"></a>
+<h2 id="ELUAP-GUID-759F1FEC-D560-4B99-9BB5-63AB468720B9" class="sect2">Start Orchestration</h2>
+<div>
+<p>This API enables you to start a specific orchestration. Only orchestrations with <code class="codeph">stopped</code> status can be started.</p>
+<div class="section">
+<p>Starting an orchestration creates all the objects defined in the orchestration. The state of the orchestration changes as the start operation progresses. The start API request returns the response immediately, however the start operation continues on the server. The start operation is completed only when the orchestration reaches the <code class="codeph">ready</code> status.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Method</p>
+<p><code class="codeph">PUT</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/orchestration/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/orchestration/<span class="variable">name</span>?action=START</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI Parameter</p>
+<div class="tblformal" id="GUID-759F1FEC-D560-4B99-9BB5-63AB468720B9__GUID-A1C51A11-0667-4BF4-979E-02568602D025">
+<table class="cellalignment62" summary="URI parameters for starting an orchestration">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d13113e377">Parameter</th>
+<th class="cellalignment64" id="d13113e379">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d13113e383" headers="d13113e377">name</td>
+<td class="cellalignment66" headers="d13113e383 d13113e379">A unique hierarchical name of an orchestration. For example, <code class="codeph">/mytenant/public/myorch</code></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d13113e391" headers="d13113e377">action</td>
+<td class="cellalignment66" headers="d13113e391 d13113e379">(Optional) Specifies the action that should be performed on the orchestration. For this API, the valid value of this parameter is <code class="codeph">START</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p><code class="codeph">https://api.oc.example.com/orchestration/mytenant/public/user1/test-vm?action=START</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Response Body</p>
+<pre dir="ltr">
+{
+"result": 
+[
+        {
+                "relationships": [], 
+                "status": "starting", 
+                "account": "/mytenant/default", 
+                "description": "", 
+                "schedule": {"start_time": "2015-10-23T09:58:52Z", "stop_time": null}, 
+                "uri": "https://api/orchestration/mytenant/public/mytenantdb", 
+                "oplans":       [{ .....}]
+                "status_timestamp": "2015-10-23T10:01:02Z"}], 
+                "info": {"errors": {}, "warnings": {}}, 
+                "status_timestamp": "2015-10-23T10:01:02Z", 
+                "name": "/mytenant/public/db"
+  }
+]
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-CEB31289-E78B-4C8D-BCE1-637286A3B002"></a>
+<h2 id="ELUAP-GUID-CEB31289-E78B-4C8D-BCE1-637286A3B002" class="sect2">Stop Orchestration</h2>
+<div>
+<p>This API enables you to stop a specific orchestration.&nbsp;Stopping an orchestration deletes all instances, releasing all resources allocated by the orchestration. This includes boot (root) disks and unreserved IP addresses. You can stop orchestrations in any one of the following statuses:<code class="codeph">ready</code>, <code class="codeph">shutdown</code>, <code class="codeph">warning</code>, and <code class="codeph">error</code>. The orchestration can be started again, thereby creating new instances and allocating new resources.</p>
+<div class="section">
+<p class="subhead2">Method</p>
+<p><code class="codeph">PUT</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/orchestration/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/orchestration/<span class="variable">name</span>?action=STOP</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI Parameters</p>
+<div class="tblformal" id="GUID-CEB31289-E78B-4C8D-BCE1-637286A3B002__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment56" summary="Parameter table for this API">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment57" id="d13113e481">Parameter</th>
+<th class="cellalignment57" id="d13113e483">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d13113e487" headers="d13113e481">name</td>
+<td class="cellalignment58" headers="d13113e487 d13113e483">A unique hierarchical name of an orchestration. For example, <code class="codeph">/mytenant/public/myorch</code></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d13113e494" headers="d13113e481">action</td>
+<td class="cellalignment58" headers="d13113e494 d13113e483">(Optional) Specifies the action which should be performed on the orchestration. The valid value of this parameter for this API is <code class="codeph">STOP</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/orchestration/mytenant/public/dev-vm?action=STOP</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Response Body</p>
+<pre dir="ltr">
+{
+    "account": "/mytenant/default",
+    "description": "",
+    "info": {
+        "errors": {},
+        "warnings": {}
+    },
+    "name": "/mytenant/public/dev-vm",
+    "oplans": [
+        {
+            "ha_policy": "",
+            "info": {
+                "errors": {},
+                "warnings": {}
+            },
+            "label": "sj-dev-vm",
+            "obj_type": "launchplan",
+            "objects": [
+                {
+                    "instances": [
+                        {
+                            "imagelist": "/oracle/public/oel6",
+                            "ip": "10.128.0.10",
+                            "label": "sj-oel6-vm",
+                            "name": "/mytenant/public/d5baeacd-e97d-4933-b170-fcfad113bf1e",
+                            "networking": {
+                                "eth0": {
+                                    "dns": [
+                                        "ccd371.mytenant.public.t1700-4186.example.com."
+                                    ],
+                                    "seclists": [
+                                        "/mytenant/default/default"
+                                    ],
+                                    "vethernet": "/oracle/public/default"
+                                }
+                            },
+                            "shape": "small",
+                            "start_time": "2015-11-23T21:15:32Z",
+                            "state": "stopping",
+                            "uri": null
+                        }
+                    ]
+                }
+            ],
+            "status": "ready",
+            "status_timestamp": "2015-11-23T21:18:11Z"
+        }
+    ],
+    "relationships": [],
+    "schedule": {
+        "start_time": "2015-11-23T21:15:27Z",
+        "stop_time": "2015-11-24T18:43:13Z"
+    },
+    "status": "ready",
+    "status_timestamp": "2015-11-23T21:18:11Z",
+    "uri": "http://api/orchestration/mytenant/public/dev-vm"
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-E683B6EB-FDCB-4F03-A5CF-E1A996ED8D02"></a>
+<h2 id="ELUAP-GUID-E683B6EB-FDCB-4F03-A5CF-E1A996ED8D02" class="sect2">Shutdown Orchestration</h2>
+<div>
+<p>This API enables you to shut down a VM instance while preserving the resources used by the instance, such as IP addresses and boot disk contents. When the orchestration is restarted, it gets back the same boot disks and IP addresses. If you do not need to preserve these resources use <code class="codeph">stop orchestration</code>. Orchestrations with a <code class="codeph">ready</code> or <code class="codeph">warning</code> state can be shut down.</p>
+<div class="section">
+<p class="subhead2">Method</p>
+<p><code class="codeph">PUT</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/orchestration/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/orchestration/<span class="variable">name</span>?action=SHUTDOWN</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI Parameters</p>
+<div class="tblformal" id="GUID-E683B6EB-FDCB-4F03-A5CF-E1A996ED8D02__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment56" summary="This table lists the URI parameters and their description for the shutdown of orchestration.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment57" id="d13113e580">Parameter</th>
+<th class="cellalignment57" id="d13113e582">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d13113e586" headers="d13113e580">name</td>
+<td class="cellalignment58" headers="d13113e586 d13113e582">A unique hierarchical name of an orchestration. For example, <code class="codeph">/mytenant/public/myorch</code>.</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d13113e594" headers="d13113e580">action</td>
+<td class="cellalignment58" headers="d13113e594 d13113e582">(Optional) Specifies the action that should be performed on the orchestration. The valid value of this parameter for this API is <span class="variable">SHUTDOWN</span>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/orchestration/mytenant/public/dev-vm?action=SHUTDOWN</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Response Body</p>
+<pre dir="ltr">
+{
+    "account": "/mytenant/default",
+    "description": "",
+    "info": {
+        "errors": {},
+        "warnings": {}
+    },
+    "name": "/mytenant/public/dev-vm",
+    "oplans": [
+        {
+            "ha_policy": "",
+            "info": {
+                "errors": {},
+                "warnings": {}
+            },
+            "label": "sj-dev-vm",
+            "obj_type": "launchplan",
+            "objects": [
+                {
+                    "instances": [
+                        {
+                            "imagelist": "/oracle/public/oel6",
+                            "ip": "10.128.0.10",
+                            "label": "sj-oel6-vm",
+                            "name": "/mytenant/public/d5baeacd-e97d-4933-b170-fcfad113bf1e",
+                            "networking": {
+                                "eth0": {
+                                    "dns": [
+                                        "ccd371.mytenant.public.t1700-4186.example.com."
+                                    ],
+                                    "seclists": [
+                                        "/mytenant/default/default"
+                                    ],
+                                    "vethernet": "/oracle/public/default"
+                                }
+                            },
+                            "shape": "small",
+                            "start_time": "2015-11-23T21:15:32Z",
+                            "state": "shutting_down",
+                            "uri": null
+                        }
+                    ]
+                }
+            ],
+            "status": "ready",
+            "status_timestamp": "2015-11-23T21:18:11Z"
+        }
+    ],
+    "relationships": [],
+    "schedule": {
+        "start_time": "2015-11-23T21:15:27Z",
+        "stop_time": "2015-11-24T18:43:13Z"
+    },
+    "status": "ready",
+    "status_timestamp": "2015-11-23T21:18:11Z",
+    "uri": "http://api/orchestration/mytenant/public/dev-vm"
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-121678A9-B0CC-42DE-8FBB-35138DC53089"></a>
+<h2 id="ELUAP-GUID-121678A9-B0CC-42DE-8FBB-35138DC53089" class="sect2">Restart Orchestration</h2>
+<div>
+<p>This API enables you to restart an orchestration that was previously in the <code class="codeph">shut_down</code> status. You can restart an orchestration with status <code class="codeph">warning</code>, <code class="codeph">shut_down</code> or <code class="codeph">error</code>.</p>
+<div class="section">
+<p class="subhead2">Method</p>
+<p><code class="codeph">PUT</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/orchestration/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/orchestration/<span class="variable">name</span>?action=RESTART</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI Parameters</p>
+<div class="tblformal" id="GUID-121678A9-B0CC-42DE-8FBB-35138DC53089__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment56" summary="This table specifies the URI parameters and descriptions for restarting the orchestration using API.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment57" id="d13113e684">Parameter</th>
+<th class="cellalignment57" id="d13113e686">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d13113e690" headers="d13113e684">name</td>
+<td class="cellalignment58" headers="d13113e690 d13113e686">A unique hierarchical name of an orchestration. For example, <code class="codeph">/mytenant/public/myorch</code>.</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d13113e698" headers="d13113e684">action</td>
+<td class="cellalignment58" headers="d13113e698 d13113e686">(Optional) Specifies the action to be performed on the orchestration. The valid value of this parameter for this API is <code class="codeph">RESTART</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/orchestration/mytenant/public/dev-vm?action=RESTART</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Response Body</p>
+<pre dir="ltr">
+{
+    "account": "/mytenant/default",
+    "description": "",
+    "info": {
+        "errors": {},
+        "warnings": {}
+    },
+    "name": "/mytenant/public/dev-vm",
+    "oplans": [
+        {
+            "ha_policy": "",
+            "info": {
+                "errors": {},
+                "warnings": {}
+            },
+            "label": "sj-dev-vm",
+            "obj_type": "launchplan",
+            "objects": [
+                {
+                    "instances": [
+                        {
+                            "imagelist": "/oracle/public/oel6",
+                            "ip": "10.128.0.10",
+                            "label": "sj-oel6-vm",
+                            "name": "/mytenant/public/d5baeacd-e97d-4933-b170-fcfad113bf1e",
+                            "networking": {
+                                "eth0": {
+                                    "dns": [
+                                        "ccd371.mytenant.public.t1700-4186.example.com."
+                                    ],
+                                    "seclists": [
+                                        "/mytenant/default/default"
+                                    ],
+                                    "vethernet": "/oracle/public/default"
+                                }
+                            },
+                            "shape": "small",
+                            "start_time": "2015-11-23T21:15:32Z",
+                            "state": "restarting",
+                            "uri": null
+                        }
+                    ]
+                }
+            ],
+            "status": "ready",
+            "status_timestamp": "2015-11-23T21:18:11Z"
+        }
+    ],
+    "relationships": [],
+    "schedule": {
+        "start_time": "2015-11-23T21:15:27Z",
+        "stop_time": "2015-11-24T18:43:13Z"
+    },
+    "status": "ready",
+    "status_timestamp": "2015-11-23T21:18:11Z",
+    "uri": "http://api/orchestration/mytenant/public/dev-vm"
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-A34F8325-BEBF-4032-8382-41054556D15C"></a>
+<h2 id="ELUAP-GUID-A34F8325-BEBF-4032-8382-41054556D15C" class="sect2">Update Orchestration</h2>
+<div>
+<p>This API enables you to update information for a specific orchestration.</p>
+<div class="section">
+<p>You can update any part of an orchestration aside from the name when it is in <code class="codeph">stopped</code> status. When the orchestration is in <code class="codeph">ready</code> status, you can update the <code class="codeph">ha_policy</code> and <code class="codeph">label</code> of an existing oplan in the orchestration. You can also add and remove oplans. Added oplans will be <code class="codeph">started</code>, and removed oplans will be <code class="codeph">stopped</code>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Method</p>
+<p><code class="codeph">PUT</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/orchestration/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/orchestration/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI Parameters</p>
+<div class="tblformal" id="GUID-A34F8325-BEBF-4032-8382-41054556D15C__GUID-A1C51A11-0667-4BF4-979E-02568602D025">
+<table class="cellalignment62" summary="Parameters for updating an orchestration">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d13113e796">Parameter</th>
+<th class="cellalignment64" id="d13113e798">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d13113e802" headers="d13113e796">name</td>
+<td class="cellalignment66" headers="d13113e802 d13113e798">A unique hierarchical name of an orchestration. For example, <code class="codeph">/mytenant/public/myorch</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Request Body Parameters</p>
+You can update the orchestration parameters in JSON format. For more information on the orchestration parameters, see section <span class="italic"><a class="olink ELUSE-GUID-F7D91076-1736-4B54-89D5-73C23A45BF85" target="_blank" href="../ELUSE/GUID-F7D91076-1736-4B54-89D5-73C23A45BF85.htm#ELUSE-GUID-F7D91076-1736-4B54-89D5-73C23A45BF85">Orchestration Templates</a></span> in <span class="italic">Using Oracle Compute Cloud Service</span>.</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/orchestration/mytenant/public/ac-control-vms</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Request Body</p>
+<pre dir="ltr">
+{
+        "relationships": [], 
+        "status": "ready", 
+        "account": "/mytenant/default", 
+        "description": "", 
+        "schedule": 
+                {
+                                "start_time": "2015-07-27T09:02:27Z", 
+                                "stop_time": null
+                }, 
+        "uri": "https://api.oc.example.com/orchestration/mytenant/public/ac-control-vms", 
+        "oplans": 
+                [{
+                                "status": "ready", 
+                                "info": {"errors": {}, "warnings": {}}, 
+                                "obj_type": "launchplan", 
+                                "ha_policy": "active", 
+                                "label": "ac-control-vms", 
+                                "objects": [{"relationships": [{"instances": ["ac-control-vm1", "ac-control-vm2"], .........}], 
+                                "status_timestamp": "2015-09-17T22:54:14Z"
+                }], 
+        "info": {"errors": {}, "warnings": {}}, 
+        "status_timestamp": "2015-09-17T22:54:14Z", 
+        "name": "/mytenant/public/ac-control-vms"
+}
+</pre></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Response Body</p>
+<pre dir="ltr">
+{
+        "relationships": [], 
+        "status": "ready", 
+        "account": "/mytenant/default", 
+        "description": "", 
+        "schedule": 
+                {
+                                "start_time": "2015-07-27T09:02:27Z", 
+                                "stop_time": null
+                }, 
+        "uri": "https://api.oc.example.com/orchestration/mytenant/public/ac-control-vms", 
+        "oplans": 
+                [{
+                                "status": "ready", 
+                                "info": {"errors": {}, "warnings": {}}, 
+                                "obj_type": "launchplan", 
+                                "ha_policy": "active", 
+                                "label": "ac-control-vms", 
+                                "objects": [{"relationships": [{"instances": ["ac-control-vm1", "ac-control-vm2"], .........}], 
+                                "status_timestamp": "2015-09-17T22:54:14Z"
+                }], 
+        "info": {"errors": {}, "warnings": {}}, 
+        "status_timestamp": "2015-09-17T22:54:14Z", 
+        "name": "/mytenant/public/ac-control-vms"
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-DF823D62-9411-4BC3-A92B-69B91B2ED391"></a>
+<h2 id="ELUAP-GUID-DF823D62-9411-4BC3-A92B-69B91B2ED391" class="sect2">Retrieve Orchestration Details</h2>
+<div>
+<div class="section">You can retrieve the orchestration details by using the REST API.</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-E9220819-EEBF-487E-9AFF-A41A34CB2121" title="This API enables you to discover orchestrations within a specific container or subcontainer.">Discover Orchestrations</a></p>
+</li>
+<li>
+<p><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-F1B955EF-93C2-4857-946C-92148B6274FF" title="This API enables you to retrieve details of a specific orchestration.">Get Orchestration</a></p>
+</li>
+<li>
+<p><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm#GUID-46C26071-498E-489E-AECF-1CA04EC38AFB" title="This API enables you to retrieve details about orchestrations in a specific container. The GET method can be used to validate the results of the POST, PUT, and DELETE operations.">List Orchestrations</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="props_rev_3"><a id="GUID-E9220819-EEBF-487E-9AFF-A41A34CB2121"></a>
+<h3 id="ELUAP-GUID-E9220819-EEBF-487E-9AFF-A41A34CB2121" class="sect3">Discover Orchestrations</h3>
+<div>
+<p>This API enables you to discover orchestrations within a specific container or subcontainer.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-E9220819-EEBF-487E-9AFF-A41A34CB2121__GUID-0C3DD741-3469-49D9-97C4-758F13F3BFE3">
+<p class="notep1">Note:</p>
+The discover API calls display the names of the objects in the specified container, not the details about the objects. To list the names of the objects, you must set the <code class="codeph">Accept</code> header to <code class="codeph">application/oracle-compute-v3+directory+json</code>. For all other purposes, you must set the <code class="codeph">Accept</code> header to <code class="codeph">application/oracle-compute-v3+json</code>.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Method</p>
+<p><code class="codeph">GET</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">REST Resource</p>
+<p><code class="codeph">/orchestration/<span class="variable">container</span>/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/orchestration/<span class="variable">container</span>/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI Parameter</p>
+<div class="tblformal" id="GUID-E9220819-EEBF-487E-9AFF-A41A34CB2121__GUID-A1C51A11-0667-4BF4-979E-02568602D025">
+<table class="cellalignment62" summary="This table specifies the URI parameter and description for listing all orchestrations in a container.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d13113e968">Parameter</th>
+<th class="cellalignment64" id="d13113e970">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d13113e974" headers="d13113e968">container</td>
+<td class="cellalignment66" headers="d13113e974 d13113e970">Hierarchical namespace for the orchestrations</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example URI</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p><code class="codeph">https://api.oc.example.com/orchestration/mytenant/public</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example Response Body</p>
+<pre dir="ltr">
+{
+        "result": 
+                [
+                                        "/mytenant/public/el-control-vms", 
+                                        "/mytenant/public/el-db-vms", 
+                                        "/mytenant/public/scae09-sdi-sdivm-el1-4-storagevolume-app", 
+                                        "/mytenant/public/scae09-sdi-sdivm-el1-5-storagevolume-ops",
+                                        "/mytenant/public/scae09-sdi-sdivm-el1-6-storagevolume-data", 
+                                        "/mytenant/public/scae09-sdi-sdivm-el1-8-instance"
+                ]
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-F1B955EF-93C2-4857-946C-92148B6274FF"></a>
+<h3 id="ELUAP-GUID-F1B955EF-93C2-4857-946C-92148B6274FF" class="sect3">Get Orchestration</h3>
+<div>
+<p>This API enables you to retrieve details of a specific orchestration.</p>
+<div class="section">
+<p class="subhead3">Method</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p><code class="codeph">GET</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">REST Resource</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p><code class="codeph">/orchestration/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/orchestration/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI Parameter</p>
+<div class="tblformal" id="GUID-F1B955EF-93C2-4857-946C-92148B6274FF__GUID-A1C51A11-0667-4BF4-979E-02568602D025">
+<table class="cellalignment62" summary="This table specifies the URI parameter and description for retrieving details of an orchestration">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d13113e1050">Parameter</th>
+<th class="cellalignment64" id="d13113e1052">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d13113e1056" headers="d13113e1050">name</td>
+<td class="cellalignment66" headers="d13113e1056 d13113e1052">A unique hierarchical name of an orchestration. For example, <code class="codeph">/mytenant/public/myorch</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/orchestration/mytenant/public/el-db-vms</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example Response Body</p>
+<pre dir="ltr">
+{
+        "relationships": [], 
+        "status": "ready", 
+        "account": "/mytenant/default", 
+        "description": "", 
+        "schedule": {"start_time": "2015-07-27T09:05:50Z", "stop_time": null}, 
+        "uri": "https://api/orchestration/mytenant/public/el-db-vms", 
+        "oplans": [
+        {"status": "ready", "info": {"errors": {}, "warnings": {}}, "obj_type": "launchplan", "ha_policy": "active",.....}], 
+         "status_timestamp": "2015-09-06T21:11:39Z"}], 
+        "info": {"errors": {}, "warnings": {}}, 
+        "status_timestamp": "2015-09-06T21:11:39Z", 
+        "name": "/mytenant/public/el-db-vms"
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-46C26071-498E-489E-AECF-1CA04EC38AFB"></a>
+<h3 id="ELUAP-GUID-46C26071-498E-489E-AECF-1CA04EC38AFB" class="sect3">List Orchestrations</h3>
+<div>
+<p>This API enables you to retrieve details about orchestrations in a specific container. The <code class="codeph">GET</code> method can be used to validate the results of the <code class="codeph">POST</code>, <code class="codeph">PUT</code>, and <code class="codeph">DELETE</code> operations.</p>
+<div class="section">
+<p class="subhead3">Method</p>
+<p><code class="codeph">GET</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">REST Resource</p>
+<p><code class="codeph">/orchestration/<span class="variable">container</span>/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/orchestration/<span class="variable">container</span>?status=<span class="variable">statusValue</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI Parameter</p>
+<div class="tblformal" id="GUID-46C26071-498E-489E-AECF-1CA04EC38AFB__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment56" summary="This table specifies the URI parameters and descriptions for listing orchestrations.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment57" id="d13113e1147">Parameter</th>
+<th class="cellalignment57" id="d13113e1149">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d13113e1153" headers="d13113e1147">container</td>
+<td class="cellalignment58" headers="d13113e1153 d13113e1149">Hierarchical namespace for orchestrations</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d13113e1158" headers="d13113e1147">status=<span class="variable">statusValue</span></td>
+<td class="cellalignment58" headers="d13113e1158 d13113e1149">(Optional) Current status of the orchestration. The following status options are supported:
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph">ready</code></p>
+</li>
+<li>
+<p><code class="codeph">scheduled</code></p>
+</li>
+<li>
+<p><code class="codeph">warning</code></p>
+</li>
+<li>
+<p><code class="codeph">error</code></p>
+</li>
+<li>
+<p><code class="codeph">starting</code></p>
+</li>
+<li>
+<p><code class="codeph">stopping</code></p>
+</li>
+<li>
+<p><code class="codeph">updating</code></p>
+</li>
+<li>
+<p><code class="codeph">shut_down</code></p>
+</li>
+<li>
+<p><code class="codeph">shutting_down</code></p>
+</li>
+<li>
+<p><code class="codeph">restarting</code></p>
+</li>
+</ul>
+<p>If this parameter is specified, then the list orchestration output is filtered for the given status.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/orchestration/mytenant/public/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example Response Body</p>
+<pre dir="ltr">
+{
+"result": 
+[
+        {
+                "relationships": [], 
+                "status": "ready", 
+                "account": "/mytenant/default", 
+                "description": "", 
+                "schedule": {"start_time": "2015-10-23T09:58:52Z", "stop_time": null}, 
+                "uri": "https://api/orchestration/mytenant/public/mytenantdb", 
+                "oplans":       [{ .....}]
+                "status_timestamp": "2015-10-23T10:01:02Z"}], 
+                "info": {"errors": {}, "warnings": {}}, 
+                "status_timestamp": "2015-10-23T10:01:02Z", 
+                "name": "/mytenant/public/db"
+}
+
+{
+        "relationships": [], 
+        "status": "ready", 
+        "account": "/mytenant/default", 
+        "description": "", 
+        "schedule": {"start_time": "2015-10-24T00:43:10Z", "stop_time": null}, 
+        "uri": "https://api/orchestration/mytenant/public/mytenantgrill", "oplans": [{.....}], 
+        "status_timestamp": "2015-10-24T00:46:31Z"}], 
+        "info": {"errors": {}, "warnings": {}}, 
+        "status_timestamp": "2015-10-24T00:46:31Z", 
+        "name": "/mytenant/public/mytenantgrill"
+}
+]
+</pre></div>
+<!-- class="section" --></div>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment49">
+<tr>
+<td class="cellalignment59">
+<table class="cellalignment54">
+<tr>
+<td class="cellalignment53"><a href="GUID-26C605BD-B81A-43A2-AE12-5021CD755271.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment53"><a href="GUID-91DB5163-DF72-44F2-A08E-FD58BBF6BFAD.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment61">
+<table class="cellalignment52">
+<tr>
+<td class="cellalignment53"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment53"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

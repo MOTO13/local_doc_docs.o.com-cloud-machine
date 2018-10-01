@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>Public Cloud Machine REST API for Oracle Database Cloud Service</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Use the Oracle Database Cloud Service REST API to create and manage Database Cloud Service instances.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="Public Cloud Machine REST API for Oracle Database Cloud Service">
+        <meta property="og:description" content="Use the Oracle Database Cloud Service REST API to create and manage Database Cloud Service instances.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="Public Cloud Machine REST API for Oracle Database Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="supported-methods.html" title="Previous" type="text/html">
+        <link rel="next" href="status-codes.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="supported-methods.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="status-codes.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Public Cloud Machine REST API for Oracle Database Cloud Service</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">Security, Authentication and Authorization</h2> 
+<div class="body">
+ <p class="shortdesc">When you make HTTPS requests to Database Cloud Service REST API endpoints, you ensure secure, authenticated and authorized access by providing the following information:</p> 
+ <ul class="ul">
+  <li class="li"><p class="p">An SSL certificate authority (CA) certificate file or bundle to authenticate against the Verisign certificate authority (CA) certificate. (Oracle Cloud uses a CA certificate issued by Verisign to enable clients to connect securely to the server.)</p> </li> 
+  <li class="li"><p class="p">The <samp class="ph codeph">X-ID-TENANT-NAME</samp> custom header to specify the identity domain.</p> </li> 
+  <li class="li"><p class="p">The <samp class="ph codeph">Authorization</samp> standard header to specify the user name and password of an Oracle Cloud user with authorization to perform the operation in the specified identity domain.</p> </li> 
+ </ul> 
+ <div class="section">
+  <h3 class="title sectiontitle">The X-ID-TENANT-NAME Header</h3>
+  <p class="p">When making a request to a Database Cloud Service REST API endpoint, you must specify an <samp class="ph codeph">X-ID-TENANT-NAME</samp> header whose value is the name of the identity domain to which the request applies; for example:</p> 
+  <pre class="pre">X-ID-TENANT-NAME: usexample</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">The Authorization Header</h3>
+  <p class="p">When making a request to a Database Cloud Service REST API endpoint, you must specify an <samp class="ph codeph">Authorization</samp> header whose value contains the user name and password of an Oracle Cloud user with authorization to perform the requested operation in the specified identity domain. The value has the form:</p> 
+  <pre class="pre">Basic <em class="ph i">base64-encrypted-username-colon-password</em></pre> 
+  <p class="p">where <samp class="ph codeph"><em class="ph i">base64-encrypted-username-colon-password</em></samp> is the user name and password, separated by a colon and encoded using Base64 encoding. For example, given the user name <samp class="ph codeph">dbaasadmin</samp> and the password <samp class="ph codeph">Pa55_word</samp>, the string to encode would be <samp class="ph codeph">dbaasadmin:Pa55_word</samp> and the resulting header would be:</p> 
+  <pre class="pre">Authorization: Basic ZGJhYXNhZG1pbjpQYTU1X3dvcmQ=</pre> 
+  <div class="note note" id="GUID-1D57BF8D-6269-4F75-B7AC-4393F4C9F8DE__GUID-C4D29654-038A-4317-A43E-4FCBB0605D5D">
+   <span class="notetitle">Note:</span> 
+   <p class="p">Many client applications provide a method that creates this header for you. In cURL, for example, the <samp class="ph codeph">-u</samp> (<samp class="ph codeph">--user</samp>) option adds the <samp class="ph codeph">Authorization</samp> header to a request:</p> 
+   <pre class="pre">--user dbaasadmin:Pa55_word</pre> 
+   <p class="p">generates the same <samp class="ph codeph">Authorization</samp> header shown in the previous example.</p> 
+  </div> 
+ </div> 
+</div></div>
+        </article>
+    </body>
+</html>

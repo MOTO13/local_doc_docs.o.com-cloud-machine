@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Typical Workflow for Managing the Life Cycle of Oracle Java Cloud Service Instances</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="To manage the life cycle of Oracle Java Cloud Service instances, consider the typical workflow described in the following table." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-941D45FB-BE73-4338-9E0F-067E09AC53D8.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-FCD2A1F3-A67B-43FF-A5EF-94413C63E511.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-DB265806-BD36-43F8-9B68-C725A875088E"></a> <span id="PAGE" style="display:none;">14/131</span> <!-- End Header -->
+<a id="JSCUG3270"></a>
+<h1 id="JSCUG-GUID-DB265806-BD36-43F8-9B68-C725A875088E" class="sect1">Typical Workflow for Managing the Life Cycle of Oracle Java Cloud Service Instances</h1>
+<div>
+<p>To manage the life cycle of Oracle Java Cloud Service instances, consider the typical workflow described in the following table.</p>
+<p>The table provides links to information about how to perform each task by using the web-browser-based Oracle Java Cloud Service Console. For information about using the REST API to manage the life cycle of Oracle Java Cloud Service instances, see <a href="../JSRMR/api-Service%20Instances.html" target="_blank">Service Instances</a> in <cite>REST API for Oracle Java Cloud Service</cite>.</p>
+<div class="tblformalwide" id="GUID-DB265806-BD36-43F8-9B68-C725A875088E__GUID-9AF84160-67AF-4E9D-8590-96E6AECFAB63">
+<table class="cellalignment30" summary="Typical workflow for managing the life cycle of Oracle Java as a Service instances">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment57" id="d8552e27">Task</th>
+<th class="cellalignment58" id="d8552e30">Description</th>
+<th class="cellalignment40" id="d8552e33">More Information</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment59" id="d8552e38" headers="d8552e27">
+<p>Create an Oracle Java Cloud Service instance</p>
+</td>
+<td class="cellalignment60" headers="d8552e38 d8552e30">
+<p>Create a new Oracle Java Cloud Service instance by stepping through the Provision New Java Cloud Service wizard.</p>
+</td>
+<td class="cellalignment42" headers="d8552e38 d8552e33">
+<p><a href="GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2.htm#GUID-31F00F2C-221F-4069-8E8A-EE48BFEC53A2" title="To create a new Oracle Java Cloud Service instance, use the Provision New Java Cloud Service wizard as described in the following sections.">Creating an Oracle Java Cloud Service Instance</a></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment59" id="d8552e53" headers="d8552e27">
+<p>View all Oracle Java Cloud Service instances</p>
+</td>
+<td class="cellalignment60" headers="d8552e53 d8552e30">
+<p>View status, resource allocation, and other details for all Oracle Java Cloud Service instances.</p>
+</td>
+<td class="cellalignment42" headers="d8552e53 d8552e33">
+<p><a href="GUID-8B518713-F8F0-475F-A7AE-2ABEDBD7BDC7.htm" title="From the Oracle Java Cloud Service Console, you can:">Viewing All Oracle Java Cloud Service Instances</a></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment59" id="d8552e68" headers="d8552e27">
+<p>View detailed information about an Oracle Java Cloud Service instance</p>
+</td>
+<td class="cellalignment60" headers="d8552e68 d8552e30">
+<p>View status, resource allocation, and other details for an Oracle Java Cloud Service instance.</p>
+</td>
+<td class="cellalignment42" headers="d8552e68 d8552e33">
+<p><a href="GUID-FA69844B-7BAF-4B67-AF29-15CAB3ED89FB.htm#GUID-FA69844B-7BAF-4B67-AF29-15CAB3ED89FB" title="From the Oracle Java Cloud Service Instance page, you can:">Viewing Detailed Information About an Oracle Java Cloud Service Instance</a></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment59" id="d8552e83" headers="d8552e27">
+<p>Suspend an Oracle Java Cloud Service instance</p>
+</td>
+<td class="cellalignment60" headers="d8552e83 d8552e30">
+<p>Disable the load balancer to block any new traffic to an Oracle Java Cloud Service instance temporarily while maintenance is performed.</p>
+</td>
+<td class="cellalignment42" headers="d8552e83 d8552e33">
+<p><a href="GUID-41A9CF0D-028D-4C62-B9C6-D369452D5937.htm#GUID-41A9CF0D-028D-4C62-B9C6-D369452D5937" title="You can disable the load balancer to suspend the Oracle Java Cloud Service instance temporarily, to block any new traffic from being delivered to the service instance. This is useful when you want to perform routine maintenance on an Oracle Java Cloud Service instance, but do not want to stop the service instance. Once the maintenance activities have been completed, you can re-enable the load balancer to allow traffic to be delivered.">Suspending an Oracle Java Cloud Service Instance</a></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment59" id="d8552e98" headers="d8552e27">
+<p>Stop, start, or restart a service instance or individual server VMs</p>
+</td>
+<td class="cellalignment60" headers="d8552e98 d8552e30">
+<p>Stop service instances or individual server VMs to stop metering for these resources. Restart the Administration Server or individual server VMs if reboot is needed.</p>
+</td>
+<td class="cellalignment42" headers="d8552e98 d8552e33">
+<p><a href="GUID-A0491DD0-6E6C-405D-A00C-A213AABDF91C.htm#GUID-A0491DD0-6E6C-405D-A00C-A213AABDF91C" title="You can stop and start an Oracle Java Cloud Service instance and, when the service instance is running, start, stop, and restart individual server or Load Balancer VMs.">Stopping and Starting an Oracle Java Cloud Service Instance and Individual VMs</a></p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment59" id="d8552e113" headers="d8552e27">
+<p>Delete an Oracle Java as Service instance</p>
+</td>
+<td class="cellalignment60" headers="d8552e113 d8552e30">
+<p>Manage access to an Oracle Java Cloud Service instance by deleting the service instance.</p>
+</td>
+<td class="cellalignment42" headers="d8552e113 d8552e33">
+<p><a href="GUID-A58DDD63-CD0F-49F4-AF78-AF4FA5C42C3A.htm#GUID-A58DDD63-CD0F-49F4-AF78-AF4FA5C42C3A" title="When you no longer require an Oracle Java Cloud Service instance, you can delete it. Your account is no longer charged for the instance.">Deleting an Oracle Java Cloud Service Instance</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p id="GUID-DB265806-BD36-43F8-9B68-C725A875088E__GUID-BFBA1D05-2782-464C-80DB-D584204AB156"><span>When Oracle Coherence is enabled for a service instance:</span> See also <a href="GUID-16418889-DD11-43BA-B0A8-0F2226F08A1A.htm" title="You can enable Oracle Coherence for an Oracle Java Cloud Service instance to use in-memory data grid and caching for your Coherence applications deployed to the cloud.">Workflow for Using Oracle Coherence in Oracle Java Cloud Service</a>.</p>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-941D45FB-BE73-4338-9E0F-067E09AC53D8.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-FCD2A1F3-A67B-43FF-A5EF-94413C63E511.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

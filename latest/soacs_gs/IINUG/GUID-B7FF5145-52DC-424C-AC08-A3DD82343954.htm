@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Publishing Business Events Using the REST API</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="With the REST API, you can publish business events from non-SOA Suite applications to Real-Time Integration Business Insight." />
+<meta name="dcterms.created" content="2017-04-11T11:24:03Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle Real-Time Integration Business Insight" />
+<meta name="dcterms.identifier" content="E76087-06" />
+<meta name="dcterms.isVersionOf" content="IINUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-101536E0-DAF1-4F3C-87C2-AB5BABDFB366.htm" title="Previous" type="text/html" />
+<link rel="alternate" href="IINUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="IINUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="IINUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-B7FF5145-52DC-424C-AC08-A3DD82343954"></a> <span id="PAGE" style="display:none;">17/17</span> <!-- End Header -->
+<h1 id="IINUG-GUID-B7FF5145-52DC-424C-AC08-A3DD82343954" class="sect1"><span class="enumeration_appendix">D</span> Publishing Business Events Using the REST API</h1>
+<div>
+<div><span>With the REST API, you can publish business events from non-SOA Suite applications to Real-Time Integration Business Insight.</span></div>
+<div class="section">To publish business events to Insight using the REST API:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Design a model that corresponds to your business processes in the Real-Time Integration Business Insight UI. Make sure you select the <span class="bold">Enable API Invocation</span> option for each milestone that sends business events using the REST API. Then activate the model. See <a href="GUID-795CC3E9-C1E9-43A5-BCF7-7EB54979159D.htm#GUID-795CC3E9-C1E9-43A5-BCF7-7EB54979159D" title="A model provides a grammar for describing the aspects of an application that are key for tracking business performance and mapping those concepts to existing software application implementation.">Working with Models</a></span>
+<div><br />
+<img width="627" height="193" src="img/GUID-3264A6EE-4DB3-4D2C-A101-1A44E80D698A-default.png" alt="Description of GUID-3264A6EE-4DB3-4D2C-A101-1A44E80D698A-default.png follows" title="Description of GUID-3264A6EE-4DB3-4D2C-A101-1A44E80D698A-default.png follows" /><br />
+<a href="img_text/GUID-3264A6EE-4DB3-4D2C-A101-1A44E80D698A-default.htm">Description of the illustration GUID-3264A6EE-4DB3-4D2C-A101-1A44E80D698A-default.png</a><br /></div>
+</li>
+<li class="stepexpand"><span>Download the API manifest for your model, or download the manifest for a specific milestone, as described in <a href="GUID-795CC3E9-C1E9-43A5-BCF7-7EB54979159D.htm#GUID-1E5B867F-45F4-45F9-B778-C390AE20265B" title="You can view a manifest with API invocation details for all of a model&rsquo;s milestones that allow API invocations.. You can also view API invocation details for an individual milestone.">Viewing API Invocation Details</a>. The manifests contain sample JSON payloads for business events for your milestones. These payloads are populated with some required fields, such as modelId and milestoneId. Edit the payloads as instructed with details specific to your business events.</span></li>
+<li class="stepexpand"><span>For each business event you want to publish, send a request to the Real-Time Integration Business Insight REST API event endpoint. Events are parsed and associated with the appropriate instances, based on correlated IDs. For example, when sending the request for the event corresponding to an initial milestone, a correlationValue is included in the payload. Include the same correlationValue in the payload for events from the same instance, such as the same order or the same support ticket.</span>
+<div>
+<p>See <span><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=INAPI" target="_blank">REST API for Oracle Real-Time Integration Business Insight</a></span> for examples and detailed usage instructions for the REST API.</p>
+</div>
+</li>
+<li class="stepexpand"><span>After you have published events, use consoles or custom dashboards to monitor business processes. See <a href="GUID-FBDCC935-499D-4A8C-BFE4-2D4E3A6A3441.htm#GUID-FBDCC935-499D-4A8C-BFE4-2D4E3A6A3441" title="A console associated with a model gives a business owner visibility into details on how a business is performing. As soon as a model is activated, a console is created for the model. The console contains useful tables, visualizations, and dashboards that can be used immediately to understand business performance. Business owners may also quickly create custom dashboards based on their model's indicators that give aggregated business insight on key metrics.">Working with Dashboards (Consoles)</a>.</span></li>
+</ol>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment128">
+<tr>
+<td class="cellalignment135">
+<table class="cellalignment133">
+<tr>
+<td class="cellalignment132"><a href="GUID-101536E0-DAF1-4F3C-87C2-AB5BABDFB366.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment137">
+<table class="cellalignment131">
+<tr>
+<td class="cellalignment132"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment132"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment132"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

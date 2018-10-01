@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="Authentication.html" title="Previous" type="text/html">
+        <link rel="next" href="Status%20Codes.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="Authentication.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="Status%20Codes.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">Use cURL</h2> 
+<div class="body taskbody">
+ <p class="shortdesc">cURL is an open source, command-line tool for transferring data with URL syntax, supporting various protocols including HTTP and HTTPS.</p> 
+ <div class="section">
+  <p class="p"> The examples throughout the documentation use cURL to demonstrate how to access the Oracle Java Cloud Service REST API. See <a class="xref" href="Install%20cURL.html" title="The examples use the cURL command-line tool to demonstrate how to access the Oracle Java Cloud Service REST API. To connect securely to the REST server, you must install a version of cURL that supports SSL.">Install cURL</a> and <a class="xref" href="Authentication.html">Authentication</a>.</p> 
+  <p class="p">Invoke cURL and specify one or more of the command-line options defined in the following table, as required, to direct its execution.</p> 
+  <div class="p"> 
+   <div class="tablenoborder">
+    <span class="desc tabledesc">This table summarizes the cURL options used in the command examples.</span>
+    <table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all">
+     <thead class="thead" align="left">
+      <tr class="row">
+       <th class="firstcol" valign="top" width="40%" id="d18936e38">cURL Option</th> 
+       <th class="entry" valign="top" width="60%" id="d18936e40">Description</th> 
+      </tr> 
+     </thead> 
+     <tbody class="tbody">
+      <tr class="row">
+       <th class="firstcol" valign="top" width="40%" id="d18936e44" headers="d18936e38 "><p class="p"><samp class="ph codeph">-d, --data @file.json</samp></p> </th> 
+       <td class="entry" valign="top" width="60%" headers="d18936e44 d18936e40 "><p class="p">Specifies the request body, or data, either directly or by referring to a JSON file on the local machine.</p> </td> 
+      </tr> 
+      <tr class="row">
+       <th class="firstcol" valign="top" width="40%" id="d18936e52" headers="d18936e38 "><p class="p"><samp class="ph codeph">-F, --form @file.json</samp></p> </th> 
+       <td class="entry" valign="top" width="60%" headers="d18936e52 d18936e40 "><p class="p">Specifies form data, either directly or by referring to a JSON file on the local machine.</p> </td> 
+      </tr> 
+      <tr class="row">
+       <th class="firstcol" valign="top" width="40%" id="d18936e60" headers="d18936e38 "><p class="p"><samp class="ph codeph">-H</samp></p> </th> 
+       <td class="entry" valign="top" width="60%" headers="d18936e60 d18936e40 "><p class="p">Defines a request header.</p> </td> 
+      </tr> 
+      <tr class="row">
+       <th class="firstcol" valign="top" width="40%" id="d18936e68" headers="d18936e38 "><p class="p"><samp class="ph codeph">-i</samp></p> </th> 
+       <td class="entry" valign="top" width="60%" headers="d18936e68 d18936e40 "><p class="p">Displays response header information.</p> </td> 
+      </tr> 
+      <tr class="row">
+       <th class="firstcol" valign="top" width="40%" id="d18936e76" headers="d18936e38 "><p class="p"><samp class="ph codeph">-u, --user</samp></p> </th> 
+       <td class="entry" valign="top" width="60%" headers="d18936e76 d18936e40 "><p class="p">Specifies the user name and password for the Oracle Java Cloud Service account. </p> </td> 
+      </tr> 
+      <tr class="row">
+       <th class="firstcol" valign="top" width="40%" id="d18936e84" headers="d18936e38 "><p class="p"><samp class="ph codeph">-X</samp></p> </th> 
+       <td class="entry" valign="top" width="60%" headers="d18936e84 d18936e40 "><p class="p">Indicates the type of request (for example, GET, POST, and so on). </p> </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+  </div> 
+  <p class="p">The following cURL command example retrieves the details of the <samp class="ph codeph">ExampleService</samp> service instance:</p> 
+  <pre class="pre">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain/ExampleService
+</pre> 
+  <p class="p"><strong class="ph b">Note: </strong>The command in the example uses the URL structure <samp class="ph codeph">https://rest_server_url/<em class="ph i">resource-path</em></samp>, where <samp class="ph codeph">rest_server_url</samp> is the Oracle Public Cloud or Oracle Cloud Machine REST server to contact for your identity domain or tenant name. See <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a> for the appropriate URL structure to use for Oracle Public Cloud or Oracle Cloud Machine.</p> 
+ </div> 
+</div></div>
+        </article>
+    </body>
+</html>

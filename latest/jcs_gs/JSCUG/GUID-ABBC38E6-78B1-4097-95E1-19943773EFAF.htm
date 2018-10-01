@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Using an IDE to Deploy and Undeploy an Application</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can use an Integrated Development Environment (IDE) such as Eclipse to deploy and undeploy an application to an Oracle Java Cloud Service instance." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-8A319690-27C6-4170-A5E1-D70E32C64B8F.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-A3B26681-17CD-4177-927F-CC441ABEBC04.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-ABBC38E6-78B1-4097-95E1-19943773EFAF"></a> <span id="PAGE" style="display:none;">52/131</span> <!-- End Header -->
+<a id="JSCUG3326"></a><a id="JSCUG3325"></a>
+<h1 id="JSCUG-GUID-ABBC38E6-78B1-4097-95E1-19943773EFAF" class="sect1">Using an IDE to Deploy and Undeploy an Application</h1>
+<div>
+<p>You can use an Integrated Development Environment (IDE) such as Eclipse to deploy and undeploy an application to an Oracle Java Cloud Service instance.</p>
+<div class="section">
+<p class="subhead1">Topics</p>
+</div>
+<!-- class="section" -->
+<ul>
+<li><span><a href="GUID-ABBC38E6-78B1-4097-95E1-19943773EFAF.htm#GUID-C8EAB628-EDFA-4E8F-8150-CA21246E2899" title="Complete the following tasks before deploying an application:">Prerequisites to Deployment with an IDE</a></span></li>
+<li><span><a href="GUID-ABBC38E6-78B1-4097-95E1-19943773EFAF.htm#GUID-C8C8271C-EAE6-4977-A569-EC3CA8CDC5AB" title="To deploy an application to Oracle Java Cloud Service, you must first establish a connection between the IDE and Oracle WebLogic Server.">Connecting the IDE to a Remote WebLogic Server</a></span></li>
+<li><span><a href="GUID-ABBC38E6-78B1-4097-95E1-19943773EFAF.htm#GUID-A003FCD5-1B20-41FF-B6E7-322CC26ED15A" title="You can deploy the application to the administration server by using the Eclipse IDE, for example. You can deploy an application to a cluster by setting properties to add the cluster as a target.">Using an IDE to Deploy an Application to a Cluster</a></span></li>
+<li><span><a href="GUID-ABBC38E6-78B1-4097-95E1-19943773EFAF.htm#GUID-7FE790C7-1CEA-4868-A8F7-D8AD94398B47" title="After you deploy an application, you can undeploy it by using an IDE.">Using an IDE to Undeploy an Application</a></span></li>
+</ul>
+</div>
+<a id="JSCUG3327"></a>
+<div class="props_rev_3"><a id="GUID-C8EAB628-EDFA-4E8F-8150-CA21246E2899"></a>
+<h2 id="JSCUG-GUID-C8EAB628-EDFA-4E8F-8150-CA21246E2899" class="sect2">Prerequisites to Deployment with an IDE</h2>
+<div>
+<p>Complete the following tasks before deploying an application:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Create an Oracle Java Cloud Service instance.</p>
+</li>
+<li>
+<p>Install the IDE on your local machine.</p>
+<p>If you want to use Eclipse, install Oracle Enterprise Pack for Eclipse (OEPE). You can download OEPE from this site:</p>
+<pre dir="ltr">
+http://www.oracle.com/technetwork/developer-tools/eclipse/downloads/index.html
+</pre></li>
+</ul>
+</div>
+</div>
+<a id="JSCUG3328"></a>
+<div class="props_rev_3"><a id="GUID-C8C8271C-EAE6-4977-A569-EC3CA8CDC5AB"></a>
+<h2 id="JSCUG-GUID-C8C8271C-EAE6-4977-A569-EC3CA8CDC5AB" class="sect2">Connecting the IDE to a Remote WebLogic Server</h2>
+<div>
+<p>To deploy an application to <span>Oracle Java Cloud Service</span>, you must first establish a connection between the IDE and Oracle WebLogic Server.</p>
+<div class="section">To connect the Eclipse IDE to a remote Oracle WebLogic Server:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Use the <span>Oracle Java Cloud Service</span> console to identify the public IP address of your Administration Server.</span></li>
+<li class="stepexpand"><span>Start Oracle Enterprise Pack for Eclipse.</span></li>
+<li class="stepexpand"><span>Click on <span class="bold">Workbench</span>.</span>
+<div>The Workbench is displayed.</div>
+</li>
+<li class="stepexpand"><span>Select <span class="bold">Window &ndash; Show View &ndash; Others...</span></span></li>
+<li class="stepexpand"><span>Type <code>server</code> in the search box, click the <span class="bold">Servers</span> entry, and click <span class="bold">OK</span>.</span>
+<div>The Servers view panel is displayed in the bottom half of the Workbench.</div>
+</li>
+<li class="stepexpand"><span>In the Servers view panel, click <span class="bold">No servers are available. Click this link to create a new server...</span></span></li>
+<li class="stepexpand"><span>Click <span class="bold">Oracle</span>, then select the Oracle WebLogic Server version you are using and click <span class="bold">Next</span>.</span>
+<div>You chose the version number when you created your <span>Oracle Java Cloud Service</span> instance.</div>
+</li>
+<li class="stepexpand"><span>On the New Server dialog, click the browse icon next to <span class="bold">WebLogic home</span> and select your WebLogic Server home directory.</span>
+<div>
+<div class="infobox-note" id="GUID-C8C8271C-EAE6-4977-A569-EC3CA8CDC5AB__GUID-CF871DDD-A485-4590-9C6F-862D02998524">
+<p class="notep1">Note:</p>
+Make sure that the local version of Weblogic you&rsquo;re running is the same version as the instance running on the cloud service. If they are not the same version then you will be unable to make a connection.</div>
+</div>
+</li>
+<li class="stepexpand"><span>Click the browse icon next to <span class="bold">Java home</span> and select your Java home directory.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Remote</span>.</span>
+<ol>
+<li><span>Set the <span class="bold">Remote Host</span> to the IP address of your cloud service Weblogic instance.</span></li>
+<li><span>Set <span class="bold">Port</span> to <span class="bold">7002</span>. (This is the SSL port of your cloud service Weblogic instance.)</span></li>
+<li><span>Make sure that <span class="bold">Use SSL port</span> is checked.</span></li>
+<li><span>Set <span class="bold">User</span> to the WebLogic administrator credentials you specified when you created the <span>Oracle Java Cloud Service</span> instance.</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Test Connection</span>.</span>
+<div>A Success dialog is displayed, informing you that the test connection succeeded.</div>
+</li>
+<li class="stepexpand"><span>In the Success dialog, click <span class="bold">OK</span>.</span>
+<div>On the Eclipse console, a new connection is added to the <span class="bold">Servers</span> view panel. A <span class="bold">Validating server...</span> status message is displayed. After the connection is established, the status changes to <span class="bold">Started</span>.</div>
+</li>
+</ol>
+</div>
+</div>
+<a id="JSCUG3330"></a>
+<div class="props_rev_3"><a id="GUID-A003FCD5-1B20-41FF-B6E7-322CC26ED15A"></a>
+<h2 id="JSCUG-GUID-A003FCD5-1B20-41FF-B6E7-322CC26ED15A" class="sect2">Using an IDE to Deploy an Application to a Cluster</h2>
+<div>
+<p>You can deploy the application to the administration server by using the Eclipse IDE, for example. You can deploy an application to a cluster by setting properties to add the cluster as a target.</p>
+<div class="section">To use Eclipse to deploy an application to a cluster in the Oracle Java Cloud Service instance:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>If you have not done so already, start the Oracle Enterprise Pack for Eclipse (OEPE).</span></li>
+<li class="stepexpand"><span>If Project Explorer is not visible, select <span class="bold">Window &ndash; Show View &ndash; Project Explorer</span>.</span></li>
+<li class="stepexpand"><span>Under Project Explorer, right-click and select <span class="bold">Import &ndash; WAR file</span> .</span></li>
+<li class="stepexpand"><span>In the War Import dialog, click the <span class="bold">Browse</span> button, navigate to the directory where your application resides, and select it. Click <span class="bold">Open</span>.</span></li>
+<li class="stepexpand"><span>On the WAR Import dialog, click <span class="bold">Finish</span>.</span></li>
+<li class="stepexpand"><span>If an Open Associated Perspective dialog appears, click <span class="bold">Yes</span> to associate the perspective of the project to Java Enterprise Edition (Java EE).</span></li>
+<li class="stepexpand"><span>On the Eclipse console, select the <span class="bold">Servers</span> tab.</span>
+<div>By default, the IDE deploys your application to the Oracle Java Cloud Service administration server. You need to deploy the application to a cluster rather than to the Administration Server.</div>
+</li>
+<li class="stepexpand"><span>On the Servers tab, right click on the server connection established previously to the administration server.</span>
+<div>For information, see <a href="GUID-ABBC38E6-78B1-4097-95E1-19943773EFAF.htm#GUID-C8C8271C-EAE6-4977-A569-EC3CA8CDC5AB" title="To deploy an application to Oracle Java Cloud Service, you must first establish a connection between the IDE and Oracle WebLogic Server.">Connecting an IDE to a Remote WebLogic Server</a>.</div>
+</li>
+<li class="stepexpand"><span>Select <span class="bold">Properties</span>.</span>
+<div>The Properties dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>Select <span class="bold">WebLogic &ndash; Publishing &ndash; Advanced</span>.</span></li>
+<li class="stepexpand"><span>Click on the green plus sign to add the cluster as the target.</span>
+<div>A new line is added under <span class="bold">Targets</span>.</div>
+</li>
+<li class="stepexpand"><span>Click on <span class="bold">Browse</span>.</span>
+<div>The names of the administration server and the cluster are listed on the Target Name dialog.</div>
+</li>
+<li class="stepexpand"><span>To delete the Administration Server as a target, select the target name and click on the red cross icon next to the Administration Server name.</span></li>
+<li class="stepexpand"><span>To add the cluster as a target, click on the green plus sign.</span>
+<div>A new line is added under <span class="bold">Targets</span>.</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Browse</span> and select the cluster where you want to deploy the application.</span>
+<div>The Administration Server and the cluster are listed in the Target Name dialog.</div>
+</li>
+<li class="stepexpand"><span>Click on the cluster and click <span class="bold">OK</span>.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Apply</span>, and then click <span class="bold">OK</span>.</span></li>
+<li class="stepexpand"><span>Click on the Servers tab.</span></li>
+<li class="stepexpand"><span>On the <span class="bold">Servers</span> tab, right click on the server connection and select <span class="bold">Add and Remove...</span></span>
+<div>The application is then listed in the available applications section of the Add and Remove dialog.</div>
+</li>
+<li class="stepexpand"><span>Select the name of the application and click <span class="bold">Add</span>.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Finish</span>.</span>
+<div>In the bottom right corner of the Eclipse console, the status of the publish request is displayed.</div>
+</li>
+<li class="stepexpand"><span>Click the icon next to the publish request status message to see the details of the request.</span>
+<div>The status of the request will become <span class="bold">Active</span>.</div>
+</li>
+<li class="stepexpand"><span>On the Servers tab, expand the server connection to see that the application is deployed.</span></li>
+</ol>
+</div>
+</div>
+<a id="JSCUG3331"></a>
+<div class="props_rev_3"><a id="GUID-7FE790C7-1CEA-4868-A8F7-D8AD94398B47"></a>
+<h2 id="JSCUG-GUID-7FE790C7-1CEA-4868-A8F7-D8AD94398B47" class="sect2">Using an IDE to Undeploy an Application</h2>
+<div>
+<p>After you deploy an application, you can undeploy it by using an IDE.</p>
+<div class="section">To use the Eclipse IDE to undeploy an application:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>If you have not done so already, start Oracle Enterprise Pack for Eclipse (OEPE).</span>
+<div>You can click on the icon on your desktop or search for <span class="bold">eclipse</span> on the Windows Start menu.</div>
+</li>
+<li class="stepexpand"><span>Select the <span class="bold">Servers</span> tab of the Eclipse console.</span></li>
+<li class="stepexpand"><span>Expand the server connection for the server on which the application resides.</span></li>
+<li class="stepexpand"><span>Locate the application under <span class="bold">Published Modules</span>.</span></li>
+<li class="stepexpand"><span>Right-click on the application and select <span class="bold">Remove</span>.</span>
+<div>The application is removed from the published modules list.</div>
+</li>
+</ol>
+<div class="section">The application is now undeployed.</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-8A319690-27C6-4170-A5E1-D70E32C64B8F.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-A3B26681-17CD-4177-927F-CC441ABEBC04.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

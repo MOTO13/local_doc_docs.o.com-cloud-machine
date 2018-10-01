@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Create Your Custom Machine Image</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2018-05-15T07:53:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E62130-11" />
+<meta name="dcterms.isVersionOf" content="ELUSE" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-BD111BF0-9F60-4554-A32F-8D41C0595D70.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-DC93E19A-87C1-45B1-AA66-0939D8A37238.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUSE.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-FAD05E6E-7BAB-4E1C-84C9-CB8014952179"></a> <span id="PAGE" style="display:none;">77/81</span> <!-- End Header -->
+<h1 id="ELUSE-GUID-FAD05E6E-7BAB-4E1C-84C9-CB8014952179" class="sect1">Create Your Custom Machine Image</h1>
+<div>
+<div class="section">
+<p>When you are done customizing your instance, to use the instance as a template to create other instances, create an instance snapshot. Instance snapshots capture the current state of your boot disk and create a corresponding machine image. These instances will contain all the configuration and customization that you&rsquo;d done on the original instance when you took the snapshot.</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Create an instance snapshot using the Oracle Compute CLI with the <code class="codeph">--machineimage</code> option.</span>
+<div>
+<pre dir="ltr">
+oracle-compute add snapshot <span class="variable">instance_name</span> --machineimage <span class="variable">image_name</span> 
+</pre></div>
+<div>
+<p><span class="bold">Example:</span></p>
+<pre dir="ltr">
+oracle-compute add snapshot <span class="variable">/mytenant/public/af2c7a90-36ee-4276-a567-665913f1f4dc</span> --machineimage <span class="variable">/mytenant/public/mycustomimage</span> 
+</pre></div>
+<div>
+<div class="infobox-note" id="GUID-FAD05E6E-7BAB-4E1C-84C9-CB8014952179__GUID-44AC7A7F-B35E-4D99-9360-C582B635F557">
+<p class="notep1">Note:</p>
+The result of an instance snapshot is a machine image. Any networking, host name, and SSH key information are not saved to the machine image. For more information, see <a href="GUID-DFF9F15E-D389-400F-B363-F2BB2F790F1A.htm#GUID-DFF9F15E-D389-400F-B363-F2BB2F790F1A" title="When you take a snapshot of an instance, a copy of the instance&rsquo;s boot disk at that time is taken. The result of an instance snapshot is a machine image. You can then create new instances from the machine images generated from the snapshots.">Creating a Snapshot of an Instance</a></div>
+</div>
+</li>
+<li class="stepexpand"><span>Add the image to the <code class="codeph">imagelist</code>:</span>
+<div>
+<pre dir="ltr">
+oracle-compute add imagelist <span class="variable">image_name</span> <span class="variable">description</span>
+</pre></div>
+<div>
+<p><span class="bold">Example:</span></p>
+<pre dir="ltr">
+oracle-compute add imagelist <span class="variable">/mytenant/public/mycustomimage</span> "imagelist for custom image"
+</pre></div>
+</li>
+<li class="stepexpand"><span>Create an <code class="codeph">imagelistentry</code>:</span>
+<div>
+<pre dir="ltr">
+oracle-compute add imagelistentry <span class="variable">image_name</span> <span class="variable">imagelistentry_name</span> <span class="variable">version</span>
+</pre></div>
+<div>
+<pre dir="ltr">
+oracle-compute add imagelistentry <span class="variable">/mytenant/public/mycustomimage</span> <span class="variable">/mytenant/public/mycustomimage</span> 1
+</pre></div>
+</li>
+</ol>
+<div class="section">
+<p>You can delete the instance and use your custom machine image to deploy more instances.</p>
+<div class="infobox-note" id="GUID-FAD05E6E-7BAB-4E1C-84C9-CB8014952179__GUID-AC768BD0-FF05-4EA7-B8C9-0ADF85311D65">
+<p class="notep1">Note:</p>
+By default, this image is only available to the specified tenant. To make it accessible to all tenants on the machine, you can submit a Change Request to Oracle Cloud Ops using My Oracle Support.</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment95">
+<tr>
+<td class="cellalignment102">
+<table class="cellalignment100">
+<tr>
+<td class="cellalignment99"><a href="GUID-BD111BF0-9F60-4554-A32F-8D41C0595D70.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment99"><a href="GUID-DC93E19A-87C1-45B1-AA66-0939D8A37238.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment104">
+<table class="cellalignment98">
+<tr>
+<td class="cellalignment99"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment99"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

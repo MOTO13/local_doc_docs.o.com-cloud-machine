@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Managing Storage Volumes</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-07T05:55:01Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine CLI Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E69222-06" />
+<meta name="dcterms.isVersionOf" content="ELUCL" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-F02212F3-0770-4A2E-B205-C32570719E69.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-A3D9830B-2E39-4D88-8E69-4CC3E3ABF864.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUCL.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-70490BA2-D367-4ED5-8C91-3291DDE22133"></a> <span id="PAGE" style="display:none;">27/40</span> <!-- End Header -->
+<h1 id="ELUCL-GUID-70490BA2-D367-4ED5-8C91-3291DDE22133" class="sect1">Managing Storage Volumes</h1>
+<div>
+<div class="section">
+<p>Storage volumes are pieces of storage of specific size created in the storage pool. You can attach them to an instance, either in an orchestration or after the instance has been launched.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-70490BA2-D367-4ED5-8C91-3291DDE22133.htm#GUID-8DA9BEC0-883B-4370-AFAF-FF6CB97890F2" title="This command enables you to create a storage volume.">add storagevolume</a></p>
+</li>
+<li>
+<p><a href="GUID-70490BA2-D367-4ED5-8C91-3291DDE22133.htm#GUID-456FA51B-C0EC-4878-9654-F7C586EA4F29" title="This command enables you to delete a storage volume.">delete storagevolume</a></p>
+</li>
+<li>
+<p><a href="GUID-70490BA2-D367-4ED5-8C91-3291DDE22133.htm#GUID-58EDDD47-C152-4BC1-A7C8-3207CEFE4B3E" title="This command enables you to update a storage volume.">update storagevolume</a></p>
+</li>
+<li>
+<p><a href="GUID-70490BA2-D367-4ED5-8C91-3291DDE22133.htm#GUID-85843E15-8A46-41BF-952B-BDA80F9D653D" title="This command enables you to retrieve information about existing storage volumes. This command enables you to retrieve storage volume information. This command enables you to retrieve storage volumes from a specific container.">Retrieve Storage Volume Details</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-8DA9BEC0-883B-4370-AFAF-FF6CB97890F2"></a>
+<h2 id="ELUCL-GUID-8DA9BEC0-883B-4370-AFAF-FF6CB97890F2" class="sect2">add storagevolume</h2>
+<div>
+<p>This command enables you to create a storage volume.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-8DA9BEC0-883B-4370-AFAF-FF6CB97890F2__GUID-C86BD592-6AC0-4EA2-9887-701B37C4F1D6">
+<p class="notep1">Note:</p>
+You can add only private volumes within your tenancy.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute add storagevolume <span class="variable">name</span> <span class="variable">size</span> <span class="variable">properties</span> [<span class="variable">--description</span>] [<span class="variable">--source_storagevolume_name</span>] [<span class="variable">--imagelist</span>] [<span class="variable">--imagelist_entry</span>] [<span class="variable">--tags</span>] [<span class="variable">--quota</span>]</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-8DA9BEC0-883B-4370-AFAF-FF6CB97890F2__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameters and descriptions for adding new storage volume.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d16389e127">Parameter</th>
+<th class="cellalignment26" id="d16389e129">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d16389e133" headers="d16389e127">name</td>
+<td class="cellalignment27" headers="d16389e133 d16389e129">Name of this storage volume
+<p>Object names can contain only alphanumeric characters, hyphens, and periods. Object names are case-sensitive.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d16389e140" headers="d16389e127">size</td>
+<td class="cellalignment27" headers="d16389e140 d16389e129">The size of this storage volume measured in the number of bytes or multiples of bytes. The allowed range is from 1 GB to 2 TB, in increments of 1 GB.
+<div class="p">Use one of the following abbreviations as the unit of measurement:
+<ul style="list-style-type: disc;">
+<li>
+<p>B or b (bytes)</p>
+</li>
+<li>
+<p>K or k (kilobytes)</p>
+</li>
+<li>
+<p>M or m (megabytes)</p>
+</li>
+<li>
+<p>G or g (gigabytes)</p>
+</li>
+<li>
+<p>T or t (terabytes)</p>
+</li>
+</ul>
+</div>
+<p>For example, to create a volume of size 10 gigabytes, you can specify 10G, or 10240M, or 10485760K, and so on.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d16389e166" headers="d16389e127">properties</td>
+<td class="cellalignment27" headers="d16389e166 d16389e129">A list of the storage properties that are associated with this storage volume.
+<p>The following storage properties are supported:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph">/oracle/public/storage/default</code>&mdash;Default storage property for internal storage appliance.</p>
+</li>
+<li>
+<p><code class="codeph">/oracle/public/storage/latency</code>&mdash;Storage property for placing volumes on external storage appliance.</p>
+</li>
+<li>
+<p><code class="codeph">/oracle/public/storage/throughput</code>&mdash;Storage property for placing volumes on external storage appliance.</p>
+</li>
+</ul>
+<p>For information on setting up storage volumes on external storage appliances, see section <a class="olink ELUSE-GUID-8F2A30B0-E7F9-4EAC-988C-BA531E202A1F" target="_blank" href="../ELUSE/GUID-8F2A30B0-E7F9-4EAC-988C-BA531E202A1F.htm#ELUSE-GUID-8F2A30B0-E7F9-4EAC-988C-BA531E202A1F">Managing Storage Volumes</a> in <span class="italic">Using Oracle Compute Cloud Service</span>.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d16389e198" headers="d16389e127">--description</td>
+<td class="cellalignment27" headers="d16389e198 d16389e129">(Optional) Description of the storage volume</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d16389e203" headers="d16389e127">--source_storagevolume_name</td>
+<td class="cellalignment27" headers="d16389e203 d16389e129">(Optional) Name of an existing storage volume, from where the data will be copied when this volume is created</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d16389e208" headers="d16389e127">--imagelist</td>
+<td class="cellalignment27" headers="d16389e208 d16389e129">(Optional) Name of the image list to use as the source for this storage volume when its created. This option must be paired with <code class="codeph">--imagelist_entry</code> to reference a specific machine image.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d16389e216" headers="d16389e127">--imagelist_entry</td>
+<td class="cellalignment27" headers="d16389e216 d16389e129">(Optional) Specific image list entry version to extract.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d16389e221" headers="d16389e127">--tags</td>
+<td class="cellalignment27" headers="d16389e221 d16389e129">(Optional) A list of user-friendly strings that will tag the storage volume. Tags should be specified by using the syntax <code class="codeph">--tags &lsquo;tag1,tag2&rsquo;</code></td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d16389e228" headers="d16389e127">--quota</td>
+<td class="cellalignment27" headers="d16389e228 d16389e129">(Optional) The quota against which this volume will be created. &nbsp;If the quota is not specified, then the default quota of the tenancy (to which the user belongs) is used.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute add storagevolume /demo/public/v2 1G /oracle/public/storage/default --description "1GB volume" --tags 'tag1,tag2'</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute add storagevolume /demo/public/v2 1G /oracle/public/storage/default --description "1GB volume" --tags 'tag1,tag2' -Fstatus,name,size,tags 
+status        name           size       tags 
+Initializing /demo/public/v2 1073741824 tag1,tag2
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-456FA51B-C0EC-4878-9654-F7C586EA4F29"></a>
+<h2 id="ELUCL-GUID-456FA51B-C0EC-4878-9654-F7C586EA4F29" class="sect2">delete storagevolume</h2>
+<div>
+<p>This command enables you to delete a storage volume.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-456FA51B-C0EC-4878-9654-F7C586EA4F29__GUID-0139B676-4277-46C3-9FA8-55CF19F4365C">
+<p class="notep1">Note:</p>
+You can delete only private volumes within your tenancy.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute delete storagevolume <span class="variable">name</span></code></p>
+<div class="infobox-note" id="GUID-456FA51B-C0EC-4878-9654-F7C586EA4F29__GUID-C3907219-EC29-41F8-AA04-5B5BC66E8EF1">
+<p class="notep1">Note:</p>
+To delete storage volumes that are attached to instances, you must first detach them by using the&nbsp;<code class="codeph">oracle-compute delete storageattachment</code> &nbsp;command.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-456FA51B-C0EC-4878-9654-F7C586EA4F29__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for deleting a storage volume.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d16389e298">Parameter</th>
+<th class="cellalignment26" id="d16389e300">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d16389e304" headers="d16389e298">name</td>
+<td class="cellalignment27" headers="d16389e304 d16389e300">Name of the storage volume</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute delete storagevolume /mytenant/public/v2</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-58EDDD47-C152-4BC1-A7C8-3207CEFE4B3E"></a>
+<h2 id="ELUCL-GUID-58EDDD47-C152-4BC1-A7C8-3207CEFE4B3E" class="sect2">update storagevolume</h2>
+<div>
+<p>This command enables you to update a storage volume.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-58EDDD47-C152-4BC1-A7C8-3207CEFE4B3E__GUID-BB16715A-71C8-4364-94CA-3275C1BDD274">
+<p class="notep1">Note:</p>
+You can update only private volumes within your tenancy.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute update storagevolume <span class="variable">name</span> [<span class="variable">--description</span>] [<span class="variable">--tags</span>]</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-58EDDD47-C152-4BC1-A7C8-3207CEFE4B3E__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies parameter and description for updating a storage volume.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d16389e371">Parameter</th>
+<th class="cellalignment26" id="d16389e373">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d16389e377" headers="d16389e371">name</td>
+<td class="cellalignment27" headers="d16389e377 d16389e373">Name of this storage volume, generated by the server</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d16389e382" headers="d16389e371">--description</td>
+<td class="cellalignment27" headers="d16389e382 d16389e373">(Optional) Description of this storage volume</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d16389e387" headers="d16389e371">--tags</td>
+<td class="cellalignment27" headers="d16389e387 d16389e373">(Optional) A list of user-friendly strings that will tag the storage volume. During an update, the list of tags specified becomes the new list. To preserve existing tags, you must retrieve the existing set, make any desired changes to that list, and then specify that list for the update.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">oracle-compute update storagevolume /mytenant/public/vol-u01 --tags &lsquo;my-application-volume-01&rsquo;</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute update storagevolume /mytenant/public/vol-u01 --tags 'my-application-volume-01' -Fstatus,name,size,status_detail,tags -ftab 
+status  status_detail                   name                     size        tags 
+Online  The storage volume is online.   /mytenant/public/vol-u01 1073741824     my-application-volume-01
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-85843E15-8A46-41BF-952B-BDA80F9D653D"></a>
+<h2 id="ELUCL-GUID-85843E15-8A46-41BF-952B-BDA80F9D653D" class="sect2">Retrieve Storage Volume Details</h2>
+<div>
+<div class="section">You can retrieve storage volume details by using the CLI.</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-70490BA2-D367-4ED5-8C91-3291DDE22133.htm#GUID-F32C917B-B448-48BE-A401-07491FBB80EC" title="This command enables you to retrieve information about existing storage volumes.">discover storagevolume</a></p>
+</li>
+<li>
+<p><a href="GUID-70490BA2-D367-4ED5-8C91-3291DDE22133.htm#GUID-00C8F1EA-514B-4D85-B941-23F8AF0CC94E" title="This command enables you to retrieve storage volume information.">get storagevolume</a></p>
+</li>
+<li>
+<p><a href="GUID-70490BA2-D367-4ED5-8C91-3291DDE22133.htm#GUID-7D577978-184C-44DD-B15B-457004D316D5" title="This command enables you to retrieve storage volumes from a specific container.">list storagevolume</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect3"><a id="GUID-F32C917B-B448-48BE-A401-07491FBB80EC"></a>
+<h3 id="ELUCL-GUID-F32C917B-B448-48BE-A401-07491FBB80EC" class="sect3">discover storagevolume</h3>
+<div>
+<p>This command enables you to retrieve information about existing storage volumes.</p>
+<div class="section">
+<p class="subhead3">Syntax</p>
+<p><code class="codeph">oracle-compute discover storagevolume <span class="variable">container</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-F32C917B-B448-48BE-A401-07491FBB80EC__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies parameter and description for discovering storage volumes in a container.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d16389e495">Parameter</th>
+<th class="cellalignment26" id="d16389e497">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d16389e501" headers="d16389e495">container</td>
+<td class="cellalignment27" headers="d16389e501 d16389e497">Hierarchical name-space for the storage volume</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<p><code class="codeph">$ oracle-compute discover storagevolume /mytenant/public</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute discover storagevolume /mytenant/public/ 
+entry 
+/mytenant/public/demo-em-1_vm1_vol01 
+/mytenant/public/demo-em-1_vm1_vol02 
+/mytenant/public/demo-em-1_vm2_vol01 
+/mytenant/public/demo-em-1_vm2_vol02 
+/mytenant/public/vol1
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-00C8F1EA-514B-4D85-B941-23F8AF0CC94E"></a>
+<h3 id="ELUCL-GUID-00C8F1EA-514B-4D85-B941-23F8AF0CC94E" class="sect3">get storagevolume</h3>
+<div>
+<p>This command enables you to retrieve storage volume information.</p>
+<div class="section">
+<p class="subhead3">Syntax</p>
+<p><code class="codeph">oracle-compute get storagevolume <span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-00C8F1EA-514B-4D85-B941-23F8AF0CC94E__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies parameter and description for retrieving details of a storage volume.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d16389e563">Parameter</th>
+<th class="cellalignment26" id="d16389e565">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d16389e569" headers="d16389e563">name</td>
+<td class="cellalignment27" headers="d16389e569 d16389e565">Name of the storage volume</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<p><code class="codeph">$ oracle-compute get storagevolume /mytenant/public/vol1</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute get storagevolume /mytenant/public/vol1 -Fstatus,name,size,status_detail 
+
+status status_detail                  name                 size 
+Online The storage volume is online. /mytenant/public/vol1 1073741824
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-7D577978-184C-44DD-B15B-457004D316D5"></a>
+<h3 id="ELUCL-GUID-7D577978-184C-44DD-B15B-457004D316D5" class="sect3">list storagevolume</h3>
+<div>
+<p>This command enables you to retrieve storage volumes from a specific container.</p>
+<div class="section">
+<p class="subhead3">Syntax</p>
+<p><code class="codeph">oracle-compute list storagevolume <span class="variable">container</span> [<span class="variable">--tags</span>] [<span class="variable">--quota</span>] [<span class="variable">--name</span>]</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-7D577978-184C-44DD-B15B-457004D316D5__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This tables lists parameters and descriptions for retrieving details of all storage volumes in a container.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d16389e642">Parameter</th>
+<th class="cellalignment26" id="d16389e644">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d16389e648" headers="d16389e642">container</td>
+<td class="cellalignment27" headers="d16389e648 d16389e644">Hierarchical name-space for the storage volume</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d16389e653" headers="d16389e642">--tags</td>
+<td class="cellalignment27" headers="d16389e653 d16389e644">(Optional) A list of user-friendly strings that tag the storage volume</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d16389e658" headers="d16389e642">--quota</td>
+<td class="cellalignment27" headers="d16389e658 d16389e644">(Optional) The quota against which this volume is created</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d16389e663" headers="d16389e642">--name</td>
+<td class="cellalignment27" headers="d16389e663 d16389e644">(Optional) Name of this storage volume</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<p><code class="codeph">$ oracle-compute list storagevolume /mytenant/public/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute list storagevolume /mytenant/public/ -Fstatus,name,size,tags
+status  name                                size         tags
+Online /mytenant/public/demo-em-1_vm1_vol01 1073741824 
+Online /mytenant/public/demo-em-1_vm1_vol02 1073741824 
+Online /mytenant/public/demo-em-1_vm2_vol01 1073741824 
+Online /mytenant/public/demo-em-1_vm2_vol02 1073741824 
+Online /mytenant/public/vol1 1073741824
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-F02212F3-0770-4A2E-B205-C32570719E69.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-A3D9830B-2E39-4D88-8E69-4CC3E3ABF864.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

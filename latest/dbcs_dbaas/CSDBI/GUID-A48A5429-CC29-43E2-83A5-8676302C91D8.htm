@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>RMAN Cross-Platform Transportable Tablespace Backup Sets</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can use this method only if the database character sets of your on-premises database and Oracle Database Cloud Service database are compatible." />
+<meta name="dcterms.created" content="2017-06-19T15:22:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Database Cloud Service" />
+<meta name="dcterms.identifier" content="E72994-04" />
+<meta name="dcterms.isVersionOf" content="CSDBI" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-B72BB3F3-4815-4745-B58F-45DE88A0460E.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-3EB5D26C-F992-4E37-91FD-A47F027C265A.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSDBI.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSDBI.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSDBI.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-A48A5429-CC29-43E2-83A5-8676302C91D8"></a> <span id="PAGE" style="display:none;">94/190</span> <!-- End Header -->
+<h1 id="CSDBI-GUID-A48A5429-CC29-43E2-83A5-8676302C91D8" class="sect1">RMAN Cross-Platform Transportable Tablespace Backup Sets</h1>
+<div>
+<p>You can use this method only if the database character sets of your on-premises database and <span>Oracle Database Cloud Service</span> database are compatible.</p>
+<div class="infobox-note" id="GUID-A48A5429-CC29-43E2-83A5-8676302C91D8__GUID-31630E74-C3F2-4CB2-BA53-0E3A8A4C1053">
+<p class="notep1">Note:</p>
+<p>See <cite>Oracle Database 12c Backup and Recovery User's Guide</cite> for Release <a href="http://www.oracle.com/pls/topic/lookup?ctx=db122&amp;id=BRADV8001" target="_blank">12.2</a> or <a href="http://www.oracle.com/pls/topic/lookup?ctx=db121&amp;id=BRADV8001" target="_blank">12.1</a> for detailed information on a similar method that enables you to perform a cross-platform transport of an entire database. When you transport an entire database to a different platform, the source platform and the destination platform must use the same endian format.</p>
+</div>
+<p>To migrate Oracle Database 12c on-premises tablespaces to an Oracle Database 12c database on an <span>Oracle Database Cloud Service</span> deployment using the RMAN cross-platform transportable backup sets method, you perform these tasks:</p>
+<ol>
+<li>
+<p>On the on-premises database host, prepare the database by placing the user-defined tablespaces that you intend to transport in <code class="codeph">READ ONLY</code> mode.</p>
+</li>
+<li>
+<p>On the on-premises database host, invoke RMAN and use the <code class="codeph">BACKUP</code> command with the <code class="codeph">TO PLATFORM</code> or <code class="codeph">FOR TRANSPORT</code> clause and the <code class="codeph">DATAPUMP</code> clause to create a backup set for cross-platform transport. See in <span class="q">"BACKUP"</span> in <cite>Oracle Database Backup and Recovery Reference</cite> for Release <a href="http://www.oracle.com/pls/topic/lookup?ctx=db122&amp;id=RCMRF107" target="_blank">12.2</a> or <a href="http://www.oracle.com/pls/topic/lookup?ctx=db121&amp;id=RCMRF107" target="_blank">12.1</a> for more information on the <code class="codeph">BACKUP</code> command.</p>
+</li>
+<li>
+<p>Use a secure copy utility to transfer the backup sets, including the Data Pump export dump file, to the <span>Database Cloud Service</span> compute node.</p>
+</li>
+<li>
+<p>Set the on-premises tablespaces back to <code class="codeph">READ WRITE</code>.</p>
+</li>
+<li>
+<p>On the <span>Database Cloud Service</span> compute node, prepare the database by creating the required schemas.</p>
+</li>
+<li>
+<p>On the <span>Database Cloud Service</span> compute node, invoke RMAN and use the <code class="codeph">RESTORE</code> command with the <span class="italic"><code class="codeph">foreignFileSpec</code></span> subclause to restore the cross-platform backup.</p>
+</li>
+<li>
+<p>On the <span>Database Cloud Service</span> compute node, set the tablespaces on the database to <code class="codeph">READ WRITE</code> mode.</p>
+</li>
+</ol>
+<p>For more information, see <span class="q">"Overview of Cross-Platform Data Transport Using Backup Sets"</span> in <cite>Oracle Database Backup and Recovery User&rsquo;s Guide</cite> for Release <a href="http://www.oracle.com/pls/topic/lookup?ctx=db122&amp;id=BRADV708" target="_blank">12.2</a> or <a href="http://www.oracle.com/pls/topic/lookup?ctx=db121&amp;id=BRADV708" target="_blank">12.1</a>.</p>
+</div>
+<div class="sect2"><a id="GUID-AEF9F356-554E-478D-8036-6F0348002331"></a>
+<h2 id="CSDBI-GUID-AEF9F356-554E-478D-8036-6F0348002331" class="sect2">RMAN Cross-Platform Transportable Tablespace Backup Sets: Example</h2>
+<div>
+<p>This example provides a step-by-step demonstration of the tasks required to migrate tablespaces in an Oracle Database PDB to an <span>Oracle Database Cloud Service</span> database.</p>
+<p>This example performs a migration of the <code class="codeph">FSDATA</code> and <code class="codeph">FSINDEX</code> tablespaces.</p>
+<p>In this example, the on-premises database is on a Linux host.</p>
+<ol>
+<li>
+<p>On the on-premises database host, prepare the database by creating a directory for the export dump file and placing the user-defined tablespaces that you intend to transport in READ ONLY mode..</p>
+<ol>
+<li>
+<p>On the on-premises database host, create a directory in the operating system to use for the export dump.</p>
+<pre dir="ltr">
+$ <span class="bold">mkdir /u01/app/oracle/admin/orcl/dpdump/for_cloud</span>
+</pre></li>
+<li>
+<p>On the on-premises data host, invoke SQL*Plus and log in to the PDB as the <code class="codeph">SYSTEM</code> user..</p>
+<pre dir="ltr">
+$ <span class="bold">sqlplus system@<span class="italic">pdb_servicename</span></span>
+Enter password: <span class="italic">enter the password for the SYSTEM user</span>
+</pre></li>
+<li>
+<p>Create a directory object in the on-premises database to reference the operating system directory.</p>
+<pre dir="ltr">
+SQL&gt; <span class="bold">CREATE DIRECTORY dp_for_cloud AS '/u01/app/oracle/admin/orcl/dpdump/for_cloud';</span>
+</pre></li>
+<li>
+<p>On the on-premises database host, set all tablespaces that will be transported (the transportable set) to READ ONLY mode.</p>
+<pre dir="ltr">
+SQL&gt; <span class="bold">ALTER TABLESPACE fsindex READ ONLY;</span>
+SQL&gt; <span class="bold">ALTER TABLESPACE fsdata READ ONLY;</span>
+</pre></li>
+<li>
+<p>Exit from SQL*Plus.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>On the on-premises database host, invoke RMAN and use the <code class="codeph">BACKUP</code> command with the <code class="codeph">TO PLATFORM</code> or <code class="codeph">FOR TRANSPORT</code> clause and the <code class="codeph">DATAPUMP</code> clause to create a backup set for cross-platform transport.</p>
+<ol>
+<li>
+<p>On the on-premises database host, create an operating system directory for the datafiles.</p>
+<pre dir="ltr">
+$ <span class="bold">mkdir /u01/app/oracle/admin/orcl/rman_transdest</span>
+</pre></li>
+<li>
+<p>Invoke RMAN and log in as a user that has been granted the <code class="codeph">SYSDBA</code> or <code class="codeph">SYSBACKUP</code> privilege.</p>
+<pre dir="ltr">
+$ <span class="bold">rman target <span class="italic">username</span>@<span class="italic">pdb_servicename</span></span>
+</pre></li>
+<li>
+<p>Execute the <code class="codeph">BACKUP</code> command.</p>
+<pre dir="ltr">
+RMAN&gt; <span class="bold">BACKUP FOR TRANSPORT</span>
+2&gt; <span class="bold">FORMAT '/u01/app/oracle/admin/orcl/rman_transdest/fs_tbs.bck'</span>
+3&gt; <span class="bold">TABLESPACE fsdata,fsindex</span>
+4&gt; <span class="bold">DATAPUMP FORMAT '/u01/app/oracle/admin/orcl/rman_transdest/fs_tbs.dmp'</span>;
+</pre></li>
+<li>
+<p>Log out of RMAN.</p>
+</li>
+<li>
+<p>Optionally, navigate to the directory you specified in the <code class="codeph">BACKUP</code> command to view the files that were created.</p>
+<pre dir="ltr">
+$ <span class="bold">cd /u01/app/oracle/admin/orcl/rman_transdest</span>
+$ <span class="bold">ls</span>
+fs_tbs.bck  fs_tbs.dmp
+</pre></li>
+</ol>
+</li>
+<li>
+<p>Use a secure copy utility to transfer the backup set, including the Data Pump export dump file, to the <span>Database Cloud Service</span> compute node.</p>
+<ol>
+<li>
+<p>On the <span>Database Cloud Service</span> compute node, create a directory for the backup set and dump file.</p>
+<pre dir="ltr">
+$ <span class="bold">mkdir /tmp/from_onprem</span>
+</pre></li>
+<li>
+<p>Before using the <code class="codeph">scp</code> command to copy files, make sure the SSH private key that provides access to the <span>Database Cloud Service</span> compute node is available on your on-premises host.</p>
+</li>
+<li>
+<p>On the on-premises database host, use the SCP utility to transfer the backup set and the dump file to the <span>Database Cloud Service</span> compute node.</p>
+<pre dir="ltr">
+$ <span class="bold">scp -i <span class="italic">private_key_file</span> \</span>
+<span class="bold">/u01/app/oracle/admin/orcl/rman_transdest/fs_tbs.bck \</span>
+<span class="bold">oracle@<span class="italic">IP_address_DBaaS_VM</span>:/tmp/from_onprem</span>
+
+$ <span class="bold">scp -i <span class="italic">private_key_file</span> \</span>
+<span class="bold">/u01/app/oracle/admin/orcl/rman_transdest/fs_tbs.dmp \</span>
+<span class="bold">oracle@<span class="italic">IP_address_DBaaS_VM</span>:/tmp/from_onprem</span>
+
+$ 
+</pre></li>
+</ol>
+</li>
+<li>
+<p>Set the on-premises tablespaces back to READ WRITE.</p>
+<ol>
+<li>
+<p>Invoke SQL*Plus and log in to the PDB as the <code class="codeph">SYSTEM</code> user.</p>
+</li>
+<li>
+<p>Set the <code class="codeph">FSDATA</code> and <code class="codeph">FSINDEX</code> tablespaces back to READ WRITE mode.</p>
+<pre dir="ltr">
+SQL&gt; <span class="bold">ALTER TABLESPACE fsdata READ WRITE;</span>
+SQL&gt; <span class="bold">ALTER TABLESPACE fsindex READ WRITE;</span>
+</pre></li>
+<li>
+<p>Exit from SQL*Plus.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>On the <span>Database Cloud Service</span> compute node, prepare the database by creating the required schemas.</p>
+<ol>
+<li>
+<p>On the <span>Database Cloud Service</span> compute node, invoke SQL*Plus and log in to the PDB as the <code class="codeph">SYSTEM</code> user.</p>
+</li>
+<li>
+<p>If the owners of the objects that will be imported do not exist in the database, create them before performing the <code class="codeph">RESTORE</code>.</p>
+<pre dir="ltr">
+SQL&gt; <span class="bold">CREATE USER fsowner</span>
+  2  <span class="bold">PROFILE default</span>
+  3  <span class="bold">IDENTIFIED BY fspass</span>
+  4  <span class="bold">TEMPORARY TABLESPACE temp</span>
+  5  <span class="bold">ACCOUNT UNLOCK</span>;
+</pre></li>
+</ol>
+</li>
+<li>
+<p>On the <span>Database Cloud Service</span> compute node, invoke RMAN and use the <code class="codeph">RESTORE</code> command with the <code class="codeph"><span class="codeinlineitalic">foreignFileSpec</span></code> subclause to restore the cross-platform backup.</p>
+<ol>
+<li>
+<p>Create an operating system directory for the Data Pump Dump file.</p>
+<pre dir="ltr">
+$ <span class="bold">mkdir /tmp/from_onprem</span>
+</pre></li>
+<li>
+<p>Invoke RMAN and log in to the PDB as a user that has been granted the <code class="codeph">SYSDBA</code> or <code class="codeph">SYSBACKUP</code> privilege.</p>
+<pre dir="ltr">
+$ <span class="bold">rman target <span class="italic">username</span>@<span class="italic">pdb_servicename</span></span>
+</pre></li>
+<li>
+<p>Execute the <code class="codeph">RESTORE</code> command.</p>
+<pre dir="ltr">
+RMAN&gt; <span class="bold">RESTORE FOREIGN TABLESPACE fsdata,fsindex TO NEW</span>
+2&gt; <span class="bold">FROM BACKUPSET '/tmp/from_onprem/fs_tbs.bck'</span>
+3&gt; <span class="bold">DUMP FILE DATAPUMP DESTINATION '/tmp/datapump'</span>
+4&gt; <span class="bold">FROM BACKUPSET '/tmp/from_onprem/fs_tbs.dmp'</span>;
+</pre></li>
+<li>
+<p>Exit from RMAN.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>On the <span>Database Cloud Service</span> compute node, set the tablespaces to READ WRITE mode.</p>
+<ol>
+<li>
+<p>Invoke SQL*Plus and log in to the PDB as the <code class="codeph">SYSTEM</code> user.</p>
+</li>
+<li>
+<p>Set the <code class="codeph">FSDATA</code> and <code class="codeph">FSINDEX</code> tablespaces to READ WRITE.</p>
+<pre dir="ltr">
+SQL&gt; <span class="bold">ALTER TABLESPACE fsdata READ WRITE;</span>
+SQL&gt; <span class="bold">ALTER TABLESPACE fsindex READ WRITE;</span>
+</pre></li>
+<li>
+<p>Exit from SQL*Plus.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>After verifying that the data has been imported successfully, you can delete the backup set files that were transported from the on-premises host.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="GUID-B72BB3F3-4815-4745-B58F-45DE88A0460E.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="GUID-3EB5D26C-F992-4E37-91FD-A47F027C265A.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

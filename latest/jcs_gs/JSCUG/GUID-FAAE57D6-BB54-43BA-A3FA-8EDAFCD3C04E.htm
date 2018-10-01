@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Using the WebLogic Server Administration Console to Deploy and Undeploy an Application</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can use the WebLogic Server Administration Control graphical user interface to deploy and undeploy an application to an Oracle Java Cloud Service instance, just as you would deploy and undeploy the application to an on-premises service instance." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-C7BD2C7D-D33C-41D8-BC7B-0F8EBC965EEE.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-8A319690-27C6-4170-A5E1-D70E32C64B8F.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-FAAE57D6-BB54-43BA-A3FA-8EDAFCD3C04E"></a> <span id="PAGE" style="display:none;">50/131</span> <!-- End Header -->
+<a id="JSCUG3321"></a><a id="JSCUG3283"></a>
+<h1 id="JSCUG-GUID-FAAE57D6-BB54-43BA-A3FA-8EDAFCD3C04E" class="sect1">Using the WebLogic Server Administration Console to Deploy and Undeploy an Application</h1>
+<div>
+<p>You can use the WebLogic Server Administration Control graphical user interface to deploy and undeploy an application to an Oracle Java Cloud Service instance, just as you would deploy and undeploy the application to an on-premises service instance.</p>
+<div class="section">
+<p class="subhead1">Topics</p>
+</div>
+<!-- class="section" -->
+<ul>
+<li><span><a href="GUID-FAAE57D6-BB54-43BA-A3FA-8EDAFCD3C04E.htm#GUID-026A6C4D-62E5-48EC-A330-1F9626568FB6" title="You can use the Administration Console to deploy an application to an Oracle Java Cloud Service instance.">Using the WebLogic Server Administration Console to Deploy an Application</a></span></li>
+<li><span><a href="GUID-FAAE57D6-BB54-43BA-A3FA-8EDAFCD3C04E.htm#GUID-496A1C02-DC0D-45A2-85A0-42681346CBED" title="You must start the application to make it ready to accept requests.">Using the WebLogic Server Administration Console to Start an Application</a></span></li>
+<li><span><a href="GUID-FAAE57D6-BB54-43BA-A3FA-8EDAFCD3C04E.htm#GUID-797051CC-443E-4272-AE93-FCF2D43EFA88" title="You can use the WebLogic Server Administration Console to undeploy an application from an Oracle Java Cloud Service instance.">Using the WebLogic Server Administration Console to Undeploy an Application</a></span></li>
+</ul>
+</div>
+<a id="JSCUG3322"></a>
+<div class="props_rev_3"><a id="GUID-026A6C4D-62E5-48EC-A330-1F9626568FB6"></a>
+<h2 id="JSCUG-GUID-026A6C4D-62E5-48EC-A330-1F9626568FB6" class="sect2">Using the WebLogic Server Administration Console to Deploy an Application</h2>
+<div>
+<p>You can use the Administration Console to deploy an application to an Oracle Java Cloud Service instance.</p>
+<div class="section">To deploy an application by using the WebLogic Server Administration Console:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Navigate to the Oracle Java Cloud Service Console.</span></li>
+<li class="stepexpand"><span>Open the WebLogic Server Administration Console.</span>
+<div>The WebLogic Server Administration Console is displayed.</div>
+</li>
+<li class="stepexpand"><span>On the Welcome screen, enter the administrator login credentials you specified when you created the Oracle Java Cloud Service instance.</span></li>
+<li class="stepexpand"><span>On the WebLogic Server Console, click <span class="bold">Lock &amp; Edit</span>.</span></li>
+<li class="stepexpand"><span>Under Domain Structure, select <span class="italic"><span class="bold">domain</span></span> <span class="bold">&gt; Deployments</span>, where <span class="italic">domain</span> is the domain into which you want to deploy the application.</span></li>
+<li class="stepexpand"><span>On the Deployments page, click <span class="bold">Install</span>.</span></li>
+<li class="stepexpand"><span>On the Install page, click <span class="bold">upload your file(s)</span> ..</span></li>
+<li class="stepexpand"><span>In the Install Application Assistant, click <span class="bold">Browse</span> to find the application you want to deploy and click <span class="bold">Next</span>.</span></li>
+<li class="stepexpand"><span>Under <span class="bold">Locate deployment to install and prepare for deployment</span>, select the application if it is not already selected, and click <span class="bold">Next</span>.</span></li>
+<li class="stepexpand"><span>Under <span class="bold">Choose targeting style</span>, you can either install the deployment as an application or as a library. Make your selection and click <span class="bold">Next</span>.</span></li>
+<li class="stepexpand"><span>Under <span class="bold">Select deployment targets</span>, select the servers or clusters to which you want to deploy the application and click <span class="bold">Next</span>.</span></li>
+<li class="stepexpand"><span>(Optional) Update settings for the deployment and click <span class="bold">Next</span>.</span>
+<div>
+<p>These settings include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The deployed name of the Web application.</p>
+</li>
+<li>
+<p>The security model that is applied to the application.</p>
+</li>
+<li>
+<p>How the source files (WAR or exploded directory contents) are made available to targeted managed servers and clusters.</p>
+</li>
+<li>
+<p>How the deployment plan source files are made available to all targeted managed servers and clusters.</p>
+</li>
+</ul>
+<p>Typically, the default settings are adequate.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Review the configuration settings you specified and click <span class="bold">Finish</span>.</span>
+<div>
+<p>The application shows a status of <span class="bold">distribute Initializing</span> on the Deployments table.</p>
+</div>
+</li>
+<li class="stepexpand"><span>In the Change Center, click <span class="bold">Activate Changes</span>.</span>
+<div>The changes are activated and no restart is necessary. The WebLogic Server Console shows the application in a <span class="bold">Prepared</span> state.</div>
+</li>
+</ol>
+<div class="section">The application is now deployed.</div>
+<!-- class="section" --></div>
+</div>
+<a id="JSCUG3323"></a>
+<div class="props_rev_3"><a id="GUID-496A1C02-DC0D-45A2-85A0-42681346CBED"></a>
+<h2 id="JSCUG-GUID-496A1C02-DC0D-45A2-85A0-42681346CBED" class="sect2">Using the WebLogic Server Administration Console to Start an Application</h2>
+<div>
+<p>You must start the application to make it ready to accept requests.</p>
+<div class="section">To start an application:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Navigate to the Oracle Java Cloud Service Console.</span></li>
+<li class="stepexpand"><span>Open the WebLogic Server Administration Console.</span>
+<div>The WebLogic Server Administration Console is displayed.</div>
+</li>
+<li class="stepexpand"><span>On the Welcome screen, enter the administrator login credentials you specified when you created the Oracle Java Cloud Service instance.</span></li>
+<li class="stepexpand"><span>Under Domain Structure, click <span class="italic"><span class="bold">domain</span></span> &ndash; <span class="bold">Deployments</span>, where <span class="italic"><span class="bold">domain</span></span> is the domain into which you want to deploy the application.</span></li>
+<li class="stepexpand"><span>Click the <span class="bold">Control</span> tab if not already selected.</span></li>
+<li class="stepexpand"><span>From the Deployments table select the application.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Start</span>, then <span class="bold">Servicing all requests</span>.</span></li>
+<li class="stepexpand"><span>On the Start Deployments dialog, click <span class="bold">Yes</span> to confirm the deployment.</span>
+<div>The application is now in the <span class="bold">Active</span> state and is ready to accept requests.</div>
+</li>
+</ol>
+</div>
+</div>
+<a id="JSCUG3324"></a>
+<div class="props_rev_3"><a id="GUID-797051CC-443E-4272-AE93-FCF2D43EFA88"></a>
+<h2 id="JSCUG-GUID-797051CC-443E-4272-AE93-FCF2D43EFA88" class="sect2">Using the WebLogic Server Administration Console to Undeploy an Application</h2>
+<div>
+<p>You can use the WebLogic Server Administration Console to undeploy an application from an Oracle Java Cloud Service instance.</p>
+<div class="section">To undeploy the application:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Navigate to the Oracle Java Cloud Service Console.</span></li>
+<li class="stepexpand"><span>Open the WebLogic Server Administration Console.</span>
+<div>The WebLogic Server Administration Console is displayed.</div>
+</li>
+<li class="stepexpand"><span>On the Welcome screen, enter the administrator login credentials you specified when you created the Oracle Java Cloud Service instance.</span></li>
+<li class="stepexpand"><span>In the Change Center of the WebLogic Server Administration Console, click <span class="bold">Lock &amp; Edit</span>.</span></li>
+<li class="stepexpand"><span>Under Domain Structure, select <span class="italic"><span class="bold">domain</span></span> &ndash;<span class="bold">Deployments</span>, where <span class="italic"><span class="bold">domain</span></span> is the domain in which the application is deployed.</span></li>
+<li class="stepexpand"><span>In the Deployments table, select the check box next to the application you want to undeploy.</span></li>
+<li class="stepexpand"><span>From the <span class="bold">Stop</span> menu, select one of the following:</span>
+<ul>
+<li><span class="bold">When work completes</span></li>
+<li><span class="bold">Force Stop Now</span></li>
+</ul>
+<div>Do not select <span class="bold">Stop, but continue servicing administration requests</span>.</div>
+</li>
+<li class="stepexpand"><span>When the application is in a <span class="bold">Stopped</span> state, ensure that the application is selected and click <span class="bold">Delete</span>.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Yes</span> to confirm your decision and remove the application.</span></li>
+<li class="stepexpand"><span>To activate your changes, in the Change Center of the WebLogic Server Administration Console, click <span class="bold">Activate Changes</span>.</span></li>
+</ol>
+<div class="section">The application has been undeployed.</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-C7BD2C7D-D33C-41D8-BC7B-0F8EBC965EEE.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-8A319690-27C6-4170-A5E1-D70E32C64B8F.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

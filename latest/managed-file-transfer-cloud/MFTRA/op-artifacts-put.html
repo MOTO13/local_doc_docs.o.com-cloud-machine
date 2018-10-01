@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Managed File Transfer Cloud Service 12.2.1.2 - Method to update existing artifacts</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Use the REST API for Oracle Managed File Transfer Cloud Service to list services, administer metadata and artifacts, discover and trigger sources, and purge old instance and payload data.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Managed File Transfer Cloud Service 12.2.1.2">
+        <meta property="og:description" content="Use the REST API for Oracle Managed File Transfer Cloud Service to list services, administer metadata and artifacts, discover and trigger sources, and purge old instance and payload data.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Managed File Transfer Cloud Service 12.2.1.2">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="op-artifacts-get.html" title="Previous" type="text/html">
+        <link rel="next" href="op-artifacts-%7BartifactType%7D-%7BartifactName%7D-delete.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="op-artifacts-get.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="op-artifacts-%7BartifactType%7D-%7BartifactName%7D-delete.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            
+            <header>
+
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Managed File Transfer Cloud Service 12.2.1.2</a></li>
+                    <li>Tasks</li>
+                    
+                    <li>
+                        
+                        Administration Service
+                        
+                    </li>
+                    
+                    <li class="active">
+                        
+                        <a href="api-Administration%20Service-MFT%20Artifacts.html">MFT Artifacts</a>
+                        
+                    </li>
+                    
+                </ol>
+                
+                <p class="draftsubtitle"></p>
+                
+                <h2>Method to update existing artifacts</h2>
+                <div>
+                    <div class="label label-put text-uppercase">put</div>
+                    <p style="word-break: break-word;"><strong>/mftapp/rest/v1/artifacts</strong></p>
+                </div>
+            </header>
+            <section>
+
+                <div class="description"></div>
+
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                        <li role="presentation" class="active"><a href="#request" aria-controls="request" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-in" aria-hidden="true"></span> Request</a></li>
+                        <li role="presentation"><a href="#response" aria-controls="response" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-out" aria-hidden="true"></span> Response</a></li>
+                        
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="request">
+                            <h3 class="visible-print-block">Request</h3>
+                            
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">multipart/form-data</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Query Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>previewModeFlag</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Value depicts if preview mode is true or false</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+                            
+
+                            
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">Body Parameter</div>
+                                <div style="padding-bottom: 0px" class="panel-body">
+                                    
+                                    <div style="margin-bottom: 8px">A body of type:</div>
+                                    
+
+                                    <div class="schema-container">
+                                    
+                                    <div id="request-paths--artifacts-put-parameters-1-schema" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : /paths/~1artifacts/put/parameters/1/schema</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    </div>
+
+                                    
+                                    
+                                    
+                                    
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">multipart/form-data</li>
+                                                    
+                                    </ul>
+                                    
+                                    
+                                    		
+                                </div>
+                            </div>
+                            
+
+
+
+                            
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="response">
+                            <h3 class="visible-print-block">Response</h3>
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">200 Response <span class="glyphicon glyphicon-ok-sign response-symbol" data-response-code="200" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    
+                                </div>
+
+                                
+                                
+
+                                
+                                <div class="panel panel-default">
+
+                                    <div class="panel-heading">Body</div>
+                                    <div class="panel-body">
+                                        
+
+                                        <div class="schema-container">
+                                        
+                                        <div id="200-paths--artifacts-put-responses-200-schema" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : MFT Artifacts result</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+<div>Title: <code>MFT Artifacts result</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-paths--artifacts-put-responses-200-schema-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-paths--artifacts-put-responses-200-schema-properties" aria-expanded="false" aria-controls="collapseListGroup-200-paths--artifacts-put-responses-200-schema-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-paths--artifacts-put-responses-200-schema-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-paths--artifacts-put-responses-200-schema-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>failureResults</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-paths--artifacts-put-responses-200-schema-properties-failureResults" role="button" class="btn btn-default btn-sm">/paths/~1artifacts/put/responses/200/schema/properties/failureResults</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div></div>
+
+            
+        </dd>
+        
+        <dt>successResults</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-paths--artifacts-put-responses-200-schema-properties-successResults" role="button" class="btn btn-default btn-sm">/paths/~1artifacts/put/responses/200/schema/properties/successResults</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div></div>
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-paths--artifacts-put-responses-200-schema-properties-failureResults" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : /paths/~1artifacts/put/responses/200/schema/properties/failureResults</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div></div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-paths--artifacts-put-responses-200-schema-properties-failureResults-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-paths--artifacts-put-responses-200-schema-properties-failureResults-items" aria-expanded="false" aria-controls="collapseListGroup-200-paths--artifacts-put-responses-200-schema-properties-failureResults-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-paths--artifacts-put-responses-200-schema-properties-failureResults-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-paths--artifacts-put-responses-200-schema-properties-failureResults-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-paths--artifacts-put-responses-200-schema-properties-failureResults-items" role="button" class="btn btn-default btn-sm">/paths/~1artifacts/put/responses/200/schema/properties/failureResults/items</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-paths--artifacts-put-responses-200-schema-properties-successResults" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : /paths/~1artifacts/put/responses/200/schema/properties/successResults</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div></div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-paths--artifacts-put-responses-200-schema-properties-successResults-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-paths--artifacts-put-responses-200-schema-properties-successResults-items" aria-expanded="false" aria-controls="collapseListGroup-200-paths--artifacts-put-responses-200-schema-properties-successResults-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-paths--artifacts-put-responses-200-schema-properties-successResults-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-paths--artifacts-put-responses-200-schema-properties-successResults-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-paths--artifacts-put-responses-200-schema-properties-successResults-items" role="button" class="btn btn-default btn-sm">/paths/~1artifacts/put/responses/200/schema/properties/successResults/items</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-paths--artifacts-put-responses-200-schema-properties-failureResults-items" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : /paths/~1artifacts/put/responses/200/schema/properties/failureResults/items</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-paths--artifacts-put-responses-200-schema-properties-failureResults-items-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-paths--artifacts-put-responses-200-schema-properties-failureResults-items-properties" aria-expanded="false" aria-controls="collapseListGroup-200-paths--artifacts-put-responses-200-schema-properties-failureResults-items-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-paths--artifacts-put-responses-200-schema-properties-failureResults-items-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-paths--artifacts-put-responses-200-schema-properties-failureResults-items-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>artifactCategory</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div></div>
+
+
+
+            
+        </dd>
+        
+        <dt>artifactName</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div></div>
+
+
+
+            
+        </dd>
+        
+        <dt>errorMessage</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div></div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-paths--artifacts-put-responses-200-schema-properties-successResults-items" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : /paths/~1artifacts/put/responses/200/schema/properties/successResults/items</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-paths--artifacts-put-responses-200-schema-properties-successResults-items-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-paths--artifacts-put-responses-200-schema-properties-successResults-items-properties" aria-expanded="false" aria-controls="collapseListGroup-200-paths--artifacts-put-responses-200-schema-properties-successResults-items-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-paths--artifacts-put-responses-200-schema-properties-successResults-items-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-paths--artifacts-put-responses-200-schema-properties-successResults-items-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>artifactCategory</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div></div>
+
+
+
+            
+        </dd>
+        
+        <dt>artifactName</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div></div>
+
+
+
+            
+        </dd>
+        
+        <dt>errorMessage</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div></div>
+
+
+
+            
+        </dd>
+        
+        <dt>id</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div></div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">500 Response <span class="glyphicon glyphicon-remove-sign response-symbol" data-response-code="500" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    
+                                </div>
+
+                                
+                                
+
+                                
+                                <div class="panel panel-default">
+
+                                    <div class="panel-heading">Body</div>
+                                    <div class="panel-body">
+                                        
+
+                                        <div class="schema-container">
+                                        
+                                        <div id="500-paths--artifacts-put-responses-500-schema" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : /paths/~1artifacts/put/responses/500/schema</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-500-paths--artifacts-put-responses-500-schema-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-500-paths--artifacts-put-responses-500-schema-properties" aria-expanded="false" aria-controls="collapseListGroup-500-paths--artifacts-put-responses-500-schema-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-500-paths--artifacts-put-responses-500-schema-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-500-paths--artifacts-put-responses-500-schema-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>errorCode</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div></div>
+
+
+
+            
+        </dd>
+        
+        <dt>errorKey</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div></div>
+
+
+
+            
+        </dd>
+        
+        <dt>errorMessage</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div></div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        </div>
+
+                                        
+                                        <h5>Example application/json</h5>
+                                        <pre><code>
+{
+    "errorCode":"MFT-7439",
+    "errorKey":"MFT_UTILITY_COULD_NOT_QUERY_MDS_ARTIFACT_ID_BY_NAME",
+    "errorMessage":"Unable to find artifact by artifact name src1"
+}</code></pre>
+                                        
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+
+
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+        </article>
+    </body>
+</html>

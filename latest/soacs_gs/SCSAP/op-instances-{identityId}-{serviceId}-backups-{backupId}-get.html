@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine - Get a Service Backup</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Use the REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine to manage, monitor, and perform operations on SOA services and servers.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine">
+        <meta property="og:description" content="Use the REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine to manage, monitor, and perform operations on SOA services and servers.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="op-instances-%7BidentityId%7D-%7BserviceId%7D-backups-%7BbackupId%7D-delete.html" title="Previous" type="text/html">
+        <link rel="next" href="op-instances-%7BidentityId%7D-%7BserviceId%7D-backups-get.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="op-instances-%7BidentityId%7D-%7BserviceId%7D-backups-%7BbackupId%7D-delete.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="op-instances-%7BidentityId%7D-%7BserviceId%7D-backups-get.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            
+            <header>
+
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine</a></li>
+                    <li>Tasks</li>
+                    
+                    <li class="active">
+                        
+                        <a href="api-Manage%20Service%20Backups.html">Manage Service Backups</a>
+                        
+                    </li>
+                    
+                </ol>
+                
+                <p class="draftsubtitle"></p>
+                
+                <h2>Get a Service Backup</h2>
+                <div>
+                    <div class="label label-get text-uppercase">get</div>
+                    <p style="word-break: break-word;"><strong>/api/v1.1/instances/{identityId}/{serviceId}/backups/{backupId}</strong></p>
+                </div>
+            </header>
+            <section>
+
+                <div class="description">Retrieves an existing backup of a service instance.</div>
+
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                        <li role="presentation" class="active"><a href="#request" aria-controls="request" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-in" aria-hidden="true"></span> Request</a></li>
+                        <li role="presentation"><a href="#response" aria-controls="response" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-out" aria-hidden="true"></span> Response</a></li>
+                        
+                        <li role="presentation"><a href="#examples" aria-controls="examples" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-edit" aria-hidden="true"></span> Examples</a></li>
+                        
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="request">
+                            <h3 class="visible-print-block">Request</h3>
+                            
+
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Path Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>backupId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>ID of the backup to be retrieved.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Query Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>includeLinkedDetails</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Includes linked details if set to true.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-queryparam-paths--instances-{identityId}-{serviceId}-backups-{backupId}-get-parameters-1-default">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-queryparam-paths--instances-{identityId}-{serviceId}-backups-{backupId}-get-parameters-1-default" aria-expanded="false" aria-controls="collapseListGroup-request-queryparam-paths--instances-{identityId}-{serviceId}-backups-{backupId}-get-parameters-1-default">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Default Value
+    </a>
+  </div>
+  <div id="collapseListGroup-request-queryparam-paths--instances-{identityId}-{serviceId}-backups-{backupId}-get-parameters-1-default" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-queryparam-paths--instances-{identityId}-{serviceId}-backups-{backupId}-get-parameters-1-default" aria-expanded="false">
+      <div class="panel-body">
+          <pre><code>false</code></pre>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+                            
+
+                            
+
+
+                            
+
+
+
+                            
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="response">
+                            <h3 class="visible-print-block">Response</h3>
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">200 Response <span class="glyphicon glyphicon-ok-sign response-symbol" data-response-code="200" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    Accepted
+                                </div>
+
+                                
+                                
+
+                                
+                                <div class="panel panel-default">
+
+                                    <div class="panel-heading">Body</div>
+                                    <div class="panel-body">
+                                        
+
+                                        <div class="schema-container">
+                                        
+                                        <div id="200-definitions-ViewTheBackupResponse" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : ViewTheBackupResponse.</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+<div>Title: <code>ViewTheBackupResponse.</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The response body contains information about the backup</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-ViewTheBackupResponse-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-ViewTheBackupResponse-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-ViewTheBackupResponse-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-ViewTheBackupResponse-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-ViewTheBackupResponse-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>backupCompleteDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+<div>Title: <code>BackupCompleteDate schema.</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time that the backup completed.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>backupId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+<div>Title: <code>BackupId schema.</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Backup ID.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>backupStartDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+<div>Title: <code>BackupStartDate schema.</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time that the backup started.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>dbTag</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+<div>Title: <code>DbTag schema.</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>This attribute is included only if the database was included in the backup.<br>ID for the Oracle Cloud Database Service database files. You can use this ID if you need to restore the database. For more information about restoring the Oracle Cloud Database Service, see <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=CSDBI-GUID-196BC5E7-A22F-4FDA-BDDE-6FBB9AA37543' target='_blank'>Restoring from a Specific Backup</a> in <i>Using Oracle Database Cloud - Database as a Service</i>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>expirationDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>null</code></div>
+
+
+
+<div>Title: <code>ExpirationDate schema.</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time that the backup will be deleted automatically from storage. If set to null, the backup is retained indefinitely or until you manually delete it.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>forceScaleInRequiredForRestore</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+<div>Title: <code>forceScaleInRequiredForRestore</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Message that indicates the current Oracle SOA Cloud Service instance has Managed Servers configured that are not included in this backup. This value is set to the following error message that provides more information:<br>JAAS-BR-105: Unable to restore configuration data for managed servers that are not part of the backup. The affected managedsServers are: [managedserver_x, managedserver_y]. Scale in the instance to remove these managed servers' nodes and then try to restore the instance again.<br>Before you restore the Oracle SOA Cloud Server instance using this backup, perform one of the following steps:<br>Scale in the service instance to remove the Managed Servers noted in the error message above.<br>To automatically scale in the Oracle SOA Cloud Service instance, set the 'forceScaleIn' attribute to true when restoring using this backup, as described in Restore a Service Instance</div>
+
+
+
+            
+        </dd>
+        
+        <dt>full</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+<div>Title: <code>Full schema.</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Boolean flag that specifies whether this is a full (true) or incremental (false) backup.<br>Full backups contain all of the service instance files, including runtime artifacts and files that change infrequently or do not change.<br>Incremental backups contain only the runtime artifacts of each managed VM in the service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>href</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+<div>Title: <code>Href schema.</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>URI of the backup resource.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>initiatedBy</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+<div>Title: <code>InitiatedBy schema.</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>User account that initiated this operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>jobHistory</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-ViewTheBackupResponse-properties-jobHistory" role="button" class="btn btn-default btn-sm">JobHistory schema.</a></div>
+
+
+<div>Title: <code>JobHistory schema.</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups job history details.</div>
+
+            
+        </dd>
+        
+        <dt>local</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+<div>Title: <code>Local schema.</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Boolean flag that specifies whether the backup is stored locally, on disk (true), or on Oracle Storage Cloud Service (false).</div>
+
+
+
+            
+        </dd>
+        
+        <dt>size</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+<div>Title: <code>Size schema.</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Size of the backup, in MBs. For example: <br><ul><li>'1011.4MB' (if backup is complete)</li><li>'Unknown' (if backup is in progress)</li></ul></div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-ViewTheBackupResponse-properties-jobHistory" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : JobHistory schema.</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+<div>Title: <code>JobHistory schema.</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups job history details.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-ViewTheBackupResponse-properties-jobHistory-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-ViewTheBackupResponse-properties-jobHistory-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-ViewTheBackupResponse-properties-jobHistory-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-ViewTheBackupResponse-properties-jobHistory-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-ViewTheBackupResponse-properties-jobHistory-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-ViewTheBackupResponse-properties-jobHistory-items-0" role="button" class="btn btn-default btn-sm">1 schema.</a></div>
+
+
+<div>Title: <code>1 schema.</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Job ID for the backup operation.</div>
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-ViewTheBackupResponse-properties-jobHistory-items-0" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : 1 schema.</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+<div>Title: <code>1 schema.</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Job ID for the backup operation.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-ViewTheBackupResponse-properties-jobHistory-items-0-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-ViewTheBackupResponse-properties-jobHistory-items-0-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-ViewTheBackupResponse-properties-jobHistory-items-0-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-ViewTheBackupResponse-properties-jobHistory-items-0-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-ViewTheBackupResponse-properties-jobHistory-items-0-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>completeDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+<div>Title: <code>CompleteDate schema.</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time the operation completed.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>jobId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+<div>Title: <code>JobId schema.</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Job ID for the backup operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>operation</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+<div>Title: <code>Operation schema.</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Type of operation being executed that was executed. For example, backup, delete, download, upload, an d so on.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>startDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+<div>Title: <code>StartDate schema.</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time the operation started.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>status</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+<div>Title: <code>Status schema.</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Status of the backup. Valid values include:<ul><li>'Completed'</li><li>'Failed'</li><li>'Deleted'</li><li>'Backup In Progress'</li><li>'Upload In Progress'</li><li>'Download In Progress'</li><li>'Delete In Progress'</li></ul></div>
+
+
+
+            
+        </dd>
+        
+        <dt>statusDetails</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+<div>Title: <code>StatusDetails schema.</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>History of system messages. Each message is separated by an ellipses.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+
+
+                        </div>
+                        
+                        <div role="tabpanel" class="tab-pane fade" id="examples">
+                            <h3>Examples</h3>
+                            <div class="body conbody">
+ <p class="p">The following example shows how to view detailed information for a backup for an Oracle SOA Cloud Service instance by submitting a GET request on the REST resource using cURL. For more information, see <a class="xref" href="Use%20cURL.html" target="_blank">Use cURL</a>.</p> 
+ <p class="p">See also <a class="xref" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=CSBCS-GUID-42A5AC87-022C-4FE2-96C1-72485AE9C3BE" target="_blank">Initiate an On-Demand Backup of an Oracle SOA Cloud Service Instance</a>.</p> 
+ <div class="section">
+  <h3 class="title sectiontitle">cURL Command</h3>
+  <pre class="pre">curl -i -X GET -u joe@example.com:Welcome1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://api-host/paas/service/soa/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance/backups/1390442367140
+</pre> 
+  <div class="note note">
+   <span class="notetitle">Note::</span> This example uses the URL prefix for the United States (
+   <samp class="ph codeph">soacs</samp>). For information about the URL prefixes for other regions of the world, see 
+   <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a>.
+  </div> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Header</h3>
+  <p class="p">The following shows an example of the response header.</p> 
+  <pre class="pre">HTTP/1.1 200 OK
+Date: Thu, 04 Feb 2015 16:23:56 GMT
+Transfer-Encoding: chunked
+Content-Type: application/json</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Body</h3>
+  <p class="p">The following example shows the contents of the response body in JSON format.</p> 
+  <pre class="pre">{
+    "backupId":"1418313410612",
+    "jobId":"18758",
+    "backupStartDate":"Wed Feb 04 15:56:50 GMT 2015",
+    "backupCompleteDate":"Wed Feb 04 16:04:10 GMT 2015",
+    "expirationDate":null,
+    "initiatedBy":"scheduled",
+    "full":true,
+    "local":true,
+    "localCopy":true,
+    "size":"1650.3MB",
+    "sizeInBytes":1730501782,
+    "dbTag":"TAG20150923T192248",
+    "status":"Completed",
+    "href":"https:\/\/api-host\/paas\/service\/soa\/api\/instances\/ExampleIdentityDomain\/ExampleInstance\/backups\/1418313410612",
+    "jobHistory":[
+    {
+        "operation":"upload",
+        "jobId":"18767",
+        "status":"In Progress",
+        "startDate":"Wed Feb 04 16:19:12 GMT 2014"
+    },
+    {
+        "operation":"backup",
+        "jobId":"18758",
+        "status":"Completed",
+        "startDate":"Wed Feb 04 15:56:50 GMT 2015",
+        "completeDate":"Wed Feb 04 16:02:10 GMT 2015",
+        "statusDetails":"Backup health check passed...
+                         Locked the WebLogic Server domain configuration...
+                         Started the backup of binary data for WebLogic Server administration server on host exampleinstance-1...
+                         Completed the backup of binary data for WebLogic Server administration server on host exampleinstance-1...
+                         Started the backup of configuration data for WebLogic Server managed servers on these hosts: exampleinstance-2 exampleinstance-1 ...
+                         Completed the backup of configuration data for WebLogic Server managed servers on these hosts: exampleinstance-2 exampleinstance-1...
+                         Started the backup of Oracle Traffic Director on host exampleinstance-lb-1... 
+                         Completed the backup of Oracle TrafficDirector on host exampleinstance-lb-1...
+                         Unlocked the WebLogic Server domain configuration..."
+    }
+    ],
+    "notes":"Automated backup"
+}</pre> 
+ </div> 
+</div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+        </article>
+    </body>
+</html>

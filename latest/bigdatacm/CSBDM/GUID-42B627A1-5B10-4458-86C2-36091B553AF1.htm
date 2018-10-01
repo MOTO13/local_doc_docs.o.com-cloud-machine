@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Executing Commands Across a Cluster Using the dcli Utility</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="The dcli utility executes commands across a group of servers on Oracle Big Data Cloud Machine and returns the output." />
+<meta name="dcterms.created" content="2017-05-03T11:44:48Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Big Data Cloud Machine" />
+<meta name="dcterms.identifier" content="E85986-01" />
+<meta name="dcterms.isVersionOf" content="CSBDM" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="http://docs.oracle.com/cloud-machine/latest/" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-8A059874-2036-4E4B-9FAD-C403BA7977B4.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-660EB8F2-22F3-4220-9C1C-42AD85184D9D.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSBDM.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSBDM.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSBDM.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-42B627A1-5B10-4458-86C2-36091B553AF1"></a> <span id="PAGE" style="display:none;">43/51</span> <!-- End Header -->
+<h1 id="CSBDM-GUID-42B627A1-5B10-4458-86C2-36091B553AF1" class="sect1">Executing Commands Across a Cluster Using the dcli Utility</h1>
+<div>
+<p>The dcli utility executes commands across a group of servers on <span>Oracle Big Data Cloud Machine</span> and returns the output.</p>
+<p>This chapter contains the following sections:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-42B627A1-5B10-4458-86C2-36091B553AF1.htm#GUID-42B627A1-5B10-4458-86C2-36091B553AF1__OVERVIEWOFTHEDCLIUTILITY-840F09FE">Overview of the dcli Utility</a></p>
+</li>
+<li>
+<p><a href="GUID-42B627A1-5B10-4458-86C2-36091B553AF1.htm#GUID-42B627A1-5B10-4458-86C2-36091B553AF1__SETTINGUPPASSWORDLESSSSH-92693AF2">Setting Up Passwordless SSH</a></p>
+</li>
+<li>
+<p><a href="GUID-42B627A1-5B10-4458-86C2-36091B553AF1.htm#GUID-42B627A1-5B10-4458-86C2-36091B553AF1__BASICUSEROFDCLI-840F0E5E">Basic Use of dcli</a></p>
+</li>
+<li>
+<p><a href="GUID-42B627A1-5B10-4458-86C2-36091B553AF1.htm#GUID-42B627A1-5B10-4458-86C2-36091B553AF1__DCLISYNTAX-840F11BA">dcli Syntax</a></p>
+</li>
+<li>
+<p><a href="GUID-42B627A1-5B10-4458-86C2-36091B553AF1.htm#GUID-42B627A1-5B10-4458-86C2-36091B553AF1__DCLIRETURNVALUES-840F1473">dcli Return Values</a></p>
+</li>
+<li>
+<p><a href="GUID-42B627A1-5B10-4458-86C2-36091B553AF1.htm#GUID-42B627A1-5B10-4458-86C2-36091B553AF1__DCLIEXAMPLES-840F17FF">dcli Examples</a></p>
+</li>
+</ul>
+<div class="section" id="GUID-42B627A1-5B10-4458-86C2-36091B553AF1__OVERVIEWOFTHEDCLIUTILITY-840F09FE">
+<p class="subhead1">Overview of the dcli Utility</p>
+<p>The <code class="codeph">dcli</code> utility executes commands across a group of nodes in an <span>Oracle Big Data Cloud Machine</span> cluster and returns the output. You use <code class="codeph">dcli</code> to reinstall or reconfigure software on a cluster.</p>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-42B627A1-5B10-4458-86C2-36091B553AF1__SETTINGUPPASSWORDLESSSSH-92693AF2">
+<p class="subhead1">Setting Up Passwordless SSH</p>
+<p>The <code class="codeph">dcli</code> utility requires a passwordless Secure Shell (SSH) between the local server and all target servers. You run the <code class="codeph">dcli</code> utility on the local server, and the commands specified in <code class="codeph">dcli</code> execute on the target servers.</p>
+<p>Two scripts facilitate the use of SSH on <span>Oracle Big Data Cloud Machine</span>: <code class="codeph">setup-root-ssh</code> and <code class="codeph">remove-root-ssh</code>. These scripts accept two options that are also used by <code class="codeph">dcli</code>:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph">-C</code>: Targets all the servers in a Hadoop cluster</p>
+</li>
+<li>
+<p><code class="codeph">-g</code>: Targets a user-defined set of servers</p>
+</li>
+</ul>
+<p>See <a href="GUID-42B627A1-5B10-4458-86C2-36091B553AF1.htm#GUID-42B627A1-5B10-4458-86C2-36091B553AF1__GUID-E21C3C51-E084-4798-98D4-F1B61E1660C3" title="The following table lists the options for this command in the left column, &ldquo;Option,&rdquo; and describes each on in the right column, &ldquo;Description.&rdquo;">Table 4-*</a> for details about these options.</p>
+<div class="infobox-note" id="GUID-42B627A1-5B10-4458-86C2-36091B553AF1__GUID-F8183FF2-1C5F-4453-A8BB-0AD2573FB6BA">
+<p class="notep1">Note:</p>
+The Mammoth and Mammoth Reconfiguration utilities require remote <code class="codeph">root</code> access. However, <span>Oracle Big Data Cloud Machine</span> doesn&rsquo;t require it for normal operation.</div>
+<p id="GUID-42B627A1-5B10-4458-86C2-36091B553AF1__TOSETUPPASSWORDLESSSSHFORROOT-926759CA"><span class="bold">To set up passwordless SSH for root:&nbsp;</span></p>
+<ol>
+<li>
+<p>Connect to a node using PuTTY or a similar utility. Select an SSH connection type. See <a href="GUID-84261712-B6BA-4786-AE93-653B4AAF40B1.htm#GUID-84261712-B6BA-4786-AE93-653B4AAF40B1" title="PuTTY is a freely available SSH client program for Windows.UNIX and UNIX-like platforms (including Solaris and Linux) include the ssh utility, an SSH client.">Connecting to a Cluster Node Through Secure Shell (SSH)</a>.</p>
+</li>
+<li>
+<p>Log in as <code class="codeph">root</code>.</p>
+</li>
+<li>
+<p>Set up passwordless SSH for root across the cluster:</p>
+<pre dir="ltr">
+# <span class="bold">setup-root-ssh</span>
+</pre>
+<p>You see the message <code class="codeph">ssh key added</code> from each server.</p>
+</li>
+<li>
+<p>You can now run any <code class="codeph">ssh</code> command on any server in the rack without entering a password. In addition to <code class="codeph">dcli</code> commands, you can use <code class="codeph">scp</code> to copy files between servers.</p>
+</li>
+<li>
+<p>To remove passwordless SSH from <code class="codeph">root</code>:</p>
+<pre dir="ltr">
+# <span class="bold">remove-root-ssh</span>
+</pre></li>
+</ol>
+<p>See also full parameter descriptions of <a href="GUID-8A059874-2036-4E4B-9FAD-C403BA7977B4.htm" title="Establishes passwordless SSH for the root user.">setup-root-ssh</a> and <a href="GUID-FDC447CB-05D8-457F-8CD3-97D0A189EACE.htm" title="Removes passwordless SSH previously established by the setup-root-ssh ommand.">remove-root-ssh</a>.</p>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-42B627A1-5B10-4458-86C2-36091B553AF1__BASICUSEROFDCLI-840F0E5E">
+<p class="subhead1">Basic Use of dcli</p>
+<p><span class="bold">Getting Help</span></p>
+<p>To see the <code class="codeph">dcli</code> help page, enter the <code class="codeph">dcli</code> command with the <code class="codeph">-h</code> or <code class="codeph">--help</code> options. You can see a description of the commands by entering the <code class="codeph">dcli</code> command with no options.</p>
+<p id="GUID-42B627A1-5B10-4458-86C2-36091B553AF1__IDENTIFYINGTHETARGETSERVERS-92675313"><span class="bold">Identifying the Target Servers</span></p>
+<p>You can identify the servers where you want the commands to run either in the command line or in a file. For a list of default target servers, use the -t option. To change the target servers for the current command, use the <code class="codeph">-c</code> or <code class="codeph">-g</code> options described in <a href="GUID-42B627A1-5B10-4458-86C2-36091B553AF1.htm#GUID-42B627A1-5B10-4458-86C2-36091B553AF1__GUID-E21C3C51-E084-4798-98D4-F1B61E1660C3" title="The following table lists the options for this command in the left column, &ldquo;Option,&rdquo; and describes each on in the right column, &ldquo;Description.&rdquo;">Table 4-*</a>.</p>
+<p>You can manually create files with groups of servers to manage together. For example, you might manage servers 5 to 18 together, because they have no special functions like servers 1 to 4.</p>
+<p><span class="bold">Specifying the Commands</span></p>
+<p>You typically specify a command for execution on the target servers on the command line. However, you can also create a command file for a series of commands that you often use together or for commands with complex syntax. See the <code class="codeph">-x</code> option in <a href="GUID-42B627A1-5B10-4458-86C2-36091B553AF1.htm#GUID-42B627A1-5B10-4458-86C2-36091B553AF1__GUID-E21C3C51-E084-4798-98D4-F1B61E1660C3" title="The following table lists the options for this command in the left column, &ldquo;Option,&rdquo; and describes each on in the right column, &ldquo;Description.&rdquo;">Table 4-*</a>.</p>
+<p>You can also copy files to the target servers without executing them by using the <code class="codeph">-f</code> option.</p>
+<p><span class="bold">Controlling the Output Levels</span></p>
+<p>You can request more information with the <code class="codeph">-v</code> option or less information with the <code class="codeph">-n</code> option. You can also limit the number of returned lines with the <code class="codeph">--maxlines</code> option, or replace matching strings with the <code class="codeph">-r</code> option.</p>
+<p>Following are examples of various output levels using a simple example: the Linux date command.</p>
+<div class="infobox-note" id="GUID-42B627A1-5B10-4458-86C2-36091B553AF1__GUID-11CA2A07-7824-4955-8E70-C0A2AC638A27">
+<p class="notep1">Note:</p>
+The output from only one server (node07) is shown. The syntax in these examples executes the <code class="codeph">date</code> command on all servers.</div>
+<p>This is the default output, which lists the server followed by the date.</p>
+<pre dir="ltr">
+# <span class="bold">dcli date</span> 
+bda1node07-adm.example.com: Tue Feb 14 10:22:31 PST 2016
+</pre>
+<p>The minimal output returns <code class="codeph">OK</code> for completed execution:</p>
+<pre dir="ltr">
+# <span class="bold">dcli -n date</span> 
+OK: ['bda1node07.example.com']
+</pre>
+<p>Verbose output provides extensive information about the settings under which the command ran:</p>
+<pre dir="ltr">
+dcli -v dateoptions.nodes: Noneoptions.destfile: Noneoptions.file: Noneoptions.group: dcserversoptions.maxLines: 100000options.listNegatives: Falseoptions.pushKey: Falseoptions.regexp: Noneoptions.sshOptions: Noneoptions.scpOptions: Noneoptions.dropKey: Falseoptions.serializeOps: Falseoptions.userID: rootoptions.verbosity 1options.vmstatOps Noneoptions.execfile: Noneargv: ['/opt/oracle/bda/bin/dcli', '-g', 'dcservers', '-v', 'date']Success connecting to nodes: ['bda1node07.example.com']...entering thread for bda1node07.example.com:execute: /usr/bin/ssh -l root bda1node07.example.com ' date' ...exiting thread for bda1node07.example.com status: 0bda1node07.example.com: Tue Feb 14 10:24:43 PST 2012]
+</pre></div>
+<!-- class="section" -->
+<div class="section" id="GUID-42B627A1-5B10-4458-86C2-36091B553AF1__DCLISYNTAX-840F11BA">
+<p class="subhead1">dcli Syntax</p>
+<pre dir="ltr">
+dcli [<span class="italic">option</span>] [<span class="italic">command</span>]
+</pre>
+<p><span class="bold">Parameters</span></p>
+<dl>
+<dt class="dlterm"><a id="GUID-42B627A1-5B10-4458-86C2-36091B553AF1__GUID-91030F05-EC0D-49B5-B384-587A0ECCCBE1"><!-- --></a><code class="codeph">option</code></dt>
+<dd>An option described in the table below. You can omit all options to run a command on all servers in the cluster.</dd>
+<dt class="dlterm"><a id="GUID-42B627A1-5B10-4458-86C2-36091B553AF1__GUID-CA7DA6D3-C9A6-4EED-904A-A12BB687DE23"><!-- --></a><code class="codeph">command</code></dt>
+<dd>
+<p>Any command that runs from the operating system prompt. If the command contains punctuation marks or special characters, then enclose the command in double quotation marks.</p>
+<p>The backslash (\) is the escape character. Precede the following special characters with a backslash on the command line to prevent interpretation by the shell. The backslash is not needed in a command file. See the <code class="codeph">-x</code> option for information about command files.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>$ (dollar sign)</p>
+</li>
+<li>
+<p>' (quotation mark)</p>
+</li>
+<li>
+<p>&lt; (less than)</p>
+</li>
+<li>
+<p>&gt; (greater than)</p>
+</li>
+<li>
+<p>(&nbsp;) (parentheses)</p>
+</li>
+</ul>
+</dd>
+</dl>
+<p id="GUID-42B627A1-5B10-4458-86C2-36091B553AF1__GUID-A4A30016-37F5-499C-B128-16A3CC3A9F8E"><span class="bold">dcli Options</span></p>
+<div class="tblformal" id="GUID-42B627A1-5B10-4458-86C2-36091B553AF1__GUID-E21C3C51-E084-4798-98D4-F1B61E1660C3">
+<table class="cellalignment80" summary="The following table lists the options for this command in the left column, &ldquo;Option,&rdquo; and describes each on in the right column, &ldquo;Description.&rdquo;">
+<thead>
+<tr class="cellalignment68">
+<th class="cellalignment81" id="d18481e360">Option</th>
+<th class="cellalignment81" id="d18481e362">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d18481e366" headers="d18481e360"><code class="codeph">-c <span class="variable">nodes</span></code></td>
+<td class="cellalignment68" headers="d18481e366 d18481e362">
+<p>Specifies a comma-separated list of <span>Oracle Big Data Cloud Machine</span> nodes where the command is executed</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d18481e378" headers="d18481e360"><code class="codeph">-C</code></td>
+<td class="cellalignment68" headers="d18481e378 d18481e362">
+<p>Uses the list of servers in <code>/opt/oracle/bda/cluster-rack-infiniband</code> as the target. See <a href="GUID-42B627A1-5B10-4458-86C2-36091B553AF1.htm#GUID-42B627A1-5B10-4458-86C2-36091B553AF1__BASICUSEROFDCLI-840F0E5E">Identifying the Target Servers</a>.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d18481e392" headers="d18481e360"><code class="codeph">-d <span class="variable">destfile</span></code></td>
+<td class="cellalignment68" headers="d18481e392 d18481e362">
+<p>Specifies a target directory or file name for the <code class="codeph">-f</code> option</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d18481e404" headers="d18481e360"><code class="codeph">-f <span class="variable">file</span></code></td>
+<td class="cellalignment68" headers="d18481e404 d18481e362">
+<p>Specifies files to be copied to the user's home directory on the target nodes. The files are not executed. See the <code class="codeph">-l</code> option.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d18481e416" headers="d18481e360"><code class="codeph">-g <span class="variable">groupfile</span></code></td>
+<td class="cellalignment68" headers="d18481e416 d18481e362">
+<p>Specifies a file containing a list of <span>Oracle Big Data Cloud Machine</span> nodes where the command is executed. You can use either server names or IP addresses in the file.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d18481e428" headers="d18481e360"><code class="codeph">-h, --help</code></td>
+<td class="cellalignment68" headers="d18481e428 d18481e362">
+<p>Displays a description of the commands</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d18481e435" headers="d18481e360"><code class="codeph">-k</code></td>
+<td class="cellalignment68" headers="d18481e435 d18481e362">
+<p>Pushes the <code class="codeph">ssh</code> key to each node's <code>/root/.ssh/authorized_keys</code> file. See <a href="GUID-42B627A1-5B10-4458-86C2-36091B553AF1.htm#GUID-42B627A1-5B10-4458-86C2-36091B553AF1__SETTINGUPPASSWORDLESSSSH-92693AF2">Setting Up Passwordless SSH</a> for an easier alternative.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d18481e451" headers="d18481e360"><code class="codeph">-l <span class="variable">userid</span></code></td>
+<td class="cellalignment68" headers="d18481e451 d18481e362">
+<p>Identifies the user ID for logging in to another server. The default ID is <code class="codeph">root</code>.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d18481e463" headers="d18481e360"><code class="codeph">--maxlines=<span class="variable">maxlines</span></code></td>
+<td class="cellalignment68" headers="d18481e463 d18481e362">
+<p>Identifies the maximum lines of output displayed from a command executed on multiple servers. The default is 10,000 lines.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d18481e472" headers="d18481e360"><code class="codeph">-n</code></td>
+<td class="cellalignment68" headers="d18481e472 d18481e362">
+<p>Abbreviates the output for non-error messages. Only the server name is displayed when a server returns normal output (return code <code class="codeph">0</code>).</p>
+<p>You cannot use the <code class="codeph">-n</code> and <code class="codeph">-r</code> options together.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d18481e490" headers="d18481e360"><code class="codeph">-r <span class="variable">regexp</span></code></td>
+<td class="cellalignment68" headers="d18481e490 d18481e362">
+<p>Replaces the output with the server name for lines that match the specified regular expression</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d18481e500" headers="d18481e360"><code class="codeph">-s <span class="variable">sshoptions</span></code></td>
+<td class="cellalignment68" headers="d18481e500 d18481e362">
+<p>Specifies a string of options that are passed to SSH</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d18481e509" headers="d18481e360"><code class="codeph">--scp=<span class="variable">scpoptions</span></code></td>
+<td class="cellalignment68" headers="d18481e509 d18481e362">
+<p>Specifies a string of options that are passed to Secure Copy (SCP), when these options are different from <code class="codeph"><span class="variable">sshoptions</span></code></p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d18481e521" headers="d18481e360"><code class="codeph">--serial</code></td>
+<td class="cellalignment68" headers="d18481e521 d18481e362">
+<p>Serializes execution over the servers. The default is parallel execution.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d18481e528" headers="d18481e360"><code class="codeph">-t</code></td>
+<td class="cellalignment68" headers="d18481e528 d18481e362">
+<p>Lists the target servers</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d18481e535" headers="d18481e360"><code class="codeph">--unkey</code></td>
+<td class="cellalignment68" headers="d18481e535 d18481e362">
+<p>Drops the keys from the <code class="codeph">authorized_key</code> files of the target servers</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d18481e545" headers="d18481e360"><code class="codeph">-v</code></td>
+<td class="cellalignment68" headers="d18481e545 d18481e362">
+<p>Displays the verbose version of all messages</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d18481e552" headers="d18481e360"><code class="codeph">--version</code></td>
+<td class="cellalignment68" headers="d18481e552 d18481e362">
+<p>Displays the <code class="codeph">dcli</code> version number</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d18481e562" headers="d18481e360"><code class="codeph">--vmstat=VMSTATOPS</code></td>
+<td class="cellalignment68" headers="d18481e562 d18481e362">
+<p>Displays the syntax of the Linux Virtual Memory Statistics utility (<code class="codeph">vmstat</code>). This command returns process, virtual memory, disk, trap, and CPU activity information.</p>
+<p>To enter a <code class="codeph">vmstat</code> command, enclose its options in quotation marks. For example:</p>
+<pre dir="ltr">
+--vmstat="-a 3 5"
+</pre>
+<p>See your Linux documentation for more information about <code class="codeph">vmstat</code>.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment68" id="d18481e584" headers="d18481e360"><code class="codeph">-x <span class="variable">execfile</span></code></td>
+<td class="cellalignment68" headers="d18481e584 d18481e362">
+<p>Specifies a command file to be copied to the user's home directory and executed on the target servers. See the <code class="codeph">-l</code> option.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section" id="GUID-42B627A1-5B10-4458-86C2-36091B553AF1__DCLIRETURNVALUES-840F1473">
+<p class="subhead1">dcli Return Values</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph">0</code>: The command ran successfully on all servers.</p>
+</li>
+<li>
+<p><code class="codeph">1</code>: One or more servers were inaccessible or remote execution returned a nonzero value. A message lists the unresponsive servers. Execution continues on the other servers.</p>
+</li>
+<li>
+<p><code class="codeph">2</code>: A local error prevented the command from executing.</p>
+</li>
+</ul>
+<p>If you interrupt the local dcli process, then the remote commands may continue without returning their output or status.</p>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-42B627A1-5B10-4458-86C2-36091B553AF1__DCLIEXAMPLES-840F17FF">
+<p class="subhead1">dcli Examples</p>
+<p>Following are examples of the dcli utility.</p>
+<p>This example returns the default list of target servers:</p>
+<pre dir="ltr">
+# dcli -t
+Target nodes: ['bda1node01-adm.example.com', 'bda1node02-adm.example.com', 'bda1node03-adm.example.com', 'bda1node04-adm.example.com', 'bda1node05-adm.example.com', 'bda1node06-adm.example.com', 'bda1node07-adm.example.com', 'bda1node08-adm.example.com', 'bda1node09-adm.example.com']
+</pre>
+<p>The next example checks the temperature of all servers:</p>
+<pre dir="ltr">
+# <span class="bold">dcli 'ipmitool sunoem cli "show /SYS/T_AMB" | grep value'</span>
+
+bda1node01-adm.example.com: value = 22.000 degree C
+bda1node02-adm.example.com: value = 22.000 degree C
+bda1node03-adm.example.com: value = 22.000 degree C
+bda1node04-adm.example.com: value = 23.000 degree C
+          .
+          .
+          .
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment67">
+<tr>
+<td class="cellalignment74">
+<table class="cellalignment72">
+<tr>
+<td class="cellalignment71"><a href="GUID-8A059874-2036-4E4B-9FAD-C403BA7977B4.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment71"><a href="GUID-660EB8F2-22F3-4220-9C1C-42AD85184D9D.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment76">
+<table class="cellalignment70">
+<tr>
+<td class="cellalignment71"><a href="http://docs.oracle.com/cloud-machine/latest/"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment71"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment71"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment71"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<!--<![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Oracle Java Cloud Service on Oracle Cloud Machine</title>
+<meta charset="utf-8">
+<meta name="date" content="2006-12-08T18:57:09Z">
+<meta name="copyright" content="Copyright 2011, 2014, Oracle and/or its affiliates.">
+<meta name="description" content="Documentation for securing the application environment for your Oracle Java Cloud Service instance by using WebLogic Server security, Oracle Platform Security Service (OPSS), and Oracle Web Services Manager (OWSM).">
+<meta name="keywords" content="None">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="dcterms.identifier" content="E70959-01">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+<link rel="stylesheet" href="dcommon/css/forms.css">
+<link rel="stylesheet" href="dcommon/css/home-search.css">
+<link rel="stylesheet" href="dcommon/css/fonts.css">
+<link rel="stylesheet" href="dcommon/fonts/glyphicons-pro/glyphicons/css/glyphicons.css">
+<link rel="stylesheet" href="dcommon/fonts/glyphicons-pro/glyphicons-halflings/css/glyphicons-halflings.css">
+<link rel="stylesheet" href="dcommon/fonts/glyphicons-pro/glyphicons-social/css/glyphicons-social.css">
+<link rel="stylesheet" href="dcommon/css/normalize.min.css">
+<link rel="stylesheet" href="dcommon/css/main.css">
+<link rel="stylesheet" href="dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="dcommon/css/respond-1140-deskop.css">
+<link rel="stylesheet" href="dcommon/css/leftnav.css">
+<link rel="stylesheet" href="dcommon/css/simpletree.css">
+<link rel="stylesheet" href="dcommon/css/header.css">
+<link rel="stylesheet" href="dcommon/css/footer.css">
+<link rel="stylesheet" href="dcommon/css/home.css">
+<link rel="stylesheet" href="dcommon/css/fusiondoc.css">
+<link rel="stylesheet" href="dcommon/css/print.css">
+<script src="dcommon/js/jquery-1.11.0.min.js"></script><script src="dcommon/js/modernizr-2.6.1-respond-1.1.0.min.js"></script><script src="dcommon/js/jquery-1.10.2.js"></script><script src="dcommon/js/jquery-ui-1.10.4.custom.js"></script><link href="dcommon/css/jquery-ui-1.10.4.custom.css" rel="stylesheet">
+<link rel="stylesheet" href="dcommon/css/search.css">
+<script src="dcommon/js/common.js"></script><script src="dcommon/js/booklist.js"></script><script src="dcommon/js/tabs.js"></script><script src="dcommon/js/leftnav.js"></script><script src="dcommon/js/jquery.matchHeight.js" type="text/javascript"></script><script src="dcommon/js/main.js"></script><link rel="stylesheet" href="dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen">
+<script type="text/javascript" src="dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script><script type="text/javascript" src="dcommon/fancybox/fbattributes.js"></script><link rel="stylesheet" href="dcommon/css/bootstrap.css">
+<script src="dcommon/js/bootstrap.min.js"></script><link rel="stylesheet" href="dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen">
+<script type="text/javascript" src="dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script><script type="text/javascript" src="dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script><link rel="stylesheet" href="dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen">
+<script type="text/javascript" src="dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script><script src="dcommon/js/ohc-videos.js"></script><script type="text/javascript" src="dcommon/js/jquery.ba-throttle-debounce.min.js"></script><script src="dcommon/js/search.js"></script><!--fonts--><!--[if lt IE 9]>
+<link rel="stylesheet" href="{$dcommonref}dcommon/css/ltIE9.css">
+<![endif]-->
+<!--[if IE ]>
+ <link rel="stylesheet" href="{$dcommonref}dcommon/css/IE.css">
+ <![endif]-->
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+<script>
+$(window).load(function () {
+    $("select#ctpages").each(function () {
+        $(this).val($(this).find('option[selected]').val());
+    });
+});
+/////////////////
+
+/////////////////  MatchHeight function
+
+ 
+
+function resizecolumns(){
+
+$('.col2equal > div').matchHeight();
+
+$('.gs-block-2').matchHeight();
+
+$('.gs4b > div').matchHeight();
+
+$('.gs-col-wrapper > div').matchHeight();
+
+};
+
+ 
+
+/////////////////
+
+/////////////////  
+
+ 
+
+$(document).ready(function() {
+
+resizecolumns();
+
+});
+
+$(window).resize(function() {
+
+resizecolumns();
+
+});
+
+ 
+</script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body id="PORTAL33" class="INDEX_DATA_FILE">
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><div id="HEADER">
+<div id="logocover"></div>
+<br class="clearfloat"><div class="header-container"></div>
+<br>
+</div></header><div id="content">
+<div id="shownav" title="Show Navigation"><input type="image" src="dcommon/img/btn-close-nav.png" alt="Open Left Navigation" title="Open Left Navigation"></div>
+<div id="hidenav"><input type="image" src="dcommon/img/btn-close-nav.png" alt="Close Left Navigation" title="Close Left Navigation"></div>
+<div class="left-nav" style="display:block;"><ul>
+<li class="home"><a href="/en/cloud/"><span class="JetFW-caret02-w_16"></span>Cloud</a></li>
+<li id="INDEX"><a style="text-decoration:none" href="index.html">Get Started</a></li>
+<li id="JCS_WHATSNEW"><a style="text-decoration:none" href="../jcs_gs/JSCWN/toc.htm" target="_blank">What's New</a></li>
+<li>
+<span class="inactive">Tasks</span><ul>
+<li id="JCS_CONCEPTS"><a style="text-decoration:none" href="jcs_concepts.htm">Learn Concepts</a></li>
+<li id="JCS_CREATE"><a style="text-decoration:none" href="jcs_create.htm">Create Service Instances</a></li>
+<li id="JCS_USE"><a style="text-decoration:none" href="jcs_use.htm">Manage Service Instances</a></li>
+<li id="JCS_BESTPRACTICES"><a style="text-decoration:none" href="jcs_bestpractices.htm">Use Best Practices</a></li>
+<li id="JCS_DEVELOPDEPLOY_12.2.1"><a style="text-decoration:none" href="jcs_developdeploy_12.2.1.htm">Develop and Deploy</a></li>
+<li id="JCS_ADMIN_12.2.1"><a style="text-decoration:none" href="jcs_admin_12.2.1.htm">Administer WebLogic Server</a></li>
+<li id="JCS_SECURE_12.2.1"><a class="selected" href="#" style="text-decoration:none">Secure</a></li>
+<li id="JCS_MONITORTUNE_12.2.1"><a style="text-decoration:none" href="jcs_monitortune_12.2.1.htm">Monitor and Tune</a></li>
+<li id="JCS_TROUBLESHOOT"><a style="text-decoration:none" href="jcs_troubleshoot.htm">Troubleshoot</a></li>
+</ul>
+</li>
+<li id="RESTAPI"><a style="text-decoration:none" href="../jcs_gs/JSRMR/index.html" target="_blank">REST API</a></li>
+<li id="JCS_TUTORIALS"><a style="text-decoration:none" href="jcs_tutorials.htm">Tutorials</a></li>
+<li id="JCS_DOCS"><a style="text-decoration:none" href="jcs_docs.htm">Books</a></li>
+<li id="JCS_WLSDOCS"><a style="text-decoration:none" href="jcs_wlsdocs.htm">WebLogic Server Books</a></li>
+</ul></div>
+<div class="main-pad" id="main">
+<div class="navback border-right"></div>
+<a id="BEGIN" name="BEGIN"></a><span id="category" style="display:none;">Cloud</span><img class="img-right" src="dcommon/img/cloudgs_java.png" alt="Graphic for Getting Started page"><h1>Oracle Java Cloud Service on Oracle Cloud Machine<br>
+</h1>
+<h2 class="libportletheader" id="secure">Tasks</h2><p>Secure the application environment for your Oracle Java Cloud Service instance by using WebLogic Server security, Oracle Platform Security Service (OPSS), and Oracle Web Services Manager (OWSM).<br />
+<br />
+<strong>Choose the release of your Oracle WebLogic Server instance: </strong></p>
+<form action="">
+<label for="ctpages" class="obscure">Links to Additional Task Pages</label><select name="ctpages" id="ctpages" class="SELECTLRG" onchange="window.location=this.value;"><option selected value="jcs_secure_12.2.1.htm">12c (12.2.1)</option>
+<option value="jcs_secure_12.1.3.htm">12c (12.1.3)</option>
+<option value="jcs_secure_11.1.1.7.htm">11g (11.1.1.7)</option></select>
+</form>
+<br><br><h3 class="task-title">
+<img src="dcommon/img/circle_arrow01_24.png" width="24" height="24" alt="arrow icon">Secure</h3>
+<hr>
+<div class="left50 nobullets">
+<h4>Secure Service Instances</h4>
+<ul>
+<li><a href="JSCUG/GUID-35AC2310-F95C-46F7-AF22-C198C0DBF8A2.htm#JSCUG3310">Understand authentication</a></li>
+<li><a href="JSCUG/GUID-58D75F45-4424-42E5-AA24-4F7772FD3C03.htm#JSCUG3121">Understand service roles and user accounts</a></li>
+<li><a href="JSCUG/GUID-EDC1BD9B-1C42-4220-8163-4B27AADDA98F.htm#JSCUG3404">Understand default access ports</a></li>
+</ul>
+<h4>Learn About WebLogic Server Security</h4>
+<ul>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SCOVR119">Understand security fundamentals</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=INTRO232">Understand WebLogic Server security</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SECMG116">Understand WebLogic security management</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SECMG744">Supported security standards</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SCOVR278">Glossary</a></li>
+</ul>
+<h4>Configure Security for the Environment</h4>
+<ul>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SECMG777">Configure security for a WebLogic domain</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=LOCKD107">Secure a production environment</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SECMG327">Manage the embedded LDAP server</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SECMG346">Manage the RDBMS security store</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=CLUST418">Understand security options for a cluster</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SECMG686">Configure security providers</a></li>
+</ul>
+<h4>Configure Authentication</h4>
+<ul>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SECMG170">Choose an authentication provider</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SECMG705">Authenticate against an RDBMS system</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SECMG175">Authenticate against an LDAP server</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SECMG753">Authenticate a user not defined in the identity store</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SECMG148">Map credentials to remote systems</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SECMG252">Configure SAML</a></li>
+<li><a target="_blank" href="http://docs.oracle.com/cloud/latest/fmw122100/WLACH/taskhelp/security/ManageUsersAndGroups.html">Manage users and groups</a></li>
+</ul>
+<h4>Configure Authorization</h4>
+<ul>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SECMG687">Configure an authorization provider</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SECMG135">Use multiple authorization providers</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SECMG411">Use the Java Authorization Contract for Containers</a></li>
+</ul>
+<h4>Secure Applications and Resources</h4>
+<ul>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=ROLES107">Secure resources using roles and policies</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=JDBCA477">Secure JDBC resources</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=WLSTG127">Secure WLST</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=OWSMC1508">Secure web services</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=ADAPT205">Secure resource adapters</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SPRNG308">Integrate WebLogic security with Spring security</a></li>
+</ul>
+</div>
+<div class="left50 nobullets">
+<h4>Configure SSL</h4>
+<ul>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SECMG718">Understand SSL configuration</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SECMG365">Create and configure JKS keystores</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SECMG666">Configure the OPSS keystore service</a></li>
+<li><a target="_blank" href="http://docs.oracle.com/cloud/latest/fmw122100/WLACH/taskhelp/security/ConfigureTwowaySSL.html">Configure two-way SSL</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SECMG502">Use cipher suites</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SECMG571">Use host name verification</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SECMG577">Configure X.509 certificate revocation checking</a></li>
+<li><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudopcm&amp;id=TDADG00136">Configure SSL between Oracle Traffic Director and clients</a></li>
+<li><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudopcm&amp;id=TDADG450">Configure SSL between Oracle Traffic Director and origin servers</a></li>
+</ul>
+<h4>Customize Security</h4>
+<ul>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SECMG127">Customize the default security configuration</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SCPRG392">Use Java security</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=DEVSP109">Develop custom security providers</a></li>
+</ul>
+<h4>Program Security</h4>
+<ul>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SCPRG118">Understand WebLogic security programming</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SCPRG133">Program security for Web applications</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SCPRG281">Program security for EJBs</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SACLT221">Program security-aware clients</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SCPRG224">Program JAAS authentication in Java clients</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SCPRG244">Program SSL authentication in Java clients</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=JMXCU191">Program custom tools to manage security realms</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SCPRG377">Program network connection filters</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SCPRG413">Program CertPath building and validation</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=SCPRG392">Use Java EE security to protect resources</a></li>
+</ul>
+<h4>Secure Applications Using OPSS</h4>
+<ul>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=JISEC1828">Learn about Oracle Platform Security Service (OPSS)</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=JISEC1874">Learn about the OPSS security store</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=JISEC3251">Learn about policies, credentials, and keys</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=JISEC3278">Administer OPSS services</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=JISEC3482">Deploy OPSS applications</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=JISEC3955">Troubleshoot OPSS</a></li>
+</ul>
+<h4>Secure Web Services Using OWSM</h4>
+<ul>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=OWSMC110">Learn about Oracle Web Services Manager (OWSM)</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=OWSMS4007">Attach and manage OWSM policies</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=OWSMS4218">Configure security with OWSM</a></li>
+<li><a target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=OWSMS4400">Manage and troubleshoot OWSM</a></li>
+</ul>
+</div>
+<br>
+</div>
+<br style="clear:both;"><br class="clearfloat"><noscript><p>Scripting on this page causes alternating background colors for the list items in the portlets.</p></noscript>
+<div style="clear:both;height:1px;width:1px"></div>
+</div>
+<script src="dcommon/js/bookpage.js"></script><script src="dcommon/js/search-drop.js"></script><script>
+function PrintPage()
+  {window.print();}
+</script><footer></footer>
+</body>
+</html>

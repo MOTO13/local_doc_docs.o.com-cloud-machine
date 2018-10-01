@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Connecting Remotely to the Database by Using Oracle SQL Developer</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-06-19T15:22:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Database Cloud Service" />
+<meta name="dcterms.identifier" content="E72994-04" />
+<meta name="dcterms.isVersionOf" content="CSDBI" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-61727FB9-01EB-45CA-AAB2-ED0A7CD57DAD.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-372D4233-9793-47EC-8DFC-AFD6CF32866C.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSDBI.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSDBI.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSDBI.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-EB66641A-1D55-4914-B5A7-4314941A7BFB"></a> <span id="PAGE" style="display:none;">38/190</span> <!-- End Header -->
+<h1 id="CSDBI-GUID-EB66641A-1D55-4914-B5A7-4314941A7BFB" class="sect1">Connecting Remotely to the Database by Using Oracle SQL Developer</h1>
+<div>
+<div class="section">
+<p>You can define an Oracle SQL Developer connection to your database in the cloud to perform operations as you would with an on-premises database.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Creating a SQL Developer Connection</p>
+<p>To create a SQL Developer connection to a database deployment:</p>
+<ol>
+<li>
+<p>Open SQL Developer. Right-click Connections and select <span class="bold">New Connection</span>.</p>
+<div class="infobox-note" id="GUID-EB66641A-1D55-4914-B5A7-4314941A7BFB__GUID-39470CB5-1BF2-4104-BA17-5725E9210C54">
+<p class="notep1">Note:</p>
+<p>If you are using a version of SQL Developer in which the Connections panel shows both "Connections" and "Cloud Connections", right-click <span class="bold">Connections</span>. Do not right-click Cloud Connections, which is for Oracle Database Exadata Express Cloud Service.</p>
+</div>
+<p>The New / Select Database Connection dialog appears.</p>
+</li>
+<li>
+<p>Provide the following information and then click <span class="bold">Test</span>.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Connection Name</span>: Create a name for this connection.</p>
+</li>
+<li>
+<p><span class="bold">Username</span>: Name of the database user for the connection. This user must have sufficient privileges to perform the tasks that you want to perform while connected to the database, such as creating, editing, and deleting tables, views, and other objects.</p>
+</li>
+<li>
+<p><span class="bold">Password</span>: Provide the "Administration" password that you specified when you created the database deployment.</p>
+</li>
+<li>
+<p><span class="bold">Hostname</span>: Provide the Public IP address for the database deployment compute node you are connecting to.</p>
+</li>
+<li>
+<p><span class="bold">Port</span>: Provide the listener port number that you specified when you created the database deployment.</p>
+</li>
+<li>
+<p><span class="bold">SID</span> or <span class="bold">Service Name</span>: If you are connecting to an Oracle 11g database or an Oracle 12c container database, provide the SID. If you are connecting to an Oracle 12c pluggable database (PDB), provide the service name instead of the SID.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>If your test results show success, click <span class="bold">Connect</span>. You have connected SQL Developer to your database deployment in Oracle Database Enterprise Cloud Service. Now you can use SQL Developer as you normally would with an on-premises database.</p>
+</li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="GUID-61727FB9-01EB-45CA-AAB2-ED0A7CD57DAD.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="GUID-372D4233-9793-47EC-8DFC-AFD6CF32866C.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

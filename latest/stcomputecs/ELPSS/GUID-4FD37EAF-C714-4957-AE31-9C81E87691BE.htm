@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Other Requirements</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="OPCM includes a wide range of Oracle Cloud services, such as Java Cloud Service, Database Cloud Service, Integration Cloud Service, and SOA Cloud Service with more to come. Based on the cloud services that are subscribed, there are some external dependencies for these services that customers must have." />
+<meta name="dcterms.created" content="2017-04-10T14:54:01Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Customer Deployment Guide" />
+<meta name="dcterms.identifier" content="E65770-09" />
+<meta name="dcterms.isVersionOf" content="ELPSS" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-588BA29F-158C-414E-9BDD-C92DA043FC21.htm" title="Previous" type="text/html" />
+<link rel="alternate" href="ELPSS.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-4FD37EAF-C714-4957-AE31-9C81E87691BE"></a> <span id="PAGE" style="display:none;">16/16</span> <!-- End Header -->
+<h1 id="ELPSS-GUID-4FD37EAF-C714-4957-AE31-9C81E87691BE" class="sect1"><span class="enumeration_chapter">3</span> Other Requirements</h1>
+<div>
+<p><span id="ACRONYM-AF466053">OPCM</span> includes a wide range of Oracle Cloud services, such as Java Cloud Service, Database Cloud Service, Integration Cloud Service, and SOA Cloud Service with more to come. Based on the cloud services that are subscribed, there are some external dependencies for these services that customers must have.</p>
+<div class="section">
+<p class="subhead1">Oracle Integration Cloud Service</p>
+<p>If you subscribe to Integration Cloud Service (ICS), an external database is required at install time.</p>
+<p>ICS creation and the flow of integrated services depend on the availability of an external database with the following characteristics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Oracle Database 11.2.0.x or later.</p>
+</li>
+<li>
+<p>Plain vanilla Real Application Clusters (RAC) database without any PDB and CDB.</p>
+</li>
+<li>
+<p>Oracle Linux 5.11 or other compatible version.</p>
+</li>
+<li>
+<p>50 GB of available storage.</p>
+</li>
+<li>
+<p>Settings: <code class="codeph">processes=1000, open_cursors=500, sessions=1400</code></p>
+</li>
+<li>
+<p>A routable network to the database such as EoIB database access network.</p>
+</li>
+<li>
+<p>The external DB needs to be configured according to customer SLA requirements.</p>
+</li>
+</ul>
+<p>See <a href="https://docs.oracle.com/cloud-machine/latest/" target="_blank">Cloud Machine Documentation</a> for more information about the Cloud Services available for <span id="GUID-4FD37EAF-C714-4957-AE31-9C81E87691BE__ACRONYM-AF466053">OPCM</span>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Oracle Java Cloud Service</p>
+<p>Oracle Java Cloud Service requires access to an existing relational database that contains the standard Oracle Fusion Middleware schemas. The schemas are required by Oracle Java Required Files (JRF).</p>
+<p>You can use an on-premises database or a database that is deployed through Oracle Database Cloud Service running on <span>OPCM</span>.</p>
+<p>The size and configuration of this database depends on the applications that are deployed on each JCS instance such as custom Java EE apps or Oracle Fusion Middleware and their own SLA.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Oracle Database Cloud Service</p>
+<p>Deploying Database Cloud Service requires an <span>OPCM</span> ZS3 Storage Expansion Rack.</p>
+<p>DBCS subscription requires to select one of the two available storage configuration options: ZS3 Model 286 or ZS3 Model 536.</p>
+<p>The prerequisites for the ZS3 Storage expansion rack are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Physical space for the ZS3 rack that is adjacent to or within 50 m cable run length from the OCM X5-2 rack.</p>
+</li>
+<li>
+<p>Power and cooling based on the hardware specification.</p>
+</li>
+<li>
+<p>Additional IP addresses for Storage heads and ILOMs (4 for Model 286 or 8 for Model 536).</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Oracle SOA Cloud Service</p>
+<p>If you need to deploy Oracle SOA Cloud Service, verify the following requirements:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Secure shell (SSH) public and private key pair.</p>
+</li>
+<li>
+<p>Access to a remote storage disk.</p>
+</li>
+<li>
+<p>Access to an existing relational database that contains the standard Oracle Fusion Middleware schemas. The schemas are required by Oracle Java Required Files (JRF).</p>
+</li>
+<li>
+<p>Access to a network through which the service instance will access the database.</p>
+</li>
+<li>
+<p>Access to a public network that will be used to access the service instance.</p>
+</li>
+<li>
+<p>Oracle Java Cloud Service.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment124">
+<tr>
+<td class="cellalignment131">
+<table class="cellalignment137">
+<tr>
+<td class="cellalignment128"><a href="GUID-588BA29F-158C-414E-9BDD-C92DA043FC21.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment133">
+<table class="cellalignment127">
+<tr>
+<td class="cellalignment128"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment128"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

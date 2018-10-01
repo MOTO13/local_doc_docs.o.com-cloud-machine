@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Working with Dashboards (Consoles)</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="A console associated with a model gives a business owner visibility into details on how a business is performing. As soon as a model is activated, a console is created for the model. The console contains useful tables, visualizations, and dashboards that can be used immediately to understand business performance. Business owners may also quickly create custom dashboards based on their model's indicators that give aggregated business insight on key metrics." />
+<meta name="dcterms.created" content="2017-04-11T11:24:03Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle Real-Time Integration Business Insight" />
+<meta name="dcterms.identifier" content="E76087-06" />
+<meta name="dcterms.isVersionOf" content="IINUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-795CC3E9-C1E9-43A5-BCF7-7EB54979159D.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-047DAE63-C557-4912-AF42-2D822C63581A.htm" title="Next" type="text/html" />
+<link rel="alternate" href="IINUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="IINUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="IINUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-FBDCC935-499D-4A8C-BFE4-2D4E3A6A3441"></a> <span id="PAGE" style="display:none;">9/17</span> <!-- End Header -->
+<h1 id="IINUG-GUID-FBDCC935-499D-4A8C-BFE4-2D4E3A6A3441" class="sect1"><span class="enumeration_chapter">4</span> Working with Dashboards (Consoles)</h1>
+<div>
+<p>A console associated with a model gives a business owner visibility into details on how a business is performing. As soon as a model is activated, a console is created for the model. The console contains useful tables, visualizations, and dashboards that can be used immediately to understand business performance. Business owners may also quickly create custom dashboards based on their model's indicators that give aggregated business insight on key metrics.</p>
+<div class="section">
+<p>It is possible to drill down into the detailed single-instance data from any dashboard to understand what milestones have been passed, and to inspect extracted indicators.</p>
+<div class="infobox-note" id="GUID-FBDCC935-499D-4A8C-BFE4-2D4E3A6A3441__GUID-D32208EB-9A1A-4268-B0C5-18D7E44231C3">
+<p class="notep1">Note:</p>
+Only users with one or more of the following roles can access consoles and the associated dashboards:
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-FA03485F-ECF0-4288-925E-992AEFAF50A1">InsightExecutive</a></p>
+</li>
+<li>
+<p><a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a></p>
+</li>
+<li>
+<p><a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a>.</p>
+</li>
+</ul>
+</div>
+<p>Finally, you can choose to display <span class="italic">external</span> dashboards in Insight that were created using the Oracle Business Activity Monitoring Composer. You need to enable external dashboards using the appropriate setting in <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-D416F3E1-5C05-42D9-813E-B67377FD2FD0">Preferences</a>.</p>
+<div class="infobox-note" id="GUID-FBDCC935-499D-4A8C-BFE4-2D4E3A6A3441__GUID-F75F77E7-8834-4A28-A961-E5C7FA5E8D66">
+<p class="notep1">Note:</p>
+If you use Oracle HTTP Server, you must point Oracle Business Activity Monitoring Composer to the same location as that of Insight with same server and port number for the dashboards to work correctly.</div>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-4025C203-C060-4FDB-B15B-46FC13F2EC27"></a>
+<h2 id="IINUG-GUID-4025C203-C060-4FDB-B15B-46FC13F2EC27" class="sect2"><span class="enumeration_section">4.1</span> Console Overview</h2>
+<div>
+<p>The <span class="bold">Consoles</span> page lists all the activated models. You can mark any model as favorite. You can also sort the models either by Date or Name.</p>
+<p>The <span class="bold">Consoles</span> page includes a high-level visualization of the metrics collected over the past day for an activated model. These metrics include the number of instances for the model that are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Healthy</p>
+</li>
+<li>
+<p>Recoverable Errors</p>
+</li>
+<li>
+<p>Successful</p>
+</li>
+<li>
+<p>Failed.</p>
+</li>
+</ul>
+<p>On the consoles list page, instances for the previous 24 hours are represented as bars at the end of each console's row. Active instances (Healthy and Recoverable) are stacked together as one bar and completed instances (Successful and Failed) are stacked as the other. Hover over the desired section of either bars to see the number of instances that bar represents. For detailed information about these instance states, refer to <a href="GUID-ABD1135E-25C7-4078-BF81-903A41BC5090.htm#GUID-BD0E9547-1A93-4DC2-8605-09E24614885F">Instance States</a>.</p>
+<div class="infobox-note" id="GUID-4025C203-C060-4FDB-B15B-46FC13F2EC27__GUID-42C06A75-3667-4DC9-9967-8F3E4AA428E4">
+<p class="notep1">Note:</p>
+The active/inactive status and instance bars will always show the state at which the page was first loaded even if you use the browser's refresh button. You must navigate away from this page and come back to see the updated data..</div>
+<p>The <span class="bold">Consoles</span> page appears as follows:</p>
+<div class="figure" id="GUID-4025C203-C060-4FDB-B15B-46FC13F2EC27__GUID-7C6125F9-1272-45FF-B7AE-071C33694439">
+<p class="titleinfigure">Figure 4-1 Consoles Page</p>
+<img width="1260" height="518" src="img/GUID-B123B1D9-BF9A-41DC-B00A-DCC5FB828755-default.png" alt="Consoles Page" title="Consoles Page" /></div>
+<!-- class="figure" -->
+<p>Click a model&rsquo;s name to navigate to the <span class="bold">Dashboards</span> page of that model.</p>
+</div>
+</div>
+<div class="sect2"><a id="GUID-DA418D05-5616-427F-8391-9939A5DB40C2"></a>
+<h2 id="IINUG-GUID-DA418D05-5616-427F-8391-9939A5DB40C2" class="sect2"><span class="enumeration_section">4.2</span> Understanding Dashboards</h2>
+<div>
+<p>The main console shows information about the milestone performance of an integration application. For example, once the model of the application has been created and activated, business owners can identify bottlenecks in the application and track key metrics immediately and in real time.</p>
+<p>The default dashboards are also known as&nbsp;<span class="italic">Milestone Dashboards</span>&nbsp;as they show metrics based on milestones defined in the model. These dashboards display the aggregate state of the business model based on milestones alone. To see the aggregate state of the model&rsquo;s <span class="italic">indicators</span>, you need to create custom dashboards.</p>
+<p>The status area is a collapsible section of the <span class="bold">Dashboards</span> page that always displays the last time the model changed to/from active/inactive state. This area also displays the search tool. You can see the model's icon, model description, and the descriptions for Single and Multiple Instances (that were defined while creating the model).</p>
+<p>See also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-FBDCC935-499D-4A8C-BFE4-2D4E3A6A3441.htm#GUID-1A287CB2-0524-4F1B-A85A-BB24F3E5CA6D" title="After a model is defined and activated, Insight collects metrics on running instances immediately. Within a few moments, you (a user with the role-permission of InsightExecutive) can evaluate the state of the integration application using the default dashboards. There are several major functional areas on the console.">Milestone Dashboards</a></p>
+</li>
+<li>
+<p><a href="GUID-FBDCC935-499D-4A8C-BFE4-2D4E3A6A3441.htm#GUID-196DD70E-C07B-49B9-9F31-717E58651544" title="You can track metrics, ratios, and trends on the console that are important to the business through custom dashboards. If a model has indicators, you can create custom dashboards to capture the data related to the indicators. As the milestones dashboards capture only data related to the milestones, a custom dashboard helps you to view indicator data along with the milestone data. You can visualize the indicators defined and extracted as the application runs.">Custom Dashboards</a></p>
+</li>
+<li>
+<p><a href="GUID-FBDCC935-499D-4A8C-BFE4-2D4E3A6A3441.htm#GUID-00496A76-660A-42C6-B571-8A471CCEF984" title="Occasionally, detailed dashboards beyond the capabilities of custom dashboards are needed to track business progress. If this is the case, you can create dashboards using the Oracle Business Activity Monitoring (BAM) Composer, and add the dashboards as an external dashboard.">External Dashboards</a>.</p>
+</li>
+</ul>
+<p>The <span class="bold">Dashboards</span> page for a model looks like the below screen.</p>
+<div class="figure" id="GUID-DA418D05-5616-427F-8391-9939A5DB40C2__GUID-DF04FCA1-0970-4ED9-A343-062A030091CD">
+<p class="titleinfigure">Figure 4-2 Dashboards of the Model</p>
+<img width="1252" height="485" src="img/GUID-12B5D2D1-24E9-4EE0-90B0-15BDAADB41F0-default.png" alt="Dashboards of the Model" title="Dashboards of the Model" /></div>
+<!-- class="figure" -->
+<p>The <span class="bold">Dashboards</span> page has the following elements:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The <span class="bold">Consoles</span> button takes you back to the list of Consoles and updates the data on that page.</p>
+</li>
+<li>
+<p>The title area contains the model name and a <span class="bold">Favorites</span> toggle icon. This icon lets you mark a model as favorite.</p>
+</li>
+<li>
+<p>The <span class="bold">Import Dashboards</span> button allows you to import dashboards that were previously exported with this particular model. See <a href="GUID-FBDCC935-499D-4A8C-BFE4-2D4E3A6A3441.htm#GUID-525DED2C-C4F7-4B3E-966E-BB5544203D93">Importing Dashboards</a>.</p>
+</li>
+<li>
+<p>The status indicator which indicates the status of the model</p>
+</li>
+<li>
+<p>The timestamp at which the model&rsquo;s status was last changed.</p>
+</li>
+<li>
+<p>The icons <a href="GUID-FBDCC935-499D-4A8C-BFE4-2D4E3A6A3441.htm#GUID-196DD70E-C07B-49B9-9F31-717E58651544" title="You can track metrics, ratios, and trends on the console that are important to the business through custom dashboards. If a model has indicators, you can create custom dashboards to capture the data related to the indicators. As the milestones dashboards capture only data related to the milestones, a custom dashboard helps you to view indicator data along with the milestone data. You can visualize the indicators defined and extracted as the application runs.">Custom Dashboards</a> and <a href="GUID-FBDCC935-499D-4A8C-BFE4-2D4E3A6A3441.htm#GUID-00496A76-660A-42C6-B571-8A471CCEF984" title="Occasionally, detailed dashboards beyond the capabilities of custom dashboards are needed to track business progress. If this is the case, you can create dashboards using the Oracle Business Activity Monitoring (BAM) Composer, and add the dashboards as an external dashboard.">External Dashboards</a> enable you to view the dashboards.</p>
+</li>
+</ul>
+</div>
+<div class="sect3"><a id="GUID-B7ADA59E-6523-42CB-81EB-B52AEF27AE87"></a>
+<h3 id="IINUG-GUID-B7ADA59E-6523-42CB-81EB-B52AEF27AE87" class="sect3"><span class="enumeration_section">4.2.1</span> Searching Instances</h3>
+<div>
+<p>The <span class="bold">Search</span> field has the same label as that of the multiple instance description of the model. The field where you enter your search string uses the single instance description of the model as the placeholder text. The label of the search tool varies from one model to another.</p>
+<p>You can use this tool to search for various instances of the model. When you search for instances either from a milestone dashboard or a custom dashboard, the search result (s) open in a new tab. When you search for instances from the Business Transaction Dashboard, the search results appear on the same page.</p>
+<p>Only users with the role <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-FA03485F-ECF0-4288-925E-992AEFAF50A1">InsightExecutive</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can search for instances.</p>
+<div class="infobox-note" id="GUID-B7ADA59E-6523-42CB-81EB-B52AEF27AE87__GUID-8E9C91DB-FF62-4D11-9781-26CBD16CF2E4">
+<p class="notep1">Note:</p>
+Search is performed only based on the search strings and any of the <a href="GUID-FBDCC935-499D-4A8C-BFE4-2D4E3A6A3441.htm#GUID-BEB756FA-37BD-4661-93A2-76B7B5F73E6F">Filtering Instances</a> that have been applied earlier are ignored.</div>
+<div class="infobox-note" id="GUID-B7ADA59E-6523-42CB-81EB-B52AEF27AE87__GUID-672F2B37-C8BF-487E-AF59-3814FA20BBFD">
+<p class="notep1">Note:</p>
+Search is performed only on identifier values of instances. For example, if your identifier is a <code class="codeph">Order Number</code>, you can only search for instances by order number.</div>
+<p>The search tool is available at the top right-corner of the screen and appears as follows:</p>
+<img width="433" height="36" src="img/GUID-CFC2A365-8E44-4B32-8B99-098751C93BE1-default.png" alt="Search Tool" title="Search Tool" />
+<p>If you want to see all the instances of the model, click <span class="bold">View All</span> available in the search tool to navigate to the <span class="bold">Business Transaction Dashboard</span>. The <span class="bold">Business Transaction Dashboard</span> opens in a new tab.</p>
+<p>When you search for an instance, if the identifier is of type <code class="codeph">numeric</code>/<code class="codeph">date</code>, you must enter the search <code class="codeph">string</code> that exactly matches the identifier. If the identifier is of type string, you can enter a partial string, an automatic wildcard mapping is done and all the instances that contain the partial string entered are retrieved. The supported SQL wildcards are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph">%</code> (percentage)</p>
+</li>
+<li>
+<p><code class="codeph">_</code> (underscore).</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3"><a id="GUID-BEB756FA-37BD-4661-93A2-76B7B5F73E6F"></a>
+<h3 id="IINUG-GUID-BEB756FA-37BD-4661-93A2-76B7B5F73E6F" class="sect3"><span class="enumeration_section">4.2.2</span> Filtering Instances</h3>
+<div>
+<p>The <span class="bold">Filters</span> allow you to control the data you can see on the dashboard. You can filter the instances by Lifecycle Filters or Indicator Filters or both. The lifecycle filters are uniform across models.</p>
+<p>Only users with the role <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-FA03485F-ECF0-4288-925E-992AEFAF50A1">InsightExecutive</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can filter instances.</p>
+<div class="infobox-note" id="GUID-BEB756FA-37BD-4661-93A2-76B7B5F73E6F__GUID-4B3B8368-87B1-4B3F-9A60-B36A6C202292">
+<p class="notep1">Note:</p>
+The filters work on the set of instances available at the time the page was loaded or when the <span class="bold">Refresh Data</span> was clicked. If you click <span class="bold">Refresh Data</span> while filters are in use, the page will update to show only the refreshed set of instances that match the existing filters.</div>
+<p>The available filters for milestone dashboards, custom dashboards, and instance list are as given below:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>For milestone dashboards, only filtering by lifecycle filters is supported.</p>
+</li>
+<li>
+<p>For custom dashboards, indicator filtering is also available apart from filtering by lifecycle filters.</p>
+</li>
+<li>
+<p>For instance list, indicator filtering is also supported apart from filtering by lifecycle filters.</p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-BEB756FA-37BD-4661-93A2-76B7B5F73E6F__GUID-665BE8D8-EBBB-434D-BCC2-B0B052CDCBDF">
+<p class="notep1">Note:</p>
+The external dashboards do not support filters.</div>
+<div class="section">
+<p class="subhead3">Lifecycle Filters</p>
+<div class="p">The milestone dashboards support only lifecycle filters. The available lifecycle filters are listed below:
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="italic">Start Date</span> &mdash; filters for instances started in your chosen time range of either one of the preset ranges or a custom range. The default value is <kbd class="userinput">Last 5 Days</kbd>. The possible values are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><kbd class="userinput">Last 1 Day</kbd>- when you select this option all the instances of the model started within last 1 day are displayed</p>
+</li>
+<li>
+<p><kbd class="userinput">Last 5 Days</kbd> - when you select this option, all the instances of the model started within the last 5 days are displayed</p>
+</li>
+<li>
+<p><kbd class="userinput">Last 30 Days</kbd> - when you select this option, all the instances of the model started within the last 30 days are displayed</p>
+</li>
+<li>
+<p><kbd class="userinput">Last 90 Days</kbd> - when you select this option, all the instances of the model started within the last 90 days are displayed</p>
+</li>
+<li>
+<p><kbd class="userinput">Custom</kbd> - when you select this option, you need to enter a time range including the date which includes the from and to values to see the instance started in this range.</p>
+</li>
+<li>
+<p><kbd class="userinput">Clear</kbd> - use this option to clear the option you have selected.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="italic">End Date</span> &mdash; filters for instances ended in your chosen time range of either one of the preset ranges or a custom range. The possible values are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><kbd class="userinput">Last 1 Day</kbd> - when you select this option all the instances of the model completed within last 1 day are displayed</p>
+</li>
+<li>
+<p><kbd class="userinput">Last 5 Days</kbd> - when you select this option, all the instances of the model completed within the last 5 days are displayed</p>
+</li>
+<li>
+<p><kbd class="userinput">Last 30 Days</kbd> - when you select this option, all the instances of the model completed within the last 30 days are displayed</p>
+</li>
+<li>
+<p><kbd class="userinput">Last 90 Days</kbd> - when you select this option, all the instances of the model completed within the last 90 days are displayed</p>
+</li>
+<li>
+<p><kbd class="userinput">Custom</kbd> - when you select this option, you need to enter a time range including the date which includes the from and to values to see the instance completed in this range.</p>
+</li>
+<li>
+<p><kbd class="userinput">Clear</kbd> - use this option to clear the option you have selected.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="italic">Duration</span> &mdash; filters for the length of time an instance took to complete from a number of seconds to days. Click this drop-down to define a value. Enter a numerical value in the text box and select the appropriate unit of time. The possible units are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><kbd class="userinput">Days</kbd></p>
+</li>
+<li>
+<p><kbd class="userinput">Minutes</kbd></p>
+</li>
+<li>
+<p><kbd class="userinput">Hours</kbd></p>
+</li>
+<li>
+<p><kbd class="userinput">Seconds</kbd>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="italic">Milestones</span> &mdash; filters for either instances with particular milestones or for instances that finished with a particular milestone. Click this drop-down to select Any or Last.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><kbd class="userinput">Any</kbd> - Select this option to filter by any milestone. You can filter by any milestone passed by an instance. When you select this option, you can select specific milestones. You can also select multiple milestones.</p>
+</li>
+<li>
+<p><kbd class="userinput">Last</kbd> - Select this option to filter by the last milestone. When you select this option, you can select specific milestones. You can also select multiple milestones.</p>
+<div class="infobox-note" id="GUID-BEB756FA-37BD-4661-93A2-76B7B5F73E6F__GUID-F1360552-D822-4159-B70D-94487FF9775E">
+<p class="notep1">Note:</p>
+When you select this option, the dashboards populate the data related to only the last milestone actions.</div>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="italic">Status</span> &mdash; filters for instances that were in the selected status choice(s) at the time when the data was loaded. The possible values are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><kbd class="userinput">Running</kbd> - indicates the instances that are running</p>
+</li>
+<li>
+<p><kbd class="userinput">Completed</kbd> - indicates the instances that have completed</p>
+</li>
+<li>
+<p><kbd class="userinput">Faulted</kbd> - indicates the instances that are in faulted state</p>
+</li>
+<li>
+<p><kbd class="userinput">Failed</kbd> - indicates the instances that have failed</p>
+</li>
+<li>
+<p><kbd class="userinput">All</kbd> - indicates all the instances, which is a combination of all the above statuses.</p>
+</li>
+</ul>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-BEB756FA-37BD-4661-93A2-76B7B5F73E6F__GUID-151D1882-080D-44B5-9880-F919661742E9">
+<p class="notep1">Note:</p>
+When you change the filters, click <span class="bold">Apply</span> to refresh the data without explicitly clicking <span class="bold">Refresh Data</span>.</div>
+</div>
+<div class="p">
+<div class="infobox-note" id="GUID-BEB756FA-37BD-4661-93A2-76B7B5F73E6F__GUID-10C8EB62-CB0D-4F74-AEF3-3AEF8B74FBE8">
+<p class="notep1">Remember:</p>
+<span>Oracle Real-Time Integration Business Insight</span> does not support filtering by <code class="codeph">NULL</code> string values.</div>
+</div>
+<p>The following screen displays the lifecycle filters.</p>
+<div class="figure" id="GUID-BEB756FA-37BD-4661-93A2-76B7B5F73E6F__GUID-F06BB567-5FF0-4C0E-A7E9-E15A24E6290F">
+<p class="titleinfigure">Figure 4-3 Lifecycle Filters for Milestone Dashboards</p>
+<img width="1143" height="294" src="img/GUID-1F6D0CEE-71D7-4FB0-BCD3-6D8A3C04A258-default.png" alt="Lifecycle Filters for Milestone Dashboards" title="Lifecycle Filters for Milestone Dashboards" /></div>
+<!-- class="figure" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Lifecycle and Indicator Filters</p>
+<p>Custom dashboards and instance list also support indicator filters apart from the lifecycle filters. The indicator filters available vary from model to model. Only the indicators that you have marked as filterable appear as filters.</p>
+<p>For example, the screen below has only two indicator filters, which implies that only two indicators have been marked as filterable in the model. The following screen displays both the lifecycle filters and indicator filters.</p>
+<div class="figure" id="GUID-BEB756FA-37BD-4661-93A2-76B7B5F73E6F__GUID-5AF648C9-73DD-44A4-B1CB-C0484BD80487">
+<p class="titleinfigure">Figure 4-4 Lifecycle and Indicator Filters for Custom Dashboards and Instance List</p>
+<img width="1132" height="335" src="img/GUID-9923141A-E1F6-493C-B7CF-32414772B16A-default.png" alt="Lifecycle and Indicator Filters for Custom Dashboards and Instance List" title="Lifecycle and Indicator Filters for Custom Dashboards and Instance List" /></div>
+<!-- class="figure" -->
+<p>When you filtering on numeric indicators, a numeric range of values to return. Filtering on text strings requires a case-sensitive exact match. The SQL wildcards <code class="codeph">%</code> and <code class="codeph">_</code> are supported.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-BD3768C1-CA99-4BCC-808E-5F4F75A8BE0B"></a>
+<h3 id="IINUG-GUID-BD3768C1-CA99-4BCC-808E-5F4F75A8BE0B" class="sect3"><span class="enumeration_section">4.2.3</span> Drilling Across Dashboards</h3>
+<div>
+<p>The milestone dashboards and custom dashboards support a feature of drill across. When you drill across a dashboard, you can go deeper into the instance details and see specific instances that relate to the dashboard.</p>
+<p>Only users with the role <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-FA03485F-ECF0-4288-925E-992AEFAF50A1">InsightExecutive</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can drill across the dashboards.</p>
+<div class="infobox-note" id="GUID-BD3768C1-CA99-4BCC-808E-5F4F75A8BE0B__GUID-9FA0430F-F9F7-42B5-9425-1C65505D4150">
+<p class="notep1">Note:</p>
+The external dashboards do not support drill across.</div>
+<div class="p">
+<div class="infobox-note" id="GUID-BD3768C1-CA99-4BCC-808E-5F4F75A8BE0B__GUID-FA0E44DC-4B47-492B-9C0D-5B322BD3924E">
+<p class="notep1">Remember:</p>
+<span>Oracle Real-Time Integration Business Insight</span> does not support drilling across by <code class="codeph">NULL</code> string values.</div>
+</div>
+<p>To drill across a dashboard:</p>
+<ol>
+<li>
+<p>Navigate to the desired dashboard.</p>
+</li>
+<li>
+<p>Drill across the dashboard. If the dashboards is:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="italic">Milestone Dashboard</span> - click any bubble on the bubble chart to drill across. When you click the dashboard, the <span class="bold">Instance List</span> opens in a new tab. You can observe that not all instances of the model are available in the <span class="bold">Instance List</span> page. Only specific instances based on the parameters of the dashboard appear here.</p>
+</li>
+<li>
+<p><span class="italic">Passed Milestones Dashboard</span> - drill across is not supported for this dashboard.</p>
+</li>
+<li>
+<p><span class="italic">Active Instances Dashboard</span> - right-click any bar on the bar chart to drill across. When you right-click, you see the <span class="bold">Instance List</span> button. Click this button to open the <span class="bold">Instance List</span> in a new tab. You can observe that not all instances of the model are available in the <span class="bold">Instance List</span>. Only specific instances based on the parameters of the dashboard appear here.</p>
+</li>
+<li>
+<p><span class="italic">Instance Errors Dashboard</span>- right-click any slice on the pie chart to drill across. When you right-click, you see the <span class="bold">Instance List</span> button. Click this button to open the <span class="bold">Instance List</span> in a new tab. You can observe that not all instances of the model are available in the <span class="bold">Instance List</span>. Only active instances represented by the bar you selected appear here.</p>
+</li>
+<li>
+<p><span class="italic">Avg Instance Completion Time Dashboard</span> - right-click any bubble on the bubble chart to drill across. When you right-click, you see the <span class="bold">Instance List</span> button. Click this button to open the <span class="bold">Instance List</span> in a new tab. You can observe that not all instances of the model are available in the <span class="bold">Instance List</span>. Only specific instances based on the parameters of the dashboard appear here.</p>
+</li>
+<li>
+<p><span class="italic">Custom Dashboard</span> - right-click any sector/bar/bubble on the dashboard to drill across when the dashboard uses pie/bar/bubble charts respectively. When you right-click, you see the <span class="bold">Instance List</span> button. Click this button to open the <span class="bold">Instance List</span> in a new tab. You can observe that not all instances of the model are available in the <span class="bold">Instance List</span>. Only specific instances based on the parameters of the dashboard appear here.</p>
+<div class="infobox-note" id="GUID-BD3768C1-CA99-4BCC-808E-5F4F75A8BE0B__GUID-6EDE89CF-E78E-49E6-A029-A0AC05C6D7D1">
+<p class="notep1">Note:</p>
+You cannot drill across from a custom dashboard that uses an area chart.</div>
+</li>
+</ul>
+</li>
+</ol>
+<p>The following screen shows an example of how you can drill across from a milestone dashboard. The milestone dashboard in this example is an Instance Errors Dashboard.</p>
+<div class="figure" id="GUID-BD3768C1-CA99-4BCC-808E-5F4F75A8BE0B__GUID-7805C7B8-E069-45D4-A99B-C7398A452AE9">
+<p class="titleinfigure">Figure 4-5 Drilling Across from a Milestone Dashboard</p>
+<img width="560" height="348" src="img/GUID-F82374B6-E3CD-4451-B2A9-A16CD830A0E3-default.png" alt="Drilling Across from a Milestone Dashboard" title="Drilling Across from a Milestone Dashboard" /></div>
+<!-- class="figure" -->
+<p>The following screen shows an example of how you can drill across from a custom dashboard. The custom dashboard in this example uses a bubble chart.</p>
+<div class="figure" id="GUID-BD3768C1-CA99-4BCC-808E-5F4F75A8BE0B__GUID-842D6A93-A2DF-4EB7-B725-B6D88FE2AE70">
+<p class="titleinfigure">Figure 4-6 Drilling Across from a Custom Dashboard</p>
+<img width="1145" height="372" src="img/GUID-3844C0CE-CB08-48CB-B589-2FC3CC595D7F-default.png" alt="Drilling Across from a Custom Dashboard" title="Drilling Across from a Custom Dashboard" /></div>
+<!-- class="figure" -->
+<p>The following screens show the list of instances that you see when you drill across from the milestone dashboard shown in <a href="GUID-FBDCC935-499D-4A8C-BFE4-2D4E3A6A3441.htm#GUID-BD3768C1-CA99-4BCC-808E-5F4F75A8BE0B__GUID-7805C7B8-E069-45D4-A99B-C7398A452AE9">Figure 4-5</a>.</p>
+<div class="figure" id="GUID-BD3768C1-CA99-4BCC-808E-5F4F75A8BE0B__GUID-0609DB27-F0DC-46F4-9C17-F02F33F348D4">
+<p class="titleinfigure">Figure 4-7 Drilled Instances from a Milestone Dashboard</p>
+<img width="1232" height="428" src="img/GUID-7BE4451F-9B40-44CF-BA31-2EC696DA02C4-default.png" alt="Drilled Instances from a Milestone Dashboard" title="Drilled Instances from a Milestone Dashboard" /></div>
+<!-- class="figure" -->
+<div class="infobox-note" id="GUID-BD3768C1-CA99-4BCC-808E-5F4F75A8BE0B__GUID-E3653E9B-446D-4BCC-B662-FDF371235386">
+<p class="notep1">Remember:</p>
+The list of instances that you see here is not the complete list. For a complete list of instances of a model, see <a href="GUID-FBDCC935-499D-4A8C-BFE4-2D4E3A6A3441.htm#GUID-6A91F552-BB13-4E8D-A58C-580328B4D1D8" title="The Instance List shows the information including the start date, the end date, the last milestone passed, and the values of various indicators, collected by Insight and associated with that instance. The instance list provides you with the ability to search for one or more instances by the unique identifier.">Instance Listing Page</a>.</div>
+<p>The following screens show the list of instances that you see when you drill across from the custom dashboard shown in <a href="GUID-FBDCC935-499D-4A8C-BFE4-2D4E3A6A3441.htm#GUID-BD3768C1-CA99-4BCC-808E-5F4F75A8BE0B__GUID-842D6A93-A2DF-4EB7-B725-B6D88FE2AE70">Figure 4-6</a>.</p>
+<div class="figure" id="GUID-BD3768C1-CA99-4BCC-808E-5F4F75A8BE0B__GUID-CAFEA9DD-C7E3-40F5-810C-4939190CDE4C">
+<p class="titleinfigure">Figure 4-8 Drilled Instances from a Custom Dashboard</p>
+<img width="1235" height="383" src="img/GUID-459B6139-C948-4983-A287-7F6E2114458B-default.png" alt="Drilled Instances from a Custom Dashboard" title="Drilled Instances from a Custom Dashboard" /></div>
+<!-- class="figure" --></div>
+</div>
+</div>
+<div class="sect2"><a id="GUID-1A287CB2-0524-4F1B-A85A-BB24F3E5CA6D"></a>
+<h2 id="IINUG-GUID-1A287CB2-0524-4F1B-A85A-BB24F3E5CA6D" class="sect2"><span class="enumeration_section">4.3</span> Milestone Dashboards</h2>
+<div>
+<p>After a model is defined and activated, Insight collects metrics on running instances immediately. Within a few moments, you (a user with the role-permission of <span class="italic">InsightExecutive</span>) can evaluate the state of the integration application using the default dashboards. There are several major functional areas on the console.</p>
+<p>The content of the console can be filtered using the <span class="bold">Filters</span> section. This area is collapsed by default. See <a href="GUID-FBDCC935-499D-4A8C-BFE4-2D4E3A6A3441.htm#GUID-BEB756FA-37BD-4661-93A2-76B7B5F73E6F">Filtering Instances</a>.</p>
+<p>By default, the console shows activity for the last five days. You can filter by a number of different criteria, including when an instance started or ended, how long the instance took to complete, any milestones passed and which milestones have most recently been passed.</p>
+<p>Insight provides default dashboards. The default dashboards are also known as <span class="italic">Milestone Dashboards</span>. Milestone dashboards on a console associated with a model give a business owner visibility into details on how a business is performing.</p>
+<div class="infobox-note" id="GUID-1A287CB2-0524-4F1B-A85A-BB24F3E5CA6D__GUID-CD62DB06-9F0F-4380-8008-D30C6192D9EA">
+<p class="notep1">Note:</p>
+Only users with the role <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-FA03485F-ECF0-4288-925E-992AEFAF50A1">InsightExecutive</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can view milestone dashboards.</div>
+<p>You can set a preference to see either all the milestone dashboards (Passed Milestones, Active Instances, Instance Error, and Avg. Instance Completion Time) or a selected dashboard on the <span class="wintitle">Milestone Dashboards</span> page. See <span class="italic">Milestone Dashboard View</span> in <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-D416F3E1-5C05-42D9-813E-B67377FD2FD0">Preferences</a>. When the preference is set as <span class="bold">Separated</span>, you must select a dashboard that needs to be displayed by default. The selected dashboard remains as the default dashboard to be displayed on the <span class="wintitle">Dashboards</span> page till you select another dashboard or change the preference to <span class="bold">Combined</span>. However, when you have set the preference as <span class="bold">Separated</span>, you can switch from one dashboard to another by clicking the relevant dashboard&rsquo;s tile.</p>
+<p>The default view of the <span class="wintitle">Milestone Dashboards</span> page is as shown below:</p>
+<div class="figure" id="GUID-1A287CB2-0524-4F1B-A85A-BB24F3E5CA6D__GUID-19C981EA-EBBA-45E9-ABF7-324956CFA84D">
+<p class="titleinfigure">Figure 4-9 View of Milestone Dashboards page when the Preference is set to Combined</p>
+<img width="837" height="764" src="img/GUID-53113902-3EFB-4F85-B013-CD2A939FB54F-default.png" alt="Milestone Summary Dashboard" title="Milestone Summary Dashboard" /></div>
+<!-- class="figure" -->
+<p>Updating the <span class="italic">Milestone Dashboard View</span> preference does not impact the Milestone Summary Dashboard. Irrespective of the value you choose for the <span class="italic">Milestone Dashboard View</span> preference, the Milestone Summary Dashboard always appears on the <span class="wintitle">Milestone Dashboards</span> page. The following screen shows the preference change.</p>
+<div class="figure" id="GUID-1A287CB2-0524-4F1B-A85A-BB24F3E5CA6D__GUID-FCEB2BF2-3A1D-46C9-A40C-184066A665D1">
+<p class="titleinfigure">Figure 4-10 View of Milestone Dashboards page when the Preference is set to Separated</p>
+<img width="1119" height="762" src="img/GUID-71D64C8E-B54F-401D-B0D8-226AAC8A8C81-default.png" alt="View of Milestone Dashboards page when the Preference is set to Separated" title="View of Milestone Dashboards page when the Preference is set to Separated" /></div>
+<!-- class="figure" -->
+<div class="section">
+<p class="subhead2">Viewing Dashboard</p>
+<p>To view data on the milestone dashboards:</p>
+<ol>
+<li>
+<p>Click the model for which you want to see the dashboards (on the <span class="bold">Consoles</span> page).</p>
+</li>
+<li>
+<p>Expand the <span class="bold">Filters</span> area and select the required filters. See <a href="GUID-FBDCC935-499D-4A8C-BFE4-2D4E3A6A3441.htm#GUID-BEB756FA-37BD-4661-93A2-76B7B5F73E6F">Filtering Instances</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply</span> to apply the filters or <span class="bold">Clear All</span> to clear all the selected filters.</p>
+</li>
+<li>
+<p>Click <span class="bold">Refresh Data</span> to see the latest data without changing the filters.</p>
+<p>Hover over any of the dashboards to view details about the milestone and execution time. You can also drill across the milestones to view specific instances. See <a href="GUID-FBDCC935-499D-4A8C-BFE4-2D4E3A6A3441.htm#GUID-BD3768C1-CA99-4BCC-808E-5F4F75A8BE0B" title="The milestone dashboards and custom dashboards support a feature of drill across. When you drill across a dashboard, you can go deeper into the instance details and see specific instances that relate to the dashboard.">Drilling Across Dashboards</a>.</p>
+<div class="infobox-note" id="GUID-1A287CB2-0524-4F1B-A85A-BB24F3E5CA6D__GUID-BA9B2894-C9B7-49CB-A24B-47C71679A870">
+<p class="notep1">Note:</p>
+Milestone count increase for each retry of a faulted instance. This is because BPEL fault policy tires to commit before every retry.</div>
+</li>
+<li>
+<p>Click <span class="bold">Consoles</span> to go back to the <span class="bold">Dashboards</span> page.</p>
+</li>
+<li>
+<p>After you are done with viewing the dashboards, click <span class="bold">View All</span> at the top-right corner of the page to navigate to the <span class="bold">Instance List</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-196DD70E-C07B-49B9-9F31-717E58651544"></a>
+<h2 id="IINUG-GUID-196DD70E-C07B-49B9-9F31-717E58651544" class="sect2"><span class="enumeration_section">4.4</span> Custom Dashboards</h2>
+<div>
+<p>You can track metrics, ratios, and trends on the console that are important to the business through custom dashboards. If a model has indicators, you can create custom dashboards to capture the data related to the indicators. As the milestones dashboards capture only data related to the milestones, a custom dashboard helps you to view indicator data along with the milestone data. You can visualize the indicators defined and extracted as the application runs.</p>
+<p>You can add as many custom dashboards as you like. Each custom dashboard is represented by a title and an icon (chosen while creating the dashboard).</p>
+<p>By default, the custom dashboards show data for instances created during the last five days. You can filter by a number of different criteria, including when an instance started or ended, how long the instance took to complete, and which milestones have most recently been passed.</p>
+<p>Custom dashboards allow you to choose the indicators based on which you want to monitor the progress of a process.</p>
+<p>To view data on <span class="bold">Custom Dashboards</span>:</p>
+<ol>
+<li>
+<p>Click the model for which you want to monitor the performance on the <span class="bold">Consoles</span> page.</p>
+</li>
+<li>
+<p>Click <span class="bold">My Custom Dashboards</span> icon.</p>
+</li>
+<li>
+<p>Expand the <span class="bold">Filters</span> area and select the required filters.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply</span> to apply the filters or <span class="bold">Clear All</span> to clear all the selected filters.</p>
+<p>You can see the data visually in the form of a chart that was selected for the dashboard.</p>
+</li>
+<li>
+<p>Click <span class="bold">Refresh Data</span> each time you change the filters to view the refreshed model data on the dashboard.</p>
+<div class="figure" id="GUID-196DD70E-C07B-49B9-9F31-717E58651544__GUID-BF621429-72CE-4ED5-9FBF-4B2E79C67B61">
+<p class="titleinfigure">Figure 4-11 Custom Dashboard</p>
+<img width="1184" height="608" src="img/GUID-38D2F862-5553-44C6-A452-21FA85171CCF-default.png" alt="Custom Dashboard" title="Custom Dashboard" /></div>
+<!-- class="figure" -->
+<p>You can drill across the dashboard to view specific instances. See <a href="GUID-FBDCC935-499D-4A8C-BFE4-2D4E3A6A3441.htm#GUID-BD3768C1-CA99-4BCC-808E-5F4F75A8BE0B" title="The milestone dashboards and custom dashboards support a feature of drill across. When you drill across a dashboard, you can go deeper into the instance details and see specific instances that relate to the dashboard.">Drilling Across Dashboards</a>.</p>
+</li>
+</ol>
+</div>
+<div class="sect3"><a id="GUID-58052EF8-FF13-4DF5-A407-5E9B093027A6"></a>
+<h3 id="IINUG-GUID-58052EF8-FF13-4DF5-A407-5E9B093027A6" class="sect3"><span class="enumeration_section">4.4.1</span> Chart Types</h3>
+<div>
+<div class="section">
+<p>The available chart types for custom dashboards are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="italic">Pie Chart</span></p>
+</li>
+<li>
+<p><span class="italic">Bar Chart</span></p>
+</li>
+<li>
+<p><span class="italic">Bubble Chart</span></p>
+</li>
+<li>
+<p><span class="italic">Area Chart</span>.</p>
+</li>
+</ul>
+<p>For more information, see <span class="italic">Types of Charts</span> in <span id="GUID-58052EF8-FF13-4DF5-A407-5E9B093027A6__INCON"><cite>Understanding Oracle Real-Time Integration Business Insight</cite></span>.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-1E2CB62A-438F-433D-9152-F18A3D7FDA05"></a>
+<h3 id="IINUG-GUID-1E2CB62A-438F-433D-9152-F18A3D7FDA05" class="sect3"><span class="enumeration_section">4.4.2</span> Creating Custom Dashboards</h3>
+<div>
+<p>You can also create custom dashboards for models that have indicators defined. Models need indicators to be defined because the visualization charts in the custom dashboard use the dimensions or measures to be represented in the chart.</p>
+<p>Only users with the role <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-FA03485F-ECF0-4288-925E-992AEFAF50A1">InsightExecutive</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can create custom dashboards.</p>
+<p>To create custom dashboards:</p>
+<ol>
+<li>
+<p>Click the model for which you want to monitor the progress on the <span class="bold">Consoles</span> page.</p>
+</li>
+<li>
+<p>Ensure that the model has indicators defined. If not, create/define indicators.</p>
+</li>
+<li>
+<p>Click <span class="bold">My Custom Dashboards</span> icon.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create Dashboard</span>.</p>
+<p>The <span class="bold">Create Dashboard</span> dialog opens.</p>
+<div class="figure" id="GUID-1E2CB62A-438F-433D-9152-F18A3D7FDA05__GUID-4A434D12-BE59-4C58-976B-CADF1B9D202D">
+<p class="titleinfigure">Figure 4-12 Create Dashboard Dialog</p>
+<img width="620" height="725" src="img/GUID-DF49F62D-9944-4E94-BF3A-4ED19EC3A352-default.png" alt="Create Dashboard Dialog" title="Create Dashboard Dialog" /></div>
+<!-- class="figure" --></li>
+<li>
+<p>Enter a suitable <span class="bold">Title</span> for the dashboard.</p>
+</li>
+<li>
+<p>Choose an appropriate icon.</p>
+</li>
+<li>
+<p>Choose a <span class="bold">Visualization</span>, the chart through which the data is visualized. Based on the type of the chart you choose, the parameters vary. The charts available are listed below:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="italic">Pie Chart</span></p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Slice Size - select the values to be represented by the slice size. This is a mandatory field.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Measure - select the measure for the slice size. This is a mandatory field.</p>
+</li>
+<li>
+<p>Aggregating Function - select the aggregating function for the slice size. This is a mandatory field.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Grouping - select the value based on which the grouping needs to be done. This is a mandatory field.</p>
+<div class="figure" id="GUID-1E2CB62A-438F-433D-9152-F18A3D7FDA05__GUID-399011AB-5726-4A0C-A728-005B11B8FB05">
+<p class="titleinfigure">Figure 4-13 Create Dashboard &mdash; Pie Chart</p>
+<img width="646" height="502" src="img/GUID-4DC9BD6B-0B26-4CF6-8027-F2A4EB884D7C-default.png" alt="Create Dashboard &mdash; Pie Chart" title="Create Dashboard &mdash; Pie Chart" /></div>
+<!-- class="figure" --></li>
+</ul>
+</li>
+<li>
+<p><span class="italic">Bar Chart</span></p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Y Axis - select the values to be represented on the Y Axis.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Measure - select the appropriate measure. This is a mandatory field.</p>
+</li>
+<li>
+<p>Aggregating Function - select the appropriate aggregating function. This is a mandatory field.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>X Axis - select the values to be represented on the X Axis. It is typically a dimension.</p>
+</li>
+<li>
+<p>Grouping - select the value based on which the grouping needs to be done. This is an optional field.</p>
+<div class="figure" id="GUID-1E2CB62A-438F-433D-9152-F18A3D7FDA05__GUID-ABBC1C89-7F5C-48E6-B2E7-B08D70B7FE75">
+<p class="titleinfigure">Figure 4-14 Create Dashboard &mdash; Bar Chart</p>
+<img width="553" height="522" src="img/GUID-A74FD1EE-0573-4F6C-B610-30554B849E86-default.png" alt="Create Dashboard &mdash; Bar Chart" title="Create Dashboard &mdash; Bar Chart" /></div>
+<!-- class="figure" --></li>
+</ul>
+</li>
+<li>
+<p><span class="italic">Bubble Chart</span></p>
+<ul style="list-style-type: disc;">
+<li>
+<p>X Axis - select the values to be represented on the X Axis.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Measure - select the appropriate measure. This is a mandatory field.</p>
+</li>
+<li>
+<p>Aggregating Function - select the appropriate aggregating function. This is a mandatory field.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Y Axis - select the values to be represented on the Y Axis.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Measure - select the appropriate measure. This is a mandatory field.</p>
+</li>
+<li>
+<p>Aggregating Function - select the appropriate aggregating function. This is a mandatory field.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Bubble Size - select the values to be used to determine the bubble size.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Measure - select the appropriate measure. This is a mandatory field.</p>
+</li>
+<li>
+<p>Aggregating Function - select the appropriate aggregating function. This is a mandatory field.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Grouping - select the value based on which the grouping needs to be done. This is a mandatory field.</p>
+<div class="figure" id="GUID-1E2CB62A-438F-433D-9152-F18A3D7FDA05__GUID-58C00B99-E151-4A47-ADEF-2CDFE61B1F0A">
+<p class="titleinfigure">Figure 4-15 Create Dashboard &mdash; Bubble Chart</p>
+<img width="507" height="715" src="img/GUID-D5AE7C5E-8169-4EFC-8A9F-EB7021E70E2A-default.png" alt="Create Dashboard &mdash; Bubble Chart" title="Create Dashboard &mdash; Bubble Chart" /></div>
+<!-- class="figure" --></li>
+</ul>
+</li>
+<li>
+<p><span class="italic">Area Chart</span></p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Y Axis - select the values to be represented on the Y Axis.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Measure - select the appropriate measure. This is a mandatory field.</p>
+</li>
+<li>
+<p>Aggregating Function - select the appropriate aggregating function. This is a mandatory field.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>X Axis - select the value to be represented on the X Axis. This is a mandatory field.</p>
+<div class="figure" id="GUID-1E2CB62A-438F-433D-9152-F18A3D7FDA05__GUID-F2C83174-0EBC-4E67-A8FB-F846C88CFF33">
+<p class="titleinfigure">Figure 4-16 Create Dashboard &mdash; Area Chart</p>
+<img width="587" height="469" src="img/GUID-EA49D079-33F4-4837-9C7A-C579941F75C8-default.png" alt="Create Dashboard &mdash; Area Chart" title="Create Dashboard &mdash; Area Chart" /></div>
+<!-- class="figure" --></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Select appropriate values for each of the fields in <span class="bold">Create Dashboard</span> dialog.</p>
+</li>
+<li>
+<p>Click <span class="bold">Ok</span> to create the dashboard.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3"><a id="GUID-85A418E3-D935-451C-8109-5CA3DDB1796D"></a>
+<h3 id="IINUG-GUID-85A418E3-D935-451C-8109-5CA3DDB1796D" class="sect3"><span class="enumeration_section">4.4.3</span> Editing Custom Dashboards</h3>
+<div>
+<p>Only users with the role <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-FA03485F-ECF0-4288-925E-992AEFAF50A1">InsightExecutive</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can edit/update custom dashboards.</p>
+<p>When you try to edit a dashboard, all the fields are populated with the current values. You can change any of the fields if required.</p>
+<p>To edit a custom dashboard:</p>
+<ol>
+<li>
+<p>Click the model for which you want to monitor the performance on the <span class="bold">Consoles</span> page.</p>
+</li>
+<li>
+<p>Click <span class="bold">My Custom Dashboards</span> icon.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Edit</span> icon (the pencil icon) on the Custom Dashboard tile.</p>
+<p>The <span class="bold">Create Dashboard</span> dialog opens.</p>
+</li>
+<li>
+<p>Make the required changes and click <span class="bold">Ok</span>. Click <span class="bold">Cancel</span> to discard your changes.</p>
+<p>You can see the changes you have made.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Delete</span> icon on the Custom Dashboard tile if you want to delete the custom dashboard for any reason.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3"><a id="GUID-525DED2C-C4F7-4B3E-966E-BB5544203D93"></a>
+<h3 id="IINUG-GUID-525DED2C-C4F7-4B3E-966E-BB5544203D93" class="sect3"><span class="enumeration_section">4.4.4</span> Importing Dashboards</h3>
+<div>
+<p>You can import dashboards from other applications into the Oracle Real-Time integration Business Insight application. You can import custom dashboards from one installation of Oracle Real-time Integration Business Insight into another.</p>
+<p>Only users with the role <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can import custom dashboards. Though a user with the role <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-FA03485F-ECF0-4288-925E-992AEFAF50A1">InsightExecutive</a> can view and edit dashboards, this user is not permitted to import dashboards.</p>
+<div class="infobox-note" id="GUID-525DED2C-C4F7-4B3E-966E-BB5544203D93__GUID-417227F9-29B5-4637-88B3-FDBA93A58722">
+<p class="notep1">Note:</p>
+You can import dashboards only into an activated model.</div>
+<p>To import dashboards:</p>
+<ol>
+<li>
+<p>Click the model for which you want to monitor the progress on the <span class="bold">Consoles</span> page.</p>
+</li>
+<li>
+<p>Click <span class="bold">My Custom Dashboards</span> icon.</p>
+</li>
+<li>
+<p>Click <span class="bold">Import Dashboards</span>.</p>
+<p>The <span class="bold">Import Dashboard</span> dialog opens.</p>
+<div class="figure" id="GUID-525DED2C-C4F7-4B3E-966E-BB5544203D93__GUID-05DFA74F-C30C-482F-9B6A-69FBFC6AB015">
+<p class="titleinfigure">Figure 4-17 Import Dashboard Dialog</p>
+<img width="329" height="312" src="img/GUID-0D8DA777-2A6C-4A5E-8E88-BDA96AFE2066-default.png" alt="Import Dashboard Dialog" title="Import Dashboard Dialog" /></div>
+<!-- class="figure" --></li>
+<li>
+<p>Click <span class="bold">Browse</span> and select the archive file of the dashboard to import.</p>
+<p>The model name is the name of the model for which you are viewing the dashboard.</p>
+</li>
+<li>
+<p>Click <span class="bold">Import Dashboards</span>.</p>
+<div class="infobox-note" id="GUID-525DED2C-C4F7-4B3E-966E-BB5544203D93__GUID-E5CB6159-8B71-4BB7-A8AC-E3D7B1C6A2CC">
+<p class="notep1">Note:</p>
+Existing dashboards are not imported. The existing dashboards appear as skipped dashboards. The imported dashboards appear on the <span class="bold">Dashboards</span> page sorted by date.</div>
+</li>
+</ol>
+<div class="infobox-note" id="GUID-525DED2C-C4F7-4B3E-966E-BB5544203D93__GUID-A69C5C25-74D5-4096-A0C5-0F9082837F52">
+<p class="notep1">Note:</p>
+Insight does not copy/import instances when you import dashboards. To copy the instances of the dashboards, you must clean up the Data Objects in <span>Oracle Business Activity Monitoring Composer</span>. See <a class="olink INSAG-GUID-D6D6D7F6-25F4-4F99-B73A-C9C661A67513" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=E78496-01&amp;id=INSAG-GUID-D6D6D7F6-25F4-4F99-B73A-C9C661A67513">Cleaning BAM Data Objects and Projects</a> in <span id="GUID-525DED2C-C4F7-4B3E-966E-BB5544203D93__INSAG"><cite>Administering Oracle Real-Time Integration Business Insight</cite></span>.</div>
+</div>
+</div>
+</div>
+<div class="sect2"><a id="GUID-00496A76-660A-42C6-B571-8A471CCEF984"></a>
+<h2 id="IINUG-GUID-00496A76-660A-42C6-B571-8A471CCEF984" class="sect2"><span class="enumeration_section">4.5</span> External Dashboards</h2>
+<div>
+<p>Occasionally, detailed dashboards beyond the capabilities of custom dashboards are needed to track business progress. If this is the case, you can create dashboards using the Oracle Business Activity Monitoring (BAM) Composer, and add the dashboards as an external dashboard.</p>
+<p>The dashboards created in BAM must be added to the project that is provisioned in BAM by Oracle Real-time Integration Business Insight when the model is activated.</p>
+<div class="infobox-note" id="GUID-00496A76-660A-42C6-B571-8A471CCEF984__GUID-C9F50D5D-8919-446A-B6F0-DC06DE2570D3">
+<p class="notep1">Note:</p>
+External dashboards are available only if that option is set in the <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-D416F3E1-5C05-42D9-813E-B67377FD2FD0">Preferences</a>.</div>
+<p>There are no filters for external dashboards. They provide flexibility in choosing measures and dimensions for the charts compared to the custom dashboards which use a fixed set of templates which largely have only indicators as measures and dimensions. The dashboards have a link to open the dashboard in a new tab. This link takes you to the BAM dashboard, which opens in a new tab. The dashboard in BAM has tools that allow you to change dimensions, set runtime filters and active data properties (if allowed by the BAM source views), and choose parameters if any are involved. If parameters are used, they appear in a collapsible pane on the right side of the dashboard.</p>
+<p>If any of the external dashboards have been added to the Oracle Real-Time Integration Business Insight application, you can see them here. &nbsp;If there are any BAM dashboards available in the model's BAM project and not yet added to Insight, you can add them. If you do not see any dashboards in <span class="bold">External Dashboards</span>, you can add external dashboards by using the <span class="bold">Add Dashboard</span> button.</p>
+<div class="infobox-note" id="GUID-00496A76-660A-42C6-B571-8A471CCEF984__GUID-0714A18B-D249-4ABA-9009-082C382A4976">
+<p class="notep1">Note:</p>
+Only users with the role <a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1CE79A08-5414-4778-A98B-1A1D39F44F5C">InsightModelCreator</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-FA03485F-ECF0-4288-925E-992AEFAF50A1">InsightExecutive</a>/<a href="GUID-975C4F25-7D23-4584-B671-1ED3C2BC54DF.htm#GUID-1B08C06D-E475-416B-BFCA-6AF001BE7B2B">InsightAdmin</a> can add/integrate external dashboards.</div>
+<div class="figure" id="GUID-00496A76-660A-42C6-B571-8A471CCEF984__GUID-F472D603-E85A-4807-BA24-50C5C24CD480">
+<p class="titleinfigure">Figure 4-18 External Dashboard</p>
+<img width="1226" height="415" src="img/GUID-E16843D3-E24F-4DB7-AE6D-69880D8C0114-default.png" alt="External Dashboard" title="External Dashboard" /></div>
+<!-- class="figure" --></div>
+<div class="sect3"><a id="GUID-E2222856-4FA3-4128-A9F2-486973A65CA5"></a>
+<h3 id="IINUG-GUID-E2222856-4FA3-4128-A9F2-486973A65CA5" class="sect3"><span class="enumeration_section">4.5.1</span> Creating an External Dashboard</h3>
+<div>
+<div class="section">To add an external dashboard in Insight, it must be created in BAM Composer first. Each Insight business model has exactly one BAM project associated with it. The display name of that BAM project is <code class="codeph">Insight-&lt;Model Name&gt;</code>. All the external dashboards related to a particular business model must be created in the corresponding BAM project. These dashboards can be created using either the top down or the bottom up approach supported by BAM.</div>
+<!-- class="section" -->
+<div class="section">The business query for the view(s) in a dashboard makes use of the data object that is called <code class="codeph">&lt;Model-Name&gt; metrics view</code> and is already added to the project. Although, other data objects also work, this data object contains all the relevant columns that you could be interested in. Thus, you have the flexibility to display the information as desired.</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Pick the required columns.</span>
+<div>
+<p>Typically, these would be the columns for the various indicators for the model. The column display names are the same as the names of the indicators.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Add/Edit Filter</span>. Create Filters for these business queries as is the case with any BAM business queries.</span>
+<div>
+<p>These filters can make use of one or more parameters that are already present in this project.</p>
+<div class="figure" id="GUID-E2222856-4FA3-4128-A9F2-486973A65CA5__GUID-6175EEDB-4D08-4FF9-B4D4-67CDAD3C1E45">
+<p class="titleinfigure">Figure 4-19 Creating External Dashboards in Oracle BAM Composer</p>
+<img width="1025" height="501" src="img/GUID-B71C6953-D267-4B51-BFCA-271F8DD5F3BC-default.png" alt="Creating External Dashboards in Oracle BAM Composer" title="Creating External Dashboards in Oracle BAM Composer" /></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>If you need a similar drill across experience as is there for the milestone dashboards and custom dashboards, you can configure the business views in the external dashboard on similar lines with the instance list being the target page to display.</span></li>
+<li class="stepexpand"><span>Leave the title of the dashboard as blank in BAM Composer if you do not want to see the BAM title of the dashboard in Insight and want only the title entered for the dashboard in the Insight <span class="bold">Add Dashboard</span> dialog.</span></li>
+<li class="stepexpand"><span>Decide the look and feel and include/exclude the various features supported by BAM in dashboards.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect3"><a id="GUID-C428C7AC-0300-407C-AB86-8D2D9087F7E3"></a>
+<h3 id="IINUG-GUID-C428C7AC-0300-407C-AB86-8D2D9087F7E3" class="sect3"><span class="enumeration_section">4.5.2</span> Adding an External Dashboard</h3>
+<div>
+<div class="section">
+<p>If the model&rsquo;s BAM project does not have any dashboards that can be added to Insight, you see an error message at the top of the screen. The error message like:</p>
+<img width="367" height="28" src="img/GUID-6E923A17-2C10-48AF-9F6A-0ABB478EA96D-default.png" alt="No external dashboards available for addition" title="No external dashboards available for addition" />
+<p>To add an external dashboard:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Click <span class="bold">Add Dashboard</span></span>
+<div>The <span class="bold">Add Dashboard</span> dialog opens.</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Browse</span> and select the dashboard you want to add.</span>
+<div>
+<div class="infobox-note" id="GUID-C428C7AC-0300-407C-AB86-8D2D9087F7E3__GUID-A6E5C95B-B158-4E70-818E-0896C4B3F7A0">
+<p class="notep1">Note:</p>
+Before you add the external dashboards, you must create them in Oracle Business Activity Monitoring Composer.</div>
+</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">OK</span></span>
+<div>The external dashboard displays data and appears at the bottom of the <span class="bold">Dashboards</span> page as a new tile.</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2"><a id="GUID-6A91F552-BB13-4E8D-A58C-580328B4D1D8"></a>
+<h2 id="IINUG-GUID-6A91F552-BB13-4E8D-A58C-580328B4D1D8" class="sect2"><span class="enumeration_section">4.6</span> Instance Listing Page</h2>
+<div>
+<p>The Instance List shows the information including the start date, the end date, the last milestone passed, and the values of various indicators, collected by Insight and associated with that instance. The instance list provides you with the ability to search for one or more instances by the unique identifier.</p>
+<p>The search tool at the top lets you search for case-insensitive partial matches of unique identifiers. You can also filter by various life-cycle filters or by filterable indicators to narrow or expand your results. For more information see <a href="GUID-FBDCC935-499D-4A8C-BFE4-2D4E3A6A3441.htm#GUID-B7ADA59E-6523-42CB-81EB-B52AEF27AE87">Searching Instances</a> and <a href="GUID-FBDCC935-499D-4A8C-BFE4-2D4E3A6A3441.htm#GUID-BEB756FA-37BD-4661-93A2-76B7B5F73E6F">Filtering Instances</a>.</p>
+<p>Users with appropriate role privileges can inspect lists of instances that match search criteria from the Instance List. From this list, you can drill across into instances and inspect detailed metadata (e.g., milestone audit, etc.).</p>
+<p>You can navigate to the <span class="bold">Instance List</span> using the <span class="bold">View All</span> link on the dashboards page.</p>
+<div class="p">You can navigate to the <span class="bold">Instance List</span> page in any of the following ways:
+<ul style="list-style-type: disc;">
+<li>
+<p>Click <span class="bold">View All</span> link on the Dashboards page</p>
+</li>
+<li>
+<p>Drill across from most the of the milestone dashboards or any of the custom visualization views with a right-click. In this case, only the list of instances specific to the dashboard appear on this page. See <a href="GUID-FBDCC935-499D-4A8C-BFE4-2D4E3A6A3441.htm#GUID-BD3768C1-CA99-4BCC-808E-5F4F75A8BE0B" title="The milestone dashboards and custom dashboards support a feature of drill across. When you drill across a dashboard, you can go deeper into the instance details and see specific instances that relate to the dashboard.">Drilling Across Dashboards</a>.</p>
+</li>
+<li>
+<p>Drill across any row of the <span class="italic">Milestone Timings Dashboard</span> with a click. In this case, only the list of instances specific to the dashboard appear on this page.</p>
+</li>
+</ul>
+</div>
+<div class="figure" id="GUID-6A91F552-BB13-4E8D-A58C-580328B4D1D8__GUID-FC9BF82A-6B0D-4E11-8AE2-59BC12976CAC">
+<p class="titleinfigure">Figure 4-20 Instance List</p>
+<img width="1230" height="508" src="img/GUID-BB4A5ABF-242E-4616-A50C-DF6D78BBF32B-default.png" alt="Instance List" title="Instance List" /></div>
+<!-- class="figure" -->
+<p>A maximum of 15 rows appear on a page. Scroll down to the end of the page to see the navigational arrows that allow you navigate to further pages.</p>
+<p>Click any of the row headers to sort the instance list by that header.</p>
+</div>
+</div>
+<div class="sect2"><a id="GUID-B8223CAE-0288-475C-8693-497A675A537F"></a>
+<h2 id="IINUG-GUID-B8223CAE-0288-475C-8693-497A675A537F" class="sect2"><span class="enumeration_section">4.7</span> Instance Details Page</h2>
+<div>
+<p>The basic use of the instance details page is to give a chronological detailed record of the passage of milestones of any particular instance that you wish to view.</p>
+<p>A user looking for failed instances, or running instances or any other filtered list of instances on the instance listing page may as a consequence want to delve into each of these instances to investigate the causes for the same. The last column for each instance on the instance listing page contains a side arrow to drill down into the instance details page, which shows details for that particular instance in the form of time line depicting which milestones were hit and when. You can also click the Identifier.</p>
+<p>The instance details page also shows a list of indicators grouped according to the milestone with which they are associated, and the values of these indicators.</p>
+<p>Click any instance on the <span class="bold">Instance Listing Page</span> to navigate to the <span class="bold">Instance Details Page</span>.</p>
+<p>When instance details page opens, by default, all milestones passed are shown in the timeline, with a master-details list below it (where headers are milestones and on expansion indicators are shown associated with that milestone) with all the headers collapsed. If you click anywhere outside the timeline item, the selected milestone gets deselected and the default state of the master-detail list is restored.</p>
+<p>Click <span class="bold">Expand All</span> on the top-right corner of the page to expand all the milestones.</p>
+<div class="figure" id="GUID-B8223CAE-0288-475C-8693-497A675A537F__GUID-87958F1E-2076-46CC-92CC-B683BAB9400F">
+<p class="titleinfigure">Figure 4-21 Instance Details Page</p>
+<img width="867" height="390" src="img/GUID-21F76646-DCF2-42EE-8CE3-1C504EFB162C-default.png" alt="Instance Details Page" title="Instance Details Page" /></div>
+<!-- class="figure" -->
+<div class="p">
+<div class="infobox-note" id="GUID-B8223CAE-0288-475C-8693-497A675A537F__GUID-92D2F9C4-A59B-49CE-A8DA-F8C3F788ADEB">
+<p class="notep1">Note:</p>
+If you face any problems with this page, you can send an e-mail with the flowtrace link to the Support team using the <span class="bold">Report A Problem</span> link either at the milestone level or the instance level. When you click this link, an e-mail editor opens with a link to the flowtrace. You can also add other details that you want to report to the Support team.</div>
+</div>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment128">
+<tr>
+<td class="cellalignment135">
+<table class="cellalignment138">
+<tr>
+<td class="cellalignment132"><a href="GUID-795CC3E9-C1E9-43A5-BCF7-7EB54979159D.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment132"><a href="GUID-047DAE63-C557-4912-AF42-2D822C63581A.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment137">
+<table class="cellalignment131">
+<tr>
+<td class="cellalignment132"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment132"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment132"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

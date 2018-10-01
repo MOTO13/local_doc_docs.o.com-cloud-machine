@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Viewing vNET Access</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-07T05:55:01Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine CLI Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E69222-06" />
+<meta name="dcterms.isVersionOf" content="ELUCL" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-4B893928-826E-4227-B82D-00C928C0BD58.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-759A67D1-F616-4825-B657-F8A14DDB86ED.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUCL.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-FF435881-D472-44A0-84D9-B72692659D5B"></a> <span id="PAGE" style="display:none;">37/40</span> <!-- End Header -->
+<h1 id="ELUCL-GUID-FF435881-D472-44A0-84D9-B72692659D5B" class="sect1">Viewing vNET Access</h1>
+<div>
+<div class="section">Virtual network access (vNET Access) allows sharing of vNETs between tenants. View the vNET Access objects in your own tenancy to determine what vNETs you have permission to use when configuring virtual machines. Tenant users and administrators can fetch the vNET Access information to determine the vNETs that they can use.</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-FF435881-D472-44A0-84D9-B72692659D5B.htm#GUID-D0CA3C44-C9E3-4BB0-A669-C170FE04AF53" title="This command enables you to discover a list of vNET Access entities configured in a specific container.">discover vnetaccess</a></p>
+</li>
+<li>
+<p><a href="GUID-FF435881-D472-44A0-84D9-B72692659D5B.htm#GUID-A740D0F6-96D7-4ABB-AD60-807EDD1B98E8" title="This command enables you to retrieve information for a specific vNET access entity.">get vnetaccess</a></p>
+</li>
+<li>
+<p><a href="GUID-FF435881-D472-44A0-84D9-B72692659D5B.htm#GUID-9FD1D50A-6C26-45DD-8D18-FBA4A511B7B6" title="This command enables you list information for all the vNet Access entities in a container.">list vnetaccess</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-D0CA3C44-C9E3-4BB0-A669-C170FE04AF53"></a>
+<h2 id="ELUCL-GUID-D0CA3C44-C9E3-4BB0-A669-C170FE04AF53" class="sect2">discover vnetaccess</h2>
+<div>
+<p>This command enables you to discover a list of vNET Access entities configured in a specific container.</p>
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute discover vnetaccess <span class="variable">container</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-D0CA3C44-C9E3-4BB0-A669-C170FE04AF53__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for listing all vNETs in a container.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d22535e90">Parameter</th>
+<th class="cellalignment26" id="d22535e92">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d22535e96" headers="d22535e90">container</td>
+<td class="cellalignment27" headers="d22535e96 d22535e92">Hierarchical name-space for vNET Access</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute discover vnetaccess /mytenant/public</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute discover vnetaccess /mytenant/public
+entry
+/mytenant/public/EoIB-OMS-c2
+/mytenant/public/EoIB-management-c2
+/mytenant/public/IPoIB-instance-storage-c2
+/mytenant/public/IPoIB-load-balancer-c2
+/mytenant/public/IPoIB-management-c2
+/mytenant/public/IPoIB-service-manager-c2
+/mytenant/public/IPoIB-virt-admin-c2
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-A740D0F6-96D7-4ABB-AD60-807EDD1B98E8"></a>
+<h2 id="ELUCL-GUID-A740D0F6-96D7-4ABB-AD60-807EDD1B98E8" class="sect2">get vnetaccess</h2>
+<div>
+<p>This command enables you to retrieve information for a specific vNET access entity.</p>
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute get vnetaccess <span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-A740D0F6-96D7-4ABB-AD60-807EDD1B98E8__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for retrieving details of a vNET access.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d22535e158">Parameter</th>
+<th class="cellalignment26" id="d22535e160">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d22535e164" headers="d22535e158">name</td>
+<td class="cellalignment27" headers="d22535e164 d22535e160">Unique hierarchical name for the virtual network access. For example, <code class="codeph">/cloud/public/myvnetworkaccess</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute get vnetaccess /mytenant/public/EoIB-OMS-c2</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+uri                                                name                         vnet                       provider
+https://api/vnetaccess/mytenant/public/EoIB-OMS   /mytenant/public/EoIB-OMS-c2  /cloud/public/EoIB-OMS-c2  False
+
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-9FD1D50A-6C26-45DD-8D18-FBA4A511B7B6"></a>
+<h2 id="ELUCL-GUID-9FD1D50A-6C26-45DD-8D18-FBA4A511B7B6" class="sect2">list vnetaccess</h2>
+<div>
+<p>This command enables you list information for all the vNet Access entities in a container.</p>
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute list vnetaccess <span class="variable">container</span> [<span class="variable">--vnet</span>]</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-9FD1D50A-6C26-45DD-8D18-FBA4A511B7B6__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameters and descriptions for listing details of vnet access.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d22535e233">Parameter</th>
+<th class="cellalignment26" id="d22535e235">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d22535e239" headers="d22535e233">container</td>
+<td class="cellalignment27" headers="d22535e239 d22535e235">Hierarchical name-space for vNET Access</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d22535e244" headers="d22535e233">--vnet</td>
+<td class="cellalignment27" headers="d22535e244 d22535e235">(Optional) Name of the associated virtual network</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute list vnetaccess /mytenant/public</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+ $ oracle-compute list vnetaccess /mytenant/public -F name,vnet,provider
+name                                        vnet                                      provider
+/mytenant/public/EoIB-OMS-c2                /cloud/public/EoIB-OMS-c2                 False
+/mytenant/public/EoIB-management-c2         /cloud/public/EoIB-management-c2          True
+/mytenant/public/IPoIB-instance-storage-c2  /cloud/public/IPoIB-instance-storage-c2   False
+/mytenant/public/IPoIB-load-balancer-c2     /cloud/public/IPoIB-load-balancer-c2      False
+/mytenant/public/IPoIB-management-c2        /cloud/public/IPoIB-management-c2         False
+/mytenant/public/IPoIB-service-manager-c2   /cloud/public/IPoIB-service-manager-c2    True
+/mytenant/public/IPoIB-virt-admin-c2        /oracle/public/IPoIB-virt-admin-c2        True
+
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-4B893928-826E-4227-B82D-00C928C0BD58.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-759A67D1-F616-4825-B657-F8A14DDB86ED.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

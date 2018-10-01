@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Typical Workflow for Using Oracle Big Data Cloud Machine</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-05-03T11:44:48Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Big Data Cloud Machine" />
+<meta name="dcterms.identifier" content="E85986-01" />
+<meta name="dcterms.isVersionOf" content="CSBDM" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="http://docs.oracle.com/cloud-machine/latest/" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-AA15F82C-941B-4FF0-BE49-A5EFCAFC6D6B.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-988C2D9A-657A-4F79-92E0-528FB59A7C07.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSBDM.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSBDM.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSBDM.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-2C2C12F8-869D-45B9-974E-6C6064B53641"></a> <span id="PAGE" style="display:none;">12/51</span> <!-- End Header -->
+<h1 id="CSBDM-GUID-2C2C12F8-869D-45B9-974E-6C6064B53641" class="sect1">Typical Workflow for Using <span>Oracle Big Data Cloud Machine</span></h1>
+<div>
+<p>To start using <span>Oracle Big Data Cloud Machine</span>, refer to the following tasks as a guide:</p>
+<div class="tblformal" id="GUID-2C2C12F8-869D-45B9-974E-6C6064B53641__GUID-3769004F-F6CE-4968-85C6-EFCB0A8C4D85">
+<table class="cellalignment77" summary="This table describes the typical workflow for using Oracle Big Data Cloud Machine. The columns are Task, Description, and More Information.">
+<thead>
+<tr class="cellalignment68">
+<th class="cellalignment82" id="d8438e32">Task</th>
+<th class="cellalignment83" id="d8438e35">Description</th>
+<th class="cellalignment84" id="d8438e38">More Information</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment68">
+<td class="cellalignment85" id="d8438e43" headers="d8438e32">
+<p>Purchase a subscription to <span>Oracle Big Data Cloud Machine</span>.</p>
+</td>
+<td class="cellalignment86" headers="d8438e43 d8438e35">
+<p>Purchase a subscription to <span>Oracle Big Data Cloud Machine</span>.</p>
+</td>
+<td class="cellalignment87" headers="d8438e43 d8438e38">
+<p><a href="GUID-D15F7820-CADF-4E8D-87C8-D369B7883302.htm" title="Here&rsquo;s how to get started with Oracle Big Data Cloud Machine subscriptions.">How to Begin with Oracle Big Data Cloud Machine Subscriptions</a></p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment85" id="d8438e66" headers="d8438e32">
+<p>Add and manage users and roles</p>
+</td>
+<td class="cellalignment86" headers="d8438e66 d8438e35">
+<p>Create accounts for your users and assign them appropriate privileges. Assign the necessary <span>Oracle Big Data Cloud Machine</span> roles.</p>
+</td>
+<td class="cellalignment87" headers="d8438e66 d8438e38">
+<p><a href="GUID-E8B08C12-1E55-4BFF-BB7F-6F0B310EB0D9.htm#GUID-E8B08C12-1E55-4BFF-BB7F-6F0B310EB0D9" title="Oracle Big Data Cloud Machine supports the following service roles and operating system roles.">About Oracle Big Data Cloud Machine Users and Roles</a></p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment85" id="d8438e85" headers="d8438e32">
+<p>Create a service instance</p>
+</td>
+<td class="cellalignment86" headers="d8438e85 d8438e35">
+<p>Use the wizard to create a service instance, which allocates resources for a cluster.</p>
+</td>
+<td class="cellalignment87" headers="d8438e85 d8438e38">
+<p><a href="GUID-6DB69BAE-433E-4F8C-A4F5-E79A99CDCE14.htm" title="When you create an Oracle Big Data Cloud Machine instance, you initiate a process that allocates resources for a cluster. You have to create a service instance before you can create a cluster.">Creating a Oracle Big Data Cloud Machine Instance</a></p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment85" id="d8438e105" headers="d8438e32">
+<p>Create an SSH key pair</p>
+</td>
+<td class="cellalignment86" headers="d8438e105 d8438e35">
+<p>Create an SSH public/private key pair for use when creating clusters.</p>
+</td>
+<td class="cellalignment87" headers="d8438e105 d8438e38">
+<p><a href="GUID-C13B13F7-454E-445A-99B8-CDDA410CA652.htm#GUID-C13B13F7-454E-445A-99B8-CDDA410CA652" title="Several tools exist to generate SSH public/private key pairs. The following sections show how to generate an SSH key pair on UNIX, UNIX-like and Windows platforms.">Generating a Secure Shell (SSH) Public/Private Key Pair</a></p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment85" id="d8438e119" headers="d8438e32">
+<p>Create a cluster</p>
+</td>
+<td class="cellalignment86" headers="d8438e119 d8438e35">
+<p>Use a wizard to create a cluster, using the resources allocated to the service instance..</p>
+</td>
+<td class="cellalignment87" headers="d8438e119 d8438e38">
+<p><a href="GUID-817CB14B-F5F3-44E7-A77A-518ABA354260.htm" title="You can create a single cluster from the resources allocated in an Oracle Big Data Cloud Machine instance.">Creating a Cluster</a></p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment85" id="d8438e136" headers="d8438e32">
+<p>Control network access to services</p>
+</td>
+<td class="cellalignment86" headers="d8438e136 d8438e35">
+<p>Use a <span class="italic">whitelist</span> to open or close the ports used by services such as Cloudera Manager and Hue.</p>
+</td>
+<td class="cellalignment87" headers="d8438e136 d8438e38"><a href="GUID-4DC086BF-DBB9-43A0-BE0D-1CCBED87BEB4.htm" title="Oracle Big Data Cloud Machine provides a utility that uses Linux iptables and configuration files called whitelists to filter network traffic to services in the cluster. The whitelist configuration specifies whether network requests from specified clients will be accepted or denied for specified services at specified ports. When a connection tries to establish itself, iptables looks for a matching client IP address or range of IP addresses in the whitelist. If it doesn&rsquo;t find one, it uses the default action.">Controlling Network Access to Services</a></td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment85" id="d8438e163" headers="d8438e32">
+<p>Access and work with your cluster.</p>
+</td>
+<td class="cellalignment86" headers="d8438e163 d8438e35">
+<p>Access and work with your cluster using Secure Shell and by using graphical tools such as Cloudera Manager and Hue.</p>
+</td>
+<td class="cellalignment87" headers="d8438e163 d8438e38"><a href="GUID-7EF9DB14-1FA4-43A3-9069-5BDDD3B20E9F.htm" title="This section describes how to access clusters and the tools, utilities and interfaces available in a cluster.">Accessing Your Oracle Big Data Cloud Machine</a></td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment85" id="d8438e176" headers="d8438e32">
+<p>Add nodes to a cluster</p>
+</td>
+<td class="cellalignment86" headers="d8438e176 d8438e35">
+<p>Add nodes in one-node increments up to a total of 60 nodes in the cluster.</p>
+</td>
+<td class="cellalignment87" headers="d8438e176 d8438e38"><a href="GUID-B6EDF7FB-A94A-4356-AF5E-C9307721F772.htm#GUID-2EE2592D-C27C-4F48-B27A-097B6FE3FE76" title="You can add additional permanent nodes to a cluster after it was created and started. Permanent nodes include permanent Hadoop nodes and edge nodes.">Adding Permanent Nodes To a Cluster</a></td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment85" id="d8438e198" headers="d8438e32">
+<p>Patch a cluster</p>
+</td>
+<td class="cellalignment86" headers="d8438e198 d8438e35">
+<p>Apply a patch or roll back a patch.</p>
+</td>
+<td class="cellalignment87" headers="d8438e198 d8438e38">
+<p><a href="GUID-87319268-5DD8-4A63-9E0C-E9A75D41CA1C.htm" title="One-off patch bundles provide a fix to specific bugs in one or more releases. You use Mammoth to apply the patch to your cluster.">Installing a One-Off Patch</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment67">
+<tr>
+<td class="cellalignment74">
+<table class="cellalignment72">
+<tr>
+<td class="cellalignment71"><a href="GUID-AA15F82C-941B-4FF0-BE49-A5EFCAFC6D6B.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment71"><a href="GUID-988C2D9A-657A-4F79-92E0-528FB59A7C07.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment76">
+<table class="cellalignment70">
+<tr>
+<td class="cellalignment71"><a href="http://docs.oracle.com/cloud-machine/latest/"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment71"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment71"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment71"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

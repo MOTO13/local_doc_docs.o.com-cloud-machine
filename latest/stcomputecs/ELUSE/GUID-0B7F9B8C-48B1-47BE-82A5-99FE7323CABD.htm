@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Customizing an Image</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can create new custom machine images based on the default machine images." />
+<meta name="dcterms.created" content="2018-05-15T07:53:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E62130-11" />
+<meta name="dcterms.isVersionOf" content="ELUSE" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-14D73E49-E2BE-482E-BABF-8DC65CB69DD9.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-BD111BF0-9F60-4554-A32F-8D41C0595D70.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUSE.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-0B7F9B8C-48B1-47BE-82A5-99FE7323CABD"></a> <span id="PAGE" style="display:none;">75/81</span> <!-- End Header -->
+<h1 id="ELUSE-GUID-0B7F9B8C-48B1-47BE-82A5-99FE7323CABD" class="sect1">Customizing an Image</h1>
+<div>
+<p>You can create new custom machine images based on the default machine images.</p>
+<div class="section">Oracle Compute Cloud Service provides two default standard templates or&nbsp;machine images&nbsp;based on Oracle Linux 5 and Oracle Linux 6. For example, on OPCM version 17.1.2, these images are registered as:</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph">/oracle/public/linux5_17.1.2_64</code></p>
+</li>
+<li>
+<p><code class="codeph">/oracle/public/linux6_17.1.2_64</code></p>
+</li>
+</ul>
+<p>These default machine images include required packages and device drivers specific to OPCM.&nbsp;All guest instances are instantiated from these images or versions of these images.&nbsp;</p>
+<p>For Oracle Compute Cloud Service, users can customize and upload new custom boot images based on one of the default machine images.</p>
+<div class="infobox-note" id="GUID-0B7F9B8C-48B1-47BE-82A5-99FE7323CABD__GUID-C7A08417-ADAB-413D-B5A1-8D16EC07EB21">
+<p class="notep1">Note:</p>
+<p>You cannot customize Platform as a Service (PaaS) machine images.&nbsp; For example, you cannot use the Java Cloud Service or Database Cloud Service images to create your own custom images.</p>
+</div>
+<p>Alternatively to can create a machine image for each type of instance deployment, you can use the <code class="codeph">opc-init</code> package to set up the customization to be performed automatically when an instance starts. For details, see <a class="olink STCSG-GUID-C63680F1-1D97-4984-AB02-285B17278CC5" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=E70972-01&amp;id=STCSG-GUID-C63680F1-1D97-4984-AB02-285B17278CC5">Automating Instance Initialization Using opc-init</a></p>
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li><a href="GUID-BD111BF0-9F60-4554-A32F-8D41C0595D70.htm" title="Describes how to deploy and customize an instance using the default machine image.">Deploy and Customize an Instance</a></li>
+<li><a href="GUID-FAD05E6E-7BAB-4E1C-84C9-CB8014952179.htm">Create Your Custom Machine Image</a></li>
+<li><a href="GUID-DC93E19A-87C1-45B1-AA66-0939D8A37238.htm" title="You can deploy instances using your custom machine image.">Deploy Instances Using the Customized Machine Image</a></li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment95">
+<tr>
+<td class="cellalignment102">
+<table class="cellalignment100">
+<tr>
+<td class="cellalignment99"><a href="GUID-14D73E49-E2BE-482E-BABF-8DC65CB69DD9.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment99"><a href="GUID-BD111BF0-9F60-4554-A32F-8D41C0595D70.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment104">
+<table class="cellalignment98">
+<tr>
+<td class="cellalignment99"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment99"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

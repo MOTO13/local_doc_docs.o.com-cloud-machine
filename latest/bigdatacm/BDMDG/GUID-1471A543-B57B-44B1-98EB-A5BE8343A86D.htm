@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Temperature and Humidity Requirements</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-28T10:06:16Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Oracle&reg; Public Cloud Machine Deploying Oracle Big Data Cloud Machine" />
+<meta name="dcterms.identifier" content="E85987-01" />
+<meta name="dcterms.isVersionOf" content="BDMDG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="http://docs.oracle.com/cloud-machine/latest/" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-AF17AE0B-45E1-41C4-9362-28076B01FBE8.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-4D214894-5834-4020-B0E5-3E24223E3184.htm" title="Next" type="text/html" />
+<link rel="alternate" href="BDMDG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="BDMDG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="BDMDG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-1471A543-B57B-44B1-98EB-A5BE8343A86D"></a> <span id="PAGE" style="display:none;">9/17</span> <!-- End Header -->
+<h1 id="BDMDG-GUID-1471A543-B57B-44B1-98EB-A5BE8343A86D" class="sect1">Temperature and Humidity Requirements</h1>
+<div>
+<div class="section">
+<p>Airflow through <span>Oracle Big Data Cloud Machine</span> is from front to back. See the table below for information about cooling and airflow.</p>
+<div class="infobox-note" id="GUID-1471A543-B57B-44B1-98EB-A5BE8343A86D__GUID-F40E9B72-33C7-4917-AF94-C6F2873A3030">
+<p class="notep1">Note:</p>
+<p>Studies show that temperature increases of 10 degrees Celsius (15 degrees Fahrenheit) above 20 degrees Celsius (70 degrees Fahrenheit) reduce long-term electronics reliability by 50 percent.</p>
+<p>Excessive internal temperatures may result in full or partial shutdown of <span>Oracle Big Data Cloud Machine</span>.</p>
+</div>
+<p>The following table lists the temperature, humidity, and altitude requirements for operating and nonoperating systems.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<div class="tblformal" id="GUID-1471A543-B57B-44B1-98EB-A5BE8343A86D__CHDHAHCA">
+<table class="cellalignment36">
+<thead>
+<tr class="cellalignment27">
+<th class="cellalignment53" id="d2257e38">Condition</th>
+<th class="cellalignment38" id="d2257e41">Operating Requirement</th>
+<th class="cellalignment38" id="d2257e44">Nonoperating Requirement</th>
+<th class="cellalignment54" id="d2257e47">Optimum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment27">
+<td class="cellalignment55" id="d2257e52" headers="d2257e38">
+<p>Temperature</p>
+</td>
+<td class="cellalignment41" headers="d2257e52 d2257e41">
+<p>5 to 35 degrees Celsius (40 to 95 degrees Fahrenheit)</p>
+</td>
+<td class="cellalignment41" headers="d2257e52 d2257e44">
+<p>-40 to 70 degrees Celsius (-40 to 158 degrees Fahrenheit)</p>
+</td>
+<td class="cellalignment56" headers="d2257e52 d2257e47">
+<p>For optimal rack cooling, data center temperatures from 21 to 23 degrees Celsius (70 to 74 degrees Fahrenheit)</p>
+</td>
+</tr>
+<tr class="cellalignment27">
+<td class="cellalignment55" id="d2257e65" headers="d2257e38">
+<p>Relative humidity</p>
+</td>
+<td class="cellalignment41" headers="d2257e65 d2257e41">
+<p>10 to 90 percent relative humidity, noncondensing</p>
+</td>
+<td class="cellalignment41" headers="d2257e65 d2257e44">
+<p>Up to 93 percent relative humidity</p>
+</td>
+<td class="cellalignment56" headers="d2257e65 d2257e47">
+<p>For optimal data center rack cooling, 45 to 50 percent, noncondensing</p>
+</td>
+</tr>
+<tr class="cellalignment27">
+<td class="cellalignment55" id="d2257e78" headers="d2257e38">
+<p>Altitude</p>
+</td>
+<td class="cellalignment41" headers="d2257e78 d2257e41">
+<p>3,000 meters (9,840 feet) maximum</p>
+</td>
+<td class="cellalignment41" headers="d2257e78 d2257e44">
+<p>12,000 meters (39,400 feet) maximum</p>
+</td>
+<td class="cellalignment56" headers="d2257e78 d2257e47">
+<p>Ambient temperature is reduced by 1 degree Celsius for each 300 meters above 900 meters altitude above sea level</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p>Set conditions to the optimal temperature and humidity ranges to minimize the chance of downtime due to component failure. Operating <span>Oracle Big Data Cloud Machine</span> for extended periods at or near the operating range limits, or installing it in an environment where it remains at or near nonoperating range limits, could significantly increase hardware component failure.</p>
+<p>The ambient temperature range of 21 to 23 degrees Celsius (70 to 74 degrees Fahrenheit) is optimal for server reliability and operator comfort. Most computer equipment can operate in a wide temperature range, but near 22 degrees Celsius (72 degrees Fahrenheit) is desirable because it is easier to maintain safe humidity levels. Operating in this temperature range provides a safety buffer if the air conditioning system fails.</p>
+<p>The ambient relative humidity range of 45 to 50 percent is suitable for safe data processing operations. Most computer equipment can operate in a wide range (20 to 80 percent), but the range of 45 to 50 percent is recommended for the following reasons:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Helps protect computer systems from corrosion problems associated with high humidity levels.</p>
+</li>
+<li>
+<p>Provides the greatest operating time buffer if the air conditioner control fails.</p>
+</li>
+<li>
+<p>Helps avoid failures or temporary malfunctions caused by intermittent interference from static discharges that may occur when relative humidity is too low.</p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-1471A543-B57B-44B1-98EB-A5BE8343A86D__GUID-06F5C96E-973A-4876-BDBC-F9159133E012">
+<p class="notep1">Note:</p>
+<p>Electrostatic discharge (ESD) is easily generated and hard to dissipate in areas of low relative humidity, such as below 35 percent. ESD becomes critical when humidity drops below 30 percent. Maintaining humidity in a data center is not difficult, because a high-efficiency vapor barrier and a low rate of air changes are normally present.</p>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment26">
+<tr>
+<td class="cellalignment33">
+<table class="cellalignment31">
+<tr>
+<td class="cellalignment30"><a href="GUID-AF17AE0B-45E1-41C4-9362-28076B01FBE8.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment30"><a href="GUID-4D214894-5834-4020-B0E5-3E24223E3184.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment35">
+<table class="cellalignment29">
+<tr>
+<td class="cellalignment30"><a href="http://docs.oracle.com/cloud-machine/latest/"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment30"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment30"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment30"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

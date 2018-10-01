@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Managing vNET Reservations</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-07T05:55:01Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine CLI Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E69222-06" />
+<meta name="dcterms.isVersionOf" content="ELUCL" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-FF435881-D472-44A0-84D9-B72692659D5B.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-348A49EB-2431-46FD-9CB3-8C590E207E9D.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUCL.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-759A67D1-F616-4825-B657-F8A14DDB86ED"></a> <span id="PAGE" style="display:none;">38/40</span> <!-- End Header -->
+<h1 id="ELUCL-GUID-759A67D1-F616-4825-B657-F8A14DDB86ED" class="sect1">Managing vNET Reservations</h1>
+<div>
+<div class="section">
+<p>A vNET Reservation enables the user to reserve an IP address for an instance.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-759A67D1-F616-4825-B657-F8A14DDB86ED.htm#GUID-4428FD32-AEEA-45D7-A968-E64AFD7B3DBC" title="This command enables you to add a new vNET Reservation.">add vnetreservation</a></p>
+</li>
+<li>
+<p><a href="GUID-759A67D1-F616-4825-B657-F8A14DDB86ED.htm#GUID-F40F0934-DCE5-47E5-9DE2-3B23051B4770" title="This command enables you to delete a specific vNET Reservation">delete vnetreservation</a></p>
+</li>
+<li>
+<p><a href="GUID-759A67D1-F616-4825-B657-F8A14DDB86ED.htm#GUID-4D853D4C-8056-400B-8820-97661CDA009B" title="This command enables you to discover all the vNET Reservations listed in a specific container or subcontainer.This command enables you to retrieve information for a specific vNET Reservation.This command enables you to retrieve information for all the vNET Reservations in a specific container.">Retrieve vNET Reservation Details</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-4428FD32-AEEA-45D7-A968-E64AFD7B3DBC"></a>
+<h2 id="ELUCL-GUID-4428FD32-AEEA-45D7-A968-E64AFD7B3DBC" class="sect2">add vnetreservation</h2>
+<div>
+<p>This command enables you to add a new vNET Reservation.</p>
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute add vnetreservation <span class="variable">name</span> <span class="variable">vnet</span> [<span class="variable">--ip</span>]</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-4428FD32-AEEA-45D7-A968-E64AFD7B3DBC__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameters and descriptions for adding a vNET Reservation.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d23011e98">Parameter</th>
+<th class="cellalignment26" id="d23011e100">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d23011e104" headers="d23011e98">name</td>
+<td class="cellalignment27" headers="d23011e104 d23011e100">A unique hierarchical name for vNET Reservation . For example, <code class="codeph">/mytenant/public/myvnetreservation</code>
+<p>Object names can contain only alphanumeric characters, hyphens, and periods. Object names are case-sensitive.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d23011e113" headers="d23011e98">vnet</td>
+<td class="cellalignment27" headers="d23011e113 d23011e100">vNET name from where the IP address will be reserved</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d23011e118" headers="d23011e98">--ip</td>
+<td class="cellalignment27" headers="d23011e118 d23011e100">(Optional) IP address allocated for this IP entry. By default, a random IP address will be taken from the vNET IP range. If an IP address is specified, then the API will attempt to allocate the specified address from the vNET pool.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute add vnetreservation /mytenant/public/res1 /mytenant/public/IPoIB --ip 192.0.10.4</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-F40F0934-DCE5-47E5-9DE2-3B23051B4770"></a>
+<h2 id="ELUCL-GUID-F40F0934-DCE5-47E5-9DE2-3B23051B4770" class="sect2">delete vnetreservation</h2>
+<div>
+<p>This command enables you to delete a specific vNET Reservation</p>
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute delete vnetreservation <span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-F40F0934-DCE5-47E5-9DE2-3B23051B4770__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for deleting a vnetreservation.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d23011e174">Parameter</th>
+<th class="cellalignment26" id="d23011e176">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d23011e180" headers="d23011e174">name</td>
+<td class="cellalignment27" headers="d23011e180 d23011e176">Unique hierarchical name for the vNET Reservation. For example, <code class="codeph">/mytenant/public/myvnetreservation</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute delete vnetreservation /mytenant/public/res1</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-4D853D4C-8056-400B-8820-97661CDA009B"></a>
+<h2 id="ELUCL-GUID-4D853D4C-8056-400B-8820-97661CDA009B" class="sect2">Retrieve vNET Reservation Details</h2>
+<div>
+<div class="section">You can retrieve vNET Reservation details by using the CLI.</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-759A67D1-F616-4825-B657-F8A14DDB86ED.htm#GUID-5B7CD886-AC0F-4BB6-9A71-AFC8B4A95486" title="This command enables you to discover all the vNET Reservations listed in a specific container or subcontainer.">discover vnetreservation</a></p>
+</li>
+<li>
+<p><a href="GUID-759A67D1-F616-4825-B657-F8A14DDB86ED.htm#GUID-CB40D31B-C9AB-42F5-8F0E-39E809ED9A7D" title="This command enables you to retrieve information for a specific vNET Reservation.">get vnetreservation</a></p>
+</li>
+<li>
+<p><a href="GUID-759A67D1-F616-4825-B657-F8A14DDB86ED.htm#GUID-41E9C55F-5EB0-487A-A1AD-DB25FF966FFA" title="This command enables you to retrieve information for all the vNET Reservations in a specific container.">list vnetreservation</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect3"><a id="GUID-5B7CD886-AC0F-4BB6-9A71-AFC8B4A95486"></a>
+<h3 id="ELUCL-GUID-5B7CD886-AC0F-4BB6-9A71-AFC8B4A95486" class="sect3">discover vnetreservation</h3>
+<div>
+<p>This command enables you to discover all the vNET Reservations listed in a specific container or subcontainer.</p>
+<div class="section">
+<p class="subhead3">Syntax</p>
+<p><code class="codeph">oracle-compute discover vnetreservation <span class="variable">container</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-5B7CD886-AC0F-4BB6-9A71-AFC8B4A95486__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for listing all vnetreservations in a container.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d23011e285">Parameter</th>
+<th class="cellalignment26" id="d23011e287">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d23011e291" headers="d23011e285">container</td>
+<td class="cellalignment27" headers="d23011e291 d23011e287">Hierarchical name-space for vNET Reservation.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<p><code class="codeph">$ oracle-compute discover vnetreservation /mytenant/public/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute discover vnetreservation /mytenant/public/
+
+entry
+/mytenant/public/myreserve
+/mytenant/public/mysecondreserve
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-CB40D31B-C9AB-42F5-8F0E-39E809ED9A7D"></a>
+<h3 id="ELUCL-GUID-CB40D31B-C9AB-42F5-8F0E-39E809ED9A7D" class="sect3">get vnetreservation</h3>
+<div>
+<p>This command enables you to retrieve information for a specific vNET Reservation.</p>
+<div class="section">
+<p class="subhead3">Syntax</p>
+<p><code class="codeph">oracle-compute get vnetreservation <span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-CB40D31B-C9AB-42F5-8F0E-39E809ED9A7D__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for retrieving details of a vnetreservation entity.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d23011e353">Parameter</th>
+<th class="cellalignment26" id="d23011e355">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d23011e359" headers="d23011e353">name</td>
+<td class="cellalignment27" headers="d23011e359 d23011e355">A unique hierarchical name for vNET Reservation. For example, <code class="codeph">/mytenant/public/myreservation</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<p><code class="codeph">$ oracle-compute get vnetreservation /mytenant/public/myreserve</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute get vnetreservation /mytenant/public/myreserve -Fname,vnet,ip,used
+name                          vnet                       ip              used
+/mytenant/public/myreserve  /mytenant/public/vnet_1  192.0.10.17  False
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-41E9C55F-5EB0-487A-A1AD-DB25FF966FFA"></a>
+<h3 id="ELUCL-GUID-41E9C55F-5EB0-487A-A1AD-DB25FF966FFA" class="sect3">list vnetreservation</h3>
+<div>
+<p>This command enables you to retrieve information for all the vNET Reservations in a specific container.</p>
+<div class="section">
+<p class="subhead3">Syntax</p>
+<p><code class="codeph">oracle-compute list vnetreservation <span class="variable">name</span> [<span class="variable">--ip</span>] [<span class="variable">--quota</span>]</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-41E9C55F-5EB0-487A-A1AD-DB25FF966FFA__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameters and descriptions for listing details of all vNET Reservations in a container.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d23011e431">Parameter</th>
+<th class="cellalignment26" id="d23011e433">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d23011e437" headers="d23011e431">name</td>
+<td class="cellalignment27" headers="d23011e437 d23011e433">A unique hierarchical name for vNET Reservation . For example, <code class="codeph">/mytenant/public/myvnetreservation</code></td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d23011e444" headers="d23011e431">--ip</td>
+<td class="cellalignment27" headers="d23011e444 d23011e433">(Optional) IP address allocated for the reservation</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d23011e449" headers="d23011e431">--quota</td>
+<td class="cellalignment27" headers="d23011e449 d23011e433">(Optional) The quota against which this reservation is created</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<p><code class="codeph">$ oracle-compute list vnetreservation /mytenant/public</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute list  vnetreservation /mytenant/public -Fname,vnet,ip,used
+name                               vnet                   ip           used
+/mytenant/public/myreserve       /mytenant/public/vnet_ 192.0.12.17 False
+/mytenant/public/mysecondreserve /mytenant/public/vnet_ 192.0.12.18 False$
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-FF435881-D472-44A0-84D9-B72692659D5B.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-348A49EB-2431-46FD-9CB3-8C590E207E9D.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

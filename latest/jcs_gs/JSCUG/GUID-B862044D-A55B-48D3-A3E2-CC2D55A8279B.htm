@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Configuring SSL for an Oracle Java Cloud Service Instance</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Secure Socket Layer (SSL) is the most commonly-used method of securing data sent across the internet, and assures visitors that transactions with your application are secure. You can configure SSL between the client browser and the load balancer in your Oracle Java Cloud Service instance in order to ensure that applications are accessed securely." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-840351A6-E2E8-46A9-ABA7-E91B6BDECDF2.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-0C2F77F4-C080-4BDF-AD03-13B878353585.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-B862044D-A55B-48D3-A3E2-CC2D55A8279B"></a> <span id="PAGE" style="display:none;">87/131</span> <!-- End Header -->
+<a id="JSCUG3427"></a><a id="JSCUG3426"></a>
+<h1 id="JSCUG-GUID-B862044D-A55B-48D3-A3E2-CC2D55A8279B" class="sect1">Configuring SSL for an Oracle Java Cloud Service Instance</h1>
+<div>
+<p>Secure Socket Layer (SSL) is the most commonly-used method of securing data sent across the internet, and assures visitors that transactions with your application are secure. You can configure SSL between the client browser and the load balancer in your <span>Oracle Java Cloud Service</span> instance in order to ensure that applications are accessed securely.</p>
+<div class="section">
+<p>By default SSL is already enabled within the software components of an <span>Oracle Java Cloud Service</span> instance, including Oracle WebLogic Server and the load balancer. They are configured to use a self-signed SSL certificate that was generated by <span>Oracle Java Cloud Service</span>. Clients will typically receive a message indicating that the signing CA for the certificate is unknown and not trusted.</p>
+<p>You can update the load balancer to use a different certificate. Before you begin, ensure that you have enabled the load balancer in your <span>Oracle Java Cloud Service</span> instance and registered your custom domain name, as described in <a href="GUID-0D852E2F-3E75-4425-8D96-EBCBF316FE9D.htm#GUID-0D852E2F-3E75-4425-8D96-EBCBF316FE9D" title='By using the load balancer as the front-end, you can quickly and easily associate a custom "vanity" domain name to your application environment. For example, rather than accessing your applications using a public IP address, you can define a custom URL, such as example.com.'>Defining a Custom Domain Name for an Oracle Java Cloud Service Instance</a>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Tasks:</p>
+</div>
+<!-- class="section" -->
+<ul>
+<li><span><a href="GUID-B862044D-A55B-48D3-A3E2-CC2D55A8279B.htm#GUID-A05BEE1B-D1FF-451F-954E-11BDB67F608F" title="For development Oracle Java Cloud Serviceenvironments, you can use either a CA-issued or a self-signed certificate. You can create a self-signed certificate using the Load Balancer Console.">Creating a Self-Signed SSL Certificate in the Load Balancer</a></span></li>
+<li><span><a href="GUID-B862044D-A55B-48D3-A3E2-CC2D55A8279B.htm#GUID-C54E36ED-BFFF-4B05-A8DB-6EF586EB3AA4" title="For production Oracle Java Cloud Service environments, it is recommended that you use a CA-issued SSL certificate. A CA-issued SSL certificate reduces the chances of experiencing a man-in-the-middle attack.">Importing a CA-Issued SSL Certificate to the Load Balancer</a></span></li>
+<li><span><a href="GUID-B862044D-A55B-48D3-A3E2-CC2D55A8279B.htm#GUID-225C9659-BC61-484A-9C0D-42EEB00C94CF" title="After installing a CA-issued or self-signed SSL certificate to the load balancer, you must associate it with the HTTPS listeners in the load balancer&rsquo;s configuration. After the association is made, the load balancer will present the SSL certificate while processing any new HTTPS requests.">Associating the SSL Certificate With the Load Balancer</a></span></li>
+</ul>
+</div>
+<a id="JSCUG3431"></a>
+<div class="props_rev_3"><a id="GUID-A05BEE1B-D1FF-451F-954E-11BDB67F608F"></a>
+<h2 id="JSCUG-GUID-A05BEE1B-D1FF-451F-954E-11BDB67F608F" class="sect2">Creating a Self-Signed SSL Certificate in the Load Balancer</h2>
+<div>
+<p>For development <span>Oracle Java Cloud Service</span>environments, you can use either a CA-issued or a self-signed certificate. You can create a self-signed certificate using the Load Balancer Console.</p>
+<div class="section">
+<p>To obtain and use a CA-issued certificate instead, see <a href="GUID-B862044D-A55B-48D3-A3E2-CC2D55A8279B.htm#GUID-C54E36ED-BFFF-4B05-A8DB-6EF586EB3AA4" title="For production Oracle Java Cloud Service environments, it is recommended that you use a CA-issued SSL certificate. A CA-issued SSL certificate reduces the chances of experiencing a man-in-the-middle attack.">Importing a CA-Issued SSL Certificate to the Load Balancer</a>.</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Navigate to the <span class="wintitle">Services</span> page of the <span>Oracle Java Cloud Service</span> console.</span></li>
+<li class="stepexpand"><span>Click <img width="14" height="15" src="img/GUID-D0E9F26E-D981-4A6C-9C9C-E53E732DCDA2-default.gif" alt="menu icon" title="menu icon" /> for the desired service instance and select <span class="bold">Open Load Balancer Console</span>.</span></li>
+<li class="stepexpand"><span>Log in to console using the credentials defined when provisioning your service instance.</span>
+<div>
+<p>If you created your service instance using the <span>Oracle Java Cloud Service</span> console, the user name and password default to the Oracle WebLogic Server Administration Console user name and password.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Access the load balancer configuration (for example, <code class="codeph">opc-config</code>):</span>
+<ul>
+<li>If your service instance is running Oracle Traffic Director 12<span class="italic">c</span>, click the <img width="46" height="44" src="img/GUID-A98A34F4-FC4D-47E9-B1E4-5FC89A2598D0-default.png" alt="Target Navigation icon" title="Target Navigation icon" /> Target Navigation icon. Expand the <span class="bold">Traffic Director</span> folder and click the name of the Traffic Director configuration.</li>
+<li>If your service instance is running Oracle Traffic Director 11<span class="italic">g</span>, click <span class="bold">Configurations</span> and then click the name of the Traffic Director configuration.</li>
+</ul>
+</li>
+<li class="stepexpand"><span>If your service instance is running Oracle Traffic Director 12<span class="italic">c</span>, perform these steps to create a self-signed certificate:</span>
+<ol>
+<li><span>Click <span class="bold">Traffic Director Configuration</span> and select <span class="bold">Security &gt; Manage Certificates</span>.</span></li>
+<li><span>Click <span class="bold">Generate Keypair</span>.</span></li>
+<li><span>Enter an <span class="bold">Alias</span> for the new certificate.</span></li>
+<li><span>Set the <span class="bold">Common Name</span> to your custom domain name. For example, <code class="codeph">example.com</code>.</span></li>
+<li><span>Complete the remaining fields and click <span class="bold">OK</span>.</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>If your service instance is running Oracle Traffic Director 11<span class="italic">g</span>, perform these steps to create a self-signed certificate:</span>
+<ol>
+<li><span>Expand <span class="bold">SSL</span> in the navigation pane and click <span class="bold">Server Certificates</span>.</span></li>
+<li><span>Click <span class="bold">New Self Signed Certificate</span>.</span></li>
+<li><span>Set the <span class="bold">Server Name</span> to your custom domain name. For example, <code class="codeph">example.com</code>.</span></li>
+<li><span>Complete the remaining fields and click <span class="bold">Next</span>.</span></li>
+<li><span>On the <span class="wintitle">Certificate Options</span> page, enter a <span class="bold">Nickname</span> (alias) for the certificate. Click <span class="bold">Next</span>.</span></li>
+<li><span>Click <span class="bold">Create Certificate</span>.</span></li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+<a id="JSCUG3430"></a>
+<div class="props_rev_3"><a id="GUID-C54E36ED-BFFF-4B05-A8DB-6EF586EB3AA4"></a>
+<h2 id="JSCUG-GUID-C54E36ED-BFFF-4B05-A8DB-6EF586EB3AA4" class="sect2">Importing a CA-Issued SSL Certificate to the Load Balancer</h2>
+<div>
+<p>For production <span>Oracle Java Cloud Service</span> environments, it is recommended that you use a CA-issued SSL certificate. A CA-issued SSL certificate reduces the chances of experiencing a man-in-the-middle attack.</p>
+<div class="section">
+<p>There are multiple CA vendors in the marketplace today, each offering different levels of service at varying price points. Research and choose a CA vendor that meets your service-level and budget requirements.</p>
+<p>For a CA vendor to issue you a CA-issued SSL certificate, you need to provide the following information:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Your custom domain name.</p>
+</li>
+<li>
+<p>Public information associated with the domain confirming you as the owner.</p>
+</li>
+<li>
+<p>Email address associated with the custom domain for verification.</p>
+</li>
+</ul>
+<p>Create a Certificate Signing Request (CSR) by using the Load Balancer Console and submit the CSR to the CA vendor. After receiving the CA-issued certificate, import it into the Load Balancer configuration.</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Navigate to the <span class="wintitle">Services</span> page of the <span>Oracle Java Cloud Service</span> console.</span></li>
+<li class="stepexpand"><span>Click <img width="14" height="15" src="img/GUID-D0E9F26E-D981-4A6C-9C9C-E53E732DCDA2-default.gif" alt="menu icon" title="menu icon" /> for the desired service instance and select <span class="bold">Open Load Balancer Console</span>.</span></li>
+<li class="stepexpand"><span>Log in to console using the credentials defined when provisioning your service instance.</span>
+<div>
+<p>If you created your service instance using the <span>Oracle Java Cloud Service</span> console, the user name and password default to the Oracle WebLogic Server Administration Console user name and password.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Access the load balancer configuration (for example, <code class="codeph">opc-config</code>):</span>
+<ul>
+<li>If your service instance is running Oracle Traffic Director 12<span class="italic">c</span>, click the <img width="46" height="44" src="img/GUID-A98A34F4-FC4D-47E9-B1E4-5FC89A2598D0-default.png" alt="Target Navigation icon" title="Target Navigation icon" /> Target Navigation icon. Expand the <span class="bold">Traffic Director</span> folder and click the name of the Traffic Director configuration.</li>
+<li>If your service instance is running Oracle Traffic Director 11<span class="italic">g</span>, click <span class="bold">Configurations</span> and then click the name of the Traffic Director configuration.</li>
+</ul>
+</li>
+<li class="stepexpand"><span>If your service instance is running Oracle Traffic Director 12<span class="italic">c</span>, perform these steps to generate a CSR:</span>
+<ol>
+<li><span>Click <span class="bold">Traffic Director Configuration</span> and select <span class="bold">Security &gt; Manage Certificates</span>.</span></li>
+<li><span>Click <span class="bold">Generate Keypair</span>.</span></li>
+<li><span>Enter an <span class="bold">Alias</span> for the new certificate.</span></li>
+<li><span>Set the <span class="bold">Common Name</span> to your custom domain name. For example, <code class="codeph">example.com</code>.</span></li>
+<li><span>Complete the remaining fields and click <span class="bold">OK</span>.</span></li>
+<li><span>Select your new certificate and click <span class="bold">Generate CSR</span>.</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>If your service instance is running Oracle Traffic Director 11<span class="italic">g</span>, perform these steps to generate a CSR:</span>
+<ol>
+<li><span>Expand <span class="bold">SSL</span> in the navigation pane and click <span class="bold">Server Certificates</span>.</span></li>
+<li><span>Click <span class="bold">Create Certificate Request</span>.</span></li>
+<li><span>Set the <span class="bold">Server Name</span> to your custom domain name. For example, <code class="codeph">example.com</code>.</span></li>
+<li><span>Complete the remaining fields and click <span class="bold">Next</span>.</span></li>
+<li><span>On the <span class="wintitle">Certificate Options</span> page, click <span class="bold">Next</span> to accept the defaults.</span></li>
+<li><span>Click <span class="bold">Create CSR</span>.</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>Save the generated CSR text, including the header line <code class="codeph">-----BEGIN NEW CERTIFICATE REQUEST-----</code> and footer line <code class="codeph">-----END NEW CERTIFICATE REQUEST-----</code>.</span>
+<div>
+<p>For example:</p>
+<pre dir="ltr">
+-----BEGIN NEW CERTIFICATE REQUEST-----
+MIIC9jCCAd4CAQAwYDELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMQwwCgYDVQQH
+EwNTQ0ExDzANBgNVBAoTBk9yYWNsZTEPMA0GA1UECxMGT3JhY2xlMRQwEgYDVQQD
+I+XY7ByYRma1XlM1cYoMUiKSnRHdllUZMRwYHu4AZvrEMIhKjB6YiC0F
+-----END NEW CERTIFICATE REQUEST-----
+</pre></div>
+<div>
+<p>The CSR includes the public key and other information that the CA vendor needs to verify the identity of the load balancer server.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Submit the CSR to your CA vendor to request a new CA-issued SSL certificate.</span>
+<div>
+<p>For more information about submitting the CSR, refer to your CA vendor documentation.</p>
+</div>
+<div>
+<p>Your CA vendor uses the CSR information to validate the domain and provides you with a valid SSL certificate, typically via email.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Return to the Load Balancer Console for your service instance.</span></li>
+<li class="stepexpand"><span>If your service instance is running Oracle Traffic Director 12<span class="italic">c</span>, perform these steps to import the CA-issued certificate:</span>
+<ol>
+<li><span>Click <span class="bold">Traffic Director Configuration</span> and select <span class="bold">Security &gt; Manage Certificates</span>.</span></li>
+<li><span>Click <span class="bold">Import</span>.</span></li>
+<li><span>Verify that <span class="bold">Certificate Type</span> is set to Certificate.</span></li>
+<li><span>Select the <span class="bold">Alias</span> of the certificate you generated earlier.</span></li>
+<li><span>You can paste the certificate text directly in the <span class="bold">Paste Certificate String Here</span> field, or click <span class="bold">Choose File</span> and select the certificate on your local file system. If you opt to paste the certificate text, be sure to include the headers <code class="codeph">BEGIN CERTIFICATE</code> and <code class="codeph">END CERTIFICATE</code>, including the beginning and ending hyphens.</span></li>
+<li><span>Click <span class="bold">OK</span>.</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>If your service instance is running Oracle Traffic Director 11<span class="italic">g</span>, perform these steps to import the CA-issued certificate:</span>
+<ol>
+<li><span>Expand <span class="bold">SSL</span> in the navigation pane and click <span class="bold">Server Certificates</span>.</span></li>
+<li><span>Click <span class="bold">Install Certificate</span>.</span></li>
+<li><span>Enter a <span class="bold">Nickname</span> (alias) for the certificate.</span></li>
+<li><span>You can paste the certificate text directly in the <span class="bold">Certificate Data</span> field, or provide the path to the certificate file in the <span class="bold">Certificate File</span> field. If you opt to paste the certificate text, be sure to include the headers <code class="codeph">BEGIN CERTIFICATE</code> and <code class="codeph">END CERTIFICATE</code>, including the beginning and ending hyphens.</span></li>
+<li><span>Click <span class="bold">Next</span>.</span></li>
+<li><span>Click <span class="bold">Install Certificate</span>.</span></li>
+</ol>
+</li>
+</ol>
+<div class="section">
+<p>For more information about managing load balancer certificates, see:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=OTADG208" target="_blank">Managing Certificates</a> in <cite>Administering Oracle Traffic Director</cite> (12.2.1)</p>
+</li>
+<li>
+<p><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudas111170&amp;id=TDADG208" target="_blank">Managing Certificates</a> in <cite>Oracle Traffic Director Administrator's Guide</cite> (11.1.1.7)</p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="JSCUG3433"></a>
+<div class="props_rev_3"><a id="GUID-225C9659-BC61-484A-9C0D-42EEB00C94CF"></a>
+<h2 id="JSCUG-GUID-225C9659-BC61-484A-9C0D-42EEB00C94CF" class="sect2">Associating the SSL Certificate With the Load Balancer</h2>
+<div>
+<p>After installing a CA-issued or self-signed SSL certificate to the load balancer, you must associate it with the HTTPS listeners in the load balancer&rsquo;s configuration. After the association is made, the load balancer will present the SSL certificate while processing any new HTTPS requests.</p>
+<ol>
+<li class="stepexpand"><span>Navigate to the <span class="wintitle">Services</span> page of the <span>Oracle Java Cloud Service</span> console.</span></li>
+<li class="stepexpand"><span>Click <img width="14" height="15" src="img/GUID-D0E9F26E-D981-4A6C-9C9C-E53E732DCDA2-default.gif" alt="menu icon" title="menu icon" /> for the desired service instance and select <span class="bold">Open Load Balancer Console</span>.</span></li>
+<li class="stepexpand"><span>Log in to console using the credentials defined when provisioning your service instance.</span>
+<div>
+<p>If you created your service instance using the <span>Oracle Java Cloud Service</span> console, the user name and password default to the Oracle WebLogic Server Administration Console user name and password.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Access the load balancer configuration (for example, <code class="codeph">opc-config</code>):</span>
+<ul>
+<li>If your service instance is running Oracle Traffic Director 12<span class="italic">c</span>, click the <img width="46" height="44" src="img/GUID-A98A34F4-FC4D-47E9-B1E4-5FC89A2598D0-default.png" alt="Target Navigation icon" title="Target Navigation icon" /> Target Navigation icon. Expand the <span class="bold">Traffic Director</span> folder and click the name of the Traffic Director configuration.</li>
+<li>If your service instance is running Oracle Traffic Director 11<span class="italic">g</span>, click <span class="bold">Configurations</span> and then click the name of the Traffic Director configuration.</li>
+</ul>
+</li>
+<li class="stepexpand"><span>Navigate to the Listeners in this configuration:</span>
+<ul>
+<li>
+<p>If your service instance is running Oracle Traffic Director 12<span class="italic">c</span>, click <span class="bold">Traffic Director Configuration</span> and select <span class="bold">Administration &gt; Listeners</span>.</p>
+</li>
+<li>
+<p>If your service instance is running Oracle Traffic Director 11<span class="italic">g</span>, click <span class="bold">Listeners</span> in the navigation pane.</p>
+</li>
+</ul>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">https-listener-1</span>.</span></li>
+<li class="stepexpand"><span>In the <span class="bold">SSL/TLS Settings</span> section select your new certificate in the <span class="bold">RSA Certificate</span> field.</span></li>
+<li class="stepexpand"><span>Activate your changes:</span>
+<ul>
+<li>
+<p>If your service instance is running Oracle Traffic Director 12<span class="italic">c</span>, click <span class="bold">OK</span>.</p>
+</li>
+<li>
+<p>If your service instance is running Oracle Traffic Director 11<span class="italic">g</span>, click <span class="bold">Deploy Changes</span>.</p>
+</li>
+</ul>
+</li>
+<li class="stepexpand"><span>Repeat from step 3 to update the certificate of any additional HTTPS listeners in this configuration.</span>
+<div>
+<p>Alternatively, you can configure <span class="bold">SSL/TLS Settings</span> for an entire Virtual Server in the load balancer configuration.</p>
+</div>
+</li>
+</ol>
+<div class="section">
+<p>After modifying a listener&rsquo;s certificate you must also restart the load balancer node(s) in your service instance for the change to take effect. See <a href="GUID-A0491DD0-6E6C-405D-A00C-A213AABDF91C.htm#GUID-B35AE4EE-14DF-47D0-A5E9-1F40F6DB7C72" title="You can stop, start, and restart the VMs on which the Managed Servers or the load balancer are running in an Oracle Java Cloud Service instance if the service instance is in a running state. Restarting a Managed Server or load balancer VM is the same as stopping it, then starting it.">Stopping, Starting, and Restarting Managed Server and Load Balancer VMs</a>.</p>
+<p>For more information about the SSL settings of the load balancer, see:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=OTADG414" target="_blank">Configuring SSL/TLS Between Oracle Traffic Director and Clients</a> in <cite>Administering Oracle Traffic Director</cite> (12.2.1)</p>
+</li>
+<li>
+<p><a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudas111170&amp;id=TDADG414" target="_blank">Configuring SSL/TLS Between Oracle Traffic Director and Clients</a> in <cite>Oracle Traffic Director Administrator's Guide</cite> (11.1.1.7)</p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-840351A6-E2E8-46A9-ABA7-E91B6BDECDF2.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-0C2F77F4-C080-4BDF-AD03-13B878353585.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Public Cloud Machine Using Oracle Big Data Cloud Machine - Contents</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Documentation that describes how to use Oracle Big Data Cloud Machine to store and manage large amounts of data of various data types in the cloud, by using Hadoop HDFS file system and associated services and tools." />
+<meta name="dcterms.created" content="2017-05-03T11:44:48Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Big Data Cloud Machine" />
+<meta name="dcterms.identifier" content="E85986-01" />
+<meta name="dcterms.isVersionOf" content="CSBDM" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="http://docs.oracle.com/cloud-machine/latest/" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"   src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"   src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Next" href="title.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSBDM.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSBDM.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSBDM.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript"  src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript"  src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript"  src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript"  src="../dcommon/js/foundation.min.js"></script>
+<script type="application/javascript"  src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript"  src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript"  src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="application/javascript"  src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="application/javascript"  src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="application/javascript"  src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="application/javascript"  src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<span id="PAGE" style="display:none;">1/51</span> <!-- End Header -->
+<h1 class="toc">Contents</h1>
+<h2 class="tocheader"><a href="title.htm">Title and Copyright Information</a></h2>
+<h2 class="tocheader"><a href="GUID-86F7C19B-FD0E-4299-9D33-7697300C5181.htm#GUID-86F7C19B-FD0E-4299-9D33-7697300C5181">Preface</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-86F7C19B-FD0E-4299-9D33-7697300C5181.htm#GUID-4D36E9A9-C4D4-48B7-A5C2-06B2A0D85F5E">Audience</a></li>
+<li><a href="GUID-86F7C19B-FD0E-4299-9D33-7697300C5181.htm#GUID-0D7ACBE9-7047-4DBE-97AA-703FD2FFBE5A">Documentation Accessibility</a></li>
+<li><a href="GUID-86F7C19B-FD0E-4299-9D33-7697300C5181.htm#GUID-734D5B3B-2FDF-463B-B7F2-4F04726F4572">Related Documents</a></li>
+<li><a href="GUID-86F7C19B-FD0E-4299-9D33-7697300C5181.htm#GUID-925F886C-E025-4111-B65C-6C7CDC41BD60">Conventions</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-7D08155A-1B7E-4860-8F3C-FC1777468366.htm"><span class="secnum">1</span> Getting Started with <span>Oracle Big Data Cloud Machine</span></a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-0D490FB2-D93C-4C01-BCD5-C7C2ABD9C35F.htm#GUID-0D490FB2-D93C-4C01-BCD5-C7C2ABD9C35F">About <span>Oracle Big Data Cloud Machine</span></a></li>
+<li><a href="GUID-D7FEC2C2-7808-43C3-BCD3-9BD6386065E9.htm">Before You Begin with <span>Oracle Big Data Cloud Machine</span></a>
+<ul style="list-style-type: none">
+<li><a href="GUID-D15F7820-CADF-4E8D-87C8-D369B7883302.htm">How to Begin with <span>Oracle Big Data Cloud Machine</span> Subscriptions</a></li>
+<li><a href="GUID-C13B13F7-454E-445A-99B8-CDDA410CA652.htm#GUID-C13B13F7-454E-445A-99B8-CDDA410CA652">Generating a Secure Shell (SSH) Public/Private Key Pair</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-C13B13F7-454E-445A-99B8-CDDA410CA652.htm#GUID-9030DBB9-F144-4DF1-B276-F7C30FE9A427">Generating an SSH Key Pair on UNIX and UNIX-Like Platforms Using the ssh-keygen Utility</a></li>
+<li><a href="GUID-C13B13F7-454E-445A-99B8-CDDA410CA652.htm#GUID-39CB2794-02E2-43BA-AA9F-A45769CA449D">Generating an SSH Key Pair on Windows Using the PuTTYgen Program</a></li>
+</ul>
+</li>
+<li><a href="GUID-E8B08C12-1E55-4BFF-BB7F-6F0B310EB0D9.htm#GUID-E8B08C12-1E55-4BFF-BB7F-6F0B310EB0D9">About <span>Oracle Big Data Cloud Machine</span> Users and Roles</a></li>
+<li><a href="GUID-0E9A125F-4739-47B4-957C-7D8CA5867B63.htm">Enabling IPsec VPN Access to <span>Oracle Big Data Cloud Machine</span></a></li>
+</ul>
+</li>
+<li><a href="GUID-AA15F82C-941B-4FF0-BE49-A5EFCAFC6D6B.htm#GUID-AA15F82C-941B-4FF0-BE49-A5EFCAFC6D6B">Where Do Services Run On a Cluster?</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-AA15F82C-941B-4FF0-BE49-A5EFCAFC6D6B.htm#GUID-D07D14A8-7913-48C2-93B8-B078B3B90115">Where Do the Services Run on a Three-Node, Development-Only Cluster?</a></li>
+<li><a href="GUID-AA15F82C-941B-4FF0-BE49-A5EFCAFC6D6B.htm#GUID-814BD059-56E8-494E-9B33-E0BC2B677686">Where Do the Services Run on a Cluster of Four or More Nodes?</a></li>
+</ul>
+</li>
+<li><a href="GUID-2C2C12F8-869D-45B9-974E-6C6064B53641.htm">Typical Workflow for Using <span>Oracle Big Data Cloud Machine</span></a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-988C2D9A-657A-4F79-92E0-528FB59A7C07.htm"><span class="secnum">2</span> Managing the Life Cycle of <span>Oracle Big Data Cloud Machine</span></a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-E33F3A47-A8AE-4DDD-BF2C-D0D5C1715744.htm">Understanding the Workflow and Life Cycle of Service Instances and Clusters</a></li>
+<li><a href="GUID-507D6F1A-4C6E-4265-BE14-1A77C0AABADC.htm">About <span>Oracle Big Data Cloud Machine</span> Nodes</a></li>
+<li><a href="GUID-6DB69BAE-433E-4F8C-A4F5-E79A99CDCE14.htm">Creating a <span>Oracle Big Data Cloud Machine</span> Instance</a></li>
+<li><a href="GUID-817CB14B-F5F3-44E7-A77A-518ABA354260.htm">Creating a Cluster</a></li>
+<li><a href="GUID-B6EDF7FB-A94A-4356-AF5E-C9307721F772.htm#GUID-B6EDF7FB-A94A-4356-AF5E-C9307721F772">Adding Nodes to a Cluster</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-B6EDF7FB-A94A-4356-AF5E-C9307721F772.htm#GUID-2EE2592D-C27C-4F48-B27A-097B6FE3FE76">Adding Permanent Nodes To a Cluster</a></li>
+<li><a href="GUID-B6EDF7FB-A94A-4356-AF5E-C9307721F772.htm#GUID-86EDCACB-19D1-4985-9B4D-AC0F51F18BF5">Adding Nodes if the Regular Process Is Interrupted</a></li>
+</ul>
+</li>
+<li><a href="GUID-4DC086BF-DBB9-43A0-BE0D-1CCBED87BEB4.htm">Controlling Network Access to Services</a></li>
+<li><a href="GUID-AAFDC601-A0E2-4D3C-A773-F11B3AEA9298.htm">Viewing All Clusters</a></li>
+<li><a href="GUID-BDDCF046-E234-4673-B9E4-AF316B84ED89.htm">Viewing Details About a Cluster</a></li>
+<li><a href="GUID-16649C5A-2C88-4E75-809A-BBF8DE250EA3.htm#GUID-16649C5A-2C88-4E75-809A-BBF8DE250EA3">Using HDFS Transparent Encryption</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-16649C5A-2C88-4E75-809A-BBF8DE250EA3.htm#GUID-9DD5DC54-B7FF-4DCA-ACB6-9118F602DA11">Creating Encryption Zones on HDFS</a></li>
+<li><a href="GUID-16649C5A-2C88-4E75-809A-BBF8DE250EA3.htm#GUID-0E1EED40-5E82-430C-8E7F-B6367C826ACE">Adding Files to Encryption Zones</a></li>
+<li><a href="GUID-16649C5A-2C88-4E75-809A-BBF8DE250EA3.htm#GUID-AF449BD3-BE24-4380-928C-DADF2FBF3859">Viewing Keys in Encryption Zones</a></li>
+</ul>
+</li>
+<li><a href="GUID-8AE99135-F40C-4EFD-B2A6-140FBCF775ED.htm">Restarting a Cluster Node</a></li>
+<li><a href="GUID-071B4982-6BA3-4DAD-800C-8506E0BA4E02.htm">Restarting the Virtual Machines (VMs) Hosting a Cluster</a></li>
+<li><a href="GUID-BEA41872-F433-4C0A-B501-EBE98E05C76F.htm">Updating the SSH Public Key for a Cluster</a></li>
+<li><a href="GUID-B933E2F9-82A6-4282-9208-ED0BB40D9ABE.htm">Supporting Multiple Key Pairs for Secure Shell (SSH) Access</a></li>
+<li><a href="GUID-FA8D6317-BE96-4393-9C82-73B3CAB9ECA0.htm">Deleting a Cluster</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-7EF9DB14-1FA4-43A3-9069-5BDDD3B20E9F.htm"><span class="secnum">3</span> Accessing Your <span>Oracle Big Data Cloud Machine</span></a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-EF58CCDD-789D-466D-96F5-41AFC8B52E04.htm">Accessing the <span>Oracle Big Data Cloud Service</span> Console</a></li>
+<li><a href="GUID-EF42DCD7-7179-43C6-B115-944A31D6B7D7.htm">Accessing Cloudera Manager to Work with Hadoop Data and Services</a></li>
+<li><a href="GUID-0F08BDBE-C108-4116-9D9C-8B0A1D30AD91.htm">Accessing Cloudera Hue to Manage Hadoop Data and Resources</a></li>
+<li><a href="GUID-84261712-B6BA-4786-AE93-653B4AAF40B1.htm#GUID-84261712-B6BA-4786-AE93-653B4AAF40B1">Connecting to a Cluster Node Through Secure Shell (SSH)</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-84261712-B6BA-4786-AE93-653B4AAF40B1.htm#GUID-29C53AFA-66ED-4649-9A3B-2B5480EC5B53">Connecting to a Node By Using PuTTY on Windows</a></li>
+<li><a href="GUID-84261712-B6BA-4786-AE93-653B4AAF40B1.htm#GUID-E6F4421D-3D7F-415B-ABD6-D3CC0C870947">Connecting to a Node By Using SSH on UNIX</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="tocheader"><a href="GUID-F54DFE52-2940-44D6-93F4-2372FB697647.htm"><span class="secnum">4</span> Managing <span>Oracle Big Data Cloud Machine</span></a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-3D79ED39-E3C9-4252-9A9B-725FD4E24E81.htm"><span>Oracle Big Data Cloud Machine</span> Management Software</a></li>
+<li><a href="GUID-D9E0D6EC-13E7-495F-AC80-D3B3EE41A414.htm">Installing <span>Oracle Big Data Cloud Machine</span> Software</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-AF1F7D50-5836-4FC4-8EDB-5FD0922BAF35.htm">Upgrading the Software on a Cluster</a></li>
+<li><a href="GUID-8D824082-FE5F-4082-8753-70E420F5C382.htm">Adding Support for Oracle Audit Vault and Database Firewall</a></li>
+<li><a href="GUID-87319268-5DD8-4A63-9E0C-E9A75D41CA1C.htm">Installing a One-Off Patch</a></li>
+</ul>
+</li>
+<li><a href="GUID-18540940-7342-40CF-8738-22B5119A57B0.htm"><span>Oracle Big Data Cloud Machine</span> Utilities</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-8ECCC922-ADBA-4F18-83AE-A66DF5AF8254.htm">bdacli</a></li>
+<li><a href="GUID-FDC447CB-05D8-457F-8CD3-97D0A189EACE.htm">remove-root-ssh</a></li>
+<li><a href="GUID-8A059874-2036-4E4B-9FAD-C403BA7977B4.htm">setup-root-ssh</a></li>
+</ul>
+</li>
+<li><a href="GUID-42B627A1-5B10-4458-86C2-36091B553AF1.htm">Executing Commands Across a Cluster Using the dcli Utility</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-660EB8F2-22F3-4220-9C1C-42AD85184D9D.htm"><span class="secnum">A</span> bda-oss-admin Command Reference</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-290F34BE-CB2A-43F0-8D4A-48E01CFFE36F.htm">bda-oss-admin add_bdcs_cp_extensions_mr</a></li>
+<li><a href="GUID-E30A976B-E411-4240-ACE9-DA04BEF6B822.htm">bda-oss-admin print_yarn_mapred_cp</a></li>
+<li><a href="GUID-C3F88D5D-6A22-4369-B5D8-DB1A866749DA.htm">bda-oss-admin remove_bdcs_cp_extensions_mr</a></li>
+<li><a href="GUID-AB8A3F35-F3C8-4DC9-8C08-28415A90461F.htm">bda-oss-admin restart_cluster</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-505CE032-FD28-424B-955A-0EC7B55D31FB.htm"><span class="secnum">B</span> Pages for Administering <span>Oracle Big Data Cloud Machine</span></a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-114A70F7-1E15-40CB-B076-B6E9F635484C.htm">Exploring the Oracle Big Data Cloud Service Console Clusters Page</a></li>
+<li><a href="GUID-0369E67B-5F8C-4A2A-AD7C-43FC46799912.htm">Exploring the <span>Oracle Big Data Cloud Service</span> Cluster Details Page</a></li>
+</ul>
+</div>
+<!-- class="ind" -->
+<!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment67">
+<tr>
+<td class="cellalignment74">
+<table class="cellalignment89">
+<tr>
+<td class="cellalignment71"><a href="title.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment76">
+<table class="cellalignment88">
+<tr>
+<td class="cellalignment71"><a href="http://docs.oracle.com/cloud-machine/latest/"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment71"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment71"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

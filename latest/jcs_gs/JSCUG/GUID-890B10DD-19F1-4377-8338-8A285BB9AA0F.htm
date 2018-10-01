@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Using Third-Party Frameworks with Oracle Java Cloud Service on OPCM</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can use third-party frameworks that conform to the Java EE and Java SE standards to extend the functionality of Oracle Java Cloud Service." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-C83E051D-3A28-4FE7-8333-20F40A06DAEA.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-2B7339B1-19CB-455E-8433-9530F6F56A0B.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-890B10DD-19F1-4377-8338-8A285BB9AA0F"></a> <span id="PAGE" style="display:none;">55/131</span> <!-- End Header -->
+<h1 id="JSCUG-GUID-890B10DD-19F1-4377-8338-8A285BB9AA0F" class="sect1">Using Third-Party Frameworks with Oracle Java Cloud Service <span>on <span>OPCM</span></span></h1>
+<div>
+<p>You can use third-party frameworks that conform to the Java EE and Java SE standards to extend the functionality of Oracle Java Cloud Service.</p>
+<p>You can use each supported framework with Oracle Java Cloud Service in one of the following ways:</p>
+<ul style="list-style-type: disc;">
+<li>Packaging the framework with applications that use it</li>
+<li>Deploying the framework as a shared library
+<p>For more information, see <a href="GUID-18128901-2017-4407-8DA9-0BCE933C8C07.htm" title="This section describes deploying and undeploying applications to an Oracle Java Cloud Service instance by using: Fusion Middleware Control, the WebLogic Server Administration Console, WLST commands, and an IDE. You cannot deploy and undeploy applications directly through the Oracle Java Cloud Service Console.">Deploying and Undeploying Applications for an Oracle Java Cloud Service Instance</a>.</p>
+</li>
+</ul>
+<p>If multiple applications use a framework, or if you want to simplify updates by minimizing the size of applications that use the framework, deploy the framework as a shared library.</p>
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-890B10DD-19F1-4377-8338-8A285BB9AA0F.htm#GUID-FA02ED5E-7A2A-45D2-AADF-A39DFA4DC5E1" title="Oracle Java Cloud Service has been tested with several third-party frameworks. A specific release of each supported framework was tested with Oracle Java Cloud Service.">Third-Party Frameworks Tested with Oracle Java Cloud Service</a></p>
+</li>
+<li>
+<p><a href="GUID-890B10DD-19F1-4377-8338-8A285BB9AA0F.htm#GUID-FB6F95CF-36DA-41B9-AD9B-E495680ACEB2" title="The Apache Software Foundation web site provides documentation for using Apache Axis/Java.">Information for Configuring Apache Axis/Java</a></p>
+</li>
+<li>
+<p><a href="GUID-890B10DD-19F1-4377-8338-8A285BB9AA0F.htm#GUID-3D79ABB1-0967-4E57-85A3-ADB90729FEAC" title="By default, Quartz Job Scheduler checks for updates when it starts.">Omitting Checks for Updates to Quartz Job Scheduler</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-FA02ED5E-7A2A-45D2-AADF-A39DFA4DC5E1"></a>
+<h2 id="JSCUG-GUID-FA02ED5E-7A2A-45D2-AADF-A39DFA4DC5E1" class="sect2">Third-Party Frameworks Tested with Oracle Java Cloud Service</h2>
+<div>
+<p>Oracle Java Cloud Service has been tested with several third-party frameworks. A specific release of each supported framework was tested with Oracle Java Cloud Service.</p>
+<div class="tblformalwide" id="GUID-FA02ED5E-7A2A-45D2-AADF-A39DFA4DC5E1__GUID-6F37C6D7-39B4-49D1-A9E9-49A550C6B52C">
+<table class="cellalignment30" summary="This table lists the third-party frameworks and the release of each framework with which Oracle Java Cloud Service was tested.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment31" id="d30061e75">Framework</th>
+<th class="cellalignment31" id="d30061e77">Release Tested</th>
+<th class="cellalignment31" id="d30061e79">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d30061e83" headers="d30061e75"><a href="http://akka.io" target="_blank">Akka</a></td>
+<td class="cellalignment32" headers="d30061e83 d30061e77">2.3.9</td>
+<td class="cellalignment32" headers="d30061e83 d30061e79">Build highly concurrent, distributed, and resilient message-driven applications on the JVM.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d30061e92" headers="d30061e75"><a href="http://axis.apache.org/axis2/java/core" target="_blank">Apache Axis2/Java</a></td>
+<td class="cellalignment32" headers="d30061e92 d30061e77">1.6.2</td>
+<td class="cellalignment32" headers="d30061e92 d30061e79">Simplify client-side and server-side programming of Web services.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d30061e101" headers="d30061e75"><a href="http://commons.apache.org" target="_blank">Apache Commons</a> component <a href="http://commons.apache.org/proper/commons-beanutils" target="_blank">BeanUtils</a></td>
+<td class="cellalignment32" headers="d30061e101 d30061e77">1.9.2</td>
+<td class="cellalignment32" headers="d30061e101 d30061e79">Simplify the use of the Java reflection and introspection APIs.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d30061e114" headers="d30061e75">Apache Commons component <a href="http://commons.apache.org/proper/commons-collections" target="_blank">Collections</a></td>
+<td class="cellalignment32" headers="d30061e114 d30061e77">3.2.1</td>
+<td class="cellalignment32" headers="d30061e114 d30061e79">Extend or augment the Java Collections Framework.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d30061e124" headers="d30061e75">Apache Commons component <a href="http://commons.apache.org/proper/commons-digester" target="_blank">Digester</a></td>
+<td class="cellalignment32" headers="d30061e124 d30061e77">3.2</td>
+<td class="cellalignment32" headers="d30061e124 d30061e79">Map XML configuration data to Java objects.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d30061e134" headers="d30061e75">Apache Commons component <a href="http://commons.apache.org/proper/commons-io" target="_blank">IO</a></td>
+<td class="cellalignment32" headers="d30061e134 d30061e77">2.4</td>
+<td class="cellalignment32" headers="d30061e134 d30061e79">Help develop functionality for input and output through data streams.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d30061e144" headers="d30061e75">Apache Commons component <a href="http://commons.apache.org/proper/commons-logging" target="_blank">Logging</a></td>
+<td class="cellalignment32" headers="d30061e144 d30061e77">1.2</td>
+<td class="cellalignment32" headers="d30061e144 d30061e79">Enable a library to be used with a chosen logging implementation at runtime.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d30061e154" headers="d30061e75"><a href="http://cxf.apache.org" target="_blank">Apache CXF</a></td>
+<td class="cellalignment32" headers="d30061e154 d30061e77">3.0.4</td>
+<td class="cellalignment32" headers="d30061e154 d30061e79">Build and develop services that use front-end programming APIs, such as JAX-WS and JAX-RS.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d30061e163" headers="d30061e75"><a href="http://logging.apache.org/log4j" target="_blank">Apache Log4j</a></td>
+<td class="cellalignment32" headers="d30061e163 d30061e77">The following releases:
+<ul style="list-style-type: disc;">
+<li>1.2.17</li>
+<li>2.0</li>
+</ul>
+</td>
+<td class="cellalignment32" headers="d30061e163 d30061e79">Provide a logging framework for Java applications.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d30061e177" headers="d30061e75"><a href="https://myfaces.apache.org" target="_blank">Apache MyFaces</a></td>
+<td class="cellalignment32" headers="d30061e177 d30061e77">2.2.8</td>
+<td class="cellalignment32" headers="d30061e177 d30061e79">
+<p>Simplify the development of web applications with JavaServer&trade; Faces by providing:</p>
+<ul style="list-style-type: disc;">
+<li>A JavaServer Faces, implementation</li>
+<li>Component libraries of UI widgets for building web applications with JavaServer Faces</li>
+<li>Extension packages to JavaServer Faces</li>
+<li>Integration modules to other technologies and standards</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d30061e199" headers="d30061e75"><a href="https://struts.apache.org" target="_blank">Apache Struts</a></td>
+<td class="cellalignment32" headers="d30061e199 d30061e77">2.3.3</td>
+<td class="cellalignment32" headers="d30061e199 d30061e79">Simplify the development of Java web applications that use a Model-View-Controller (MVC) architecture.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d30061e209" headers="d30061e75"><a href="http://tapestry.apache.org/index.html" target="_blank">Apache Tapestry</a></td>
+<td class="cellalignment32" headers="d30061e209 d30061e77">5.3.7</td>
+<td class="cellalignment32" headers="d30061e209 d30061e79">Simplify the development of dynamic, robust, highly scalable web applications in Java.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d30061e218" headers="d30061e75"><a href="https://thrift.apache.org" target="_blank">Apache Thrift</a></td>
+<td class="cellalignment32" headers="d30061e218 d30061e77">0.9.0</td>
+<td class="cellalignment32" headers="d30061e218 d30061e79">Build services that work efficiently and seamlessly between languages including, among other langauges:
+<ul style="list-style-type: disc;">
+<li>C++</li>
+<li>C#</li>
+<li>Cocoa</li>
+<li>Delphi</li>
+<li>Erlang</li>
+<li>Haskell</li>
+<li>Java</li>
+<li>JavaScript</li>
+<li>Node.js</li>
+<li>OCaml</li>
+<li>Perl</li>
+<li>PHP</li>
+<li>Python</li>
+<li>Ruby</li>
+<li>Smalltalk</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d30061e259" headers="d30061e75"><a href="http://velocity.apache.org" target="_blank">Apache Velocity</a></td>
+<td class="cellalignment32" headers="d30061e259 d30061e77">1.7</td>
+<td class="cellalignment32" headers="d30061e259 d30061e79">Reference objects that are defined in Java code through a template language.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d30061e268" headers="d30061e75"><a href="https://wicket.apache.org" target="_blank">Apache Wicket</a></td>
+<td class="cellalignment32" headers="d30061e268 d30061e77">6.18.0</td>
+<td class="cellalignment32" headers="d30061e268 d30061e79">Simplify the development of Java web applications by:
+<ul style="list-style-type: disc;">
+<li>Properly separating markup and logic</li>
+<li>Using a Plain Old Java Object (POJO) data model</li>
+<li>Limiting the use of Extensible Markup Language (XML) configuration files</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d30061e284" headers="d30061e75"><a href="http://freemarker.org" target="_blank">FreeMarker</a></td>
+<td class="cellalignment32" headers="d30061e284 d30061e77">2.3.19</td>
+<td class="cellalignment32" headers="d30061e284 d30061e79">Generate text output from templates, for example, web pages for servlet-based applications that follow the MVC pattern.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d30061e293" headers="d30061e75"><a href="https://code.google.com/p/guava-libraries" target="_blank">Google Guava Libraries</a></td>
+<td class="cellalignment32" headers="d30061e293 d30061e77">15.0</td>
+<td class="cellalignment32" headers="d30061e293 d30061e79">Provide Java libraries for functionality such as:
+<ul style="list-style-type: disc;">
+<li>Caching</li>
+<li>Collections</li>
+<li>Concurrency</li>
+<li>Common annotations</li>
+<li>I/O</li>
+<li>Primitives</li>
+<li>String processing</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d30061e317" headers="d30061e75"><a href="https://github.com/google/guice" target="_blank">Google Guice</a></td>
+<td class="cellalignment32" headers="d30061e317 d30061e77">3.0</td>
+<td class="cellalignment32" headers="d30061e317 d30061e79">Provide dependency injection for Java 6 and above.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d30061e326" headers="d30061e75"><a href="http://www.gwtproject.org" target="_blank">GWT</a></td>
+<td class="cellalignment32" headers="d30061e326 d30061e77">2.5.1</td>
+<td class="cellalignment32" headers="d30061e326 d30061e79">Build and optimize complex browser-based applications without the need to understand the behavior of specific browsers, the <span class="apiname">XMLHttpRequest</span> object, or JavaSrcipt.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d30061e338" headers="d30061e75"><a href="http://hibernate.org/orm" target="_blank">Hibernate ORM</a></td>
+<td class="cellalignment32" headers="d30061e338 d30061e77">4.2.8</td>
+<td class="cellalignment32" headers="d30061e338 d30061e79">Provide Object/Relational Mapping (ORM) to simplify storage of data by object-oriented applications in relational databases.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d30061e347" headers="d30061e75"><a href="http://seamframework.org" target="_blank">JBoss Seam</a></td>
+<td class="cellalignment32" headers="d30061e347 d30061e77">3.1.0</td>
+<td class="cellalignment32" headers="d30061e347 d30061e79">Provide a modular set of extensions to the contexts and dependency injection (CDI) programming model.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d30061e356" headers="d30061e75"><a href="http://www.joda.org/joda-time" target="_blank">Joda-Time</a></td>
+<td class="cellalignment32" headers="d30061e356 d30061e77">2.1</td>
+<td class="cellalignment32" headers="d30061e356 d30061e79">Replace the date and time class libraries in the Java Platform, Standard Edition (Java SE).</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d30061e366" headers="d30061e75"><a href="http://jquery.com" target="_blank">JQuery</a></td>
+<td class="cellalignment32" headers="d30061e366 d30061e77">2.0.3</td>
+<td class="cellalignment32" headers="d30061e366 d30061e79">Provide a JavaScript library to simplify HTML document traversal and manipulation, event handling, animation, and Ajax.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d30061e375" headers="d30061e75"><a href="http://jruby.org" target="_blank">JRuby</a></td>
+<td class="cellalignment32" headers="d30061e375 d30061e77">1.7.2</td>
+<td class="cellalignment32" headers="d30061e375 d30061e79">Provide a 100% Java implementation of the Ruby programming language.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d30061e384" headers="d30061e75"><a href="http://www.primefaces.org" target="_blank">PrimeFaces</a></td>
+<td class="cellalignment32" headers="d30061e384 d30061e77">4.0</td>
+<td class="cellalignment32" headers="d30061e384 d30061e79">Provide a library of user interface components for JavaServer Faces (JSF) applications.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d30061e393" headers="d30061e75"><a href="http://quartz-scheduler.org" target="_blank">Quartz Job Scheduler</a></td>
+<td class="cellalignment32" headers="d30061e393 d30061e77">2.1.5</td>
+<td class="cellalignment32" headers="d30061e393 d30061e79">Create simple or complex schedules for executing jobs whose tasks are defined as standard Java components.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d30061e402" headers="d30061e75"><a href="http://www.slf4j.org" target="_blank">Simple Logging Facade for Java (SLF4J)</a></td>
+<td class="cellalignment32" headers="d30061e402 d30061e77">1.7.7</td>
+<td class="cellalignment32" headers="d30061e402 d30061e79">Enable end users to plug in a specific logging framework at deployment time.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d30061e411" headers="d30061e75"><a href="http://spring.io" target="_blank">Spring</a></td>
+<td class="cellalignment32" headers="d30061e411 d30061e77">4.0.3</td>
+<td class="cellalignment32" headers="d30061e411 d30061e79">Build simple, portable, fast, and flexible JVM-based systems and applications.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<div class="sect2"><a id="GUID-FB6F95CF-36DA-41B9-AD9B-E495680ACEB2"></a>
+<h2 id="JSCUG-GUID-FB6F95CF-36DA-41B9-AD9B-E495680ACEB2" class="sect2">Information for Configuring Apache Axis/Java</h2>
+<div>
+<p>The Apache Software Foundation web site provides documentation for using Apache Axis/Java.</p>
+<p>For detailed instructions for configuring Apache Axis with Oracle WebLogic Server, see <cite>WebLogic</cite> in <a href="https://axis.apache.org/axis2/java/core/docs/app_server.html" target="_blank">Application Server Specific Configuration Guide</a>.</p>
+</div>
+</div>
+<div class="sect2"><a id="GUID-3D79ABB1-0967-4E57-85A3-ADB90729FEAC"></a>
+<h2 id="JSCUG-GUID-3D79ABB1-0967-4E57-85A3-ADB90729FEAC" class="sect2">Omitting Checks for Updates to Quartz Job Scheduler <span>on <span>OPCM</span></span></h2>
+<div>
+<p>By default, Quartz Job Scheduler checks for updates when it starts.</p>
+<div class="section">The check for updates involves connecting to a remote server. If the server cannot be reached, the check fails and an exception is written to log file. The failure does not prevent Quartz Job Scheduler from starting and does not affect the functionality of Quartz Job Scheduler in any way. However, you can prevent this exception by omitting checks for updates to Quartz Job Scheduler.
+<p>To omit checks for updates to Quartz Job Scheduler:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>For each managed server in your Oracle Java Cloud Service instance, set one of the following properties to <code class="codeph">true</code>:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>The Quartz configuration property <code class="codeph">org.quartz.scheduler.skipUpdateCheck</code></li>
+<li>The Java system property <code class="codeph">org.terracotta.quartz.skipUpdateCheck</code></li>
+</ul>
+<p>For more information about these properties, see the following Quartz Job Scheduler documentation:</p>
+<ul style="list-style-type: disc;">
+<li><a href="http://quartz-scheduler.org/documentation/best-practices#skip-update-check" target="_blank">Skip Update Check</a> in <cite>Best Practices</cite></li>
+<li><a href="http://quartz-scheduler.org/documentation/quartz-2.x/configuration/ConfigMain" target="_blank">Configure Main Scheduler Settings</a> in <cite>Configuration Reference</cite></li>
+</ul>
+<p>For information about how to set a property, see the Administration Console online help for the release of Oracle WebLogic Server that you are using:</p>
+<ul style="list-style-type: disc;">
+<li>For release 12.2.1.0, see <a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=WLACH03401" target="_blank">Configure startup arguments for Managed Servers</a> in <cite>Oracle WebLogic Server Administration Console Online Help 12c (12.2.1)</cite>.</li>
+<li>For release 12.1.3.0, see <a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw121300&amp;id=WLACH03401" target="_blank">Configure startup arguments for Managed Servers</a> in<cite>Oracle WebLogic Server Administration Console Online Help 12c (12.1.3)</cite>.</li>
+<li>For release 11.1.1.7, see <a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudas111170&amp;id=WLACH03401" target="_blank">Configure startup arguments for Managed Servers</a> in<cite>Oralce WebLogic Server Administration Console Online Help 11g Release (10.3.6)</cite> .</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Restart each managed server for which you set a property in the previous step.</span>
+<div>For more information, see <a href="GUID-BD5190E0-5DE4-454E-BAD3-E889C575D432.htm#GUID-C65E74C2-1FB9-45DB-90CA-1295518E0D2C" title="After you have started the Administration Server through the Node Manager by using WLST commands, you can start the Managed Servers through theWebLogic Server Administration Console.">Using the WebLogic Server Administration Console to Start Managed Servers</a>.</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-C83E051D-3A28-4FE7-8333-20F40A06DAEA.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-2B7339B1-19CB-455E-8433-9530F6F56A0B.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

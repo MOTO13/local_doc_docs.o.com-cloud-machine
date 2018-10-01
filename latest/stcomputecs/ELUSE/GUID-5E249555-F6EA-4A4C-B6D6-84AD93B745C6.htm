@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Patch Your Instances</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Describes how to patch your instances to the required version." />
+<meta name="dcterms.created" content="2018-05-15T07:53:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E62130-11" />
+<meta name="dcterms.isVersionOf" content="ELUSE" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-8EC17036-C730-435F-9EE1-519AC3194C0E.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-8F2A30B0-E7F9-4EAC-988C-BA531E202A1F.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUSE.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+                    <script>var w=window;if(w.performance||w.mozPerformance||w.msPerformance||w.webkitPerformance){var d=document;AKSB=w.AKSB||{},AKSB.q=AKSB.q||[],AKSB.mark=AKSB.mark||function(e,_){AKSB.q.push(["mark",e,_||(new Date).getTime()])},AKSB.measure=AKSB.measure||function(e,_,t){AKSB.q.push(["measure",e,_,t||(new Date).getTime()])},AKSB.done=AKSB.done||function(e){AKSB.q.push(["done",e])},AKSB.mark("firstbyte",(new Date).getTime()),AKSB.prof={custid:"322179",ustr:"",originlat:"0",clientrtt:"1",ghostip:"23.212.3.15",ipv6:false,pct:"10",clientip:"45.78.37.67",requestid:"23708cf",region:"32996",protocol:"",blver:14,akM:"dsca",akN:"ae",akTT:"O",akTX:"1",akTI:"23708cf",ai:"206465",ra:"false",pmgn:"",pmgi:"",pmp:"",qc:""},function(e){var _=d.createElement("script");_.async="async",_.src=e;var t=d.getElementsByTagName("script"),t=t[t.length-1];t.parentNode.insertBefore(_,t)}(("https:"===d.location.protocol?"https:":"http:")+"//ds-aksb-a.akamaihd.net/aksb.min.js")}</script>
+                    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-5E249555-F6EA-4A4C-B6D6-84AD93B745C6"></a> <span id="PAGE" style="display:none;">65/81</span> <!-- End Header -->
+<h1 id="ELUSE-GUID-5E249555-F6EA-4A4C-B6D6-84AD93B745C6" class="sect1">Patch Your Instances</h1>
+<div>
+<p>Describes how to patch your instances to the required version.</p>
+<div class="section">
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-5E249555-F6EA-4A4C-B6D6-84AD93B745C6.htm#GUID-5E249555-F6EA-4A4C-B6D6-84AD93B745C6__PATCHYOUR16.1.2OR16.3.1INSTANCESTO1-BBF52454">Patch Your 16.1.2 or 16.3.1 Instances to 17.1.2</a></p>
+</li>
+<li>
+<p><a href="GUID-5E249555-F6EA-4A4C-B6D6-84AD93B745C6.htm#GUID-5E249555-F6EA-4A4C-B6D6-84AD93B745C6__PATCHYOUR16.1.2INSTANCESTO16.3.1-BBF52721">Patch Your 16.1.2 Instances to 16.3.1</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-5E249555-F6EA-4A4C-B6D6-84AD93B745C6__PATCHYOUR16.1.2OR16.3.1INSTANCESTO1-BBF52454">
+<p class="subhead1">Patch Your 16.1.2 or 16.3.1 Instances to 17.1.2</p>
+<ol>
+<li>
+<p>Log in to the instance you want to patch as the <code class="codeph">root</code> user.</p>
+</li>
+<li>
+<p>Navigate to the <code class="codeph">/etc/yum.repos.d</code> directory</p>
+<pre dir="ltr">
+cd /etc/yum.repos.d
+</pre></li>
+<li>
+<p>Download the <code class="codeph">exalogic.repo</code> file from the repository server to your instance:</p>
+<pre dir="ltr">
+wget http://<span class="variable">http-repo-server</span>:<span class="variable">port</span>/patchrepo/template/exalogic.repo
+</pre></li>
+<li>
+<p>Identify the version of Oracle Linux of your guest instance:</p>
+<pre dir="ltr">
+lsb_release -rs | cut -f1 -d.
+</pre>
+<ul style="list-style-type: disc;">
+<li>
+<p>If <code class="codeph">6</code> appears, the instance is an Oracle Linux 6 instance.</p>
+</li>
+<li>
+<p>If <code class="codeph">5</code> appears, the instance is an Oracle Linux 5 instance.</p>
+</li>
+</ul>
+</li>
+<li>
+<div class="p">Based on the OS of your guest instance, patch the instance as follows:
+<ul style="list-style-type: disc;">
+<li>
+<div class="p">For Oracle Linux 6 instances:
+<ol>
+<li>
+<p>Download the following scripts using <code class="codeph">wget</code>:</p>
+<pre dir="ltr">
+wget http://<span class="variable">http-repo-server</span>:<span class="variable">port</span>/patchrepo/scripts/update_instance.sh
+wget http://<span class="variable">http-repo-server</span>:<span class="variable">port</span>/patchrepo/scripts/remove_old_kernel.sh
+</pre></li>
+<li>
+<p>Add execute permissions to the downloaded scripts:</p>
+<pre dir="ltr">
+chmod +x update_instance.sh remove_old_kernel.sh
+</pre></li>
+<li>
+<p>Update the instance:</p>
+<pre dir="ltr">
+./update_instance.sh
+</pre></li>
+<li>
+<p>Shut down the instance as described in <a href="GUID-DDA83168-BFFF-47B4-91FC-ACEF3C28CA50.htm#GUID-DDA83168-BFFF-47B4-91FC-ACEF3C28CA50" title="When you shut down an instance, the instance is gracefully shut down and its network configuration, storage volumes, and disk metadata associated with the instance are preserved. Shutting down an instance is necessary for maintenance or for updating the configuration of an instance, such as changing the shape. You can shut down only a running instance.">Shutting Down an Instance</a></p>
+</li>
+<li>
+<p>Restart the instance as described in <a href="GUID-703822A2-46BE-4656-8EBE-8F7FB615AFF2.htm#GUID-703822A2-46BE-4656-8EBE-8F7FB615AFF2" title="You restart an instance that is in Shut_down or error status.">Restarting an Instance</a></p>
+</li>
+<li>
+<p>Wait for the instance to be accessible.</p>
+</li>
+<li>
+<p>Log in to the instance as the root user.</p>
+</li>
+<li>
+<p>Run the <code class="codeph">remove_old_kernel.sh</code> script:</p>
+<pre dir="ltr">
+./remove_old_kernel.sh
+</pre></li>
+</ol>
+</div>
+</li>
+<li>
+<p>For Oracle Linux 5 instances:</p>
+<ol>
+<li>
+<p>Download the following script using <code class="codeph">wget</code>:</p>
+<pre dir="ltr">
+wget http://<span class="variable">http-repo-server</span>:<span class="variable">port</span>/patchrepo/scripts/update_instance.sh
+</pre></li>
+<li>
+<p>Add execute permissions to the downloaded script:</p>
+<pre dir="ltr">
+chmod +x update_instance.sh
+</pre></li>
+<li>
+<p>Update the instance using the script:</p>
+<pre dir="ltr">
+./update_instance.sh
+</pre></li>
+<li>
+<p>Download the kernel header package using <code class="codeph">wget</code>:</p>
+<pre dir="ltr">
+wget http://<span class="variable">http-repo-server</span>:<span class="variable">port</span>/patchrepo/additional_packages/kernel-headers-2.6.18-417.0.0.0.1.el5.x86_64.rpm
+</pre></li>
+<li>
+<p>Install the kernel header package:</p>
+<pre dir="ltr">
+rpm -ivh --force kernel-headers-2.6.18-417.0.0.0.1.el5.x86_64.rpm
+</pre></li>
+</ol>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-5E249555-F6EA-4A4C-B6D6-84AD93B745C6__PATCHYOUR16.1.2INSTANCESTO16.3.1-BBF52721">
+<p class="subhead1">Patch Your 16.1.2 Instances to 16.3.1</p>
+<ol>
+<li>
+<p>Log in to the instance you want to patch as the <code class="codeph">root</code> user.</p>
+</li>
+<li>
+<p>Navigate to the <code class="codeph">/etc/yum.repos.d</code> directory</p>
+<pre dir="ltr">
+cd /etc/yum.repos.d
+</pre></li>
+<li>
+<p>Download the <code class="codeph">exalogic.repo</code> file from the repository server to your instance:</p>
+<pre dir="ltr">
+wget http://<span class="variable">http-repo-server</span>:<span class="variable">port</span>/patchrepo/template/exalogic.repo
+</pre></li>
+<li>
+<p>Remove cached packages or headers:</p>
+<pre dir="ltr">
+yum clean all
+</pre></li>
+<li>
+<p>Run the <code class="codeph">yum update</code> command to upgrade your instance:</p>
+<pre dir="ltr">
+yum update --disableexcludes=main -y
+</pre></li>
+<li>
+<p>Verify that the instance has been updated to the new version by running the <code class="codeph">imageinfo</code> command:</p>
+<p>In this example, the instance was patched from 16.1.2 to 16.3.1.</p>
+<pre dir="ltr">
+imageinfo
+
+Oracle Public Cloud Machine 16.3.1
+
+Image version : 16.3.1
+...
+</pre></li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment95">
+<tr>
+<td class="cellalignment102">
+<table class="cellalignment100">
+<tr>
+<td class="cellalignment99"><a href="GUID-8EC17036-C730-435F-9EE1-519AC3194C0E.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment99"><a href="GUID-8F2A30B0-E7F9-4EAC-988C-BA531E202A1F.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment104">
+<table class="cellalignment98">
+<tr>
+<td class="cellalignment99"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment99"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

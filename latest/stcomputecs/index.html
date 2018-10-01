@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<!--<![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Oracle Compute Cloud Service on Oracle Cloud Machine</title>
+<meta charset="utf-8">
+<meta name="date" content="2006-12-08T18:57:09Z">
+<meta name="copyright" content="Copyright 2011, 2014, Oracle and/or its affiliates.">
+<meta name="description" content="Documentation that shows how to configure and manage virtual machines on Oracle Public Cloud Machine (OPCM).">
+<meta name="keywords" content="None">
+<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="dcterms.identifier" content="E70972-01">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+<link rel="stylesheet" href="dcommon/css/forms.css">
+<link rel="stylesheet" href="dcommon/css/home-search.css">
+<link rel="stylesheet" href="dcommon/css/fonts.css">
+<link rel="stylesheet" href="dcommon/fonts/glyphicons-pro/glyphicons/css/glyphicons.css">
+<link rel="stylesheet" href="dcommon/fonts/glyphicons-pro/glyphicons-halflings/css/glyphicons-halflings.css">
+<link rel="stylesheet" href="dcommon/fonts/glyphicons-pro/glyphicons-social/css/glyphicons-social.css">
+<link rel="stylesheet" href="dcommon/css/normalize.min.css">
+<link rel="stylesheet" href="dcommon/css/main.css">
+<link rel="stylesheet" href="dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="dcommon/css/respond-1140-deskop.css">
+<link rel="stylesheet" href="dcommon/css/leftnav.css">
+<link rel="stylesheet" href="dcommon/css/simpletree.css">
+<link rel="stylesheet" href="dcommon/css/header.css">
+<link rel="stylesheet" href="dcommon/css/footer.css">
+<link rel="stylesheet" href="dcommon/css/home.css">
+<link rel="stylesheet" href="dcommon/css/fusiondoc.css">
+<link rel="stylesheet" href="dcommon/css/print.css">
+<script src="dcommon/js/jquery-1.11.0.min.js"></script><script src="dcommon/js/modernizr-2.6.1-respond-1.1.0.min.js"></script><script src="dcommon/js/jquery-1.10.2.js"></script><script src="dcommon/js/jquery-ui-1.10.4.custom.js"></script><link href="dcommon/css/jquery-ui-1.10.4.custom.css" rel="stylesheet">
+<link rel="stylesheet" href="dcommon/css/search.css">
+<script src="dcommon/js/common.js"></script><script src="dcommon/js/booklist.js"></script><script src="dcommon/js/tabs.js"></script><script src="dcommon/js/leftnav.js"></script><script src="dcommon/js/jquery.matchHeight.js" type="text/javascript"></script><script src="dcommon/js/main.js"></script><link rel="stylesheet" href="dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen">
+<script type="text/javascript" src="dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script><script type="text/javascript" src="dcommon/fancybox/fbattributes.js"></script><script src="dcommon/js/search.js"></script><!--fonts--><!--[if lt IE 9]>
+<link rel="stylesheet" href="{$dcommonref}dcommon/css/ltIE9.css">
+<![endif]-->
+<!--[if IE ]>
+ <link rel="stylesheet" href="{$dcommonref}dcommon/css/IE.css">
+ <![endif]-->
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+<script>
+$(window).load(function () {
+    $("select#ctpages").each(function () {
+        $(this).val($(this).find('option[selected]').val());
+    });
+});
+/////////////////
+
+/////////////////  MatchHeight function
+
+ 
+
+function resizecolumns(){
+
+$('.col2equal > div').matchHeight();
+
+$('.gs-block-2').matchHeight();
+
+$('.gs4b > div').matchHeight();
+
+$('.gs-col-wrapper > div').matchHeight();
+
+};
+
+ 
+
+/////////////////
+
+/////////////////  
+
+ 
+
+$(document).ready(function() {
+
+resizecolumns();
+
+});
+
+$(window).resize(function() {
+
+resizecolumns();
+
+});
+
+ 
+</script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body id="PORTAL1" class="INDEX_DATA_FILE">
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><div id="HEADER">
+<div id="logocover"></div>
+<br class="clearfloat"><div class="header-container"></div>
+<br>
+</div></header><div id="content">
+<div id="shownav" title="Show Navigation"><input type="image" src="dcommon/img/btn-close-nav.png" alt="Open Left Navigation" title="Open Left Navigation"></div>
+<div id="hidenav"><input type="image" src="dcommon/img/btn-close-nav.png" alt="Close Left Navigation" title="Close Left Navigation"></div>
+<div class="left-nav" style="display:block;"><ul>
+<li class="home"><a href="/en/cloud/"><span class="JetFW-caret02-w_16"></span>Cloud</a></li>
+<li id="INDEX"><a class="selected" href="#" style="text-decoration:none">Get Started</a></li>
+<li id="COMPUTECS_COMMON_WEB"><a style="text-decoration:none" href="computecs_common_web.htm">Tasks</a></li>
+<li id="DOCS"><a style="text-decoration:none" href="docs.htm">Books</a></li>
+</ul></div>
+<div class="main-pad" id="main">
+<div class="navback border-right"></div>
+<a id="BEGIN" name="BEGIN"></a><span id="category" style="display:none;">Cloud</span><img class="img-right" src="dcommon/img/cloudgs_compute.png" alt="Graphic for Getting Started page"><h1>Oracle Compute Cloud Service on Oracle Cloud Machine<br>
+</h1>
+<h2 class="libportletheader" id="get_started">Get Started</h2><p>Oracle Compute Cloud Service allows you to configure and manage virtual machines on Oracle Public Cloud Machine (OPCM). This service provides the virtual machines that host instances of Oracle Java Cloud Service on OPCM.</p>
+
+<h4><strong>New here?</strong></h4>
+
+<ul>
+	<li>Get an <a href="http://www.oracle.com/webfolder/technetwork/tutorials/infographics/ocm_gettingstarted_quickview/index_text.html">overview of the deployment process</a>&nbsp;<a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudopcm&amp;id=cloudmachine_deploy_overview"><img alt="Opens interactive tutorial" height="18" src="http://docs.oracle.com/cloud/latest/reportingcs_use/dcommon/img/label_infographic.png" width="71" /></a></li>
+	<li>See the <a href="ELPSS/GUID-302325E9-D83C-40B3-96F8-BF0D3A5DF8DA.htm#GUID-302325E9-D83C-40B3-96F8-BF0D3A5DF8DA">customer deployment guide</a> for complete list of requirements</li>
+</ul>
+<br><br><div class="newsection"><div class="gs-col-wrapper">
+<div id="gs-2b-box1">
+<img src="dcommon/img/gs_64_understand_q1.png" class="gs-1-icon" alt="getting started image"><h4>Get an Overview</h4>
+<ul>
+<li><a href="ELUSE/GUID-7DDB3DE2-76F5-46D2-A5B7-44BAEFBB36CA.htm#ELUSE-GUID-7DDB3DE2-76F5-46D2-A5B7-44BAEFBB36CA">Understand the features</a></li>
+<li><a href="ELUSE/GUID-203AB1EE-45F5-4701-BF15-8C8D6190E66B.htm#ELUSE-GUID-203AB1EE-45F5-4701-BF15-8C8D6190E66B">Get familiar with the terminology</a></li>
+<li><a href="ELUSE/GUID-C43D18EF-9039-4992-97C7-C7CEAFBFBCFA.htm#ELUSE-GUID-C43D18EF-9039-4992-97C7-C7CEAFBFBCFA">Learn about users and roles</a></li>
+</ul>
+</div>
+<div id="gs-2b-box2">
+<img src="dcommon/img/gs-64-3.png" class="gs-1-icon" alt="getting started image"><h4>Set Up the CLI</h4>
+<ul>
+<li><a href="ELUCL/GUID-2FD61692-F7E8-48A0-8170-8524F09CD56C.htm#ELUCL-GUID-070E8892-4EB2-4BDE-B5FC-BC098CEE4D9D">Install the CLI client</a></li>
+<li><a href="ELUCL/GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#ELUCL-GUID-6DA98174-9F39-466E-BA3B-C7B18238B399">Understand the structure of the CLI commands</a></li>
+<li><a href="ELUCL/GUID-2FD61692-F7E8-48A0-8170-8524F09CD56C.htm#ELUCL-GUID-A238FFC5-AAC0-443B-B059-4A4A7F3D798E">Understand the required roles</a></li>
+</ul>
+</div>
+<div id="gs-2b-box3">
+<img src="dcommon/img/gs-64-1.png" class="gs-1-icon" alt="getting started image"><h4>Get Started with the API</h4>
+<ul>
+<li><a href="ELUAP/GUID-A5AFEE46-BD9C-4C99-BCAC-F38876F991DC.htm#ELUAP-GUID-BDE7703A-33BC-4000-8694-DEB9938D84A9">Understand resource URIs</a></li>
+<li><a href="ELUAP/GUID-A5AFEE46-BD9C-4C99-BCAC-F38876F991DC.htm#ELUAP-GUID-BDE7703A-33BC-4000-8694-DEB9938D84A9">Authenticate API calls</a></li>
+<li><a href="ELUAP/GUID-A06DABC3-C214-455A-9264-9946B712FD8E.htm#ELUAP-GUID-A5FB61AB-6355-4881-A3BB-BF00650320C6">Understand request headers</a></li>
+<li><a href="ELUAP/GUID-A5AFEE46-BD9C-4C99-BCAC-F38876F991DC.htm#ELUAP-GUID-F3B6C5A7-7CAA-4139-AB96-D242B5518AC0">Understand the required roles</a></li>
+</ul>
+</div>
+</div></div>
+</div>
+<br style="clear:both;"><br class="clearfloat"><noscript><p>Scripting on this page causes alternating background colors for the list items in the portlets.</p></noscript>
+<div style="clear:both;height:1px;width:1px"></div>
+</div>
+<script src="dcommon/js/bookpage.js"></script><script src="dcommon/js/search-drop.js"></script><script>
+function PrintPage()
+  {window.print();}
+</script><footer></footer>
+</body>
+</html>

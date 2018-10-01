@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Restoring an Oracle Java Cloud Service Instance from a Backup on OPCM</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can restore an Oracle Java Cloud Service instance from a backup to undo configuration changes you don&rsquo;t want and to return the service instance to a particular state. The instance&rsquo;s configuration data is always restored, but you can also choose whether to restore the Oracle WebLogic Server and the JDK software to its current official patch set update (PSU) level or to leave it unchanged." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-7472FA73-3CD6-4E2F-A78F-BB715A57CC5B.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-94744619-CB75-4BD8-8DCD-B2A4506F8908.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-88CEA944-DFAB-45A1-9224-CB34C7112280"></a> <span id="PAGE" style="display:none;">70/131</span> <!-- End Header -->
+<a id="JSCUG3189"></a>
+<h1 id="JSCUG-GUID-88CEA944-DFAB-45A1-9224-CB34C7112280" class="sect1">Restoring an <span>Oracle Java Cloud Service</span> Instance from a Backup <span>on <span>OPCM</span></span></h1>
+<div>
+<p>You can restore an <span>Oracle Java Cloud Service</span> instance from a backup to undo configuration changes you don&rsquo;t want and to return the service instance to a particular state. The instance&rsquo;s configuration data is always restored, but you can also choose whether to restore the Oracle WebLogic Server and the JDK software to its current official patch set update (PSU) level or to leave it unchanged.</p>
+<div class="section">
+<p>You may choose to restore your service instance to a previous PSU level in order to undo a change to the software that you don&rsquo;t want, for example:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Some files in the software installation were accidentally deleted.</p>
+</li>
+<li>
+<p>A patch from a source other than <span>Oracle Java Cloud Service</span> was installed and the software no longer works as required.</p>
+</li>
+</ul>
+<p>The software is restored from an image maintained internally to Oracle Cloud. If you are restoring from an old backup that contains a copy of the binary files, the copy in the backup is <span class="bold">not</span> restored. If you backed up software that includes patches from a source other than <span>Oracle Java Cloud Service</span>, those patches are <span class="bold">not</span> included in the restored software.</p>
+<p>In addition, you <span class="bold">cannot</span> use <span>Oracle Java Cloud Service</span> to restore the database. To restore the database, you must use <span>Oracle Database Cloud Service</span> to restore from the associated database backup as identified by its RMAN tag or timestamp. For instructions, see these topics in <span><cite>Using Oracle Database Cloud Service</cite></span>:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a class="olink CSDBI-GUID-C9A1467F-9AA4-433E-92A6-E46182D2B4C2" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=E70959-01&amp;id=CSDBI-GUID-C9A1467F-9AA4-433E-92A6-E46182D2B4C2">Restoring from a Specific Backup</a></p>
+</li>
+<li>
+<p><a class="olink CSDBI-GUID-73B84014-88DA-40D1-A5F1-6EC4537F2778" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=E70959-01&amp;id=CSDBI-GUID-73B84014-88DA-40D1-A5F1-6EC4537F2778">Restoring to a Specific Point in Time</a></p>
+</li>
+</ul>
+<p>If the hosts in the backup and the service instance don&rsquo;t match, how Oracle Java Cloud Service handles the mismatch depends on the cause of the mismatch. For details, see <a href="GUID-A04B0E6C-D9C3-4A8D-80D7-138F085FC300.htm#GUID-74F51136-3203-4A95-929C-AE08C910926C" title="When restoration of a service instance is initiated, Oracle Java Cloud Service shuts down the service instance's servers. After the restoration is complete, Oracle Java Cloud Service restarts the service instance's servers.">What Happens when a Service Instance Is Restored</a>.</p>
+</div>
+<!-- class="section" -->
+<div class="p">
+<p>Before restoring a service instance, Oracle recommends that you disable any load balancer for the service instance. See <a href="GUID-5D722781-44AD-4BAA-B726-A285154F8534.htm#GUID-5D722781-44AD-4BAA-B726-A285154F8534" title="You can disable the load balancer for an Oracle Java Cloud Service instance to suspend the service instance during maintenance, or enable the load balancer to resume a service instance after maintenance.">Disabling or Enabling the Load Balancer for an Oracle Java Cloud Service Instance</a>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">To restore an Oracle Java Cloud Service instance from a backup:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Navigate to the <span class="wintitle">Backup</span> page.</span></li>
+<li class="stepexpand"><span>From the <img width="14" height="15" src="img/GUID-D0E9F26E-D981-4A6C-9C9C-E53E732DCDA2-default.gif" alt="menu icon" title="menu icon" /> menu for the backup in the list of available backups, choose <span class="bold">Restore</span>.</span>
+<div>You can restore a service instance from an incremental backup without the need to restore the full backup to which the incremental backup is linked. <span>Oracle Java Cloud Service</span> restores all the data from the linked full backup required for a complete restoration of the service instance.</div>
+<div>A dialog box in which to set options for restoring from the backup opens.</div>
+</li>
+<li class="stepexpand"><span>In the dialog box, set the following options and click <span class="bold">Restore</span>.</span>
+<div>You don&rsquo;t need to select configuration data because <span>Oracle Java Cloud Service</span> always restores configuration data from a backup.
+<div class="tblformal" id="GUID-88CEA944-DFAB-45A1-9224-CB34C7112280__GUID-95BD12CF-EC5E-4ADB-893B-1388250AAF18">
+<table class="cellalignment25" summary="This table describes the options for restoring an Oracle Java Cloud Service instance from a backup.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d37120e135">Option</th>
+<th class="cellalignment27" id="d37120e137">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment28" id="d37120e141" headers="d37120e135">
+<p><span class="bold">Include Database</span></p>
+</td>
+<td class="cellalignment29" headers="d37120e141 d37120e137">
+<p>If present, this option reminds you that the selected backup has an associated <span>Oracle Database Cloud Service</span> backup. If you select this option, <span>Oracle Java Cloud Service</span> asks you to confirm that you have restored the database before continuing.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment28" id="d37120e155" headers="d37120e135">
+<p><span class="bold">Restore binary files</span></p>
+</td>
+<td class="cellalignment29" headers="d37120e155 d37120e137">
+<p>Select this option to restore the Oracle WebLogic Server and the JDK software to the versions installed at the time the backup was taken.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment28" id="d37120e163" headers="d37120e135">
+<p><span class="bold">Notes</span></p>
+</td>
+<td class="cellalignment29" headers="d37120e163 d37120e137">
+<p>Enter up to 255 characters of free-form text to provide additional information about the restoration, for example, why you are restoring the service instance.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<div>
+<p>The <span class="wintitle">Backup</span> page is updated to show that the restoration is in progress. While the restoration is in progress, you cannot start any other management operation on the service instance.</p>
+<p>When the restoration is complete, it is added to the restoration history in the <span class="wintitle">Backup</span> page.</p>
+</div>
+</li>
+</ol>
+<div class="section">
+<p>If you restore a service instance from a backup whose topology does not match the current service instance, you may need to modify the restored service instance to return it to the state you require. See <a href="GUID-94744619-CB75-4BD8-8DCD-B2A4506F8908.htm#GUID-94744619-CB75-4BD8-8DCD-B2A4506F8908" title="After restoring an Oracle Java Cloud Service instance from a backup, you must perform additional steps to return the service instance to service. You may also need to modify the service instance to return it to the state you require.">Returning an Oracle Java Cloud Service Instance to Service After Restoration from a Backup on OPCM</a>.</p>
+<p>If you previously disabled the load balancer for the service instance, enable it again. See <a href="GUID-5D722781-44AD-4BAA-B726-A285154F8534.htm#GUID-5D722781-44AD-4BAA-B726-A285154F8534" title="You can disable the load balancer for an Oracle Java Cloud Service instance to suspend the service instance during maintenance, or enable the load balancer to resume a service instance after maintenance.">Disabling or Enabling the Load Balancer for an Oracle Java Cloud Service Instance</a>.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-7472FA73-3CD6-4E2F-A78F-BB715A57CC5B.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-94744619-CB75-4BD8-8DCD-B2A4506F8908.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

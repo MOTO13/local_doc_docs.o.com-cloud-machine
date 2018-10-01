@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Using Oracle Enterprise Manager Cloud Control with Database Cloud Service</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Oracle Enterprise Manager Cloud Control 12c Release 5 (12.1.0.5) includes Hybrid Cloud Management, which you can use to manage the Oracle Databases on Oracle Database Cloud Service from the same management console that you use for your on-premises databases." />
+<meta name="dcterms.created" content="2017-06-19T15:22:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Database Cloud Service" />
+<meta name="dcterms.identifier" content="E72994-04" />
+<meta name="dcterms.isVersionOf" content="CSDBI" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-71CB7FA2-5809-441E-971F-C1FDE4A4E02B.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-93DB710A-1A55-4068-A20A-996E0C44605F.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSDBI.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSDBI.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSDBI.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-F90BABF1-F0D9-49E4-A649-A94A6A587310"></a> <span id="PAGE" style="display:none;">79/190</span> <!-- End Header -->
+<h1 id="CSDBI-GUID-F90BABF1-F0D9-49E4-A649-A94A6A587310" class="sect1">Using Oracle Enterprise Manager Cloud Control with <span>Database Cloud Service</span></h1>
+<div>
+<p>Oracle Enterprise Manager Cloud Control 12c Release 5 (12.1.0.5) includes Hybrid Cloud Management, which you can use to manage the Oracle Databases on <span>Oracle Database Cloud Service</span> from the same management console that you use for your on-premises databases.</p>
+<p>Oracle Enterprise Manager is Oracle&rsquo;s integrated enterprise IT management product line, which provides the industry&rsquo;s only complete, integrated and business-driven enterprise cloud management solution. Oracle Enterprise Manager 12c delivers comprehensive capabilities to manage, migrate, test, and deploy applications and workloads across hybrid clouds. See <a href="http://www.oracle.com/technetwork/oem/hybrid-cloud-management/index.html" target="_blank">EM Hybrid Cloud Management</a> for information about its hybrid cloud features.</p>
+<p>To use the Hybrid Cloud Management feature to manage the Oracle Databases on <span>Database Cloud Service</span>, you perform these high-level tasks:</p>
+<ol>
+<li>
+<p>Ensure that your on-premises Enterprise Manager Cloud Control Oracle Management Service (OMS) is of version 12.1.0.5, and that at least one 12.1.0.5 Management Agent exists in your enterprise.</p>
+</li>
+<li>
+<p>Configure one or more version 12.1.0.5 Management Agents within your enterprise to act as Hybrid Cloud Gateway Agents, which provide an SSH-based communication channel between <span>Database Cloud Service</span> compute nodes and the on-premises OMS.</p>
+</li>
+<li>
+<p>Ensure that the Hybrid Cloud Gateway Agents and the on-premises OMS can communicate with the <span>Database Cloud Service</span> compute nodes.</p>
+</li>
+<li>
+<p>Deploy Management Agents to <span>Database Cloud Service</span> compute nodes using the Add Host Targets Wizard or Enterprise Manager Command Line Interface.</p>
+</li>
+</ol>
+<p>For the detailed steps to perform these tasks, see <a href="http://docs.oracle.com/cd/E24628_01/doc.121/e24473/hybrid-cloud.htm" target="_blank">Enabling Hybrid Cloud Management</a> in <cite>Oracle Enterprise Manager Cloud Control Administrator's Guide</cite>, 12<span class="italic">c</span> Release 5 (12.1.0.5).</p>
+<div class="section">
+<p class="subhead1">Preserving the Hybrid Cloud Agent Home When Patching <span>a Database Cloud Service</span> Deployment</p>
+<p>If you installed the Oracle Enterprise Manager Cloud Control agent under <code class="codeph">/u01/app/oracle</code> (the Oracle Base directory) the agent home will be moved to <code class="codeph">/u01/app.ORG/oracle</code> when a database patch is applied to the database deployment using the cloud tooling.</p>
+<p>If the agent home has already been moved to <code class="codeph">/u01/app.ORG/oracle</code>, you can copy it back to <code class="codeph">/u01/app/oracle</code> to restore it.</p>
+<p>Perform the following steps to configure the patching tools so that they do not move the agent home to <code class="codeph">/u01/app.ORG/oracle</code>:</p>
+<ol>
+<li>
+<p>Connect to the compute node as the <code class="codeph"><span class="bold">oracle</span></code> user.</p>
+<p>For detailed instructions, see <a href="GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1.htm#GUID-C5DAB5B8-1FFA-4122-9181-189561F6E0F1">Connecting to a Compute Node Through Secure Shell (SSH)</a>.</p>
+</li>
+<li>
+<p>Create a file named <code class="codeph">/var/opt/oracle/patch/files_to_save.ora</code>.</p>
+</li>
+<li>
+<p>Add the full path of the agent directory to the <code class="codeph">/var/opt/oracle/patch/files_to_save.ora</code> file.</p>
+</li>
+<li>
+<p>Disconnect from the compute node, and then reconnect as the <code class="codeph"><span class="bold">opc</span></code> user.</p>
+</li>
+<li>
+<p>Start a root-user command shell:</p>
+<pre dir="ltr">
+$ <span class="bold">sudo -s</span>
+#
+</pre></li>
+<li>
+<p>Edit the patching configuration file, <code class="codeph">/var/opt/oracle/patch/dbpatchm.cfg</code>, and search for the following lines:</p>
+<pre dir="ltr">
+# create /var/opt/oracle/patch/files_to_save.ora with full path of directory or
+# files to preserve any special files you may have in your /u01/app directory.
+# set this to yes, if you have files_to_save.ora
+special_files="no"
+</pre></li>
+<li>
+<p>Change <code class="codeph">special_files="no"</code> to <code class="codeph">special_files="yes"</code>.</p>
+</li>
+<li>
+<p>Save and close the file.</p>
+</li>
+<li>
+<p>Exit the root-user command shell and disconnect from the compute node.</p>
+</li>
+</ol>
+<p>After performing these steps, the agent home will be preserved in its original location whenever the database deployment is patched.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="GUID-71CB7FA2-5809-441E-971F-C1FDE4A4E02B.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="GUID-93DB710A-1A55-4068-A20A-996E0C44605F.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

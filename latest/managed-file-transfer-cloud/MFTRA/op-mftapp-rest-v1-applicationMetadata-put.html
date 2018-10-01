@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Managed File Transfer Cloud Service 12.2.1.2 - Import the MFT metadata into the MFT MDS store</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Use the REST API for Oracle Managed File Transfer Cloud Service to list services, administer metadata and artifacts, discover and trigger sources, and purge old instance and payload data.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Managed File Transfer Cloud Service 12.2.1.2">
+        <meta property="og:description" content="Use the REST API for Oracle Managed File Transfer Cloud Service to list services, administer metadata and artifacts, discover and trigger sources, and purge old instance and payload data.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Managed File Transfer Cloud Service 12.2.1.2">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="op-mftapp-rest-v1-applicationMetadata-get.html" title="Previous" type="text/html">
+        <link rel="next" href="op-mftapp-rest-v1-applicationMetadata-delete.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="op-mftapp-rest-v1-applicationMetadata-get.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="op-mftapp-rest-v1-applicationMetadata-delete.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            
+            <header>
+
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Managed File Transfer Cloud Service 12.2.1.2</a></li>
+                    <li>Tasks</li>
+                    
+                    <li>
+                        
+                        Administration Service
+                        
+                    </li>
+                    
+                    <li class="active">
+                        
+                        <a href="api-Administration%20Service-MFT%20Application%20Metadata.html">MFT Application Metadata</a>
+                        
+                    </li>
+                    
+                </ol>
+                
+                <p class="draftsubtitle"></p>
+                
+                <h2>Import the MFT metadata into the MFT MDS store</h2>
+                <div>
+                    <div class="label label-put text-uppercase">put</div>
+                    <p style="word-break: break-word;"><strong>/mftapp/rest/v1/mftapp/rest/v1/applicationMetadata</strong></p>
+                </div>
+            </header>
+            <section>
+
+                <div class="description"> Supports importing metadata along with optional config plan file which allows to override the attributes in the metadata files.</div>
+
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                        <li role="presentation" class="active"><a href="#request" aria-controls="request" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-in" aria-hidden="true"></span> Request</a></li>
+                        <li role="presentation"><a href="#response" aria-controls="response" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-out" aria-hidden="true"></span> Response</a></li>
+                        
+                        <li role="presentation"><a href="#examples" aria-controls="examples" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-edit" aria-hidden="true"></span> Examples</a></li>
+                        
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="request">
+                            <h3 class="visible-print-block">Request</h3>
+                            
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">multipart/form-data</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Query Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>previewModeFlag</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag to view the preview the import without actually importing metadata.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+                            
+
+                            
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">Body Parameter</div>
+                                <div style="padding-bottom: 0px" class="panel-body">
+                                    
+                                    <div style="margin-bottom: 8px">A body of type:</div>
+                                    
+
+                                    <div class="schema-container">
+                                    
+                                    <div id="request-paths--mftapp-rest-v1-applicationMetadata-put-parameters-1-schema" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : /paths/~1mftapp~1rest~1v1~1applicationMetadata/put/parameters/1/schema</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    </div>
+
+                                    
+                                    
+                                    
+                                    
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">multipart/form-data</li>
+                                                    
+                                    </ul>
+                                    
+                                    
+                                    		
+                                </div>
+                            </div>
+                            
+
+
+
+                            
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="response">
+                            <h3 class="visible-print-block">Response</h3>
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">200 Response <span class="glyphicon glyphicon-ok-sign response-symbol" data-response-code="200" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    
+                                </div>
+
+                                
+                                
+
+                                
+                                <div class="panel panel-default">
+
+                                    <div class="panel-heading">Body</div>
+                                    <div class="panel-body">
+                                        
+
+                                        <div class="schema-container">
+                                        
+                                        <div id="200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : /paths/~1mftapp~1rest~1v1~1applicationMetadata/put/responses/200/schema</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties" aria-expanded="false" aria-controls="collapseListGroup-200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>artifactsAdded</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>artifactsModified</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>configPlanOverrideResultSummmary</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties-configPlanOverrideResultSummmary" role="button" class="btn btn-default btn-sm">/paths/~1mftapp~1rest~1v1~1applicationMetadata/put/responses/200/schema/properties/configPlanOverrideResultSummmary</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>failedTransfers</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties-failedTransfers" role="button" class="btn btn-default btn-sm">/paths/~1mftapp~1rest~1v1~1applicationMetadata/put/responses/200/schema/properties/failedTransfers</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>skippedTransfers</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties-skippedTransfers" role="button" class="btn btn-default btn-sm">/paths/~1mftapp~1rest~1v1~1applicationMetadata/put/responses/200/schema/properties/skippedTransfers</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties-configPlanOverrideResultSummmary" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : /paths/~1mftapp~1rest~1v1~1applicationMetadata/put/responses/200/schema/properties/configPlanOverrideResultSummmary</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties-configPlanOverrideResultSummmary-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties-configPlanOverrideResultSummmary-items" aria-expanded="false" aria-controls="collapseListGroup-200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties-configPlanOverrideResultSummmary-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties-configPlanOverrideResultSummmary-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties-configPlanOverrideResultSummmary-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties-configPlanOverrideResultSummmary-items" role="button" class="btn btn-default btn-sm">/paths/~1mftapp~1rest~1v1~1applicationMetadata/put/responses/200/schema/properties/configPlanOverrideResultSummmary/items</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties-failedTransfers" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : /paths/~1mftapp~1rest~1v1~1applicationMetadata/put/responses/200/schema/properties/failedTransfers</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties-failedTransfers-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties-failedTransfers-items" aria-expanded="false" aria-controls="collapseListGroup-200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties-failedTransfers-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties-failedTransfers-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties-failedTransfers-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties-skippedTransfers" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : /paths/~1mftapp~1rest~1v1~1applicationMetadata/put/responses/200/schema/properties/skippedTransfers</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties-skippedTransfers-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties-skippedTransfers-items" aria-expanded="false" aria-controls="collapseListGroup-200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties-skippedTransfers-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties-skippedTransfers-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties-skippedTransfers-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties-configPlanOverrideResultSummmary-items" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : /paths/~1mftapp~1rest~1v1~1applicationMetadata/put/responses/200/schema/properties/configPlanOverrideResultSummmary/items</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties-configPlanOverrideResultSummmary-items-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties-configPlanOverrideResultSummmary-items-properties" aria-expanded="false" aria-controls="collapseListGroup-200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties-configPlanOverrideResultSummmary-items-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties-configPlanOverrideResultSummmary-items-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-paths--mftapp-rest-v1-applicationMetadata-put-responses-200-schema-properties-configPlanOverrideResultSummmary-items-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>artifactName</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>artifactType</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>attributeName</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>newValue</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>oldValue</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">500 Response <span class="glyphicon glyphicon-remove-sign response-symbol" data-response-code="500" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    
+                                </div>
+
+                                
+                                
+
+                                
+                                <div class="panel panel-default">
+
+                                    <div class="panel-heading">Body</div>
+                                    <div class="panel-body">
+                                        
+
+                                        <div class="schema-container">
+                                        
+                                        <div id="500-paths--mftapp-rest-v1-applicationMetadata-put-responses-500-schema" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : Error information.</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+<div>Title: <code>Error information.</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-500-paths--mftapp-rest-v1-applicationMetadata-put-responses-500-schema-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-500-paths--mftapp-rest-v1-applicationMetadata-put-responses-500-schema-properties" aria-expanded="false" aria-controls="collapseListGroup-500-paths--mftapp-rest-v1-applicationMetadata-put-responses-500-schema-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-500-paths--mftapp-rest-v1-applicationMetadata-put-responses-500-schema-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-500-paths--mftapp-rest-v1-applicationMetadata-put-responses-500-schema-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>errorCode</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The error code that Oracle Managed File Transfer returns.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>errorKey</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>A message describing the error that Oracle Managed File Transfer returns.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>errorMessage</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>A message that describes the error that Oracle Managed File Transfer returns</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        </div>
+
+                                        
+                                        <h5>Example application/json</h5>
+                                        <pre><code>
+{
+    "errorCode":"MFT-2351",
+    "errorKey":"MFT_IMPORT_ERROR",
+    "errorMessage":"Error occurred while importing the metadata."
+}</code></pre>
+                                        
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+
+
+                        </div>
+                        
+                        <div role="tabpanel" class="tab-pane fade" id="examples">
+                            <h3>Examples</h3>
+                            <div class="body conbody">
+ <div class="section">
+  <h3 class="title sectiontitle">Example of cURL command to import metadata from a remote machine</h3>
+  <span class="ph">The API <samp class="ph codeph">mftapp-rest-v1-applicationMetadata-put</samp> supports importing metadata from a remote server. </span>
+  <p class="p">The following cURL command shows the import command:</p> 
+  <pre class="pre"><strong class="ph b"><em class="ph i">curl -X PUT -H "Content-Type: multipart/form-data;" -F </em></strong><a class="xref" href="mailto:archive=@export.zip" target="_blank">"archive=@export.zip"</a><strong class="ph b"><em class="ph i"> -F </em></strong><a class="xref" href="mailto:configPlan=@mftConfig.xml" target="_blank">"configPlan=@mftConfig.xml"</a><strong class="ph b"><em class="ph i"> </em></strong><a class="xref" href="http://den00pgf.us.oracle.com:5001/mftapp/rest/v1/applicationMetadata" target="_blank">http://test.us.oracle.com:5000/mftapp/rest/v1/applicationMetadata</a><strong class="ph b"><em class="ph i">&nbsp; -u username:password</em></strong>
+	</pre> 
+ </div> 
+ <div class="example">
+  Run the above mentioned cURL command from folder where export.zip exists, else provide complete path for example,
+  <samp class="ph codeph">/net/test.us.oracle.com/scratch/export.zip</samp>. 
+  <p class="p">It is recommended that you use MFT console or MFT REST API for export/import of files.</p> 
+ </div> 
+</div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+        </article>
+    </body>
+</html>

@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service - Restore a Service Instance</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-backups-%7BbackupId%7D-post.html" title="Previous" type="text/html">
+        <link rel="next" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-backupconfig-post.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-backups-%7BbackupId%7D-post.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="op-paas-api-v1.1-instancemgmt-%7BidentityDomainId%7D-services-jaas-instances-%7BserviceId%7D-backupconfig-post.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            
+            <header>
+
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li>Tasks</li>
+                    
+                    <li class="active">
+                        
+                        <a href="api-Backups%20and%20Restorations.html">Backups and Restorations</a>
+                        
+                    </li>
+                    
+                </ol>
+                
+                <p class="draftsubtitle"></p>
+                
+                <h2>Restore a Service Instance</h2>
+                <div>
+                    <div class="label label-post text-uppercase">post</div>
+                    <p style="word-break: break-word;"><strong>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/jaas/instances/{serviceId}/restoredbackups</strong></p>
+                </div>
+            </header>
+            <section>
+
+                <div class="description">Restores the Oracle Java Cloud Service instance from the specified backup to undo configuration changes. You can also choose to reset the Oracle WebLogic Server and the JDK software to the versions that correspond to the official patch set update (PSU) level of the software that Oracle Java Cloud Service is currently running, or leave the versions unchanged. After the restoration operation completes, you may need to perform a set of manual tasks to return the service instance to full operation.<p>If a service instance contains Managed Servers and Coherence Managed Servers that are not included in the backup being restored, you must scale in the service instance before trying to restore the instance. For regular Managed Servers, you can use <code>forceScaleIn</code> to automatically scale in the service instance after and only if restoration is successful. For Coherence Managed Servers, you must remove the capacity unit that manages those specific Managed Servers before trying to restore the service instance. The Managed Servers configured on the Coherence data tier are identified by <code>managedserver_x_DG</code>.<p>On Oracle Public Cloud, see these topics in <i>Using Oracle Java Cloud Service</i>:<ul><li><a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=JSCUG3312' target='_blank'>About Backup and Restoration of Oracle Java Cloud Service Instances</a> for complete information about the contents of backups and what files can be restored</li><li><a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=JSCUG3420' target='_blank'>Returning an Oracle Java Cloud Service Instance to Service After Restoration from a Backup</a></li><li><a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=JSCUG-GUID-FC95A5B6-DE4F-4713-809C-79E7C4215597' target='_blank'>Scaling the Coherence Data Tier by Using the Oracle Java Cloud Service Console</a> for information about removing a specific capacity unit</li><li><a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=JSCUG-GUID-74F51136-3203-4A95-929C-AE08C910926C' target='_blank'>What Happens When a Service Instance is Restored</a> for information about how Oracle Java Cloud Service handles situations where the hosts in the backup and the service instance do not match</li></ul><p>On Oracle Cloud Machine, see these topics in <i>Using Oracle Java Cloud Service on OPCM</i>:<ul><li><a href='http://www.oracle.com/pls/topic/lookup?ctx=cloudopcm&id=JSCUG3312' target='_blank'>About Backup and Restoration of Oracle Java Cloud Service Instances</a> for complete information about the contents of backups and what files can be restored</li><li><a href='http://www.oracle.com/pls/topic/lookup?ctx=cloudopcm&id=JSCUG3420' target='_blank'>Returning an Oracle Java Cloud Service Instance to Service After Restoration from a Backup</a></li><li><a href='http://www.oracle.com/pls/topic/lookup?ctx=cloudopcm&id=JSCUG-GUID-FC95A5B6-DE4F-4713-809C-79E7C4215597' target='_blank'>Scaling the Coherence Data Tier by Using the Oracle Java Cloud Service Console</a> for information about removing a specific capacity unit</li><li><a href='http://www.oracle.com/pls/topic/lookup?ctx=cloudopcm&amp;id=JSCUG-GUID-74F51136-3203-4A95-929C-AE08C910926C' target='_blank'>What Happens When a Service Instance is Restored</a> for information about how Oracle Java Cloud Service handles situations where the hosts in the backup and the service instance do not match</li></ul><p><b>Note for Oracle Public Cloud</b>: If a database backup was included in the Oracle Java Cloud Service instance backup, know that restoration of the database files for the Oracle Database Cloud Service database deployment associated with the Oracle Java Cloud Service instance is not supported through the Oracle Java Cloud Service instance restore operation. You need to restore the database files separately. Depending on whether the Database Cloud Service database deployment is hosting a single-instance database or an Oracle Real Application Clusters (RAC) database, you use an RMAN tag or a timestamp of the associated database backup to restore the database files. The RMAN tag or timestamp is the <code>dbTag</code> attribute value that is returned by using a GET request on the Oracle Java Cloud Service instance backup, as described in <a href='op-paas-api-v1.1-instancemgmt-{identityDomainId}-services-jaas-instances-{serviceId}-backups-{backupId}-get.html'>View a Backup</a>. For more information about restoring the Oracle Database Cloud Service database files, see <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=CSDBI-GUID-C9A1467F-9AA4-433E-92A6-E46182D2B4C2' target='_blank'>Restoring from a Specific Backup</a> or <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=CSDBI-GUID-73B84014-88DA-40D1-A5F1-6EC4537F2778' target='_blank'>Restoring to a Specific Point in Time</a> in <i>Using Oracle Database Cloud Service</i>.<p><b>Note:</b> The legacy path <i>/paas/service/jcs/api/v1.1/instances/{identityDomainId}/{serviceId}/restoredbackups</i> is deprecated but it will continue to be supported for the near term. However, it is recommended that you migrate your applications to use the new path at your earliest convenience to minimize any disruption in the future when the deprecated URL structure is no longer supported.</div>
+
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                        <li role="presentation" class="active"><a href="#request" aria-controls="request" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-in" aria-hidden="true"></span> Request</a></li>
+                        <li role="presentation"><a href="#response" aria-controls="response" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-out" aria-hidden="true"></span> Response</a></li>
+                        
+                        <li role="presentation"><a href="#examples" aria-controls="examples" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-edit" aria-hidden="true"></span> Examples</a></li>
+                        
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="request">
+                            <h3 class="visible-print-block">Request</h3>
+                            
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Path Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>identityDomainId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account (on Oracle Public Cloud).<p>Tenant name for the Oracle Java Cloud Service instance (on Oracle Cloud Machine).</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                        <dt>serviceId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the Oracle Java Cloud Service instance.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+
+                            
+                            
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Header Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>X-ID-TENANT-NAME</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account (on Oracle Public Cloud).<p>Tenant name for the Oracle Java Cloud Service instance (on Oracle Cloud Machine).</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">Body Parameter</div>
+                                <div style="padding-bottom: 0px" class="panel-body">
+                                    
+                                    <div style="margin-bottom: 8px">The request body defines the details of the restoration request.</div>
+                                    
+
+                                    <div class="schema-container">
+                                    
+                                    <div id="request-definitions-restoration-postrequest" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : restoration-postrequest</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The request body defines the details of the restoration request.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-restoration-postrequest-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-restoration-postrequest-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-restoration-postrequest-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-restoration-postrequest-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-restoration-postrequest-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>backupId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Backup ID. To retrieve the backup ID, see <a href='op-paas-api-v1.1-instancemgmt-{identityDomainId}-services-jaas-instances-{serviceId}-backups-get.html'>View All Backups</a>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>forceScaleIn</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether to automatically scale in the Oracle Java Cloud Service instance if there are Managed Servers configured that are not included in the backup being restored. This value defaults to <code>false</code>, indicating that the service instance should not be scaled in automatically.<p>If this flag is set to <code>false</code> and the Oracle Java Cloud Service instance has Managed Servers configured that are not included in the backup being restored, the operation fails and the following error message is returned:<p><code>JAAS-BR-105: Unable to restore configuration data for managed servers that are not part of the backup. The affected managedsServers are: [managedserver_x, managedserver_y]. Scale in the service instance to remove these managed servers' nodes and then try to restore the service instance again.</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>notes</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Free-form text to provide additional information about the restoration operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>pauseOTD</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether to pause the load balancer during the restoration process. This value defaults to <code>false</code>.<p>If set to <code>true</code>, the load balancer is paused and stops forwarding requests to the Managed Servers in the service instance during the restoration process, and responds with an HTTP 503 status code to client requests. After the restoration process completes, the load balancer is restarted.<p>If pause or restart of the load balancer fails, for example, because the load balancer Administration Server is not available, the restoration process proceeds. The restoration process will fail, however, if the load balancer health check fails.<p>You should not rely on this feature if any manual tasks are required to be performed once the restoration completes. On Oracle Public Cloud, see <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=JSCUG3420' target='_blank'>Returning an Oracle Java Cloud Service Instance to Service After Restoration from a Backup</a> in <i>Using Oracle Java Cloud Service</i> for more information. On Oracle Cloud Machine, see <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloudopcm&id=JSCUG3420' target='_blank'>Returning an Oracle Java Cloud Service Instance to Service After Restoration from a Backup</a> in <i>Using Oracle Java Cloud Service on OPCM</i>.<p><b>Note:</b> This flag is valid only if the load balancer is enabled.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>resetBinaries</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether to reset the Oracle WebLogic Server and the JDK software to the versions that correspond to the official patch set update (PSU) level of the software that Oracle Java Cloud Service is currently running. This value defaults to <code>false</code>, indicating that the binary files should not be replaced.<p><b>Note</b>: To restore software to an older version, initiate a roll back of the appropriate patch.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>restoreConfig</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies configuration data is restored. This value defaults to <code>true</code>. <code>false</code> is not supported.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    </div>
+
+                                    
+                                    
+                                    
+                                    		
+                                </div>
+                            </div>
+                            
+
+
+
+                            
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="response">
+                            <h3 class="visible-print-block">Response</h3>
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">202 Response <span class="glyphicon glyphicon-ok-sign response-symbol" data-response-code="202" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    Accepted. See <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=jcs_rest_statuscodes'>Status Codes</a> for information about other possible HTTP status codes.
+                                </div>
+
+                                
+                                
+
+                                
+                                <div class="panel panel-default">
+
+                                    <div class="panel-heading">Body</div>
+                                    <div class="panel-body">
+                                        
+                                        <div>The response body defines the details of the restoration operation.</div>
+                                        
+
+                                        <div class="schema-container">
+                                        
+                                        <div id="202-definitions-restoration-response" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : restoration-response</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The response body defines the details of the restoration operation.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-202-definitions-restoration-response-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-202-definitions-restoration-response-properties" aria-expanded="false" aria-controls="collapseListGroup-202-definitions-restoration-response-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-202-definitions-restoration-response-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-202-definitions-restoration-response-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>job_id</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Job ID for the restoration operation. You can use the job ID to view the status of the restoration operation, as described in <a href='op-paas-api-v1.1-instancemgmt-{identityDomainId}-services-jaas-instances-{serviceId}-restoredbackups-{jobId}-get.html'>View the Status of a Restoration Operation</a>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>operationName</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Operation performed. This value is set to <code>restore-backup</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>target_uri</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>URI of the restoration resource.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+
+
+                        </div>
+                        
+                        <div role="tabpanel" class="tab-pane fade" id="examples">
+                            <h3>Examples</h3>
+                            <div class="body conbody">
+ <p class="p">The following example shows how to restore an Oracle Java Cloud Service instance by submitting a POST request on the REST resource using cURL.</p> 
+ <p class="p"><strong class="ph b">Note:</strong> The command in this example uses the URL structure <samp class="ph codeph">https://rest_server_url/<em class="ph i">resource-path</em></samp>, where <samp class="ph codeph">rest_server_url</samp> is the Oracle Public Cloud or Oracle Cloud Machine REST server to contact for your identity domain or tenant name. See <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a> for the appropriate URL structure to use on Oracle Public Cloud or Oracle Cloud Machine.</p> 
+ <div class="section">
+  <h3 class="title sectiontitle">cURL Command</h3>
+  <pre class="pre">curl -i -X POST -u username:userPassword1! -d @restore.json -H "Content-Type:application/json" -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/api/v1.1/instancemgmt/ExampleIdentityDomain/services/jaas/instances/ExampleInstance/restoredbackups
+</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Request Body</h3>
+  <p class="p">The following shows an example of the request body in JSON format, where three optional values are provided. Note that the only required value is <samp class="ph codeph">backupId</samp>.</p> 
+  <pre class="pre">{
+     "backupId":"1449332100032",
+     "forceScaleIn":true,
+     "notes":"restore from backup before scale out",
+     "pauseOTD":true
+} </pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Header</h3>
+  <p class="p">The following shows an example of the response header:</p> 
+  <pre class="pre">HTTP/1.1 202 Accepted
+Date: Sat, 05 Dec 2015 23:39:02 GMT
+Transfer-Encoding: chunked
+Content-Type: application/json</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Body</h3>
+  <p class="p">The following shows an example of the response JSON document. Note the job ID that you can use to view the status of the restoration operation.</p> 
+  <pre class="pre">{
+    "operationName":"restore-backup",
+    "job_id":"8226",
+    "target_uri":"https:\/\/rest_server_url\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/ExampleInstance\/restoredbackups\/8226"
+}</pre> 
+ </div> 
+</div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+        </article>
+    </body>
+</html>

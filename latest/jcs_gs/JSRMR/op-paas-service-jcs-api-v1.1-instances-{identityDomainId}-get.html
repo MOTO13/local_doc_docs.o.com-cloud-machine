@@ -1,0 +1,5883 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Java Cloud Service - View All Service Instances</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Java Cloud Service">
+        <meta property="og:description" content="Describes how to use the Oracle Java Cloud Service REST API to create and manage WebLogic Server instances on both Oracle Public Cloud and Oracle Cloud Machine, unless otherwise indicated.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Java Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-get.html" title="Previous" type="text/html">
+        <link rel="next" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-status-%7BrequestName%7D-job-%7BjobId%7D-get.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-%7BserviceId%7D-get.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="op-paas-service-jcs-api-v1.1-instances-%7BidentityDomainId%7D-status-%7BrequestName%7D-job-%7BjobId%7D-get.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            
+            <header>
+
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Java Cloud Service</a></li>
+                    <li>Tasks</li>
+                    
+                    <li class="active">
+                        
+                        <a href="api-Service%20Instances.html">Service Instances</a>
+                        
+                    </li>
+                    
+                </ol>
+                
+                <p class="draftsubtitle"></p>
+                
+                <h2>View All Service Instances</h2>
+                <div>
+                    <div class="label label-get text-uppercase">get</div>
+                    <p style="word-break: break-word;"><strong>/paas/service/jcs/api/v1.1/instances/{identityDomainId}</strong></p>
+                </div>
+            </header>
+            <section>
+
+                <div class="description">Returns information about all Oracle Java Cloud Service instances. You can view the full set of details by specifying the <code>?outputLevel=verbose</code> query parameter.</div>
+
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                        <li role="presentation" class="active"><a href="#request" aria-controls="request" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-in" aria-hidden="true"></span> Request</a></li>
+                        <li role="presentation"><a href="#response" aria-controls="response" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-out" aria-hidden="true"></span> Response</a></li>
+                        
+                        <li role="presentation"><a href="#examples" aria-controls="examples" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-edit" aria-hidden="true"></span> Examples</a></li>
+                        
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="request">
+                            <h3 class="visible-print-block">Request</h3>
+                            
+
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Path Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>identityDomainId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account (on Oracle Public Cloud).<p>Tenant name for the Oracle Java Cloud Service instance (on Oracle Cloud Machine).</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Query Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>outputLevel</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that when set to <code>verbose</code> specifies that the response should include the full set of details for all service instances.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Header Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>X-ID-TENANT-NAME</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account (on Oracle Public Cloud).<p>Tenant name for the Oracle Java Cloud Service instance (on Oracle Cloud Machine).</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+
+
+                            
+
+
+
+                            
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="response">
+                            <h3 class="visible-print-block">Response</h3>
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/vnd.com.oracle.oracloud.provisioning.Pod+json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">200 Response <span class="glyphicon glyphicon-ok-sign response-symbol" data-response-code="200" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    OK. See <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=jcs_rest_statuscodes'>Status Codes</a> for information about other possible HTTP status codes.
+                                </div>
+
+                                
+                                
+
+                                
+                                <div class="panel panel-default">
+
+                                    <div class="panel-heading">Body</div>
+                                    <div class="panel-body">
+                                        
+                                        <div>The response body contains information about all Oracle Java Cloud Service instances.</div>
+                                        
+
+                                        <div class="schema-container">
+                                        
+                                        <div id="200-definitions-allinstances-allresponse" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : allinstances-allresponse</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The response body contains information about all Oracle Java Cloud Service instances.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-allinstances-allresponse-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-allinstances-allresponse-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-allinstances-allresponse-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-allinstances-allresponse-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-allinstances-allresponse-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>implementation_version</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Implementation version.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>service_type</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>For Oracle Java Cloud Service, the service type is <code>jaas</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>services</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-allinstances-allresponse-properties-services" role="button" class="btn btn-default btn-sm">services</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about the service instances.</div>
+
+            
+        </dd>
+        
+        <dt>uri</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>URI for the REST resource.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-allinstances-allresponse-properties-services" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : services</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about the service instances.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-allinstances-allresponse-properties-services-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-allinstances-allresponse-properties-services-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-allinstances-allresponse-properties-services-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-allinstances-allresponse-properties-services-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-allinstances-allresponse-properties-services-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-allinstances-response" role="button" class="btn btn-default btn-sm">allinstances-response</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The response body contains information about all Oracle Java Cloud Service instances.</div>
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-allinstances-response" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : allinstances-response</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The response body contains information about all Oracle Java Cloud Service instances.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-allinstances-response-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-allinstances-response-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-allinstances-response-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-allinstances-response-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-allinstances-response-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>auto_update</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether updates to the Oracle Cloud Tools are automatically applied to the Oracle Java Cloud Service instance during the maintenance window. The Oracle Cloud Tools are used to manage the lifecycle of your service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>cluster_name</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the cluster that contains the Managed Servers for the service instance. This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>compliance_status</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Status indicating whether the version of Oracle Cloud Tools is out of compliance. Oracle uses Oracle Cloud Tools to manage the lifecycle of your service instance. If the Oracle Cloud Tools are out of compliance, this attribute is set to one of the following status values:<ul><li><code>NEW_VERSION</code>: Indicates a new version of Oracle Cloud Tools is available. Oracle strongly recommends that you apply this update as soon as possible.</li><li><code>DEPRECATED</code>:  Indicates that the current version of Oracle Cloud Tools is deprecated. Apply the latest Oracle Cloud Tools update to avoid any disruption of service in the future.</li><li><code>UNSUPPORTED</code>:  Indicates that the current version of Oracle Cloud Tools is not supported. Apply the latest patch to resume normal operations.</li></ul><p>If the Oracle Cloud Tools are up-to-date, this attribute is blank.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>compliance_status_desc</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Description that provides more details about the compliance status of the Oracle Cloud Tools, used to manage the lifecycle of your Oracle Java Cloud Service instance. If the service instance is out of compliance, this attribute is set to one of the following descriptions, based on the status value:If the Oracle Cloud Tools are out of compliance, this attribute is set to one of the following status values:<ul><li><code>NEW_VERSION</code>: A newer version of Oracle tools <code><i>latestVersion</i></code> is available. This update includes critical fixes to Oracle Cloud Tools. Oracle uses cloud tools to manage lifecycle of your service. Oracle strongly recommends that customers apply this update as soon as possible.</li><li><code>DEPRECATED</code>:  This service is currently in a deprecated state because the Oracle tools version <code><i>deprecatedVersion</i></code> is deprecated. Apply the latest Oracle tools update as this version may not be supported in the future.</li><li><code>UNSUPPORTED</code>:  This service is currently in an unsupported state because the Oracle tools version <code><i>unsupportedVersion</i></code> is obsolete. Apply the latest patch to resume normal operations.</li></ul><p>If the Oracle Cloud Tools are up-to-date, this attribute is blank.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>compute_site_name</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Location where the service instance is provisioned. This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>content_url</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Resource URL for accessing the deployed applications using HTTP. This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>created_by</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the user account used to create the Oracle Java Cloud Service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>creation_job_id</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Job ID for the create job. This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>creation_time</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time the Oracle Java Cloud Service instance was created.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>db_associations</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-allinstances-response-properties-db_associations" role="button" class="btn btn-default btn-sm">db_associations</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups details of Database Cloud Service database deployments and databases used. This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+            
+        </dd>
+        
+        <dt>db_info</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Database that is used to host the Oracle Required Schema. This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter. <p>On Oracle Public Cloud, this contains information about the Database Cloud Service database deployment.<p>On Oracle Cloud Machine, this is the database connect string.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>db_service_name</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>This attribute is only available on Oracle Public Cloud. This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.<p>Name of the Database Cloud Service database deployment that is used to host the Oracle Required Schema. </div>
+
+
+
+            
+        </dd>
+        
+        <dt>db_service_uri</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Resource URL for the Oracle Database Cloud Service database deployment for this service instance. This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>deletion_job_id</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Job ID for the delete job. This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>description</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Free-form text that provides additional information about the service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>domain_mode</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Mode of the domain. Valid values include: <code>DEVELOPMENT</code> and <code>PRODUCTION</code>. This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>domain_name</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the WebLogic domain. This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>edition</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Software edition. Valid values include: <code>SE</code>, <code>EE</code>, or <code>SUITE</code>. This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>error_status_desc</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Error status that describes the reason that the Oracle Java Cloud Service instance is in an erroneous state. The following provides an example of the description:<p><code>This service is currently in an erroneous state as the tools are in an inconsistent state. Reason - <i>error details</i>. Apply the latest tools patch to resume normal operations on this service.</code></div>
+
+
+
+            
+        </dd>
+        
+        <dt>fmw_control_url</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>URL to Enterprise Manager Fusion Middleware Control. This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>identity_domain</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Identity domain ID for the Oracle Java Cloud Service account (on Oracle Public Cloud).<p>Tenant name for the Oracle Java Cloud Service instance (on Oracle Cloud Machine).</div>
+
+
+
+            
+        </dd>
+        
+        <dt>isApp2Cloud</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>This attribute is only available on Oracle Public Cloud. It is returned when you set the <code>?outputLevel=verbose</code> query parameter.<p>Flag that specifies whether this service instance is created with AppToCloud artifacts. This attribute is displayed only if the service instance was created with AppToCloud artifacts.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>last_modified_time</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time the Oracle Java Cloud Service instance was last modified.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>level</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Service level. Valid values include:<ul><li><code>PAAS</code>: Production-level service. Supports Oracle Java Cloud Service instance creation and monitoring; backup and restoration; patching; and scaling. This is the default.</li><li><code>BASIC</code>: Developer-level service. Supports Oracle Java Cloud Service instance creation and monitoring.<p><b>Note:</b> This service level does not support backup and restoration, patching, or scaling.</li></ul><p>This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>lifecycle_control_job_id</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Job ID of a lifecycle control request. Is a Long value. This attribute appears only if a lifecycle control request is in progress. You can use this ID to check the status of the lifecycle control request (for example, a start/stop/restart operation), as described in <a href='op-paas-service-jcs-api-v1.1-instances-{identityDomainId}-status-{requestName}-job-{jobId}-get.html'>View the Status of a Service Instance Lifecycle Operation</a>.<p>This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>num_ip_reservations</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Total number of public IP addresses reserved for the Oracle Java Cloud Service instance. This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>num_nodes</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Number of Managed Servers in the domain. This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>options</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-allinstances-response-properties-options" role="button" class="btn btn-default btn-sm">options</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about the Coherence data tier.</div>
+
+            
+        </dd>
+        
+        <dt>otd_admin_url</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>URL for accessing the load balancer Administration Console. This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>otd_provisioned</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether the load balancer is enabled. This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>otd_shape</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Desired compute shape for the load balancer. This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>otd_storage_size</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Storage size of the load balancer in GBs. This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>psm_plugin_version</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Version of the PaaS Service Manager. This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>sample_app_url</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>URL for accessing the sample application, if it was deployed and started when the service instance was provisioned. On Oracle Public Cloud, see <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloud&id=JSCUG-GUID-35722F36-98FE-4685-98EC-606A4C5F7DCA' target='_blank'>About the Sample Application Deployed to an Oracle Java Cloud Service Instance</a> in <i>Using Oracle Java Cloud Service</i>. On Oracle Cloud Machine, see <a href='http://www.oracle.com/pls/topic/lookup?ctx=cloudopcm&id=JSCUG-GUID-35722F36-98FE-4685-98EC-606A4C5F7DCA' target='_blank'>About the Sample Application Deployed to an Oracle Java Cloud Service Instance</a> in <i>Using Oracle Java Cloud Service on OPCM</i>.<p>This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>secure_content_url</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>URL for accessing the deployed applications using HTTPS. This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>service_components</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-allinstances-response-properties-service_components" role="button" class="btn btn-default btn-sm">service_components</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups service component details. This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+            
+        </dd>
+        
+        <dt>service_name</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of Oracle Java Cloud Service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>service_uri</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Resource URL for the Oracle Java Cloud Service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>shape</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Desired compute shape.<p>This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>shiftJobId</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>This attribute is only available on Oracle Public Cloud.<p>Job ID of the <code>customPayload</code> import operation with regards to AppToCloud migration.<p>This attribute is displayed only if the service instance was created with AppToCloud artifacts, and is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>shiftStatus</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>This attribute is only available on Oracle Public Cloud.<p>Status of the service instance with regards to AppToCloud migration. Possible values: <code>readyToShift</code>, <code>shiftCompleted</code>, <code>shiftFailed</code>.<p>This attribute is displayed only if the service instance was created with AppToCloud artifacts, and is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>status</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies the status of the Oracle Java Cloud Service instance. Valid values include: <code>Running</code>, <code>In Progress</code>, <code>Maintenance</code>, <code>Stopped</code>, <code>Terminating</code>, and <code>Failed</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>subscription_type</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Billing frequency.<p>This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.<p>On Oracle Public Cloud, the valid values include:<ul><li><code>HOURLY</code>: Pay only for the number of hours used during your billing period.</li><li><code>MONTHLY</code>: Pay one price for the full month irrespective of the number of hours used.</li></ul><p>On Oracle Cloud Machine, the attribute is not applicable at this time.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>upper_stack_product_name</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>This attribute is only available on Oracle Public Cloud. It is displayed only if the service instance was created with <code>upperStackProductName</code>, and is returned when you set the <code>?outputLevel=verbose</code> query parameter.<p>The Oracle Fusion Middleware product installer added to this service instance. For example: <code>WCP</code></div>
+
+
+
+            
+        </dd>
+        
+        <dt>version</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Oracle Fusion Middleware software version installed on the service instance. Valid values include: <code>12cRelease212</code, <code>12cRelease2</code>, <code>12cR3</code> and <code>11g</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>wls_admin_url</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>URL to the WebLogic Administration Console. This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>wls_deployment_channel_port</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Port for accessing the Administration Server using WLST. This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>wlsVersion</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Oracle WebLogic Server software version. For example: <code>12.2.1.2.0</code>, <code>12.2.1.0.x</code>, <code>12.1.3.0.x</code> and <code>10.3.6.0.x</code>.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-allinstances-response-properties-db_associations" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : db_associations</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups details of Database Cloud Service database deployments and databases used. This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-allinstances-response-properties-db_associations-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-allinstances-response-properties-db_associations-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-allinstances-response-properties-db_associations-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-allinstances-response-properties-db_associations-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-allinstances-response-properties-db_associations-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-db_associations" role="button" class="btn btn-default btn-sm">db_associations</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-allinstances-response-properties-options" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : options</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about the Coherence data tier.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-allinstances-response-properties-options-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-allinstances-response-properties-options-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-allinstances-response-properties-options-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-allinstances-response-properties-options-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-allinstances-response-properties-options-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-options" role="button" class="btn btn-default btn-sm">options</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>When viewing a service instance, this attribute is returned when the service instance has Oracle Coherence enabled.<p>When viewing all service instances, this attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-allinstances-response-properties-service_components" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : service_components</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups service component details. This attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-allinstances-response-properties-service_components-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-allinstances-response-properties-service_components-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-allinstances-response-properties-service_components-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-allinstances-response-properties-service_components-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-allinstances-response-properties-service_components-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-service_components" role="button" class="btn btn-default btn-sm">service_components</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-db_associations" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : db_associations</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-db_associations-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-db_associations-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-db_associations-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-db_associations-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-db_associations-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>db_apex_url</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The URL to use to connect to Oracle Application Express on the service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>db_app</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether this database is used to host application schemas (<code>true</code>).</div>
+
+
+
+            
+        </dd>
+        
+        <dt>db_connect_string</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div><p>On Oracle Public Cloud, this contains information about the Database Cloud Service database deployment.<p>On Oracle Cloud Machine, this is the database connection string.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>db_em_url</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The URL to use to connect to Enterprise Manager on the service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>db_infra</dt>
+        <dd>
+            
+            
+<div>Type: <code>boolean</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Flag that specifies whether this database is used to host the Oracle Required Schema (<code>true</code>).</div>
+
+
+
+            
+        </dd>
+        
+        <dt>db_monitor_url</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>The URL to use to connect to Oracle DBaaS Monitor on the service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>db_service_level</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Service level for the Database Cloud Service database deployment. <p>On Oracle Cloud Machine, the only value is <code>PAAS</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>db_service_name</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the Database Cloud Service database deployment.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>db_version</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Version of the Oracle database.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>pdb_service_name</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the pluggable database created for Oracle Database 12<em>c</em>. This value does not apply to a Database Cloud Service database deployment that is running Oracle Database 11<em>g</em>.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-options" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : options</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>When viewing a service instance, this attribute is returned when the service instance has Oracle Coherence enabled.<p>When viewing all service instances, this attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-options-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-options-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-options-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-options-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-options-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>clusters</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-options-properties-clusters" role="button" class="btn btn-default btn-sm">clusters</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups the information about the datagrid cluster.</div>
+
+            
+        </dd>
+        
+        <dt>type</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Specifies the Coherence data tier cluster. This value is set to  <code>datagrid</code>.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-options-properties-clusters" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : clusters</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups the information about the datagrid cluster.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-options-properties-clusters-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-options-properties-clusters-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-options-properties-clusters-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-options-properties-clusters-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-options-properties-clusters-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-clusters" role="button" class="btn btn-default btn-sm">clusters</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>When viewing a service instance, this attribute is returned when the service instance has Oracle Coherence enabled.<p>When viewing all service instances, this attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-clusters" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : clusters</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>When viewing a service instance, this attribute is returned when the service instance has Oracle Coherence enabled.<p>When viewing all service instances, this attribute is returned when you set the <code>?outputLevel=verbose</code> query parameter.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-clusters-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-clusters-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-clusters-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-clusters-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-clusters-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>clusterName</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of a Coherence data tier cluster for a service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>heapIncrements</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Additional heap available when a capacity unit is added as a result of a scale out operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>heapSize</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Heap size to configure per JVM in a capacity unit.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>jvmCount</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Number of JVMs or Managed Servers to configure per VM in a capacity unit.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>maxHeap</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Maximum JVM heap available, based on the site.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>maxPrimary</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Maximum primary cache that can be provided, based on the site.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>maxScalingUnit</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Maximum number of capacity units that can be provisioned, based on the site.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>primaryIncrements</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Primary cache storage that can be added when a capacity unit is added as a result of a scale out operation.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>scalingUnitCount</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Number of capacity units provisioned for the service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>scalingUnitInstances</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-clusters-properties-scalingUnitInstances" role="button" class="btn btn-default btn-sm">scalingUnitInstances</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about the capacity units provisioned in the service instance.</div>
+
+            
+        </dd>
+        
+        <dt>scalingUnitName</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of a default capacity unit, if used for the service instance.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>shape</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Shape of the virtual machines provisioned by a capacity unit.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>totalHeap</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Total heap available, based on the number of JVMs configured per capacity unit.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>totalPrimary</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Total primary cache storage to allocate for Coherence, based on the general rule of splitting the JVM heap size into thirds, using 1/3 for primary cache storage, 1/3 for backup storage, and 1/3 for scratch space.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>vmCount</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Number of virtual machines configured per capacity unit.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-clusters-properties-scalingUnitInstances" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : scalingUnitInstances</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about the capacity units provisioned in the service instance.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-clusters-properties-scalingUnitInstances-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-clusters-properties-scalingUnitInstances-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-clusters-properties-scalingUnitInstances-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-clusters-properties-scalingUnitInstances-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-clusters-properties-scalingUnitInstances-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-scalingUnitInstances" role="button" class="btn btn-default btn-sm">scalingUnitInstances</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-scalingUnitInstances" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : scalingUnitInstances</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-scalingUnitInstances-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-scalingUnitInstances-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-scalingUnitInstances-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-scalingUnitInstances-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-scalingUnitInstances-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>scalingUnitInstanceId</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Unique ID for managing a capacity unit.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>servers</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-scalingUnitInstances-properties-servers" role="button" class="btn btn-default btn-sm">servers</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about the Managed Servers provisioned by a capacity unit.</div>
+
+            
+        </dd>
+        
+        <dt>status</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Status of the capacity unit. Valid values are: <ul><li><code>Ready</code>: Fully operational</li><li><code>Starting</code>: Being created or initialized</li><li><code>Stopping</code>: Being removed</li><li><code>Error</code>: Has some error condition(s)</li></uL></div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-scalingUnitInstances-properties-servers" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : servers</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Groups information about the Managed Servers provisioned by a capacity unit.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-scalingUnitInstances-properties-servers-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-scalingUnitInstances-properties-servers-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-scalingUnitInstances-properties-servers-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-scalingUnitInstances-properties-servers-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-scalingUnitInstances-properties-servers-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-datatierservers" role="button" class="btn btn-default btn-sm">datatierservers</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-datatierservers" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : datatierservers</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-datatierservers-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-datatierservers-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-datatierservers-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-datatierservers-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-datatierservers-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>name</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of a Managed Server on the Coherence data tier.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-service_components" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : service_components</div>
+<div class="panel-body">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-service_components-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-service_components-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-service_components-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-service_components-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-service_components-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>type</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Service component type. Valid values are <code>JDK</code>, <code>OTD</code>, <code>OTD_JDK</code>, or <code>WLS</code>.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>version</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Software version of the specified component. For example, 12.1.3.0.5 for WLS, 11.1.1.9.1 for OTD, 1.7.0_91 for OTD_JDK, or 1.7.0_91 for JDK.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+
+
+                        </div>
+                        
+                        <div role="tabpanel" class="tab-pane fade" id="examples">
+                            <h3>Examples</h3>
+                            <div class="body conbody">
+ <div class="section">
+  <p class="p">The following example shows how to view information about all Oracle Java Cloud Service instances by submitting a GET request on the REST resource using cURL.</p> 
+  <p class="p"><strong class="ph b">Note:</strong> The command in this example uses the URL structure <samp class="ph codeph">https://rest_server_url/<em class="ph i">resource-path</em></samp>, where <samp class="ph codeph">rest_server_url</samp> is the Oracle Public Cloud or Oracle Cloud Machine REST server to contact for your identity domain or tenant name. See <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a> for the appropriate URL structure to use on Oracle Public Cloud or Oracle Cloud Machine.</p> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">cURL Command</h3>
+  <pre class="pre">curl -i -X GET -u username:userPassword1! -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://rest_server_url/paas/service/jcs/api/v1.1/instances/ExampleIdentityDomain
+</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Header</h3>
+  <p class="p">The following shows an example of the response header.</p> 
+  <pre class="pre">HTTP/1.1 200 OK
+Date: Thu, 24 Mar 2016 15:22:54 GMT
+Transfer-Encoding: chunked
+Content-Type: application/vnd.com.oracle.oracloud.provisioning.Pod+json</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Body (Oracle Public Cloud)</h3>
+  <p class="p">The following shows an example of the response body in JSON format, showing three service instances. Verbose output is not enabled.</p> 
+  <pre class="pre">{
+    "uri":"https:\/\/rest_server_url/\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain",
+    "service_type":"jaas",
+    "implementation_version":"1.0",
+    "services" : [
+    {
+        "service_name":"My11gService",
+        "version":"11g",
+        "wlsVersion":"10.3.6.0.160419",
+        "status":"Running",
+        "error_status_desc": "",
+        "compliance_status": "",
+        "compliance_status_desc": "",
+        "auto_update": "true",
+        "description":"",
+        "identity_domain":"ExampleIdentityDomain",
+        "creation_time":"Fri Jun 17 21:51:53 UTC 2016",
+        "last_modified_time":"Fri Jun 17 21:51:52 UTC 2016",
+        "created_by":"username",
+        "service_uri":"https:\/\/rest_server_url/\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/My11gService"    
+    },
+    {
+        "service_name":"My12cService",
+        "version":"12cR3",
+        "wlsVersion":"12.1.3.0.160419",
+        "status":"Running",
+        "error_status_desc": "",
+        "compliance_status": "",
+        "compliance_status_desc": "",
+        "auto_update": "true",
+        "description":"WebLogicEnterprise",
+        "identity_domain":"ExampleIdentityDomain",
+        "creation_time":"Tue Jun 14 19:14:27 UTC 2016",
+        "last_modified_time":"Tue Jun 14 19:14:25 UTC 2016",
+        "created_by":"username",
+        "service_uri":"https:\/\/resT-server_url/\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/My12cService"    
+    },
+    {
+        "service_name":"Example1Instance",
+        "version":"12cRelease2",
+        "wlsVersion":"12.2.1.0.160419",
+        "status":"Running",
+        "error_status_desc":"",
+        "compliance_status":"",
+        "compliance_status_desc":"",
+        "auto_update":"true",
+        "description":"Example Instance created via REST API",
+        "identity_domain":"ExampleIdentityDomain",
+        "creation_time":"Tue Jun 14 18:14:0 UTC 2016",
+        "last_modified_time":"Tue Jun 14 18:13:58 UTC 2016",
+        "created_by":"username",
+        "service_uri":"https:\/\/rest_server_url/\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/Example1Instance"
+    }]
+}
+</pre> 
+  <p class="p">The following shows an example of the response body in JSON format, showing two service instances. Verbose output is enabled.</p> 
+  <pre class="pre">{
+    "uri":"https:\/\/rest_server_url/\/paas/\service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain?outputLevel=verbose",
+    "service_type":"jaas",
+    "implementation_version":"1.0",
+    "services" : [
+    {
+        "service_name":"My11gService",
+        "version":"11g",
+        "wlsVersion":"10.3.6.0.160419",
+        "status":"Running",
+        "error_status_desc": "",
+        "compliance_status": "",
+        "compliance_status_desc": "",
+        "auto_update": "true",
+        "description":"",
+        "identity_domain":"ExampleIdentityDomain",
+        "creation_time":"Fri Jun 17 21:51:53 UTC 2016",
+        "last_modified_time":"Fri Jun 17 21:51:52 UTC 2016",
+        "created_by":"username",
+        "service_uri":"https:\/\/rest_server_url/\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/My11gServer" ,        
+        "domain_name" : "ExampleDomain",
+        "domain_mode" : "PRODUCTION",
+        "cluster_name" : "ExampleCluster",
+        "num_nodes" : 3,
+        "level" : "PAAS",
+        "subscription_type" : "HOURLY",
+        "edition" : "EE",
+        "shape" : "oc3",
+        "otd_provisioned" : "yes",
+        "otd_shape" : "oc3",
+        "otd_storage_size": 43008,
+        "service_components": [
+        {
+            "type": "JDK",
+            "version": "1.7.0_101"
+        },
+        {
+            "type": "OTD_JDK",
+            "version": "1.7.0_101"
+        },
+        {
+            "type": "OTD",
+            "version": "11.1.1.9.2"
+        },
+        {
+            "type": "WLS",
+            "version": "10.3.6.0.160419"
+        }],
+        "creation_job_id" : "110",
+        "deletion_job_id" : "0",
+        "lifecycle_control_job_id": 236,
+        "db_info" : "myDBService1:1521\/PDB1.exampleidentitydomain.oraclecloud.internal",
+        "db_service_name" : "myDBService1", 
+        "num_ip_reservations" : 3,
+        "wls_admin_url" : "https:\/\/192.1.2.0:7002\/console",
+        "fmw_control_url" : "https:\/\/192.1.2.0:7002\/em",
+        "otd_admin_url" : "https:\/\/192.0.2.23:8989",
+        "sample_app_url": "https:\/\/192.0.2.23\/sample-app\/",
+        "secure_content_url" : "https:\/\/192.0.2.23",
+        "content_url" : "http:\/\/192.0.2.23",
+        "wls_deployment_channel_port": 9001,
+        "psm_plugin_version": "16.3.1-132",
+        "compute_site_name": "US000_Z00",
+        "db_associations": [
+        {
+            "db_service_name": "myDBService1",
+            "db_infra": true,
+            "db_connect_string": "myDBService1:1521\/PDB1.exampleidentitydomain.oraclecloud.internal",
+            "pdb_service_name": "PDB1",
+            "db_version": "12.1.0.2"
+        }] 
+    },
+    {
+        "service_name":"My12cService",
+        "version":"12cR3",
+        "wlsVersion":"12.1.3.0.160419",
+        "status":"Running",
+        "error_status_desc": "",
+        "compliance_status": "",
+        "compliance_status_desc": "",
+        "auto_update": "true",
+        "description":"WebLogicEnterprise",
+        "identity_domain":"ExampleIdentityDomain",
+        "creation_time":"Tue Jun 14 19:14:27 UTC 2016",
+        "last_modified_time":"Tue Jun 14 19:14:25 UTC 2016",
+        "created_by":"username",
+        "service_uri":"https:\/\/rest_server_url/\/paas\/service\/jcs\/api\/v1.1\/instances\/ExampleIdentityDomain\/My12cService",
+        "domain_name" : "ExampleDomain",
+        "domain_mode" : "PRODUCTION",
+        "cluster_name" : "ExampleCluster",
+        "num_nodes" : 3,
+        "level" : "PAAS",
+        "subscription_type" : "HOURLY",
+        "edition" : "EE",
+        "shape" : "oc3",
+        "otd_provisioned" : "yes",
+        "otd_shape" : "oc3",
+        "otd_storage_size": 43008,
+        "service_components": [
+        {
+            "type": "JDK",
+            "version": "1.7.0_101"
+        },
+        {
+            "type": "OTD_JDK",
+            "version": "1.7.0_101"
+        },
+        {
+            "type": "OTD",
+            "version": "11.1.1.9.2"
+        },
+        {
+            "type": "WLS",
+            "version": "12.1.3.0.160419"
+        }],
+        "creation_job_id" : "123",
+        "deletion_job_id" : "0",
+        "db_info" : "myDBService:1521\/PDB1.exampleidentitydomain.oraclecloud.internal",
+        "db_service_name" : "myDBService", 
+        "num_ip_reservations" : 3,
+        "wls_admin_url" : "https:\/\/192.0.2.2:7002\/console",
+        "fmw_control_url" : "https:\/\/192.0.2.2:7002\/em",
+        "otd_admin_url" : "https:\/\/192.0.2.25:8989",
+        "sample_app_url": "https:\/\/192.0.2.25\/sample-app\/",
+        "secure_content_url" : "https:\/\/192.0.2.25",
+        "content_url" : "http:\/\/192.0.2.25",
+        "wls_deployment_channel_port": 9001,
+        "psm_plugin_version": "16.3.1-132",
+        "compute_site_name": "US000_Z00",
+        "db_associations": [
+        {
+            "db_service_name": "myDBService",
+            "db_infra": true,
+            "db_connect_string": "myDBService:1521\/PDB1.exampleidentitydomain.oraclecloud.internal",
+            "pdb_service_name": "PDB1",
+            "db_version": "12.1.0.2"
+        }]  
+    }]
+}
+</pre> 
+  <p class="p">If a service instance was recently created with AppToCloud artifacts and the on-premises domain has not yet been imported, you will see these additional attributes for the instance:</p> 
+  <pre class="pre">    "isApp2Cloud": "true",
+    "shiftStatus": "readyToShift",</pre> 
+  <p class="p">If the on-premises domain has been imported into an AppToCloud service instance, you will see a job ID for the import. For example:</p> 
+  <pre class="pre">    "shiftStatus": "shiftCompleted",
+    "shiftJobId": "30059",
+    "isApp2Cloud": "true",</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Body (Oracle Cloud Machine)</h3>
+  <p class="p">The following shows an example of the response body in JSON format. In this example, there are three service instances. Verbose output is not enabled.</p> 
+  <pre class="pre">{
+    "uri":"https:\/\/rest_server_url/\/paas\/service\/jcs\/api\/v1.1\/instances\/myTenantName",
+    "service_type":"jaas",
+    "implementation_version":"1.0",
+    "services" : [
+    {
+        "service_name":"My11gService",
+        "version":"11g",
+        "wlsVersion":"10.3.6.0.160419",
+        "status":"Running",
+        "description":"WebLogic11gEnterprise",
+        "identity_domain":"myTenantName",
+        "creation_time":"Tue Jul 22 18:11:41 GMT 2016",
+        "last_modified_time":"Wed Jul 23 00:35:11 GMT 2016",
+        "created_by":"username",
+        "service_uri":"https:\/\/rest_server_url/\/paas\/service\/jcs\/api\/v1.1\/instances\/myTenantName\/My11gService"    
+    },
+    {
+        "service_name":"My12cService",
+        "version":"12cR3",
+        "wlsVersion":"12.1.3.0.160419",
+        "status":"Running",
+        "error_status_desc": "",
+        "compliance_status": "",
+        "compliance_status_desc": "",
+        "auto_update": "true",
+        "description":"WebLogic12cEnterprise",
+        "identity_domain":"myTenantName",
+        "creation_time":"Wed Jul 23 15:36:57 GMT 2016",
+        "last_modified_time":"Thu Jul 24 09:15:57 GMT 2016",
+        "created_by":"username",
+        "service_uri":"https:\/\/rest_server_url/\/paas\/service\/jcs\/api\/v1.1\/instances\/myTenantName\/My12cService"    
+    },
+    {
+        "service_name":"Example1Instance",
+        "version":"12cRelease2",
+        "wlsVersion":"12.2.1.0.160419",
+        "status":"Running",
+        "error_status_desc":"",
+        "compliance_status":"",
+        "compliance_status_desc":"",
+        "auto_update":"true",
+        "description":"Example Instance created via REST API",
+        "identity_domain":"myTenantName",
+        "creation_time":"Thu Mar 17 17:2:31 UTC 2016",
+        "last_modified_time":"Thu Mar 24 1:5:26 UTC 2016",
+        "created_by":"username",
+        "service_uri":"https:\/\/rest_server_url/\/paas\/service\/jcs\/api\/v1.1\/instances\/myTenantName\/Example1Instance"
+    }]
+}
+</pre> 
+  <p class="p">The following shows an example of the response body in JSON format with verbose output enabled.</p> 
+  <pre class="pre">{
+    "uri":"https:\/\/rest_server_url/\/paas/\service\/jcs\/api\/v1.1\/instances\/myTenantName?outputLevel=verbose",
+    "service_type":"jaas",
+    "implementation_version":"1.0",
+    "services" : [
+    {
+        "service_name":"My11gService",
+        "version":"11g",
+        "wlsVersion":"10.3.6.0.160419",
+        "status":"Running",
+        "description":"WebLogic11gEnterprise",
+        "identity_domain":"myTenantName",
+        "creation_time":"Tue Jul 22 18:11:41 GMT 2016",
+        "last_modified_time":"Wed Jul 23 00:35:11 GMT 2016",
+        "created_by":"username",
+        "service_uri":"https:\/\/rest_server_url/\/paas\/service\/jcs\/api\/v1.1\/instances\/myTenantName\/My11gService" ,        
+        "domain_name" : "ExampleDomain",
+        "domain_mode" : "PRODUCTION",
+        "cluster_name" : "ExampleCluster",
+        "num_nodes" : 3,
+        "level" : "PAAS",
+        "subscription_type" : "MONTHLY",
+        "edition" : "EE",
+        "shape" : "oc3",
+        "otd_provisioned" : "yes",
+        "otd_shape" : "oc3",
+        "otd_storage_size": 43008,
+        "service_components": [
+        {
+            "type": "JDK",
+            "version": "1.7.0_101"
+        },
+        {
+            "type": "OTD_JDK",
+            "version": "1.7.0_101"
+        },
+        {
+            "type": "OTD",
+            "version": "11.1.1.9.2"
+        },
+        {
+            "type": "WLS",
+            "version": "10.3.6.0.160419"
+        }],
+        "creation_job_id" : "2",
+        "deletion_job_id" : "0",
+        "lifecycle_control_job_id": 236,
+        "db_info" : "myhost:1521\/dbservicename",
+        "num_ip_reservations" : 3,
+        "wls_admin_url" : "https:\/\/thehost:7002\/console",
+        "fmw_control_url" : "https:\/\/thehost:7002\/em",
+        "otd_admin_url" : "https:\/\/thelbhost:8989",
+        "sample_app_url": "https:\/\/thehost\/sample-app\/",
+        "content_url": "http:\/\/thehost",
+        "secure_content_url" : "https:\/\/thehost",
+        "wls_deployment_channel_port": 9001,
+        "psm_plugin_version": "16.3.3-1-168",
+        "compute_site_name":"PRIVATE_SITE",
+        "db_associations": [
+        {
+            "db_connect_string": "myhost:1521\/dbservicename",
+            "db_infra": true
+        }]  
+    },
+    {
+        "service_name":"My12cService",
+        "version":"12cR3",
+        "wlsVersion":"12.1.3.0.160419",
+        "status":"Running",
+        "error_status_desc": "",
+        "compliance_status": "",
+        "compliance_status_desc": "",
+        "auto_update": "true",
+        "description":"WebLogic12cEnterprise",
+        "identity_domain":"myTenantName",
+        "creation_time":"Wed Jul 23 15:36:57 GMT 2016",
+        "last_modified_time":"Thu Jul 24 09:15:57 GMT 2016",
+        "created_by":"username",
+        "service_uri":"https:\/\/rest_server_url/\/paas\/service\/jcs\/api\/v1.1\/instances\/myTenantName\/My12cService",
+        "domain_name" : "ExampleDomain",
+        "domain_mode" : "PRODUCTION",
+        "cluster_name" : "ExampleCluster",
+        "num_nodes" : 3,
+        "level" : "PAAS",
+        "subscription_type" : "MONTHLY",
+        "edition" : "EE",
+        "shape" : "oc3",
+        "otd_provisioned" : "yes",
+        "otd_shape" : "oc3",
+        "otd_storage_size": 43008,
+        "service_components": [
+        {
+            "type": "JDK",
+            "version": "1.7.0_101"
+        },
+        {
+           "type": "OTD_JDK",
+            "version": "1.7.0_101"
+        },
+        {
+            "type": "OTD",
+            "version": "11.1.1.9.2"
+        },
+        {
+            "type": "WLS",
+            "version": "12.1.3.0.160419"
+        }],
+        "creation_job_id" : "1",
+        "deletion_job_id" : "0",
+        "lifecycle_control_job_id": 273,
+        "db_info" : "myhost:1521\/dbservicename",
+        "num_ip_reservations" : 3,
+        "wls_admin_url" : "https:\/\/thehost:7002\/console",
+        "fmw_control_url" : "https:\/\/thehost:7002\/em",
+        "otd_admin_url" : "https:\/\/thelbhost:8989",
+        "sample_app_url": "https:\/\/thehost\/sample-app\/",
+        "content_url": "http:\/\/thehost",
+        "secure_content_url" : "https:\/\/thehost",
+        "wls_deployment_channel_port": 9001,
+        "psm_plugin_version": "16.3.3-1-168",
+        "compute_site_name":"PRIVATE_SITE",
+        "db_associations": [
+        {
+            "db_connect_string": "myhost:1521\/dbservicename",
+            "db_infra": true
+        }]     
+    }]
+}
+</pre> 
+ </div> 
+</div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+        </article>
+    </body>
+</html>

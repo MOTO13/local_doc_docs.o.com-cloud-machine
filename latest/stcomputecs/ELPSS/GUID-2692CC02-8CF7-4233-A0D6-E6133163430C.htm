@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Ventilation and Cooling</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Learn about the ventilation and cooling requirements for OPCM and the optional ZS3 storage expansion rack." />
+<meta name="dcterms.created" content="2017-04-10T14:54:01Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Customer Deployment Guide" />
+<meta name="dcterms.identifier" content="E65770-09" />
+<meta name="dcterms.isVersionOf" content="ELPSS" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-EC805CFF-C39C-415E-B896-6D006EB54393.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-FA2B10BC-C8DD-4B3D-8185-139D0F652D66.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELPSS.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-2692CC02-8CF7-4233-A0D6-E6133163430C"></a> <span id="PAGE" style="display:none;">12/16</span> <!-- End Header -->
+<h1 id="ELPSS-GUID-2692CC02-8CF7-4233-A0D6-E6133163430C" class="sect1"><span class="enumeration_section">1.7</span> Ventilation and Cooling</h1>
+<div>
+<p>Learn about the ventilation and cooling requirements for <span id="ACRONYM-AF466053">OPCM</span> and the optional ZS3 storage expansion rack.</p>
+<div class="section">
+<p>Always provide adequate space in front of and behind the rack to allow for proper ventilation. Do not obstruct the front or rear of the rack with equipment or objects that might prevent air from flowing through the rack. Rack-mountable servers and equipment typically draw cool air in through the front of the rack and let warm air out the rear of the rack. There is no air flow requirement for the left and right sides due to front-to-back cooling.</p>
+<p>If the rack is not completely filled with components, the empty sections will be covered with filler panels. Gaps between components can adversely affect air flow and cooling within the rack.</p>
+<p>Relative humidity is the percentage of the total water vapor that can exist in the air without condensing, and is inversely proportional to air temperature. Humidity goes down when the temperature rises, and goes up when the temperature drops. For example, air with a relative humidity of 45 percent at a temperature of 24 degrees Celsius (75 degrees Fahrenheit) has a relative humidity of 65 percent at a temperature of 18 degrees Celsius (64 degrees Fahrenheit). As the temperature drops, the relative humidity rises to more than 65 percent, and water droplets are formed.</p>
+<p>Air conditioning facilities usually do not precisely monitor or control temperature and humidity throughout an entire computer room. Generally, monitoring is done at individual points corresponding to multiple exhaust vents in the main unit, and other units in the room. Special consideration should be paid to humidity when using underfloor ventilation. When underfloor ventilation is used, monitoring is done at each point close to an exhaust vent. Distribution of the temperature and humidity across the entire room is uneven.</p>
+<p><span id="GUID-2692CC02-8CF7-4233-A0D6-E6133163430C__ORACLEEXALOGICELASTICCLOUD-881D6B97">Oracle Public Cloud Machine</span> (<span id="GUID-2692CC02-8CF7-4233-A0D6-E6133163430C__ACRONYM-AF466053">OPCM</span>) systems have been designed to function while mounted in a natural convection air flow. The following requirements must be followed to meet the environmental specification:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Ensure there is adequate air flow through the server.</p>
+</li>
+<li>
+<p>Ensure the server has front-to-back cooling. The air inlet is at the front of the server, and the air is let out the rear.</p>
+</li>
+<li>
+<p>Allow a minimum clearance of 914 mm (36 inches) at the front of the server, and 914 mm (36 inches) at the rear of the server for ventilation.</p>
+</li>
+</ul>
+<p>Use perforated tiles, approximately 400 CFM/tile, in front of the rack for cold air intake. The tiles can be arranged in any order in front of the rack, as long as cold air from the tiles can flow into the rack. Inadequate cold air flow could result in a higher inlet temperature in the servers due to exhaust air recirculation. The following is the recommended number of floor tiles:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Four floor tiles for <span>OPCM</span> model 1080.</p>
+</li>
+<li>
+<p>Three floor tiles for <span>OPCM</span> model 576.</p>
+</li>
+<li>
+<p>One floor tile for <span>OPCM</span> model 288.</p>
+</li>
+</ul>
+<p>The following figure shows an installation of the floor tiles for an <span>OPCM</span> model 1080 in a typical data center.</p>
+<div class="figure" id="GUID-2692CC02-8CF7-4233-A0D6-E6133163430C__GUID-8D72734A-FD8A-40B9-AE58-1EFDAEEBA86D">
+<p class="titleinfigure">Figure 1-2 Typical Data Center Configuration for Perforated Floor Tiles</p>
+<img width="450" height="393" src="img/GUID-BF1BC83B-C791-4E65-A1A3-B01AE766F8FF-default.png" alt="Illustration of an Oracle Cloud Machine with four floor ventilation tiles for cooling." title="Illustration of an Oracle Cloud Machine with four floor ventilation tiles for cooling." /></div>
+<!-- class="figure" -->
+<p>The following table describes the cooling and airflow maximum and typical requirements for <span>OPCM</span>:</p>
+<div class="tblformalwide" id="GUID-2692CC02-8CF7-4233-A0D6-E6133163430C__GUID-71337462-CFFF-4955-AA07-884D3B582A7C">
+<p class="titleintable">Table 1-13 Cooling and airflow requirements for <span>OPCM</span></p>
+<table class="cellalignment134" title="Cooling and airflow requirements for OPCM" summary="The table contains four columns. The column with the Description heading lists maximum and typical cooling and airflow requirements for OPCM. The other columns with headings Model 288, Model 576, and Model 1080 describe the required values for all the models of OPCM in BTUs and kilojoules per hour for cooling and Cubic Feet per Minute (CFM) for airflow.">
+<thead>
+<tr class="cellalignment125">
+<th class="cellalignment135" id="d6795e108">Description</th>
+<th class="cellalignment135" id="d6795e110">Model 288</th>
+<th class="cellalignment135" id="d6795e112">Model 576</th>
+<th class="cellalignment135" id="d6795e114">Model 1080</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d6795e118" headers="d6795e108">Maximum cooling</td>
+<td class="cellalignment125" headers="d6795e118 d6795e110">26397 BTU/hour, 27849 kJ/hour</td>
+<td class="cellalignment125" headers="d6795e118 d6795e112">45898 BTU/hour, 48422 kJ/hour</td>
+<td class="cellalignment125" headers="d6795e118 d6795e114">80297 BTU/hour, 84714 kJ/hour</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d6795e127" headers="d6795e108">Typical cooling</td>
+<td class="cellalignment125" headers="d6795e127 d6795e110">18478 BTU/hour, 19494 kJ/hour</td>
+<td class="cellalignment125" headers="d6795e127 d6795e112">32128 BTU/hour, 33896 kJ/hour</td>
+<td class="cellalignment125" headers="d6795e127 d6795e114">56208 BTU/hour, 59300 kJ/hour</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d6795e136" headers="d6795e108">Maximum airflow (front to back)</td>
+<td class="cellalignment125" headers="d6795e136 d6795e110">1222 CFM</td>
+<td class="cellalignment125" headers="d6795e136 d6795e112">2125 CFM</td>
+<td class="cellalignment125" headers="d6795e136 d6795e114">3717 CFM</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d6795e145" headers="d6795e108">Typical airflow (front to back)</td>
+<td class="cellalignment125" headers="d6795e145 d6795e110">855 CFM</td>
+<td class="cellalignment125" headers="d6795e145 d6795e112">1487 CFM</td>
+<td class="cellalignment125" headers="d6795e145 d6795e114">2602 CFM</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>If you are deploying the <span>OPCM</span> ZS3 storage expansion rack, review the following table describing cooling requirements:</p>
+<div class="tblformalwide" id="GUID-2692CC02-8CF7-4233-A0D6-E6133163430C__GUID-21F2B8DB-AF8F-488A-8058-98B323196504">
+<p class="titleintable">Table 1-14 Cooling requirements for <span>OPCM</span> ZS3 Storage Expansion Rack</p>
+<table class="cellalignment134" title="Cooling requirements for OPCM ZS3 Storage Expansion Rack" summary="The table contains three columns. The column with the Description heading lists maximum and typical cooling requirements for OPCM ZS3 storage expansion rack. The other columns with headings Model 268, and Model 536 describe the required values in BTUs and kilojoules per hour for cooling.">
+<thead>
+<tr class="cellalignment125">
+<th class="cellalignment135" id="d6795e175">Description</th>
+<th class="cellalignment135" id="d6795e177">Model 268</th>
+<th class="cellalignment135" id="d6795e179">Model 536</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d6795e183" headers="d6795e175">Maximum cooling</td>
+<td class="cellalignment125" headers="d6795e183 d6795e177">22759 BTU/hour, 24012 kJ/hour</td>
+<td class="cellalignment125" headers="d6795e183 d6795e179">45518 BTU/hour, 48024 kJ/hour</td>
+</tr>
+<tr class="cellalignment125">
+<td class="cellalignment125" id="d6795e190" headers="d6795e175">Typical cooling</td>
+<td class="cellalignment125" headers="d6795e190 d6795e177">10834 BTU/hour, 11430 kJ/hour</td>
+<td class="cellalignment125" headers="d6795e190 d6795e179">21668 BTU/hour, 22860 kJ/hour</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment124">
+<tr>
+<td class="cellalignment131">
+<table class="cellalignment129">
+<tr>
+<td class="cellalignment128"><a href="GUID-EC805CFF-C39C-415E-B896-6D006EB54393.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment128"><a href="GUID-FA2B10BC-C8DD-4B3D-8185-139D0F652D66.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment133">
+<table class="cellalignment127">
+<tr>
+<td class="cellalignment128"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment128"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

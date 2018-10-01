@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Managing Instances</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-07T05:55:01Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine CLI Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E69222-06" />
+<meta name="dcterms.isVersionOf" content="ELUCL" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-137014B6-4301-418F-BB31-BA3097E1263A.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-FF5BD712-A4BB-4095-8279-7C5914D61F98.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUCL.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F"></a> <span id="PAGE" style="display:none;">12/40</span> <!-- End Header -->
+<h1 id="ELUCL-GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F" class="sect1">Managing Instances</h1>
+<div>
+<div class="section">An instance is a logical representation of a virtual machine (VM).&nbsp;An instance defines the properties of a virtual machine and has a life cycle that surrounds and extends beyond the life cycle of a single virtual machine.&nbsp;You create virtual machine instances by starting orchestrations, but you can manage them individually thereafter by using CLI commands or API requests.
+<div class="infobox-note" id="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F__GUID-FD9D27A0-E403-4AFA-BBF3-E27765B4D5B7">
+<p class="notep1">Note:</p>
+Life-cycle commands (such as <code class="codeph">start</code>, <code class="codeph">stop</code>, <code class="codeph">restart</code> etc.) that change the state of an instance, return immediately with the state change proceeding on the server side. Instance state can be monitored by retrieving the instance details.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F.htm#GUID-A15837F6-380A-4522-B20B-2BA88FCFB02F" title="This command enables you to delete a specific instance.">delete instance</a></p>
+</li>
+<li>
+<p><a href="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F.htm#GUID-9E6A6072-A847-4A70-9C25-31AA1C5EE7D4" title="This command enables you to shut down a specific instance.">shutdown instance</a></p>
+</li>
+<li>
+<p><a href="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F.htm#GUID-EF31B882-137E-4689-AACE-D5CCC5BF3BBC" title="This command enables you to restart a specific instance.">restart instance</a></p>
+</li>
+<li>
+<p><a href="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F.htm#GUID-EB21D8D5-56BD-4FEE-B2B1-85CF60369073" title="This command enables you to update information for a specific instance.">update instance</a></p>
+</li>
+<li>
+<p><a href="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F.htm#GUID-6C518741-900D-4F0A-86E6-C23749373F82" title="This command enables you to discover instances in the specific container and subcontainers.This command enables you to retrieve information for a specific instance. This command enables you to retrieve instance information in a specific container or subcontainer.">Retrieve Instance Details</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-A15837F6-380A-4522-B20B-2BA88FCFB02F"></a>
+<h2 id="ELUCL-GUID-A15837F6-380A-4522-B20B-2BA88FCFB02F" class="sect2">delete instance</h2>
+<div>
+<p>This command enables you to delete a specific instance.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-A15837F6-380A-4522-B20B-2BA88FCFB02F__GUID-056C2859-5E4A-4B4F-824A-E8B90183BA2C">
+<p class="notep1">Note:</p>
+An instance can only be deleted when it is in any one of the following states: <code class="codeph">running, shut_down,</code> or <code class="codeph">error</code>.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute delete instance <span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-A15837F6-380A-4522-B20B-2BA88FCFB02F__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for deleting an instance.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d6496e124">Parameter</th>
+<th class="cellalignment26" id="d6496e126">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d6496e130" headers="d6496e124">name</td>
+<td class="cellalignment27" headers="d6496e130 d6496e126">A unique hierarchical name of an instance. For example,&nbsp;<code class="codeph">/mytenant/public/e6640ebc-6953-444f-848d-4a3bf6050ea</code>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">oracle-compute delete instance /mytenant/public/3e81e735-cdfc-43c2-9ba9-219585501f90</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-9E6A6072-A847-4A70-9C25-31AA1C5EE7D4"></a>
+<h2 id="ELUCL-GUID-9E6A6072-A847-4A70-9C25-31AA1C5EE7D4" class="sect2">shutdown instance</h2>
+<div>
+<p>This command enables you to shut down a specific instance.</p>
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute shutdown instance <span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-9E6A6072-A847-4A70-9C25-31AA1C5EE7D4__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for the shutting down an instance.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d6496e189">Parameter</th>
+<th class="cellalignment26" id="d6496e191">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d6496e195" headers="d6496e189">name</td>
+<td class="cellalignment27" headers="d6496e195 d6496e191">A unique hierarchical name for an instance. For example, <code class="codeph">/mytenant/public/e6640ebc-6953-444f-848d-4a3bf6050ea5</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute shutdown instance /mytenant/public/0c9f738c-26e1-440e-9a92-c81378f80683</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-EF31B882-137E-4689-AACE-D5CCC5BF3BBC"></a>
+<h2 id="ELUCL-GUID-EF31B882-137E-4689-AACE-D5CCC5BF3BBC" class="sect2">restart instance</h2>
+<div>
+<p>This command enables you to restart a specific instance.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-EF31B882-137E-4689-AACE-D5CCC5BF3BBC__GUID-4DE5B089-10ED-43B5-AF03-F3B312EDF321">
+<p class="notep1">Note:</p>
+An instance can only be restarted when it is in one of the following states:<code class="codeph">shut_down, warning,</code> and <code class="codeph">error</code> .</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute restart instance <span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-EF31B882-137E-4689-AACE-D5CCC5BF3BBC__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for restarting an instance.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d6496e263">Parameter</th>
+<th class="cellalignment26" id="d6496e265">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d6496e269" headers="d6496e263">name</td>
+<td class="cellalignment27" headers="d6496e269 d6496e265">A unique hierarchical name of an instance. For example, <code class="codeph">&nbsp;/mytenant/public/e6640ebc-6953-444f-848d-4a3bf6050ea5</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute restart instance /mytenant/public/dc48d972-d893-4574-9446-5b7d6ea1f596</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ 
+ oracle-compute restart instance /mytenant/public/dc48d972-d893-4574-9446-5b7d6ea1f596 -Fname,state
+name                                                    state 
+/mytenant/public/dc48d972-d893-4574-9446-5b7d6ea1f596   shut_down
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-EB21D8D5-56BD-4FEE-B2B1-85CF60369073"></a>
+<h2 id="ELUCL-GUID-EB21D8D5-56BD-4FEE-B2B1-85CF60369073" class="sect2">update instance</h2>
+<div>
+<p>This command enables you to update information for a specific instance.</p>
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute update instance <span class="variable">name</span> [<span class="variable">--shape</span>] [<span class="variable">--networking</span>] [<span class="variable">--nis</span>] [<span class="variable">--tag</span>] [<span class="variable">--delete_tag</span>]</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-EB21D8D5-56BD-4FEE-B2B1-85CF60369073__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table lists the URI parameter and description for updating an instance.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d6496e350">Parameter</th>
+<th class="cellalignment26" id="d6496e352">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d6496e356" headers="d6496e350">name</td>
+<td class="cellalignment27" headers="d6496e356 d6496e352">An unique hierarchical name for an instance. For example, <code class="codeph">/mytenant/public/e6640ebc-6953-444f-848d-4a3bf6050ea5e</code></td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d6496e363" headers="d6496e350">--shape</td>
+<td class="cellalignment27" headers="d6496e363 d6496e352">(Optional) The name of the shape to be associated with the instance. You can update the shape only when the instance is in the <code class="codeph">shut_down</code> state.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d6496e371" headers="d6496e350">--networking</td>
+<td class="cellalignment27" headers="d6496e371 d6496e352">(Optional) Mapping of device name to network specifiers for the virtual Network Interface Card (NICs) to be attached to this instance. You can update the instance when it is in either the <code class="codeph">running</code> state or the <code class="codeph">shut_down</code> state.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d6496e382" headers="d6496e350">--nis</td>
+<td class="cellalignment27" headers="d6496e382 d6496e352">(Optional) Network Information Service (NIS) configuration. You can update the NIS configuration only when the instance is in the <code class="codeph">running</code> state or the <code class="codeph">shut_down</code> state.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d6496e393" headers="d6496e350">--tag</td>
+<td class="cellalignment27" headers="d6496e393 d6496e352">(Optional) User-friendly tags for a specific instance. You can tag an instance with a list of human-readable tags (strings) that can be used to identify a group of instances easily during instance listing.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d6496e398" headers="d6496e350">--delete_tag</td>
+<td class="cellalignment27" headers="d6496e398 d6496e352">(Optional) Deletes user-friendly strings for a specific instance. You can remove tags from the instance in any state.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>For more information on instance optional parameters, see section <span class="italic"><a class="olink ELUSE-GUID-F7D91076-1736-4B54-89D5-73C23A45BF85" target="_blank" href="../ELUSE/GUID-F7D91076-1736-4B54-89D5-73C23A45BF85.htm#ELUSE-GUID-F7D91076-1736-4B54-89D5-73C23A45BF85">Orchestration Templates</a></span> in <span class="italic">Using Oracle Compute Cloud Service</span>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute update instance /mytenant/public/e8faac3a-d4bb-41bd-9e79-e13d8be4d9d0 --shape medium -Fname,shape,state</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+name                                                  shape   state
+/mytenant/public/e8faac3a-d4bb-41bd-9e79-e13d8be4d9d0 medium  shut_down
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-6C518741-900D-4F0A-86E6-C23749373F82"></a>
+<h2 id="ELUCL-GUID-6C518741-900D-4F0A-86E6-C23749373F82" class="sect2">Retrieve Instance Details</h2>
+<div>
+<div class="section">You can retrieve instance details by using the CLI.</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F.htm#GUID-5DC6112C-F7C7-44B2-9E4F-E92AF05DBA45" title="This command enables you to discover instances in the specific container and subcontainers.">discover instance</a></p>
+</li>
+<li>
+<p><a href="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F.htm#GUID-D735CCA1-76BA-484F-A6FA-DC88EB34243D" title="This command enables you to retrieve information for a specific instance.">get instance</a></p>
+</li>
+<li>
+<p><a href="GUID-558B8B58-D91C-408B-876E-DCB8B6337C7F.htm#GUID-3E06D401-3C98-4908-9650-7DDB3A28E9E0" title="This command enables you to retrieve instance information in a specific container or subcontainer.">list instance</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect3"><a id="GUID-5DC6112C-F7C7-44B2-9E4F-E92AF05DBA45"></a>
+<h3 id="ELUCL-GUID-5DC6112C-F7C7-44B2-9E4F-E92AF05DBA45" class="sect3">discover instance</h3>
+<div>
+<p>This command enables you to discover instances in the specific container and subcontainers.</p>
+<div class="section">
+<p class="subhead3">Syntax</p>
+<p><code class="codeph">oracle-compute discover instance <span class="variable">container</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-5DC6112C-F7C7-44B2-9E4F-E92AF05DBA45__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for listing instances.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d6496e516">Parameter</th>
+<th class="cellalignment26" id="d6496e518">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d6496e522" headers="d6496e516">container</td>
+<td class="cellalignment27" headers="d6496e522 d6496e518">Hierarchical name-space containing instances</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<p><code class="codeph">$ oracle-compute discover instance /mytenant/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute discover instance /mytenant/ 
+name
+/mytenant/public/0c9f738c-26e1-440e-9a92-c81378f80683
+/mytenant/public/58f3a5d2-2c8c-41cb-8047-44f2e3aab876
+/mytenant/public/6e319b05-4158-4d43-961b-be37157c8022
+/mytenant/public/8243c540-337f-499e-ab08-4abd48b4d7bf
+/mytenant/public/bdb7b6da-8919-4034-ad0f-6e506837e4f3
+/mytenant/public/d02a40a0-5e51-43f9-a15d-09d014d0c915
+/mytenant/public/e25237f7-def4-4853-9c13-dde120cb9161
+/mytenant/public/fdd530da-347c-4f07-86ad-0855add035f2
+/mytenant/public/scae09-sdi-sdivm-el1-8-instance/1a9ce3a1-ddba-44f7-9cc5-04c77f6523bc
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-D735CCA1-76BA-484F-A6FA-DC88EB34243D"></a>
+<h3 id="ELUCL-GUID-D735CCA1-76BA-484F-A6FA-DC88EB34243D" class="sect3">get instance</h3>
+<div>
+<p>This command enables you to retrieve information for a specific instance.</p>
+<div class="section">
+<p class="subhead3">Syntax</p>
+<p><code class="codeph">oracle-compute get instance <span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-D735CCA1-76BA-484F-A6FA-DC88EB34243D__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for retrieving details of an instance.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d6496e584">Parameter</th>
+<th class="cellalignment26" id="d6496e586">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d6496e590" headers="d6496e584">name</td>
+<td class="cellalignment27" headers="d6496e590 d6496e586">A unique hierarchical name for an instance. For example, <code class="codeph">/mytenant/public/e6640ebc-6953-444f-848d-4a3bf6050ea5</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<p><code class="codeph">$ oracle-compute get instance /mytenant/public/0c9f738c-26e1-440e-9a92-c81378f80683</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute get instance /mytenant/public/0c9f738c-26e1-440e-9a92-c81378f80683 -F shape,tags,entry
+entry           shape           tags
+1               oc4             mytenant_db, mytenant_db_instance1, /mytenant/public/el-db-vms, db8633ae9d611203b6c566770b51d34b
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-3E06D401-3C98-4908-9650-7DDB3A28E9E0"></a>
+<h3 id="ELUCL-GUID-3E06D401-3C98-4908-9650-7DDB3A28E9E0" class="sect3">list instance</h3>
+<div>
+<p>This command enables you to retrieve instance information in a specific container or subcontainer.</p>
+<div class="section">
+<p class="subhead3">Syntax</p>
+<p><code class="codeph">oracle-compute list instance <span class="variable">container</span> [<span class="variable">--tags</span>] [<span class="variable">--quota</span>] [<span class="variable">--vcable_id</span>]</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="infobox-note" id="GUID-3E06D401-3C98-4908-9650-7DDB3A28E9E0__GUID-BC33E957-FBE0-452C-AAC0-4A7ACFB783A6">
+<p class="notep1">Note:</p>
+The output of this command is filtered based on the optional parameters (if specified).</div>
+<div class="tblformal" id="GUID-3E06D401-3C98-4908-9650-7DDB3A28E9E0__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameters and descriptions for listing details of instances.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d6496e667">Parameter</th>
+<th class="cellalignment26" id="d6496e669">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d6496e673" headers="d6496e667">container</td>
+<td class="cellalignment27" headers="d6496e673 d6496e669">Hierarchical name-space for instances</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d6496e678" headers="d6496e667">--tags</td>
+<td class="cellalignment27" headers="d6496e678 d6496e669">(Optional) You can tag an instance with a list of human-readable tags (strings) that can be used to identify a group of instances easily during instance listing.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d6496e683" headers="d6496e667">--quota</td>
+<td class="cellalignment27" headers="d6496e683 d6496e669">(Optional) The name of a quota associated with an instance</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d6496e688" headers="d6496e667">--vcable_id</td>
+<td class="cellalignment27" headers="d6496e688 d6496e669">(Optional) The unique identifier of a Virtual Cable (vCable) associated with an instance.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example</p>
+<p><code class="codeph">$ oracle-compute list instance /mytenant/public/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute list instance /demo/ -Fname,ip,state,label -ftab
+name                                                   label     state     ip
+/demo/public/960adf49-eefd-4f93-a300-2c798ba4a123      vm2       shut_down 10.247.60.146
+/demo/public/dg1/35faaf0b-825c-42f9-bbfe-e72470c23883  myvm-j-v1 shut_down 10.247.64.55
+/demo/public/ff94e915-a1d1-4f0f-88de-cc41b91394d3      vm1       shut_down 10.247.60.145
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-137014B6-4301-418F-BB31-BA3097E1263A.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-FF5BD712-A4BB-4095-8279-7C5914D61F98.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

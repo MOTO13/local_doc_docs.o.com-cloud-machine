@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Managing Users</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-07T05:33:13Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine REST API Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E68443-07" />
+<meta name="dcterms.isVersionOf" content="ELUAP" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-ADDF21C4-2B79-4A5D-A3AA-1068218CFC15.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-137014B6-4301-418F-BB31-BA3097E1263A.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUAP.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE"></a> <span id="PAGE" style="display:none;">11/40</span> <!-- End Header -->
+<h1 id="ELUAP-GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE" class="sect1">Managing Users</h1>
+<div>
+<div class="section">User names are unique within a specific tenant, and tenant names are unique within the system as a whole.</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE.htm#GUID-C8811EEF-B17B-4EC2-AF6C-F4E3A94A38CC" title="This API enables you to add new users.">Add User</a></p>
+</li>
+<li>
+<p><a href="GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE.htm#GUID-A7373707-66C7-44A5-B0EA-1B02FE81C439" title="This API enables you to delete an existing user.">Delete User</a></p>
+</li>
+<li>
+<p><a href="GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE.htm#GUID-DC01DD44-753F-42E7-A0B9-E07AA66C55A5" title="This API enables you to update user information.">Update User</a></p>
+</li>
+<li>
+<p><a href="GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE.htm#GUID-F09B4C03-7B44-4ADB-99A4-1527688E2492" title="This API enables you to discover a list of users in a specific container.This API enables you to retrieve information for a specific user.This API enables you to list users in a specific container.">Retrieve User Details</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="props_rev_3"><a id="GUID-C8811EEF-B17B-4EC2-AF6C-F4E3A94A38CC"></a>
+<h2 id="ELUAP-GUID-C8811EEF-B17B-4EC2-AF6C-F4E3A94A38CC" class="sect2">Add User</h2>
+<div>
+<p>This API enables you to add new users.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-C8811EEF-B17B-4EC2-AF6C-F4E3A94A38CC__GUID-CED62686-B2B7-46F8-B119-1B878A0A8063">
+<p class="notep1">Note:</p>
+Only a tenant administrator can add new users.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Method</p>
+<p><code class="codeph">POST</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/user/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/user/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Request Body Parameters</p>
+<div class="tblformal" id="GUID-C8811EEF-B17B-4EC2-AF6C-F4E3A94A38CC__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment56" summary="This table lists request body parameters and descriptions for adding a new user.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment57" id="d7501e107">Parameter</th>
+<th class="cellalignment57" id="d7501e109">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d7501e113" headers="d7501e107">username</td>
+<td class="cellalignment58" headers="d7501e113 d7501e109">A unique hierarchical name for a user. For example, <code class="codeph">/mytenant/myuser</code>.
+<p>Object names can contain only alphanumeric characters, hyphens, and periods. Object names are case-sensitive.</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d7501e123" headers="d7501e107">fullname</td>
+<td class="cellalignment58" headers="d7501e123 d7501e109">Full name of the user</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d7501e128" headers="d7501e107">email</td>
+<td class="cellalignment58" headers="d7501e128 d7501e109">Valid email address</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d7501e133" headers="d7501e107">role</td>
+<td class="cellalignment58" headers="d7501e133 d7501e109">(Optional) The role of a user in the system.
+<p>This option is used by the cloud administrator. A tenant administrator can discard this option.&nbsp;Oracle Cloud Administrator uses the role option to add one of the following roles to a user:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph">/cloud/admin</code> for cloud administrators.</p>
+</li>
+<li>
+<p><code class="codeph">/cloud/monitor</code> for cloud monitors.</p>
+</li>
+<li>
+<p><code class="codeph">/<span class="variable">tenant_name</span>/admin</code> for tenant administrators.</p>
+</li>
+<li>
+<p><code class="codeph">/<span class="variable">tenant_name</span>/users</code> for tenant users</p>
+</li>
+</ul>
+<p>If this option is not specified, then the default role of <code class="codeph">/<span class="variable">tenant_name</span>/users</code> is granted.</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d7501e175" headers="d7501e107">password</td>
+<td class="cellalignment58" headers="d7501e175 d7501e109">(Optional) User password.
+<div class="p">The password for a user must meet the following requirements:
+<ul style="list-style-type: disc;">
+<li>
+<p>Alphanumeric.</p>
+</li>
+<li>
+<p>At least 6 characters&nbsp;in length.</p>
+</li>
+<li>
+<p>At least 5 unique characters. For example, "azylaz" is not a valid password but "azylmz" is valid.&nbsp;</p>
+</li>
+<li>
+<p>Can contain underscore and dash.</p>
+</li>
+<li>
+<p>Must not contain a sequence of characters. For example, "abcde1" and "asdfgh" are not valid passwords.&nbsp;</p>
+</li>
+<li>
+<p>Must not contain a dictionary word.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/user/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Request Body</p>
+<pre dir="ltr">
+{
+        "username": "/mytenant/myuser", 
+        "blacklisted": false, 
+        "uri": null, 
+        "role": "", 
+        "groups": [], 
+        "fullname": "myuserfullname", 
+        "password": "zaqwsx1234", 
+        "email": "myuser@example.com"
+}
+
+</pre></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Response Body</p>
+<pre dir="ltr">
+{
+        "username": "/mytenant/myuser", 
+        "customer": "mytenant", 
+        "blacklisted": false, 
+        "uri": "https://api/user/mytenant/myuser", 
+        "id": "f36f54ca-e8d2-4e56-93acae392c4f1", 
+        "role": "/mytenant/users", 
+        "groups": ["/mytenant/users"], 
+        fullname": "myuserfullname", 
+        "password": "", 
+        "email": "myuser@example.com"
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-A7373707-66C7-44A5-B0EA-1B02FE81C439"></a>
+<h2 id="ELUAP-GUID-A7373707-66C7-44A5-B0EA-1B02FE81C439" class="sect2">Delete User</h2>
+<div>
+<p>This API enables you to delete an existing user.</p>
+<div class="section">
+<p class="subhead2">Method</p>
+<p>DELETE</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/user/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/user/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI Parameter</p>
+<div class="tblformal" id="GUID-A7373707-66C7-44A5-B0EA-1B02FE81C439__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment56" summary="This table specifies parameter and description for deleting a user.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment57" id="d7501e272">Parameter</th>
+<th class="cellalignment57" id="d7501e274">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d7501e278" headers="d7501e272">name</td>
+<td class="cellalignment58" headers="d7501e278 d7501e274">Hierarchical name of the user to be deleted. For example, <code class="codeph">/mytenant/myuser</code>, and <code class="codeph">/cloud/myuser</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/user/mytenant/myuser1</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-DC01DD44-753F-42E7-A0B9-E07AA66C55A5"></a>
+<h2 id="ELUAP-GUID-DC01DD44-753F-42E7-A0B9-E07AA66C55A5" class="sect2">Update User</h2>
+<div>
+<p>This API enables you to update user information.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-DC01DD44-753F-42E7-A0B9-E07AA66C55A5__GUID-816ABE58-FC53-4A42-B72F-775600381A7B">
+<p class="notep1">Note:</p>
+<p>Tenant users can only update their password and email address.</p>
+</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Method</p>
+<p><code class="codeph">PUT</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/user/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<code class="codeph">api_endpoint</code>/user/<code class="codeph">name</code></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI Parameter</p>
+<div class="tblformal" id="GUID-DC01DD44-753F-42E7-A0B9-E07AA66C55A5__THISTABLESPECIFIESTHEURIPARAMETERAN-626D7072">
+<table class="cellalignment56" summary="This table specifies the URI parameter and description for updating a user.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment57" id="d7501e355">Parameter</th>
+<th class="cellalignment57" id="d7501e357">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d7501e361" headers="d7501e355">name</td>
+<td class="cellalignment58" headers="d7501e361 d7501e357">A unique hierarchical name for a user. For example, <code class="codeph">/mytenant/myuser</code> and <code class="codeph">/cloud/myuser</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Request Body Parameters</p>
+<div class="tblformal" id="GUID-DC01DD44-753F-42E7-A0B9-E07AA66C55A5__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment56" summary="This table lists the request body parameters and descriptions for updating the user.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment57" id="d7501e381">Parameter</th>
+<th class="cellalignment57" id="d7501e383">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d7501e387" headers="d7501e381">fullname</td>
+<td class="cellalignment58" headers="d7501e387 d7501e383">(Optional) Full name of the user</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d7501e392" headers="d7501e381">email</td>
+<td class="cellalignment58" headers="d7501e392 d7501e383">(Optional) Valid email address</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d7501e397" headers="d7501e381">role</td>
+<td class="cellalignment58" headers="d7501e397 d7501e383">(Optional) The role of a user in the system.
+<p>This option is used by the cloud administrator. A tenant administrator can discard this option.&nbsp;A cloud administrator uses the role option to add one of the following roles to a user:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph">/cloud/admin</code> for cloud administrators.</p>
+</li>
+<li>
+<p><code class="codeph">/cloud/monitor</code> for cloud monitors.</p>
+</li>
+<li>
+<p><code class="codeph">/<span class="variable">tenant_name</span>/admin</code> for tenant administrators.</p>
+</li>
+<li>
+<p><code class="codeph">/<span class="variable">tenant_name</span>/users</code> for tenant users</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d7501e431" headers="d7501e381">password</td>
+<td class="cellalignment58" headers="d7501e431 d7501e383">(Optional) User password.
+<div class="p">The password for a user must meet the following requirements:
+<ul style="list-style-type: disc;">
+<li>
+<p>Alphanumeric.</p>
+</li>
+<li>
+<p>At least 6 characters&nbsp;in length.</p>
+</li>
+<li>
+<p>At least 5 unique characters. For example, "azylaz" is not a valid password but "azylmz" is valid.&nbsp;</p>
+</li>
+<li>
+<p>Can contain underscore and dash.</p>
+</li>
+<li>
+<p>Must not contain a sequence of characters. For example, "abcde1" and "asdfgh" are not valid passwords.&nbsp;</p>
+</li>
+<li>
+<p>Must not contain a dictionary word.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d7501e457" headers="d7501e381">blacklisted</td>
+<td class="cellalignment58" headers="d7501e457 d7501e383">(Optional) Specifies if the user is blacklisted</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/user/mytenant/myuser</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Request Body</p>
+<pre dir="ltr">
+{
+        "username": "/mytenant/myuser", 
+        "fullname": "myuserfullname", 
+        "password": "", 
+        "email": "new.email@example.com"
+}
+</pre></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Response Body</p>
+<pre dir="ltr">
+{
+        "username": "/mytenant/myuser", 
+        "customer": "mytenant", 
+        "blacklisted": false, 
+        "uri": "https://api/user/mytenant/myuser", 
+        "id": "f36f54ca-e8d2-4e56-9371-0acae392c4f1", 
+        "role": "/mytenant/users", 
+        "groups": ["/mytenant/users"], 
+        "fullname": "myuserfullname", 
+        "password": "", 
+        "email": "new.email@example.com"
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-F09B4C03-7B44-4ADB-99A4-1527688E2492"></a>
+<h2 id="ELUAP-GUID-F09B4C03-7B44-4ADB-99A4-1527688E2492" class="sect2">Retrieve User Details</h2>
+<div>
+<div class="section">You can retrieve the user details using REST APIs.</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE.htm#GUID-3C90ED44-BD17-4AE4-A001-19464F0B940E" title="This API enables you to discover a list of users in a specific container.">Discover Users</a></p>
+</li>
+<li>
+<p><a href="GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE.htm#GUID-DC774431-C003-4579-984C-D602DE1EAA88" title="This API enables you to retrieve information for a specific user.">Get User</a></p>
+</li>
+<li>
+<p><a href="GUID-CE0F24CE-B243-4EAD-8217-8D17FB481FFE.htm#GUID-29BFB645-3C27-4C95-BA0F-50A4D08C00A0" title="This API enables you to list users in a specific container.">List Users</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="props_rev_3"><a id="GUID-3C90ED44-BD17-4AE4-A001-19464F0B940E"></a>
+<h3 id="ELUAP-GUID-3C90ED44-BD17-4AE4-A001-19464F0B940E" class="sect3">Discover Users</h3>
+<div>
+<p>This API enables you to discover a list of users in a specific container.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-3C90ED44-BD17-4AE4-A001-19464F0B940E__GUID-3C704071-7208-409A-B100-F6443AFF0802">
+<p class="notep1">Note:</p>
+The discover API calls display the names of the objects in the specified container, not the details about the objects. To list the names of the objects, you must set the <code class="codeph">Accept</code> header to <code class="codeph">application/oracle-compute-v3+directory+json</code>. For all other purposes, you must set the <code class="codeph">Accept</code> header to <code class="codeph">application/oracle-compute-v3+json</code>.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Method</p>
+<p><code class="codeph">GET</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">REST Resource</p>
+<p><code class="codeph">/user/<span class="variable">container</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/user/<span class="variable">container</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI Parameters</p>
+<div class="tblformal" id="GUID-3C90ED44-BD17-4AE4-A001-19464F0B940E__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment56" summary="This table specifies the URI parameter and description for listing all users in a container.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment57" id="d7501e595">Parameter</th>
+<th class="cellalignment57" id="d7501e597">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d7501e601" headers="d7501e595">container</td>
+<td class="cellalignment58" headers="d7501e601 d7501e597">Hierarchical name-space for users.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/user/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example Response Body</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<pre dir="ltr">
+{"result": ["/mytenant/administrator", "/mytenant/user123"]}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-DC774431-C003-4579-984C-D602DE1EAA88"></a>
+<h3 id="ELUAP-GUID-DC774431-C003-4579-984C-D602DE1EAA88" class="sect3">Get User</h3>
+<div>
+<p>This API enables you to retrieve information for a specific user.</p>
+<div class="section">
+<p class="subhead3">Method</p>
+<p><code class="codeph">GET</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">REST Resource</p>
+<p><code class="codeph">/user/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/user/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI Parameter</p>
+<div class="tblformal" id="GUID-DC774431-C003-4579-984C-D602DE1EAA88__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment56" summary="This table specifies the URI parameter and description for retrieving details of a user.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment57" id="d7501e675">Parameter</th>
+<th class="cellalignment57" id="d7501e677">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d7501e681" headers="d7501e675">name</td>
+<td class="cellalignment58" headers="d7501e681 d7501e677">Hierarchical name of the user. For example, <code class="codeph">/mytenant/myuser</code> and <code class="codeph">/cloud/myuser</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/user/mytenant/myuser</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example Response Body</p>
+<pre dir="ltr">
+{
+        "username": "/mytenant/myuser", 
+        "customer": "mytenant", 
+        "blacklisted": false, 
+        "uri": "https://api/user/mytenant/myuser", 
+        "id": "f36f54ca-e8d2-4e56-9371-0acae392c4f1", 
+        "role": "/mytenant/users", 
+        "groups": ["/mytenant/users"], 
+        "fullname": "myuserfullname", 
+        "password": "", 
+        "email": "myuser@example.com"
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-29BFB645-3C27-4C95-BA0F-50A4D08C00A0"></a>
+<h3 id="ELUAP-GUID-29BFB645-3C27-4C95-BA0F-50A4D08C00A0" class="sect3">List Users</h3>
+<div>
+<p>This API enables you to list users in a specific container.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-29BFB645-3C27-4C95-BA0F-50A4D08C00A0__GUID-0AC730C8-DA9A-4330-8926-4B5FD1A50A4B">
+<p class="notep1">Note:</p>
+You can list only tenant users in your tenancy.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Method</p>
+<p><code class="codeph">GET</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">REST Resource</p>
+<p><code class="codeph">/user/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI</p>
+<p><code class="codeph">https://<code class="codeph">api_endpoint</code>/user/<span class="variable">container</span>?role=<span class="variable">roleValue</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI Parameters</p>
+<div class="tblformal" id="GUID-29BFB645-3C27-4C95-BA0F-50A4D08C00A0__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment56" summary="This table specifies the URI parameters and descriptions for listing users.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment57" id="d7501e765">Parameter</th>
+<th class="cellalignment57" id="d7501e767">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d7501e771" headers="d7501e765">container</td>
+<td class="cellalignment58" headers="d7501e771 d7501e767">Hierarchical name-space for the user.</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment58" id="d7501e776" headers="d7501e765">role=<span class="variable">roleValue</span></td>
+<td class="cellalignment58" headers="d7501e776 d7501e767">(Optional) The role of a user in the system.
+<div class="p">You can filter the list output based on user role by specifying one of the following:
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph">/cloud/admin</code> for cloud administrators</p>
+</li>
+<li>
+<p><code class="codeph">/cloud/monitor</code> for cloud monitors</p>
+</li>
+<li>
+<p><code class="codeph">/<span class="variable">tenant_name</span>/admin</code> for tenant administrators</p>
+</li>
+<li>
+<p><code class="codeph">/<span class="variable">tenant_name</span>/users</code> for tenant users.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/user/mytenant/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example Response Body</p>
+<pre dir="ltr">
+{"result": [
+        {
+                "username": "/mytenant/administrator", 
+                "customer": "mytenant", "blacklisted": false, 
+                "uri": "https://api/user/mytenant/administrator", 
+                "id": "1ccf2e90-39aa-4b73-bca8-da9fdf8c6441", 
+                "role": "/mytenant/admin", 
+                "groups": ["/mytenant/admin"], 
+                "fullname": "Administrator", "password": "", 
+                "email": "myuser@example.com"
+        }, 
+
+        {
+                "username": "/mytenant/myuser", 
+                "customer": "mytenant", 
+                "blacklisted": false, 
+                "uri": "https://api/user/mytenant/myuser", 
+                "id": "f36f54ca-e8d2-4e56-9371-0acae392c4f1", 
+                "role": "/mytenant/users", 
+                "groups": ["/mytenant/users"], 
+                "fullname": "myuserfullname", 
+                "password": "", 
+                "email": "myuser@example.com"
+        }
+]}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment49">
+<tr>
+<td class="cellalignment59">
+<table class="cellalignment54">
+<tr>
+<td class="cellalignment53"><a href="GUID-ADDF21C4-2B79-4A5D-A3AA-1068218CFC15.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment53"><a href="GUID-137014B6-4301-418F-BB31-BA3097E1263A.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment61">
+<table class="cellalignment52">
+<tr>
+<td class="cellalignment53"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment53"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

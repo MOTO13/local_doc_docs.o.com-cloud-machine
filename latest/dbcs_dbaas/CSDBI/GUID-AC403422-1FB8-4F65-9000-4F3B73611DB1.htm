@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Storage Volumes and File System Layout</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="This section provides information about the storage volumes and file system layout of a newly created database deployment on Oracle Database Cloud Service that hosts an Oracle Real Application Clusters (Oracle RAC) database." />
+<meta name="dcterms.created" content="2017-06-19T15:22:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Database Cloud Service" />
+<meta name="dcterms.identifier" content="E72994-04" />
+<meta name="dcterms.isVersionOf" content="CSDBI" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-70A912B7-9EAD-482B-A484-18F94A35356C.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-10D73D2E-AAD7-46BF-8DC1-1033282AFB14.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSDBI.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSDBI.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSDBI.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-AC403422-1FB8-4F65-9000-4F3B73611DB1"></a> <span id="PAGE" style="display:none;">136/190</span> <!-- End Header -->
+<h1 id="CSDBI-GUID-AC403422-1FB8-4F65-9000-4F3B73611DB1" class="sect1">Storage Volumes and File System Layout</h1>
+<div>
+<p>This section provides information about the storage volumes and file system layout of a newly created database deployment on <span>Oracle Database Cloud Service</span> that hosts an Oracle Real Application Clusters (Oracle RAC) database.</p>
+<p>When the database deployment is created, the following Oracle Compute Cloud Service storage volumes are created and attached to the two compute nodes.</p>
+<div class="tblformal" id="GUID-AC403422-1FB8-4F65-9000-4F3B73611DB1__GUID-2A7415CC-299A-42D6-80E2-AFD6CA8793A1">
+<table class="cellalignment11" summary="Table listing storage volumes in column 1 and descriptions of the storage volumes in column 2.">
+<thead>
+<tr class="cellalignment2">
+<th class="cellalignment36" id="d34792e20">Storage Volume</th>
+<th class="cellalignment37" id="d34792e23">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment2">
+<td class="cellalignment38" id="d34792e28" headers="d34792e20">
+<p><span class="bold">boot</span> (two volumes, one for each compute node)</p>
+</td>
+<td class="cellalignment39" headers="d34792e28 d34792e23">
+<p>31 GB volume for operating system files, user directories and swap space.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment38" id="d34792e37" headers="d34792e20">
+<p><span class="bold">bits</span> (two volumes, one for each compute node)</p>
+</td>
+<td class="cellalignment39" headers="d34792e37 d34792e23">
+<p>70 GB volume for Oracle Database and Oracle Grid Infrastructure software.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment38" id="d34792e46" headers="d34792e20">
+<p><span class="bold">data</span> (one volume accessed by both compute nodes)</p>
+</td>
+<td class="cellalignment39" headers="d34792e46 d34792e23">
+<p>Shared storage for database files. GB size equal to two plus the value provided in the <span class="bold">Usable Data Storage</span> field during the database deployment creation process, with a minimum of 15 GB.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment38" id="d34792e58" headers="d34792e20">
+<p><span class="bold">fra</span> (one volume accessed by both compute nodes)</p>
+</td>
+<td class="cellalignment39" headers="d34792e58 d34792e23">
+<p>Shared storage for the fast recovery area. GB size depends on the choice of <span class="bold">Backup Destination</span> during the database deployment creation process:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Remote Storage Only</span>: GB size equal to 1.7 times the size of the <span class="bold">data</span> volume.</p>
+</li>
+<li>
+<p><span class="bold">None</span>: GB size equal to 0.7 times the size of the <span class="bold">data</span> volume, with a minimum of 7 GB</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment38" id="d34792e87" headers="d34792e20">
+<p><span class="bold">redo</span> (one volume accessed by both compute nodes)</p>
+</td>
+<td class="cellalignment39" headers="d34792e87 d34792e23">
+<p>20 GB shared storage volume for redo logs.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>These storage volumes are mounted on the compute nodes as follows.</p>
+<div class="tblformal" id="GUID-AC403422-1FB8-4F65-9000-4F3B73611DB1__GUID-ACCBB2C5-A2AF-44E8-9F13-D104CB48DE18">
+<table class="cellalignment11" summary="Table listing file system mounts in column 1 and descriptions of the mounts column 2.">
+<thead>
+<tr class="cellalignment2">
+<th class="cellalignment27" id="d34792e105">File System Mount</th>
+<th class="cellalignment28" id="d34792e108">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment2">
+<td class="cellalignment29" id="d34792e113" headers="d34792e105">
+<p>swap</p>
+</td>
+<td class="cellalignment30" headers="d34792e113 d34792e108">
+<p>Swap space; 4 GB allocated from the <span class="bold">boot</span> Compute Cloud storage volume.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment29" id="d34792e123" headers="d34792e105">
+<p><code class="codeph">/</code> (root)</p>
+</td>
+<td class="cellalignment30" headers="d34792e123 d34792e108">
+<p>Operating system files; 16 GB allocated from the <span class="bold">boot</span> Compute Cloud storage volume.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment29" id="d34792e135" headers="d34792e105">
+<p><code class="codeph">/boot</code></p>
+</td>
+<td class="cellalignment30" headers="d34792e135 d34792e108">
+<p>Operating system kernel; 500 MB allocated from the <span class="bold">boot</span> Compute Cloud storage volume.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment29" id="d34792e146" headers="d34792e105">
+<p><code class="codeph">/u01</code></p>
+</td>
+<td class="cellalignment30" headers="d34792e146 d34792e108">
+<p>Oracle product software; the entire <span class="bold">bits</span> Compute Cloud storage volume.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment29" id="d34792e157" headers="d34792e105">
+<p><code class="codeph">/u02</code></p>
+</td>
+<td class="cellalignment30" headers="d34792e157 d34792e108">
+<p>Oracle Database data storage; the entire <span class="bold">data</span> Compute Cloud storage volume. An Oracle ASM diskgroup named DATA is created on the storage volume and Oracle ACFS is used to mount it.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment29" id="d34792e168" headers="d34792e105">
+<p><code class="codeph">/u03</code></p>
+</td>
+<td class="cellalignment30" headers="d34792e168 d34792e108">
+<p>Database backup storage; the entire <span class="bold">fra</span> Compute Cloud storage volume. An Oracle ASM diskgroup named FRA is created on the storage volume and Oracle ACFS is used to mount it.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment29" id="d34792e179" headers="d34792e105">
+<p><code class="codeph">/u04</code></p>
+</td>
+<td class="cellalignment30" headers="d34792e179 d34792e108">
+<p>Database redo logs; the entire <span class="bold">redo</span> Compute Cloud storage volume. An Oracle ASM diskgroup named REDO is created on the storage volume and Oracle ACFS is used to mount it.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="GUID-70A912B7-9EAD-482B-A484-18F94A35356C.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="GUID-10D73D2E-AAD7-46BF-8DC1-1033282AFB14.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

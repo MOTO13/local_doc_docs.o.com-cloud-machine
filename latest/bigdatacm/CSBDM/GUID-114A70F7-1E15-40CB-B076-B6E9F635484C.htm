@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Exploring the Oracle Big Data Cloud Service Console Clusters Page</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="The Oracle Big Data Cloud Service console lists all the clusters in the current identity domain." />
+<meta name="dcterms.created" content="2017-05-03T11:44:48Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Big Data Cloud Machine" />
+<meta name="dcterms.identifier" content="E85986-01" />
+<meta name="dcterms.isVersionOf" content="CSBDM" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="http://docs.oracle.com/cloud-machine/latest/" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-505CE032-FD28-424B-955A-0EC7B55D31FB.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-0369E67B-5F8C-4A2A-AD7C-43FC46799912.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSBDM.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSBDM.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSBDM.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-114A70F7-1E15-40CB-B076-B6E9F635484C"></a> <span id="PAGE" style="display:none;">50/51</span> <!-- End Header -->
+<h1 id="CSBDM-GUID-114A70F7-1E15-40CB-B076-B6E9F635484C" class="sect1">Exploring the Oracle Big Data Cloud Service Console Clusters Page</h1>
+<div>
+<p>The <span>Oracle Big Data Cloud Service</span> console lists all the clusters in the current identity domain.</p>
+<div class="section" id="GUID-114A70F7-1E15-40CB-B076-B6E9F635484C__WHATYOUSEEONTHEORACLEBIGDATACLOUDSE-82F37139">
+<p class="subhead1">What You See On the Page</p>
+<p>The following table describes each item on the <span>Oracle Big Data Cloud Service</span> console page.</p>
+<div class="infobox-note" id="GUID-114A70F7-1E15-40CB-B076-B6E9F635484C__GUID-714B82E4-9BFE-4498-A33D-69F6F69F9BDD">
+<p class="notep1">Note:</p>
+Depending on your role, you may not have access to all the options on this page. Only a user with Administrator privileges has access to all.</div>
+<div class="tblformal" id="GUID-114A70F7-1E15-40CB-B076-B6E9F635484C__GUID-54375B8C-674F-47E7-9BEC-F19056D10A53">
+<table class="cellalignment77" summary="This table describes each item on the Oracle Big Data Cloud Service console.">
+<thead>
+<tr class="cellalignment68">
+<th class="cellalignment78" id="d21493e36">Element</th>
+<th class="cellalignment78" id="d21493e39">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d21493e44" headers="d21493e36"><span class="bold">Clusters</span></td>
+<td class="cellalignment79" headers="d21493e44 d21493e39">
+<p>The <span class="bold">Clusters</span> link displays the current page, the <span>Oracle Big Data Cloud Service</span> console.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d21493e57" headers="d21493e36"><span class="bold">Dashboard</span></td>
+<td class="cellalignment79" headers="d21493e57 d21493e39">
+<p>Click the <span class="bold">Dashboard</span> link to displays your <span class="wintitle">My Services Dashboard</span>, where you can check the overall status of your active services for the current data center and identity domain.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d21493e70" headers="d21493e36"><span class="bold">Users</span></td>
+<td class="cellalignment79" headers="d21493e70 d21493e39">
+<p>Click the <span class="bold">Users</span> link to display the <span class="wintitle">My Services Users</span> page, where you can manage users and perform access control.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d21493e83" headers="d21493e36"><span class="bold">Notifications</span></td>
+<td class="cellalignment79" headers="d21493e83 d21493e39">
+<p>Click the <span class="bold">Notifications</span> link to display the <span class="wintitle">My Services Notifications</span> page, where you can monitor any notifications from the system, including service outages and planned service outages (for regular maintenance).</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d21493e96" headers="d21493e36"><span class="bold">Started Clusters</span></td>
+<td class="cellalignment79" headers="d21493e96 d21493e39">
+<p>Total number of clusters started, out of the total number in the service.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d21493e103" headers="d21493e36"><span class="bold">Nodes</span></td>
+<td class="cellalignment79" headers="d21493e103 d21493e39">
+<p>Total number of nodes in all running clusters, out of the total number allocated for the service.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d21493e110" headers="d21493e36"><span class="bold">Memory</span></td>
+<td class="cellalignment79" headers="d21493e110 d21493e39">
+<p>Total amount of memory allocated across all clusters in the service.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d21493e117" headers="d21493e36"><span class="bold">HDFS Storage</span></td>
+<td class="cellalignment79" headers="d21493e117 d21493e39">
+<p>Total amount of Hadoop Distributed File System (HDFS) storage allocated across all clusters in the service.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d21493e124" headers="d21493e36"><span class="bold">Create Cluster</span></td>
+<td class="cellalignment79" headers="d21493e124 d21493e39">
+<p>Click to create a new cluster. See <a href="GUID-817CB14B-F5F3-44E7-A77A-518ABA354260.htm" title="You can create a single cluster from the resources allocated in an Oracle Big Data Cloud Machine instance.">Creating a Cluster</a>.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d21493e140" headers="d21493e36"><span class="bold">Clusters</span></td>
+<td class="cellalignment79" headers="d21493e140 d21493e39">
+<p>All the clusters in the account, including running, stopped, and failed clusters.</p>
+.</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d21493e148" headers="d21493e36">
+<p><img width="58" height="56" src="img/GUID-D7E81F05-F94A-490E-B5BC-9CE218F94647-default.jpg" alt="Big Data Cloud Service cluster icon" title="Big Data Cloud Service cluster icon" /> <span class="italic"><span class="bold">Cluster name</span></span></p>
+<p><span class="italic">Status</span></p>
+</td>
+<td class="cellalignment79" headers="d21493e148 d21493e39">
+<p>Each box shows information about a single cluster. The icon changes, depending on the status of the cluster, and the status is displayed below the cluster name.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d21493e164" headers="d21493e36"><img width="14" height="15" src="img/GUID-77A57F12-760D-4DA7-A575-52504188E378-default.gif" alt="Menu icon" title="Menu icon" /> (for the cluster)</td>
+<td class="cellalignment79" headers="d21493e164 d21493e39">
+<p>Click the icon to open a menu with these options:</p>
+<ul style="list-style-type: disc;">
+<li><span class="bold">View Details</span>&mdash;View details of the cluster on the Oracle Big Data Cloud Cluster Overview page. See <a href="GUID-0369E67B-5F8C-4A2A-AD7C-43FC46799912.htm" title="The Oracle Big Data Cloud Service Cluster Overview page displays details about the cluster.">Exploring the Oracle Big Data Cloud Service Cluster Details Page</a>.</li>
+<li><span class="bold">Open Cloudera Manager</span>&mdash;Open the Cloudera Manager application to manage the Hadoop cluster.</li>
+<li><span class="bold">Edit</span>&mdash;Open the <span class="bold">Edit <span class="variable">cluster name</span></span> dialog to edit the description and to update the SSH public key for the cluster. See <a href="GUID-BEA41872-F433-4C0A-B501-EBE98E05C76F.htm" title="A cluster must have a Secure Shell (SSH) key pair associated with it to permit secure access for the opc user. When you create a cluster, you must specify the public key. After the cluster has been created, you can replace that key (or any subsequently assigned key) with a new one.">Updating the SSH Public Key for a Cluster</a>.</li>
+<li><span class="bold">Restart Cluster VMs</span>&mdash;Restart all virtual machines (VMs) hosting the nodes of the cluster.</li>
+<li><span class="bold">Delete Instance</span>&mdash;Delete the cluster.</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d21493e215" headers="d21493e36"><span class="bold">Version</span></td>
+<td class="cellalignment79" headers="d21493e215 d21493e39">
+<p>Version of <span>Oracle Big Data Cloud Machine</span> software running on this cluster.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d21493e225" headers="d21493e36"><span class="bold">No of Nodes</span></td>
+<td class="cellalignment79" headers="d21493e225 d21493e39">
+<p>Number of nodes allocated to this cluster.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d21493e232" headers="d21493e36"><span class="bold">Secure Setup</span></td>
+<td class="cellalignment79" headers="d21493e232 d21493e39">
+<p>Indicates whether or not security, Kerberos, is enabled for this cluster.</p>
+</td>
+</tr>
+<tr class="cellalignment68">
+<td class="cellalignment79" id="d21493e239" headers="d21493e36"><span class="bold">Applications</span></td>
+<td class="cellalignment79" headers="d21493e239 d21493e39">Number of applications installed on the cluster (not including CDH software); for example, Oracle Big Data Discovery Cloud Service.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment67">
+<tr>
+<td class="cellalignment74">
+<table class="cellalignment72">
+<tr>
+<td class="cellalignment71"><a href="GUID-505CE032-FD28-424B-955A-0EC7B55D31FB.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment71"><a href="GUID-0369E67B-5F8C-4A2A-AD7C-43FC46799912.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment76">
+<table class="cellalignment70">
+<tr>
+<td class="cellalignment71"><a href="http://docs.oracle.com/cloud-machine/latest/"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment71"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment71"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment71"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

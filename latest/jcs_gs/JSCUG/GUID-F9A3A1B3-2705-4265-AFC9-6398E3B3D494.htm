@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Configuring Automated Backups for an Oracle Java Cloud Service Instance on OPCM</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can configure backups for an Oracle Java Cloud Service instance to customize when the service instance is automatically backed up and how backups are stored." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-CF725B2D-DC34-4E1C-BAD7-2955ED03430C.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-20AE6F0E-FF15-47F2-9CBF-7B9CC31BBFCA.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-F9A3A1B3-2705-4265-AFC9-6398E3B3D494"></a> <span id="PAGE" style="display:none;">66/131</span> <!-- End Header -->
+<a id="JSCUG3314"></a>
+<h1 id="JSCUG-GUID-F9A3A1B3-2705-4265-AFC9-6398E3B3D494" class="sect1">Configuring Automated Backups for an <span>Oracle Java Cloud Service</span> Instance <span>on <span>OPCM</span></span></h1>
+<div>
+<p>You can configure backups for an <span>Oracle Java Cloud Service</span> instance to customize when the service instance is automatically backed up and how backups are stored.</p>
+<div class="section">
+<p>Specifically, you can customize the following properties of the service instance:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">When automated backups are initiated.</span> By default, backups are performed at the following times:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Full backups are initiated weekly starting 12 hours after the service instance was created, rounded to the nearest five-minute interval.</p>
+<p>For example, if a service instance is created at 1:01 PM on a Monday, full backups are initiated at 1:00 AM on Tuesdays.</p>
+</li>
+<li>
+<p>Incremental backups are initiated every day except the day of a full backup at the same time that full backups are initiated.</p>
+<p>For example, if a service instance is created at 1:01 PM on a Monday, incremental backups are initiated at 1:00 AM every day except Tuesdays.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="bold">Where backups are stored.</span> By default, backups are stored in the remote file system that you provided when the service instance was created.</p>
+</li>
+</ul>
+<p>Because the changes affect only one service instance, you can configure different values for these properties for each of your service instances. However, you cannot configure automated backups for a service instance while it is currently being backed up.</p>
+<p>Alternatively, you can disable all backups. See <a href="GUID-7472FA73-3CD6-4E2F-A78F-BB715A57CC5B.htm" title="Disable both automated and on-demand backups for an Oracle Java Cloud Service instance.">Disabling or Enabling Backups for an Oracle Java Cloud Service Instance on OPCM</a>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">To configure automated backups for an <span>Oracle Java Cloud Service</span> instance:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Navigate to the <span class="wintitle">Backup</span> page.</span>
+<ol>
+<li class="substepexpand"><span>Access the <span>Oracle Java Cloud Service</span> console.</span></li>
+<li class="substepexpand"><span>Click the name of the service instance for which you want to configure automated backups.</span>
+<div>The <span class="wintitle">Oracle Java Cloud Service Instance</span> page is displayed with the Overview tile in focus, displaying detailed information about the service instance.</div>
+</li>
+<li class="substepexpand"><span>Click the <span class="bold">Administration</span> tile.</span>
+<div>The <span class="wintitle">Oracle Java Cloud Service Instance</span> page is refreshed with the Administration tile in focus.</div>
+</li>
+<li class="substepexpand"><span>Click the <span class="bold">Backup</span> tab.</span>
+<div>The <span class="wintitle">Backup</span> page is displayed.</div>
+</li>
+</ol>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Configure Backups</span>.</span>
+<div>The <span class="wintitle">Configure Backups</span> dialog box opens.</div>
+</li>
+<li class="stepexpand"><span>In the <span class="wintitle">Configure Backups</span> dialog box, set the options to configure automated backups for the service instance.</span>
+<ol>
+<li class="substepexpand"><span>In the Schedule section, set options to configure when automated backups are performed:</span>
+<div>
+<div class="infobox-note" id="GUID-F9A3A1B3-2705-4265-AFC9-6398E3B3D494__GUID-37DEE959-1A6B-49E4-BC9B-2B42B1F42286">
+<p class="notep1">Note:</p>
+<p>All times must be for the Coordinated Universal Time (UTC) time zone, not your local time zone.</p>
+</div>
+<div class="tblformal" id="GUID-F9A3A1B3-2705-4265-AFC9-6398E3B3D494__GUID-03E94758-1D35-4B0A-BEFC-A8E4DD04A4DA">
+<table class="cellalignment25" summary="This table describes the options for when automated backups of Oracle Java Cloud Service instances are performed.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d35968e142">Option</th>
+<th class="cellalignment27" id="d35968e145">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment28" id="d35968e150" headers="d35968e142">
+<p><span class="bold">Full Backup</span></p>
+</td>
+<td class="cellalignment29" headers="d35968e150 d35968e145">
+<p>From the drop-down lists, select the day of the week and the time of day UTC when you want full backups to be performed.</p>
+</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment28" id="d35968e158" headers="d35968e142">
+<p><span class="bold">Incremental Backup</span></p>
+</td>
+<td class="cellalignment29" headers="d35968e158 d35968e145">
+<p>From the drop-down list, select the time of day UTC when you want incremental backups to be performed.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</li>
+<li class="substepexpand"><span>In the <span class="bold">NFS Remote Backup</span> field, enter the remote file-system directory where you want backups to be stored.</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Save</span>.</span></li>
+</ol>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-CF725B2D-DC34-4E1C-BAD7-2955ED03430C.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-20AE6F0E-FF15-47F2-9CBF-7B9CC31BBFCA.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

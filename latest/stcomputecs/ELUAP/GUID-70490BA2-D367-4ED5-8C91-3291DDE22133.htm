@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Managing Storage Volumes</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-07T05:33:13Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine REST API Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E68443-07" />
+<meta name="dcterms.isVersionOf" content="ELUAP" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-F02212F3-0770-4A2E-B205-C32570719E69.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-A3D9830B-2E39-4D88-8E69-4CC3E3ABF864.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUAP.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-70490BA2-D367-4ED5-8C91-3291DDE22133"></a> <span id="PAGE" style="display:none;">28/40</span> <!-- End Header -->
+<h1 id="ELUAP-GUID-70490BA2-D367-4ED5-8C91-3291DDE22133" class="sect1">Managing Storage Volumes</h1>
+<div>
+<div class="section">
+<p>Storage volumes are pieces of storage of specific size created in the storage pool. You can attach them to an instance, either in an orchestration or after the instance has been launched.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-70490BA2-D367-4ED5-8C91-3291DDE22133.htm#GUID-1F21207E-5467-4DBA-9AE1-1E28DD303E50" title="This API enables you to add a storage volume.">Add Storage Volume</a></p>
+</li>
+<li>
+<p><a href="GUID-70490BA2-D367-4ED5-8C91-3291DDE22133.htm#GUID-A1A86DB9-90A2-47E7-A645-0BA2D0D1BD1F" title="This API enables you to delete a specific storage volume.">Delete Storage Volume</a></p>
+</li>
+<li>
+<p><a href="GUID-70490BA2-D367-4ED5-8C91-3291DDE22133.htm#GUID-7F23D4D3-788F-44E5-BB6D-A2726AD887FB" title="This API enables you to update a specific storage volume.">Update Storage Volume</a></p>
+</li>
+<li>
+<p><a href="GUID-70490BA2-D367-4ED5-8C91-3291DDE22133.htm#GUID-85843E15-8A46-41BF-952B-BDA80F9D653D" title="This API enables you to discover storage volumes in a specific container.This API enables you to retrieve information for a specific storage volume.This API enables you to list storage volumes.">Retrieve Storage Volume Details</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-1F21207E-5467-4DBA-9AE1-1E28DD303E50"></a>
+<h2 id="ELUAP-GUID-1F21207E-5467-4DBA-9AE1-1E28DD303E50" class="sect2">Add Storage Volume</h2>
+<div>
+<p>This API enables you to add a storage volume.</p>
+<div class="section">
+<p class="subhead2">Method</p>
+<p><code class="codeph">POST</code></p>
+<div class="infobox-note" id="GUID-1F21207E-5467-4DBA-9AE1-1E28DD303E50__GUID-95673BC7-313E-484F-AF19-43A96122D047">
+<p class="notep1">Note:</p>
+You can add only private volumes within your tenancy.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/storage/volume/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/storage/volume/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Request Body Parameters</p>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-1F21207E-5467-4DBA-9AE1-1E28DD303E50__PARAMETERSFORCREATINGASTORAGEVOLUME-640E3684">
+<div class="tblformal" id="GUID-1F21207E-5467-4DBA-9AE1-1E28DD303E50__GUID-EA7B4EB8-70C4-4A32-836B-1ED9140784F3">
+<table class="cellalignment62" summary="This table specifies the request body parameters and descriptions for adding new storage volume.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d19585e108">Parameter</th>
+<th class="cellalignment64" id="d19585e110">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d19585e114" headers="d19585e108">name</td>
+<td class="cellalignment66" headers="d19585e114 d19585e110">Name of this storage volume.
+<p>Object names can contain only alphanumeric characters, hyphens, and periods. Object names are case-sensitive.</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d19585e121" headers="d19585e108">size</td>
+<td class="cellalignment66" headers="d19585e121 d19585e110">The size of this storage volume measured in the number of bytes or multiples of bytes. The allowed range is from 1 GB to 2 TB, in increments of 1 GB.
+<p>Use one of the following abbreviations as the unit of measurement:</p>
+<div class="p">
+<ul style="list-style-type: disc;">
+<li>
+<p>B or b (bytes)</p>
+</li>
+<li>
+<p>K or k (kilobytes)</p>
+</li>
+<li>
+<p>M or m (megabytes)</p>
+</li>
+<li>
+<p>G or g (gigabytes)</p>
+</li>
+<li>
+<p>T or t (terabytes).</p>
+</li>
+</ul>
+</div>
+<p>For example, to create a volume of size 10 gigabytes, you can specify 10G, or 10240M, or 10485760K, and so on.</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d19585e148" headers="d19585e108">properties</td>
+<td class="cellalignment66" headers="d19585e148 d19585e110">A list of the storage properties that are associated with this storage volume.
+<p>The following storage properties are supported:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code class="codeph">/oracle/public/storage/default</code>&mdash;Default storage property for internal storage appliance.</p>
+</li>
+<li>
+<p><code class="codeph">/oracle/public/storage/latency</code>&mdash;Storage property for placing volumes on external storage appliance.</p>
+</li>
+<li>
+<p><code class="codeph">/oracle/public/storage/throughput</code>&mdash;Storage property for placing volumes on external storage appliance.</p>
+</li>
+</ul>
+<p>For information on setting up storage volumes on external storage appliances, see section <a class="olink ELUSE-GUID-8F2A30B0-E7F9-4EAC-988C-BA531E202A1F" target="_blank" href="../ELUSE/GUID-8F2A30B0-E7F9-4EAC-988C-BA531E202A1F.htm#ELUSE-GUID-8F2A30B0-E7F9-4EAC-988C-BA531E202A1F">Managing Storage Volumes</a> in <span class="italic">Using Oracle Compute Cloud Service</span>.</p>
+</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d19585e180" headers="d19585e108">description</td>
+<td class="cellalignment66" headers="d19585e180 d19585e110">(Optional) Description of the storage volume</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d19585e185" headers="d19585e108">source_storagevolume_name</td>
+<td class="cellalignment66" headers="d19585e185 d19585e110">(Optional) Name of the existing storage volume, from where the data will be copied when this volume is created</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d19585e190" headers="d19585e108">imagelist</td>
+<td class="cellalignment66" headers="d19585e190 d19585e110">(Optional) Name of the image list to use as source for this storage volume when created. This option must be paired with i<code class="codeph">magelist_entry</code> in order to reference a specific machine image.</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d19585e198" headers="d19585e108">imagelist_entry</td>
+<td class="cellalignment66" headers="d19585e198 d19585e110">(Optional) Specific the image list entry version to extract</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d19585e203" headers="d19585e108">tags</td>
+<td class="cellalignment66" headers="d19585e203 d19585e110">(Optional) A list of user-friendly strings which will tag the storage volume. Tags should be specified in the following syntax: <code class="codeph">"tags": ["tag1", "tag2"]</code></td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d19585e210" headers="d19585e108">quota</td>
+<td class="cellalignment66" headers="d19585e210 d19585e110">(Optional) The quota against which this volume will be created. &nbsp;If the quota is not specified, then the default quota of the tenancy (to which the user belongs) is used.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/storage/volume/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Request Body</p>
+<pre dir="ltr">
+{
+  "size": "10G",
+  "properties": [
+    "/oracle/public/storage/default"
+  ],
+  "name": "/mytenant/public/vol1"
+}
+</pre></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Response Body</p>
+<pre dir="ltr">
+{
+ "status": "Initializing",
+ "account": "/mytenant/default",
+ "writecache": false,
+ "managed": true,
+ "description": null,
+ "tags": [],
+ "bootable": false,
+ "hypervisor": null,
+ "quota": null,
+ "uri": "https://api.oc.example.com/storage/volume/mytenant/public/vol1",
+ "status_detail": "The storage volume is currently being initialized.",
+ "imagelist_entry": -1,
+ "storage_pool": "/mytenant/public/mypool",
+ "machineimage_name": null,
+ "status_timestamp": "2015-06-01T11:15:57Z",
+ "shared": false,
+ "imagelist": null,
+ "size": "10737418240",
+ "properties": ["/oracle/public/storage/default"],
+ "name": "/mytenant/public/vol1"
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-A1A86DB9-90A2-47E7-A645-0BA2D0D1BD1F"></a>
+<h2 id="ELUAP-GUID-A1A86DB9-90A2-47E7-A645-0BA2D0D1BD1F" class="sect2">Delete Storage Volume</h2>
+<div>
+<p>This API enables you to delete a specific storage volume.</p>
+<div class="section">
+<p class="subhead2">Method</p>
+<p><code class="codeph">DELETE</code></p>
+<div class="infobox-note" id="GUID-A1A86DB9-90A2-47E7-A645-0BA2D0D1BD1F__GUID-FAB4911E-D232-4C9D-AB78-36C282DE6007">
+<p class="notep1">Note:</p>
+You can delete only private volumes within your tenancy.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/storage/volume/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/storage/volume/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI Parameter</p>
+<div class="tblformal" id="GUID-A1A86DB9-90A2-47E7-A645-0BA2D0D1BD1F__GUID-74497592-8264-42C4-A3F8-53B7ABCF687C">
+<table class="cellalignment62" summary="This table specifies the URI parameter and description for deleting a storage volume.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d19585e289">Parameter</th>
+<th class="cellalignment64" id="d19585e291">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d19585e295" headers="d19585e289">name</td>
+<td class="cellalignment66" headers="d19585e295 d19585e291">Name of the storage volume</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/storage/volume/mytenant/public/vol1</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-7F23D4D3-788F-44E5-BB6D-A2726AD887FB"></a>
+<h2 id="ELUAP-GUID-7F23D4D3-788F-44E5-BB6D-A2726AD887FB" class="sect2">Update Storage Volume</h2>
+<div>
+<p>This API enables you to update a specific storage volume.</p>
+<div class="section">
+<p class="subhead2">Method</p>
+<p><code class="codeph">PUT</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">REST Resource</p>
+<p><code class="codeph">/storage/volume/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/storage/volume/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">URI Parameter</p>
+<div class="tblformal" id="GUID-7F23D4D3-788F-44E5-BB6D-A2726AD887FB__THISTABLESPECIFIESURIPARAMETERANDDE-6270C08B">
+<table class="cellalignment62" summary="This table specifies URI parameter and description for updating a storage volume.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d19585e363">Parameter</th>
+<th class="cellalignment64" id="d19585e365">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d19585e369" headers="d19585e363">name</td>
+<td class="cellalignment66" headers="d19585e369 d19585e365">Name of this storage volume</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Request Body Parameter</p>
+<div class="tblformal" id="GUID-7F23D4D3-788F-44E5-BB6D-A2726AD887FB__THISTABLESPECIFIESTHEREQUESTBODYPAR-6270C2E8">
+<table class="cellalignment62" summary="This table specifies the request body parameters and descriptions for updating a storage volume.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d19585e384">Parameter</th>
+<th class="cellalignment64" id="d19585e386">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d19585e390" headers="d19585e384">description</td>
+<td class="cellalignment66" headers="d19585e390 d19585e386">(Optional) Description of this storage volume</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d19585e395" headers="d19585e384">tags</td>
+<td class="cellalignment66" headers="d19585e395 d19585e386">(Optional) A list of user-friendly strings that will tag the storage volume. During an update, the list of tags specified becomes the new list. To preserve existing tags, the existing set must first be retrieved and any changes should be made to that list, and then that list must be specified for the update.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/storage/volume/mytenant/public/vol1</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Request Body</p>
+<pre dir="ltr">
+{
+ "description": "Updated Storage Volume",
+ "tags": ["Accounting Department Block Storage"],
+}
+
+</pre></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example Response Body</p>
+<pre dir="ltr">
+{
+ "status": "Online",
+ "account": "/mytenant/default",
+ "writecache": false,
+ "managed": true,
+ "description": "Updated Storage Volume",
+ "tags": ["Accounting Department Block Storage"],
+ "bootable": false,
+ "hypervisor": null,
+ "quota": null,
+ "uri": "https://api.oc.example.com/storage/volume/mytenant/public/vol1",
+ "status_detail": "The storage volume is online.",
+ "imagelist_entry": -1,
+ "storage_pool": "/mytenant/public/mypool",
+ "machineimage_name": null,
+ "status_timestamp": "2015-06-01T11:16:04Z",
+ "shared": false,
+ "imagelist": null,
+ "size": "10737418240",
+ "properties": ["/oracle/public/storage/default"],
+ "name": "/mytenant/public/vol1"
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-85843E15-8A46-41BF-952B-BDA80F9D653D"></a>
+<h2 id="ELUAP-GUID-85843E15-8A46-41BF-952B-BDA80F9D653D" class="sect2">Retrieve Storage Volume Details</h2>
+<div>
+<div class="section">You can retrieve storage volume details by using the REST API.</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-70490BA2-D367-4ED5-8C91-3291DDE22133.htm#GUID-D9C6804E-1529-4758-A823-818E7AD7F232" title="This API enables you to discover storage volumes in a specific container.">Discover Storage Volumes</a></p>
+</li>
+<li>
+<p><a href="GUID-70490BA2-D367-4ED5-8C91-3291DDE22133.htm#GUID-E4771C4C-E6AF-4E97-9AE6-3D2DCB30CF92" title="This API enables you to retrieve information for a specific storage volume.">Get Storage Volume</a></p>
+</li>
+<li>
+<p><a href="GUID-70490BA2-D367-4ED5-8C91-3291DDE22133.htm#GUID-9E73EB06-7908-485F-AB7B-CB7204EB2E95" title="This API enables you to list storage volumes.">List Storage Volumes</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect3"><a id="GUID-D9C6804E-1529-4758-A823-818E7AD7F232"></a>
+<h3 id="ELUAP-GUID-D9C6804E-1529-4758-A823-818E7AD7F232" class="sect3">Discover Storage Volumes</h3>
+<div>
+<p>This API enables you to discover storage volumes in a specific container.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-D9C6804E-1529-4758-A823-818E7AD7F232__GUID-80CFBBA1-7D15-4FA4-BF7B-F776E118E8F8">
+<p class="notep1">Note:</p>
+The discover API calls display the names of the objects in the specified container, not the details about the objects. To list the names of the objects, you must set the <code class="codeph">Accept</code> header to <code class="codeph">application/oracle-compute-v3+directory+json</code>. For all other purposes, you must set the <code class="codeph">Accept</code> header to <code class="codeph">application/oracle-compute-v3+json</code>.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Method</p>
+<p><code class="codeph">GET</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">REST Resource</p>
+<p><code class="codeph"><code class="codeph">/storage/volume/<span class="variable">container</span></code></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/storage/volume/<span class="variable">container</span>/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI Parameter</p>
+<div class="tblformal" id="GUID-D9C6804E-1529-4758-A823-818E7AD7F232__GUID-1C56FFA4-CA85-483D-B667-5B5CAD6B7F6F">
+<table class="cellalignment62" summary="This table specifies URI parameter and description for discovering storage volumes in a container.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d19585e535">Parameter</th>
+<th class="cellalignment64" id="d19585e538">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d19585e543" headers="d19585e535">container</td>
+<td class="cellalignment66" headers="d19585e543 d19585e538">Hierarchical namespace for storage volume.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/storage/volume/mytenant/public/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example Response Body</p>
+<pre dir="ltr">
+{
+  "result": [
+    "/mytenant/public/vol1"
+  ]
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-E4771C4C-E6AF-4E97-9AE6-3D2DCB30CF92"></a>
+<h3 id="ELUAP-GUID-E4771C4C-E6AF-4E97-9AE6-3D2DCB30CF92" class="sect3">Get Storage Volume</h3>
+<div>
+<p>This API enables you to retrieve information for a specific storage volume.</p>
+<div class="section">
+<p class="subhead3">Method</p>
+<p><code class="codeph">GET</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">REST Resource</p>
+<p><code class="codeph">/storage/volume/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/storage/volume/<span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI Parameter</p>
+<div class="tblformal" id="GUID-E4771C4C-E6AF-4E97-9AE6-3D2DCB30CF92__GUID-E8035205-BAA2-40F2-A051-DFB8FAC7FC8B">
+<table class="cellalignment62" summary="This table specifies parameter and description for retrieving details of a storage volume.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d19585e615">Parameter</th>
+<th class="cellalignment64" id="d19585e617">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d19585e621" headers="d19585e615">name</td>
+<td class="cellalignment66" headers="d19585e621 d19585e617">Name of the storage volume</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/storage/volume/mytenant/public/vol1</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example Response Body</p>
+<pre dir="ltr">
+{
+ "status": "Online",
+ "account": "/mytenant/default",
+ "writecache": false,
+ "managed": true,
+ "description": null,
+ "tags": [],
+ "bootable": false,
+ "hypervisor": null,
+ "quota": null,
+ "uri": "https://api.oc.example.com/storage/volume/mytenant/public/vol1",
+ "status_detail": "The storage volume is online.",
+ "imagelist_entry": -1,
+ "storage_pool": "/mytenant/public/mypool",
+ "machineimage_name": null,
+ "status_timestamp": "2015-06-01T11:16:04Z",
+ "shared": false,
+ "imagelist": null,
+ "size": "10737418240",
+ "properties": ["/oracle/public/storage/default"],
+ "name": "/mytenant/public/vol1"
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-9E73EB06-7908-485F-AB7B-CB7204EB2E95"></a>
+<h3 id="ELUAP-GUID-9E73EB06-7908-485F-AB7B-CB7204EB2E95" class="sect3">List Storage Volumes</h3>
+<div>
+<p>This API enables you to list storage volumes.</p>
+<div class="section">
+<p class="subhead3">Method</p>
+<p><code class="codeph">GET</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">REST Resource</p>
+<p><code class="codeph">/storage/volume/<span class="variable">container</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI</p>
+<p><code class="codeph">https://<span class="variable">api_endpoint</span>/storage/volume/<span class="variable">container</span>?tags=<span class="variable">tagsValue</span>&amp;quota=<span class="variable">quotaValue</span>&amp;name=<span class="variable">nameValue</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">URI Parameter</p>
+<div class="infobox-note" id="GUID-9E73EB06-7908-485F-AB7B-CB7204EB2E95__GUID-A40E15C2-688B-442C-8DB3-5C7A797E98A2">
+<p class="notep1">Note:</p>
+The output of this command is filtered based on the optional parameters (if specified).</div>
+<div class="tblformal" id="GUID-9E73EB06-7908-485F-AB7B-CB7204EB2E95__GUID-1C56FFA4-CA85-483D-B667-5B5CAD6B7F6F">
+<table class="cellalignment62" summary="This tables lists parameters and descriptions for retrieving details of all storage volumes in a container.">
+<thead>
+<tr class="cellalignment50">
+<th class="cellalignment63" id="d19585e705">Parameter</th>
+<th class="cellalignment64" id="d19585e708">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d19585e713" headers="d19585e705">container</td>
+<td class="cellalignment66" headers="d19585e713 d19585e708">Hierarchical namespace for the storage volume</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d19585e718" headers="d19585e705">tags=<span class="variable">tagsValue</span></td>
+<td class="cellalignment66" headers="d19585e718 d19585e708">(Optional) A list of user-friendly strings which tag the storage volume</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d19585e725" headers="d19585e705">quota=<span class="variable">quotaValue</span></td>
+<td class="cellalignment66" headers="d19585e725 d19585e708">(Optional) The quota against which this volume is created</td>
+</tr>
+<tr class="cellalignment50">
+<td class="cellalignment65" id="d19585e732" headers="d19585e705">name=<span class="variable">nameValue</span></td>
+<td class="cellalignment66" headers="d19585e732 d19585e708">(Optional) Name of storage volume</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example URI</p>
+<p><code class="codeph">https://api.oc.example.com/storage/volume/mytenant/public/</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead3">Example Response Body</p>
+<pre dir="ltr">
+{"result": [
+{
+ "status": "Online",
+ "account": "/mytenant/default",
+ "writecache": false,
+ "managed": true,
+ "description": null,
+ "tags": [],
+ "bootable": false,
+ "hypervisor": null,
+ "quota": null,
+ "uri": "https://api.oc.example.com/storage/volume/mytenant/public/vol1",
+ "status_detail": "The storage volume is online.",
+ "imagelist_entry": -1,
+ "storage_pool": "/mytenant/public/mypool",
+ "machineimage_name": null,
+ "status_timestamp": "2015-06-01T11:16:04Z",
+ "shared": false,
+ "imagelist": null,
+ "size": "10737418240",
+ "properties": ["/oracle/public/storage/default"],
+ "name": "/mytenant/public/vol1"
+}
+]
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment49">
+<tr>
+<td class="cellalignment59">
+<table class="cellalignment54">
+<tr>
+<td class="cellalignment53"><a href="GUID-F02212F3-0770-4A2E-B205-C32570719E69.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment53"><a href="GUID-A3D9830B-2E39-4D88-8E69-4CC3E3ABF864.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment61">
+<table class="cellalignment52">
+<tr>
+<td class="cellalignment53"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment53"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

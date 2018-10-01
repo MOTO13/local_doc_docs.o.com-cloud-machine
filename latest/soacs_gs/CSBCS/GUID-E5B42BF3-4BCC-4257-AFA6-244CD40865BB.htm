@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Differences Between the Cloud and On-Premises Environments</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Many of the Oracle SOA Cloud Service components differ slightly depending on which environment you are using. This chapter highlight these differences." />
+<meta name="dcterms.created" content="2017-04-10T13:38:19Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle SOA Cloud Service" />
+<meta name="dcterms.identifier" content="E78502-02" />
+<meta name="dcterms.isVersionOf" content="CSBCS" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-1DFB75AF-031B-4464-AB7A-9CCEE3DF855A.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-84CE6C15-FC83-47D5-90C4-D85DE188F212.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSBCS.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSBCS.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSBCS.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-E5B42BF3-4BCC-4257-AFA6-244CD40865BB"></a> <span id="PAGE" style="display:none;">24/83</span> <!-- End Header -->
+<h1 id="CSBCS-GUID-E5B42BF3-4BCC-4257-AFA6-244CD40865BB" class="sect1"><span class="enumeration_chapter">2</span> Differences Between the Cloud and On-Premises Environments</h1>
+<div>
+<p>Many of the Oracle SOA Cloud Service components differ slightly depending on which environment you are using. This chapter highlight these differences.</p>
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-E5B42BF3-4BCC-4257-AFA6-244CD40865BB.htm#GUID-CE3F6D28-09A3-4BC4-B7D6-CBE7B9BCC478" title="This table describes high-level differences between running Oracle SOA in the cloud and on-premises environments.">Platform Differences Between the Cloud and On-Premises Environments</a></p>
+</li>
+<li>
+<p><a href="GUID-E5B42BF3-4BCC-4257-AFA6-244CD40865BB.htm#GUID-CFBBBBF8-A102-44D9-8C33-7A3454CC5CA1" title="Some features of Oracle SOA Suite behave differently on Oracle Cloud Machine than they do on Oracle Public Cloud. Here are some of the differences.">Differences Between Oracle SOA Cloud Service on Oracle Cloud Machine and on Oracle Public Cloud</a></p>
+</li>
+<li>
+<p><a href="GUID-E5B42BF3-4BCC-4257-AFA6-244CD40865BB.htm#GUID-E5B42BF3-4BCC-4257-AFA6-244CD40865BB" title="Many of the Oracle SOA Cloud Service components differ slightly depending on which environment you are using. This chapter highlight these differences.">Differences Between the Cloud and On-Premises Environments</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-CE3F6D28-09A3-4BC4-B7D6-CBE7B9BCC478"></a>
+<h2 id="CSBCS-GUID-CE3F6D28-09A3-4BC4-B7D6-CBE7B9BCC478" class="sect2">Platform Differences Between the Cloud and On-Premises Environments</h2>
+<div>
+<p>This table describes high-level differences between running Oracle SOA in the cloud and on-premises environments.</p>
+<div class="tblformal" id="GUID-CE3F6D28-09A3-4BC4-B7D6-CBE7B9BCC478__GUID-6CC7973E-BFE5-4802-B9B3-9A7E0B3DB227">
+<table class="cellalignment89" summary="Describes the differences between running Oracle SOA in the cloud and on-premises environments.">
+<thead>
+<tr class="cellalignment70">
+<th class="cellalignment91" id="d10826e50">Oracle SOA Cloud Service</th>
+<th class="cellalignment91" id="d10826e52">Oracle SOA Suite On-Premises</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment70">
+<td class="cellalignment92" id="d10826e56" headers="d10826e50">
+<p>Available by subscription.</p>
+</td>
+<td class="cellalignment92" headers="d10826e56 d10826e52">
+<p>You install Oracle SOA Suite on your own hardware.</p>
+</td>
+</tr>
+<tr class="cellalignment70">
+<td class="cellalignment92" id="d10826e63" headers="d10826e50">
+<p>Provisioning of Oracle SOA Cloud Service automatically includes Oracle Java Cloud Service, which provides an Oracle WebLogic Server domain.</p>
+</td>
+<td class="cellalignment92" headers="d10826e63 d10826e52">
+<p>You create the complete domain.</p>
+</td>
+</tr>
+<tr class="cellalignment70">
+<td class="cellalignment92" id="d10826e70" headers="d10826e50">
+<p>Oracle SOA Cloud Service provides OPC-based backup services.</p>
+</td>
+<td class="cellalignment92" headers="d10826e70 d10826e52">
+<p>You must develop your own archival infrastructure.</p>
+</td>
+</tr>
+<tr class="cellalignment70">
+<td class="cellalignment92" id="d10826e77" headers="d10826e50">
+<p>You can either select an existing database (Oracle Database Cloud Service) in the tenant or enter the connection string of an on-premises database.</p>
+</td>
+<td class="cellalignment92" headers="d10826e77 d10826e52">
+<p>You must install a database.</p>
+</td>
+</tr>
+<tr class="cellalignment70">
+<td class="cellalignment92" id="d10826e84" headers="d10826e50">
+<p>High availability functionality is provided by default using a virtual machine restart.</p>
+</td>
+<td class="cellalignment92" headers="d10826e84 d10826e52">
+<p>You must set up an environment based on your high availability requirements.</p>
+</td>
+</tr>
+<tr class="cellalignment70">
+<td class="cellalignment92" id="d10826e91" headers="d10826e50">
+<p>Load balancing is provided by the built-in Oracle Traffic Director.</p>
+</td>
+<td class="cellalignment92" headers="d10826e91 d10826e52">
+<p>Oracle HTTP Server serves as the load balancer.</p>
+</td>
+</tr>
+<tr class="cellalignment70">
+<td class="cellalignment92" id="d10826e98" headers="d10826e50">
+<p>Application deployment directly from Oracle JDeveloper to the cloud is not supported. You must use one of the deployment mechanisms described in <a href="GUID-6A22645D-1194-4BF0-98CD-0E272248DC06.htm#GUID-6A22645D-1194-4BF0-98CD-0E272248DC06" title="This section describes deploying and undeploying applications to an Oracle SOA Cloud Service instance by using: Fusion Middleware Control, the WebLogic Server Administration Console, and WLST commands. You cannot deploy and undeploy applications directly through the Oracle SOA Cloud Service Console.">Deploying and Undeploying Applications for an Oracle SOA Cloud Service Instance</a>.</p>
+</td>
+<td class="cellalignment92" headers="d10826e98 d10826e52">
+<p>Applications can be deployed directly from Oracle JDeveloper.</p>
+</td>
+</tr>
+<tr class="cellalignment70">
+<td class="cellalignment92" id="d10826e111" headers="d10826e50">
+<ul style="list-style-type: disc;">
+<li>
+<p>External network access must be configured at the virtual machine level and the Oracle Traffic Director level.</p>
+</li>
+<li>
+<p>Logins to the virtual machine can be done through an SSH tunnel.</p>
+</li>
+</ul>
+</td>
+<td class="cellalignment92" headers="d10826e111 d10826e52">
+<p>Network access for on-premises networks varies from site to site, as well as logic processes. Usually it is completely open to employees, as long as they have the right credentials.</p>
+</td>
+</tr>
+<tr class="cellalignment70">
+<td class="cellalignment92" id="d10826e123" headers="d10826e50">
+<p>Oracle Business Process Management Suite is not available with Oracle SOA Cloud Service. Instead, you can subscribe to Oracle Process Cloud Service or run Oracle Business Process Management Suite on Oracle Java Cloud Service.</p>
+<p><img width="22" height="15" src="img/GUID-05E56E4F-C413-4223-80CC-29A5019D1D90-default.png" alt="Tutorial icon" title="Tutorial icon" /><a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/javaservice/JCS/FMW_UpperStack_on_JCS/bpm_on_jcs_obe/bpm_on_jcs.html" target="_blank">Tutorial</a></p>
+</td>
+<td class="cellalignment92" headers="d10826e123 d10826e52">
+<p>After installing Oracle SOA Suite Cloud Service, you can install Oracle Business Process Management Suite on top of it.</p>
+</td>
+</tr>
+<tr class="cellalignment70">
+<td class="cellalignment92" id="d10826e137" headers="d10826e50">
+<p>Oracle Integration Continuous Availability features such as the following are <span class="italic">not</span> supported:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Circuit Breaker</p>
+</li>
+<li>
+<p>Composite Instance Patching</p>
+</li>
+<li>
+<p>Automatic Service Migration (ASM) support</p>
+</li>
+<li>
+<p>Integration Workload Statistics</p>
+</li>
+<li>
+<p>In-Memory SOA</p>
+</li>
+</ul>
+</td>
+<td class="cellalignment92" headers="d10826e137 d10826e52">
+<p>Oracle Integration Continuous Availability features are supported.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>For information about specific feature differences between the Oracle SOA and Oracle Service Bus cloud and on-premises environments, see <a href="GUID-E5B42BF3-4BCC-4257-AFA6-244CD40865BB.htm#GUID-4B66969F-2B72-4076-9901-BB07C1A169FA" title="Some features of Oracle SOA behave differently in the cloud than in an on-premises environment.">Differences in Oracle SOA Behavior in the Cloud</a>.</p>
+</div>
+</div>
+<div class="sect2"><a id="GUID-CFBBBBF8-A102-44D9-8C33-7A3454CC5CA1"></a>
+<h2 id="CSBCS-GUID-CFBBBBF8-A102-44D9-8C33-7A3454CC5CA1" class="sect2">Differences Between Oracle SOA Cloud Service on Oracle Cloud Machine and on Oracle Public Cloud</h2>
+<div>
+<p>Some features of Oracle SOA Suite behave differently on Oracle Cloud Machine than they do on Oracle Public Cloud. Here are some of the differences.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>During provisioning on Oracle Cloud Machine, you do not specify a database connection. Instead you specify a connection to a network that provides access to a database.</p>
+</li>
+<li>
+<p>Oracle Cloud Machine supports direct connection to an external database. Oracle Database Cloud Service is not required.</p>
+</li>
+<li>
+<p>Oracle Cloud Machine uses NFS directories for storage.</p>
+</li>
+<li>
+<p>Oracle API Manager is not supported on Oracle Cloud Machine.</p>
+</li>
+<li>
+<p>Database backup is not provided in Oracle Cloud Machine. Oracle Cloud Machine provides domain backup, you back up the database using your normal procedures.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2"><a id="GUID-4B66969F-2B72-4076-9901-BB07C1A169FA"></a>
+<h2 id="CSBCS-GUID-4B66969F-2B72-4076-9901-BB07C1A169FA" class="sect2">Differences in Oracle SOA Behavior in the Cloud</h2>
+<div>
+<p>Some features of Oracle SOA behave differently in the cloud than in an on-premises environment.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Because shared disk is currently not available, writing to a shared file from multiple managed servers running in a cluster is not possible. To make this work in the cloud, managed servers would have to write to a file on their own local disks, and then an additional process would have to consolidate the files on one of the VMs.</p>
+</li>
+<li>
+<p>File adapter read actions &mdash; each managed server only reads from its local directory.</p>
+</li>
+<li>
+<p>JMS store and JTA transaction logs must use the Oracle database instead of file stores.</p>
+</li>
+<li>
+<p>Oracle B2B large file processing - Files are written to the local file system of the managed server that processes the message. The Oracle B2B Console cannot read the file unless it is running on the same managed server (you see random behavior).</p>
+</li>
+<li>
+<p>Connectivity between Oracle SOA Cloud Service adapters and on-premises applications might be blocked by your corporate firewall. Connections can be established by using an SSH tunnel from the application server to which the adapter connects.</p>
+</li>
+<li>
+<p>The SOA debugger and automatic SOA composite application tester (unit tester) in Oracle JDeveloper are not supported when connecting to the SOA Cloud Service server.</p>
+</li>
+<li>
+<p>Reports are not supported in Oracle Real-Time Integration Business Insight, installed as part of the Integration Analytics Cluster service type.</p>
+</li>
+<li>
+<p>The iWay application adapters listed under Application Adapters (iWay) on <a href="http://www.oracle.com/technetwork/middleware/adapters/documentation/index.html" target="_blank">Oracle Cloud Adapters Documentation</a> are not supported by Oracle SOA Cloud Service.</p>
+</li>
+<li>
+<p>The Oracle Traffic Director <cite>high availability features</cite> <a href="http://www.oracle.com/pls/topic/lookup?ctx=fmw122120&amp;id=GUID-7535D97D-6EBD-4969-8A6D-C736B44C5555" target="_blank">12.2.1.2</a>/<a href="http://www.oracle.com/pls/topic/lookup?ctx=fmw121300&amp;id=GUID-7535D97D-6EBD-4969-8A6D-C736B44C5555" target="_blank">12.1.3</a> are not supported with Oracle SOA Cloud Service.</p>
+</li>
+<li>
+<p>Dehydration <span class="italic">does</span> work in the cloud as it does in the on-premises environment as described in <cite>Fusion Middleware Administering Oracle SOA Suite and Oracle Business Process Management Suite</cite> <a href="http://www.oracle.com/pls/topic/lookup?ctx=fmw122120&amp;id=GUID-DBCFFB8F-3B67-4000-9F48-404D16D503DD" target="_blank">12.2.1.2</a>/<a href="http://www.oracle.com/pls/topic/lookup?ctx=fmw121300&amp;id=GUID-DBCFFB8F-3B67-4000-9F48-404D16D503DD" target="_blank">12.1.3</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment69">
+<tr>
+<td class="cellalignment81">
+<table class="cellalignment74">
+<tr>
+<td class="cellalignment73"><a href="GUID-1DFB75AF-031B-4464-AB7A-9CCEE3DF855A.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment73"><a href="GUID-84CE6C15-FC83-47D5-90C4-D85DE188F212.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment83">
+<table class="cellalignment72">
+<tr>
+<td class="cellalignment73"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment73"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment73"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

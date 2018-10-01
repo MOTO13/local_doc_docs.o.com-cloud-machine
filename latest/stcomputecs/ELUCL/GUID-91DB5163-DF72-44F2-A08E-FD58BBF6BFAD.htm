@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Viewing Shapes</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2017-04-07T05:55:01Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine CLI Reference for Oracle Compute Cloud Service" />
+<meta name="dcterms.identifier" content="E69222-06" />
+<meta name="dcterms.isVersionOf" content="ELUCL" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-7D04FD96-6C9F-49BC-A2FC-2C840A3C9BA0.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ELUCL.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-91DB5163-DF72-44F2-A08E-FD58BBF6BFAD"></a> <span id="PAGE" style="display:none;">16/40</span> <!-- End Header -->
+<h1 id="ELUCL-GUID-91DB5163-DF72-44F2-A08E-FD58BBF6BFAD" class="sect1">Viewing Shapes</h1>
+<div>
+<div class="section">
+<p>Shapes define the compute resources for an instance. You can view the shapes that are available to your tenant.&nbsp;Contact your Oracle Cloud Administrator if you need a shape with a different configuration.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-91DB5163-DF72-44F2-A08E-FD58BBF6BFAD.htm#GUID-BAB5133D-127E-476A-92CA-316A469914D6" title="This command enables you to determine what shapes you have access to in a specific container.">discover shapes</a></p>
+</li>
+<li>
+<p><a href="GUID-91DB5163-DF72-44F2-A08E-FD58BBF6BFAD.htm#GUID-AD3ABBC5-169D-418B-8BE6-50655153EE38" title="This command enables you to retrieve information for a specific shape.">get shape</a></p>
+</li>
+<li>
+<p><a href="GUID-91DB5163-DF72-44F2-A08E-FD58BBF6BFAD.htm#GUID-0FA11652-4E52-4B57-953E-FFDCF152E11B" title="This command enables you to list information about shapes. The only valid container for shape is /.">list shape</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-BAB5133D-127E-476A-92CA-316A469914D6"></a>
+<h2 id="ELUCL-GUID-BAB5133D-127E-476A-92CA-316A469914D6" class="sect2">discover shapes</h2>
+<div>
+<p>This command enables you to determine what shapes you have access to in a specific container.</p>
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute discover shape <span class="variable">container</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-BAB5133D-127E-476A-92CA-316A469914D6__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for listing shapes.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d12120e91">Parameter</th>
+<th class="cellalignment26" id="d12120e93">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d12120e97" headers="d12120e91">container</td>
+<td class="cellalignment27" headers="d12120e97 d12120e93">Hierarchical name-space for shapes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute discover shape /</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute discover shape /
+entry
+/myshape
+/LARGE
+/SMALL
+/large
+/oc4m
+/oc5
+/oc5m
+/oc6
+/oc7
+/ot1
+/small
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-AD3ABBC5-169D-418B-8BE6-50655153EE38"></a>
+<h2 id="ELUCL-GUID-AD3ABBC5-169D-418B-8BE6-50655153EE38" class="sect2">get shape</h2>
+<div>
+<p>This command enables you to retrieve information for a specific shape.</p>
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute get shape <span class="variable">name</span></code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-AD3ABBC5-169D-418B-8BE6-50655153EE38__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for retrieving details of a specific shape.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d12120e159">Parameter</th>
+<th class="cellalignment26" id="d12120e161">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d12120e165" headers="d12120e159">name</td>
+<td class="cellalignment27" headers="d12120e165 d12120e161">Name of the shape</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute get shape myshape</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute get shape myshape
+uri                               name         cpus        ram
+https://api/shape/myshape         myshape      32.0        122880
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-0FA11652-4E52-4B57-953E-FFDCF152E11B"></a>
+<h2 id="ELUCL-GUID-0FA11652-4E52-4B57-953E-FFDCF152E11B" class="sect2">list shape</h2>
+<div>
+<p>This command enables you to list information about shapes. The only valid container for shape is /.</p>
+<div class="section">
+<p class="subhead2">Syntax</p>
+<p><code class="codeph">oracle-compute list shape <span class="variable">container</span> [<span class="variable">--name</span>]</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Parameters and Options</p>
+<p>The following parameters are specific to this command. You can also use the common options described in <a href="GUID-A377A4D6-8A3E-43EF-B069-5C4EA50D7E6D.htm#GUID-04569A88-AFEE-4604-ABBB-A92CECAAA6C2">General Command Options</a>.</p>
+<div class="tblformal" id="GUID-0FA11652-4E52-4B57-953E-FFDCF152E11B__GUID-E052CF8A-67E6-4038-8E60-254A953AD760">
+<table class="cellalignment25" summary="This table specifies the parameter and description for listing details of shapes.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment26" id="d12120e232">Parameter</th>
+<th class="cellalignment26" id="d12120e234">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d12120e238" headers="d12120e232">container</td>
+<td class="cellalignment27" headers="d12120e238 d12120e234">Hierarchical name-space for shapes. It is always set to <code class="codeph">/</code>.</td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment27" id="d12120e246" headers="d12120e232">--name</td>
+<td class="cellalignment27" headers="d12120e246 d12120e234">(Optional) Name of the shape</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Example</p>
+<p><code class="codeph">$ oracle-compute list shape /</code></p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Sample Output</p>
+<div class="p">
+<pre dir="ltr">
+$ oracle-compute list shape /
+uri                                    name                 cpus                ram
+https://api/shape/oc4m                 oc4m                 16.0                122880
+https://api/shape/myshape              myshape              32.0                122880
+https://api/shape/oc3m                 oc3m                 8.0                 61440
+https://api/shape/oc5m                 oc5m                 32.0                245760
+https://api/shape/SMALL                SMALL                1.0                 4096
+https://api/shape/oc1m                 oc1m                 2.0                 15360
+https://api/shape/LARGE                LARGE                2.0                 8192
+https://api/shape/oc2m                 oc2m                 4.0                 30720
+https://api/shape/oc1                  oc1                  2.0                 16384
+
+</pre></div>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-D868C44D-BD8E-4819-87A4-CC969EAE15C2.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-7D04FD96-6C9F-49BC-A2FC-2C840A3C9BA0.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

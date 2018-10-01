@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Shutting Down and Starting Server Processes</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can shut down and start WebLogic Servers (including Administration Servers) employed in your Oracle Java Cloud Service instance." />
+<meta name="dcterms.created" content="2017-04-07T16:50:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Java Cloud Service" />
+<meta name="dcterms.identifier" content="E66979-05" />
+<meta name="dcterms.isVersionOf" content="JSCUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-5C29EA98-DF21-4EEA-B3E3-517150021E4B.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-A3190691-7808-4E14-8873-2FA205F58134.htm" title="Next" type="text/html" />
+<link rel="alternate" href="JSCUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="JSCUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="JSCUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-BD5190E0-5DE4-454E-BAD3-E889C575D432"></a> <span id="PAGE" style="display:none;">40/131</span> <!-- End Header -->
+<h1 id="JSCUG-GUID-BD5190E0-5DE4-454E-BAD3-E889C575D432" class="sect1">Shutting Down and Starting Server Processes</h1>
+<div>
+<p>You can shut down and start WebLogic Servers (including Administration Servers) employed in your Oracle Java Cloud Service instance.</p>
+<div class="section">
+<p>The topics in this section describe how to shut down and start server <span class="italic">processes</span> only. The server VMs remain running. For information about how to shut down Managed Server and Administration Server VMs, see <a href="GUID-A0491DD0-6E6C-405D-A00C-A213AABDF91C.htm#GUID-A0491DD0-6E6C-405D-A00C-A213AABDF91C" title="You can stop and start an Oracle Java Cloud Service instance and, when the service instance is running, start, stop, and restart individual server or Load Balancer VMs.">Stopping and Starting an Oracle Java Cloud Service Instance and Individual Nodes</a>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-BD5190E0-5DE4-454E-BAD3-E889C575D432.htm#GUID-446160EC-1A9E-4A8D-8608-064471EA6893" title="Use the WebLogic Server Administration Console to shut down servers employed by your Oracle Java Cloud Service instance: the Administration server and one or more managed servers. Do not attempt to shut down servers through the Oracle Traffic Director.">Using the WebLogic Server Administration Console to Shut Down Servers Without Stopping VMs</a></p>
+</li>
+<li>
+<p><a href="GUID-BD5190E0-5DE4-454E-BAD3-E889C575D432.htm#GUID-AD271E5C-D40C-4E8D-A8AB-D4C8E6FBB8C7" title="You start the Administration Server through the Node Manager by using WLST commands.">Using WLST Commands to Start the Administration Server</a></p>
+</li>
+<li>
+<p><a href="GUID-BD5190E0-5DE4-454E-BAD3-E889C575D432.htm#GUID-C65E74C2-1FB9-45DB-90CA-1295518E0D2C" title="After you have started the Administration Server through the Node Manager by using WLST commands, you can start the Managed Servers through theWebLogic Server Administration Console.">Using the WebLogic Server Administration Console to Start Managed Servers</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-446160EC-1A9E-4A8D-8608-064471EA6893"></a>
+<h2 id="JSCUG-GUID-446160EC-1A9E-4A8D-8608-064471EA6893" class="sect2">Using the WebLogic Server Administration Console to Shut Down Servers Without Stopping VMs</h2>
+<div>
+<p>Use the WebLogic Server Administration Console to shut down servers employed by your Oracle Java Cloud Service instance: the Administration server and one or more managed servers. Do not attempt to shut down servers through the Oracle Traffic Director.</p>
+<div class="section">
+<p>This topic only presents how to shut down servers without stopping the VMs on which the servers are running. This procedure enables you to shut down servers for any reason, such as periodic shutdown, or to address CPU and memory resource contention. This approach shuts down the server processes only, leaving other processes you might have running on the nodes to continue to run. For more information about stopping server nodes, see <a href="GUID-A0491DD0-6E6C-405D-A00C-A213AABDF91C.htm#GUID-A0491DD0-6E6C-405D-A00C-A213AABDF91C" title="You can stop and start an Oracle Java Cloud Service instance and, when the service instance is running, start, stop, and restart individual server or Load Balancer VMs.">Stopping and Starting an Oracle Java Cloud Service Instance and Individual VMs</a>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">To use the WebLogic Server Console to shut down servers:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Navigate to the Oracle Java Cloud Service Console.</span></li>
+<li class="stepexpand"><span>Click <img width="14" height="15" src="img/GUID-D0E9F26E-D981-4A6C-9C9C-E53E732DCDA2-default.gif" alt="menu icon" title="menu icon" /> for the desired service instance and select <span class="bold">Open WebLogic Server Console</span>.</span></li>
+<li class="stepexpand"><span>When the console login page appears, enter the WebLogic username and password you provided when you created the service instance.</span></li>
+<li class="stepexpand"><span>On the Administration Console, under Domain Structure, expand <span class="bold">Environment</span>.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Servers</span>.</span></li>
+<li class="stepexpand"><span>On the Configuration tab of the Summary of Servers page, notice that the state of the Administration server and managed servers is RUNNING.</span></li>
+<li class="stepexpand"><span>Click the Control tab.</span></li>
+<li class="stepexpand"><span>Click the check box to the left of each server.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Shutdown</span>, then <span class="bold">Force Shutdown Now</span> or <span class="bold">When Work Completes</span>.</span>
+<div>The servers are shut down. A <span class="bold">Server Shutdown</span> message appears. The message you receive will be different based on whether you are shutting down the administration server or the managed servers. When you shut down the administration server, the message warns you that the browser session will end.</div>
+</li>
+</ol>
+<div class="section">You have now shut down the servers.</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-AD271E5C-D40C-4E8D-A8AB-D4C8E6FBB8C7"></a>
+<h2 id="JSCUG-GUID-AD271E5C-D40C-4E8D-A8AB-D4C8E6FBB8C7" class="sect2">Using WLST Commands to Start the Administration Server</h2>
+<div>
+<p>You start the Administration Server through the Node Manager by using WLST commands.</p>
+<div class="p">
+<p>Prior to running WLST, identify the public IP address of the Administration Server VM and connect to it with SSH, as described in <a href="GUID-B5656350-E387-4E43-91A6-8C20D78288A7.htm" title="You can access the services and resources that an Oracle Java Cloud Service instance's VM provides by logging into the VM as the opc user through SSH. You can use any SSH utility you want. For example, if you are using Windows, you might use PuTTY; if you are using Linux, you might use OpenSSH.">Accessing a VM Through a Secure Shell (SSH)</a>.</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>After connecting to the VM, switch to the <code class="codeph">oracle</code> user:</span>
+<div>
+<pre dir="ltr">
+sudo su - oracle
+</pre></div>
+</li>
+<li class="stepexpand"><span>Check to see that the Node Manager is running:</span>
+<div>
+<pre dir="ltr">
+ps -ef | grep NodeManager
+</pre></div>
+<div>You should receive messages showing that the Node Manager is running.</div>
+</li>
+<li class="stepexpand"><span>Change the directory to where environment setup is located:</span>
+<div>
+<pre dir="ltr">
+cd /u01/data/domains/<span class="variable">domain_name</span>/bin
+</pre></div>
+<div>
+<p>For example:</p>
+<pre dir="ltr">
+cd /u01/data/domains/OurServi_domain/bin
+</pre></div>
+</li>
+<li class="stepexpand"><span>Set up the environment.</span>
+<div>
+<pre dir="ltr">
+. ./setDomainEnv.sh
+</pre></div>
+</li>
+<li class="stepexpand"><span>Start WLST:</span>
+<div>
+<pre dir="ltr">
+java weblogic.WLST
+</pre></div>
+</li>
+<li class="stepexpand"><span>To connect to the Node Manager, use the WLST <code class="codeph">nmConnect</code> command:</span>
+<div>
+<pre dir="ltr">
+nmConnect (username,password,host,nmPort,domainName,domainDir,nmType)
+</pre></div>
+<div>
+<div class="tblformal" id="GUID-AD271E5C-D40C-4E8D-A8AB-D4C8E6FBB8C7__GUID-EC7B0C67-3DD3-4B7F-B306-FC20306A2B0B">
+<table class="cellalignment54" summary="This table describes the parameters to the nmConnect WLST command.">
+<thead>
+<tr class="cellalignment16">
+<th class="cellalignment31" id="d22750e213">Parameter</th>
+<th class="cellalignment31" id="d22750e215">Description</th>
+<th class="cellalignment31" id="d22750e217">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d22750e221" headers="d22750e213"><code class="codeph">username</code></td>
+<td class="cellalignment32" headers="d22750e221 d22750e215">Username you specified when you created the service instance.</td>
+<td class="cellalignment32" headers="d22750e221 d22750e217"><code class="codeph">weblogic</code></td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d22750e230" headers="d22750e213"><code class="codeph">password</code></td>
+<td class="cellalignment32" headers="d22750e230 d22750e215">Password you specified when you created the service instance.</td>
+<td class="cellalignment32" headers="d22750e230 d22750e217"><code class="codeph">welcome1</code></td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d22750e239" headers="d22750e213"><code class="codeph">host</code></td>
+<td class="cellalignment32" headers="d22750e239 d22750e215">The host name of the Node Manager. Instance name in all lower case, followed by a dash, followed by <code class="codeph">wls</code>, followed by a dash, followed by <code class="codeph">1</code>.</td>
+<td class="cellalignment32" headers="d22750e239 d22750e217"><code class="codeph">ourserviceinstance-wls-1</code></td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d22750e254" headers="d22750e213"><code class="codeph">nmPort</code></td>
+<td class="cellalignment32" headers="d22750e254 d22750e215">Port number of the node manager. .</td>
+<td class="cellalignment32" headers="d22750e254 d22750e217"><code class="codeph">5556</code></td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d22750e263" headers="d22750e213"><code class="codeph">domainName</code></td>
+<td class="cellalignment32" headers="d22750e263 d22750e215">Name of the domain. You can find the domain name on the Oracle Java Cloud Service Instance Overview page.</td>
+<td class="cellalignment32" headers="d22750e263 d22750e217"><code class="codeph">OurServi_domain</code></td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d22750e272" headers="d22750e213"><code class="codeph">domainDir</code></td>
+<td class="cellalignment32" headers="d22750e272 d22750e215">Path to the domain. In Oracle Java Cloud Service, the domain directory is <code class="codeph">/u01/data/domains/&lt;domainName&gt;</code>.</td>
+<td class="cellalignment32" headers="d22750e272 d22750e217"><code class="codeph">/u01/data/domains/OurServi_domain</code></td>
+</tr>
+<tr class="cellalignment16">
+<td class="cellalignment32" id="d22750e284" headers="d22750e213"><code class="codeph">nmType</code></td>
+<td class="cellalignment32" headers="d22750e284 d22750e215">Use <code class="codeph">SSL</code> for Java-based SSL implementation.</td>
+<td class="cellalignment32" headers="d22750e284 d22750e217"><code class="codeph">SSL</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<div>
+<p>For example:</p>
+</div>
+<div>
+<pre dir="ltr">
+nmConnect ('weblogic','welcome1','ourserviceinstance-wls-1','5556','OurServi_domain','/u01/data/domains/OurServi_domain','SSL')
+</pre></div>
+<div>For more information about <code class="codeph">nmConnect</code> parameters, see:
+<ul style="list-style-type: disc;">
+<li>
+<p>For Oracle Fusion Middleware 12.2.1: <a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw122100&amp;id=WLSTC476" target="_blank">nmConnect</a> in <cite>WLST Command Reference for WebLogic Server</cite></p>
+</li>
+<li>
+<p>For Oracle Fusion Middleware 12.1.3: <a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudfmw121300&amp;id=WLSTC476" target="_blank">nmConnect</a> in <cite>WLST Command Reference for WebLogic Server</cite></p>
+</li>
+<li>
+<p>For Oracle Fusion Middleware 11.1.1.7: <a href="http://www.oracle.com/pls/topic/lookup?ctx=cloudas111170&amp;id=WLSTC476" target="_blank">nmConnect</a> in <cite>WLST Scripting Tool Command Reference</cite></p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Use the <code class="codeph">nmStart</code> command to start the Administration Server:</span>
+<div>
+<pre dir="ltr">
+nmStart (<span class="variable">server_name</span>)
+</pre></div>
+<div>
+<p>For example:</p>
+</div>
+<div>
+<pre dir="ltr">
+nmStart ('OurServi_adminserver')
+</pre></div>
+</li>
+<li class="stepexpand"><span>Exit WLST:</span>
+<div>
+<pre dir="ltr">
+exit()
+</pre></div>
+</li>
+<li class="stepexpand"><span>Exit the <code class="codeph">oracle</code> session.</span>
+<div>
+<pre dir="ltr">
+exit
+</pre></div>
+</li>
+<li class="stepexpand"><span>Exit the command window:</span>
+<div>
+<pre dir="ltr">
+exit
+</pre></div>
+</li>
+<li class="stepexpand"><span>Open a browser window.</span></li>
+<li class="stepexpand"><span>Navigate to the Oracle Java Cloud Service Console.</span></li>
+<li class="stepexpand"><span>Click <img width="14" height="15" src="img/GUID-D0E9F26E-D981-4A6C-9C9C-E53E732DCDA2-default.gif" alt="menu icon" title="menu icon" /> for the desired service instance and select <span class="bold">Open WebLogic Server Console</span>.</span></li>
+<li class="stepexpand"><span>When the console login page appears, enter the WebLogic username and password you provided when you created the service instance.</span>
+<div>If the Administration Console opens, you know that the Administration Server is running. We will also verify that it is running by using the Administration Console.</div>
+</li>
+<li class="stepexpand"><span>On the Administration Console, under <span class="bold">Domain Structure</span>, expand <span class="bold">Environment</span>.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Servers</span>.</span></li>
+<li class="stepexpand"><span>On the <span class="bold">Configuration</span> page, check that the Administration Server state is RUNNING.</span></li>
+</ol>
+<div class="section">You have now started the Administration Server through the Node Manager by using WLST commands.</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-C65E74C2-1FB9-45DB-90CA-1295518E0D2C"></a>
+<h2 id="JSCUG-GUID-C65E74C2-1FB9-45DB-90CA-1295518E0D2C" class="sect2">Using the WebLogic Server Administration Console to Start Managed Servers</h2>
+<div>
+<p>After you have started the Administration Server through the Node Manager by using WLST commands, you can start the Managed Servers through theWebLogic Server Administration Console.</p>
+<div class="section">To start Managed Servers:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Navigate to the Oracle Java Cloud Service Console.</span></li>
+<li class="stepexpand"><span>Click <img width="14" height="15" src="img/GUID-D0E9F26E-D981-4A6C-9C9C-E53E732DCDA2-default.gif" alt="menu icon" title="menu icon" /> for the desired service instance and select <span class="bold">Open WebLogic Server Console</span>.</span></li>
+<li class="stepexpand"><span>When the console login page appears, enter the WebLogic username and password you provided when you created the service instance.</span></li>
+<li class="stepexpand"><span>Under <span class="bold">Domain Structure</span>, expand <span class="bold">Environment</span>.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Servers</span>.</span></li>
+<li class="stepexpand"><span>On the Configuration page, notice that the Administration Server state is RUNNING, and the Managed Server state is SHUTDOWN.</span></li>
+<li class="stepexpand"><span>Select the <span class="bold">Control</span> tab.</span></li>
+<li class="stepexpand"><span>Click the check box to the left of each Managed Server name.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Start</span>.</span></li>
+<li class="stepexpand"><span>On the Server Life Cycle Assistant, click <span class="bold">Yes</span>.</span>
+<div>The server state changes to STARTING.</div>
+</li>
+<li class="stepexpand"><span>Click the <span class="bold">Refresh</span> icon.</span>
+<div>The server state changes to RUNNING.</div>
+</li>
+</ol>
+<div class="section">You have now started the Managed Servers.</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment15">
+<tr>
+<td class="cellalignment22">
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment19"><a href="GUID-5C29EA98-DF21-4EEA-B3E3-517150021E4B.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment19"><a href="GUID-A3190691-7808-4E14-8873-2FA205F58134.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment24">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment19"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment19"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment19"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

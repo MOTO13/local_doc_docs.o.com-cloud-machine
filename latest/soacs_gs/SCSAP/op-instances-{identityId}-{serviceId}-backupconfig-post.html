@@ -1,0 +1,2698 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine - Update the Backup Configuration</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Use the REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine to manage, monitor, and perform operations on SOA services and servers.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine">
+        <meta property="og:description" content="Use the REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine to manage, monitor, and perform operations on SOA services and servers.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="api-Manage%20the%20Backup%20Configuration.html" title="Previous" type="text/html">
+        <link rel="next" href="op-instances-%7BidentityId%7D-%7BserviceId%7D-backupconfig-get.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="api-Manage%20the%20Backup%20Configuration.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="op-instances-%7BidentityId%7D-%7BserviceId%7D-backupconfig-get.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            
+            <header>
+
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle SOA Cloud Service on Oracle Public Cloud Machine</a></li>
+                    <li>Tasks</li>
+                    
+                    <li class="active">
+                        
+                        <a href="api-Manage%20the%20Backup%20Configuration.html">Manage the Backup Configuration</a>
+                        
+                    </li>
+                    
+                </ol>
+                
+                <p class="draftsubtitle"></p>
+                
+                <h2>Update the Backup Configuration</h2>
+                <div>
+                    <div class="label label-post text-uppercase">post</div>
+                    <p style="word-break: break-word;"><strong>/api/v1.1/instances/{identityId}/{serviceId}/backupconfig</strong></p>
+                </div>
+            </header>
+            <section>
+
+                <div class="description">Updates the backup configuration for a service instance.</div>
+
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                        <li role="presentation" class="active"><a href="#request" aria-controls="request" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-in" aria-hidden="true"></span> Request</a></li>
+                        <li role="presentation"><a href="#response" aria-controls="response" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-out" aria-hidden="true"></span> Response</a></li>
+                        
+                        <li role="presentation"><a href="#examples" aria-controls="examples" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-edit" aria-hidden="true"></span> Examples</a></li>
+                        
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="request">
+                            <h3 class="visible-print-block">Request</h3>
+                            
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Path Parameters</div>
+                                <div style="padding-bottom: 0px; padding-top: 0px" class="panel-body">
+                                    <div class="schema-container">
+                                    <dl style="margin-bottom: 0px" class="schema-properties">
+                                        
+                                        <dt>identityId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Name of the identity domain for the Oracle Cloud Service account.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                        <dt>serviceId</dt>
+                                        <dd>
+                                            
+
+
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>ID of the service instance.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        </dd>
+                                        
+                                    </dl>
+                                        
+                                   </div>
+                                </div>
+                            </div>
+                            
+
+                            
+                            
+                            
+
+                            
+                            
+
+                            
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">Body Parameter</div>
+                                <div style="padding-bottom: 0px" class="panel-body">
+                                    
+
+                                    <div class="schema-container">
+                                    
+                                    <div id="request-definitions-UpdateBackupConfigurationPayload" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : UpdateBackupConfigurationPayload</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-UpdateBackupConfigurationPayload-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-UpdateBackupConfigurationPayload-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-UpdateBackupConfigurationPayload-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-UpdateBackupConfigurationPayload-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-UpdateBackupConfigurationPayload-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>cloudStorageContainer</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Oracle Cloud Storage Service container name.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>defaultRetention</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Number of days the incremental backups are retained.<br>Full backups are retained until their last related incremental backup is available.<br>If set to null, backups are retained indefinitely or until you manually delete them.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>fullBackupSchedule</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-definitions-UpdateBackupConfigurationPayload-properties-fullBackupSchedule" role="button" class="btn btn-default btn-sm">fullBackupSchedule</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Schedule for the next full backup.<br>By default, full backups are initiated weekly starting 12 hours after a service instance was created, rounded to the nearest five-minute interval.</div>
+
+            
+        </dd>
+        
+        <dt>incrementalBackupSchedule</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#request-definitions-UpdateBackupConfigurationPayload-properties-incrementalBackupSchedule" role="button" class="btn btn-default btn-sm">incrementalBackupSchedule</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Schedule for the next incremental backup.<br>By default, incremental backups are initiated every day except the day of a full backup at the same time that full backups are initiated.<br>Units are the same as for 'fullBackupSchedule'.</div>
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-UpdateBackupConfigurationPayload-properties-fullBackupSchedule" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : fullBackupSchedule</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Schedule for the next full backup.<br>By default, full backups are initiated weekly starting 12 hours after a service instance was created, rounded to the nearest five-minute interval.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-UpdateBackupConfigurationPayload-properties-fullBackupSchedule-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-UpdateBackupConfigurationPayload-properties-fullBackupSchedule-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-UpdateBackupConfigurationPayload-properties-fullBackupSchedule-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-UpdateBackupConfigurationPayload-properties-fullBackupSchedule-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-UpdateBackupConfigurationPayload-properties-fullBackupSchedule-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>dayOfMonth</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Non-configurable item. '*' (all days)</div>
+
+
+
+            
+        </dd>
+        
+        <dt>dayOfWeek</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Configurable item</div>
+
+
+
+            
+        </dd>
+        
+        <dt>hour</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Configurable item</div>
+
+
+
+            
+        </dd>
+        
+        <dt>minute</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Configurable item</div>
+
+
+
+            
+        </dd>
+        
+        <dt>month</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Non-configurable item. '*' (all months)</div>
+
+
+
+            
+        </dd>
+        
+        <dt>second</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Non-configurable item. Defaults to '0'</div>
+
+
+
+            
+        </dd>
+        
+        <dt>year</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Non-configurable item. '*' (all years)</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    <div id="request-definitions-UpdateBackupConfigurationPayload-properties-incrementalBackupSchedule" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : incrementalBackupSchedule</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Schedule for the next incremental backup.<br>By default, incremental backups are initiated every day except the day of a full backup at the same time that full backups are initiated.<br>Units are the same as for 'fullBackupSchedule'.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-request-definitions-UpdateBackupConfigurationPayload-properties-incrementalBackupSchedule-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-request-definitions-UpdateBackupConfigurationPayload-properties-incrementalBackupSchedule-properties" aria-expanded="false" aria-controls="collapseListGroup-request-definitions-UpdateBackupConfigurationPayload-properties-incrementalBackupSchedule-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-request-definitions-UpdateBackupConfigurationPayload-properties-incrementalBackupSchedule-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-request-definitions-UpdateBackupConfigurationPayload-properties-incrementalBackupSchedule-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>dayOfMonth</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Day Of Month</div>
+
+
+
+            
+        </dd>
+        
+        <dt>dayOfWeek</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Day Of Week</div>
+
+
+
+            
+        </dd>
+        
+        <dt>hour</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>hours</div>
+
+
+
+            
+        </dd>
+        
+        <dt>minute</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>minutes</div>
+
+
+
+            
+        </dd>
+        
+        <dt>month</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Month</div>
+
+
+
+            
+        </dd>
+        
+        <dt>second</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>seconds</div>
+
+
+
+            
+        </dd>
+        
+        <dt>year</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Year</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                    
+                                    </div>
+
+                                    
+                                    
+                                    
+                                    		
+                                </div>
+                            </div>
+                            
+
+
+
+                            
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="response">
+                            <h3 class="visible-print-block">Response</h3>
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">200 Response <span class="glyphicon glyphicon-ok-sign response-symbol" data-response-code="200" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    success
+                                </div>
+
+                                
+                                
+
+                                
+                                <div class="panel panel-default">
+
+                                    <div class="panel-heading">Body</div>
+                                    <div class="panel-body">
+                                        
+
+                                        <div class="schema-container">
+                                        
+                                        <div id="200-definitions-ViewBackupConfigurationResponse" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : ViewBackupConfigurationResponse</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-ViewBackupConfigurationResponse-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-ViewBackupConfigurationResponse-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-ViewBackupConfigurationResponse-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-ViewBackupConfigurationResponse-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-ViewBackupConfigurationResponse-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>cloudStorageContainer</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Oracle Cloud Storage Service container name.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>defaultRetention</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Number of days the incremental backups are retained.<br>Full backups are retained until their last related incremental backup is available.<br>If set to null, backups are retained indefinitely or until you manually delete them.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>fullBackupSchedule</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-ViewBackupConfigurationResponse-properties-fullBackupSchedule" role="button" class="btn btn-default btn-sm">fullBackupSchedule</a></div>
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Schedule for the next full backup.<br>By default, full backups are initiated weekly starting 12 hours after a service instance was created, rounded to the nearest five-minute interval.</div>
+
+            
+        </dd>
+        
+        <dt>incrementalBackupSchedule</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-ViewBackupConfigurationResponse-properties-incrementalBackupSchedule" role="button" class="btn btn-default btn-sm">incrementalBackupSchedule</a></div>
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Schedule for the next incremental backup.<br>By default, incremental backups are initiated every day except the day of a full backup at the same time that full backups are initiated.<br>Units are the same as for 'fullBackupSchedule'.</div>
+
+            
+        </dd>
+        
+        <dt>lastBackupDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Date and time that the last backup completed.<br>Note: If there have been no backups, this attribute is omitted.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>nextFullBackupDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Scheduled date and time for next full backup.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>nextIncrementalBackupDate</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Scheduled date and time for next incremental backup.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>percentBackupVolumeUsed</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Total percent of the backup volume that is currently in use.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>totalBackupVolumeUsed</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Total amount, in MBs, of the backup volume that is currently in use.</div>
+
+
+
+            
+        </dd>
+        
+        <dt>totalCloudStorageContainerUsed</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Total amount, in MBs, of Cloud Storage Container space that is currently in use.</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-ViewBackupConfigurationResponse-properties-fullBackupSchedule" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : fullBackupSchedule</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Schedule for the next full backup.<br>By default, full backups are initiated weekly starting 12 hours after a service instance was created, rounded to the nearest five-minute interval.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-ViewBackupConfigurationResponse-properties-fullBackupSchedule-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-ViewBackupConfigurationResponse-properties-fullBackupSchedule-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-ViewBackupConfigurationResponse-properties-fullBackupSchedule-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-ViewBackupConfigurationResponse-properties-fullBackupSchedule-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-ViewBackupConfigurationResponse-properties-fullBackupSchedule-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>dayOfMonth</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Non-configurable item. '*' (all days)</div>
+
+
+
+            
+        </dd>
+        
+        <dt>dayOfWeek</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Configurable item</div>
+
+
+
+            
+        </dd>
+        
+        <dt>hour</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Configurable item</div>
+
+
+
+            
+        </dd>
+        
+        <dt>minute</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Configurable item</div>
+
+
+
+            
+        </dd>
+        
+        <dt>month</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Non-configurable item. '*' (all months)</div>
+
+
+
+            
+        </dd>
+        
+        <dt>second</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Non-configurable item. Defaults to '0'</div>
+
+
+
+            
+        </dd>
+        
+        <dt>year</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Non-configurable item. '*' (all years)</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-ViewBackupConfigurationResponse-properties-incrementalBackupSchedule" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : incrementalBackupSchedule</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Schedule for the next incremental backup.<br>By default, incremental backups are initiated every day except the day of a full backup at the same time that full backups are initiated.<br>Units are the same as for 'fullBackupSchedule'.</div>
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-ViewBackupConfigurationResponse-properties-incrementalBackupSchedule-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-ViewBackupConfigurationResponse-properties-incrementalBackupSchedule-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-ViewBackupConfigurationResponse-properties-incrementalBackupSchedule-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-ViewBackupConfigurationResponse-properties-incrementalBackupSchedule-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-ViewBackupConfigurationResponse-properties-incrementalBackupSchedule-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>dayOfMonth</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Day Of Month</div>
+
+
+
+            
+        </dd>
+        
+        <dt>dayOfWeek</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Day Of Week</div>
+
+
+
+            
+        </dd>
+        
+        <dt>hour</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>hours</div>
+
+
+
+            
+        </dd>
+        
+        <dt>minute</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>minutes</div>
+
+
+
+            
+        </dd>
+        
+        <dt>month</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Month</div>
+
+
+
+            
+        </dd>
+        
+        <dt>second</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>seconds</div>
+
+
+
+            
+        </dd>
+        
+        <dt>year</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Year</div>
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+
+
+                        </div>
+                        
+                        <div role="tabpanel" class="tab-pane fade" id="examples">
+                            <h3>Examples</h3>
+                            <div class="body conbody">
+ <p class="p">The following example shows how to update the backup configuration for an Oracle SOA Cloud Service instance by submitting a POST request on the REST resource using cURL. For more information, see <a class="xref" href="Use%20cURL.html" target="_blank">Use cURL</a>.</p> 
+ <p class="p">See also <a class="xref" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=CSBCS-GUID-9FFC92B7-DB53-495A-A84C-03330ABDEFF1" target="_blank">Configuring Automated Backups for an Oracle SOA Cloud Service Instance</a>.</p> 
+ <div class="section">
+  <h3 class="title sectiontitle">cURL Command</h3>
+  <pre class="pre">curl -i -X POST -u joe@example.com:Welcome1! -d @backup.json -H "Content-type:application/json" -H "X-ID-TENANT-NAME:ExampleIdentityDomain" https://api-host/paas/service/soa/api/v1.1/instances/ExampleIdentityDomain/ExampleInstance/backupconfig
+</pre> 
+  <div class="note note">
+   <span class="notetitle">Note::</span> This example uses the URL prefix for the United States (
+   <samp class="ph codeph">soacs</samp>). For information about the URL prefixes for other regions of the world, see 
+   <a class="xref" href="SendRequests.html" target="_blank">Send Requests</a>.
+  </div> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Request Body</h3>
+  <p class="p">The following shows an example of the request document in JSON format.</p> 
+  <pre class="pre">{
+   "fullBackupSchedule":
+   {
+      "hour":"5",
+      "dayOfWeek":"Sun"
+   },
+   "incrementalBackupSchedule":
+   {
+      "hour":"3"
+   }
+}
+</pre> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Example of Response Body</h3>
+  <p class="p">The following example shows the response returned in JSON format with the new values in effect (shown in <strong class="ph b">bold</strong>).</p> 
+  <pre class="pre">{
+    "defaultRetention":"30 days",
+    "fullBackupSchedule":
+    {
+        "second":"0",
+        "minute":"0",
+        <strong class="ph b">"hour":"5"</strong>,
+        "dayOfMonth":"*",
+        "month":"*",
+        <strong class="ph b">"dayOfWeek":"Sun"</strong>,
+        "year":"*"
+    },
+    "incrementalBackupSchedule":
+    {
+       "second":"0",
+       "minute":"0",
+       <strong class="ph b">"hour":"3"</strong>,
+       "dayOfMonth":"*",
+       "month":"*",
+       <strong class="ph b">"dayOfWeek":"Mon,Tue,Wed,Thu,Fri,Sat"</strong>,
+       "year":"*"
+    },
+    "lastBackupDate":"Thu Dec 11 07:25:00 GMT 2014",
+    "nextFullBackupDate":"Sun Dec 14 05:00:00 GMT 2014",
+    "nextIncrementalBackupDate":"Fri Dec 12 03:00:00 GMT 2014",
+    "cloudStorageContainer":"develop-soa/JCSBackup",
+    "totalCloudStorageContainerUsed":"0.0MB",
+    "totalBackupVolumeUsed":"853.5MB",     
+    "percentBackupVolumeUsed":0
+}
+</pre> 
+ </div> 
+</div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+        </article>
+    </body>
+</html>

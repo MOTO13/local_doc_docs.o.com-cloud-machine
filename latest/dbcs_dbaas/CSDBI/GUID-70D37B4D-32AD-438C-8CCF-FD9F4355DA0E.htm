@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Data Security</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="In Oracle Database Cloud Service databases, data security is provided for data in transit and data at rest. Security of data in transit is achieved through network encryption. Data at rest security is achieved through encryption of data stored in database data files and backups." />
+<meta name="dcterms.created" content="2017-06-19T15:22:47Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Public Cloud Machine Using Oracle Database Cloud Service" />
+<meta name="dcterms.identifier" content="E72994-04" />
+<meta name="dcterms.isVersionOf" content="CSDBI" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-221C2977-3B5A-4376-8DD9-76B1B6A07D6F.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-A33A6627-EABE-4339-8711-EBEE890D2DFD.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CSDBI.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CSDBI.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CSDBI.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-70D37B4D-32AD-438C-8CCF-FD9F4355DA0E"></a> <span id="PAGE" style="display:none;">132/190</span> <!-- End Header -->
+<h1 id="CSDBI-GUID-70D37B4D-32AD-438C-8CCF-FD9F4355DA0E" class="sect1">Data Security</h1>
+<div>
+<p>In <span>Oracle Database Cloud Service</span> databases, data security is provided for data in transit and data at rest. Security of data in transit is achieved through network encryption. Data at rest security is achieved through encryption of data stored in database data files and backups.</p>
+<p>Data in Oracle Database files, including backups, is secured by the use of encryption implemented through a key management framework. Security of data across the network is provided by native Oracle Net encryption and integrity capabilities.</p>
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-70D37B4D-32AD-438C-8CCF-FD9F4355DA0E.htm#GUID-AD8C853F-A30C-4E50-85ED-B161058D6A93" title="Oracle Database Cloud Service databases include a key management framework that stores and manages keys and credentials used to encrypt data in the database data files and in backups.">Security of Data at Rest</a></p>
+</li>
+<li>
+<p><a href="GUID-70D37B4D-32AD-438C-8CCF-FD9F4355DA0E.htm#GUID-7BDCEED4-E0A4-48D5-972C-7D65E7D1536D" title="Oracle Database Cloud Service uses native Oracle Net encryption and integrity capabilities to secure connections to the database.">Security of Data in Transit</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-AD8C853F-A30C-4E50-85ED-B161058D6A93"></a>
+<h2 id="CSDBI-GUID-AD8C853F-A30C-4E50-85ED-B161058D6A93" class="sect2">Security of Data at Rest</h2>
+<div>
+<p><span>Oracle Database Cloud Service</span> databases include a key management framework that stores and manages keys and credentials used to encrypt data in the database data files and in backups.</p>
+<p>The key management framework includes the keystore (referred to as a wallet in Oracle Database 11<span class="italic">g</span> and previous releases) to securely store Transparent Data Encryption (TDE) master encryption keys, and the management framework to securely and efficiently manage keystore and key operations for various database components. TDE is the underlying mechanism used for default tablespace encryption and encrypted backups.</p>
+<p>TDE uses a two-tiered, key-based architecture to transparently encrypt and decrypt data. The master encryption key is stored in the software keystore. For tablespace encryption, this master encryption key is used to encrypt the tablespace encryption key, which in turn is used to encrypt and decrypt data in the tablespace. Refer to <a href="GUID-6C18CC56-223B-4373-B5F6-2F70CBA72975.htm#GUID-6C18CC56-223B-4373-B5F6-2F70CBA72975" title="All new tablespaces you create in a Database Cloud Service database are encrypted by default.">Using Tablespace Encryption in Database Cloud Service</a> for details on the implementation of tablespace encryption by default in <span>Oracle Database Cloud Service</span></p>
+<p>When a database deployment is created on <span>Oracle Database Cloud Service</span>, a local auto-login software keystore is created. The keystore is local to the compute node and is protected by a system-generated password. The auto-login software keystore is automatically opened when accessed.</p>
+<p>The keystore location is specified in the <code class="codeph">ENCRYPTION_WALLET_LOCATION</code> parameter in the <code class="codeph">$ORACLE_HOME/network/admin/sqlnet.ora</code> file.</p>
+<p>The Oracle keystore stores a history of retired TDE master encryption keys, which enables you to change them and still be able to decrypt data that was encrypted under an earlier TDE master encryption key.</p>
+<p>For additional information on TDE and the keystore, refer to <span class="q">"Introduction to Transparent Data Encryption"</span> in <cite>Oracle Database Advanced Security Guide</cite> for Release <a href="http://www.oracle.com/pls/topic/lookup?ctx=db122&amp;id=ASOAG10117" target="_blank">12.2</a> or <a href="http://www.oracle.com/pls/topic/lookup?ctx=db121&amp;id=ASOAG10117" target="_blank">12.1</a> or <span class="q">"Securing Stored Data Using Transparent Data Encryption"</span> in <cite>Oracle Database Advanced Security Administrator&rsquo;s Guide</cite> for Release <a href="http://www.oracle.com/pls/topic/lookup?ctx=db112&amp;id=ASOAG600" target="_blank">11.2</a>.</p>
+</div>
+</div>
+<div class="sect2"><a id="GUID-7BDCEED4-E0A4-48D5-972C-7D65E7D1536D"></a>
+<h2 id="CSDBI-GUID-7BDCEED4-E0A4-48D5-972C-7D65E7D1536D" class="sect2">Security of Data in Transit</h2>
+<div>
+<p><span>Oracle Database Cloud Service</span> uses native Oracle Net encryption and integrity capabilities to secure connections to the database.</p>
+<p>Refer to <a href="GUID-93DB710A-1A55-4068-A20A-996E0C44605F.htm" title="To secure connections to your Oracle Database Cloud Service databases, you can use native Oracle Net encryption and integrity capabilities.">Using Network Encryption and Integrity</a> for details on how to check your configuration and verify the use of native Oracle Net encryption and integrity.</p>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="GUID-221C2977-3B5A-4376-8DD9-76B1B6A07D6F.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="GUID-A33A6627-EABE-4339-8711-EBEE890D2DFD.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>
